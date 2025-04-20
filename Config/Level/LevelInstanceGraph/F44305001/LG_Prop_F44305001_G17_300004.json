@@ -1,0 +1,63 @@
+{
+  "OnInitSequece": [
+    {
+      "TaskList": []
+    }
+  ],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CollectDataConditions",
+          "TaskIDList": [
+            0
+          ],
+          "MainMissionIDList": [],
+          "PerformanceIDList": [],
+          "PerformanceIDDsList": [],
+          "CustomValueMainMissionIDList": []
+        },
+        {
+          "$type": "RPG.GameCore.WaitEntityEventV2",
+          "EventName": {
+            "Value": "SavePoint"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareSubMissionState"
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.ArchiveWolfBroPuzzle",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                    "FetchType": "SinglePropByPropID",
+                    "SinglePropKey": {
+                      "Custom": true,
+                      "Key": "PuzzleInit_Obj"
+                    },
+                    "SinglePropID": {
+                      "GroupID": {
+                        "FixedValue": {
+                          "Value": 3
+                        }
+                      },
+                      "ID": {
+                        "FixedValue": {
+                          "Value": 300001
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "Type": "EntityInstance"
+}

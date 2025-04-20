@@ -1,0 +1,60 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.ShowGuideHintWithText",
+          "Block": true,
+          "TargetEvent": [
+            {
+              "$type": "RPG.GameCore.WaitPlayerAction",
+              "ActionType": "AnyAction",
+              "ProtectTime": 0
+            }
+          ],
+          "NodeIDList": [
+            "PlanetFesMainPage.AvatarVisit.01"
+          ],
+          "GuideHintType": "ClickRect",
+          "GuideTextType": "Talk",
+          "GuideText": "TutorialTextmap_552101",
+          "GuideTalkID": 575046,
+          "CustomTextDirection": "RightUp",
+          "GuideHintShowConfig": {},
+          "GuideTextShowConfig": {
+            "UseCustomConfig": true,
+            "OffsetX": 200,
+            "OffsetY": 50
+          },
+          "GuideUIContextConfig": {},
+          "EnableClickInHintArea": true,
+          "EnableActionList": [],
+          "EnableBattleOperationList": [],
+          "DisableBlackMask": true
+        },
+        {
+          "$type": "RPG.GameCore.WaitTutorial",
+          "Event": "ShowUIContext",
+          "Param": "PlanetFesAvatarEventGamePlayDialog"
+        },
+        {
+          "$type": "RPG.GameCore.TutorialBlockAndWait",
+          "WaitSecond": 2
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideDetailDialog",
+          "GuideID": {
+            "Value": "9956"
+          },
+          "WaitForExit": true
+        },
+        {
+          "$type": "RPG.GameCore.TutorialClose"
+        }
+      ]
+    }
+  ],
+  "ValueSource": {},
+  "EntityEventList": []
+}

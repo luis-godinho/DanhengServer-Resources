@@ -1,0 +1,93 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropSetupUITrigger",
+          "ButtonText": {
+            "Hash": 15704201361786165831
+          },
+          "ButtonCallback": [
+            {
+              "$type": "RPG.GameCore.SelectorConfig",
+              "TaskList": [
+                {
+                  "$type": "RPG.GameCore.PropStateExecute",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                    "FetchType": "SinglePropByPropKey",
+                    "SinglePropKey": {
+                      "Custom": true,
+                      "Key": "GPID"
+                    }
+                  },
+                  "State": "Open",
+                  "Execute": [
+                    {
+                      "$type": "RPG.GameCore.PropReqInteract",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                        "FetchType": "SinglePropByPropKey",
+                        "SinglePropKey": {
+                          "Custom": true,
+                          "Key": "GPID"
+                        }
+                      },
+                      "InteractID": {
+                        "FixedValue": {
+                          "Value": 1100
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.PropStateExecute",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                    "FetchType": "SinglePropByPropKey",
+                    "SinglePropKey": {
+                      "Custom": true,
+                      "Key": "GPID"
+                    }
+                  },
+                  "State": "Locked",
+                  "Execute": [
+                    {
+                      "$type": "RPG.GameCore.PropReqInteract",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                        "FetchType": "SinglePropByPropKey",
+                        "SinglePropKey": {
+                          "Custom": true,
+                          "Key": "GPID"
+                        }
+                      },
+                      "InteractID": {
+                        "FixedValue": {
+                          "Value": 1200
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          }
+        }
+      ]
+    }
+  ],
+  "ValueSource": {
+    "Values": [
+      {
+        "$type": "RPG.GameCore.SharedString",
+        "Key": "GPID"
+      }
+    ]
+  }
+}

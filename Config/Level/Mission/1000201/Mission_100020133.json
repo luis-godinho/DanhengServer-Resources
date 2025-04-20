@@ -9,28 +9,21 @@
             100020132
           ],
           "MainMissionIDList": [],
-          "PerformanceIDList": [],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceIDList": []
         },
         {
           "$type": "RPG.GameCore.PredicateTaskList",
           "Predicate": {
             "$type": "RPG.GameCore.ByCompareSubMissionState",
             "SubMissionID": 100020132,
-            "SubMissionState": "Finish",
-            "TaskEnabled": true,
-            "IsClientOnly": true
+            "SubMissionState": "Finish"
           },
           "SuccessTaskList": [
             {
               "$type": "RPG.GameCore.FinishPerformanceMission",
-              "Key": "Mission_100020133",
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "Key": "Mission_100020133"
             }
-          ],
-          "TaskEnabled": true
+          ]
         }
       ]
     },
@@ -44,33 +37,36 @@
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 17179869184
+                "FixedValue": {
+                  "Value": 4
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288528843505664
+                "FixedValue": {
+                  "Value": 300009
                 }
               }
             }
           },
-          "TargetGroupID": {},
-          "TargetID": {},
+          "TargetGroupID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "TargetID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
           "TargetTypes": [],
           "ColliderRelativePath": "Trigger",
           "DestroyAfterTriggered": true,
           "OnTriggerEnter": [
             {
               "$type": "RPG.GameCore.FinishPerformanceMission",
-              "Key": "Mission_100020133",
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "Key": "Mission_100020133"
             }
-          ],
-          "SkipFakeAvatar": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     }

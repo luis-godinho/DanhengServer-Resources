@@ -1,4 +1,5 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "MainMission4040260_2",
   "Category": "Mission",
   "AreaAnchorName": "LevelArea_P20223_F20223001_G101",
@@ -7,8 +8,6 @@
   "ValueSource": {},
   "ConflictIDList": [],
   "IsHoyoGroup": true,
-  "StreamingTemplateType": "Standard",
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
   "ConflictWhiteList": [],
   "AnchorList": [
     {
@@ -17,7 +16,7 @@
       "Usage": "Camera",
       "CustomParameter": {
         "$type": "RPG.GameCore.LevelAnchorCameraParameter",
-        "fov": 50.0
+        "fov": 50
       },
       "Name": "Anchor1",
       "RotY": 271.4288,
@@ -36,38 +35,34 @@
   "NPCList": [
     {
       "NPCID": 3061,
-      "LoadOnInitial": true,
       "ValueSource": {},
       "StaticNPC": true,
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "ServerInteractVerificationIDList": [],
+      "DefaultLookAtMode": "Closed",
       "BoardShowList": [],
       "OverrideNPCName": {
-        "Hash": 217922367,
-        "Hash64": 15501707192613211850
+        "Hash": 15501707192613211850
       },
       "TalkDialogGroupIDList": [],
-      "DefaultAnimationType": "FreeStyle",
-      "BornType": "Mission",
       "IsNeedFade": true,
       "InitialHiddenNodeList": [],
       "Dialog": {
         "LevelGraph": "Config/Level/NPCDialogue/P20223/F20223001_G101/DialogueMain_F20223001_G101_N400001.json",
-        "PackList": [],
-        "EnableDialogCamera": true
+        "PackList": []
       },
       "InteractIconType": "SecretMissionIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "SpawnConfig": {
-        "CaptureDistanceTolerance": 1.5,
+        "TryCapture": false,
         "OverrideSpawn": true,
-        "EntitySpawnConfig": {}
+        "EntitySpawnConfig": {
+          "NeedBlackIn": false,
+          "BlackInDistance": 0,
+          "NeedFadeIn": false,
+          "NeedFadeOut": false
+        }
       },
-      "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true
-      },
+      "TriggerValidGuest": {},
       "Name": "NPC1",
       "RotY": 127.6576,
       "ID": 400001,
@@ -77,27 +72,17 @@
     },
     {
       "NPCID": 1990,
+      "LoadOnInitial": false,
       "ValueSource": {},
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "ServerInteractVerificationIDList": [],
+      "DefaultLookAtMode": "Closed",
       "BoardShowList": [],
       "TalkDialogGroupIDList": [],
-      "DefaultAnimationType": "FreeStyle",
       "DefaultIdleFreeStyleMotionID": 900,
-      "BornType": "Mission",
       "InitialHiddenNodeList": [],
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "SpawnConfig": {
-        "TryCapture": true,
-        "CaptureDistanceTolerance": 1.5,
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "NPC2",
       "RotY": 307.9672,

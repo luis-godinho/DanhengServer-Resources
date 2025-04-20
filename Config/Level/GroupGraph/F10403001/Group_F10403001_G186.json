@@ -1,0 +1,478 @@
+{
+  "OnInitSequece": [
+    {
+      "TaskList": []
+    }
+  ],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "Ev_sfx_amphoreus_prop_bug_butterfly_sing_01"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.GenericSwitchCase",
+              "SwitchRef": {
+                "$type": "RPG.GameCore.SwitchRefGraphDynamicFloat",
+                "Name": "Count"
+              },
+              "Cases": [
+                {
+                  "$type": "RPG.GameCore.StringCaseContainer",
+                  "Case": {
+                    "Value": "0"
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.SetDynamicValue",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                      },
+                      "ContextScope": "TargetEntity",
+                      "Value": {
+                        "FixedValue": {
+                          "Value": 1
+                        }
+                      },
+                      "DynamicKey": {
+                        "Value": "Count"
+                      }
+                    },
+                    {
+                      "$type": "RPG.GameCore.PredicateTaskList",
+                      "Predicate": {
+                        "$type": "RPG.GameCore.ByCompareItemNum",
+                        "ItemPair": [
+                          {
+                            "ItemID": 150071,
+                            "ItemNum": 1
+                          }
+                        ]
+                      },
+                      "SuccessTaskList": [
+                        {
+                          "$type": "RPG.GameCore.PlayMissionTalk",
+                          "SimpleTalkList": [
+                            {
+                              "TalkSentenceID": 404019514,
+                              "ProtectTime": 2
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.StringCaseContainer",
+                  "Case": {
+                    "Value": "3"
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.SetDynamicValue",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                      },
+                      "ContextScope": "TargetEntity",
+                      "Value": {
+                        "FixedValue": {
+                          "Value": 4
+                        }
+                      },
+                      "DynamicKey": {
+                        "Value": "Count"
+                      }
+                    },
+                    {
+                      "$type": "RPG.GameCore.PredicateTaskList",
+                      "Predicate": {
+                        "$type": "RPG.GameCore.ByCompareItemNum",
+                        "ItemPair": [
+                          {
+                            "ItemID": 150071,
+                            "ItemNum": 1
+                          }
+                        ]
+                      },
+                      "SuccessTaskList": [
+                        {
+                          "$type": "RPG.GameCore.PlayMissionTalk",
+                          "SimpleTalkList": [
+                            {
+                              "TalkSentenceID": 404019514,
+                              "ProtectTime": 2
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "Default": [
+                {
+                  "$type": "RPG.GameCore.SetDynamicValue",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                  },
+                  "ContextScope": "TargetEntity",
+                  "Value": {
+                    "FixedValue": {
+                      "Value": 0
+                    }
+                  },
+                  "DynamicKey": {
+                    "Value": "Count"
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByCompareItemNum",
+                    "ItemPair": [
+                      {
+                        "ItemID": 150071,
+                        "ItemNum": 1
+                      }
+                    ]
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.PlayMissionTalk",
+                      "SimpleTalkList": [
+                        {
+                          "TalkSentenceID": 404019513,
+                          "ProtectTime": 2
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "Ev_sfx_amphoreus_prop_bug_butterfly_sing_02"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.GenericSwitchCase",
+              "SwitchRef": {
+                "$type": "RPG.GameCore.SwitchRefGraphDynamicFloat",
+                "Name": "Count"
+              },
+              "Cases": [
+                {
+                  "$type": "RPG.GameCore.StringCaseContainer",
+                  "Case": {
+                    "Value": "0"
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.SetDynamicValue",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                      },
+                      "ContextScope": "TargetEntity",
+                      "Value": {
+                        "FixedValue": {
+                          "Value": 1
+                        }
+                      },
+                      "DynamicKey": {
+                        "Value": "Count"
+                      }
+                    },
+                    {
+                      "$type": "RPG.GameCore.PredicateTaskList",
+                      "Predicate": {
+                        "$type": "RPG.GameCore.ByCompareItemNum",
+                        "ItemPair": [
+                          {
+                            "ItemID": 150071,
+                            "ItemNum": 1
+                          }
+                        ]
+                      },
+                      "SuccessTaskList": [
+                        {
+                          "$type": "RPG.GameCore.PlayMissionTalk",
+                          "SimpleTalkList": [
+                            {
+                              "TalkSentenceID": 404019514,
+                              "ProtectTime": 2
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.StringCaseContainer",
+                  "Case": {
+                    "Value": "3"
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.SetDynamicValue",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                      },
+                      "ContextScope": "TargetEntity",
+                      "Value": {
+                        "FixedValue": {
+                          "Value": 4
+                        }
+                      },
+                      "DynamicKey": {
+                        "Value": "Count"
+                      }
+                    },
+                    {
+                      "$type": "RPG.GameCore.PredicateTaskList",
+                      "Predicate": {
+                        "$type": "RPG.GameCore.ByCompareItemNum",
+                        "ItemPair": [
+                          {
+                            "ItemID": 150071,
+                            "ItemNum": 1
+                          }
+                        ]
+                      },
+                      "SuccessTaskList": [
+                        {
+                          "$type": "RPG.GameCore.PlayMissionTalk",
+                          "SimpleTalkList": [
+                            {
+                              "TalkSentenceID": 404019514,
+                              "ProtectTime": 2
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "Default": [
+                {
+                  "$type": "RPG.GameCore.SetDynamicValue",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                  },
+                  "ContextScope": "TargetEntity",
+                  "Value": {
+                    "FixedValue": {
+                      "Value": 0
+                    }
+                  },
+                  "DynamicKey": {
+                    "Value": "Count"
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByCompareItemNum",
+                    "ItemPair": [
+                      {
+                        "ItemID": 150071,
+                        "ItemNum": 1
+                      }
+                    ]
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.PlayMissionTalk",
+                      "SimpleTalkList": [
+                        {
+                          "TalkSentenceID": 404019513,
+                          "ProtectTime": 2
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "Ev_sfx_amphoreus_prop_bug_butterfly_sing_03"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.GenericSwitchCase",
+              "SwitchRef": {
+                "$type": "RPG.GameCore.SwitchRefGraphDynamicFloat",
+                "Name": "Count"
+              },
+              "Cases": [
+                {
+                  "$type": "RPG.GameCore.StringCaseContainer",
+                  "Case": {
+                    "Value": "0"
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.SetDynamicValue",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                      },
+                      "ContextScope": "TargetEntity",
+                      "Value": {
+                        "FixedValue": {
+                          "Value": 1
+                        }
+                      },
+                      "DynamicKey": {
+                        "Value": "Count"
+                      }
+                    },
+                    {
+                      "$type": "RPG.GameCore.PredicateTaskList",
+                      "Predicate": {
+                        "$type": "RPG.GameCore.ByCompareItemNum",
+                        "ItemPair": [
+                          {
+                            "ItemID": 150071,
+                            "ItemNum": 1
+                          }
+                        ]
+                      },
+                      "SuccessTaskList": [
+                        {
+                          "$type": "RPG.GameCore.PlayMissionTalk",
+                          "SimpleTalkList": [
+                            {
+                              "TalkSentenceID": 404019514,
+                              "ProtectTime": 2
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.StringCaseContainer",
+                  "Case": {
+                    "Value": "3"
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.SetDynamicValue",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                      },
+                      "ContextScope": "TargetEntity",
+                      "Value": {
+                        "FixedValue": {
+                          "Value": 4
+                        }
+                      },
+                      "DynamicKey": {
+                        "Value": "Count"
+                      }
+                    },
+                    {
+                      "$type": "RPG.GameCore.PredicateTaskList",
+                      "Predicate": {
+                        "$type": "RPG.GameCore.ByCompareItemNum",
+                        "ItemPair": [
+                          {
+                            "ItemID": 150071,
+                            "ItemNum": 1
+                          }
+                        ]
+                      },
+                      "SuccessTaskList": [
+                        {
+                          "$type": "RPG.GameCore.PlayMissionTalk",
+                          "SimpleTalkList": [
+                            {
+                              "TalkSentenceID": 404019514,
+                              "ProtectTime": 2
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "Default": [
+                {
+                  "$type": "RPG.GameCore.SetDynamicValue",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                  },
+                  "ContextScope": "TargetEntity",
+                  "Value": {
+                    "FixedValue": {
+                      "Value": 0
+                    }
+                  },
+                  "DynamicKey": {
+                    "Value": "Count"
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByCompareItemNum",
+                    "ItemPair": [
+                      {
+                        "ItemID": 150071,
+                        "ItemNum": 1
+                      }
+                    ]
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.PlayMissionTalk",
+                      "SimpleTalkList": [
+                        {
+                          "TalkSentenceID": 404019513,
+                          "ProtectTime": 2
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "ValueSource": {
+    "Values": [
+      {
+        "$type": "RPG.GameCore.SharedFloat",
+        "Key": "Count"
+      }
+    ]
+  },
+  "Type": "Group",
+  "EntityEventList": []
+}

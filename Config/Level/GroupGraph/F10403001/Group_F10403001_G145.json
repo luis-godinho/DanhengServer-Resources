@@ -1,0 +1,740 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": []
+    },
+    {
+      "TaskList": []
+    },
+    {
+      "TaskList": []
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitFloorCustomValueChangeV2",
+          "Name": {
+            "Value": "FCV_BugQuestCount"
+          },
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.AdvDestroyGroupEntity",
+              "InstanceIDList": [
+                300001,
+                300003,
+                300004
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.BlockInputController",
+              "ActionNameList": []
+            },
+            {
+              "$type": "RPG.GameCore.LockPlayerControl"
+            },
+            {
+              "$type": "RPG.GameCore.EnablePlayerPlayIdleShow",
+              "Enable": false
+            },
+            {
+              "$type": "RPG.GameCore.EnableNPCMonsterAI",
+              "GroupMonsterIDs": [],
+              "UniqueNames": []
+            },
+            {
+              "$type": "RPG.Client.AdventureGameplayLock",
+              "IsLock": true,
+              "LockSource": "InstantKill"
+            },
+            {
+              "$type": "RPG.GameCore.WaitSecond",
+              "WaitTime": {
+                "FixedValue": {
+                  "Value": 2
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.SetFloorCustomFloatV2",
+              "Name": {
+                "Value": "FCV_BugQuest"
+              },
+              "Value": {
+                "FixedValue": {
+                  "Value": 1
+                }
+              }
+            }
+          ],
+          "Condition": {
+            "$type": "RPG.GameCore.ByCompareFloorCustomFloatV2",
+            "Name": {
+              "Value": "FCV_BugQuestCount"
+            },
+            "CompareType": "Equal",
+            "CompareValue": {
+              "FixedValue": {
+                "Value": 5
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitFloorCustomValueChangeV2",
+          "Name": {
+            "Value": "FCV_BugQuest"
+          },
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByComparePropState",
+                "TargetType": {
+                  "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                  "TargetType": "Prop",
+                  "Targets": [
+                    300002
+                  ]
+                },
+                "State": "Hidden"
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.PlayFullScreenTransfer",
+                  "PostDuration": 0,
+                  "Action": [
+                    {
+                      "$type": "RPG.GameCore.ScrTrfActPerformance",
+                      "CreateNpc": {
+                        "TaskEnabled": false
+                      },
+                      "DestroyNpc": {
+                        "Hide": true,
+                        "TaskEnabled": false
+                      },
+                      "CreateProp": {
+                        "GroupID": {
+                          "FixedValue": {
+                            "Value": 247
+                          }
+                        },
+                        "GroupPropID": {
+                          "FixedValue": {
+                            "Value": 300001
+                          }
+                        },
+                        "CreateList": [],
+                        "TaskEnabled": false
+                      },
+                      "DestroyProp": {
+                        "TargetType": {
+                          "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                        },
+                        "TaskEnabled": false
+                      },
+                      "CaptureNpc": [],
+                      "SwitchCharacterAnchor": {
+                        "TaskEnabled": false
+                      },
+                      "ActiveVirtualCamera": {
+                        "AreaName": "LevelArea_P10403_F10403001_G145",
+                        "AnchorName": "Anchor1"
+                      },
+                      "ActiveTemplateVirtualCamera": {
+                        "TaskEnabled": false
+                      },
+                      "AdvNpcFaceToPlayer": {
+                        "SteerImmediately": true,
+                        "FinishImmadiate": true,
+                        "TaskEnabled": false
+                      },
+                      "WaitStreamingFinish": true
+                    },
+                    {
+                      "$type": "RPG.GameCore.ScrTrfActTaskList",
+                      "TaskList": [
+                        {
+                          "$type": "RPG.GameCore.ShowTalkUI",
+                          "Show": true
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.PropReqInteract",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                    "TargetType": "Prop",
+                    "Targets": [
+                      300002
+                    ]
+                  },
+                  "InteractID": {
+                    "FixedValue": {
+                      "Value": 120120
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "Condition": {
+            "$type": "RPG.GameCore.ByCompareFloorCustomFloatV2",
+            "Name": {
+              "Value": "FCV_BugQuest"
+            },
+            "CompareType": "Equal",
+            "CompareValue": {
+              "FixedValue": {
+                "Value": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitPropStateChange",
+          "InstanceID": 300002,
+          "FromAnyState": true,
+          "ToState": "ChestClosed",
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.WaitSecond",
+              "WaitTime": {
+                "FixedValue": {
+                  "Value": 2
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.PlayFullScreenTransfer",
+              "PostDuration": 0,
+              "Action": [
+                {
+                  "$type": "RPG.GameCore.ScrTrfActPerformance",
+                  "CreateNpc": {
+                    "TaskEnabled": false
+                  },
+                  "DestroyNpc": {
+                    "Hide": true,
+                    "TaskEnabled": false
+                  },
+                  "CreateProp": {
+                    "TaskEnabled": false
+                  },
+                  "DestroyProp": {
+                    "TargetType": {
+                      "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                    },
+                    "TaskEnabled": false
+                  },
+                  "CaptureNpc": [],
+                  "SwitchCharacterAnchor": {
+                    "TaskEnabled": false
+                  },
+                  "ActiveVirtualCamera": {
+                    "AreaName": "LevelArea_P10403_F10403001_G145",
+                    "AnchorName": "Anchor1",
+                    "IsActive": false
+                  },
+                  "ActiveTemplateVirtualCamera": {
+                    "TaskEnabled": false
+                  },
+                  "AdvNpcFaceToPlayer": {
+                    "SteerImmediately": true,
+                    "FinishImmadiate": true,
+                    "TaskEnabled": false
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.ScrTrfActTaskList",
+                  "TaskList": [
+                    {
+                      "$type": "RPG.GameCore.ShowTalkUI"
+                    },
+                    {
+                      "$type": "RPG.GameCore.EnablePlayerPlayIdleShow"
+                    },
+                    {
+                      "$type": "RPG.GameCore.UnLockPlayerControl"
+                    },
+                    {
+                      "$type": "RPG.GameCore.EnableNPCMonsterAI",
+                      "Enable": true,
+                      "GroupMonsterIDs": [],
+                      "UniqueNames": []
+                    },
+                    {
+                      "$type": "RPG.GameCore.BlockInputController",
+                      "ActionNameList": []
+                    },
+                    {
+                      "$type": "RPG.Client.AdventureGameplayLock",
+                      "LockSource": "InstantKill"
+                    },
+                    {
+                      "$type": "RPG.GameCore.SetFloorCustomFloatV2",
+                      "Name": {
+                        "Value": "FCV_BugQuestCount"
+                      },
+                      "Value": {
+                        "FixedValue": {
+                          "Value": 10
+                        }
+                      }
+                    },
+                    {
+                      "$type": "RPG.GameCore.AdvCreateGroupEntityV2",
+                      "InstanceIDList": [
+                        300001,
+                        300003,
+                        300004
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByAny",
+            "PredicateList": [
+              {
+                "$type": "RPG.GameCore.ByComparePropState",
+                "TargetType": {
+                  "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                  "TargetType": "Prop",
+                  "Targets": [
+                    300002
+                  ]
+                },
+                "State": "ChestClosed"
+              },
+              {
+                "$type": "RPG.GameCore.ByComparePropState",
+                "TargetType": {
+                  "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                  "TargetType": "Prop",
+                  "Targets": [
+                    300002
+                  ]
+                },
+                "State": "ChestUsed"
+              }
+            ]
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.SetFloorCustomFloatV2",
+              "Name": {
+                "Value": "FCV_BugQuestCount"
+              },
+              "Value": {
+                "FixedValue": {
+                  "Value": 10
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitFloorCustomValueChangeV2",
+          "Name": {
+            "Value": "FCV_BugQuestCount"
+          },
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.WaitSecond",
+              "WaitTime": {
+                "FixedValue": {
+                  "Value": 0.1
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareQuestGetReward",
+                "QuestID": {
+                  "FixedValue": {
+                    "Value": 2200611
+                  }
+                }
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.PlayMissionTalk",
+                  "SimpleTalkList": [
+                    {
+                      "TalkSentenceID": 404019513,
+                      "ProtectTime": 2
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "Condition": {
+            "$type": "RPG.GameCore.ByCompareFloorCustomFloatV2",
+            "Name": {
+              "Value": "FCV_BugQuestCount"
+            },
+            "CompareType": "Equal",
+            "CompareValue": {
+              "FixedValue": {
+                "Value": 0
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitFloorCustomValueChangeV2",
+          "Name": {
+            "Value": "FCV_BugQuestCount"
+          },
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.WaitSecond",
+              "WaitTime": {
+                "FixedValue": {
+                  "Value": 0.1
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareQuestGetReward",
+                "QuestID": {
+                  "FixedValue": {
+                    "Value": 2200611
+                  }
+                }
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.PlayMissionTalk",
+                  "SimpleTalkList": [
+                    {
+                      "TalkSentenceID": 404019514,
+                      "ProtectTime": 2
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "Condition": {
+            "$type": "RPG.GameCore.ByCompareFloorCustomFloatV2",
+            "Name": {
+              "Value": "FCV_BugQuestCount"
+            },
+            "CompareType": "Equal",
+            "CompareValue": {
+              "FixedValue": {
+                "Value": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitFloorCustomValueChangeV2",
+          "Name": {
+            "Value": "FCV_BugQuestCount"
+          },
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.WaitSecond",
+              "WaitTime": {
+                "FixedValue": {
+                  "Value": 0.1
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareQuestGetReward",
+                "QuestID": {
+                  "FixedValue": {
+                    "Value": 2200611
+                  }
+                }
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.PlayMissionTalk",
+                  "SimpleTalkList": [
+                    {
+                      "TalkSentenceID": 404019515,
+                      "ProtectTime": 2
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "Condition": {
+            "$type": "RPG.GameCore.ByCompareFloorCustomFloatV2",
+            "Name": {
+              "Value": "FCV_BugQuestCount"
+            },
+            "CompareType": "Equal",
+            "CompareValue": {
+              "FixedValue": {
+                "Value": 2
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitFloorCustomValueChangeV2",
+          "Name": {
+            "Value": "FCV_BugQuestCount"
+          },
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.WaitSecond",
+              "WaitTime": {
+                "FixedValue": {
+                  "Value": 0.1
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareQuestGetReward",
+                "QuestID": {
+                  "FixedValue": {
+                    "Value": 2200611
+                  }
+                }
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.PlayMissionTalk",
+                  "SimpleTalkList": [
+                    {
+                      "TalkSentenceID": 404019516,
+                      "ProtectTime": 2
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "Condition": {
+            "$type": "RPG.GameCore.ByCompareFloorCustomFloatV2",
+            "Name": {
+              "Value": "FCV_BugQuestCount"
+            },
+            "CompareType": "Equal",
+            "CompareValue": {
+              "FixedValue": {
+                "Value": 3
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitFloorCustomValueChangeV2",
+          "Name": {
+            "Value": "FCV_BugQuestCount"
+          },
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.WaitSecond",
+              "WaitTime": {
+                "FixedValue": {
+                  "Value": 0.1
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareQuestGetReward",
+                "QuestID": {
+                  "FixedValue": {
+                    "Value": 2200611
+                  }
+                }
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.PlayMissionTalk",
+                  "SimpleTalkList": [
+                    {
+                      "TalkSentenceID": 404019517,
+                      "ProtectTime": 2
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "Condition": {
+            "$type": "RPG.GameCore.ByCompareFloorCustomFloatV2",
+            "Name": {
+              "Value": "FCV_BugQuestCount"
+            },
+            "CompareType": "Equal",
+            "CompareValue": {
+              "FixedValue": {
+                "Value": 4
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitFloorCustomValueChangeV2",
+          "Name": {
+            "Value": "FCV_BugQuestCount"
+          },
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.WaitSecond",
+              "WaitTime": {
+                "FixedValue": {
+                  "Value": 0.1
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareQuestGetReward",
+                "QuestID": {
+                  "FixedValue": {
+                    "Value": 2200611
+                  }
+                }
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.PlayMissionTalk",
+                  "SimpleTalkList": [
+                    {
+                      "TalkSentenceID": 404019518,
+                      "ProtectTime": 2
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "Condition": {
+            "$type": "RPG.GameCore.ByCompareFloorCustomFloatV2",
+            "Name": {
+              "Value": "FCV_BugQuestCount"
+            },
+            "CompareType": "Equal",
+            "CompareValue": {
+              "FixedValue": {
+                "Value": 5
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByAny",
+            "PredicateList": [
+              {
+                "$type": "RPG.GameCore.ByComparePropState",
+                "TargetType": {
+                  "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                  "TargetType": "Prop",
+                  "Targets": [
+                    300002
+                  ]
+                },
+                "State": "ChestClosed"
+              },
+              {
+                "$type": "RPG.GameCore.ByComparePropState",
+                "TargetType": {
+                  "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                  "TargetType": "Prop",
+                  "Targets": [
+                    300002
+                  ]
+                },
+                "State": "ChestUsed"
+              }
+            ]
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.SetFloorCustomFloatV2",
+              "Name": {
+                "Value": "FCV_BugQuestCount"
+              },
+              "Value": {
+                "FixedValue": {
+                  "Value": 10
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "ValueSource": {
+    "Values": [
+      {
+        "$type": "RPG.GameCore.SharedInt",
+        "Key": "Count"
+      }
+    ]
+  },
+  "Type": "Group",
+  "EntityEventList": []
+}

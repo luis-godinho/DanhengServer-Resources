@@ -1,0 +1,38 @@
+{
+  "OnInitSequece": [
+    {
+      "TaskList": []
+    }
+  ],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitEntityEvent",
+          "EventName": {
+            "Value": "Clt_OnOpened"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.TriggerEntityEvent",
+              "EventName": {
+                "Value": "Clt_DestoryNPC"
+              },
+              "InstanceID": {
+                "FixedValue": {
+                  "Value": 300003
+                }
+              }
+            }
+          ],
+          "InstanceID": {
+            "FixedValue": {
+              "Value": 300001
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "Type": "Group"
+}

@@ -1,0 +1,62 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "EnterArea_G{GroupID}"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.PlayFullScreenTransfer",
+              "PrevDuration": 0.83,
+              "KeepDuration": 1.83,
+              "PostDuration": -1
+            },
+            {
+              "$type": "RPG.GameCore.TriggerPerformance",
+              "ValueSource": {},
+              "PerformanceType": "D",
+              "PerformanceID": 104030609,
+              "MaskConfig": {
+                "UseExcelData": false,
+                "StartBlack": "NoPre"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.ClientFinishMission",
+              "SubmissionID": 104031602
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvSetupCustomTaskTrigger",
+          "TargetType": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "TargetType": "Prop",
+            "Targets": [
+              300001
+            ]
+          },
+          "TriggerName": "MissionTrigger",
+          "OnEnter": [
+            {
+              "$type": "RPG.GameCore.TriggerGroupEvent",
+              "EventName": {
+                "Value": "EnterArea_G{GroupID}"
+              }
+            }
+          ],
+          "DisableAfterTriggered": true
+        }
+      ]
+    }
+  ],
+  "Type": "Group"
+}

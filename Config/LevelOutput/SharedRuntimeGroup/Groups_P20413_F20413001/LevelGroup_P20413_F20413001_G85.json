@@ -1,8 +1,8 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "SwitchHand",
   "LevelGraph": "Config/Level/GroupGraph/F20413001/Group_F20413001_G85.json",
   "AreaAnchorName": "LevelArea_P20413_F20413001_G85",
-  "SaveType": "Permanent",
   "SavedValueCondition": {
     "Conditions": [],
     "Operation": "And"
@@ -36,50 +36,25 @@
         "Value": "LevelArea_P20413_F20413001_G85,PullBack",
         "Key": "PullBackAnchor"
       }
-    ],
-    "SharedValues": [
-      {
-        "$type": "RPG.GameCore.SharedString",
-        "Value": "LevelArea_P20413_F20413001_G85,Anchor3",
-        "Key": "ChestCam"
-      },
-      {
-        "$type": "RPG.GameCore.SharedString",
-        "Value": "85,300001",
-        "Key": "SwitchHandConsole"
-      },
-      {
-        "$type": "RPG.GameCore.SharedString",
-        "Value": "85,300002",
-        "Key": "SwitchHandProp"
-      },
-      {
-        "$type": "RPG.GameCore.SharedString",
-        "Value": "LevelArea_P20413_F20413001_G85",
-        "Key": "PullBackArea"
-      },
-      {
-        "$type": "RPG.GameCore.SharedString",
-        "Value": "LevelArea_P20413_F20413001_G85,PullBack",
-        "Key": "PullBackAnchor"
-      }
     ]
   },
   "ConflictIDList": [],
   "IsHoyoGroup": true,
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
+  "StreamingTemplateType": "None",
   "ConflictWhiteList": [],
   "EnableGroupAI": true,
-  "TagContainer": [
-    {
-      "Tag": "Group.Level.Gameplay",
-      "TagHash": -141571921
-    }
-  ],
+  "TagContainer": {
+    "List": [
+      {
+        "Tag": "Group.Level.Gameplay",
+        "TagHash": -141571921
+      }
+    ]
+  },
   "AnchorList": [
     {
       "Name": "Anchor1",
-      "RotY": 90.0,
+      "RotY": 90,
       "ID": 1,
       "PosX": 120.482,
       "PosY": 43.68,
@@ -90,7 +65,7 @@
       "Usage": "Camera",
       "CustomParameter": {
         "$type": "RPG.GameCore.LevelAnchorCameraParameter",
-        "fov": 40.0
+        "fov": 40
       },
       "Name": "Anchor2",
       "ID": 2,
@@ -100,11 +75,11 @@
     },
     {
       "RotX": 12.58723,
-      "RotZ": -1e-06,
+      "RotZ": -1E-06,
       "Usage": "Camera",
       "CustomParameter": {
         "$type": "RPG.GameCore.LevelAnchorCameraParameter",
-        "fov": 40.0
+        "fov": 40
       },
       "Name": "Anchor3",
       "RotY": 90.00005,
@@ -132,7 +107,6 @@
         "SlaveConfigList": []
       },
       "AIVariableSource": {},
-      "LoadOnInitial": true,
       "ValueSource": {},
       "CampID": 3,
       "BattleArea": {
@@ -144,19 +118,12 @@
       "BoardShowList": [
         2
       ],
-      "DefaultLookAtMode": "LookPlayer",
       "TagList": [],
-      "InteractIconType": "ChatIcon",
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Monster1",
-      "RotY": 165.0,
+      "RotY": 165,
       "ID": 200001,
       "PosX": 133.65,
       "PosY": 70.373,
@@ -165,53 +132,9 @@
   ],
   "PropList": [
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 104097,
-      "LoadOnInitial": true,
       "ValueSource": {
         "Values": [
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "Props/Outputs/Chap04/SwitchHand/SwitchHand_Puzzle_6.prefab",
-            "Key": "PuzzlePath"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "85,300002",
-            "Key": "SwitchHandEntity"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "FCV_SwitchHand_P06",
-            "Key": "FCV_SwitchHand_PuzzleID"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "1",
-            "Key": "isRoctetPucnhTutorial"
-          }
-        ],
-        "SharedValues": [
           {
             "$type": "RPG.GameCore.SharedString",
             "Value": "Props/Outputs/Chap04/SwitchHand/SwitchHand_Puzzle_6.prefab",
@@ -235,31 +158,20 @@
         ]
       },
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
       "MappingInfoID": 10077,
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
       "OverrideMapIconType": 270,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "IsClientOnly": true,
       "CameraCenterEntityList": [],
       "CameraConfig": {},
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Prop1",
       "RotY": 269.9997,
@@ -269,71 +181,30 @@
       "PosZ": 5.517571
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 104089,
-      "LoadOnInitial": true,
       "ValueSource": {},
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {
         "InteractTrigger": {
           "Shape": "Box",
-          "DimX": 5.0,
-          "DimY": 3.0,
-          "DimZ": 6.0,
+          "DimX": 5,
+          "DimY": 3,
+          "DimZ": 6,
           "Offset": {
-            "y": 1.5,
-            "normalized": {
-              "y": 1.0,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 1.5,
-            "sqrMagnitude": 2.25
+            "Y": 1.5
           }
         }
       },
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "IsTrackRealtimePositionInMap": true,
       "Name": "Prop2",
@@ -344,48 +215,9 @@
       "PosZ": 5.420003
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 104101,
-      "LoadOnInitial": true,
       "ValueSource": {
         "Values": [
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "LevelArea_P20413_F20413001_G85,Anchor1",
-            "Key": "LiftAnchor"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "LevelArea_P20413_F20413001_G85,Anchor2",
-            "Key": "CameraAnchor"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "FCV_SwitchHand_P06",
-            "Key": "FCV_SwitchHand_PuzzleID"
-          }
-        ],
-        "SharedValues": [
           {
             "$type": "RPG.GameCore.SharedString",
             "Value": "LevelArea_P20413_F20413001_G85,Anchor1",
@@ -404,52 +236,33 @@
         ]
       },
       "Trigger": {
-        "Radius": 4.0,
-        "DimX": 1.0,
-        "DimY": 1.0,
-        "DimZ": 1.0,
+        "Radius": 4,
+        "DimX": 1,
+        "DimY": 1,
+        "DimZ": 1,
         "Offset": {
-          "y": -1.5,
-          "normalized": {
-            "y": -1.0,
-            "magnitude": 1.0,
-            "sqrMagnitude": 1.0
-          },
-          "magnitude": 1.5,
-          "sqrMagnitude": 2.25
+          "Y": -1.5
         }
       },
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {
         "InteractTrigger": {
-          "Radius": 5.0,
-          "DimX": 1.0,
-          "DimY": 1.0,
-          "DimZ": 1.0
+          "Radius": 5,
+          "DimX": 1,
+          "DimY": 1,
+          "DimZ": 1
         }
       },
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Prop3",
       "RotY": 89.99995,
@@ -459,59 +272,25 @@
       "PosZ": 39.53
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 60402,
-      "LoadOnInitial": true,
       "ValueSource": {},
       "CampID": 4,
       "State": "Hidden",
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
       "ChestID": 20413670,
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Prop4",
-      "RotY": 270.0,
+      "RotY": 270,
       "ID": 300004,
       "PosX": 159.43,
       "PosY": 41.54376,
@@ -520,62 +299,17 @@
   ],
   "DistrictList": [
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "Trigger": {
         "Shape": "GeometryBox",
-        "Radius": 1.0,
-        "DimX": 110.0,
-        "DimY": 90.0,
-        "DimZ": 90.0
+        "Radius": 1,
+        "DimX": 110,
+        "DimY": 90,
+        "DimZ": 90
       },
-      "LoadOnInitial": true,
       "DistrictType": "Level",
-      "NPCCrowdRadius": 25.0,
       "LevelGraph": "Config/Level/Props/Chap04/InitLevelGraph_Prop_Chap04_HandDistrict_01.json",
       "ValueSource": {
         "Values": [
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "FCV_SwitchHand_P06",
-            "Key": "FCV_SwitchHand_PuzzleID"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "85,300001",
-            "Key": "SwitchHandConsole"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "LevelArea_P20413_F20413001_G85",
-            "Key": "PullBackArea"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "LevelArea_P20413_F20413001_G85,PullBack",
-            "Key": "PullBackAnchor"
-          }
-        ],
-        "SharedValues": [
           {
             "$type": "RPG.GameCore.SharedString",
             "Value": "FCV_SwitchHand_P06",
@@ -602,7 +336,7 @@
       "ID": 1,
       "PosX": 121.9,
       "PosY": 50.6,
-      "PosZ": 3.0
+      "PosZ": 3
     }
   ],
   "WaypointList": [],

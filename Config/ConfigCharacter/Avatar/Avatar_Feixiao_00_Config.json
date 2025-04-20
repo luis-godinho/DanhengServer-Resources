@@ -1,27 +1,15 @@
 {
+  "$type": "RPG.GameCore.CharacterConfig",
   "SomatoType": "MiddleAvatar",
-  "CharacterBodySize": "None",
   "BuffPanelOffset": {
-    "y": 1.2,
-    "normalized": {
-      "y": 1.0,
-      "magnitude": 1.0,
-      "sqrMagnitude": 1.0
-    },
-    "magnitude": 1.2,
-    "sqrMagnitude": 1.44
+    "Y": 1.2
   },
   "HitBoxWidth": 0.3,
-  "HitBoxLength": 1.0,
   "HitBoxHeight": 1.5,
-  "Resilience": "C",
   "Location": {
     "Width": 0.8
   },
-  "VisualRadius": 1.0,
-  "LookAtIKEnableRadius": 0.5,
   "SaveModelWhenDead": true,
-  "IsSpecialVisualCharacter": "Keep",
   "AnimEventConfigList": [
     "Config/ConfigAnimEvents/Avatar/Designer/Avatar_Feixiao_00_Designer_AnimEvent.json",
     "Config/ConfigAnimEvents/Avatar/Effect/Avatar_Feixiao_00_Effect_AnimEvent.json",
@@ -32,467 +20,225 @@
     {
       "Name": "Skill01",
       "UseType": "SelectEntity",
-      "ActivateAfterRevive": true,
-      "MaxCastTimes": -1,
       "TargetInfo": {
-        "TargetType": "EnemySelect",
-        "AdjoinSubTargetCount": 1,
-        "MaxTargetCount": 1,
-        "AllowFriendServant": "Allow",
-        "AllowEnemyServant": "Allow"
+        "TargetType": "EnemySelect"
       },
       "UseReadyTransitAnim": true,
-      "SkillNameHUD": true,
-      "CanOverkill": true,
       "ReadyAnimState": "Skill01_Ready",
       "ReadyAnimWaitTime": 0.3,
       "CameraConfig": {
         "NormalConfig": {
           "CameraState": "SelectDarkTeamEntity",
-          "AnchorTargetType": {
-            "$type": "RPG.GameCore.TargetAlias",
-            "Alias": "Caster"
-          },
           "IsLocalOffset": true,
           "AnchorOffset": {
-            "x": 0.5,
-            "y": 0.24,
-            "z": -0.56,
-            "normalized": {
-              "x": 0.634387,
-              "y": 0.304505765,
-              "z": -0.7105135,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 0.7881624,
-            "sqrMagnitude": 0.621199965
-          },
-          "AimTargetType": {
-            "$type": "RPG.GameCore.TargetAlias",
-            "Alias": "SkillTargetEntityList"
+            "X": 0.5,
+            "Y": 0.24,
+            "Z": -0.56
           },
           "AimOffset": {
-            "x": -2.8,
-            "y": 0.45,
-            "normalized": {
-              "x": -0.9873304,
-              "y": 0.1586781,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 2.83593,
-            "sqrMagnitude": 8.0425
+            "X": -2.8,
+            "Y": 0.45
           },
-          "FollowRadius": 3.0,
-          "AnchorToAimAngle": 30.0,
-          "Dutch": 2.0,
-          "NearClipping": 0.1,
-          "ForbidDynamicOffset": true,
-          "ResetToDefault": true,
-          "UseSkillPerformIgnoreDynamicOffset": true,
-          "UseAimTargetToCameraFocus": true
+          "FollowRadius": 3,
+          "AnchorToAimAngle": 30,
+          "Dutch": 2
         },
         "BlendConfig": {
-          "BlendType": "Cut",
-          "FOVSmoothDampTime": -1.0,
-          "FrameBlendWeightStart": 1.0,
-          "FrameBlendDuration": 1.0
+          "BlendType": "Cut"
         }
       },
       "CameraConfigAdded": {
         "NormalConfig": {
           "CameraState": "SelectDarkTeamEntity",
-          "AnchorTargetType": {
-            "$type": "RPG.GameCore.TargetAlias",
-            "Alias": "Caster"
-          },
           "IsLocalOffset": true,
           "AnchorOffset": {
-            "x": -0.35,
-            "y": 0.08,
-            "z": 0.06,
-            "normalized": {
-              "x": -0.96152395,
-              "y": 0.219776914,
-              "z": 0.164832681,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 0.364005476,
-            "sqrMagnitude": 0.1325
-          },
-          "AimTargetType": {
-            "$type": "RPG.GameCore.TargetAlias",
-            "Alias": "SkillTargetEntityList"
+            "X": -0.35,
+            "Y": 0.08,
+            "Z": 0.06
           },
           "AimOffset": {
-            "x": -2.8,
-            "y": 0.5,
-            "normalized": {
-              "x": -0.9844275,
-              "y": 0.175790638,
-              "normalized": {
-                "x": -0.9844276,
-                "y": 0.175790653,
-                "normalized": {
-                  "x": -0.984427631,
-                  "y": 0.175790668,
-                  "magnitude": 1.0,
-                  "sqrMagnitude": 1.00000012
-                },
-                "magnitude": 0.99999994,
-                "sqrMagnitude": 0.99999994
-              },
-              "magnitude": 0.99999994,
-              "sqrMagnitude": 0.9999999
-            },
-            "magnitude": 2.84429264,
-            "sqrMagnitude": 8.09
+            "X": -2.8,
+            "Y": 0.5
           },
           "FollowRadius": 3.15,
-          "AnchorToAimAngle": 25.0,
-          "NearClipping": 0.1,
-          "ForbidDynamicOffset": true,
-          "ResetToDefault": true,
-          "UseSkillPerformIgnoreDynamicOffset": true,
-          "UseAimTargetToCameraFocus": true
+          "AnchorToAimAngle": 25
         },
         "BlendConfig": {
           "BlendType": "Custom",
           "CustomCurveName": "BlendCut_00to1",
-          "BlendTime": 1.0,
-          "FOVSmoothDampTime": -1.0,
-          "FrameBlendWeightStart": 1.0,
-          "FrameBlendDuration": 1.0
+          "BlendTime": 1
         }
       },
       "FormationType": "LightTeamSelectTarget",
       "EntryAbility": "Avatar_Feixiao_00_Skill01_Phase01",
-      "DelayRatio": {
-        "RawValue": 4294967296
-      },
       "ComplexSkillAIPreCheck": {
-        "SkillBasicPower": {
-          "RawValue": 4294967296
-        },
         "Groups": [
           {
-            "GroupName": "DefaultNormalSkill_PreCheck",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "DefaultNormalSkill_PreCheck"
           },
           {
-            "GroupName": "BaseWeight",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BaseWeight"
           }
         ]
       },
       "ComplexSkillAI": {
-        "SkillBasicPower": {
-          "RawValue": 4294967296
-        },
         "Groups": [
           {
-            "GroupName": "DefaultNormalSkill",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "DefaultNormalSkill"
           },
           {
             "GroupName": "BasePp_Common_StrongEnemiyPriority",
             "Weight": {
-              "RawValue": 8589934592
+              "Value": 2
             }
           },
           {
-            "GroupName": "BasePp_Common_SingleAttack",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasePp_Common_SingleAttack"
           },
           {
-            "GroupName": "BasePp_Common_WeakBreak",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasePp_Common_WeakBreak"
           }
         ]
-      },
-      "AIUltraSkillPriority": "PROG_Default",
-      "CanBeInterrupted": true,
-      "AutoCostSpNeed": true,
-      "AutoStandbyOnSkillFinish": true,
-      "IsSkillInsertable": true
+      }
     },
     {
       "Name": "Skill02",
       "SkillType": "Skill",
       "UseType": "SelectEntity",
-      "ActivateAfterRevive": true,
-      "MaxCastTimes": -1,
       "TargetInfo": {
-        "TargetType": "EnemySelect",
-        "AdjoinSubTargetCount": 1,
-        "MaxTargetCount": 1,
-        "AllowFriendServant": "Allow",
-        "AllowEnemyServant": "Allow"
+        "TargetType": "EnemySelect"
       },
       "UseReadyTransitAnim": true,
-      "SkillNameHUD": true,
-      "CanOverkill": true,
       "ReadyAnimState": "Skill02_Ready_Loop",
       "ReadyAnimWaitTime": 0.3,
       "CameraConfig": {
         "NormalConfig": {
           "CameraState": "SelectDarkTeamEntity",
-          "AnchorTargetType": {
-            "$type": "RPG.GameCore.TargetAlias",
-            "Alias": "Caster"
-          },
           "IsLocalOffset": true,
           "AnchorOffset": {
-            "x": -0.21,
-            "y": -0.18,
-            "z": -0.13,
-            "normalized": {
-              "x": -0.687140942,
-              "y": -0.588978,
-              "z": -0.425372958,
-              "normalized": {
-                "x": -0.687141,
-                "y": -0.588978052,
-                "z": -0.425373,
-                "magnitude": 1.0,
-                "sqrMagnitude": 1.00000012
-              },
-              "magnitude": 0.99999994,
-              "sqrMagnitude": 0.9999999
-            },
-            "magnitude": 0.305614144,
-            "sqrMagnitude": 0.0934
-          },
-          "AimTargetType": {
-            "$type": "RPG.GameCore.TargetAlias",
-            "Alias": "SkillTargetEntityList"
+            "X": -0.21,
+            "Y": -0.18,
+            "Z": -0.13
           },
           "AimOffset": {
-            "x": -2.8,
-            "y": 1.75,
-            "normalized": {
-              "x": -0.847998261,
-              "y": 0.5299989,
-              "normalized": {
-                "x": -0.8479983,
-                "y": 0.529998958,
-                "magnitude": 1.0,
-                "sqrMagnitude": 1.0
-              },
-              "magnitude": 0.99999994,
-              "sqrMagnitude": 0.9999999
-            },
-            "magnitude": 3.30189347,
-            "sqrMagnitude": 10.9025
+            "X": -2.8,
+            "Y": 1.75
           },
-          "FollowRadius": 2.0,
-          "AnchorToAimAngle": 26.0,
-          "FOV": 45.0,
-          "NearClipping": 0.1,
-          "ForbidDynamicOffset": true,
-          "ResetToDefault": true,
-          "UseSkillPerformIgnoreDynamicOffset": true,
-          "UseAimTargetToCameraFocus": true
+          "FollowRadius": 2,
+          "AnchorToAimAngle": 26,
+          "FOV": 45
         },
         "BlendConfig": {
           "BlendType": "Custom",
           "CustomCurveName": "BlendCut_05to1",
-          "BlendTime": 1.0,
-          "FOVSmoothDampTime": -1.0,
-          "FrameBlendWeightStart": 1.0,
-          "FrameBlendDuration": 1.0
+          "BlendTime": 1
         }
       },
       "EntryAbility": "Avatar_Feixiao_00_Skill02_Phase01",
-      "DelayRatio": {
-        "RawValue": 4294967296
-      },
       "ComplexSkillAIPreCheck": {
-        "SkillBasicPower": {
-          "RawValue": 4294967296
-        },
         "Groups": [
           {
-            "GroupName": "DefaultBPSkill_PreCheck",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "DefaultBPSkill_PreCheck"
           },
           {
-            "GroupName": "AddNP_Common_BPSkill",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "AddNP_Common_BPSkill"
           }
         ]
       },
       "ComplexSkillAI": {
-        "SkillBasicPower": {
-          "RawValue": 4294967296
-        },
         "Groups": [
           {
-            "GroupName": "DefaultBPSkill",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "DefaultBPSkill"
           },
           {
             "GroupName": "BasePp_Common_StrongEnemiyPriority",
             "Weight": {
-              "RawValue": 8589934592
+              "Value": 2
             }
           },
           {
-            "GroupName": "BasePp_Common_SingleAttack",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasePp_Common_SingleAttack"
           },
           {
-            "GroupName": "BasePp_Common_WeakBreak",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasePp_Common_WeakBreak"
           }
         ]
-      },
-      "AIUltraSkillPriority": "PROG_Default",
-      "CanBeInterrupted": true,
-      "AutoCostSpNeed": true,
-      "AutoStandbyOnSkillFinish": true,
-      "IsSkillInsertable": true
+      }
     },
     {
       "Name": "Skill03",
       "SkillType": "Ultra",
       "UseType": "SelectEntity",
-      "ActivateAfterRevive": true,
-      "MaxCastTimes": -1,
       "ProgressDisplayType": "ExtraProgress",
       "TargetInfo": {
-        "TargetType": "EnemySelect",
-        "AdjoinSubTargetCount": 1,
-        "MaxTargetCount": 1,
-        "AllowFriendServant": "Allow",
-        "AllowEnemyServant": "Allow"
+        "TargetType": "EnemySelect"
       },
-      "CanOverkill": true,
+      "SkillNameHUD": false,
       "ReadyAnimState": "Skill03_Ready",
       "ReadyAnimWaitTime": 0.3,
       "EntryAbility": "Avatar_Feixiao_00_Skill03_Phase01",
       "PrepareAbility": "Avatar_Feixiao_00_Skill03_EnterReady",
-      "DelayRatio": {
-        "RawValue": 4294967296
-      },
       "ComplexSkillAI": {
         "SkillBasicPower": {
-          "RawValue": 343597383680
+          "Value": 80
         },
         "Groups": [
           {
-            "GroupName": "DefaultUltra",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "DefaultUltra"
           },
           {
-            "GroupName": "Ultra_Common_ImmediateRelease",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "Ultra_Common_ImmediateRelease"
           },
           {
             "GroupName": "BasePp_Common_StrongEnemiyPriority",
             "Weight": {
-              "RawValue": 85899345920
+              "Value": 20
             }
           },
           {
-            "GroupName": "Ultra_Common_SingleAttack",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "Ultra_Common_SingleAttack"
           },
           {
-            "GroupName": "Ultra_Common_WeakBreak",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "Ultra_Common_WeakBreak"
           }
         ]
       },
       "AIUltraSkillPriority": "DamageAfterHeal",
-      "CanBeInterrupted": true,
-      "AutoCostSpNeed": true,
-      "IsSkillInsertable": true
+      "AutoStandbyOnSkillFinish": false
     },
     {
       "Name": "Skill31",
       "SkillType": "Ultra",
       "UseType": "SelectEntity",
-      "ActivateAfterRevive": true,
-      "MaxCastTimes": -1,
       "TargetInfo": {
-        "TargetType": "EnemySelect",
-        "AdjoinSubTargetCount": 1,
-        "MaxTargetCount": 1,
-        "AllowFriendServant": "Allow",
-        "AllowEnemyServant": "Allow"
+        "TargetType": "EnemySelect"
       },
-      "CanOverkill": true,
+      "SkillNameHUD": false,
       "ReadyAnimState": "Skill03_Ready",
-      "DelayRatio": {
-        "RawValue": 4294967296
-      },
       "ComplexSkillAI": {
         "SkillBasicPower": {
-          "RawValue": 343597383680
+          "Value": 80
         },
         "Groups": [
           {
-            "GroupName": "DefaultUltra",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "DefaultUltra"
           },
           {
-            "GroupName": "Ultra_Common_ImmediateRelease",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "Ultra_Common_ImmediateRelease"
           }
         ]
       },
       "AIUltraSkillPriority": "DamageAfterHeal",
-      "CanBeInterrupted": true,
-      "AutoCostSpNeed": true,
       "ChildSkillList": [
         "Skill11",
         "Skill21"
       ],
-      "AutoStandbyOnSkillFinish": true,
-      "IsSkillInsertable": true,
       "ChildSkillUILayout": "FeixiaoLayout"
     },
     {
       "Name": "Skill11",
       "SkillType": "Ultra",
       "UseType": "UIButtonClick",
-      "ActivateAfterRevive": true,
-      "MaxCastTimes": -1,
       "TargetInfo": {
         "TargetType": "EnemySelect",
         "TargetFilter": {
@@ -512,78 +258,55 @@
                 },
                 "ModifierName": {
                   "Value": "M_Feixiao_00_UltraTarget"
-                },
-                "TaskEnabled": true
+                }
               }
             }
           ]
         },
-        "AdjoinSubTargetCount": 1,
-        "MaxTargetCount": 1,
         "AliveState": "AliveOrLimbo",
-        "AllowFriendServant": "Allow",
-        "AllowEnemyServant": "Allow",
         "BeyondTargetDarkness": true
       },
-      "CanOverkill": true,
+      "SkillNameHUD": false,
       "EntryAbility": "Avatar_Feixiao_00_Skill11_Entry",
-      "DelayRatio": {
-        "RawValue": 4294967296
-      },
       "ComplexSkillAIPreCheck": {
-        "SkillBasicPower": {
-          "RawValue": 4294967296
-        },
         "Groups": [
           {
-            "GroupName": "DefaultNormalSkill_PreCheck",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "DefaultNormalSkill_PreCheck"
           },
           {
             "GroupName": "BaseWeight",
             "Weight": {
-              "RawValue": 2147483650
+              "Value": 0.5
             }
           },
           {
             "GroupName": "Add100nP_Feixiao_BreakCheck",
             "Weight": {
-              "RawValue": 42949672960
+              "Value": 10
             }
           }
         ]
       },
       "ComplexSkillAI": {
-        "SkillBasicPower": {
-          "RawValue": 4294967296
-        },
         "Groups": [
           {
-            "GroupName": "DefaultNormalSkill",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "DefaultNormalSkill"
           },
           {
             "GroupName": "BaseWeight",
             "Weight": {
-              "RawValue": 2147483650
+              "Value": 0.5
             }
           },
           {
             "GroupName": "Add100nP_Feixiao_BreakCheck",
             "Weight": {
-              "RawValue": 42949672960
+              "Value": 10
             }
           }
         ]
       },
-      "AIUltraSkillPriority": "PROG_Default",
-      "CanBeInterrupted": true,
-      "AutoCostSpNeed": true,
-      "IsSkillInsertable": true,
+      "AutoStandbyOnSkillFinish": false,
       "ForceSkillPanelActive": true,
       "UseInputCache": true,
       "InputCacheTime": 0.2
@@ -592,8 +315,6 @@
       "Name": "Skill21",
       "SkillType": "Ultra",
       "UseType": "UIButtonClick",
-      "ActivateAfterRevive": true,
-      "MaxCastTimes": -1,
       "TargetInfo": {
         "TargetType": "EnemySelect",
         "TargetFilter": {
@@ -613,66 +334,37 @@
                 },
                 "ModifierName": {
                   "Value": "M_Feixiao_00_UltraTarget"
-                },
-                "TaskEnabled": true
+                }
               }
             }
           ]
         },
-        "AdjoinSubTargetCount": 1,
-        "MaxTargetCount": 1,
         "AliveState": "AliveOrLimbo",
-        "AllowFriendServant": "Allow",
-        "AllowEnemyServant": "Allow",
         "BeyondTargetDarkness": true
       },
-      "CanOverkill": true,
+      "SkillNameHUD": false,
       "EntryAbility": "Avatar_Feixiao_00_Skill21_Entry",
-      "DelayRatio": {
-        "RawValue": 4294967296
-      },
       "ComplexSkillAIPreCheck": {
-        "SkillBasicPower": {
-          "RawValue": 4294967296
-        },
         "Groups": [
           {
-            "GroupName": "DefaultNormalSkill_PreCheck",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "DefaultNormalSkill_PreCheck"
           },
           {
-            "GroupName": "BaseWeight",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BaseWeight"
           }
         ]
       },
       "ComplexSkillAI": {
-        "SkillBasicPower": {
-          "RawValue": 4294967296
-        },
         "Groups": [
           {
-            "GroupName": "DefaultNormalSkill",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "DefaultNormalSkill"
           },
           {
-            "GroupName": "BaseWeight",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BaseWeight"
           }
         ]
       },
-      "AIUltraSkillPriority": "PROG_Default",
-      "CanBeInterrupted": true,
-      "AutoCostSpNeed": true,
-      "IsSkillInsertable": true,
+      "AutoStandbyOnSkillFinish": false,
       "ForceSkillPanelActive": true,
       "UseInputCache": true,
       "InputCacheTime": 0.2
@@ -681,75 +373,27 @@
       "Name": "SkillP01",
       "SkillType": "Passive",
       "UseType": "Passive",
-      "ActivateAfterRevive": true,
-      "MaxCastTimes": -1,
       "TargetInfo": {
-        "TargetType": "Caster",
-        "AdjoinSubTargetCount": 1,
-        "MaxTargetCount": 1,
-        "AllowFriendServant": "Allow",
-        "AllowEnemyServant": "Allow"
+        "TargetType": "Caster"
       },
-      "SkillNameHUD": true,
-      "CanOverkill": true,
-      "EntryAbility": "Avatar_Feixiao_00_PassiveSkill01",
-      "DelayRatio": {
-        "RawValue": 4294967296
-      },
-      "AIUltraSkillPriority": "PROG_Default",
-      "CanBeInterrupted": true,
-      "AutoCostSpNeed": true,
-      "AutoStandbyOnSkillFinish": true,
-      "IsSkillInsertable": true
+      "EntryAbility": "Avatar_Feixiao_00_PassiveSkill01"
     },
     {
       "Name": "PassiveSkill02",
       "SkillType": "Passive",
       "UseType": "Passive",
-      "ActivateAfterRevive": true,
-      "MaxCastTimes": -1,
       "TargetInfo": {
-        "TargetType": "Caster",
-        "AdjoinSubTargetCount": 1,
-        "MaxTargetCount": 1,
-        "AllowFriendServant": "Allow",
-        "AllowEnemyServant": "Allow"
+        "TargetType": "Caster"
       },
-      "SkillNameHUD": true,
-      "CanOverkill": true,
-      "EntryAbility": "Avatar_Common_PassiveSkill",
-      "DelayRatio": {
-        "RawValue": 4294967296
-      },
-      "AIUltraSkillPriority": "PROG_Default",
-      "CanBeInterrupted": true,
-      "AutoCostSpNeed": true,
-      "AutoStandbyOnSkillFinish": true,
-      "IsSkillInsertable": true
+      "EntryAbility": "Avatar_Common_PassiveSkill"
     },
     {
       "Name": "SkillMaze",
       "SkillType": "Maze",
-      "ActivateAfterRevive": true,
-      "MaxCastTimes": -1,
       "TargetInfo": {
-        "TargetType": "AllEnemy",
-        "AdjoinSubTargetCount": 1,
-        "MaxTargetCount": 1,
-        "AllowFriendServant": "Allow",
-        "AllowEnemyServant": "Allow"
+        "TargetType": "AllEnemy"
       },
-      "SkillNameHUD": true,
-      "CanOverkill": true,
-      "EntryAbility": "Avatar_Feixiao_00_SkillMazeInLevel",
-      "DelayRatio": {
-        "RawValue": 4294967296
-      },
-      "AIUltraSkillPriority": "PROG_Default",
-      "CanBeInterrupted": true,
-      "AutoCostSpNeed": true,
-      "AutoStandbyOnSkillFinish": true,
-      "IsSkillInsertable": true
+      "EntryAbility": "Avatar_Feixiao_00_SkillMazeInLevel"
     }
   ],
   "AbilityList": [
@@ -841,6 +485,238 @@
       ]
     }
   ],
+  "DynamicValues": {
+    "Floats": {
+      "-2144593789": {},
+      "88841845": {},
+      "370433348": {},
+      "-1218403065": {},
+      "-2137890152": {},
+      "1889906259": {},
+      "-238055500": {},
+      "-888303849": {},
+      "-422941358": {},
+      "-173779568": {},
+      "227001536": {},
+      "713018958": {},
+      "1051363132": {},
+      "1313593181": {},
+      "-1683861742": {},
+      "-1683834445": {},
+      "1647647363": {},
+      "1647890146": {},
+      "-1284524274": {},
+      "-668820197": {},
+      "-349947247": {},
+      "1450366102": {},
+      "-952305989": {},
+      "1535499663": {},
+      "-1126825319": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill01"
+        }
+      },
+      "-1847083384": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill02"
+        }
+      },
+      "-56289053": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill03"
+        }
+      },
+      "125523216": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill03",
+          "Index": 1
+        }
+      },
+      "41796156": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill03",
+          "Index": 2
+        }
+      },
+      "-1999440872": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill11"
+        }
+      },
+      "-1695908581": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill11",
+          "Index": 1
+        }
+      },
+      "1882622235": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill21"
+        }
+      },
+      "1579089944": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill21",
+          "Index": 1
+        }
+      },
+      "1246667513": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP01"
+        }
+      },
+      "270537990": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP01",
+          "Index": 1
+        }
+      },
+      "-1870934479": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP01",
+          "Index": 2
+        }
+      },
+      "-805767650": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP01",
+          "Index": 3
+        }
+      },
+      "-942295799": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP01",
+          "Index": 4
+        }
+      },
+      "951506380": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP01",
+          "Index": 5
+        }
+      },
+      "1522093397": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillMaze",
+          "Index": 2
+        }
+      },
+      "-578659677": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillMaze",
+          "Index": 3
+        }
+      },
+      "333287799": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillMaze",
+          "Index": 4
+        }
+      },
+      "-943350478": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillMaze",
+          "Index": 5
+        }
+      },
+      "1922016615": {
+        "ReadInfo": {
+          "Type": "SkillTreeParam",
+          "TriggerKey": "PointB1"
+        }
+      },
+      "-394954435": {
+        "ReadInfo": {
+          "Type": "SkillTreeParam",
+          "TriggerKey": "PointB2"
+        }
+      },
+      "1101525656": {
+        "ReadInfo": {
+          "Type": "SkillTreeParam",
+          "TriggerKey": "PointB3"
+        }
+      },
+      "-755874373": {
+        "ReadInfo": {
+          "Type": "SkillTreeParam",
+          "TriggerKey": "PointB3",
+          "Index": 1
+        }
+      },
+      "-2147277244": {
+        "ReadInfo": {
+          "Type": "SkillRank",
+          "TriggerKey": "Rank01"
+        }
+      },
+      "-1929600963": {
+        "ReadInfo": {
+          "Type": "SkillRank",
+          "TriggerKey": "Rank01",
+          "Index": 1
+        }
+      },
+      "-1227230863": {
+        "ReadInfo": {
+          "Type": "SkillRank",
+          "TriggerKey": "Rank02"
+        }
+      },
+      "1399153822": {
+        "ReadInfo": {
+          "Type": "SkillRank",
+          "TriggerKey": "Rank04"
+        }
+      },
+      "1629909416": {
+        "ReadInfo": {
+          "Type": "SkillRank",
+          "TriggerKey": "Rank04",
+          "Index": 1
+        }
+      },
+      "965721029": {
+        "ReadInfo": {
+          "Type": "SkillRank",
+          "TriggerKey": "Rank04",
+          "Index": 2
+        }
+      },
+      "-906831167": {
+        "ReadInfo": {
+          "Type": "SkillRank",
+          "TriggerKey": "Rank06"
+        }
+      },
+      "-1790781914": {
+        "ReadInfo": {
+          "Type": "SkillRank",
+          "TriggerKey": "Rank06",
+          "Index": 1
+        }
+      }
+    }
+  },
   "WeaponType": "WP_Bullet",
   "SkillReadyTransits": [
     {
@@ -858,17 +734,19 @@
       "ReverseOutroTime": 0.06
     }
   ],
-  "InitAnimStateName": "StandBy",
-  "ModifierPerformTimeFactor": 1.0,
   "DisableAnimEventLayers": [
     "Riboon Layer"
   ],
-  "RepeatOccurAnimWhenBeHitNormalizedTime": -1.0,
-  "IgnoreDynamicOffsetBySelf": true,
-  "OverrideHeightForCameraOffset": -1.0,
-  "MonsterIgnoreGlobalDymanicOffset": true,
-  "MaxMonsterPhase": 1,
   "GraphEmotionAsset": "Characters/GraphEmotion/Avatar_Lady_Feixiao_00_GraphEmotion.asset",
+  "AITagList": {
+    "Floats": {
+      "-2126289379": {},
+      "-447313187": {},
+      "762466": {},
+      "-1570322415": {},
+      "-1599294167": {}
+    }
+  },
   "GlobalAIFactorGroups": {
     "Ultra_Feixiao_MaxSPImmediateRelease": {
       "Factors": [
@@ -881,27 +759,27 @@
             "Ranges": [
               {
                 "ymin": {
-                  "RawValue": -4294967296000
+                  "Value": -1000
                 },
                 "xmax": {
-                  "RawValue": 8546984923
+                  "Value": 1.99
                 },
                 "ymax": {
-                  "RawValue": -4294967296000
+                  "Value": -1000
                 }
               },
               {
                 "xmin": {
-                  "RawValue": 8546984923
+                  "Value": 1.99
                 },
                 "ymin": {
-                  "RawValue": 4294967296000
+                  "Value": 1000
                 },
                 "xmax": {
-                  "RawValue": 8589934592
+                  "Value": 2
                 },
                 "ymax": {
-                  "RawValue": 4294967296000
+                  "Value": 1000
                 }
               }
             ]
@@ -920,27 +798,27 @@
             "Ranges": [
               {
                 "ymin": {
-                  "RawValue": -4294967296000
+                  "Value": -1000
                 },
                 "xmax": {
-                  "RawValue": 4252017627
+                  "Value": 0.99
                 },
                 "ymax": {
-                  "RawValue": -4294967296000
+                  "Value": -1000
                 }
               },
               {
                 "xmin": {
-                  "RawValue": 4252017627
+                  "Value": 0.99
                 },
                 "ymin": {
-                  "RawValue": 4294967296000
+                  "Value": 1000
                 },
                 "xmax": {
-                  "RawValue": 8589934592
+                  "Value": 2
                 },
                 "ymax": {
-                  "RawValue": 4294967296000
+                  "Value": 1000
                 }
               }
             ]
@@ -949,9 +827,7 @@
         {
           "Source": {
             "$type": "RPG.GameCore.ComplexSkillAISourcePropertyCompareRatio",
-            "FromTargetA": true,
             "PropertyTypeA": "CurrentHP",
-            "FromTargetB": true,
             "PropertyTypeB": "MaxHP"
           },
           "Mapper": {
@@ -959,27 +835,27 @@
             "Ranges": [
               {
                 "ymin": {
-                  "RawValue": 429496729600
+                  "Value": 100
                 },
                 "xmax": {
-                  "RawValue": 858993460
+                  "Value": 0.2
                 },
                 "ymax": {
-                  "RawValue": 429496729600
+                  "Value": 100
                 }
               },
               {
                 "xmin": {
-                  "RawValue": 858993460
+                  "Value": 0.2
                 },
                 "ymin": {
-                  "RawValue": 429496729600
+                  "Value": 100
                 },
                 "xmax": {
-                  "RawValue": 4294967296
+                  "Value": 1
                 },
                 "ymax": {
-                  "RawValue": 4294967296
+                  "Value": 1
                 }
               }
             ]
@@ -989,12 +865,20 @@
           "CombineOperator": "Mul",
           "Source": {
             "$type": "RPG.GameCore.ComplexSkillAISourcePropertyCompare",
-            "FromTarget": true,
             "TargetPropertyType": "CurrentStance",
             "CompareType": "LessEqual",
             "CompareDynamicFromActor": {
-              "fixedValue": {
-                "RawValue": -149061134974976
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAAAAQR",
+                "FixedValues": [
+                  {
+                    "Value": 30
+                  }
+                ],
+                "DynamicHashes": [
+                  -1218403065
+                ]
               }
             }
           },
@@ -1003,21 +887,21 @@
             "Ranges": [
               {
                 "xmax": {
-                  "RawValue": 2147483650
+                  "Value": 0.5
                 }
               },
               {
                 "xmin": {
-                  "RawValue": 2147483650
+                  "Value": 0.5
                 },
                 "ymin": {
-                  "RawValue": 4294967296
+                  "Value": 1
                 },
                 "xmax": {
-                  "RawValue": 4294967296
+                  "Value": 1
                 },
                 "ymax": {
-                  "RawValue": 4294967296
+                  "Value": 1
                 }
               }
             ]
@@ -1033,21 +917,21 @@
             "Ranges": [
               {
                 "ymin": {
-                  "RawValue": 4294967296
+                  "Value": 1
                 },
                 "xmax": {
-                  "RawValue": 6442450946
+                  "Value": 1.5
                 },
                 "ymax": {
-                  "RawValue": 4294967296
+                  "Value": 1
                 }
               },
               {
                 "xmin": {
-                  "RawValue": 6442450946
+                  "Value": 1.5
                 },
                 "xmax": {
-                  "RawValue": 12884901888
+                  "Value": 3
                 }
               }
             ]
@@ -1063,21 +947,21 @@
             "Ranges": [
               {
                 "xmax": {
-                  "RawValue": 10737418242
+                  "Value": 2.5
                 }
               },
               {
                 "xmin": {
-                  "RawValue": 10737418242
+                  "Value": 2.5
                 },
                 "ymin": {
-                  "RawValue": 4294967296
+                  "Value": 1
                 },
                 "xmax": {
-                  "RawValue": 21474836480
+                  "Value": 5
                 },
                 "ymax": {
-                  "RawValue": 4294967296
+                  "Value": 1
                 }
               }
             ]
@@ -1096,27 +980,27 @@
             "Ranges": [
               {
                 "ymin": {
-                  "RawValue": -4294967296000
+                  "Value": -1000
                 },
                 "xmax": {
-                  "RawValue": 4252017627
+                  "Value": 0.99
                 },
                 "ymax": {
-                  "RawValue": -4294967296000
+                  "Value": -1000
                 }
               },
               {
                 "xmin": {
-                  "RawValue": 4252017627
+                  "Value": 0.99
                 },
                 "ymin": {
-                  "RawValue": 4294967296000
+                  "Value": 1000
                 },
                 "xmax": {
-                  "RawValue": 8589934592
+                  "Value": 2
                 },
                 "ymax": {
-                  "RawValue": 4294967296000
+                  "Value": 1000
                 }
               }
             ]
@@ -1136,21 +1020,21 @@
             "Ranges": [
               {
                 "ymin": {
-                  "RawValue": 4294967296
+                  "Value": 1
                 },
                 "xmax": {
-                  "RawValue": 10737418242
+                  "Value": 2.5
                 },
                 "ymax": {
-                  "RawValue": 4294967296
+                  "Value": 1
                 }
               },
               {
                 "xmin": {
-                  "RawValue": 10737418242
+                  "Value": 2.5
                 },
                 "xmax": {
-                  "RawValue": 21474836480
+                  "Value": 5
                 }
               }
             ]
@@ -1163,19 +1047,17 @@
         {
           "Source": {
             "$type": "RPG.GameCore.ComplexSkillAISourceContainBehaviorFlag",
-            "FromTarget": true,
-            "BehaviorFlag": "Break",
-            "ValueType": "Amount"
+            "BehaviorFlag": "Break"
           },
           "Mapper": {
             "$type": "RPG.GameCore.ComplexSkillAIMapperMultiRange",
             "Ranges": [
               {
                 "xmax": {
-                  "RawValue": 4294967296
+                  "Value": 1
                 },
                 "ymax": {
-                  "RawValue": 429496729600
+                  "Value": 100
                 }
               }
             ]
@@ -1183,6 +1065,5 @@
         }
       ]
     }
-  },
-  "AlwaysCutOnSkillTargetTeamChange": true
+  }
 }

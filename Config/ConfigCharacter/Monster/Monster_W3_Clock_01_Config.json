@@ -1,0 +1,114 @@
+{
+  "$type": "RPG.GameCore.CharacterConfig",
+  "CharacterHUDOffset": {
+    "Y": 2.25
+  },
+  "BuffPanelOffset": {
+    "Y": 1.5
+  },
+  "HitBoxWidth": 0.4,
+  "HitBoxHeight": 1.5,
+  "Location": {
+    "Width": 1.3,
+    "LocalZOffsetMin": 0.3,
+    "LocalZOffsetMax": 1
+  },
+  "VisualRadius": 0.8,
+  "AnimEventConfigList": [
+    "Config/ConfigAnimEvents/Monster/Designer/Monster_W3_Clock_01_Designer_AnimEvent.json",
+    "Config/ConfigAnimEvents/Monster/Effect/Monster_W3_Clock_01_Effect_AnimEvent.json",
+    "Config/ConfigAnimEvents/Monster/Audio/Monster_W3_Clock_01_Audio_AnimEvent.json"
+  ],
+  "SkillList": [
+    {
+      "Name": "Skill03",
+      "UseType": "SelectEntity",
+      "TargetInfo": {
+        "TargetType": "EnemySelect"
+      },
+      "ReadyAnimState": "StandBy",
+      "EntryAbility": "Monster_W3_Clock_01_Skill03_Phase01"
+    },
+    {
+      "Name": "SkillP01",
+      "SkillType": "Passive",
+      "UseType": "Passive",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "EntryAbility": "Monster_W3_Clock_01_SkillP01"
+    },
+    {
+      "Name": "PassiveSkill01",
+      "SkillType": "Passive",
+      "UseType": "Passive",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "EntryAbility": "Monster_Common_PassiveSkill_StanceBreak_Action"
+    }
+  ],
+  "AbilityList": [
+    "Monster_Common_PassiveSkill_StanceBreak_Action"
+  ],
+  "SkillAbilityList": [
+    {
+      "Skill": "Skill03",
+      "AbilityList": [
+        "Monster_W3_Clock_01_Skill03_Phase01",
+        "Monster_W3_Clock_01_Skill03_Phase02",
+        "Monster_W3_Clock_01_Skill03_Camera"
+      ]
+    },
+    {
+      "Skill": "SkillP01",
+      "AbilityList": [
+        "Monster_W3_Clock_01_SkillP01"
+      ]
+    }
+  ],
+  "DynamicValues": {
+    "Floats": {
+      "1850673830": {},
+      "-56289053": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill03"
+        }
+      },
+      "2128224722": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP01"
+        }
+      },
+      "-1136159583": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP01",
+          "Index": 1
+        }
+      },
+      "-543532705": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP01",
+          "Index": 2
+        }
+      }
+    }
+  },
+  "WeaponType": "WP_Explode",
+  "DisableAnimEventLayers": [
+    "Riboon Layer"
+  ],
+  "OnHitEditFootIKModeMap": {
+    "Back": "LockLeftFoot",
+    "Left": "LockLeftFoot",
+    "Forward": "LockLeftFoot",
+    "Right": "LockRightFoot"
+  },
+  "RepeatOccurAnimWhenBeHitNormalizedTime": 0.392,
+  "MonsterIgnoreGlobalDymanicOffset": false,
+  "OverrideColliderCameraByName": "Monster_W3_Clock_00_Viewmode_Camera"
+}

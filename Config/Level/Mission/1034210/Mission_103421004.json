@@ -5,18 +5,16 @@
       "TaskList": [
         {
           "$type": "RPG.GameCore.PlayFullScreenTransfer",
-          "Type": "Black",
-          "KeepDuration": 3.0,
-          "PostDuration": -1.0,
+          "PrevDuration": 0,
+          "KeepDuration": 3,
+          "PostDuration": -1,
           "TextInfo": {
             "TextList": [
               {
                 "TalkSentenceID": 103452959
               }
             ]
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
           "$type": "RPG.GameCore.TriggerPerformance",
@@ -24,18 +22,13 @@
           "PerformanceType": "D",
           "PerformanceID": 103421007,
           "MaskConfig": {
-            "StartBlack": "NoPre",
-            "EndBlack": "Full",
-            "MaskColor": "Black"
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+            "UseExcelData": false,
+            "StartBlack": "NoPre"
+          }
         },
         {
           "$type": "RPG.GameCore.ClientFinishMission",
-          "SubmissionID": 103421004,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "SubmissionID": 103421004
         }
       ]
     }

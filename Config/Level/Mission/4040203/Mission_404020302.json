@@ -7,23 +7,20 @@
           "$type": "RPG.GameCore.TriggerCustomString",
           "CustomString": {
             "Value": "LogisticsRobotActivate_SimpleMission"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.CreateProp",
           "GroupID": {
-            "fixedValue": {
-              "RawValue": 493921239040
+            "FixedValue": {
+              "Value": 115
             }
           },
           "GroupPropID": {
-            "fixedValue": {
-              "RawValue": 1288498778734592
+            "FixedValue": {
+              "Value": 300002
             }
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         }
       ]
     },
@@ -33,8 +30,7 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "404020302_RobotArrive"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.PropSetupTrigger",
@@ -43,33 +39,37 @@
             "MultiGroupFetch": [
               {
                 "GroupID": {
-                  "fixedValue": {
-                    "RawValue": 493921239040
+                  "FixedValue": {
+                    "Value": 115
                   }
                 },
                 "ID": {
-                  "fixedValue": {
-                    "RawValue": 1288498778734592
+                  "FixedValue": {
+                    "Value": 300002
                   }
                 }
               }
             ]
           },
-          "TargetGroupID": {},
-          "TargetID": {},
+          "TargetGroupID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "TargetID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
           "TargetTypes": [],
           "OnTriggerEnter": [
             {
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "404020302_Finish"
-              },
-              "TaskEnabled": true
+              }
             }
-          ],
-          "SkipFakeAvatar": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     },
@@ -79,14 +79,11 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "404020302_Finish"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_404020302",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_404020302"
         }
       ]
     }

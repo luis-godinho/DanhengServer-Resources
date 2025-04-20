@@ -1,4 +1,5 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "RapperShadow",
   "AreaAnchorName": "LevelArea_P10306_F10306001_G352",
   "SaveType": "Reset",
@@ -6,7 +7,6 @@
     "Conditions": [
       {
         "SavedValueName": "FSV_RapperShadow",
-        "Operation": "Equal",
         "Value": 1
       }
     ],
@@ -17,15 +17,15 @@
   "ConflictIDList": [],
   "IsHoyoGroup": true,
   "HoYoGroupType": "Container",
-  "StreamingTemplateType": "Standard",
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
   "ConflictWhiteList": [],
-  "TagContainer": [
-    {
-      "Tag": "Group.Activity.260MusicSchool",
-      "TagHash": 1428080347
-    }
-  ],
+  "TagContainer": {
+    "List": [
+      {
+        "Tag": "Group.Activity.260MusicSchool",
+        "TagHash": 1428080347
+      }
+    ]
+  },
   "AnchorList": [],
   "MonsterList": [],
   "PropList": [],
@@ -36,20 +36,15 @@
   "NPCList": [
     {
       "NPCID": 1318,
-      "LoadOnInitial": true,
       "ValueSource": {},
       "StaticNPC": true,
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "ServerInteractVerificationIDList": [],
+      "DefaultLookAtMode": "Closed",
       "BoardShowList": [],
       "TalkDialogGroupIDList": [],
-      "DefaultAnimationType": "FreeStyle",
       "DefaultIdleFreeStyleMotionID": 313170975,
-      "BornType": "Mission",
       "InitialHiddenNodeList": [],
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "OverrideReplaceMaterialKeyList": [
         "Rappa_00_Phantom"
@@ -58,19 +53,9 @@
       "CameraConfig": {},
       "SFXOnLoad": "Ev_sfx_npc_common_projection_loop",
       "SpawnConfig": {
-        "TryCapture": true,
-        "CaptureDistanceTolerance": 1.5,
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
-      "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true
-      },
+      "TriggerValidGuest": {},
       "Name": "NPC1",
       "RotY": 178.0317,
       "ID": 400001,

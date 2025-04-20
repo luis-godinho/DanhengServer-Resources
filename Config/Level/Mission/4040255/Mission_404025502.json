@@ -8,14 +8,11 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Talk_404025502"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_404025502",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_404025502"
         }
       ]
     },
@@ -24,18 +21,16 @@
         {
           "$type": "RPG.GameCore.CreateNPC",
           "GroupID": {
-            "fixedValue": {
-              "RawValue": 575525617664
+            "FixedValue": {
+              "Value": 134
             }
           },
           "GroupNpcID": {
-            "fixedValue": {
-              "RawValue": 1717991213367296
+            "FixedValue": {
+              "Value": 400001
             }
           },
-          "CreateList": [],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "CreateList": []
         },
         {
           "$type": "RPG.GameCore.NpcSetupTrigger",
@@ -44,52 +39,45 @@
             "FetchType": "SingleNpcByNpcID",
             "SingleNpcID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 575525617664
+                "FixedValue": {
+                  "Value": 134
                 }
               },
               "GroupNpcID": {
-                "fixedValue": {
-                  "RawValue": 1717991213367296
+                "FixedValue": {
+                  "Value": 400001
                 }
               }
             }
           },
           "TriggerID": "400001",
-          "Range": 6.0,
+          "Range": 6,
           "OnTriggerEnter": [
             {
               "$type": "RPG.GameCore.PlayNPCBubbleTalk",
               "BubbleTalkInfoList": [
                 {
-                  "AutoSkipTime": 3.0,
+                  "AutoSkipTime": 3,
                   "GroupID": 134,
                   "GroupNpcID": 400001,
                   "TalkSentenceID": 414255030
                 },
                 {
-                  "AutoSkipTime": 3.0,
+                  "AutoSkipTime": 3,
                   "GroupID": 134,
                   "GroupNpcID": 400001,
                   "TalkSentenceID": 414255031
                 },
                 {
-                  "AutoSkipTime": 3.0,
+                  "AutoSkipTime": 3,
                   "GroupID": 134,
                   "GroupNpcID": 400001,
                   "TalkSentenceID": 414255032
                 }
-              ],
-              "BubbleTalkType": "Normal",
-              "LoopInterval": 1.0,
-              "InstantFinish": true,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              ]
             }
           ],
-          "TargetTypes": [],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "TargetTypes": []
         }
       ]
     }

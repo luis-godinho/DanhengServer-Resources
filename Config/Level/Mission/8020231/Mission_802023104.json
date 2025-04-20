@@ -9,8 +9,7 @@
           "CustomString": {
             "Value": "ConsumeItem_802023104"
           },
-          "GoNextImmediately": true,
-          "TaskEnabled": true
+          "GoNextImmediately": true
         },
         {
           "$type": "RPG.GameCore.ConsumeMissionItemPerformance",
@@ -18,30 +17,17 @@
           "OnSubmitConfirm": [
             {
               "$type": "RPG.GameCore.PlayFullScreenTransfer",
-              "Type": "Black",
-              "PrevDuration": 0.5,
-              "PostDuration": -1.0,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "KeepDuration": 0,
+              "PostDuration": -1
             },
             {
               "$type": "RPG.GameCore.ConsumeMissionItem",
               "SubMissionID": 802023104,
               "IsAutoConsume": true,
-              "SimpleTalk": {
-                "TextSpeed": 20.0,
-                "ProtectTime": 0.8
-              },
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "SimpleTalk": {}
             }
           ],
-          "SimpleTalk": {
-            "TextSpeed": 20.0,
-            "ProtectTime": 0.8
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "SimpleTalk": {}
         }
       ]
     }

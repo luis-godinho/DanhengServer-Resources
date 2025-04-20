@@ -1,0 +1,89 @@
+{
+  "OnInitSequece": [
+    {
+      "TaskList": []
+    }
+  ],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvTriggerAIPlaySmartObject",
+          "InstanceID": {
+            "FixedValue": {
+              "Value": 400001
+            }
+          },
+          "SmartObjectID": {
+            "FixedValue": {
+              "Value": 1
+            }
+          },
+          "OnFinish": [
+            {
+              "$type": "RPG.GameCore.PlayNPCBubbleTalk",
+              "BubbleTalkInfoList": [
+                {
+                  "AutoSkipTime": 5,
+                  "GroupID": 13,
+                  "GroupNpcID": 400001,
+                  "TalkSentenceID": 500002331
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvDistrictSetupTrigger",
+          "GroupID": {
+            "FixedValue": {
+              "Value": 19
+            }
+          },
+          "DistrictID": {
+            "FixedValue": {
+              "Value": 1
+            }
+          },
+          "DisableAfterTrigger": true,
+          "OnEnter": [
+            {
+              "$type": "RPG.GameCore.PlayNPCBubbleTalk",
+              "BubbleTalkInfoList": [
+                {
+                  "AutoSkipTime": 1,
+                  "GroupID": 19,
+                  "GroupNpcID": 400001,
+                  "TalkSentenceID": 500002331
+                }
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.AdvTriggerAIPlaySmartObject",
+              "InstanceID": {
+                "FixedValue": {
+                  "Value": 400001
+                }
+              },
+              "SmartObjectID": {
+                "FixedValue": {
+                  "Value": 2
+                }
+              },
+              "OnFinish": []
+            }
+          ],
+          "IsOverrideValidGuestConfig": true,
+          "OverridedValidGuestConfig": {
+            "FakePlayer": true
+          }
+        }
+      ]
+    }
+  ],
+  "Type": "Group"
+}

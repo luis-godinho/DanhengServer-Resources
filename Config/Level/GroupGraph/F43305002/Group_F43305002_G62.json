@@ -1,0 +1,45 @@
+{
+  "OnInitSequece": [
+    {
+      "TaskList": []
+    }
+  ],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitFloorCustomValueChange",
+          "Name": {
+            "Value": "MissionFCV_103020108"
+          },
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.TriggerEntityEvent",
+              "EventName": {
+                "Value": "CltSrv_TriggerOpen"
+              },
+              "InstanceID": {
+                "FixedValue": {
+                  "Value": 300001
+                }
+              }
+            }
+          ],
+          "Condition": {
+            "$type": "RPG.GameCore.ByCompareFloorCustomFloat",
+            "Name": {
+              "Value": "MissionFCV_103020108"
+            },
+            "CompareType": "NotEqual",
+            "CompareValue": {
+              "FixedValue": {
+                "Value": 1
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "Type": "Group"
+}

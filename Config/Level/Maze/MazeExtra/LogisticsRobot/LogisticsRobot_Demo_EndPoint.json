@@ -1,0 +1,46 @@
+{
+  "OnInitSequece": [
+    {
+      "TaskList": []
+    }
+  ],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropSetupTrigger",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          },
+          "TargetGroupID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "TargetID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "TargetTypes": [
+            "NPC"
+          ],
+          "DisableAfterTriggered": true,
+          "OnTriggerEnter": [
+            {
+              "$type": "RPG.GameCore.AdvLogisticsRobotReachEnd"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "ValueSource": {
+    "Values": [
+      {
+        "$type": "RPG.GameCore.SharedString",
+        "Key": "LogisticsRobotReachEnd"
+      }
+    ]
+  }
+}

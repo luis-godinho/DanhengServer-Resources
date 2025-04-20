@@ -1,0 +1,565 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CollectDataConditions",
+          "TaskIDList": [
+            103150113,
+            103150114,
+            103150115
+          ],
+          "MainMissionIDList": [],
+          "PerformanceIDList": [],
+          "PerformanceIDDsList": [],
+          "CustomValueMainMissionIDList": []
+        },
+        {
+          "$type": "RPG.GameCore.WaitSubMissionStateChange",
+          "SubMissions": [
+            103150113
+          ],
+          "State": "Finish",
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.HeartDialEmoBlackList",
+              "TargetType": {
+                "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                "Targets": [
+                  400003
+                ]
+              },
+              "EmoTypeBlackList": [
+                "Happy"
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByAnd",
+                "PredicateList": [
+                  {
+                    "$type": "RPG.GameCore.ByCompareSubMissionState",
+                    "SubMissionID": 103150113,
+                    "SubMissionState": "Finish"
+                  },
+                  {
+                    "$type": "RPG.GameCore.ByCompareSubMissionState",
+                    "SubMissionID": 103150114,
+                    "SubMissionState": "Finish"
+                  },
+                  {
+                    "$type": "RPG.GameCore.ByCompareSubMissionState",
+                    "SubMissionID": 103150115,
+                    "SubMissionState": "Finish"
+                  }
+                ]
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.TriggerCustomString",
+                  "CustomString": {
+                    "Value": "End103150112"
+                  }
+                }
+              ],
+              "FailedTaskList": [
+                {
+                  "$type": "RPG.GameCore.PlayFullScreenTransfer",
+                  "PrevDuration": -1
+                },
+                {
+                  "$type": "RPG.GameCore.TriggerCustomString",
+                  "CustomString": {
+                    "Value": "1031501MissionTalk2"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CollectDataConditions",
+          "TaskIDList": [
+            103150113,
+            103150114,
+            103150115
+          ],
+          "MainMissionIDList": [],
+          "PerformanceIDList": [],
+          "PerformanceIDDsList": [],
+          "CustomValueMainMissionIDList": []
+        },
+        {
+          "$type": "RPG.GameCore.WaitSubMissionStateChange",
+          "SubMissions": [
+            103150114
+          ],
+          "State": "Finish",
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.HeartDialEmoBlackList",
+              "TargetType": {
+                "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                "Targets": [
+                  400003
+                ]
+              },
+              "EmoTypeBlackList": [
+                "Sad"
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByAnd",
+                "PredicateList": [
+                  {
+                    "$type": "RPG.GameCore.ByCompareSubMissionState",
+                    "SubMissionID": 103150113,
+                    "SubMissionState": "Finish"
+                  },
+                  {
+                    "$type": "RPG.GameCore.ByCompareSubMissionState",
+                    "SubMissionID": 103150114,
+                    "SubMissionState": "Finish"
+                  },
+                  {
+                    "$type": "RPG.GameCore.ByCompareSubMissionState",
+                    "SubMissionID": 103150115,
+                    "SubMissionState": "Finish"
+                  }
+                ]
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.TriggerCustomString",
+                  "CustomString": {
+                    "Value": "End103150112"
+                  }
+                }
+              ],
+              "FailedTaskList": [
+                {
+                  "$type": "RPG.GameCore.PlayFullScreenTransfer",
+                  "PrevDuration": -1
+                },
+                {
+                  "$type": "RPG.GameCore.TriggerCustomString",
+                  "CustomString": {
+                    "Value": "1031501MissionTalk2"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CollectDataConditions",
+          "TaskIDList": [
+            103150113,
+            103150114,
+            103150115
+          ],
+          "MainMissionIDList": [],
+          "PerformanceIDList": [],
+          "PerformanceIDDsList": [],
+          "CustomValueMainMissionIDList": []
+        },
+        {
+          "$type": "RPG.GameCore.WaitSubMissionStateChange",
+          "SubMissions": [
+            103150115
+          ],
+          "State": "Finish",
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.HeartDialEmoBlackList",
+              "TargetType": {
+                "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                "Targets": [
+                  400003
+                ]
+              },
+              "EmoTypeBlackList": [
+                "Anger"
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByAnd",
+                "PredicateList": [
+                  {
+                    "$type": "RPG.GameCore.ByCompareSubMissionState",
+                    "SubMissionID": 103150113,
+                    "SubMissionState": "Finish"
+                  },
+                  {
+                    "$type": "RPG.GameCore.ByCompareSubMissionState",
+                    "SubMissionID": 103150114,
+                    "SubMissionState": "Finish"
+                  },
+                  {
+                    "$type": "RPG.GameCore.ByCompareSubMissionState",
+                    "SubMissionID": 103150115,
+                    "SubMissionState": "Finish"
+                  }
+                ]
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.TriggerCustomString",
+                  "CustomString": {
+                    "Value": "End103150112"
+                  }
+                }
+              ],
+              "FailedTaskList": [
+                {
+                  "$type": "RPG.GameCore.PlayFullScreenTransfer",
+                  "PrevDuration": -1
+                },
+                {
+                  "$type": "RPG.GameCore.TriggerCustomString",
+                  "CustomString": {
+                    "Value": "1031501MissionTalk3"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CollectDataConditions",
+          "TaskIDList": [
+            103150113,
+            103150114,
+            103150115
+          ],
+          "MainMissionIDList": [],
+          "PerformanceIDList": [],
+          "PerformanceIDDsList": [],
+          "CustomValueMainMissionIDList": []
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByCompareSubMissionState",
+            "SubMissionID": 103150113,
+            "SubMissionState": "Finish"
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.HeartDialEmoBlackList",
+              "TargetType": {
+                "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                "Targets": [
+                  400003
+                ]
+              },
+              "EmoTypeBlackList": [
+                "Happy"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CollectDataConditions",
+          "TaskIDList": [
+            103150113,
+            103150114,
+            103150115
+          ],
+          "MainMissionIDList": [],
+          "PerformanceIDList": [],
+          "PerformanceIDDsList": [],
+          "CustomValueMainMissionIDList": []
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByCompareSubMissionState",
+            "SubMissionID": 103150114,
+            "SubMissionState": "Finish"
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.HeartDialEmoBlackList",
+              "TargetType": {
+                "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                "Targets": [
+                  400003
+                ]
+              },
+              "EmoTypeBlackList": [
+                "Sad"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CollectDataConditions",
+          "TaskIDList": [
+            103150113,
+            103150114,
+            103150115
+          ],
+          "MainMissionIDList": [],
+          "PerformanceIDList": [],
+          "PerformanceIDDsList": [],
+          "CustomValueMainMissionIDList": []
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByCompareSubMissionState",
+            "SubMissionID": 103150115,
+            "SubMissionState": "Finish"
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.HeartDialEmoBlackList",
+              "TargetType": {
+                "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                "Targets": [
+                  400003
+                ]
+              },
+              "EmoTypeBlackList": [
+                "Anger"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CollectDataConditions",
+          "TaskIDList": [
+            103150113,
+            103150114,
+            103150115
+          ],
+          "MainMissionIDList": [],
+          "PerformanceIDList": [],
+          "PerformanceIDDsList": [],
+          "CustomValueMainMissionIDList": []
+        },
+        {
+          "$type": "RPG.GameCore.TriggerCustomString",
+          "CustomString": {
+            "Value": "G374TriggerReady"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "OnTrigger2"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByAnd",
+                "PredicateList": [
+                  {
+                    "$type": "RPG.GameCore.ByCompareSubMissionState",
+                    "SubMissionID": 103150113,
+                    "SubMissionState": "Finish"
+                  },
+                  {
+                    "$type": "RPG.GameCore.ByCompareSubMissionState",
+                    "SubMissionID": 103150114,
+                    "SubMissionState": "Finish"
+                  },
+                  {
+                    "$type": "RPG.GameCore.ByCompareSubMissionState",
+                    "SubMissionID": 103150115,
+                    "SubMissionState": "Finish"
+                  }
+                ]
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.TriggerCustomString",
+                  "CustomString": {
+                    "Value": "End103150112"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "G374TriggerReady"
+          },
+          "WaitOwnerOnly": true
+        },
+        {
+          "$type": "RPG.GameCore.AdvSetupCustomTaskTrigger",
+          "TargetType": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "TargetType": "Prop",
+            "Targets": [
+              300002
+            ]
+          },
+          "TriggerName": "MissionTrigger",
+          "OnEnter": [
+            {
+              "$type": "RPG.GameCore.TriggerGroupEvent",
+              "EventName": {
+                "Value": "OnTrigger2"
+              }
+            }
+          ],
+          "DisableAfterTriggered": true
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "1031501MissionTalk1"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.WaitSecond",
+          "WaitTime": {
+            "FixedValue": {
+              "Value": 2
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.PlayMissionTalk",
+          "SimpleTalkList": [
+            {
+              "TalkSentenceID": 103151006,
+              "ProtectTime": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "1031501MissionTalk2"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.WaitSecond",
+          "WaitTime": {
+            "FixedValue": {
+              "Value": 2
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.PlayMissionTalk",
+          "SimpleTalkList": [
+            {
+              "TalkSentenceID": 103151006,
+              "ProtectTime": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "1031501MissionTalk3"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.WaitSecond",
+          "WaitTime": {
+            "FixedValue": {
+              "Value": 2
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.PlayMissionTalk",
+          "SimpleTalkList": [
+            {
+              "TalkSentenceID": 103151204,
+              "ProtectTime": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "End103150112"
+          },
+          "GoNextImmediately": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerPerformance",
+          "ValueSource": {},
+          "PerformanceType": "D",
+          "PerformanceID": 103150113,
+          "MaskConfig": {}
+        },
+        {
+          "$type": "RPG.GameCore.TriggerPerformance",
+          "ValueSource": {},
+          "PerformanceType": "D",
+          "PerformanceID": 103150114,
+          "MaskConfig": {}
+        },
+        {
+          "$type": "RPG.GameCore.ClientFinishMission",
+          "SubmissionID": 103150112
+        }
+      ]
+    }
+  ],
+  "Type": "Group"
+}

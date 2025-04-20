@@ -1,12 +1,10 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "Bridge_Group",
   "AreaAnchorName": "LevelArea_P40101_F40101001_G8",
-  "SaveType": "Permanent",
   "LoadSide": "Server",
   "LoadOnInitial": true,
   "GroupRefreshID": 1,
-  "StreamingTemplateType": "Standard",
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
   "AnchorList": [
     {
       "Name": "North",
@@ -17,7 +15,7 @@
     },
     {
       "Name": "East",
-      "RotY": 90.0,
+      "RotY": 90,
       "ID": 2,
       "PosX": 81.12277,
       "PosY": -4.8,
@@ -25,7 +23,7 @@
     },
     {
       "Name": "South",
-      "RotY": 180.0,
+      "RotY": 180,
       "ID": 3,
       "PosX": 81.12277,
       "PosY": -4.8,
@@ -33,7 +31,7 @@
     },
     {
       "Name": "West",
-      "RotY": 270.0,
+      "RotY": 270,
       "ID": 4,
       "PosX": 81.12277,
       "PosY": -4.8,
@@ -43,29 +41,7 @@
   "MonsterList": [],
   "PropList": [
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 301011,
-      "LoadOnInitial": true,
       "IsOverrideInitLevelGraph": true,
       "InitLevelGraph": "Config/Level/Props/Chap01/InitLevelGraph_Prop_Chap01_RotateBridge_State.json",
       "ValueSource": {
@@ -115,95 +91,40 @@
             "Value": "6,300001",
             "Key": "BridgeController_04"
           }
-        ],
-        "SharedValues": [
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "LevelArea_P40101_F40101001_G8,North",
-            "Key": "Bridge_Rotate_North"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "LevelArea_P40101_F40101001_G8,East",
-            "Key": "Bridge_Rotate_East"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "LevelArea_P40101_F40101001_G8,South",
-            "Key": "Bridge_Rotate_South"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "LevelArea_P40101_F40101001_G8,West",
-            "Key": "Bridge_Rotate_West"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "Chap01_MAZ_M302_LevelArea,RotateBridge_Cam_02",
-            "Key": "Maze_Chap01_RotateBridge_CamAnchor"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "6,300001",
-            "Key": "BridgeController_01"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "6,300001",
-            "Key": "BridgeController_02"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "6,300001",
-            "Key": "BridgeController_03"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "6,300001",
-            "Key": "BridgeController_04"
-          }
         ]
       },
       "Trigger": {
-        "Radius": 28.0,
-        "DimX": 1.0,
-        "DimY": 1.0,
-        "DimZ": 1.0
+        "Radius": 28,
+        "DimX": 1,
+        "DimY": 1,
+        "DimZ": 1
       },
       "State": "BridgeState3",
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "StateConfigs": [
         {
           "State": "BridgeState1",
-          "Rotation": 180.0
+          "Rotation": 180
         },
         {
           "State": "BridgeState2",
-          "Rotation": 270.0
+          "Rotation": 270
         },
         {
           "State": "BridgeState3"
         },
         {
           "State": "BridgeState4",
-          "Rotation": 90.0
+          "Rotation": 90
         }
       ],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
       "StageObjectCapture": {
         "BlockAlias": "Chap01_CloseView_MAZ_M301_MazePart07",
-        "PrefabAlias": "Chap01_Grd_WheelGear_01_part01",
-        "UseOverridePos": true
+        "PrefabAlias": "Chap01_Grd_WheelGear_01_part01"
       },
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "Name": "Bridge",
       "ID": 300001,
       "PosX": 81.034,

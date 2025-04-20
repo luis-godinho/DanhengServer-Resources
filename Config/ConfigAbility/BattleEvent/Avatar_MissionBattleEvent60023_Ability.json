@@ -1,0 +1,782 @@
+{
+  "AbilityList": [
+    {
+      "Name": "Avatar_MissionBattleEvent60023_Passive",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.AddModifier",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "ModifierName": {
+            "Value": "MAvatar_MissionBattleEvent60023_PassiveAbility"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.AddModifier",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "ModifierName": {
+            "Value": "MAvatar_MissionBattleEvent60023_AutoUseUltraSkill"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.SetEntityVisible",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Avatar_MissionBattleEvent60023_Skill03_Phase01",
+      "TargetInfo": {
+        "TargetType": "AllEnemy"
+      },
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.AddModifier",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "ModifierName": {
+            "Value": "Death_BattleEventAttackUPByMaxHP"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.SetEntityVisible",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "Visible": true
+        },
+        {
+          "$type": "RPG.GameCore.LookAt",
+          "TargetType": "AbilityTargetEntity"
+        },
+        {
+          "$type": "RPG.GameCore.SetEntityPosition",
+          "PosTargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "DarkTeamCenter"
+          },
+          "OffsetZ": {
+            "FixedValue": {
+              "Value": 6
+            }
+          },
+          "YawAngle": {
+            "FixedValue": {
+              "Value": 180
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.HeadLookAt",
+          "PerformerType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "AllDarkTeam"
+          },
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "DoRootRotate": true
+        },
+        {
+          "$type": "RPG.GameCore.HideLevelStage",
+          "IsHide": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAnimState",
+          "AnimStateName": "Skill22"
+        },
+        {
+          "$type": "RPG.GameCore.SetSimulationSpeedEnable"
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAbility",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AbilityInherentTargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "AbilityTargetAndAdjoinEntity"
+          },
+          "AbilityName": {
+            "Value": "BattleEventAbility_60023_Camera"
+          },
+          "IsSkillPerform": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Mydeimos_00/Eff_Avatar_Mydeimos_00_Skill21_Lion.prefab"
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill22",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.53799
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.PlayTimeline",
+          "TimelineName": "Effects/Eff_Prefab/Eff_Avatar/Eff_Mydeimos_00/Eff_Avatar_Mydeimos_00_Skill22_TimeLine.playable"
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill22",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.571642
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.DamageByAttackProperty",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "AllEnemy"
+          },
+          "AttackProperty": {
+            "$type": "RPG.GameCore.AttackData",
+            "DamageType": {
+              "DamageType": "Imaginary"
+            },
+            "FormulaType": "ByMaxHP",
+            "DamagePercentage": {
+              "FixedValue": {
+                "Value": 18
+              }
+            },
+            "DamageValue": {
+              "FixedValue": {
+                "Value": 200000
+              }
+            },
+            "StanceValue": {
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAR",
+                "FixedValues": [],
+                "DynamicHashes": [
+                  -1315627076
+                ]
+              }
+            },
+            "HitSplitRatio": {
+              "FixedValue": {
+                "Value": 0.5
+              }
+            },
+            "HitAnimation": "Hit_H",
+            "HitEffect": "Effects/Eff_Prefab/Eff_Avatar/Eff_Mydeimos_00/Eff_Avatar_Mydeimos_00_Skill21_Hit01.prefab",
+            "HitPosHeight": 1,
+            "HitAngleVertical": 30
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TargetTimeSlow",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "AbilityTargetAndAdjoinEntity"
+          },
+          "TimeScale": 0.25,
+          "UnscaledDuration": 0.6
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill22",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.8247457
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.DamageByAttackProperty",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "AllEnemy"
+          },
+          "AttackProperty": {
+            "$type": "RPG.GameCore.AttackData",
+            "DamageType": {
+              "DamageType": "Imaginary"
+            },
+            "FormulaType": "ByMaxHP",
+            "DamagePercentage": {
+              "FixedValue": {
+                "Value": 36
+              }
+            },
+            "DamageValue": {
+              "FixedValue": {
+                "Value": 400000
+              }
+            },
+            "StanceValue": {
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAR",
+                "FixedValues": [],
+                "DynamicHashes": [
+                  1659254037
+                ]
+              }
+            },
+            "HitSplitRatio": {
+              "FixedValue": {
+                "Value": 0.5
+              }
+            },
+            "SPHitRatio": {
+              "FixedValue": {
+                "Value": 1
+              }
+            },
+            "HitAnimation": "Hit_H",
+            "HitEffect": "Effects/Eff_Prefab/Eff_Avatar/Eff_Mydeimos_00/Eff_Avatar_Mydeimos_00_Skill21_Hit01.prefab",
+            "HitMotion": {
+              "Offset": {
+                "Y": 3.5
+              },
+              "RiseTime": 0.2,
+              "HangTime": 0.7,
+              "FallTime": 0.3,
+              "HangPeakTime": 0.2,
+              "HangBeginHeightRatio": 0.57
+            },
+            "HitPosHeight": 1,
+            "HitAngleVertical": -50
+          }
+        },
+        {
+          "$type": "RPG.GameCore.DamagePerformFinish"
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill22",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 1
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.SetSimulationSpeedEnable",
+          "Enable": true
+        },
+        {
+          "$type": "RPG.GameCore.SetEntityVisible",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.WaitSecond",
+          "WaitTime": {
+            "FixedValue": {
+              "Value": 0.4
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.RadialBlurEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "AbilityTargetEntity"
+          },
+          "Active": false
+        },
+        {
+          "$type": "RPG.GameCore.GlobalMainIntensityEffect",
+          "IsRevert": true,
+          "FadeDuration": 1
+        },
+        {
+          "$type": "RPG.GameCore.HideLevelStage"
+        }
+      ]
+    },
+    {
+      "Name": "BattleEventAbility_60023_Camera",
+      "TargetInfo": {
+        "TargetType": "InherentTargetEntity"
+      },
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.VCameraConfigChange",
+          "CameraConfig": {
+            "CloseupShotConfig": {
+              "CameraTimelineAssetName": "Character_Mydeimos_00_Skill21_TimeLine",
+              "TransTypeFollow": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "TransTypeAim": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AbilityTargetEntity"
+              }
+            },
+            "BlendConfig": {
+              "BlendType": "Cut"
+            },
+            "ShowEntityConfig": {
+              "ShowTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              }
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.WaitTimelineFinish",
+          "TimelineName": "Character_Mydeimos_00_Skill21_TimeLine"
+        },
+        {
+          "$type": "RPG.GameCore.VCameraConfigChange",
+          "CameraConfig": {
+            "NormalConfig": {
+              "CameraState": "CasterToTargetPerform",
+              "AnchorTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "IsLocalOffset": true,
+              "AnchorOffset": {
+                "X": -1.38,
+                "Y": 5.23,
+                "Z": -11.79
+              },
+              "AnchorRatio": 0.99,
+              "AimTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AbilityTargetGroup"
+              },
+              "AimOffset": {
+                "X": -1.13,
+                "Y": -1.5,
+                "Z": 1.51
+              },
+              "AimRatio": 1,
+              "Dutch": 3
+            },
+            "BlendConfig": {
+              "BlendType": "Cut"
+            },
+            "ShowEntityConfig": {
+              "ShowTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AbilityTargetGroup"
+              }
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchCaster"
+          },
+          "AnimStateName": "Skill22",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.53999996
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.VCameraConfigChange",
+          "CameraConfig": {
+            "NormalConfig": {
+              "CameraState": "CasterToTargetPerform",
+              "AnchorTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "IsLocalOffset": true,
+              "AnchorOffset": {
+                "X": -1.38,
+                "Y": 5.44,
+                "Z": -12.4
+              },
+              "AnchorRatio": 0.99,
+              "AimTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AbilityTargetGroup"
+              },
+              "AimOffset": {
+                "X": -1.02,
+                "Y": -1.5,
+                "Z": 1.51
+              },
+              "AimRatio": 1,
+              "Dutch": 3
+            },
+            "BlendConfig": {
+              "BlendType": "Custom",
+              "CustomCurveName": "Blend_1218_Skill02",
+              "BlendTime": 0.208262
+            },
+            "ShowEntityConfig": {
+              "ShowTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AbilityTargetGroup"
+              }
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchCaster"
+          },
+          "AnimStateName": "Skill22",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.5777966
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.VCameraConfigChange",
+          "CameraConfig": {
+            "ShakeTemplateName": "1404_00_BP_Shake",
+            "OverrideShakeConfigV2": {
+              "ShakeScale": 1.15,
+              "ShakeTime": 0.25,
+              "LoopTime": 0.55,
+              "ShakeDir": {
+                "Y": -0.4,
+                "Z": 0.1
+              },
+              "RangeAttenuationDelay": 999,
+              "RangeAttenuationTarget": 0,
+              "DistanceAttenuation": {}
+            },
+            "BlendConfig": {
+              "BlendType": "Cut",
+              "BlendTime": 0.016667
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchCaster"
+          },
+          "AnimStateName": "Skill22",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.8237999
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.VCameraConfigChange",
+          "CameraConfig": {
+            "ShakeTemplateName": "1404_00_BP_Shake",
+            "OverrideShakeConfigV2": {
+              "ShakeScale": 1.5,
+              "ShakeTime": 0.55,
+              "LoopTime": 0.2,
+              "ShakeDir": {
+                "Y": -0.4,
+                "Z": 0.1
+              },
+              "RangeAttenuationDelay": 999,
+              "RangeAttenuationTarget": 0.3,
+              "RangeAttenuationDuration": 0,
+              "DistanceAttenuation": {}
+            },
+            "BlendConfig": {
+              "BlendType": "Cut"
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchCaster"
+          },
+          "AnimStateName": "Skill22",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.83599997
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.VCameraConfigChange",
+          "CameraConfig": {
+            "NormalConfig": {
+              "CameraState": "CasterToTargetPerform",
+              "AnchorTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "IsLocalOffset": true,
+              "AnchorOffset": {
+                "X": -1.6,
+                "Y": 7.8,
+                "Z": -17.31
+              },
+              "AnchorRatio": 0.99,
+              "AimTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AbilityTargetGroup"
+              },
+              "AimOffset": {
+                "X": -1.02,
+                "Y": -1.5,
+                "Z": 1.51
+              },
+              "AimRatio": 1,
+              "Dutch": 3
+            },
+            "BlendConfig": {
+              "BlendType": "Custom",
+              "CustomCurveName": "Blend_1218_Skill02",
+              "BlendTime": 0.223263
+            },
+            "ShowEntityConfig": {
+              "ShowTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AbilityTargetGroup"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "GlobalModifiers": {
+    "Death_BattleEventAttackUPByMaxHP": {
+      "_CallbackList": [
+        {
+          "Event": "OnStack",
+          "CallbackConfig": [
+            {
+              "$type": "RPG.GameCore.SetDynamicValueByProperty",
+              "DynamicKey": "MDF_BaseHP",
+              "ReadTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "ModifierOwnerEntity"
+              },
+              "Value": "BaseHP"
+            },
+            {
+              "$type": "RPG.GameCore.SetDynamicValueByProperty",
+              "DynamicKey": "MDF_BaseAttack",
+              "ReadTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "ModifierOwnerEntity"
+              },
+              "Value": "BaseAttack"
+            },
+            {
+              "$type": "RPG.GameCore.StackProperty",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "ModifierOwnerEntity"
+              },
+              "Property": "AttackDelta",
+              "PropertyValue": {
+                "IsDynamic": true,
+                "PostfixExpr": {
+                  "OpCodes": "AQABAQMR",
+                  "FixedValues": [],
+                  "DynamicHashes": [
+                    117371273,
+                    1570219357
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "DynamicValues": {
+        "Floats": {
+          "117371273": {},
+          "1570219357": {}
+        }
+      }
+    },
+    "MAvatar_MissionBattleEvent60023_PassiveAbility": {
+      "BehaviorFlagList": [
+        "BlockDamage",
+        "Stealth"
+      ],
+      "_CallbackList": [
+        {
+          "Event": "OnCreate",
+          "CallbackConfig": [
+            {
+              "$type": "RPG.GameCore.SetEntityUnselectable",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "ModifierOwnerEntity"
+              },
+              "Unselectable": true
+            }
+          ]
+        },
+        {
+          "Event": "OnStack",
+          "CallbackConfig": [
+            {
+              "$type": "RPG.GameCore.TurnInsertAbility",
+              "AbilityName": {
+                "Value": "Avatar_MissionBattleEvent60023_Skill03_Phase01"
+              },
+              "AbilityTarget": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AllDarkTeam"
+              },
+              "InsertAbilityPriority": "AvatarInsertAttackSelf"
+            }
+          ]
+        },
+        {
+          "Event": "OnModifierAdd",
+          "CallbackConfig": [
+            {
+              "$type": "RPG.GameCore.DispelStatus",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "ModifierOwnerEntity"
+              },
+              "BuffType": "Buff"
+            },
+            {
+              "$type": "RPG.GameCore.DispelStatus",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "ModifierOwnerEntity"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.DispelStatus",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "ModifierOwnerEntity"
+              },
+              "BuffType": "Other"
+            }
+          ]
+        }
+      ]
+    },
+    "MAvatar_MissionBattleEvent60023_Charge": {
+      "BehaviorFlagList": [
+        "ListenBattleEventSkill"
+      ],
+      "_CallbackList": [
+        {
+          "Event": "OnListenBeforeSkillUse",
+          "CallbackConfig": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByAny",
+                "PredicateList": [
+                  {
+                    "$type": "RPG.GameCore.ByAnd",
+                    "PredicateList": [
+                      {
+                        "$type": "RPG.GameCore.ByCompareTurnActionEntityTeamType",
+                        "Team": "TeamLight"
+                      },
+                      {
+                        "$type": "RPG.GameCore.ByNot",
+                        "Predicate": {
+                          "$type": "RPG.GameCore.ByCurrentSkillType",
+                          "SkillType": "Ultra"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.ModifySPNew",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "ModifierOwnerEntity"
+                  },
+                  "FixedAddValue": {
+                    "IsDynamic": true,
+                    "PostfixExpr": {
+                      "OpCodes": "AQAR",
+                      "FixedValues": [],
+                      "DynamicHashes": [
+                        1608487908
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "DynamicValues": {
+        "Floats": {
+          "1608487908": {}
+        }
+      }
+    },
+    "MAvatar_MissionBattleEvent60023_AutoUseUltraSkill": {
+      "_CallbackList": [
+        {
+          "Event": "OnCreate",
+          "CallbackConfig": [
+            {
+              "$type": "RPG.GameCore.AutoUseUltraSkill",
+              "Target": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AllDarkTeam"
+              },
+              "WaitCutinFinished": false
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

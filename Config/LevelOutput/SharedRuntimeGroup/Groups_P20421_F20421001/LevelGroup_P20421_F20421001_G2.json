@@ -1,4 +1,5 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "StartPoint",
   "AreaAnchorName": "LevelArea_P20421_F20421001_G2",
   "SaveType": "Reset",
@@ -11,15 +12,15 @@
   "ConflictIDList": [],
   "IsHoyoGroup": true,
   "HoYoGroupType": "Container",
-  "StreamingTemplateType": "Standard",
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
   "ConflictWhiteList": [],
-  "TagContainer": [
-    {
-      "Tag": "Group.Level.AnchorPoint",
-      "TagHash": -1743222658
-    }
-  ],
+  "TagContainer": {
+    "List": [
+      {
+        "Tag": "Group.Level.AnchorPoint",
+        "TagHash": -1743222658
+      }
+    ]
+  },
   "AnchorList": [
     {
       "Name": "PlayerStart",
@@ -96,29 +97,7 @@
   "MonsterList": [],
   "PropList": [
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 115,
-      "LoadOnInitial": true,
       "IsOverrideInitLevelGraph": true,
       "InitLevelGraph": "Config/Level/Maze/Chapter01/Town/Town_Chapter01_TownExit_CameraArea.json",
       "ValueSource": {
@@ -138,55 +117,28 @@
             "Value": "Chap04_MAZ_A201_LevelArea,Exit_CamRoot01",
             "Key": "Anchor"
           }
-        ],
-        "SharedValues": [
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "Chap04_MAZ_A201_LevelArea,ExitCam_02",
-            "Key": "Camera1"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "Chap04_MAZ_A201_LevelArea,ExitCam_01",
-            "Key": "Camera2"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "Chap04_MAZ_A201_LevelArea,Exit_CamRoot01",
-            "Key": "Anchor"
-          }
         ]
       },
       "Trigger": {
         "Shape": "Box",
-        "Radius": 1.0,
-        "DimX": 13.0,
-        "DimY": 8.0,
-        "DimZ": 8.0
+        "Radius": 1,
+        "DimX": 13,
+        "DimY": 8,
+        "DimZ": 8
       },
       "CampID": 4,
-      "OverrideSoundRange": -1.0,
+      "OverrideHintRange": 0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Prop1",
       "RotY": 337.6384,
@@ -196,29 +148,7 @@
       "PosZ": -140.4701
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 114,
-      "LoadOnInitial": true,
       "IsOverrideInitLevelGraph": true,
       "InitLevelGraph": "Config/Level/Maze/Chapter01/Town/Town_Chapter01_Entry.json",
       "ValueSource": {
@@ -233,55 +163,33 @@
             "Value": 1040105,
             "Key": "EnterMapEntranceID"
           }
-        ],
-        "SharedValues": [
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "FloorName_10401001",
-            "Key": "ButtonTextFloorName"
-          },
-          {
-            "$type": "RPG.GameCore.SharedInt",
-            "Value": 1040105,
-            "Key": "EnterMapEntranceID"
-          }
         ]
       },
       "Trigger": {
         "Shape": "Box",
-        "Radius": 1.0,
-        "DimX": 4.0,
-        "DimY": 2.0,
-        "DimZ": 2.0
+        "Radius": 1,
+        "DimX": 4,
+        "DimY": 2,
+        "DimZ": 2
       },
       "CampID": 4,
-      "OverrideSoundRange": -1.0,
+      "OverrideHintRange": 0,
       "CustomTriggerMap": {
         "CustomTrigger_OnEnter": {
-          "Radius": 20.0
+          "Radius": 20
         }
       },
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
       "MappingInfoID": 1040100,
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Prop2",
       "RotY": 337.6384,

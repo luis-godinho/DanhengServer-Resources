@@ -4,144 +4,103 @@
     {
       "TaskList": [
         {
-          "$type": "RPG.GameCore.LockPlayerControl",
-          "LockCameraControl": true,
-          "LockInteractSelect": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "$type": "RPG.GameCore.LockPlayerControl"
         },
         {
           "$type": "RPG.GameCore.ShowTalkUI",
-          "Show": true,
-          "ShowDialogControlUI": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Show": true
         },
         {
           "$type": "RPG.GameCore.PlayScreenTransfer",
-          "Type": "Black",
           "Mode": "SwitchOut",
-          "CustomTime": 1.0,
-          "SwitchInEndTaskAfterUIClose": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "CustomTime": 1
         },
         {
           "$type": "RPG.GameCore.ActiveVirtualCamera",
           "AreaName": "LevelArea_P40002_F40002102_G2",
-          "AnchorName": "Anchor1",
-          "IsActive": true,
-          "VCameraDitherMaxDistance": 1.0,
-          "CenterPosX": -1.0,
-          "CenterPosY": -1.0,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "AnchorName": "Anchor1"
         },
         {
           "$type": "RPG.GameCore.PlayScreenTransfer",
-          "Type": "Black",
-          "CustomTime": 1.0,
-          "SwitchInEndTaskAfterUIClose": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "CustomTime": 1
         },
         {
           "$type": "RPG.GameCore.TriggerCustomString",
           "CustomString": {
             "Value": "800020202_DoorOpen_1"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.WaitSecond",
           "WaitTime": {
-            "fixedValue": {
-              "RawValue": 4294967296
+            "FixedValue": {
+              "Value": 1
             }
-          },
-          "MaxAdvencePerTick": -1.0,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
           "$type": "RPG.GameCore.DestroyProp",
           "TargetType": {
             "$type": "RPG.GameCore.TargetFetchAdvPropEx"
           },
-          "ID": {},
-          "GroupID": {},
+          "ID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "GroupID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
           "DestroyList": [
             {
+              "$type": "RPG.GameCore.GroupEntityInfo",
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 8589934592
+                "FixedValue": {
+                  "Value": 2
                 }
               },
               "GroupInstanceID": {
-                "fixedValue": {
-                  "RawValue": 1288507368669184
+                "FixedValue": {
+                  "Value": 300004
                 }
               }
             }
-          ],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         },
         {
           "$type": "RPG.GameCore.WaitSecond",
           "WaitTime": {
-            "fixedValue": {
-              "RawValue": 8589934592
+            "FixedValue": {
+              "Value": 2
             }
-          },
-          "MaxAdvencePerTick": -1.0,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
           "$type": "RPG.GameCore.PlayScreenTransfer",
-          "Type": "Black",
           "Mode": "SwitchOut",
-          "CustomTime": 1.0,
-          "SwitchInEndTaskAfterUIClose": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "CustomTime": 1
         },
         {
           "$type": "RPG.GameCore.ActiveVirtualCamera",
           "AreaName": "LevelArea_P40002_F40002102_G2",
           "AnchorName": "Anchor1",
-          "VCameraDitherMaxDistance": 1.0,
-          "CenterPosX": -1.0,
-          "CenterPosY": -1.0,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "IsActive": false
         },
         {
-          "$type": "RPG.GameCore.ShowTalkUI",
-          "ShowDialogControlUI": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "$type": "RPG.GameCore.ShowTalkUI"
         },
         {
           "$type": "RPG.GameCore.PlayScreenTransfer",
-          "Type": "Black",
-          "CustomTime": 1.0,
-          "SwitchInEndTaskAfterUIClose": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "CustomTime": 1
         },
         {
-          "$type": "RPG.GameCore.UnLockPlayerControl",
-          "UnLockCameraControl": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "$type": "RPG.GameCore.UnLockPlayerControl"
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_800020202",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_800020202"
         }
       ]
     },
@@ -151,12 +110,10 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "800020202_DoorOpen_1"
-          },
-          "TaskEnabled": true
+          }
         },
         {
-          "$type": "RPG.GameCore.ChangePropState",
-          "TaskEnabled": true
+          "$type": "RPG.GameCore.ChangePropState"
         }
       ]
     },
@@ -166,12 +123,10 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "800020202_DoorOpen_1"
-          },
-          "TaskEnabled": true
+          }
         },
         {
-          "$type": "RPG.GameCore.ChangePropState",
-          "TaskEnabled": true
+          "$type": "RPG.GameCore.ChangePropState"
         }
       ]
     },
@@ -181,8 +136,7 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "800020202_DoorOpen_1"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.AnimSetParameter",
@@ -191,22 +145,19 @@
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 17179869184
+                "FixedValue": {
+                  "Value": 4
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288657692524544
+                "FixedValue": {
+                  "Value": 300039
                 }
               }
             }
           },
           "ParameterName": "TriggerOpen",
-          "ParameterType": "Trigger",
-          "Value": {},
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "ParameterType": "Trigger"
         }
       ]
     }

@@ -1,0 +1,87 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.TutorialLockPlayerAction",
+          "Lock": true
+        },
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "Activity_Marble_Self_Turn_Begin"
+          },
+          "ResetWhenTaskBegin": true
+        },
+        {
+          "$type": "RPG.GameCore.TutorialLockPlayerAction"
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideHintWithText",
+          "Block": true,
+          "TargetEvent": [
+            {
+              "$type": "RPG.GameCore.WaitPlayerAction",
+              "ActionType": "AnyAction"
+            }
+          ],
+          "NodeIDList": [
+            "PlayerBall_13"
+          ],
+          "IsAutoMatchGuideHintType": false,
+          "GuideTextType": "Talk",
+          "GuideText": "TutorialTextmap_552101",
+          "GuideTalkID": 591601,
+          "CustomTextDirection": "LeftUp",
+          "GuideHintShowConfig": {},
+          "GuideTextShowConfig": {},
+          "GuideUIContextConfig": {
+            "Type": "MainPage"
+          },
+          "EnableActionList": [],
+          "EnableBattleOperationList": [],
+          "ShowDelay": 1.7,
+          "DisableBlackMask": true
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideHintWithText",
+          "Block": true,
+          "TargetEvent": [
+            {
+              "$type": "RPG.GameCore.WaitPlayerAction",
+              "ActionType": "AnyAction"
+            }
+          ],
+          "NodeIDList": [
+            "PlayerBall_13"
+          ],
+          "IsAutoMatchGuideHintType": false,
+          "GuideHintType": "ClickCircle",
+          "GuideTextType": "Talk",
+          "GuideText": "TutorialTextmap_552101",
+          "GuideTalkID": 591602,
+          "GuideHintShowConfig": {},
+          "GuideTextShowConfig": {},
+          "GuideUIContextConfig": {
+            "Type": "MainPage"
+          },
+          "EnableActionList": [],
+          "EnableBattleOperationList": []
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideDetailDialog",
+          "GuideID": {
+            "Value": "9834"
+          },
+          "WaitForExit": true
+        },
+        {
+          "$type": "RPG.GameCore.TutorialClose"
+        }
+      ]
+    }
+  ],
+  "ValueSource": {},
+  "EntityEventList": []
+}

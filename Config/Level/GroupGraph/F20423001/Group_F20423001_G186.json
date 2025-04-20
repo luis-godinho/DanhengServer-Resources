@@ -1,0 +1,49 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvOnButtonPressed",
+          "ButtonName": "Interaction_G186",
+          "OnPressedCallback": [
+            {
+              "$type": "RPG.GameCore.TriggerPerformance",
+              "ValueSource": {},
+              "PerformanceType": "E",
+              "PerformanceID": 104030738,
+              "MaskConfig": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvSetupButtonListTrigger",
+          "TargetType": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "TargetType": "Prop",
+            "Targets": [
+              300001
+            ]
+          },
+          "TriggerName": "MissionTrigger",
+          "ButtonsByName": [],
+          "ButtonConfigs": [
+            {
+              "ID": "Interaction_G186",
+              "IconType": "ChatIcon",
+              "ButtonText": {
+                "Value": "PropInteractTitle_5"
+              }
+            }
+          ],
+          "DisableAfterTriggered": true
+        }
+      ]
+    }
+  ],
+  "Type": "Group"
+}

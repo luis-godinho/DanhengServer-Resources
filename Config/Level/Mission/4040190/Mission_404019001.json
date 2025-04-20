@@ -10,18 +10,13 @@
           "MainMissionIDList": [
             4040117
           ],
-          "PerformanceIDList": [],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceIDList": []
         },
         {
           "$type": "RPG.GameCore.PredicateTaskList",
           "Predicate": {
             "$type": "RPG.GameCore.ByCompareMainMissionState",
-            "MainMissionID": 4040117,
-            "MainMissionState": "Finish",
-            "TaskEnabled": true,
-            "IsClientOnly": true
+            "MainMissionID": 4040117
           },
           "SuccessTaskList": [
             {
@@ -29,36 +24,27 @@
               "Predicate": {
                 "$type": "RPG.GameCore.ByCompareItemNumber",
                 "ItemID": {
-                  "fixedValue": {
-                    "RawValue": 602064220585984
+                  "FixedValue": {
+                    "Value": 140179
                   }
                 },
                 "Number": {
-                  "fixedValue": {
-                    "RawValue": 4294967296
+                  "FixedValue": {
+                    "Value": 1
                   }
                 },
-                "CompareType": "Equal",
-                "TaskEnabled": true,
-                "IsClientOnly": true
+                "CompareType": "Equal"
               },
               "SuccessTaskList": [
                 {
                   "$type": "RPG.GameCore.ConsumeMissionItem",
                   "SubMissionID": 404019001,
                   "IsAutoConsume": true,
-                  "SimpleTalk": {
-                    "TextSpeed": 20.0,
-                    "ProtectTime": 0.8
-                  },
-                  "TaskEnabled": true,
-                  "IsClientOnly": true
+                  "SimpleTalk": {}
                 }
-              ],
-              "TaskEnabled": true
+              ]
             }
-          ],
-          "TaskEnabled": true
+          ]
         }
       ]
     }

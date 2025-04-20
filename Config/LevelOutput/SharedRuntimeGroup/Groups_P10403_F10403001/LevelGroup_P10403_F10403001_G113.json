@@ -1,0 +1,457 @@
+{
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
+  "GroupName": "QTEGotchard",
+  "LevelGraph": "Config/Level/GroupGraph/F10403001/Group_F10403001_G113.json",
+  "AreaAnchorName": "LevelArea_P10403_F10403001_G113",
+  "SavedValueCondition": {
+    "Conditions": [],
+    "Operation": "And"
+  },
+  "LoadSide": "Server",
+  "LoadOnInitial": true,
+  "GroupStateList": [
+    {
+      "Comment": "贼灵抢夺",
+      "DstState": 1
+    },
+    {
+      "Comment": "捕捉贼灵",
+      "SrcState": 1,
+      "DstState": 2
+    },
+    {
+      "Comment": "贼灵归还",
+      "SrcState": 2,
+      "DstState": 3
+    },
+    {
+      "Comment": "宝箱出现",
+      "SrcState": 3,
+      "DstState": 4
+    }
+  ],
+  "ValueSource": {
+    "Values": [
+      {
+        "$type": "RPG.GameCore.SharedString",
+        "Value": "LevelArea_P10403_F10403001_G113,Vcam1",
+        "Key": "Vcam1"
+      },
+      {
+        "$type": "RPG.GameCore.SharedString",
+        "Value": "LevelArea_P10403_F10403001_G113,Vcam2",
+        "Key": "Vcam2"
+      },
+      {
+        "$type": "RPG.GameCore.SharedString",
+        "Value": "LevelArea_P10403_F10403001_G113,Vcam3",
+        "Key": "Vcam3"
+      },
+      {
+        "$type": "RPG.GameCore.SharedString",
+        "Value": "LevelArea_P10403_F10403001_G113,Vcam4",
+        "Key": "Vcam4"
+      },
+      {
+        "$type": "RPG.GameCore.SharedString",
+        "Value": "FSV_QTEGotchard_RewardGet_16",
+        "Key": "FSV_QTEGotchard_RewardGet_ID"
+      },
+      {
+        "$type": "RPG.GameCore.SharedFloat",
+        "Value": 3,
+        "Key": "GoodRadius"
+      },
+      {
+        "$type": "RPG.GameCore.SharedFloat",
+        "Value": 1,
+        "Key": "StruggleDuration"
+      },
+      {
+        "$type": "RPG.GameCore.SharedFloat",
+        "Value": 180,
+        "Key": "Steer2Run"
+      },
+      {
+        "$type": "RPG.GameCore.SharedFloat",
+        "Value": 135,
+        "Key": "Steer2Player"
+      },
+      {
+        "$type": "RPG.GameCore.SharedFloat",
+        "Value": 180,
+        "Key": "Steer2Leave"
+      }
+    ]
+  },
+  "ConflictIDList": [],
+  "IsHoyoGroup": true,
+  "StreamingTemplateType": "None",
+  "ConflictWhiteList": [],
+  "TagContainer": {
+    "List": [
+      {
+        "Tag": "Group.Level.SpecialGameplay",
+        "TagHash": 718389408
+      }
+    ]
+  },
+  "AnchorList": [
+    {
+      "RotX": 22.17356,
+      "RotZ": 0.002006,
+      "Usage": "Camera",
+      "LookAtCameraTemplate": "Level/Common_Adventure/Camera_Module/PinballPuzzleCam01.prefab",
+      "CustomParameter": {
+        "$type": "RPG.GameCore.LevelAnchorCameraParameter",
+        "fov": 60
+      },
+      "Name": "Vcam1",
+      "RotY": 358.6266,
+      "ID": 1,
+      "PosX": 0.754741,
+      "PosY": 817.9831,
+      "PosZ": 729.4659
+    },
+    {
+      "RotX": 22.17356,
+      "RotZ": 0.002006,
+      "Usage": "Camera",
+      "LookAtCameraTemplate": "Level/Common_Adventure/Camera_Module/PinballPuzzleCam01.prefab",
+      "CustomParameter": {
+        "$type": "RPG.GameCore.LevelAnchorCameraParameter",
+        "fov": 60,
+        "AimIsComposer": true,
+        "AimHorizontalDamping": 1,
+        "AimVerticalDamping": 1,
+        "AimScreenX": 0.5,
+        "AimScreenY": 0.5,
+        "AimDeadZoneWidth": 0.3,
+        "AimDeadZoneHeight": 0.3
+      },
+      "Name": "Vcam2",
+      "RotY": 358.6266,
+      "ID": 2,
+      "PosX": 0.754741,
+      "PosY": 817.9831,
+      "PosZ": 729.4659
+    },
+    {
+      "RotX": 22.17356,
+      "RotZ": 0.002006,
+      "Usage": "Camera",
+      "LookAtCameraTemplate": "Level/Common_Adventure/Camera_Module/PinballPuzzleCam01.prefab",
+      "CustomParameter": {
+        "$type": "RPG.GameCore.LevelAnchorCameraParameter",
+        "fov": 60
+      },
+      "Name": "Vcam3",
+      "RotY": 358.6266,
+      "ID": 3,
+      "PosX": 0.754741,
+      "PosY": 817.9831,
+      "PosZ": 729.4659
+    },
+    {
+      "RotX": 22.17356,
+      "RotZ": 0.002006,
+      "Usage": "Camera",
+      "LookAtCameraTemplate": "Level/Common_Adventure/Camera_Module/PinballPuzzleCam01.prefab",
+      "CustomParameter": {
+        "$type": "RPG.GameCore.LevelAnchorCameraParameter",
+        "fov": 20,
+        "AimIsComposer": true,
+        "AimHorizontalDamping": 1,
+        "AimVerticalDamping": 1,
+        "AimScreenX": 0.5,
+        "AimScreenY": 0.5,
+        "AimDeadZoneWidth": 0.3,
+        "AimDeadZoneHeight": 0.3
+      },
+      "Name": "Vcam4",
+      "RotY": 358.6266,
+      "ID": 4,
+      "PosX": 0.754741,
+      "PosY": 817.9831,
+      "PosZ": 729.4659
+    }
+  ],
+  "MonsterList": [],
+  "PropList": [
+    {
+      "PropID": 104050,
+      "IsOverrideInitLevelGraph": true,
+      "ValueSource": {},
+      "CampID": 4,
+      "CustomTriggerMap": {},
+      "CustomTriggerMapV2": {},
+      "StateConfigs": [],
+      "DialogueGroups": [],
+      "TalkDialogGroupIDList": [],
+      "ServerInteractVerificationIDList": [],
+      "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
+      "CameraCenterEntityList": [],
+      "CameraConfig": {},
+      "OverrideAdvEffectMap": {},
+      "SpawnConfig": {
+        "EntitySpawnConfig": {}
+      },
+      "Name": "Fake",
+      "RotY": 180,
+      "ID": 300001,
+      "PosX": 0.49,
+      "PosY": 814.5972,
+      "PosZ": 735.26
+    },
+    {
+      "Scale": {
+        "X": 0.6,
+        "Y": 0.6,
+        "Z": 0.6
+      },
+      "PropID": 104159,
+      "ValueSource": {},
+      "CampID": 4,
+      "CustomTriggerMap": {},
+      "CustomTriggerMapV2": {},
+      "StateConfigs": [],
+      "DialogueGroups": [],
+      "TalkDialogGroupIDList": [],
+      "ServerInteractVerificationIDList": [],
+      "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
+      "CameraCenterEntityList": [],
+      "CameraConfig": {},
+      "OverrideAdvEffectMap": {},
+      "SpawnConfig": {
+        "EntitySpawnConfig": {}
+      },
+      "Name": "Coin",
+      "RotY": 180,
+      "ID": 300002,
+      "PosX": 0.49,
+      "PosY": 814.6972,
+      "PosZ": 735.26
+    },
+    {
+      "PropID": 104102,
+      "ValueSource": {
+        "Values": [
+          {
+            "$type": "RPG.GameCore.SharedJsonConfig",
+            "Value": {
+              "$type": "RPG.GameCore.GameLevelObjectRefConfig",
+              "GroupID": 113,
+              "InstanceID": 1,
+              "Type": "Curve"
+            },
+            "Key": "CurveRef"
+          },
+          {
+            "$type": "RPG.GameCore.SharedFloat",
+            "Value": 20,
+            "Key": "StartMoveSpeed"
+          },
+          {
+            "$type": "RPG.GameCore.SharedFloat",
+            "Value": 10,
+            "Key": "HoldMoveSpeed"
+          },
+          {
+            "$type": "RPG.GameCore.SharedInt",
+            "Value": 1,
+            "Key": "CaughtType"
+          }
+        ]
+      },
+      "CampID": 4,
+      "CustomTriggerMap": {},
+      "CustomTriggerMapV2": {},
+      "StateConfigs": [],
+      "DialogueGroups": [],
+      "TalkDialogGroupIDList": [],
+      "ServerInteractVerificationIDList": [],
+      "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
+      "IsClientOnly": true,
+      "CameraCenterEntityList": [],
+      "CameraConfig": {},
+      "OverrideAdvEffectMap": {},
+      "SpawnConfig": {
+        "EntitySpawnConfig": {}
+      },
+      "Name": "MascotSpirits",
+      "RotY": 270,
+      "ID": 300003,
+      "PosX": 2.304,
+      "PosY": 815.428,
+      "PosZ": 735.26
+    },
+    {
+      "PropID": 100,
+      "ValueSource": {},
+      "CampID": 4,
+      "CustomTriggerMap": {},
+      "CustomTriggerMapV2": {},
+      "StateConfigs": [],
+      "DialogueGroups": [],
+      "TalkDialogGroupIDList": [],
+      "ServerInteractVerificationIDList": [],
+      "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
+      "CameraCenterEntityList": [],
+      "CameraConfig": {},
+      "OverrideAdvEffectMap": {},
+      "SpawnConfig": {
+        "EntitySpawnConfig": {}
+      },
+      "Name": "EffectPoint",
+      "RotY": 180,
+      "ID": 300004,
+      "PosX": 0.49,
+      "PosY": 814.5972,
+      "PosZ": 735.26
+    }
+  ],
+  "DistrictList": [
+    {
+      "Trigger": {
+        "Shape": "GeometrySphere",
+        "Radius": 3,
+        "DimX": 20,
+        "DimY": 6,
+        "DimZ": 15
+      },
+      "DistrictType": "Level",
+      "ValueSource": {},
+      "Name": "District1",
+      "RotY": 180,
+      "ID": 1,
+      "PosX": 0.49,
+      "PosY": 814.5972,
+      "PosZ": 735.26
+    }
+  ],
+  "WaypointList": [],
+  "PathwayList": [],
+  "BattleAreaList": [],
+  "NPCList": [],
+  "CrowdList": [],
+  "PedestrianList": [],
+  "PedestrianV2List": [],
+  "AudienceList": [],
+  "SmartObjectList": [],
+  "CurveList": [
+    {
+      "PointList": [
+        {
+          "Position": {
+            "X": 54.16322,
+            "Y": 21.97607,
+            "Z": 2.240955
+          },
+          "ControlType": 1,
+          "Control1": {
+            "X": 7.067017,
+            "Z": -0.019157
+          },
+          "Control2": {
+            "X": -7.067017,
+            "Z": 0.019157
+          },
+          "Alias": "Start"
+        },
+        {
+          "Position": {
+            "X": 38.89136,
+            "Y": 13.0697,
+            "Z": 2.231174
+          },
+          "ControlType": 1,
+          "Control1": {
+            "X": 6.426941,
+            "Y": 3.298218,
+            "Z": 0.00563
+          },
+          "Control2": {
+            "X": -6.426941,
+            "Y": -3.298218,
+            "Z": -0.00563
+          }
+        },
+        {
+          "Position": {
+            "X": 26.00873,
+            "Y": 13.99805,
+            "Z": -11.92207
+          },
+          "ControlType": 1,
+          "Control1": {
+            "X": 3.995182,
+            "Y": 5.923035,
+            "Z": -3.579552
+          },
+          "Control2": {
+            "X": -3.995182,
+            "Y": -5.923035,
+            "Z": 3.579552
+          },
+          "Alias": "1"
+        },
+        {
+          "Position": {
+            "X": 12.55475,
+            "Y": 0.951538,
+            "Z": 7.984791
+          },
+          "ControlType": 1,
+          "Control1": {
+            "X": 8.124331,
+            "Y": 3.903809,
+            "Z": 0.208573
+          },
+          "Control2": {
+            "X": -8.124331,
+            "Y": -3.903809,
+            "Z": -0.208573
+          }
+        },
+        {
+          "Position": {
+            "X": 12.98755,
+            "Y": 5.037292,
+            "Z": -9.422953
+          },
+          "ControlType": 1,
+          "Control1": {
+            "X": 5.77643,
+            "Y": 1.071899,
+            "Z": 6.479925
+          },
+          "Control2": {
+            "X": -5.77643,
+            "Y": -1.071899,
+            "Z": -6.479925
+          },
+          "Alias": "2"
+        },
+        {
+          "ControlType": 1,
+          "Control1": {
+            "X": 0.095829,
+            "Z": -6.524168
+          },
+          "Control2": {
+            "X": -0.095829,
+            "Z": 6.524168
+          },
+          "Alias": "End"
+        }
+      ],
+      "Name": "Curve1",
+      "RotY": 270,
+      "ID": 1,
+      "PosX": 2.304,
+      "PosY": 815.428,
+      "PosZ": 735.26
+    }
+  ],
+  "LittleGameList": []
+}

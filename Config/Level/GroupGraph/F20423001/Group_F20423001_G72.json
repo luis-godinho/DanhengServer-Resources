@@ -1,0 +1,110 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvOnButtonPressed",
+          "ButtonName": "Interaction_G72",
+          "OnPressedCallback": [
+            {
+              "$type": "RPG.GameCore.TriggerPerformance",
+              "ValueSource": {},
+              "PerformanceType": "E",
+              "PerformanceID": 104030740,
+              "MaskConfig": {
+                "UseExcelData": false,
+                "StartBlack": "None",
+                "EndBlack": "NoPost",
+                "MaskColor": "White"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.TriggerPerformance",
+              "ValueSource": {},
+              "PerformanceType": "D",
+              "PerformanceID": 104030715,
+              "MaskConfig": {
+                "UseExcelData": false,
+                "StartBlack": "NoPre",
+                "EndBlack": "None",
+                "MaskColor": "White"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.PlayFullScreenTransfer",
+              "PrevDuration": 0
+            },
+            {
+              "$type": "RPG.GameCore.ClientFinishMission",
+              "SubmissionID": 104030711
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvSetupButtonListTrigger",
+          "TargetType": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "TargetType": "Prop",
+            "Targets": [
+              300001
+            ]
+          },
+          "TriggerName": "MissionTrigger",
+          "ButtonsByName": [],
+          "ButtonConfigs": [
+            {
+              "ID": "Interaction_G72",
+              "IconType": "ChatIcon",
+              "ButtonText": {
+                "Value": "PropInteractTitle_5"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PlayMissionTalk",
+          "SimpleTalkList": [
+            {
+              "TalkSentenceID": 140309230,
+              "ProtectTime": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvClientChangePropState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+            "FetchType": "SinglePropByPropID",
+            "SinglePropID": {
+              "GroupID": {
+                "FixedValue": {
+                  "Value": 72
+                }
+              },
+              "ID": {
+                "FixedValue": {
+                  "Value": 300001
+                }
+              }
+            }
+          },
+          "FromState": "Open"
+        }
+      ]
+    }
+  ],
+  "Type": "Group"
+}

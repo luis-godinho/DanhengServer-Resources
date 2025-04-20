@@ -10,32 +10,36 @@
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 425201762304
+                "FixedValue": {
+                  "Value": 99
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288494483767296
+                "FixedValue": {
+                  "Value": 300001
                 }
               }
             }
           },
-          "TargetGroupID": {},
-          "TargetID": {},
+          "TargetGroupID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "TargetID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
           "TargetTypes": [],
           "OnTriggerEnter": [
             {
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "Mission_101150221_Prop_99_300001_OnEnter"
-              },
-              "TaskEnabled": true
+              }
             }
-          ],
-          "SkipFakeAvatar": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     },
@@ -46,23 +50,19 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Mission_101150221_Prop_99_300001_OnEnter"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.TriggerPerformance",
           "ValueSource": {},
           "PerformanceType": "E",
-          "PerformanceID": 101150221,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 101150221
         },
         {
           "$type": "RPG.GameCore.TriggerCustomString",
           "CustomString": {
             "Value": "Talk_101150221_2"
-          },
-          "TaskEnabled": true
+          }
         }
       ]
     },
@@ -72,36 +72,28 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Talk_101150221"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Talk_101150221_2"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.SetAudioEmotionState",
           "StateName": "State_Esilence",
-          "SubMissionID": 101150221,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "SubMissionID": 101150221
         },
         {
           "$type": "RPG.GameCore.TriggerPerformance",
           "ValueSource": {},
           "PerformanceType": "PlayVideo",
-          "PerformanceID": 101150200,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 101150200
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_101150221",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_101150221"
         }
       ]
     }

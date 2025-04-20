@@ -7,9 +7,7 @@
           "$type": "RPG.GameCore.ShowEnvBuffDialog",
           "RaidID": 4013101,
           "IsAutoGetParam": true,
-          "OnCancel": [],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "OnCancel": []
         }
       ]
     },
@@ -22,33 +20,37 @@
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 47244640256
+                "FixedValue": {
+                  "Value": 11
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288494483767296
+                "FixedValue": {
+                  "Value": 300001
                 }
               }
             },
             "MultiPropID": []
           },
-          "TargetGroupID": {},
-          "TargetID": {},
+          "TargetGroupID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "TargetID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
           "TargetTypes": [],
           "OnTriggerEnter": [
             {
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "Mission_407131301"
-              },
-              "TaskEnabled": true
+              }
             }
-          ],
-          "SkipFakeAvatar": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     },
@@ -59,31 +61,22 @@
           "CustomString": {
             "Value": "Mission_407131301"
           },
-          "GoNextImmediately": true,
-          "TaskEnabled": true
+          "GoNextImmediately": true
         },
         {
           "$type": "RPG.GameCore.TriggerPerformance",
           "ValueSource": {},
           "PerformanceType": "E",
-          "PerformanceID": 407131301,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 407131301
         },
         {
           "$type": "RPG.GameCore.PlayScreenTransfer",
-          "Type": "Black",
           "Mode": "SwitchOut",
-          "CustomTime": 0.5,
-          "SwitchInEndTaskAfterUIClose": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "CustomTime": 0.5
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_407131301",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_407131301"
         }
       ]
     }

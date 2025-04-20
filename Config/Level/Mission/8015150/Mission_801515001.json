@@ -6,22 +6,17 @@
       "TaskList": [
         {
           "$type": "RPG.GameCore.WaitUIControllerClose",
-          "UIControllerName": "HeliobusActionDayResultPerformanceDialog",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "UIControllerName": "HeliobusActionDayResultPerformanceDialog"
         },
         {
           "$type": "RPG.GameCore.WaitUIControllerClose",
-          "UIControllerName": "HeliobusActionDayResultPage",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "UIControllerName": "HeliobusActionDayResultPage"
         },
         {
           "$type": "RPG.GameCore.TriggerCustomString",
           "CustomString": {
             "Value": "801515001start"
-          },
-          "TaskEnabled": true
+          }
         }
       ]
     },
@@ -31,8 +26,7 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "801515001start"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.PropSetupTrigger",
@@ -41,13 +35,13 @@
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 279172874240
+                "FixedValue": {
+                  "Value": 65
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288494483767296
+                "FixedValue": {
+                  "Value": 300001
                 }
               }
             }
@@ -59,13 +53,9 @@
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "801515001p"
-              },
-              "TaskEnabled": true
+              }
             }
-          ],
-          "SkipFakeAvatar": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     },
@@ -75,23 +65,19 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "801515001p"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.TriggerPerformance",
           "ValueSource": {},
           "PerformanceType": "D",
-          "PerformanceID": 801515001,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 801515001
         },
         {
           "$type": "RPG.GameCore.TriggerCustomString",
           "CustomString": {
             "Value": "Talk_801515001"
-          },
-          "TaskEnabled": true
+          }
         }
       ]
     },
@@ -102,14 +88,11 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Talk_801515001"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_801515001",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_801515001"
         }
       ]
     }

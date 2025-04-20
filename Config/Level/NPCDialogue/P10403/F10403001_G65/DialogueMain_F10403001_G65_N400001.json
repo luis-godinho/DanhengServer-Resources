@@ -1,0 +1,58 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CollectDataConditions",
+          "TaskIDList": [],
+          "MainMissionIDList": [],
+          "PerformanceIDList": [],
+          "PerformanceIDDsList": [],
+          "CustomValueMainMissionIDList": [
+            1040302
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.TriggerPerformance",
+          "ValueSource": {},
+          "PerformanceType": "D",
+          "PerformanceID": 104030213,
+          "MaskConfig": {
+            "UseExcelData": false,
+            "EndBlack": "NoPost"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByCompareMissionCustomValue",
+            "MainMissionID": 1040302,
+            "MissionCustomValue": {
+              "Index": 1,
+              "ValidValueParamList": [
+                0,
+                1
+              ]
+            },
+            "EquationType": "Equal",
+            "TargetValue": 1
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.ClientFinishMission",
+              "SubmissionID": 104030209
+            }
+          ],
+          "FailedTaskList": [
+            {
+              "$type": "RPG.GameCore.PlayFullScreenTransfer",
+              "PrevDuration": -1,
+              "KeepDuration": 0.3
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

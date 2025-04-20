@@ -1,0 +1,101 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitPredicateSucc"
+        },
+        {
+          "$type": "RPG.GameCore.SetFloorSavedValue"
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitEntityEvent",
+          "EventName": {
+            "Value": "MazeSkillUsed"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.SetFloorCustomFloat",
+              "Name": {
+                "Value": "MazeSkillUsed"
+              },
+              "Value": {
+                "FixedValue": {
+                  "Value": 1
+                }
+              }
+            }
+          ],
+          "InstanceID": {
+            "FixedValue": {
+              "Value": 300001
+            }
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitEntityEvent",
+          "EventName": {
+            "Value": "InMazeSkillTrigger1"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.SetFloorCustomFloat",
+              "Name": {
+                "Value": "InMazeSkillTrigger"
+              },
+              "Value": {
+                "FixedValue": {
+                  "Value": 1
+                }
+              }
+            }
+          ],
+          "InstanceID": {
+            "FixedValue": {
+              "Value": 300002
+            }
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitEntityEvent",
+          "EventName": {
+            "Value": "InMazeSkillTrigger0"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.SetFloorCustomFloat",
+              "Name": {
+                "Value": "InMazeSkillTrigger"
+              },
+              "Value": {
+                "FixedValue": {
+                  "Value": 0
+                }
+              }
+            }
+          ],
+          "InstanceID": {
+            "FixedValue": {
+              "Value": 300002
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "Type": "Group",
+  "EntityEventList": []
+}

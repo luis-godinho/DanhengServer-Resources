@@ -1,0 +1,33 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.SetUpPamAIDialogue"
+        },
+        {
+          "$type": "RPG.GameCore.TriggerPerformance",
+          "ValueSource": {},
+          "PerformanceType": "E",
+          "PerformanceID_DS": {
+            "Custom": true,
+            "Key": "PamPerformance"
+          },
+          "MaskConfig": {}
+        },
+        {
+          "$type": "RPG.GameCore.ShowMenu"
+        }
+      ]
+    }
+  ],
+  "ValueSource": {
+    "Values": [
+      {
+        "$type": "RPG.GameCore.SharedString",
+        "Key": "PamPerformance"
+      }
+    ]
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CollectDataConditions",
+          "TaskIDList": [
+            802350102
+          ],
+          "MainMissionIDList": [],
+          "PerformanceIDList": [],
+          "PerformanceIDDsList": [],
+          "CustomValueMainMissionIDList": []
+        },
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "EnterDistrict_G303"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareSubMissionState",
+                "SubMissionID": 802350102,
+                "SubMissionState": "Started"
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.TriggerPerformance",
+                  "ValueSource": {},
+                  "PerformanceType": "E",
+                  "PerformanceID": 802351101,
+                  "MaskConfig": {
+                    "UseExcelData": false,
+                    "StartBlack": "None",
+                    "EndBlack": "None"
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.ClientFinishMission",
+                  "SubmissionID": 802350102
+                }
+              ],
+              "FailedTaskList": [
+                {
+                  "$type": "RPG.GameCore.PlayMissionTalk",
+                  "StartSentenceID": {
+                    "FixedValue": {
+                      "Value": 802350100
+                    }
+                  },
+                  "EndSentenceID": {
+                    "FixedValue": {
+                      "Value": 802350100
+                    }
+                  },
+                  "SimpleTalkList": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "Type": "Group"
+}

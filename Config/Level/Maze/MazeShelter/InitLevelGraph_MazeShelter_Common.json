@@ -1,0 +1,39 @@
+{
+  "OnInitSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvDistrictSetupTrigger",
+          "OnEnter": [
+            {
+              "$type": "RPG.GameCore.ToastPile",
+              "DescTextID": {
+                "Hash": 11640875393877749628
+              }
+            },
+            {
+              "$type": "RPG.GameCore.TriggerEnterSafeUI"
+            }
+          ],
+          "OnExit": [
+            {
+              "$type": "RPG.GameCore.ToastPile",
+              "DescTextID": {
+                "Hash": 16672914075016161249
+              }
+            },
+            {
+              "$type": "RPG.GameCore.TriggerEnterSafeUI",
+              "IsEnterSafe": false
+            }
+          ],
+          "IsOverrideValidGuestConfig": true,
+          "OverridedValidGuestConfig": {
+            "FakePlayer": true
+          }
+        }
+      ]
+    }
+  ],
+  "OnStartSequece": []
+}

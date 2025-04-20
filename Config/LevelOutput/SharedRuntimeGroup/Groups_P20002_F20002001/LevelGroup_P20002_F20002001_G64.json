@@ -1,8 +1,8 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "N2_Raid_2000205",
   "ConfigPrefabPath": "Level/Maze/Chapter01/Chap01_MAZ_M203_LevelArea.prefab",
   "AreaAnchorName": "LevelArea_P20002_F20002001_G64",
-  "SaveType": "Permanent",
   "LoadCondition": {
     "Conditions": [
       {
@@ -14,8 +14,6 @@
   "LoadSide": "Server",
   "GroupRefreshID": 1,
   "ConflictIDList": [],
-  "StreamingTemplateType": "Standard",
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
   "AnchorList": [
     {
       "Name": "Anchor1",
@@ -29,29 +27,7 @@
   "MonsterList": [],
   "PropList": [
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 100,
-      "LoadOnInitial": true,
       "IsOverrideInitLevelGraph": true,
       "InitLevelGraph": "Config/Level/Raid/Common_Raid_OpenEntrance.json",
       "ValueSource": {
@@ -71,44 +47,20 @@
             "Value": 400001,
             "Key": "NPCID"
           }
-        ],
-        "SharedValues": [
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "4000202",
-            "Key": "RaidID"
-          },
-          {
-            "$type": "RPG.GameCore.SharedInt",
-            "Value": 64,
-            "Key": "NPCGroupID"
-          },
-          {
-            "$type": "RPG.GameCore.SharedInt",
-            "Value": 400001,
-            "Key": "NPCID"
-          }
         ]
       },
       "Trigger": {
-        "Radius": 1.0,
-        "DimX": 1.0,
-        "DimY": 1.0,
-        "DimZ": 1.0,
+        "Radius": 1,
+        "DimX": 1,
+        "DimY": 1,
+        "DimZ": 1,
         "PointList": []
       },
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "Name": "Prop1",
       "ID": 300001,
       "PosX": -113.8046,
@@ -123,13 +75,12 @@
   "NPCList": [
     {
       "NPCID": 10120,
-      "LoadOnInitial": true,
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [
         200020801
       ],
       "ServerInteractVerificationIDList": [],
       "DefaultIdleStateName": "Akimbo02Loop",
+      "DefaultLookAtMode": "Closed",
       "MappingInfoID": 1407,
       "BoardShowList": [
         4,
@@ -137,11 +88,9 @@
         64
       ],
       "OverrideNPCName": {
-        "Hash": 1698982866,
-        "Hash64": 11720791470970770601
+        "Hash": 11720791470970770601
       },
       "TalkDialogGroupIDList": [],
-      "DefaultAnimationType": "FreeStyle",
       "DefaultIdleFreeStyleMotionID": 100010209,
       "IsMapContent": true,
       "MiniMapIconType": 14,
@@ -149,11 +98,8 @@
       "InitialHiddenNodeList": [],
       "Dialog": {
         "LevelGraph": "Config/Level/NPCDialogue/P20002/F20002001_G64/DialogueMain_F20002001_G64_N400001.json",
-        "PackList": [],
-        "EnableDialogCamera": true
+        "PackList": []
       },
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "RaidID": 4000202,
       "Name": "NPC1",
       "RotY": 152.2614,

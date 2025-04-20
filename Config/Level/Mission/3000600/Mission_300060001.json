@@ -11,25 +11,25 @@
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 360777252864
+                "FixedValue": {
+                  "Value": 84
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288498778734592
+                "FixedValue": {
+                  "Value": 300002
                 }
               }
             }
           },
           "TargetGroupID": {
-            "fixedValue": {
-              "RawValue": 360777252864
+            "FixedValue": {
+              "Value": 84
             }
           },
           "TargetID": {
-            "fixedValue": {
-              "RawValue": 1288498778734592
+            "FixedValue": {
+              "Value": 300002
             }
           },
           "TargetTypes": [],
@@ -38,13 +38,9 @@
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "300060001_Bubble"
-              },
-              "TaskEnabled": true
+              }
             }
-          ],
-          "SkipFakeAvatar": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     },
@@ -55,30 +51,24 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "300060001_Bubble"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.PlayNPCBubbleTalk",
           "BubbleTalkInfoList": [
             {
-              "AutoSkipTime": 3.0,
+              "AutoSkipTime": 3,
               "GroupID": 84,
               "GroupNpcID": 400001,
               "TalkSentenceID": 300060145
             },
             {
-              "AutoSkipTime": 3.0,
+              "AutoSkipTime": 3,
               "GroupID": 84,
               "GroupNpcID": 400002,
               "TalkSentenceID": 300060146
             }
-          ],
-          "BubbleTalkType": "Normal",
-          "LoopInterval": 1.0,
-          "InstantFinish": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     },
@@ -90,39 +80,33 @@
           "ButtonIcon": "SpriteOutput/TalkIcon/CheckIcon.png",
           "IconType": "CheckIcon",
           "ButtonText": {
-            "Hash": 278713941,
-            "Hash64": 9043410032120036605
+            "Hash": 9043410032120036605
           },
           "ButtonCallback": [
             {
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "300060001_Finish"
-              },
-              "TaskEnabled": true
+              }
             }
           ],
-          "InteractAngleRange": 180.0,
           "OverrideTargetTypes": [],
-          "SkipFakeAvatar": true,
           "TargetType": {
             "$type": "RPG.GameCore.TargetFetchAdvPropEx",
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 360777252864
+                "FixedValue": {
+                  "Value": 84
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288494483767296
+                "FixedValue": {
+                  "Value": 300001
                 }
               }
             }
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         }
       ]
     },
@@ -132,22 +116,17 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "300060001_Finish"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.TriggerPerformance",
           "ValueSource": {},
           "PerformanceType": "E",
-          "PerformanceID": 300060001,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 300060001
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_300060001",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_300060001"
         }
       ]
     }

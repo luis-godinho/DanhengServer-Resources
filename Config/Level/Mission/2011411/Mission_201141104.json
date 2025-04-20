@@ -6,18 +6,16 @@
         {
           "$type": "RPG.GameCore.CreateProp",
           "GroupID": {
-            "fixedValue": {
-              "RawValue": 790273982464
+            "FixedValue": {
+              "Value": 184
             }
           },
           "GroupPropID": {
-            "fixedValue": {
-              "RawValue": 1288494483767296
+            "FixedValue": {
+              "Value": 300001
             }
           },
-          "CreateList": [],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "CreateList": []
         },
         {
           "$type": "RPG.GameCore.PropSetupTrigger",
@@ -26,19 +24,27 @@
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 790273982464
+                "FixedValue": {
+                  "Value": 184
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288494483767296
+                "FixedValue": {
+                  "Value": 300001
                 }
               }
             }
           },
-          "TargetGroupID": {},
-          "TargetID": {},
+          "TargetGroupID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "TargetID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
           "TargetTypes": [],
           "DestroyAfterTriggered": true,
           "OnTriggerEnter": [
@@ -46,13 +52,9 @@
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "EnterArea_201141104"
-              },
-              "TaskEnabled": true
+              }
             }
-          ],
-          "SkipFakeAvatar": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     },
@@ -63,31 +65,25 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "EnterArea_201141104"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.TriggerPerformance",
           "ValueSource": {},
           "PerformanceType": "D",
-          "PerformanceID": 201141103,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 201141103
         },
         {
           "$type": "RPG.GameCore.TriggerPerformance",
           "ValueSource": {},
           "PerformanceType": "C",
-          "PerformanceID": 201141104,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 201141104
         },
         {
           "$type": "RPG.GameCore.TriggerCustomString",
           "CustomString": {
             "Value": "PrformanceFinish_201141104"
-          },
-          "TaskEnabled": true
+          }
         }
       ]
     },
@@ -97,21 +93,17 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "PrformanceFinish_201141104"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.TriggerCustomString",
           "CustomString": {
             "Value": "EnterRaid_4010106"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_201141104",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_201141104"
         }
       ]
     }

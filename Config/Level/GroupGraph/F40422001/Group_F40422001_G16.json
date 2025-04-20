@@ -1,0 +1,1191 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.SetMissionCustomValue",
+          "SubmissionID": 104031902,
+          "MissionCustomValue": {
+            "isLocal": true,
+            "isRange": true,
+            "ValidValueParamList": [
+              0,
+              10
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "GroupEvent_G91"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.SetMissionCustomValue",
+              "SubmissionID": 104031902,
+              "MissionCustomValue": {
+                "isLocal": true,
+                "isRange": true,
+                "ValidValueParamList": [
+                  0,
+                  10
+                ]
+              },
+              "CustomValue": 1
+            },
+            {
+              "$type": "RPG.GameCore.TriggerGroupEvent",
+              "EventName": {
+                "Value": "GroupEvent_PlayBubble"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvSetupCustomTaskTrigger",
+          "TargetType": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "TargetType": "Prop",
+            "Targets": [
+              300001
+            ]
+          },
+          "TriggerName": "MissionTrigger",
+          "OnEnter": [
+            {
+              "$type": "RPG.GameCore.TriggerGroupEvent",
+              "EventName": {
+                "Value": "GroupEvent_G91"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CollectDataConditions",
+          "TaskIDList": [],
+          "MainMissionIDList": [],
+          "PerformanceIDList": [],
+          "PerformanceIDDsList": [],
+          "CustomValueMainMissionIDList": [
+            1040319
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "GroupEvent_G98"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareMissionCustomValue",
+                "MainMissionID": 1040319,
+                "MissionCustomValue": {
+                  "isLocal": true,
+                  "isRange": true,
+                  "ValidValueParamList": [
+                    0,
+                    10
+                  ]
+                },
+                "EquationType": "GreaterEqual",
+                "TargetValue": 1
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.PlayMissionTalk",
+                  "SimpleTalkList": [
+                    {
+                      "TalkSentenceID": 140313201,
+                      "ProtectTime": 2
+                    },
+                    {
+                      "TalkSentenceID": 140313202,
+                      "ProtectTime": 2
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.PlayFullScreenTransfer",
+                  "KeepDuration": 0.25,
+                  "Action": [
+                    {
+                      "$type": "RPG.GameCore.ScrTrfActTaskList",
+                      "TaskList": [
+                        {
+                          "$type": "RPG.GameCore.SwitchCharacterAnchorV2",
+                          "SwitchCharacterAnchorConfig": {
+                            "IsLocalPlayer": true,
+                            "CharacterUniqueName": "LocalPlayer",
+                            "AreaName": {
+                              "Value": "LevelArea_P40422_F40422001_G9"
+                            },
+                            "AnchorName": {
+                              "Value": "Anchor1"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvSetupCustomTaskTrigger",
+          "TargetType": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "TargetType": "Prop",
+            "Targets": [
+              300008
+            ]
+          },
+          "TriggerName": "MissionTrigger",
+          "OnEnter": [
+            {
+              "$type": "RPG.GameCore.TriggerGroupEvent",
+              "EventName": {
+                "Value": "GroupEvent_G98"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "GroupEvent_G92"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.SetMissionCustomValue",
+              "SubmissionID": 104031902,
+              "MissionCustomValue": {
+                "isLocal": true,
+                "isRange": true,
+                "ValidValueParamList": [
+                  0,
+                  10
+                ]
+              },
+              "CustomValue": 2
+            },
+            {
+              "$type": "RPG.GameCore.TriggerGroupEvent",
+              "EventName": {
+                "Value": "GroupEvent_PlayBubble"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvSetupCustomTaskTrigger",
+          "TargetType": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "TargetType": "Prop",
+            "Targets": [
+              300002
+            ]
+          },
+          "TriggerName": "MissionTrigger",
+          "OnEnter": [
+            {
+              "$type": "RPG.GameCore.TriggerGroupEvent",
+              "EventName": {
+                "Value": "GroupEvent_G92"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CollectDataConditions",
+          "TaskIDList": [],
+          "MainMissionIDList": [],
+          "PerformanceIDList": [],
+          "PerformanceIDDsList": [],
+          "CustomValueMainMissionIDList": [
+            1040319
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "GroupEvent_G99"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareMissionCustomValue",
+                "MainMissionID": 1040319,
+                "MissionCustomValue": {
+                  "isLocal": true,
+                  "isRange": true,
+                  "ValidValueParamList": [
+                    0,
+                    10
+                  ]
+                },
+                "EquationType": "GreaterEqual",
+                "TargetValue": 2
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.PlayMissionTalk",
+                  "SimpleTalkList": [
+                    {
+                      "TalkSentenceID": 140313205,
+                      "ProtectTime": 2
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.PlayFullScreenTransfer",
+                  "KeepDuration": 0.25,
+                  "Action": [
+                    {
+                      "$type": "RPG.GameCore.ScrTrfActTaskList",
+                      "TaskList": [
+                        {
+                          "$type": "RPG.GameCore.SwitchCharacterAnchorV2",
+                          "SwitchCharacterAnchorConfig": {
+                            "IsLocalPlayer": true,
+                            "CharacterUniqueName": "LocalPlayer",
+                            "AreaName": {
+                              "Value": "LevelArea_P40422_F40422001_G9"
+                            },
+                            "AnchorName": {
+                              "Value": "Anchor2"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvSetupCustomTaskTrigger",
+          "TargetType": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "TargetType": "Prop",
+            "Targets": [
+              300009
+            ]
+          },
+          "TriggerName": "MissionTrigger",
+          "OnEnter": [
+            {
+              "$type": "RPG.GameCore.TriggerGroupEvent",
+              "EventName": {
+                "Value": "GroupEvent_G99"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "GroupEvent_G93"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.SetMissionCustomValue",
+              "SubmissionID": 104031902,
+              "MissionCustomValue": {
+                "isLocal": true,
+                "isRange": true,
+                "ValidValueParamList": [
+                  0,
+                  10
+                ]
+              },
+              "CustomValue": 3
+            },
+            {
+              "$type": "RPG.GameCore.TriggerGroupEvent",
+              "EventName": {
+                "Value": "GroupEvent_PlayBubble"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvSetupCustomTaskTrigger",
+          "TargetType": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "TargetType": "Prop",
+            "Targets": [
+              300003
+            ]
+          },
+          "TriggerName": "MissionTrigger",
+          "OnEnter": [
+            {
+              "$type": "RPG.GameCore.TriggerGroupEvent",
+              "EventName": {
+                "Value": "GroupEvent_G93"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CollectDataConditions",
+          "TaskIDList": [],
+          "MainMissionIDList": [],
+          "PerformanceIDList": [],
+          "PerformanceIDDsList": [],
+          "CustomValueMainMissionIDList": [
+            1040319
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "GroupEvent_G910"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareMissionCustomValue",
+                "MainMissionID": 1040319,
+                "MissionCustomValue": {
+                  "isLocal": true,
+                  "isRange": true,
+                  "ValidValueParamList": [
+                    0,
+                    10
+                  ]
+                },
+                "EquationType": "GreaterEqual",
+                "TargetValue": 3
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.PlayMissionTalk",
+                  "SimpleTalkList": [
+                    {
+                      "TalkSentenceID": 140313206,
+                      "ProtectTime": 2
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.PlayFullScreenTransfer",
+                  "KeepDuration": 0.25,
+                  "Action": [
+                    {
+                      "$type": "RPG.GameCore.ScrTrfActTaskList",
+                      "TaskList": [
+                        {
+                          "$type": "RPG.GameCore.SwitchCharacterAnchorV2",
+                          "SwitchCharacterAnchorConfig": {
+                            "IsLocalPlayer": true,
+                            "CharacterUniqueName": "LocalPlayer",
+                            "AreaName": {
+                              "Value": "LevelArea_P40422_F40422001_G9"
+                            },
+                            "AnchorName": {
+                              "Value": "Anchor3"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvSetupCustomTaskTrigger",
+          "TargetType": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "TargetType": "Prop",
+            "Targets": [
+              300010
+            ]
+          },
+          "TriggerName": "MissionTrigger",
+          "OnEnter": [
+            {
+              "$type": "RPG.GameCore.TriggerGroupEvent",
+              "EventName": {
+                "Value": "GroupEvent_G910"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "GroupEvent_G94"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.SetMissionCustomValue",
+              "SubmissionID": 104031902,
+              "MissionCustomValue": {
+                "isLocal": true,
+                "isRange": true,
+                "ValidValueParamList": [
+                  0,
+                  10
+                ]
+              },
+              "CustomValue": 4
+            },
+            {
+              "$type": "RPG.GameCore.TriggerGroupEvent",
+              "EventName": {
+                "Value": "GroupEvent_PlayBubble"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvSetupCustomTaskTrigger",
+          "TargetType": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "TargetType": "Prop",
+            "Targets": [
+              300004
+            ]
+          },
+          "TriggerName": "MissionTrigger",
+          "OnEnter": [
+            {
+              "$type": "RPG.GameCore.TriggerGroupEvent",
+              "EventName": {
+                "Value": "GroupEvent_G94"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CollectDataConditions",
+          "TaskIDList": [],
+          "MainMissionIDList": [],
+          "PerformanceIDList": [],
+          "PerformanceIDDsList": [],
+          "CustomValueMainMissionIDList": [
+            1040319
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "GroupEvent_G911"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareMissionCustomValue",
+                "MainMissionID": 1040319,
+                "MissionCustomValue": {
+                  "isLocal": true,
+                  "isRange": true,
+                  "ValidValueParamList": [
+                    0,
+                    10
+                  ]
+                },
+                "EquationType": "GreaterEqual",
+                "TargetValue": 4
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.PlayMissionTalk",
+                  "SimpleTalkList": [
+                    {
+                      "TalkSentenceID": 140313208,
+                      "ProtectTime": 2
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.PlayFullScreenTransfer",
+                  "KeepDuration": 0.25,
+                  "Action": [
+                    {
+                      "$type": "RPG.GameCore.ScrTrfActTaskList",
+                      "TaskList": [
+                        {
+                          "$type": "RPG.GameCore.SwitchCharacterAnchorV2",
+                          "SwitchCharacterAnchorConfig": {
+                            "IsLocalPlayer": true,
+                            "CharacterUniqueName": "LocalPlayer",
+                            "AreaName": {
+                              "Value": "LevelArea_P40422_F40422001_G9"
+                            },
+                            "AnchorName": {
+                              "Value": "Anchor4"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvSetupCustomTaskTrigger",
+          "TargetType": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "TargetType": "Prop",
+            "Targets": [
+              300011
+            ]
+          },
+          "TriggerName": "MissionTrigger",
+          "OnEnter": [
+            {
+              "$type": "RPG.GameCore.TriggerGroupEvent",
+              "EventName": {
+                "Value": "GroupEvent_G911"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "GroupEvent_G95"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.SetMissionCustomValue",
+              "SubmissionID": 104031902,
+              "MissionCustomValue": {
+                "isLocal": true,
+                "isRange": true,
+                "ValidValueParamList": [
+                  0,
+                  10
+                ]
+              },
+              "CustomValue": 5
+            },
+            {
+              "$type": "RPG.GameCore.TriggerGroupEvent",
+              "EventName": {
+                "Value": "GroupEvent_PlayBubble"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvSetupCustomTaskTrigger",
+          "TargetType": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "TargetType": "Prop",
+            "Targets": [
+              300005
+            ]
+          },
+          "TriggerName": "MissionTrigger",
+          "OnEnter": [
+            {
+              "$type": "RPG.GameCore.TriggerGroupEvent",
+              "EventName": {
+                "Value": "GroupEvent_G95"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CollectDataConditions",
+          "TaskIDList": [],
+          "MainMissionIDList": [],
+          "PerformanceIDList": [],
+          "PerformanceIDDsList": [],
+          "CustomValueMainMissionIDList": [
+            1040319
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "GroupEvent_G912"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareMissionCustomValue",
+                "MainMissionID": 1040319,
+                "MissionCustomValue": {
+                  "isLocal": true,
+                  "isRange": true,
+                  "ValidValueParamList": [
+                    0,
+                    10
+                  ]
+                },
+                "EquationType": "GreaterEqual",
+                "TargetValue": 5
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.PlayMissionTalk",
+                  "SimpleTalkList": [
+                    {
+                      "TalkSentenceID": 140313207,
+                      "ProtectTime": 2
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.PlayFullScreenTransfer",
+                  "KeepDuration": 0.25,
+                  "Action": [
+                    {
+                      "$type": "RPG.GameCore.ScrTrfActTaskList",
+                      "TaskList": [
+                        {
+                          "$type": "RPG.GameCore.SwitchCharacterAnchorV2",
+                          "SwitchCharacterAnchorConfig": {
+                            "IsLocalPlayer": true,
+                            "CharacterUniqueName": "LocalPlayer",
+                            "AreaName": {
+                              "Value": "LevelArea_P40422_F40422001_G9"
+                            },
+                            "AnchorName": {
+                              "Value": "Anchor5"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvSetupCustomTaskTrigger",
+          "TargetType": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "TargetType": "Prop",
+            "Targets": [
+              300012
+            ]
+          },
+          "TriggerName": "MissionTrigger",
+          "OnEnter": [
+            {
+              "$type": "RPG.GameCore.TriggerGroupEvent",
+              "EventName": {
+                "Value": "GroupEvent_G912"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "GroupEvent_G96"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.SetMissionCustomValue",
+              "SubmissionID": 104031902,
+              "MissionCustomValue": {
+                "isLocal": true,
+                "isRange": true,
+                "ValidValueParamList": [
+                  0,
+                  10
+                ]
+              },
+              "CustomValue": 6
+            },
+            {
+              "$type": "RPG.GameCore.TriggerGroupEvent",
+              "EventName": {
+                "Value": "GroupEvent_PlayBubble"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvSetupCustomTaskTrigger",
+          "TargetType": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "TargetType": "Prop",
+            "Targets": [
+              300006
+            ]
+          },
+          "TriggerName": "MissionTrigger",
+          "OnEnter": [
+            {
+              "$type": "RPG.GameCore.TriggerGroupEvent",
+              "EventName": {
+                "Value": "GroupEvent_G96"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CollectDataConditions",
+          "TaskIDList": [],
+          "MainMissionIDList": [],
+          "PerformanceIDList": [],
+          "PerformanceIDDsList": [],
+          "CustomValueMainMissionIDList": [
+            1040319
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "GroupEvent_G913"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareMissionCustomValue",
+                "MainMissionID": 1040319,
+                "MissionCustomValue": {
+                  "isLocal": true,
+                  "isRange": true,
+                  "ValidValueParamList": [
+                    0,
+                    10
+                  ]
+                },
+                "EquationType": "GreaterEqual",
+                "TargetValue": 6
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.PlayMissionTalk",
+                  "SimpleTalkList": [
+                    {
+                      "TalkSentenceID": 140313209,
+                      "ProtectTime": 2
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.PlayFullScreenTransfer",
+                  "KeepDuration": 0.25,
+                  "Action": [
+                    {
+                      "$type": "RPG.GameCore.ScrTrfActTaskList",
+                      "TaskList": [
+                        {
+                          "$type": "RPG.GameCore.SwitchCharacterAnchorV2",
+                          "SwitchCharacterAnchorConfig": {
+                            "IsLocalPlayer": true,
+                            "CharacterUniqueName": "LocalPlayer",
+                            "AreaName": {
+                              "Value": "LevelArea_P40422_F40422001_G9"
+                            },
+                            "AnchorName": {
+                              "Value": "Anchor6"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvSetupCustomTaskTrigger",
+          "TargetType": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "TargetType": "Prop",
+            "Targets": [
+              300013
+            ]
+          },
+          "TriggerName": "MissionTrigger",
+          "OnEnter": [
+            {
+              "$type": "RPG.GameCore.TriggerGroupEvent",
+              "EventName": {
+                "Value": "GroupEvent_G913"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "GroupEvent_G97"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.SetMissionCustomValue",
+              "SubmissionID": 104031902,
+              "MissionCustomValue": {
+                "isLocal": true,
+                "isRange": true,
+                "ValidValueParamList": [
+                  0,
+                  10
+                ]
+              },
+              "CustomValue": 7
+            },
+            {
+              "$type": "RPG.GameCore.TriggerGroupEvent",
+              "EventName": {
+                "Value": "GroupEvent_PlayBubble"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvSetupCustomTaskTrigger",
+          "TargetType": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "TargetType": "Prop",
+            "Targets": [
+              300007
+            ]
+          },
+          "TriggerName": "MissionTrigger",
+          "OnEnter": [
+            {
+              "$type": "RPG.GameCore.TriggerGroupEvent",
+              "EventName": {
+                "Value": "GroupEvent_G97"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CollectDataConditions",
+          "TaskIDList": [],
+          "MainMissionIDList": [],
+          "PerformanceIDList": [],
+          "PerformanceIDDsList": [],
+          "CustomValueMainMissionIDList": [
+            1040319
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "GroupEvent_G914"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareMissionCustomValue",
+                "MainMissionID": 1040319,
+                "MissionCustomValue": {
+                  "isLocal": true,
+                  "isRange": true,
+                  "ValidValueParamList": [
+                    0,
+                    10
+                  ]
+                },
+                "EquationType": "GreaterEqual",
+                "TargetValue": 7
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.PlayMissionTalk",
+                  "SimpleTalkList": [
+                    {
+                      "TalkSentenceID": 140313210,
+                      "ProtectTime": 2
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.PlayFullScreenTransfer",
+                  "KeepDuration": 0.25,
+                  "Action": [
+                    {
+                      "$type": "RPG.GameCore.ScrTrfActTaskList",
+                      "TaskList": [
+                        {
+                          "$type": "RPG.GameCore.SwitchCharacterAnchorV2",
+                          "SwitchCharacterAnchorConfig": {
+                            "IsLocalPlayer": true,
+                            "CharacterUniqueName": "LocalPlayer",
+                            "AreaName": {
+                              "Value": "LevelArea_P40422_F40422001_G9"
+                            },
+                            "AnchorName": {
+                              "Value": "Anchor7"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvSetupCustomTaskTrigger",
+          "TargetType": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "TargetType": "Prop",
+            "Targets": [
+              300014
+            ]
+          },
+          "TriggerName": "MissionTrigger",
+          "OnEnter": [
+            {
+              "$type": "RPG.GameCore.TriggerGroupEvent",
+              "EventName": {
+                "Value": "GroupEvent_G914"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "GroupEvent_PlayBubble"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.RandomConfig",
+              "OddsList": [
+                {
+                  "FixedValue": {
+                    "Value": 1
+                  }
+                },
+                {
+                  "FixedValue": {
+                    "Value": 1
+                  }
+                },
+                {
+                  "FixedValue": {
+                    "Value": 1
+                  }
+                },
+                {
+                  "FixedValue": {
+                    "Value": 1
+                  }
+                },
+                {
+                  "FixedValue": {
+                    "Value": 1
+                  }
+                }
+              ],
+              "TaskList": [
+                {
+                  "$type": "RPG.GameCore.PlayNPCBubbleTalk",
+                  "BubbleTalkInfoList": [
+                    {
+                      "GroupID": 16,
+                      "GroupNpcID": 400001,
+                      "TalkSentenceID": 140314001,
+                      "EnableVoice": true
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.PlayNPCBubbleTalk",
+                  "BubbleTalkInfoList": [
+                    {
+                      "GroupID": 16,
+                      "GroupNpcID": 400002,
+                      "TalkSentenceID": 140314002,
+                      "EnableVoice": true
+                    }
+                  ],
+                  "UniqueID": 1
+                },
+                {
+                  "$type": "RPG.GameCore.PlayNPCBubbleTalk",
+                  "BubbleTalkInfoList": [
+                    {
+                      "GroupID": 16,
+                      "GroupNpcID": 400003,
+                      "TalkSentenceID": 140314003,
+                      "EnableVoice": true
+                    }
+                  ],
+                  "UniqueID": 2
+                },
+                {
+                  "$type": "RPG.GameCore.PlayNPCBubbleTalk",
+                  "BubbleTalkInfoList": [
+                    {
+                      "GroupID": 16,
+                      "GroupNpcID": 400004,
+                      "TalkSentenceID": 140314004,
+                      "EnableVoice": true
+                    }
+                  ],
+                  "UniqueID": 3
+                },
+                {
+                  "$type": "RPG.GameCore.PlayNPCBubbleTalk",
+                  "BubbleTalkInfoList": [
+                    {
+                      "GroupID": 16,
+                      "GroupNpcID": 400005,
+                      "TalkSentenceID": 140314005,
+                      "EnableVoice": true
+                    }
+                  ],
+                  "UniqueID": 4
+                }
+              ],
+              "ContinuousNotRepeat": true,
+              "RandomMaskTarget": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "Type": "Group"
+}

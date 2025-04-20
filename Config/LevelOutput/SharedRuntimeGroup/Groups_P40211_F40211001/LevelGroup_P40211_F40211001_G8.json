@@ -1,38 +1,15 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "Gameplay_CallPuppy_ForSpecialVision",
   "AreaAnchorName": "LevelArea_P40211_F40211001_G8",
   "SaveType": "Reset",
   "LoadOnInitial": true,
   "ConflictIDList": [],
-  "StreamingTemplateType": "Standard",
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
   "AnchorList": [],
   "MonsterList": [],
   "PropList": [
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 102028,
-      "LoadOnInitial": true,
       "IsOverrideInitLevelGraph": true,
       "InitLevelGraph": "Config/Level/Props/Chap02/InitLevelGraph_Puzzle_Chap02_SpecialVision_CallPippy.json",
       "ValueSource": {
@@ -87,72 +64,13 @@
             "Value": "Maze_SetPuppy_ByFollow_01",
             "Key": "Maze_SetPuppy_ByFollow"
           }
-        ],
-        "SharedValues": [
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "Maze_TriggerSpecialVision_01",
-            "Key": "Maze_TriggerSpecialVision_Key"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "Maze_StopSpecialVision_01",
-            "Key": "Maze_StopSpecialVision_Key"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "8,400001",
-            "Key": "NPC_Puppy_Key"
-          },
-          {
-            "$type": "RPG.GameCore.SharedInt",
-            "Value": 8,
-            "Key": "NPC_Puppy_GroupID"
-          },
-          {
-            "$type": "RPG.GameCore.SharedInt",
-            "Value": 400001,
-            "Key": "NPC_Puppy_NPCID"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "Maze_AfterCallPuppy_Key_01",
-            "Key": "Maze_AfterCallPuppy_Key"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "Maze_AfterDelPuppy_Key_01",
-            "Key": "Maze_AfterDelPuppy_Key"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "Maze_SetPuppy_Happy_01",
-            "Key": "Maze_SetPuppy_Happy"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "Maze_SetPuppy_Follow_01",
-            "Key": "Maze_SetPuppy_Follow"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "Maze_SetPuppy_ByFollow_01",
-            "Key": "Maze_SetPuppy_ByFollow"
-          }
         ]
       },
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "Name": "PuppyController",
       "ID": 300001
     }
@@ -189,6 +107,7 @@
   "NPCList": [
     {
       "NPCID": 3009,
+      "LoadOnInitial": false,
       "AIConfig": {
         "AIFile": "Config/ConfigAI/Adventure/MazeNPC_FollowPlayer_Special_Puppy_YanqingMission.json",
         "PathwayList": [
@@ -201,20 +120,16 @@
         ],
         "SlaveConfigList": []
       },
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "ServerInteractVerificationIDList": [],
+      "DefaultLookAtMode": "Closed",
       "BoardShowList": [
         4
       ],
       "TalkDialogGroupIDList": [],
-      "DefaultAnimationType": "FreeStyle",
       "DefaultIdleFreeStyleMotionID": 900030000,
-      "BornType": "Mission",
       "IsNeedFade": true,
       "InitialHiddenNodeList": [],
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "Name": "NPC1",
       "RotY": 195.0002,
       "ID": 400001,

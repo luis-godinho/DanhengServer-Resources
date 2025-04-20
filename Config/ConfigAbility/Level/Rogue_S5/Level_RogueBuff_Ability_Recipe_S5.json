@@ -1,0 +1,909 @@
+{
+  "AbilityList": [
+    {
+      "Modifiers": {
+        "StageAbility_673760_Modifier_Sub": {
+          "_CallbackList": [
+            {
+              "Event": "OnPhase1",
+              "CallbackConfig": [
+                {
+                  "$type": "RPG.GameCore.TurnInsertAbility",
+                  "AbilityName": {
+                    "Value": "StageAbility_673670_Insert"
+                  },
+                  "AbilityTarget": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "AllDarkTeam"
+                  },
+                  "InsertAbilityPriority": "AvatarInsertAttackSelf"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "Name": "StageAbility_673670",
+      "OnAdd": [
+        {
+          "$type": "RPG.GameCore.CreateBattleEvent",
+          "EventID": {
+            "FixedValue": {
+              "Value": 44012
+            }
+          },
+          "Team": "TeamNeutral",
+          "TotalDamageTeam": "TeamLight",
+          "OnBattleEventCreate": [
+            {
+              "$type": "RPG.GameCore.AddModifier",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "ParamEntity"
+              },
+              "ModifierName": {
+                "Value": "StageAbility_673760_Modifier_Sub"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.SetActionDelay",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "ParamEntity"
+              },
+              "NormalizedValue": {
+                "FixedValue": {
+                  "Value": 1
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "DynamicValues": {
+        "Floats": {
+          "-2034167767": {}
+        }
+      }
+    },
+    {
+      "Name": "StageAbility_673670_Insert",
+      "TargetInfo": {
+        "TargetType": "InherentTargetEntity"
+      },
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.TriggerAbility",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AbilityInherentTargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "AllDarkTeam"
+          },
+          "AbilityName": {
+            "Value": "StageAbility_673670_Camera"
+          },
+          "IsSkillPerform": true
+        },
+        {
+          "$type": "RPG.GameCore.SetDynamicValueByRandom",
+          "DynamicKey": "_random",
+          "ContextScope": "ContextAbility",
+          "IsInt": true,
+          "Min": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "Max": {
+            "FixedValue": {
+              "Value": 100
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TriggerEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "DarkTeamCenter"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_ActivityProp/Eff_ActivityProp_Rogue_S5/Eff_ActivityProp_Rogue_S5_Elation_Slots_03.prefab",
+          "UniqueEffectName": "673670Slot"
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByCompareDynamicValue",
+            "DynamicKey": {
+              "Value": "_random"
+            },
+            "ContextScope": "ContextAbility",
+            "CompareType": "Less",
+            "CompareValue": {
+              "FixedValue": {
+                "Value": 15
+              }
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.TriggerEffectList",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "DarkTeamCenter"
+              },
+              "EffectList": [
+                {
+                  "EffectPath": "Effects/Eff_Prefab/Eff_ActivityProp/Eff_ActivityProp_Rogue_S5/Eff_ActivityProp_Rogue_S5_Elation_Slots_01.prefab"
+                },
+                {
+                  "EffectPath": "Effects/Eff_Prefab/Eff_ActivityProp/Eff_ActivityProp_Rogue_S5/Eff_ActivityProp_Rogue_S5_Elation_Slots_01.prefab"
+                },
+                {
+                  "EffectPath": "Effects/Eff_Prefab/Eff_ActivityProp/Eff_ActivityProp_Rogue_S5/Eff_ActivityProp_Rogue_S5_Elation_Slots_01.prefab"
+                },
+                {
+                  "EffectPath": "Effects/Eff_Prefab/Eff_ActivityProp/Eff_ActivityProp_Rogue_S5/Eff_ActivityProp_Rogue_S5_Elation_Slots_Hit.prefab"
+                }
+              ]
+            }
+          ],
+          "FailedTaskList": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareDynamicValue",
+                "DynamicKey": {
+                  "Value": "_random"
+                },
+                "ContextScope": "ContextAbility",
+                "CompareType": "Less",
+                "CompareValue": {
+                  "FixedValue": {
+                    "Value": 35
+                  }
+                }
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.TriggerEffectList",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "DarkTeamCenter"
+                  },
+                  "EffectList": [
+                    {
+                      "EffectPath": "Effects/Eff_Prefab/Eff_ActivityProp/Eff_ActivityProp_Rogue_S5/Eff_ActivityProp_Rogue_S5_Elation_Slots_02.prefab"
+                    },
+                    {
+                      "EffectPath": "Effects/Eff_Prefab/Eff_ActivityProp/Eff_ActivityProp_Rogue_S5/Eff_ActivityProp_Rogue_S5_Elation_Slots_02.prefab"
+                    },
+                    {
+                      "EffectPath": "Effects/Eff_Prefab/Eff_ActivityProp/Eff_ActivityProp_Rogue_S5/Eff_ActivityProp_Rogue_S5_Elation_Slots_02.prefab"
+                    }
+                  ]
+                }
+              ],
+              "FailedTaskList": [
+                {
+                  "$type": "RPG.GameCore.TriggerEffectList",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "DarkTeamCenter"
+                  },
+                  "EffectList": [
+                    {
+                      "EffectPath": "Effects/Eff_Prefab/Eff_ActivityProp/Eff_ActivityProp_Rogue_S5/Eff_ActivityProp_Rogue_S5_Elation_Slots_01.prefab"
+                    },
+                    {
+                      "EffectPath": "Effects/Eff_Prefab/Eff_ActivityProp/Eff_ActivityProp_Rogue_S5/Eff_ActivityProp_Rogue_S5_Elation_Slots_02.prefab"
+                    },
+                    {
+                      "EffectPath": "Effects/Eff_Prefab/Eff_ActivityProp/Eff_ActivityProp_Rogue_S5/Eff_ActivityProp_Rogue_S5_Elation_Slots_01.prefab"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "DynamicValues": {
+        "Floats": {
+          "459325696": {}
+        }
+      }
+    },
+    {
+      "Name": "StageAbility_673670_Camera",
+      "TargetInfo": {
+        "TargetType": "InherentTargetEntity"
+      },
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.VCameraConfigChange",
+          "CameraConfig": {
+            "NormalConfig": {
+              "CameraState": "UseSkillPerform",
+              "AnchorTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "DarkTeamCenter"
+              },
+              "IsLocalOffset": true,
+              "AnchorOffset": {
+                "X": 0.001,
+                "Y": 2.5,
+                "Z": -0.501
+              },
+              "AimTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "DarkTeamCenter"
+              },
+              "AimOffset": {
+                "X": 0.001,
+                "Y": 0.7,
+                "Z": 0.001
+              },
+              "FollowPoleAngle": 90,
+              "FollowRadius": 9.5,
+              "FollowDamp": 0.5,
+              "AimDamp": 0.5
+            },
+            "BlendConfig": {
+              "BlendType": "Cut"
+            },
+            "ShowEntityConfig": {
+              "ShowTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AllDarkTeam"
+              },
+              "IsTargetIgnoreCameraDither": true,
+              "IsAliveOnly": false
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.WaitSecond",
+          "WaitTime": {
+            "FixedValue": {
+              "Value": 2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Modifiers": {
+        "Modifier_StageAbility_673480": {
+          "_CallbackList": [
+            {
+              "Event": "OnCreate",
+              "CallbackConfig": [
+                {
+                  "$type": "RPG.GameCore.OwnerEntityAddAbility",
+                  "AbilityName": {
+                    "Value": "StageAbility_673480_Camera"
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.SetDynamicValue",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "ModifierOwnerEntity"
+                  },
+                  "Value": {
+                    "IsDynamic": true,
+                    "PostfixExpr": {
+                      "OpCodes": "AQAR",
+                      "FixedValues": [],
+                      "DynamicHashes": [
+                        909827948
+                      ]
+                    }
+                  },
+                  "DynamicKey": {
+                    "Value": "ChargeAmountTotal"
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.Retarget",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "BattleEventEntityList"
+                  },
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByCompareBattleEventID",
+                    "TargetType": {
+                      "$type": "RPG.GameCore.TargetAlias",
+                      "Alias": "ParamEntity"
+                    },
+                    "TargetBattleEventID": {
+                      "FixedValue": {
+                        "Value": 44006
+                      }
+                    }
+                  },
+                  "ByRandom": true,
+                  "TaskList": [
+                    {
+                      "$type": "RPG.GameCore.ShowAttackTime",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetAlias",
+                        "Alias": "ParamEntity"
+                      },
+                      "BaseAttackTime": {
+                        "IsDynamic": true,
+                        "PostfixExpr": {
+                          "OpCodes": "AQAR",
+                          "FixedValues": [],
+                          "DynamicHashes": [
+                            1884213508
+                          ]
+                        }
+                      },
+                      "IsShow": true
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Event": "OnPhase1",
+              "CallbackConfig": [
+                {
+                  "$type": "RPG.GameCore.RemoveModifier",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "AllLightTeam"
+                  },
+                  "ModifierName": {
+                    "Value": "Modifier_StageAbility_673480_Sub3"
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.TurnInsertAbility",
+                  "AbilityName": {
+                    "Value": "StageAbility_673480_Insert"
+                  },
+                  "AbilityTarget": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "AllDarkTeam"
+                  },
+                  "InsertAbilityPriority": "AvatarInsertAttackSelf",
+                  "DynamicValues": {
+                    "ADF_4": {
+                      "IsDynamic": true,
+                      "PostfixExpr": {
+                        "OpCodes": "AQAR",
+                        "FixedValues": [],
+                        "DynamicHashes": [
+                          909827948
+                        ]
+                      }
+                    },
+                    "ADF_5": {
+                      "IsDynamic": true,
+                      "PostfixExpr": {
+                        "OpCodes": "AQAR",
+                        "FixedValues": [],
+                        "DynamicHashes": [
+                          909827949
+                        ]
+                      }
+                    },
+                    "ADF_6": {
+                      "IsDynamic": true,
+                      "PostfixExpr": {
+                        "OpCodes": "AQAR",
+                        "FixedValues": [],
+                        "DynamicHashes": [
+                          909827946
+                        ]
+                      }
+                    },
+                    "_ChargeAmountTotal": {
+                      "IsDynamic": true,
+                      "PostfixExpr": {
+                        "OpCodes": "AQAR",
+                        "FixedValues": [],
+                        "DynamicHashes": [
+                          1884213508
+                        ]
+                      }
+                    },
+                    "_DifficultyRatio": {
+                      "IsDynamic": true,
+                      "PostfixExpr": {
+                        "OpCodes": "AQAR",
+                        "FixedValues": [],
+                        "DynamicHashes": [
+                          -2034167767
+                        ]
+                      }
+                    }
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.SetDynamicValue",
+                  "Value": {
+                    "IsDynamic": true,
+                    "PostfixExpr": {
+                      "OpCodes": "AQAR",
+                      "FixedValues": [],
+                      "DynamicHashes": [
+                        909827948
+                      ]
+                    }
+                  },
+                  "DynamicKey": {
+                    "Value": "ChargeAmountTotal"
+                  }
+                }
+              ]
+            },
+            {
+              "Event": "OnListenBpChange",
+              "CallbackConfig": [
+                {
+                  "$type": "RPG.GameCore.SetDynamicValueByBPChange",
+                  "DynamicKey": "ChargeAmount",
+                  "ValueType": "UnclampedDelta"
+                },
+                {
+                  "$type": "RPG.GameCore.SetDynamicValue",
+                  "Value": {
+                    "IsDynamic": true,
+                    "PostfixExpr": {
+                      "OpCodes": "AQABAQECEAECEQ==",
+                      "FixedValues": [],
+                      "DynamicHashes": [
+                        1884213508,
+                        1099313850,
+                        533282510
+                      ]
+                    }
+                  },
+                  "DynamicKey": {
+                    "Value": "ChargeAmountTotal"
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.Retarget",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "BattleEventEntityList"
+                  },
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByCompareBattleEventID",
+                    "TargetType": {
+                      "$type": "RPG.GameCore.TargetAlias",
+                      "Alias": "ParamEntity"
+                    },
+                    "TargetBattleEventID": {
+                      "FixedValue": {
+                        "Value": 44006
+                      }
+                    }
+                  },
+                  "ByRandom": true,
+                  "TaskList": [
+                    {
+                      "$type": "RPG.GameCore.ShowAttackTime",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetAlias",
+                        "Alias": "ParamEntity"
+                      },
+                      "BaseAttackTime": {
+                        "IsDynamic": true,
+                        "PostfixExpr": {
+                          "OpCodes": "AQAR",
+                          "FixedValues": [],
+                          "DynamicHashes": [
+                            1884213508
+                          ]
+                        }
+                      },
+                      "IsShow": true
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "DynamicValues": {
+            "Floats": {
+              "533282510": {},
+              "1884213508": {},
+              "909827945": {},
+              "909827942": {},
+              "909827943": {},
+              "909827948": {},
+              "909827949": {},
+              "909827946": {}
+            }
+          }
+        },
+        "Modifier_StageAbility_673480_Sub": {
+          "_CallbackList": [
+            {
+              "Event": "OnListenCharacterCreate",
+              "CallbackConfig": [
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByTargetTeam",
+                    "TargetType": {
+                      "$type": "RPG.GameCore.TargetAlias",
+                      "Alias": "ParamEntity"
+                    },
+                    "Team": "TeamDark"
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.AddModifier",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetAlias",
+                        "Alias": "ParamEntity"
+                      },
+                      "ModifierName": {
+                        "Value": "Modifier_StageAbility_673480_Sub2"
+                      },
+                      "DynamicValues": {
+                        "MDF_DamageRatio": {
+                          "IsDynamic": true,
+                          "PostfixExpr": {
+                            "OpCodes": "AQAR",
+                            "FixedValues": [],
+                            "DynamicHashes": [
+                              909827945
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "DynamicValues": {
+            "Floats": {
+              "909827945": {}
+            }
+          }
+        },
+        "Modifier_StageAbility_673480_Sub2": {
+          "_CallbackList": [
+            {
+              "Event": "OnBeforeBeingHitAll",
+              "CallbackConfig": [
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByAttackType",
+                    "AttackTypes": [
+                      "Normal",
+                      "BPSkill"
+                    ]
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.DebugLog",
+                      "Level": "Warn",
+                      "Message": "==========Modifier_StageAbility_673480_Sub2====================="
+                    },
+                    {
+                      "$type": "RPG.GameCore.ModifyDamageData",
+                      "Defender_AllDamageTypeTakenRatio": {
+                        "IsDynamic": true,
+                        "PostfixExpr": {
+                          "OpCodes": "AQAR",
+                          "FixedValues": [],
+                          "DynamicHashes": [
+                            -2039151640
+                          ]
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "DynamicValues": {
+            "Floats": {
+              "-2039151640": {}
+            }
+          }
+        }
+      },
+      "Name": "StageAbility_673480",
+      "OnAdd": [
+        {
+          "$type": "RPG.GameCore.AddModifier",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "ModifierName": {
+            "Value": "Modifier_StageAbility_673480_Sub"
+          },
+          "DynamicValues": {
+            "ADF_1": {
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAR",
+                "FixedValues": [],
+                "DynamicHashes": [
+                  462955996
+                ]
+              }
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.CreateBattleEvent",
+          "EventID": {
+            "FixedValue": {
+              "Value": 44006
+            }
+          },
+          "Team": "TeamNeutral",
+          "TotalDamageTeam": "TeamLight",
+          "OnBattleEventCreate": [
+            {
+              "$type": "RPG.GameCore.AddModifier",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "ParamEntity"
+              },
+              "ModifierName": {
+                "Value": "Modifier_StageAbility_673480"
+              },
+              "DynamicValues": {
+                "ADF_1": {
+                  "IsDynamic": true,
+                  "PostfixExpr": {
+                    "OpCodes": "AQAR",
+                    "FixedValues": [],
+                    "DynamicHashes": [
+                      462955996
+                    ]
+                  }
+                },
+                "ADF_2": {
+                  "IsDynamic": true,
+                  "PostfixExpr": {
+                    "OpCodes": "AQAR",
+                    "FixedValues": [],
+                    "DynamicHashes": [
+                      59671469
+                    ]
+                  }
+                },
+                "ADF_3": {
+                  "IsDynamic": true,
+                  "PostfixExpr": {
+                    "OpCodes": "AQAR",
+                    "FixedValues": [],
+                    "DynamicHashes": [
+                      1625755410
+                    ]
+                  }
+                },
+                "ADF_4": {
+                  "IsDynamic": true,
+                  "PostfixExpr": {
+                    "OpCodes": "AQAR",
+                    "FixedValues": [],
+                    "DynamicHashes": [
+                      866240523
+                    ]
+                  }
+                },
+                "ADF_5": {
+                  "IsDynamic": true,
+                  "PostfixExpr": {
+                    "OpCodes": "AQAR",
+                    "FixedValues": [],
+                    "DynamicHashes": [
+                      -1862642832
+                    ]
+                  }
+                },
+                "ADF_6": {
+                  "IsDynamic": true,
+                  "PostfixExpr": {
+                    "OpCodes": "AQAR",
+                    "FixedValues": [],
+                    "DynamicHashes": [
+                      2029039937
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.SetActionDelay",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "ParamEntity"
+              },
+              "NormalizedValue": {
+                "FixedValue": {
+                  "Value": 1
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "DynamicValues": {
+        "Floats": {
+          "-2034167767": {}
+        }
+      }
+    },
+    {
+      "Modifiers": {
+        "Modifier_StageAbility_673510": {
+          "_CallbackList": [
+            {
+              "Event": "OnListenCharacterCreate",
+              "CallbackConfig": [
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByTargetTeam",
+                    "TargetType": {
+                      "$type": "RPG.GameCore.TargetAlias",
+                      "Alias": "ParamEntity"
+                    },
+                    "Team": "TeamLight"
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.AddModifier",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetAlias",
+                        "Alias": "ParamEntity"
+                      },
+                      "ModifierName": {
+                        "Value": "Modifier_StageAbility_673510_Sub"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "Modifier_StageAbility_673510_Sub": {
+          "_CallbackList": [
+            {
+              "Event": "OnAfterBeingAttacked",
+              "CallbackConfig": [
+                {
+                  "$type": "RPG.GameCore.TriggerEffect",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "ModifierOwnerEntity"
+                  },
+                  "EffectPath": "Effects/Eff_Prefab/Eff_ActivityProp/Eff_ActivityProp_Rogue_S5/Eff_ActivityProp_Rogue_S5_Ruin_01.prefab"
+                },
+                {
+                  "$type": "RPG.GameCore.TriggerEffect",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "AllLightTeam - ModifierOwnerEntity"
+                  },
+                  "EffectPath": "Effects/Eff_Prefab/Eff_ActivityProp/Eff_ActivityProp_Rogue_S5/Eff_ActivityProp_Rogue_S5_Ruin_01Hit.prefab"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "Name": "StageAbility_673510",
+      "OnAdd": [
+        {
+          "$type": "RPG.GameCore.AddModifier",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "ModifierName": {
+            "Value": "Modifier_StageAbility_673510"
+          }
+        }
+      ]
+    },
+    {
+      "Modifiers": {
+        "Modifier_StageAbility_673250": {
+          "_CallbackList": [
+            {
+              "Event": "OnListenCharacterCreate",
+              "CallbackConfig": [
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByTargetTeam",
+                    "TargetType": {
+                      "$type": "RPG.GameCore.TargetAlias",
+                      "Alias": "ParamEntity"
+                    },
+                    "Team": "TeamDark"
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.AddModifier",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetAlias",
+                        "Alias": "ParamEntity"
+                      },
+                      "ModifierName": {
+                        "Value": "Modifier_StageAbility_673250_Sub"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "Modifier_StageAbility_673250_Sub": {
+          "LifeStepMoment": "ModifierPhase1End",
+          "PerformTime": {
+            "FixedValue": {
+              "Value": 0.3
+            }
+          },
+          "BehaviorFlagList": [
+            "STAT_DOT"
+          ],
+          "UseSnapshotEntity": true,
+          "_CallbackList": [
+            {
+              "Event": "OnPhase1",
+              "CallbackConfig": [
+                {
+                  "$type": "RPG.GameCore.TriggerEffect",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "ModifierOwnerEntity"
+                  },
+                  "EffectPath": "Effects/Eff_Prefab/Eff_ActivityProp/Eff_ActivityProp_Rogue_S5/Eff_ActivityProp_Rogue_S5_Sandworm_01.prefab",
+                  "MinMutexTime": -1,
+                  "MinMutexType": "Entity"
+                }
+              ]
+            }
+          ],
+          "Count": 0
+        }
+      },
+      "Name": "StageAbility_673250",
+      "OnAdd": [
+        {
+          "$type": "RPG.GameCore.AddModifier",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "ModifierName": {
+            "Value": "Modifier_StageAbility_673250"
+          }
+        }
+      ],
+      "DynamicValues": {
+        "Floats": {
+          "-2034167767": {}
+        }
+      }
+    }
+  ],
+  "GlobalModifiers": {}
+}

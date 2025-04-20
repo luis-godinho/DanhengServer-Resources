@@ -1,0 +1,81 @@
+{
+  "OnInitSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.EnableRogueEnter"
+        }
+      ]
+    }
+  ],
+  "OnStartSequece": [
+    {
+      "TaskList": []
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropSetupUITrigger",
+          "ColliderRelativePath": "TriggerUIBtn",
+          "ButtonText": {
+            "Hash": 11258454477322327384
+          },
+          "ButtonCallback": [
+            {
+              "$type": "RPG.GameCore.VerifyInteractingEntity",
+              "IsOwnerEntity": true
+            },
+            {
+              "$type": "RPG.GameCore.SelectorConfig",
+              "TaskList": [
+                {
+                  "$type": "RPG.GameCore.PropStateExecute",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                  },
+                  "Execute": [
+                    {
+                      "$type": "RPG.GameCore.ToastPile",
+                      "DescTextID": {
+                        "Hash": 16902165103272377815
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.PropStateExecute",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                  },
+                  "State": "Open",
+                  "Execute": [
+                    {
+                      "$type": "RPG.GameCore.RogueStart",
+                      "AvatarIDList": [],
+                      "SpecialAvatarIDList": [
+                        4000003,
+                        4000004,
+                        4000001,
+                        4000002
+                      ],
+                      "AreaID": 100
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "InteractAngleRange": 240,
+          "OverrideTargetTypes": [],
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          }
+        }
+      ]
+    }
+  ],
+  "ValueSource": {
+    "Values": []
+  },
+  "Type": "Entity"
+}

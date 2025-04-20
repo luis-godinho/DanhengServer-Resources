@@ -1,0 +1,187 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitTutorial",
+          "Event": "ShowUIContext",
+          "Param": "PlanetFesBusinessDayStartDialog"
+        },
+        {
+          "$type": "RPG.GameCore.WaitUIControllerClose",
+          "UIControllerName": "PlanetFesBusinessDayStartDialog"
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideHintWithText",
+          "Block": true,
+          "TargetEvent": [
+            {
+              "$type": "RPG.GameCore.WaitPlayerAction",
+              "ActionType": "AnyAction",
+              "ProtectTime": 0.5
+            }
+          ],
+          "NodeIDList": [
+            "PlanetFes.MainPage"
+          ],
+          "IsAutoMatchGuideHintType": false,
+          "GuideTextType": "Talk",
+          "GuideText": "TutorialTextmap_552101",
+          "GuideTalkID": 575002,
+          "CustomTextDirection": "LeftUp",
+          "GuideHintShowConfig": {},
+          "GuideTextShowConfig": {
+            "UseCustomConfig": true,
+            "OffsetX": 200,
+            "OffsetY": 50
+          },
+          "GuideUIContextConfig": {},
+          "EnableActionList": [],
+          "EnableBattleOperationList": [],
+          "DisableBlackMask": true
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideHintWithText",
+          "Block": true,
+          "TargetEvent": [
+            {
+              "$type": "RPG.GameCore.WaitPlayerAction",
+              "ActionType": "ClickBtn",
+              "Param": "PlanetFes.Building02.Tutorial01",
+              "ProtectTime": 0.5
+            }
+          ],
+          "NodeIDList": [
+            "PlanetFes.Building02.Tutorial01"
+          ],
+          "GuideHintType": "ClickRect",
+          "GuideTextType": "Talk",
+          "GuideText": "TutorialTextmap_552101",
+          "GuideTalkID": 575004,
+          "OverrideActionName": "Menu_Confirm",
+          "GuideHintShowConfig": {},
+          "GuideTextShowConfig": {},
+          "GuideUIContextConfig": {},
+          "EnableActionList": [],
+          "EnableBattleOperationList": []
+        },
+        {
+          "$type": "RPG.GameCore.WaitTutorial",
+          "Event": "ShowUIContext",
+          "Param": "PlanetFesGamePlayLandUnlockDialog"
+        },
+        {
+          "$type": "RPG.GameCore.WaitUIControllerClose",
+          "UIControllerName": "PlanetFesGamePlayLandUnlockDialog"
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideHintWithText",
+          "Block": true,
+          "TargetEvent": [
+            {
+              "$type": "RPG.GameCore.WaitPlayerAction",
+              "ActionType": "ClickBtn",
+              "Param": "PlanetFes.Building02.Tutorial02",
+              "ProtectTime": 0.5
+            }
+          ],
+          "NodeIDList": [
+            "PlanetFes.Building02.Tutorial02"
+          ],
+          "GuideHintType": "ClickRect",
+          "GuideTextType": "Talk",
+          "GuideText": "TutorialTextmap_552101",
+          "GuideTalkID": 575005,
+          "OverrideActionName": "Menu_Confirm",
+          "GuideHintShowConfig": {},
+          "GuideTextShowConfig": {},
+          "GuideUIContextConfig": {},
+          "EnableActionList": [],
+          "EnableBattleOperationList": []
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideHintWithText",
+          "Block": true,
+          "TargetEvent": [
+            {
+              "$type": "RPG.GameCore.WaitPlayerAction",
+              "ActionType": "AnyAction",
+              "Param": "PlanetFes.Land01.Lock",
+              "ProtectTime": 0.5
+            }
+          ],
+          "NodeIDList": [
+            "PlanetFes.AvatarSelect.01"
+          ],
+          "IsAutoMatchGuideHintType": false,
+          "GuideHintType": "NormalRect",
+          "GuideTextType": "Talk",
+          "GuideText": "TutorialTextmap_552101",
+          "GuideTalkID": 575021,
+          "CustomTextDirection": "LeftDown",
+          "GuideHintShowConfig": {},
+          "GuideTextShowConfig": {},
+          "GuideUIContextConfig": {},
+          "EnableActionList": [],
+          "EnableBattleOperationList": [],
+          "DisableBlackMask": true
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideHintWithText",
+          "Block": true,
+          "TargetEvent": [
+            {
+              "$type": "RPG.GameCore.WaitPlayerAction",
+              "ActionType": "ClickBtn",
+              "Param": "PlanetFes.AvatarSelect.Confirm.4",
+              "ProtectTime": 0.5
+            }
+          ],
+          "NodeIDList": [
+            "PlanetFes.AvatarSelect.Confirm.4"
+          ],
+          "GuideHintType": "ClickRect",
+          "GuideTextType": "Talk",
+          "GuideText": "TutorialTextmap_552101",
+          "GuideTalkID": 575006,
+          "OverrideActionName": "Menu_Confirm",
+          "GuideHintShowConfig": {},
+          "GuideTextShowConfig": {},
+          "GuideUIContextConfig": {},
+          "EnableActionList": [],
+          "EnableBattleOperationList": []
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideHintWithText",
+          "Block": true,
+          "TargetEvent": [
+            {
+              "$type": "RPG.GameCore.WaitPlayerAction",
+              "ActionType": "ClickBtn",
+              "Param": "PlanetFes.AvatarSelect.BtnConfirm1",
+              "ProtectTime": 0.5
+            }
+          ],
+          "NodeIDList": [
+            "PlanetFes.AvatarSelect.BtnConfirm1"
+          ],
+          "GuideHintType": "ClickRect",
+          "GuideTextType": "Talk",
+          "GuideText": "TutorialTextmap_552101",
+          "GuideTalkID": 575007,
+          "GuideHintShowConfig": {},
+          "GuideTextShowConfig": {},
+          "GuideUIContextConfig": {},
+          "EnableActionList": [],
+          "EnableBattleOperationList": []
+        },
+        {
+          "$type": "RPG.GameCore.TutorialClose"
+        }
+      ]
+    }
+  ],
+  "ValueSource": {},
+  "EntityEventList": []
+}

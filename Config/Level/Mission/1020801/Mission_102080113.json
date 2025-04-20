@@ -8,20 +8,15 @@
           "Predicate": {
             "$type": "RPG.GameCore.ByTargetNpcExists",
             "GroupID": 41,
-            "GroupNpcID": 400001,
-            "TaskEnabled": true,
-            "IsClientOnly": true
+            "GroupNpcID": 400001
           },
           "SuccessTaskList": [
             {
               "$type": "RPG.GameCore.DestroyNPC",
               "GroupID": 41,
-              "GroupNpcID": 400001,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "GroupNpcID": 400001
             }
-          ],
-          "TaskEnabled": true
+          ]
         }
       ]
     },
@@ -31,53 +26,35 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "102070113_MissionOver"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Mission_102080113"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.PerformanceTransition",
-          "SwitchInTime": 0.5,
-          "SwitchKeepTime": 0.5,
-          "SwitchOutTime": -1.0,
+          "SwitchOutTime": -1,
           "CreateNpcList": [],
           "CaptureNpcList": [],
           "DestroyNpcList": [
             {
               "GroupID": 77,
-              "GroupNpcID": 400001,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "GroupNpcID": 400001
             }
           ],
-          "DisactiveVCamOnGraphEnd": true,
           "ActiveVirtualCamera": {
-            "IsActive": true,
-            "VCameraDitherMaxDistance": 1.0,
-            "CenterPosX": -1.0,
-            "CenterPosY": -1.0,
-            "IsClientOnly": true
+            "TaskEnabled": false
           },
           "SwitchCharacterAnchor": {
-            "ResetAnimation": true,
-            "ResetCamera": true,
-            "ClearSpecialVision": true,
-            "IsClientOnly": true
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+            "TaskEnabled": false
+          }
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_102080113",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_102080113"
         }
       ]
     }

@@ -8,26 +8,18 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Mission_202030637_PropTrigger"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.TriggerPerformance",
           "ValueSource": {},
           "PerformanceType": "E",
-          "PerformanceID": 202030907,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 202030907
         },
         {
           "$type": "RPG.GameCore.ConsumeMissionItem",
           "SubMissionID": 202030907,
-          "SimpleTalk": {
-            "TextSpeed": 20.0,
-            "ProtectTime": 0.8
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "SimpleTalk": {}
         }
       ]
     },
@@ -40,32 +32,36 @@
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 227633266688
+                "FixedValue": {
+                  "Value": 53
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288494483767296
+                "FixedValue": {
+                  "Value": 300001
                 }
               }
             }
           },
-          "TargetGroupID": {},
-          "TargetID": {},
+          "TargetGroupID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "TargetID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
           "TargetTypes": [],
           "OnTriggerEnter": [
             {
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "Mission_202030637_PropTrigger"
-              },
-              "TaskEnabled": true
+              }
             }
-          ],
-          "SkipFakeAvatar": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     }

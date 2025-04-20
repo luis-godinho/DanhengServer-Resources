@@ -1,21 +1,13 @@
 {
   "ModifierMap": {
     "ADV_SystemModifier_CloseBattleOnAttacked": {
-      "LifeTime": -1.0,
-      "Level": 1,
-      "LevelMax": 1,
-      "IsCountDownAfterBattle": true,
-      "ApplyBehaviorFlagBindEffects": true,
-      "TickInterval": 1.0,
       "OnCreate": [
         {
           "$type": "RPG.GameCore.EnableBattleOnAttacked",
           "TargetType": {
             "$type": "RPG.GameCore.TargetAlias",
             "Alias": "Caster"
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         }
       ],
       "OnDestroy": [
@@ -25,13 +17,10 @@
             "$type": "RPG.GameCore.TargetAlias",
             "Alias": "Caster"
           },
-          "Enabled": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Enabled": true
         }
       ],
-      "Count": 1,
-      "Stacking": "Unique"
+      "Count": 1
     }
   }
 }

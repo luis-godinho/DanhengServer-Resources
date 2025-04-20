@@ -1,0 +1,33 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.TutorialLockPlayerAction",
+          "Lock": true
+        },
+        {
+          "$type": "RPG.GameCore.WaitSecond",
+          "WaitTime": {
+            "FixedValue": {
+              "Value": 1.2
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TutorialLockPlayerAction"
+        },
+        {
+          "$type": "RPG.GameCore.ShowTutorialGuide",
+          "GuideID": 8165,
+          "WaitForExit": true
+        },
+        {
+          "$type": "RPG.GameCore.TutorialFinish",
+          "TutorialID": 5459
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "OnInitSequece": [
+    {
+      "TaskList": []
+    }
+  ],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitEntityEvent",
+          "EventName": {
+            "Value": "Clt_OnInteractStart"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.SetFloorCustomFloat",
+              "Name": {
+                "Value": "MissionFCV_103060110"
+              },
+              "Value": {
+                "FixedValue": {
+                  "Value": 2
+                }
+              }
+            }
+          ],
+          "InstanceID": {
+            "FixedValue": {
+              "Value": 300001
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "Type": "Group"
+}

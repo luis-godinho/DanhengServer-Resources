@@ -8,14 +8,11 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Talk_800326701"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_800326701",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_800326701"
         }
       ]
     },
@@ -28,41 +25,35 @@
             "FetchType": "SingleNpcByNpcID",
             "SingleNpcID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 1133871366144
+                "FixedValue": {
+                  "Value": 264
                 }
               },
               "GroupNpcID": {
-                "fixedValue": {
-                  "RawValue": 1717991213367296
+                "FixedValue": {
+                  "Value": 400001
                 }
               }
             }
           },
           "TriggerID": "400001",
-          "Range": 10.0,
+          "Range": 10,
           "OnTriggerEnter": [
             {
               "$type": "RPG.GameCore.PlayNPCBubbleTalk",
               "BubbleTalkInfoList": [
                 {
-                  "AutoSkipTime": 4.0,
+                  "AutoSkipTime": 4,
                   "GroupID": 264,
                   "GroupNpcID": 400001,
                   "TalkSentenceID": 801326701
                 }
               ],
-              "BubbleTalkType": "Normal",
               "IsLoop": true,
-              "LoopInterval": 10.0,
-              "InstantFinish": true,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "LoopInterval": 10
             }
           ],
-          "TargetTypes": [],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "TargetTypes": []
         }
       ]
     }

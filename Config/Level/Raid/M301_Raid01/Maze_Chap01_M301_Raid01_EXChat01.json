@@ -1,0 +1,78 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropSetupTrigger",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          },
+          "TargetGroupID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "TargetID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "TargetTypes": [
+            "LocalPlayer"
+          ],
+          "OnTriggerEnter": [
+            {
+              "$type": "RPG.GameCore.PlayMissionTalk",
+              "SimpleTalkList": [
+                {
+                  "TalkSentenceID": 407131113,
+                  "ProtectTime": 2
+                },
+                {
+                  "TalkSentenceID": 407131114,
+                  "ProtectTime": 2
+                }
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.PropReqInteract",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                "SinglePropID": {
+                  "GroupID": {
+                    "FixedValue": {
+                      "Value": 6
+                    }
+                  },
+                  "ID": {
+                    "FixedValue": {
+                      "Value": 300011
+                    }
+                  }
+                }
+              },
+              "InteractID": {
+                "FixedValue": {
+                  "Value": 1010
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "ValueSource": {
+    "Values": [
+      {
+        "$type": "RPG.GameCore.SharedString",
+        "Key": "Camera"
+      },
+      {
+        "$type": "RPG.GameCore.SharedString",
+        "Key": "Camera2"
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "G863_Finish"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.AdvDestroyGroupEntity",
+              "InstanceIDList": [
+                400001
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.ClientFinishMission",
+              "SubmissionID": 304009015
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "Type": "Group"
+}

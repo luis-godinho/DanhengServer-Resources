@@ -1,0 +1,65 @@
+{
+  "AbilityList": [
+    {
+      "Modifiers": {
+        "StageAbility_Maze_Geppard_Modifier": {
+          "_CallbackList": [
+            {
+              "Event": "OnListenCharacterCreate",
+              "CallbackConfig": [
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByTargetTeam",
+                    "TargetType": {
+                      "$type": "RPG.GameCore.TargetAlias",
+                      "Alias": "ParamEntity"
+                    },
+                    "Team": "TeamLight"
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.AddModifier",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetAlias",
+                        "Alias": "ParamEntity"
+                      },
+                      "ModifierName": {
+                        "Value": "MCommon_Protect_Shield"
+                      },
+                      "LifeTime": {
+                        "FixedValue": {
+                          "Value": 2
+                        }
+                      },
+                      "DynamicValues": {
+                        "MDF_ShowValue": {
+                          "FixedValue": {
+                            "Value": 5000
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "Name": "StageAbility_Maze_Geppard",
+      "OnAdd": [
+        {
+          "$type": "RPG.GameCore.AddModifier",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "ModifierName": {
+            "Value": "StageAbility_Maze_Geppard_Modifier"
+          }
+        }
+      ]
+    }
+  ]
+}

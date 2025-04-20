@@ -7,41 +7,34 @@
           "$type": "RPG.GameCore.PropSetupUITrigger",
           "DestroyAfterTriggered": true,
           "ButtonIcon": "SpriteOutput/TalkIcon/CheckIcon.png",
-          "IconType": "Default",
           "ButtonText": {
-            "Hash": 278713937,
-            "Hash64": 16304550243505668348
+            "Hash": 16304550243505668348
           },
           "ButtonCallback": [
             {
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "Mission_800120502_PropUITrigger"
-              },
-              "TaskEnabled": true
+              }
             }
           ],
-          "InteractAngleRange": 180.0,
           "OverrideTargetTypes": [],
-          "SkipFakeAvatar": true,
           "TargetType": {
             "$type": "RPG.GameCore.TargetFetchAdvPropEx",
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 395136991232
+                "FixedValue": {
+                  "Value": 92
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288498778734592
+                "FixedValue": {
+                  "Value": 300002
                 }
               }
             }
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         }
       ]
     },
@@ -51,30 +44,22 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Mission_800120502_PropUITrigger"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.ShowFuncBtn",
-          "HideWhenGraphFinish": true,
+          "Show": false,
           "ItemID": 140215,
-          "PuzzleFunc": "Info",
-          "CDDuration": 2.0,
-          "ShowBtnFucHint": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "CDDuration": 2
         },
         {
           "$type": "RPG.GameCore.TriggerPerformance",
           "PerformanceType": "E",
-          "PerformanceID": 800120502,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 800120502
         },
         {
           "$type": "RPG.GameCore.PerformanceTransition",
-          "SwitchInTime": 0.5,
-          "SwitchKeepTime": 3.0,
+          "SwitchKeepTime": 3,
           "SwitchOutTime": -0.5,
           "TextEnabled": true,
           "TalkSentenceID": 800130932,
@@ -82,55 +67,50 @@
           "CaptureNpcList": [],
           "DestroyNpcList": [],
           "CreateProp": {
-            "GroupID": {},
-            "GroupPropID": {},
-            "IsClientOnly": true
+            "GroupID": {
+              "FixedValue": {
+                "Value": 0
+              }
+            },
+            "GroupPropID": {
+              "FixedValue": {
+                "Value": 0
+              }
+            },
+            "TaskEnabled": false
           },
           "DestroyProp": {
             "TargetType": {
               "$type": "RPG.GameCore.TargetFetchAdvPropEx"
             },
-            "ID": {},
-            "GroupID": {},
-            "IsClientOnly": true
+            "ID": {
+              "FixedValue": {
+                "Value": 0
+              }
+            },
+            "GroupID": {
+              "FixedValue": {
+                "Value": 0
+              }
+            },
+            "TaskEnabled": false
           },
-          "DisactiveVCamOnGraphEnd": true,
           "ActiveVirtualCamera": {
-            "IsActive": true,
-            "VCameraDitherMaxDistance": 1.0,
-            "CenterPosX": -1.0,
-            "CenterPosY": -1.0,
-            "IsClientOnly": true
+            "TaskEnabled": false
           },
           "ActiveTemplateVirtualCamera": {
-            "IsActive": true,
-            "IsClientOnly": true
+            "TaskEnabled": false
           },
           "SwitchCharacterAnchor": {
-            "ResetAnimation": true,
-            "ResetCamera": true,
-            "ClearSpecialVision": true,
-            "IsClientOnly": true
+            "TaskEnabled": false
           },
           "AdvNpcFaceToPlayer": {
-            "FromDialog": true,
-            "TryFaceToFace": true,
-            "NpcLookAtPlayer": true,
-            "PlayerLookAtNpc": true,
-            "StopLookAtOnGraphEnd": true,
-            "TurnBackOnGraphEnd": true,
-            "WaitFinishMode": "WaitFaceAngle",
-            "ForceToStandBy": true,
-            "IsClientOnly": true
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+            "TaskEnabled": false
+          }
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_800120502",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_800120502"
         }
       ]
     },
@@ -138,14 +118,8 @@
       "TaskList": [
         {
           "$type": "RPG.GameCore.ShowFuncBtn",
-          "Show": true,
-          "HideWhenGraphFinish": true,
           "ItemID": 140215,
-          "PuzzleFunc": "Info",
-          "CDDuration": 2.0,
-          "ShowBtnFucHint": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "CDDuration": 2
         }
       ]
     }

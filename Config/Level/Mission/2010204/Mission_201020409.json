@@ -7,82 +7,71 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "BombSuccess_2010204"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.PerformanceTransition",
-          "SwitchInTime": 0.5,
-          "SwitchKeepTime": 0.5,
-          "SwitchOutTime": 0.5,
           "CreateNpcList": [],
           "CaptureNpcList": [],
           "DestroyNpcList": [
             {
               "GroupID": 8,
               "GroupNpcID": 400001,
-              "DestroyList": [],
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "DestroyList": []
             }
           ],
           "CreateProp": {
-            "GroupID": {},
-            "GroupPropID": {},
-            "IsClientOnly": true
+            "GroupID": {
+              "FixedValue": {
+                "Value": 0
+              }
+            },
+            "GroupPropID": {
+              "FixedValue": {
+                "Value": 0
+              }
+            },
+            "TaskEnabled": false
           },
           "DestroyProp": {
             "TargetType": {
               "$type": "RPG.GameCore.TargetFetchAdvPropEx"
             },
-            "ID": {},
-            "GroupID": {},
-            "IsClientOnly": true
+            "ID": {
+              "FixedValue": {
+                "Value": 0
+              }
+            },
+            "GroupID": {
+              "FixedValue": {
+                "Value": 0
+              }
+            },
+            "TaskEnabled": false
           },
           "AdvCreateGroupEntity": {
-            "IsClientOnly": true
+            "TaskEnabled": false
           },
           "AdvDestroyGroupEntity": {
-            "IsClientOnly": true
+            "TaskEnabled": false
           },
-          "DisactiveVCamOnGraphEnd": true,
           "ActiveVirtualCamera": {
-            "IsActive": true,
-            "VCameraDitherMaxDistance": 1.0,
-            "CenterPosX": -1.0,
-            "CenterPosY": -1.0,
-            "IsClientOnly": true
+            "TaskEnabled": false
           },
           "ActiveTemplateVirtualCamera": {
-            "IsActive": true,
-            "IsClientOnly": true
+            "TaskEnabled": false
           },
           "SwitchCharacterAnchor": {
-            "ResetAnimation": true,
-            "ResetCamera": true,
-            "ClearSpecialVision": true,
-            "IsClientOnly": true
+            "TaskEnabled": false
           },
           "AdvNpcFaceToPlayer": {
-            "FromDialog": true,
-            "TryFaceToFace": true,
-            "NpcLookAtPlayer": true,
-            "PlayerLookAtNpc": true,
-            "StopLookAtOnGraphEnd": true,
-            "TurnBackOnGraphEnd": true,
-            "WaitFinishMode": "WaitFaceAngle",
-            "ForceToStandBy": true,
-            "IsClientOnly": true
+            "TaskEnabled": false
           },
-          "WaitStreamingFinish": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "WaitStreamingFinish": true
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_201020409",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_201020409"
         }
       ]
     },
@@ -93,16 +82,13 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "DestroyNPC_201020406"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.DestroyNPC",
           "GroupID": 8,
           "GroupNpcID": 400002,
-          "DestroyList": [],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "DestroyList": []
         }
       ]
     }

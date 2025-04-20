@@ -1,11 +1,10 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "NPC",
   "Category": "Atmosphere",
   "AreaAnchorName": "LevelArea_P20241_F20241001_G117",
-  "SaveType": "Permanent",
   "AtmosphereCondition": {
-    "Conditions": [],
-    "Operation": "And"
+    "Conditions": []
   },
   "LoadSide": "Server",
   "LoadOnInitial": true,
@@ -13,15 +12,15 @@
   "ConflictIDList": [],
   "IsHoyoGroup": true,
   "HoYoGroupType": "Container",
-  "StreamingTemplateType": "Standard",
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
   "ConflictWhiteList": [],
-  "TagContainer": [
-    {
-      "Tag": "Group.Atomsphere.NPC",
-      "TagHash": -882113524
-    }
-  ],
+  "TagContainer": {
+    "List": [
+      {
+        "Tag": "Group.Atomsphere.NPC",
+        "TagHash": -882113524
+      }
+    ]
+  },
   "AnchorList": [],
   "MonsterList": [],
   "PropList": [],
@@ -32,13 +31,12 @@
   "NPCList": [
     {
       "NPCID": 2224,
-      "LoadOnInitial": true,
       "ValueSource": {},
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "ServerInteractVerificationIDList": [
         70
       ],
+      "DefaultLookAtMode": "Closed",
       "MappingInfoID": 2440,
       "BoardShowList": [
         1,
@@ -46,19 +44,15 @@
         4
       ],
       "OverrideNPCName": {
-        "Hash": 2036521749,
-        "Hash64": 5624842129036905910
+        "Hash": 5624842129036905910
       },
       "OverrideNPCTitle": {
-        "Hash": -1355382068,
-        "Hash64": 6617864217969939724
+        "Hash": 6617864217969939724
       },
       "TalkDialogGroupIDList": [],
-      "DefaultAnimationType": "FreeStyle",
       "DefaultIdleFreeStyleMotionID": 200700000,
       "IsMapContent": true,
       "MiniMapIconType": 4,
-      "BornType": "Mission",
       "InitialHiddenNodeList": [],
       "Dialog": {
         "LevelGraph": "Config/Level/NPCDialogue/P20241/F20241001_G117/DialogueMain_F20241001_G117_N400001.json",
@@ -67,28 +61,15 @@
             "Name": "Common",
             "LevelGraph": "Config/Level/NPCDialogue/P20241/F20241001_G117/DialoguePack_Common_F20241001_G117_N400001.json"
           }
-        ],
-        "EnableDialogCamera": true
+        ]
       },
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "OverrideReplaceMaterialKeyList": [],
       "CameraCenterEntityList": [],
       "SpawnConfig": {
-        "TryCapture": true,
-        "CaptureDistanceTolerance": 1.5,
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
-      "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true
-      },
+      "TriggerValidGuest": {},
       "Name": "NPC1",
       "RotY": 326.869,
       "ID": 400001,

@@ -1,0 +1,2079 @@
+{
+  "$type": "RPG.GameCore.ServantConfig",
+  "CustomTeamFormationConfigs": [
+    {
+      "ActiveTurnStates": [
+        "Unknow",
+        "SelfActionExecuting1",
+        "InsertUltraSkillExecuting"
+      ],
+      "ActionEntityTypes": "Summoner",
+      "ActiveSkillNames": [
+        "Skill21",
+        "Skill03"
+      ],
+      "FormationType": "Follow",
+      "LocationConfig": {
+        "Width": 1
+      },
+      "FollowOffsetMode": "Target"
+    },
+    {
+      "ActiveTurnStates": [
+        "SelfActionExecuting1",
+        "InsertAbilityActionPhase",
+        "SelfActionEnd",
+        "ActionPhaseEnd",
+        "TurnEnd"
+      ],
+      "ActionEntityTypes": "Self",
+      "ActiveCondition": {
+        "$type": "RPG.GameCore.ByAny",
+        "PredicateList": [
+          {
+            "$type": "RPG.GameCore.ByCurrentSkillName",
+            "SkillName": "Skill01",
+            "AccessClientActiveSkill": true
+          },
+          {
+            "$type": "RPG.GameCore.ByAnd",
+            "PredicateList": [
+              {
+                "$type": "RPG.GameCore.ByCurrentTurnState",
+                "TurnStates": [
+                  "InsertAbilityActionPhase",
+                  "SelfActionEnd",
+                  "ActionPhaseEnd",
+                  "TurnEnd"
+                ]
+              },
+              {
+                "$type": "RPG.GameCore.ByCompareTarget",
+                "TargetType": {
+                  "$type": "RPG.GameCore.TargetAlias",
+                  "Alias": "Caster"
+                },
+                "CompareType": {
+                  "$type": "RPG.GameCore.TargetAlias",
+                  "Alias": "CurrentTurnOwnerEntity"
+                }
+              },
+              {
+                "$type": "RPG.GameCore.ByHaveEnemyAlive",
+                "TargetType": {
+                  "$type": "RPG.GameCore.TargetAlias",
+                  "Alias": "Caster"
+                },
+                "Inverse": true
+              }
+            ]
+          }
+        ]
+      },
+      "Option": "ExcludeInCustomFromation",
+      "FormationType": "Follow",
+      "LocationConfig": {
+        "Width": 1,
+        "FormationFollowOffset": {
+          "X": -2,
+          "Z": -16
+        }
+      },
+      "FollowOffsetMode": "EnemyTeamCenter",
+      "AttachPointRedirect": {
+        "SelectRoot": "SelectRootFixSelf",
+        "Root": "RootFixtSelf",
+        "Origin": "OriginFixtSelf",
+        "Head": "HeadPointFix"
+      },
+      "AttachPointRedirectRule": "^Effects/(?!.*Eff_Castorice_00).+$"
+    },
+    {
+      "ActionEntityTypes": "Self",
+      "FormationType": "Follow",
+      "LocationConfig": {
+        "Width": 1,
+        "FormationFollowOffset": {
+          "X": -2,
+          "Z": -22
+        }
+      },
+      "FollowOffsetMode": "EnemyTeamCenter",
+      "FollowDirMode": "SelfToEnemyCenter",
+      "AttachPointRedirect": {
+        "SelectRoot": "SelectRootFixSelf",
+        "Root": "RootFixtSelf",
+        "Origin": "OriginFixtSelf",
+        "Head": "HeadPointFix"
+      },
+      "AttachPointRedirectRule": "^Effects/(?!.*Eff_Castorice_00).+$"
+    },
+    {
+      "ActiveTurnStates": [
+        "Unknow",
+        "BattleEnter"
+      ],
+      "ActiveCondition": {
+        "$type": "RPG.GameCore.ByCurrentVCameraConfigCaster",
+        "TargetType": {
+          "$type": "RPG.GameCore.TargetAlias",
+          "Alias": "Caster + CasterSummoner"
+        }
+      },
+      "FormationType": "Follow",
+      "LocationConfig": {
+        "Width": 1,
+        "FormationFollowOffset": {
+          "X": -2,
+          "Z": -22
+        }
+      },
+      "FollowOffsetMode": "EnemyTeamCenter",
+      "FollowDirMode": "SelfToEnemyCenter",
+      "ForceAnimName": "StandeBy"
+    },
+    {
+      "ActiveTurnStates": [
+        "Unknow",
+        "BattleEnter"
+      ],
+      "FormationType": "Follow",
+      "LocationConfig": {
+        "Width": 1,
+        "FormationFollowOffset": {
+          "X": -2,
+          "Z": -22
+        }
+      },
+      "FollowOffsetMode": "EnemyTeamCenter",
+      "FollowDirMode": "SelfToEnemyCenter"
+    },
+    {
+      "ActiveTurnStates": [
+        "SelfWaitActionOrder1",
+        "SelfActionBegin",
+        "SelfActionExecuting1",
+        "InsertAbilityPhase1Begin",
+        "InsertAbilityActionPhase",
+        "InsertAbilityPhase2",
+        "InsertAbilityAfterUltraSkillBegin",
+        "InsertAbilityAfterUltraSkillEnd"
+      ],
+      "ActionEntityTypes": "Enemy",
+      "ActiveCondition": {
+        "$type": "RPG.GameCore.ByTargetTeam",
+        "TargetType": {
+          "$type": "RPG.GameCore.TargetAlias",
+          "Alias": "ParamEntity"
+        },
+        "Team": "TeamNeutral"
+      },
+      "Option": "ExcludeInCustomFromation",
+      "FormationType": "Follow",
+      "LocationConfig": {
+        "Width": 1,
+        "RootOffset": {
+          "X": 4,
+          "Z": -504.6
+        },
+        "FormationFollowOffset": {
+          "X": 2,
+          "Z": -5
+        },
+        "FormationFollowAngleOffset": -45
+      },
+      "FollowOffsetMode": "TeamCenter",
+      "AttachPointRedirect": {
+        "CameraRoot": "CameraRootFix",
+        "SelectRoot": "CameraRootFix",
+        "Root": "RootFix",
+        "Origin": "OriginFix",
+        "Head": "HeadPointFix"
+      }
+    },
+    {
+      "ActiveTurnStates": [
+        "SelfWaitActionOrder1",
+        "SelfActionBegin",
+        "SelfActionExecuting1",
+        "InsertAbilityPhase1Begin",
+        "InsertAbilityActionPhase",
+        "InsertAbilityPhase2",
+        "InsertAbilityAfterUltraSkillBegin",
+        "InsertAbilityAfterUltraSkillEnd"
+      ],
+      "ActionEntityTypes": "Enemy",
+      "ActiveCondition": {
+        "$type": "RPG.GameCore.ByInTimelinePerform",
+        "Inverse": true
+      },
+      "Option": "ExcludeInCustomFromation",
+      "FormationType": "Follow",
+      "LocationConfig": {
+        "Width": 1,
+        "FormationFollowOffset": {
+          "Z": -27
+        }
+      },
+      "FollowOffsetMode": "TeamCenter"
+    },
+    {
+      "ActiveTurnStates": [
+        "SelfActionExecuting1",
+        "InsertUltraSkillExecuting",
+        "InsertAbilityPhase1Begin",
+        "InsertAbilityActionPhase",
+        "InsertAbilityPhase2",
+        "InsertAbilityAfterUltraSkillBegin",
+        "InsertAbilityAfterUltraSkillEnd"
+      ],
+      "ActionEntityCharacterID": [
+        1313
+      ],
+      "ActiveSkillNames": [
+        "Skill03"
+      ],
+      "Option": 3,
+      "FormationType": "Follow",
+      "LocationConfig": {
+        "FormationFollowOffset": {
+          "X": -0.7,
+          "Y": 1.5,
+          "Z": -5.5
+        },
+        "FormationFollowAngleOffset": -2
+      },
+      "FollowOffsetMode": "Target",
+      "Visible": false,
+      "Scale": 0.3,
+      "AttachPointRedirect": {
+        "CameraRoot": "CameraRootFix",
+        "SelectRoot": "SelectRootFix",
+        "Root": "RootFix",
+        "Origin": "OriginFix",
+        "Head": "HeadPointFix"
+      }
+    },
+    {
+      "ActiveTurnStates": [
+        "SelfActionExecuting1",
+        "InsertUltraSkillExecuting",
+        "InsertAbilityPhase1Begin",
+        "InsertAbilityActionPhase",
+        "InsertAbilityPhase2",
+        "InsertAbilityAfterUltraSkillBegin",
+        "InsertAbilityAfterUltraSkillEnd"
+      ],
+      "ActionEntityCharacterID": [
+        1313
+      ],
+      "ActiveSkillNames": [
+        "Skill02"
+      ],
+      "Option": 3,
+      "FormationType": "Follow",
+      "LocationConfig": {
+        "FormationFollowOffset": {
+          "X": -3,
+          "Z": -6.5
+        }
+      },
+      "FollowOffsetMode": "Target",
+      "AttachPointRedirect": {
+        "CameraRoot": "CameraRootFix",
+        "SelectRoot": "SelectRootFix",
+        "Root": "RootFix",
+        "Origin": "OriginFix",
+        "Head": "HeadPointFix"
+      }
+    },
+    {
+      "ActiveTurnStates": [
+        "SelfActionExecuting1",
+        "InsertUltraSkillExecuting",
+        "InsertAbilityPhase1Begin",
+        "InsertAbilityActionPhase",
+        "InsertAbilityPhase2",
+        "InsertAbilityAfterUltraSkillBegin",
+        "InsertAbilityAfterUltraSkillEnd"
+      ],
+      "ActionEntityTypes": "FriendExcludeSummoner",
+      "ActionEntityCharacterID": [
+        1202
+      ],
+      "ActiveSkillNames": [
+        "Skill02"
+      ],
+      "Option": 12,
+      "FormationType": "Follow",
+      "LocationConfig": {
+        "Width": 1,
+        "RootOffset": {
+          "X": 4,
+          "Z": 4.6
+        },
+        "FormationFollowOffset": {
+          "X": 1.5,
+          "Z": -6
+        }
+      },
+      "FollowOffsetMode": "TeamCenter",
+      "Scale": 0.7,
+      "AttachPointRedirect": {
+        "CameraRoot": "CameraRootFixRight_1",
+        "SelectRoot": "CameraRootFixRight_1",
+        "Root": "RootFixRight_1",
+        "Origin": "OriginFixRight_1",
+        "Head": "HeadPointFix"
+      }
+    },
+    {
+      "ActiveTurnStates": [
+        "SelfActionExecuting1",
+        "InsertUltraSkillExecuting"
+      ],
+      "ActionEntityTypes": "FriendExcludeSummoner",
+      "ActionEntityCharacterID": [
+        1215
+      ],
+      "ActiveSkillNames": [
+        "Skill03"
+      ],
+      "ActiveCondition": {
+        "$type": "RPG.GameCore.ByAnd",
+        "PredicateList": [
+          {
+            "$type": "RPG.GameCore.ByInTimelinePerform"
+          },
+          {
+            "$type": "RPG.GameCore.ByIsCurrentSkillAllowMultiTarget",
+            "AccessClientActiveSkill": true,
+            "Inverse": true
+          },
+          {
+            "$type": "RPG.GameCore.ByTargetListIntersects",
+            "FirstTargetType": {
+              "$type": "RPG.GameCore.TargetAlias",
+              "Alias": "CurrentTurnActionEntity.GetSkillTarget"
+            },
+            "SecondTargetType": {
+              "$type": "RPG.GameCore.TargetAlias",
+              "Alias": "Caster"
+            }
+          }
+        ]
+      },
+      "FormationType": "Follow",
+      "LocationConfig": {
+        "Width": 1,
+        "RootOffset": {
+          "X": 4,
+          "Z": 4.6
+        },
+        "FormationFollowOffset": {
+          "X": 3.5,
+          "Z": -5
+        }
+      },
+      "FollowOffsetMode": "TeamCenter",
+      "Scale": 0.75,
+      "AttachPointRedirect": {
+        "CameraRoot": "CameraRootFix",
+        "SelectRoot": "CameraRootFix",
+        "Root": "RootFix",
+        "Origin": "OriginFix",
+        "Head": "HeadPointFix"
+      }
+    },
+    {
+      "ActiveTurnStates": [
+        "SelfActionExecuting1",
+        "InsertUltraSkillExecuting",
+        "InsertAbilityPhase1Begin",
+        "InsertAbilityActionPhase",
+        "InsertAbilityPhase2",
+        "InsertAbilityAfterUltraSkillBegin",
+        "InsertAbilityAfterUltraSkillEnd"
+      ],
+      "ActionEntityTypes": "FriendExcludeSummoner",
+      "ActionEntityCharacterID": [
+        1225
+      ],
+      "ActiveSkillNames": [
+        "Skill02"
+      ],
+      "Option": 12,
+      "FormationType": "Follow",
+      "LocationConfig": {
+        "Width": 1,
+        "RootOffset": {
+          "X": 4,
+          "Z": 4.6
+        },
+        "FormationFollowOffset": {
+          "X": 1.5,
+          "Z": -6
+        }
+      },
+      "FollowOffsetMode": "TeamCenter",
+      "Scale": 0.7,
+      "AttachPointRedirect": {
+        "CameraRoot": "CameraRootFixRight_1",
+        "SelectRoot": "CameraRootFixRight_1",
+        "Root": "RootFixRight_1",
+        "Origin": "OriginFixRight_1",
+        "Head": "HeadPointFix"
+      }
+    },
+    {
+      "ActiveTurnStates": [
+        "SelfActionExecuting1",
+        "InsertUltraSkillExecuting",
+        "SelfActionPrepare",
+        "SelfWaitActionOrder1",
+        "InsertAbilityPhase1Begin",
+        "InsertAbilityActionPhase",
+        "InsertAbilityPhase2",
+        "InsertAbilityAfterUltraSkillBegin",
+        "InsertAbilityAfterUltraSkillEnd"
+      ],
+      "ActionEntityTypes": "FriendExcludeSummoner",
+      "ActionEntityCharacterID": [
+        18007
+      ],
+      "ActiveSkillNames": [
+        "Skill11"
+      ],
+      "Option": 12,
+      "FormationType": "Follow",
+      "LocationConfig": {
+        "Width": 1,
+        "RootOffset": {
+          "X": 4,
+          "Z": 4.6
+        },
+        "FormationFollowOffset": {
+          "X": 1.5,
+          "Z": -6
+        },
+        "FormationFollowAngleOffset": -5
+      },
+      "FollowOffsetMode": "TeamCenter",
+      "AttachPointRedirect": {
+        "CameraRoot": "CameraRootFixRight_1",
+        "SelectRoot": "CameraRootFixRight_1",
+        "Root": "RootFixRight_1",
+        "Origin": "OriginFixRight_1",
+        "Head": "HeadPointFix"
+      }
+    },
+    {
+      "ActiveTurnStates": [
+        "SelfActionExecuting1",
+        "InsertUltraSkillExecuting",
+        "SelfActionPrepare",
+        "SelfWaitActionOrder1",
+        "InsertAbilityPhase1Begin",
+        "InsertAbilityActionPhase",
+        "InsertAbilityPhase2",
+        "InsertAbilityAfterUltraSkillBegin",
+        "InsertAbilityAfterUltraSkillEnd"
+      ],
+      "ActionEntityTypes": "FriendExcludeSummoner",
+      "ActionEntityCharacterID": [
+        1105
+      ],
+      "ActiveSkillNames": [
+        "Skill03"
+      ],
+      "Option": 12,
+      "FormationType": "Follow",
+      "LocationConfig": {
+        "Width": 1,
+        "RootOffset": {
+          "X": 4,
+          "Z": 4.6
+        },
+        "FormationFollowOffset": {
+          "X": 7.5,
+          "Z": -5
+        },
+        "FormationFollowAngleOffset": -45
+      },
+      "FollowOffsetMode": "TeamCenter",
+      "AttachPointRedirect": {
+        "CameraRoot": "CameraRootFix",
+        "SelectRoot": "CameraRootFix",
+        "Root": "RootFix",
+        "Origin": "OriginFix",
+        "Head": "HeadPointFix"
+      }
+    },
+    {
+      "ActiveTurnStates": [
+        "SelfActionExecuting1",
+        "InsertUltraSkillExecuting",
+        "SelfActionPrepare",
+        "SelfWaitActionOrder1",
+        "InsertAbilityPhase1Begin",
+        "InsertAbilityActionPhase",
+        "InsertAbilityPhase2",
+        "InsertAbilityAfterUltraSkillBegin",
+        "InsertAbilityAfterUltraSkillEnd"
+      ],
+      "ActionEntityTypes": "FriendExcludeSummoner",
+      "ActionEntityCharacterID": [
+        1110
+      ],
+      "ActiveSkillNames": [
+        "Skill03"
+      ],
+      "Option": 12,
+      "FormationType": "Follow",
+      "LocationConfig": {
+        "Width": 1,
+        "RootOffset": {
+          "X": 4,
+          "Z": 4.6
+        },
+        "FormationFollowOffset": {
+          "X": 4,
+          "Z": -2
+        },
+        "FormationFollowAngleOffset": -50
+      },
+      "FollowOffsetMode": "TeamCenter",
+      "AttachPointRedirect": {
+        "CameraRoot": "CameraRootFix",
+        "SelectRoot": "CameraRootFix",
+        "Root": "RootFix",
+        "Origin": "OriginFix",
+        "Head": "HeadPointFix"
+      }
+    },
+    {
+      "ActiveTurnStates": [
+        "SelfActionExecuting1",
+        "InsertUltraSkillExecuting",
+        "SelfActionPrepare",
+        "SelfWaitActionOrder1",
+        "InsertAbilityPhase1Begin",
+        "InsertAbilityActionPhase",
+        "InsertAbilityPhase2",
+        "InsertAbilityAfterUltraSkillBegin",
+        "InsertAbilityAfterUltraSkillEnd"
+      ],
+      "ActionEntityTypes": "FriendExcludeSummoner",
+      "ActionEntityCharacterID": [
+        1309
+      ],
+      "ActiveSkillNames": [
+        "Skill03"
+      ],
+      "Option": 12,
+      "FormationType": "Follow",
+      "LocationConfig": {
+        "Width": 1,
+        "RootOffset": {
+          "X": 4,
+          "Z": 4.6
+        },
+        "FormationFollowOffset": {
+          "X": 4.5,
+          "Y": 2,
+          "Z": -2
+        },
+        "FormationFollowAngleOffset": -50
+      },
+      "FollowOffsetMode": "TeamCenter",
+      "Visible": false,
+      "Scale": 0.5,
+      "AttachPointRedirect": {
+        "CameraRoot": "CameraRootFix",
+        "SelectRoot": "CameraRootFix",
+        "Root": "RootFix",
+        "Origin": "OriginFix",
+        "Head": "HeadPointFix"
+      }
+    },
+    {
+      "ActiveTurnStates": [
+        "SelfActionExecuting1",
+        "InsertUltraSkillExecuting",
+        "SelfActionPrepare",
+        "SelfWaitActionOrder1",
+        "InsertAbilityPhase1Begin",
+        "InsertAbilityActionPhase",
+        "InsertAbilityPhase2",
+        "InsertAbilityAfterUltraSkillBegin",
+        "InsertAbilityAfterUltraSkillEnd"
+      ],
+      "ActionEntityTypes": "FriendExcludeSummoner",
+      "ActionEntityCharacterID": [
+        1101
+      ],
+      "ActiveSkillNames": [
+        "Skill03"
+      ],
+      "Option": 12,
+      "FormationType": "Follow",
+      "LocationConfig": {
+        "Width": 1,
+        "RootOffset": {
+          "X": 4,
+          "Z": 4.6
+        },
+        "FormationFollowOffset": {
+          "X": -10.5,
+          "Y": 2,
+          "Z": -28
+        }
+      },
+      "FollowOffsetMode": "TeamCenter",
+      "Visible": false,
+      "AttachPointRedirect": {
+        "CameraRoot": "CameraRootFix",
+        "SelectRoot": "CameraRootFix",
+        "Root": "RootFix",
+        "Origin": "OriginFix",
+        "Head": "HeadPointFix"
+      }
+    },
+    {
+      "ActiveTurnStates": [
+        "SelfActionExecuting1",
+        "InsertUltraSkillExecuting",
+        "SelfActionPrepare",
+        "SelfWaitActionOrder1",
+        "InsertAbilityPhase1Begin",
+        "InsertAbilityActionPhase",
+        "InsertAbilityPhase2",
+        "InsertAbilityAfterUltraSkillBegin",
+        "InsertAbilityAfterUltraSkillEnd"
+      ],
+      "ActionEntityTypes": "FriendExcludeSummoner",
+      "ActionEntityCharacterID": [
+        1211
+      ],
+      "ActiveSkillNames": [
+        "Skill03"
+      ],
+      "Option": 12,
+      "FormationType": "Follow",
+      "LocationConfig": {
+        "Width": 1,
+        "RootOffset": {
+          "X": 4,
+          "Z": 4.6
+        },
+        "FormationFollowOffset": {
+          "X": 13.5,
+          "Z": -3
+        },
+        "FormationFollowAngleOffset": -60
+      },
+      "FollowOffsetMode": "TeamCenter",
+      "Visible": false,
+      "AttachPointRedirect": {
+        "CameraRoot": "CameraRootFix",
+        "SelectRoot": "CameraRootFix",
+        "Root": "RootFix",
+        "Origin": "OriginFix",
+        "Head": "HeadPointFix"
+      }
+    },
+    {
+      "ActiveTurnStates": [
+        "SelfActionExecuting1",
+        "InsertUltraSkillExecuting",
+        "SelfActionPrepare",
+        "SelfWaitActionOrder1",
+        "InsertAbilityPhase1Begin",
+        "InsertAbilityActionPhase",
+        "InsertAbilityPhase2",
+        "InsertAbilityAfterUltraSkillBegin",
+        "InsertAbilityAfterUltraSkillEnd"
+      ],
+      "ActionEntityTypes": "FriendExcludeSummoner",
+      "ActionEntityCharacterID": [
+        1217
+      ],
+      "ActiveSkillNames": [
+        "Skill03"
+      ],
+      "Option": 12,
+      "FormationType": "Follow",
+      "LocationConfig": {
+        "Width": 1,
+        "RootOffset": {
+          "X": 4,
+          "Z": 4.6
+        },
+        "FormationFollowOffset": {
+          "X": 1.5,
+          "Z": -10
+        },
+        "FormationFollowAngleOffset": -20
+      },
+      "FollowOffsetMode": "TeamCenter",
+      "Visible": false,
+      "AttachPointRedirect": {
+        "CameraRoot": "CameraRootFix",
+        "SelectRoot": "CameraRootFix",
+        "Root": "RootFix",
+        "Origin": "OriginFix",
+        "Head": "HeadPointFix"
+      }
+    },
+    {
+      "ActiveTurnStates": [
+        "SelfActionExecuting1",
+        "InsertUltraSkillExecuting",
+        "SelfActionPrepare",
+        "SelfWaitActionOrder1",
+        "InsertAbilityPhase1Begin",
+        "InsertAbilityActionPhase",
+        "InsertAbilityPhase2",
+        "InsertAbilityAfterUltraSkillBegin",
+        "InsertAbilityAfterUltraSkillEnd"
+      ],
+      "ActionEntityTypes": "FriendExcludeSummoner",
+      "ActionEntityCharacterID": [
+        1303
+      ],
+      "ActiveSkillNames": [
+        "Skill03"
+      ],
+      "Option": 12,
+      "FormationType": "Follow",
+      "LocationConfig": {
+        "Width": 1,
+        "RootOffset": {
+          "X": 4,
+          "Z": 4.6
+        },
+        "FormationFollowOffset": {
+          "X": 4.5,
+          "Z": 1
+        },
+        "FormationFollowAngleOffset": -120
+      },
+      "FollowOffsetMode": "TeamCenter",
+      "Visible": false,
+      "AttachPointRedirect": {
+        "CameraRoot": "CameraRootFix",
+        "SelectRoot": "CameraRootFix",
+        "Root": "RootFix",
+        "Origin": "OriginFix",
+        "Head": "HeadPointFix"
+      }
+    },
+    {
+      "ActiveTurnStates": [
+        "SelfActionExecuting1",
+        "InsertUltraSkillExecuting",
+        "SelfActionPrepare",
+        "SelfWaitActionOrder1",
+        "InsertAbilityPhase1Begin",
+        "InsertAbilityActionPhase",
+        "InsertAbilityPhase2",
+        "InsertAbilityAfterUltraSkillBegin",
+        "InsertAbilityAfterUltraSkillEnd"
+      ],
+      "ActionEntityTypes": "FriendExcludeSummoner",
+      "ActionEntityCharacterID": [
+        1306
+      ],
+      "ActiveSkillNames": [
+        "Skill03"
+      ],
+      "Option": 12,
+      "FormationType": "Follow",
+      "LocationConfig": {
+        "Width": 1,
+        "RootOffset": {
+          "X": 4,
+          "Z": 4.6
+        },
+        "FormationFollowOffset": {
+          "X": 7.5,
+          "Z": 1
+        },
+        "FormationFollowAngleOffset": -10
+      },
+      "FollowOffsetMode": "TeamCenter",
+      "Visible": false,
+      "AttachPointRedirect": {
+        "CameraRoot": "CameraRootFix",
+        "SelectRoot": "CameraRootFix",
+        "Root": "RootFix",
+        "Origin": "OriginFix",
+        "Head": "HeadPointFix"
+      }
+    },
+    {
+      "ActiveTurnStates": [
+        "SelfActionExecuting1",
+        "InsertUltraSkillExecuting",
+        "SelfActionPrepare",
+        "SelfWaitActionOrder1",
+        "InsertAbilityPhase1Begin",
+        "InsertAbilityActionPhase",
+        "InsertAbilityPhase2",
+        "InsertAbilityAfterUltraSkillBegin",
+        "InsertAbilityAfterUltraSkillEnd"
+      ],
+      "ActionEntityTypes": "FriendExcludeSummoner",
+      "ActionEntityCharacterID": [
+        8005,
+        8006
+      ],
+      "ActiveSkillNames": [
+        "Skill03"
+      ],
+      "Option": 12,
+      "FormationType": "Follow",
+      "LocationConfig": {
+        "Width": 1,
+        "RootOffset": {
+          "X": 4,
+          "Z": 4.6
+        },
+        "FormationFollowOffset": {
+          "X": 10,
+          "Z": 3
+        },
+        "FormationFollowAngleOffset": -90
+      },
+      "FollowOffsetMode": "TeamCenter",
+      "Visible": false,
+      "AttachPointRedirect": {
+        "CameraRoot": "CameraRootFix",
+        "SelectRoot": "CameraRootFix",
+        "Root": "RootFix",
+        "Origin": "OriginFix",
+        "Head": "HeadPointFix"
+      }
+    },
+    {
+      "ActiveTurnStates": [
+        "SelfActionExecuting1",
+        "InsertUltraSkillExecuting"
+      ],
+      "ActionEntityTypes": "FriendExcludeSummoner",
+      "ActiveCondition": {
+        "$type": "RPG.GameCore.ByAnd",
+        "PredicateList": [
+          {
+            "$type": "RPG.GameCore.ByInTimelinePerform"
+          },
+          {
+            "$type": "RPG.GameCore.ByIsCurrentSkillAllowMultiTarget",
+            "AccessClientActiveSkill": true,
+            "Inverse": true
+          },
+          {
+            "$type": "RPG.GameCore.ByTargetListIntersects",
+            "FirstTargetType": {
+              "$type": "RPG.GameCore.TargetAlias",
+              "Alias": "CurrentTurnActionEntity.GetSkillTarget"
+            },
+            "SecondTargetType": {
+              "$type": "RPG.GameCore.TargetAlias",
+              "Alias": "Caster"
+            }
+          }
+        ]
+      },
+      "FormationType": "Follow",
+      "LocationConfig": {
+        "Width": 1,
+        "RootOffset": {
+          "X": 4,
+          "Z": 4.6
+        },
+        "FormationFollowOffset": {
+          "X": 1.5,
+          "Z": -8
+        }
+      },
+      "FollowOffsetMode": "TeamCenter",
+      "Scale": 0.25,
+      "AttachPointRedirect": {
+        "CameraRoot": "CameraRootFix",
+        "SelectRoot": "CameraRootFix",
+        "Root": "RootFix",
+        "Origin": "OriginFix",
+        "Head": "HeadPointFix"
+      }
+    },
+    {
+      "ActiveTurnStates": [
+        "SelfActionExecuting1",
+        "InsertUltraSkillExecuting",
+        "InsertAbilityPhase1Begin",
+        "InsertAbilityActionPhase",
+        "InsertAbilityPhase2",
+        "InsertAbilityAfterUltraSkillBegin",
+        "InsertAbilityAfterUltraSkillEnd"
+      ],
+      "ActionEntityTypes": "FriendExcludeSummoner",
+      "ActiveCondition": {
+        "$type": "RPG.GameCore.ByInTimelinePerform"
+      },
+      "Option": "ExcludeInCustomFromation",
+      "FormationType": "Follow",
+      "FollowOffsetMode": "TeamCenter",
+      "Visible": false
+    },
+    {
+      "ActiveTurnStates": [
+        "SelfActionExecuting1",
+        "InsertUltraSkillExecuting",
+        "InsertAbilityPhase1Begin",
+        "InsertAbilityActionPhase",
+        "InsertAbilityPhase2",
+        "InsertAbilityAfterUltraSkillBegin",
+        "InsertAbilityAfterUltraSkillEnd"
+      ],
+      "ActionEntityTypes": "FriendExcludeSummoner",
+      "Option": 12,
+      "FormationType": "Follow",
+      "LocationConfig": {
+        "Width": 1,
+        "RootOffset": {
+          "X": 4,
+          "Z": 4.6
+        },
+        "FormationFollowOffset": {
+          "X": 1.5,
+          "Z": -6
+        }
+      },
+      "FollowOffsetMode": "TeamCenter",
+      "Scale": 0.7,
+      "AttachPointRedirect": {
+        "CameraRoot": "CameraRootFixRight_1",
+        "SelectRoot": "CameraRootFixRight_1",
+        "Root": "RootFixRight_1",
+        "Origin": "OriginFixRight_1",
+        "Head": "HeadPointFix"
+      }
+    },
+    {
+      "ActiveCameraStates": [
+        "SelectLightTeamEntity",
+        "UseSkillPerform",
+        "LightTeamDolly",
+        "SelectAllLightTeamEntity",
+        "SelectServant"
+      ],
+      "ActionEntityTypes": "FriendExcludeSummoner",
+      "ActiveCondition": {
+        "$type": "RPG.GameCore.ByAnd",
+        "PredicateList": [
+          {
+            "$type": "RPG.GameCore.ByInTimelinePerform",
+            "Inverse": true
+          },
+          {
+            "$type": "RPG.GameCore.ByIsInCustomTeamFormation",
+            "Team": "TeamLight"
+          }
+        ]
+      },
+      "Option": "ExcludeInCustomFromation",
+      "FormationType": "Follow",
+      "LocationConfig": {
+        "Width": 1,
+        "FormationFollowOffset": {
+          "X": -2.5,
+          "Z": -7.5
+        }
+      },
+      "FollowOffsetMode": "CustomFormationCenter",
+      "FollowDirMode": "Camera",
+      "AttachPointRedirect": {
+        "SelectRoot": "SelectRootFix",
+        "Head": "HeadPointFix"
+      }
+    },
+    {
+      "ActionEntityTypes": "SelfTeam",
+      "ActiveCondition": {
+        "$type": "RPG.GameCore.ByInTimelinePerform",
+        "Inverse": true
+      },
+      "FormationType": "Follow",
+      "LocationConfig": {
+        "Width": 1,
+        "FormationFollowOffset": {
+          "X": -2.5,
+          "Z": -7.5
+        }
+      },
+      "FollowOffsetMode": "TeamCenter",
+      "AttachPointRedirect": {
+        "Root": "RootFix",
+        "SelectRoot": "SelectRootFix",
+        "Head": "HeadPointFix"
+      }
+    },
+    {
+      "Option": "IgnoreOverrideConfig",
+      "FormationType": "Follow",
+      "Visible": false
+    }
+  ],
+  "DamageType": "Quantum",
+  "SyncPropertyExceptList": [
+    "BaseHP",
+    "HPAddedRatio",
+    "HPConvert",
+    "HPDelta",
+    "MaxHP",
+    "CurrentHP",
+    "Speed",
+    "BaseSpeed",
+    "SpeedAddedRatio",
+    "SpeedConvert",
+    "SpeedDelta",
+    "SpeedOverride"
+  ],
+  "ViewModeServantFollowOffset": {
+    "X": -4.9,
+    "Z": -9.2
+  },
+  "IsPlayerControlled": true,
+  "AIPath": "Config/ConfigAI/Avatar_ComplexSkilll_AutoFight_AI.json",
+  "SomatoType": "LargeServant",
+  "CharacterHUDOffset": {
+    "X": 3,
+    "Y": 0.5
+  },
+  "BuffPanelOffset": {
+    "Y": 1.2
+  },
+  "TargetSelectGroup": 1,
+  "HitBoxWidth": 0.6,
+  "HitBoxHeight": 0.2,
+  "HitBoxAttachPoint": "Root",
+  "Location": {
+    "Width": 1,
+    "FormationFollowOffset": {
+      "Z": -27
+    }
+  },
+  "AnimEventConfigList": [
+    "Config/ConfigAnimEvents/Servant/Designer/Servant_CastoriceServant_00_Designer_AnimEvent.json",
+    "Config/ConfigAnimEvents/Servant/Effect/Servant_CastoriceServant_00_Effect_AnimEvent.json",
+    "Config/ConfigAnimEvents/Servant/Audio/Servant_CastoriceServant_00_Audio_AnimEvent.json",
+    "Config/ConfigAnimEvents/Avatar/Audio/Avatar_Common_ControllerVibration_AnimEvent.json"
+  ],
+  "SkillList": [
+    {
+      "Name": "Skill01",
+      "SkillType": "Servant",
+      "UseType": "UIButtonClick",
+      "TargetInfo": {
+        "TargetType": "AllEnemy",
+        "AliveState": "AliveOrLimbo"
+      },
+      "ReadyAnimState": "Skill01_Ready",
+      "EntryAbility": "Servant_CastoriceServant_Skill01_Phase01",
+      "ComplexSkillAIPreCheck": {
+        "Groups": [
+          {
+            "GroupName": "DefaultNormalSkill_PreCheck"
+          },
+          {
+            "GroupName": "BaseWeight",
+            "Weight": {
+              "Value": 0.2
+            }
+          },
+          {
+            "GroupName": "BasePp_Common_SingleAttack",
+            "Weight": {
+              "Value": 0.05
+            }
+          },
+          {
+            "GroupName": "BasePp_Common_WeakBreak",
+            "Weight": {
+              "Value": 0.05
+            }
+          }
+        ]
+      },
+      "ComplexSkillAI": {
+        "Groups": [
+          {
+            "GroupName": "DefaultNormalSkill"
+          },
+          {
+            "GroupName": "BaseWeight",
+            "Weight": {
+              "Value": 0.2
+            }
+          },
+          {
+            "GroupName": "BasePp_Common_SingleAttack",
+            "Weight": {
+              "Value": 0.05
+            }
+          },
+          {
+            "GroupName": "BasePp_Common_WeakBreak",
+            "Weight": {
+              "Value": 0.05
+            }
+          }
+        ]
+      },
+      "VisibleCondition": {
+        "$type": "RPG.GameCore.ByIsContainModifier",
+        "TargetType": {
+          "$type": "RPG.GameCore.TargetAlias",
+          "Alias": "Caster"
+        },
+        "ModifierName": {
+          "Value": "MServant_CastoriceServant_Disable"
+        },
+        "Inverse": true
+      },
+      "AutoStandbyOnSkillFinish": false,
+      "DisableHeadLookAt": true
+    },
+    {
+      "Name": "Skill02",
+      "SkillType": "Servant",
+      "UseType": "UIButtonPress",
+      "AutoSelectPriority": 1,
+      "TargetInfo": {
+        "TargetType": "AllEnemy",
+        "AliveState": "AliveOrLimbo"
+      },
+      "ReadyAnimState": "Skill01_Ready",
+      "CameraConfig": {
+        "NormalConfig": {
+          "CameraState": "SelectDarkTeamEntity",
+          "IsLocalOffset": true,
+          "AnchorOffset": {
+            "X": 3.5,
+            "Y": 16.85,
+            "Z": -5
+          },
+          "AimTargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "DarkTeamCenter"
+          },
+          "AimOffset": {
+            "X": -8.6,
+            "Y": -1.7
+          },
+          "FollowRadius": 1.5,
+          "AnchorToAimAngle": 22,
+          "Dutch": 2,
+          "FOV": 40
+        },
+        "BlendConfig": {
+          "BlendType": "Cut"
+        },
+        "ShowEntityConfig": {
+          "ShowTargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "CasterWithAllEnemy"
+          }
+        },
+        "LockRelatedTarget": true
+      },
+      "CameraConfigAdded": {
+        "NormalConfig": {
+          "CameraState": "SelectDarkTeamEntity",
+          "IsLocalOffset": true,
+          "AnchorOffset": {
+            "X": 3.5,
+            "Y": 18.41,
+            "Z": -7.6
+          },
+          "AimTargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "DarkTeamCenter"
+          },
+          "AimOffset": {
+            "X": -9.36,
+            "Y": -1.7
+          },
+          "FollowRadius": 1.5,
+          "AnchorToAimAngle": 22,
+          "Dutch": 2,
+          "FOV": 40
+        },
+        "BlendConfig": {
+          "BlendType": "Custom",
+          "CustomCurveName": "BlendCut_1407_00toReady01",
+          "BlendTime": 1.1
+        },
+        "ShowEntityConfig": {
+          "ShowTargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "CasterWithAllEnemy"
+          }
+        },
+        "LockRelatedTarget": true
+      },
+      "EntryAbility": "Servant_CastoriceServant_Skill02_Phase01",
+      "ComplexSkillAIPreCheck": {
+        "SkillBasicPower": {
+          "Value": 2
+        },
+        "Groups": [
+          {
+            "GroupName": "DefaultBPSkill_PreCheck"
+          },
+          {
+            "GroupName": "BaseWeight"
+          },
+          {
+            "GroupName": "BasePp_Common_SingleAttack",
+            "Weight": {
+              "Value": 0.1
+            }
+          },
+          {
+            "GroupName": "Add100_Servant_Castorice_SingleAttack",
+            "Weight": {
+              "Value": 2
+            }
+          },
+          {
+            "GroupName": "BasePp_Common_WeakBreak",
+            "Weight": {
+              "Value": 0.1
+            }
+          }
+        ]
+      },
+      "ComplexSkillAI": {
+        "SkillBasicPower": {
+          "Value": 2
+        },
+        "Groups": [
+          {
+            "GroupName": "DefaultBPSkill"
+          },
+          {
+            "GroupName": "BaseWeight"
+          }
+        ]
+      },
+      "AutoStandbyOnSkillFinish": false,
+      "IsSkillInsertable": false,
+      "ForceSkillPanelActive": true,
+      "DisableHeadLookAt": true
+    },
+    {
+      "Name": "Skill21",
+      "SkillType": "Servant",
+      "UseType": "UIButtonPress",
+      "AutoSelectPriority": 1,
+      "TargetInfo": {
+        "TargetType": "AllEnemy",
+        "AliveState": "AliveOrLimbo"
+      },
+      "UseReadyTransitAnim": true,
+      "ReadyAnimState": "Skill21_Ready",
+      "CustomReadyConfigs": [
+        {
+          "Condition": {
+            "$type": "RPG.GameCore.ByIsContainModifier",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetAlias",
+              "Alias": "Caster"
+            },
+            "ModifierName": {
+              "Value": "MServant_CastoriceServant_Flag01"
+            },
+            "Inverse": true
+          },
+          "CameraConfig": {
+            "NormalConfig": {
+              "CameraState": "SelectDarkTeamEntity",
+              "IsLocalOffset": true,
+              "AnchorOffset": {
+                "X": 3.9,
+                "Y": 13.95,
+                "Z": -2.5
+              },
+              "AimTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "DarkTeamCenter"
+              },
+              "AimOffset": {
+                "X": -8.4,
+                "Y": -1.98
+              },
+              "FollowRadius": 1.5,
+              "AnchorToAimAngle": 22,
+              "Dutch": 2,
+              "FOV": 40
+            },
+            "BlendConfig": {
+              "BlendType": "Cut"
+            },
+            "ShowEntityConfig": {
+              "ShowTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "CasterWithAllEnemy"
+              }
+            }
+          },
+          "CameraConfigAdded": {
+            "NormalConfig": {
+              "CameraState": "SelectDarkTeamEntity",
+              "IsLocalOffset": true,
+              "AnchorOffset": {
+                "X": 4.14,
+                "Y": 14.95,
+                "Z": -4.4
+              },
+              "AimTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "DarkTeamCenter"
+              },
+              "AimOffset": {
+                "X": -8.84,
+                "Y": -1.98
+              },
+              "FollowRadius": 1.5,
+              "AnchorToAimAngle": 22,
+              "Dutch": 2,
+              "FOV": 40
+            },
+            "BlendConfig": {
+              "BlendType": "Custom",
+              "CustomCurveName": "BlendCut_1407_00toReady02",
+              "BlendTime": 1
+            },
+            "ShowEntityConfig": {
+              "ShowTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "CasterWithAllEnemy"
+              }
+            }
+          },
+          "ReadyAnimState": "Skill21_Ready"
+        }
+      ],
+      "EntryAbility": "Servant_CastoriceServant_Skill21_Phase01",
+      "ComplexSkillAIPreCheck": {
+        "SkillBasicPower": {
+          "Value": 2
+        },
+        "Groups": [
+          {
+            "GroupName": "DefaultBPSkill_PreCheck"
+          },
+          {
+            "GroupName": "BaseWeight"
+          },
+          {
+            "GroupName": "Add100_Servant_Castorice_SingleAttack",
+            "Weight": {
+              "Value": 2
+            }
+          },
+          {
+            "GroupName": "BasePp_Common_SingleAttack",
+            "Weight": {
+              "Value": 0.1
+            }
+          },
+          {
+            "GroupName": "BasePp_Common_WeakBreak",
+            "Weight": {
+              "Value": 0.1
+            }
+          }
+        ]
+      },
+      "ComplexSkillAI": {
+        "SkillBasicPower": {
+          "Value": 2
+        },
+        "Groups": [
+          {
+            "GroupName": "DefaultBPSkill"
+          },
+          {
+            "GroupName": "BaseWeight"
+          }
+        ]
+      },
+      "AutoStandbyOnSkillFinish": false,
+      "IsSkillInsertable": false,
+      "ForceSkillPanelActive": true,
+      "DisableHeadLookAt": true
+    },
+    {
+      "Name": "Skill22",
+      "SkillType": "Servant",
+      "UseType": "UIButtonPress",
+      "AutoSelectPriority": 1,
+      "TargetInfo": {
+        "TargetType": "AllEnemy",
+        "AliveState": "AliveOrLimbo"
+      },
+      "UseReadyTransitAnim": true,
+      "ReadyAnimState": "Skill22_Ready",
+      "CustomReadyConfigs": [
+        {
+          "Condition": {
+            "$type": "RPG.GameCore.ByIsContainModifier",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetAlias",
+              "Alias": "Caster"
+            },
+            "ModifierName": {
+              "Value": "MServant_CastoriceServant_Flag01"
+            },
+            "Inverse": true
+          },
+          "CameraConfig": {
+            "NormalConfig": {
+              "CameraState": "SelectDarkTeamEntity",
+              "IsLocalOffset": true,
+              "AnchorOffset": {
+                "X": 2.73,
+                "Y": 12.3,
+                "Z": 0.25
+              },
+              "AimTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "DarkTeamCenter"
+              },
+              "AimOffset": {
+                "X": -7.73,
+                "Y": -1.37
+              },
+              "FollowRadius": 1.5,
+              "AnchorToAimAngle": 22,
+              "Dutch": 2,
+              "FOV": 40
+            },
+            "BlendConfig": {
+              "BlendType": "Cut"
+            },
+            "ShowEntityConfig": {
+              "ShowTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "CasterWithAllEnemy"
+              }
+            }
+          },
+          "CameraConfigAdded": {
+            "NormalConfig": {
+              "CameraState": "SelectDarkTeamEntity",
+              "IsLocalOffset": true,
+              "AnchorOffset": {
+                "X": 2.73,
+                "Y": 13.1,
+                "Z": -0.76
+              },
+              "AimTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "DarkTeamCenter"
+              },
+              "AimOffset": {
+                "X": -7.73,
+                "Y": -1.37
+              },
+              "FollowRadius": 1.5,
+              "AnchorToAimAngle": 22,
+              "Dutch": 2,
+              "FOV": 40
+            },
+            "BlendConfig": {
+              "BlendType": "Custom",
+              "CustomCurveName": "BlendCut_1407_00toReady03",
+              "BlendTime": 1
+            },
+            "ShowEntityConfig": {
+              "ShowTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "CasterWithAllEnemy"
+              }
+            }
+          },
+          "ReadyAnimState": "Skill22_Ready"
+        }
+      ],
+      "EntryAbility": "Servant_CastoriceServant_Skill22_Phase01",
+      "ComplexSkillAIPreCheck": {
+        "SkillBasicPower": {
+          "Value": 2
+        },
+        "Groups": [
+          {
+            "GroupName": "DefaultBPSkill_PreCheck"
+          },
+          {
+            "GroupName": "BaseWeight",
+            "Weight": {
+              "Value": 2
+            }
+          },
+          {
+            "GroupName": "Add100_Servant_Castorice_SingleAttack",
+            "Weight": {
+              "Value": 2
+            }
+          },
+          {
+            "GroupName": "BasePp_Common_SingleAttack",
+            "Weight": {
+              "Value": 0.1
+            }
+          },
+          {
+            "GroupName": "BasePp_Common_WeakBreak",
+            "Weight": {
+              "Value": 0.1
+            }
+          }
+        ]
+      },
+      "ComplexSkillAI": {
+        "SkillBasicPower": {
+          "Value": 2
+        },
+        "Groups": [
+          {
+            "GroupName": "DefaultBPSkill"
+          },
+          {
+            "GroupName": "BaseWeight"
+          }
+        ]
+      },
+      "AutoStandbyOnSkillFinish": false,
+      "IsSkillInsertable": false,
+      "ForceSkillPanelActive": true,
+      "DisableHeadLookAt": true
+    },
+    {
+      "Name": "Skill23",
+      "SkillType": "Servant",
+      "UseType": "UIButtonPress",
+      "AutoSelectPriority": 1,
+      "TargetInfo": {
+        "TargetType": "AllEnemy",
+        "AliveState": "AliveOrLimbo"
+      },
+      "UseReadyTransitAnim": true,
+      "ReadyAnimState": "Skill22_Ready",
+      "CustomReadyConfigs": [
+        {
+          "Condition": {
+            "$type": "RPG.GameCore.ByAnd",
+            "PredicateList": [
+              {
+                "$type": "RPG.GameCore.ByIsContainModifier",
+                "TargetType": {
+                  "$type": "RPG.GameCore.TargetAlias",
+                  "Alias": "Caster"
+                },
+                "ModifierName": {
+                  "Value": "MServant_CastoriceServant_Flag01"
+                },
+                "Inverse": true
+              },
+              {
+                "$type": "RPG.GameCore.ByCompareDynamicValue",
+                "DynamicKey": {
+                  "Value": "CastoriceServant_BPSkill_Level"
+                },
+                "CompareType": "Greater",
+                "CompareValue": {
+                  "FixedValue": {
+                    "Value": 1
+                  }
+                }
+              }
+            ]
+          },
+          "CameraConfig": {
+            "NormalConfig": {
+              "CameraState": "SelectDarkTeamEntity",
+              "IsLocalOffset": true,
+              "AnchorOffset": {
+                "X": 2.73,
+                "Y": 12.3,
+                "Z": 0.25
+              },
+              "AimTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "DarkTeamCenter"
+              },
+              "AimOffset": {
+                "X": -7.73,
+                "Y": -1.37
+              },
+              "FollowRadius": 1.5,
+              "AnchorToAimAngle": 22,
+              "Dutch": 2,
+              "FOV": 40
+            },
+            "BlendConfig": {
+              "BlendType": "Cut"
+            },
+            "ShowEntityConfig": {
+              "ShowTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "CasterWithAllEnemy"
+              }
+            }
+          },
+          "CameraConfigAdded": {
+            "NormalConfig": {
+              "CameraState": "SelectDarkTeamEntity",
+              "IsLocalOffset": true,
+              "AnchorOffset": {
+                "X": 2.73,
+                "Y": 13.1,
+                "Z": -0.76
+              },
+              "AimTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "DarkTeamCenter"
+              },
+              "AimOffset": {
+                "X": -7.73,
+                "Y": -1.37
+              },
+              "FollowRadius": 1.5,
+              "AnchorToAimAngle": 22,
+              "Dutch": 2,
+              "FOV": 40
+            },
+            "BlendConfig": {
+              "BlendType": "Custom",
+              "CustomCurveName": "BlendCut_00to1",
+              "BlendTime": 1
+            },
+            "ShowEntityConfig": {
+              "ShowTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "CasterWithAllEnemy"
+              }
+            }
+          },
+          "ReadyAnimState": "Skill22_Ready"
+        }
+      ],
+      "EntryAbility": "Servant_CastoriceServant_Skill23_Phase01",
+      "ComplexSkillAIPreCheck": {
+        "SkillBasicPower": {
+          "Value": 2
+        },
+        "Groups": [
+          {
+            "GroupName": "DefaultBPSkill_PreCheck"
+          },
+          {
+            "GroupName": "BaseWeight"
+          },
+          {
+            "GroupName": "Add100_Servant_Castorice_SingleAttack",
+            "Weight": {
+              "Value": 2
+            }
+          },
+          {
+            "GroupName": "BasePp_Common_SingleAttack",
+            "Weight": {
+              "Value": 0.1
+            }
+          },
+          {
+            "GroupName": "BasePp_Common_WeakBreak",
+            "Weight": {
+              "Value": 0.1
+            }
+          }
+        ]
+      },
+      "ComplexSkillAI": {
+        "SkillBasicPower": {
+          "Value": 2
+        },
+        "Groups": [
+          {
+            "GroupName": "DefaultBPSkill"
+          },
+          {
+            "GroupName": "BaseWeight"
+          }
+        ]
+      },
+      "AutoStandbyOnSkillFinish": false,
+      "IsSkillInsertable": false,
+      "ForceSkillPanelActive": true,
+      "DisableHeadLookAt": true
+    },
+    {
+      "Name": "SkillP01",
+      "SkillType": "Passive",
+      "UseType": "Passive",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "SkillNameHUD": false,
+      "EntryAbility": "Servant_CastoriceServant_PassiveSkill01"
+    },
+    {
+      "Name": "PassiveSkill02",
+      "SkillType": "Passive",
+      "UseType": "Passive",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "EntryAbility": "Avatar_Common_PassiveSkill"
+    },
+    {
+      "Name": "PassiveSkill02",
+      "SkillType": "Passive",
+      "UseType": "Passive",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "EntryAbility": "Servant_Common_PassiveSkill"
+    },
+    {
+      "Name": "SkillP03",
+      "SkillType": "Passive",
+      "UseType": "Passive",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "SkillNameHUD": false,
+      "EntryAbility": "Servant_CastoriceServant_00_BattleCry"
+    },
+    {
+      "Name": "SkillP04",
+      "SkillType": "Passive",
+      "UseType": "Passive",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "SkillNameHUD": false,
+      "EntryAbility": "Servant_CastoriceServant_DeathRattle"
+    }
+  ],
+  "AbilityList": [
+    "Avatar_Common_PassiveSkill",
+    "Servant_Common_PassiveSkill"
+  ],
+  "SkillAbilityList": [
+    {
+      "Skill": "Skill01",
+      "AbilityList": [
+        "Servant_CastoriceServant_Skill01_Phase01",
+        "Servant_CastoriceServant_Skill01_Phase02",
+        "Servant_CastoriceServant_Skill01_Camera",
+        "Servant_CastoriceServant_Skill01_Ready"
+      ]
+    },
+    {
+      "Skill": "Skill02",
+      "AbilityList": [
+        "Servant_CastoriceServant_Skill02_Phase01",
+        "Servant_CastoriceServant_Skill02_Phase02",
+        "Servant_CastoriceServant_Skill02_Camera"
+      ]
+    },
+    {
+      "Skill": "Skill21",
+      "AbilityList": [
+        "Servant_CastoriceServant_Skill21_Phase01",
+        "Servant_CastoriceServant_Skill21_Phase02",
+        "Servant_CastoriceServant_Skill21_Camera",
+        "Servant_CastoriceServant_Skill21_Skill01toSkill21_Camera"
+      ]
+    },
+    {
+      "Skill": "Skill22",
+      "AbilityList": [
+        "Servant_CastoriceServant_Skill22_Phase01",
+        "Servant_CastoriceServant_Skill22_Phase02",
+        "Servant_CastoriceServant_Skill22_Camera",
+        "Servant_CastoriceServant_Skill22_Skill01toSkill22_Camera"
+      ]
+    },
+    {
+      "Skill": "Skill23",
+      "AbilityList": [
+        "Servant_CastoriceServant_Skill23_Phase01",
+        "Servant_CastoriceServant_Skill23_Phase02",
+        "Servant_CastoriceServant_Skill23_Camera",
+        "Servant_CastoriceServant_Skill23_Camera_NoneCasterSummonerCamera",
+        "Servant_CastoriceServant_Skill23_ReadytoFly_Camera",
+        "Servant_CastoriceServant_Skill23_ReadytoFly_Camera02",
+        "Servant_CastoriceServant_Skill23_ReadytoFly_Camera03"
+      ]
+    },
+    {
+      "Skill": "SkillP01",
+      "AbilityList": [
+        "Servant_CastoriceServant_PassiveSkill01",
+        "Servant_CastoriceServant_Together_Phase01"
+      ]
+    },
+    {
+      "Skill": "SkillP03",
+      "AbilityList": [
+        "Servant_CastoriceServant_00_BattleCry"
+      ]
+    },
+    {
+      "Skill": "SkillP04",
+      "AbilityList": [
+        "Servant_CastoriceServant_DeathRattle",
+        "Servant_CastoriceServant_PassiveInsertAbility_Phase01",
+        "Servant_CastoriceServant_PassiveInsertAbility_Phase02",
+        "Servant_CastoriceServant_PassiveInsertAbility_Camera",
+        "Servant_CastoriceServant_PassiveInsertAbility_NoneCasterSummonerCamera"
+      ]
+    }
+  ],
+  "DynamicValues": {
+    "Floats": {
+      "-1634999942": {},
+      "-908429758": {},
+      "2139524410": {},
+      "-1672504447": {},
+      "-347937351": {},
+      "2088291737": {},
+      "-246534785": {},
+      "-416657746": {},
+      "-664257011": {},
+      "11134768": {},
+      "-1709953464": {},
+      "-177856056": {},
+      "1062232195": {},
+      "1793845941": {},
+      "-1341917994": {},
+      "1996252207": {},
+      "603281572": {},
+      "1204840578": {},
+      "-1348048847": {},
+      "1870095566": {},
+      "-1175712008": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill01"
+        }
+      },
+      "2133001108": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill02"
+        }
+      },
+      "1476844314": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill02",
+          "Index": 1
+        }
+      },
+      "-2087063973": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill02",
+          "Index": 2
+        }
+      },
+      "-1825185632": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill02",
+          "Index": 3
+        }
+      },
+      "1113455817": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill02",
+          "Index": 4
+        }
+      },
+      "-502065740": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP01"
+        }
+      },
+      "-1078988428": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP03"
+        }
+      },
+      "843042081": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP03",
+          "Index": 1
+        }
+      },
+      "812377323": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP04"
+        }
+      },
+      "-686680309": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP04",
+          "Index": 1
+        }
+      },
+      "1788584214": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP04",
+          "Index": 2
+        }
+      },
+      "1982367917": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP04",
+          "Index": 3
+        }
+      },
+      "537315424": {},
+      "537315423": {},
+      "-1216640613": {},
+      "-783509448": {},
+      "1855260932": {},
+      "943383391": {},
+      "-1162817553": {},
+      "997796529": {},
+      "1958022546": {},
+      "1113479596": {},
+      "-1717072585": {}
+    }
+  },
+  "DisableAnimEventLayers": [
+    "Riboon Layer"
+  ],
+  "AttachPointEffectAdaptionList": [
+    {
+      "AttachPoint": "Origin",
+      "Scale": 2
+    },
+    {
+      "AttachPoint": "Head",
+      "Scale": 8
+    },
+    {
+      "AttachPoint": "HeadPointFix",
+      "Scale": 8
+    },
+    {
+      "AttachPoint": "OriginFixtSelf",
+      "Scale": 5
+    },
+    {
+      "AttachPoint": "RootFixtSelf",
+      "Scale": 5
+    },
+    {
+      "AttachPoint": "SelectRootFixSelf",
+      "Scale": 5
+    },
+    {
+      "AttachPoint": "OriginFix",
+      "Scale": 2
+    },
+    {
+      "AttachPoint": "OriginFixRight_1",
+      "Scale": 2
+    },
+    {
+      "AttachPoint": "Root",
+      "Scale": 4
+    },
+    {
+      "AttachPoint": "RootFix",
+      "Scale": 4
+    },
+    {
+      "AttachPoint": "RootFixRight_1",
+      "Scale": 4
+    },
+    {
+      "AttachPoint": "SelectRoot",
+      "Scale": 5
+    },
+    {
+      "Scale": 3
+    }
+  ],
+  "AITagList": {
+    "Floats": {
+      "-2126289379": {},
+      "762466": {},
+      "1692650493": {},
+      "-1649595214": {}
+    }
+  },
+  "GlobalAIFactorGroups": {
+    "Add100_Servant_Castorice_SingleAttack": {
+      "CombineOperator": "Mul",
+      "Factors": [
+        {
+          "Source": {
+            "$type": "RPG.GameCore.ComplexSkillAISourcePropertyCompare",
+            "TargetPropertyType": "CurrentHP",
+            "CompareType": "LessEqual",
+            "CompareValue": {
+              "Value": 1
+            }
+          },
+          "Mapper": {
+            "$type": "RPG.GameCore.ComplexSkillAIMapperMultiRange",
+            "Ranges": [
+              {
+                "xmin": {
+                  "Value": -0.5
+                },
+                "ymin": {
+                  "Value": 1
+                },
+                "xmax": {
+                  "Value": 0.5
+                },
+                "ymax": {
+                  "Value": 1
+                }
+              },
+              {
+                "xmin": {
+                  "Value": 0.5
+                },
+                "xmax": {
+                  "Value": 1.5
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,25 +1,24 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "NPC",
   "Category": "Atmosphere",
   "AreaAnchorName": "LevelArea_P10301_F10301001_G154",
   "SaveType": "Reset",
-  "AtmosphereCondition": {
-    "Operation": "And"
-  },
+  "AtmosphereCondition": {},
   "LoadOnInitial": true,
   "ValueSource": {},
   "ConflictIDList": [],
   "IsHoyoGroup": true,
   "HoYoGroupType": "Container",
-  "StreamingTemplateType": "Standard",
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
   "ConflictWhiteList": [],
-  "TagContainer": [
-    {
-      "Tag": "Group.Atomsphere.NPC",
-      "TagHash": -882113524
-    }
-  ],
+  "TagContainer": {
+    "List": [
+      {
+        "Tag": "Group.Atomsphere.NPC",
+        "TagHash": -882113524
+      }
+    ]
+  },
   "AnchorList": [
     {
       "Name": "Anchor1",
@@ -45,42 +44,25 @@
   "NPCList": [
     {
       "NPCID": 13309,
-      "LoadOnInitial": true,
       "ValueSource": {},
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "ServerInteractVerificationIDList": [],
-      "DefaultLookAtMode": "LookPlayer",
       "BoardShowList": [
         1,
         64,
         128
       ],
       "TalkDialogGroupIDList": [],
-      "DefaultAnimationType": "FreeStyle",
       "DefaultIdleFreeStyleMotionID": 100040210,
-      "BornType": "Mission",
       "InitialHiddenNodeList": [],
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "OverrideBehaviorType": "DreamlandActor",
       "OverrideReplaceMaterialKeyList": [],
       "CameraCenterEntityList": [],
       "SpawnConfig": {
-        "TryCapture": true,
-        "CaptureDistanceTolerance": 1.5,
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
-      "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true
-      },
+      "TriggerValidGuest": {},
       "Name": "NPC1",
       "RotY": 280.3967,
       "ID": 400001,
@@ -103,82 +85,60 @@
               "PosX": -14.3988,
               "PosY": -0.543968,
               "PosZ": 0.426392,
+              "RestartMode": "RestartFromSO",
               "RootTask": {
                 "$type": "RPG.GameCore.SO_Sequence",
                 "Tasks": [
                   {
                     "$type": "RPG.GameCore.SO_MoveTo",
-                    "MoveStance": "Walk",
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "MoveStance": "Walk"
                   },
                   {
                     "$type": "RPG.GameCore.SO_FaceTo",
                     "AnchorGroupId": 154,
-                    "AnchorPointId": 1,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "AnchorPointId": 1
                   },
                   {
                     "$type": "RPG.GameCore.SO_PlayFreeStyle",
                     "StoryAvatarID": "NPC_Child",
-                    "StoryMotionID": 100040210,
-                    "ForceStart": true,
-                    "NormalizedTransitionDuration": 0.05,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "StoryMotionID": 100040210
                   },
                   {
                     "$type": "RPG.GameCore.SO_Wait",
-                    "Time": 20.0,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "Time": 20
                   }
                 ],
-                "WaitMessages": [],
-                "TaskEnabled": true,
-                "IsClientOnly": true
+                "WaitMessages": []
               }
             },
             {
               "PosX": -14.4,
               "PosY": -0.543984,
               "PosZ": -5.93,
+              "RestartMode": "RestartFromSO",
               "RootTask": {
                 "$type": "RPG.GameCore.SO_Sequence",
                 "Tasks": [
                   {
                     "$type": "RPG.GameCore.SO_MoveTo",
-                    "MoveStance": "Walk",
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "MoveStance": "Walk"
                   },
                   {
                     "$type": "RPG.GameCore.SO_FaceTo",
                     "AnchorGroupId": 154,
-                    "AnchorPointId": 2,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "AnchorPointId": 2
                   },
                   {
                     "$type": "RPG.GameCore.SO_PlayFreeStyle",
                     "StoryAvatarID": "NPC_Child",
-                    "StoryMotionID": 100040231,
-                    "ForceStart": true,
-                    "NormalizedTransitionDuration": 0.05,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "StoryMotionID": 100040231
                   },
                   {
                     "$type": "RPG.GameCore.SO_Wait",
-                    "Time": 20.0,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "Time": 20
                   }
                 ],
-                "WaitMessages": [],
-                "TaskEnabled": true,
-                "IsClientOnly": true
+                "WaitMessages": []
               }
             }
           ]

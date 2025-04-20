@@ -1,0 +1,95 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "43205_MoveMonster"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.AdvTriggerAIPlaySmartObject",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvMonster",
+            "MultiGroupFetch": [
+              {
+                "GroupID": {
+                  "FixedValue": {
+                    "Value": 13
+                  }
+                },
+                "ID": {
+                  "FixedValue": {
+                    "Value": 200002
+                  }
+                }
+              }
+            ]
+          },
+          "InstanceID": {
+            "FixedValue": {
+              "Value": 200002
+            }
+          },
+          "SmartObjectID": {
+            "FixedValue": {
+              "Value": 2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "43205_MoveMonster"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.AdvTriggerAIPlaySmartObject",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvMonster",
+            "MultiGroupFetch": [
+              {
+                "GroupID": {
+                  "FixedValue": {
+                    "Value": 13
+                  }
+                },
+                "ID": {
+                  "FixedValue": {
+                    "Value": 200001
+                  }
+                }
+              }
+            ]
+          },
+          "InstanceID": {
+            "FixedValue": {
+              "Value": 200001
+            }
+          },
+          "SmartObjectID": {
+            "FixedValue": {
+              "Value": 1
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ValueSource": {
+    "Values": [
+      {
+        "$type": "RPG.GameCore.SharedString",
+        "Key": "Cam"
+      }
+    ]
+  }
+}

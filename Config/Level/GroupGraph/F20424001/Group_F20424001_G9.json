@@ -1,0 +1,97 @@
+{
+  "OnInitSequece": [
+    {
+      "TaskList": []
+    }
+  ],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PlayNPCBubbleTalk",
+          "BubbleTalkInfoList": [
+            {
+              "AutoSkipTime": 2,
+              "GroupID": 9,
+              "InstanceID": 300001,
+              "TalkSentenceID": 404019503
+            },
+            {
+              "AutoSkipTime": 3,
+              "GroupID": 9,
+              "InstanceID": 300002,
+              "TalkSentenceID": 404019504
+            },
+            {
+              "AutoSkipTime": 3,
+              "GroupID": 9,
+              "InstanceID": 300003,
+              "TalkSentenceID": 404019505
+            }
+          ],
+          "IsLoop": true,
+          "LoopInterval": 12,
+          "InstantFinish": false
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CollectDataConditions",
+          "TaskIDList": [],
+          "MainMissionIDList": [],
+          "PerformanceIDList": [
+            404018103
+          ],
+          "PerformanceIDDsList": [],
+          "CustomValueMainMissionIDList": []
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByComparePerformance",
+            "PerformanceID": 404018103
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.AdvCreateGroupEntityV2",
+              "InstanceIDList": [
+                300001,
+                300002,
+                300003
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "404018103Done"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.SetEntityVisible",
+              "TargetType": {
+                "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                "TargetType": "Prop",
+                "Targets": [
+                  300001,
+                  300002,
+                  300003
+                ]
+              },
+              "MuteTriggerWhenInvisible": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "Type": "Group",
+  "EntityEventList": []
+}

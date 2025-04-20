@@ -12,17 +12,14 @@
           "PerformanceIDDsList": [],
           "CustomValueMainMissionIDList": [
             8015152
-          ],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         },
         {
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Talk_801515202"
           },
-          "GoNextImmediately": true,
-          "TaskEnabled": true
+          "GoNextImmediately": true
         },
         {
           "$type": "RPG.GameCore.PredicateTaskList",
@@ -34,34 +31,26 @@
               "ValidValueParamList": []
             },
             "EquationType": "Equal",
-            "TargetValue": 1,
-            "TaskEnabled": true,
-            "IsClientOnly": true
+            "TargetValue": 1
           },
           "SuccessTaskList": [
             {
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "T2_Begin"
-              },
-              "TaskEnabled": true
+              }
             },
             {
               "$type": "RPG.GameCore.FinishPerformanceMission",
-              "Key": "Mission_801515202",
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "Key": "Mission_801515202"
             }
           ],
           "FailedTaskList": [
             {
               "$type": "RPG.GameCore.FinishPerformanceMission",
-              "Key": "Mission_801515202",
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "Key": "Mission_801515202"
             }
-          ],
-          "TaskEnabled": true
+          ]
         }
       ]
     }

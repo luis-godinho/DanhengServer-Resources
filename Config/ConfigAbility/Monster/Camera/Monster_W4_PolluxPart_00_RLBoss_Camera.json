@@ -1,0 +1,536 @@
+{
+  "AbilityList": [
+    {
+      "Name": "Monster_W4_Pollux_00_RLBoss_Skill04_Camera",
+      "TargetInfo": {
+        "TargetType": "SkillTargetEntityList"
+      },
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.VCameraConfigChange",
+          "CameraConfig": {
+            "NormalConfig": {
+              "CameraState": "CastAnimation",
+              "AnchorTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "AnchorOffset": {
+                "X": 0.2,
+                "Y": -0.09,
+                "Z": -6.43
+              },
+              "AimTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "AimOffset": {
+                "X": -0.23,
+                "Y": -0.89
+              }
+            },
+            "BlendConfig": {
+              "BlendType": "Cut"
+            },
+            "ShowEntityConfig": {
+              "ShowTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AllTeamMember"
+              }
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchCaster"
+          },
+          "AnimStateName": "Skill04",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.014782609
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.VCameraConfigChange",
+          "CameraConfig": {
+            "NormalConfig": {
+              "CameraState": "CastAnimation",
+              "AnchorTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "AnchorOffset": {
+                "X": 0.2,
+                "Y": 0.16,
+                "Z": -6.23
+              },
+              "AimTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "AimOffset": {
+                "X": -0.47,
+                "Y": -0.03
+              }
+            },
+            "AdditiveNormalConfig": {
+              "CameraState": "CastAnimation",
+              "AnchorTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "AnchorOffset": {
+                "X": -3.75,
+                "Y": -0.82
+              },
+              "AimTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "SkillTargetEntityList"
+              },
+              "AimOffset": {
+                "X": -0.09,
+                "Y": 0.68
+              },
+              "FollowRadius": 4
+            },
+            "BlendConfig": {
+              "BlendType": "Custom",
+              "CustomCurveName": "BlendCut08",
+              "BlendTime": 1.394091
+            },
+            "ShowEntityConfig": {
+              "ShowTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster + CasterSummonedMinions"
+              }
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchCaster"
+          },
+          "AnimStateName": "Skill04",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.41565213
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.VCameraConfigChange",
+          "CameraConfig": {
+            "NormalConfig": {
+              "CameraState": "UseSkillPerform",
+              "TemplateName": "Cocolia_UseSkill",
+              "AnchorTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "IsLocalOffset": true,
+              "AnchorOffset": {
+                "X": -1,
+                "Z": 2
+              },
+              "AimTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "FollowPoleAngle": 90,
+              "FollowElevationAngle": -4.52,
+              "FollowRadius": 8,
+              "FollowDamp": 0.1,
+              "AimDamp": 0.1,
+              "ForbidDynamicOffset": false,
+              "ResetToDefault": false
+            },
+            "AdditiveNormalConfig": {
+              "AnchorTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "AnchorOffset": {
+                "X": -1.31,
+                "Y": 0.1,
+                "Z": 4.72
+              },
+              "AimTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "AimOffset": {
+                "X": 0.32,
+                "Y": 0.03
+              },
+              "ResetToDefault": false
+            },
+            "BlendConfig": {
+              "BlendType": "EaseInOut",
+              "CustomCurveName": "null",
+              "BlendTime": 0.736667
+            },
+            "ShowEntityConfig": {
+              "ShowTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AllTeamMember"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Monster_W4_PolluxPart_00_RLBoss_Skill01_Camera",
+      "TargetInfo": {
+        "TargetType": "SkillTargetEntityList"
+      },
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.VCameraConfigChange",
+          "CameraConfig": {
+            "NormalConfig": {
+              "CameraState": "CastAnimation",
+              "AnchorTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "AimTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "SkillTargetEntityList"
+              }
+            },
+            "AdditiveNormalConfig": {
+              "AnchorTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "AnchorOffset": {
+                "X": 6.66,
+                "Z": -14.05
+              },
+              "AimTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "SkillTargetEntityList"
+              },
+              "AimOffset": {
+                "X": 1.6,
+                "Y": 0.31
+              }
+            },
+            "BlendConfig": {
+              "BlendType": "Cut"
+            },
+            "ShowEntityConfig": {
+              "ShowTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Monster_W4_Pollux_00_WithSummonMillions  + SkillTargetEntityList"
+              }
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchCaster"
+          },
+          "AnimStateName": "Skill01",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.264
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.VCameraConfigChange",
+          "CameraConfig": {
+            "ShakeTemplateName": "Spike_Light",
+            "OverrideShakeConfigV2": {
+              "ShakeDir": {
+                "Y": 0.1,
+                "Z": 0.6
+              }
+            },
+            "ShowEntityConfig": {
+              "ShowTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Monster_W4_Pollux_00_WithSummonMillions  + SkillTargetEntityList"
+              },
+              "IsTargetIgnoreCameraDither": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Monster_W4_PolluxPart_00_RLBoss_Skill01_L_Camera",
+      "TargetInfo": {
+        "TargetType": "SkillTargetEntityList"
+      },
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.VCameraConfigChange",
+          "CameraConfig": {
+            "NormalConfig": {
+              "CameraState": "CastAnimation",
+              "AnchorTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "AimTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "SkillTargetEntityList"
+              }
+            },
+            "AdditiveNormalConfig": {
+              "AnchorTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "UseLightTeamOffsetByTeamWidth": true,
+              "AnchorOffset": {
+                "X": -1.1,
+                "Z": -12.85
+              },
+              "AimTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "SkillTargetEntityList"
+              },
+              "AimOffset": {
+                "X": -5.85,
+                "Y": 0.33
+              }
+            },
+            "BlendConfig": {
+              "BlendType": "Cut"
+            },
+            "ShowEntityConfig": {
+              "ShowTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Monster_W4_Pollux_00_WithSummonMillions  + SkillTargetEntityList"
+              }
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchCaster"
+          },
+          "AnimStateName": "Skill01",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.264
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.VCameraConfigChange",
+          "CameraConfig": {
+            "ShakeTemplateName": "Spike_Light",
+            "OverrideShakeConfigV2": {
+              "ShakeDir": {
+                "Y": 0.1,
+                "Z": 0.6
+              }
+            },
+            "ShowEntityConfig": {
+              "ShowTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Monster_W4_Pollux_00_WithSummonMillions  + SkillTargetEntityList"
+              },
+              "IsTargetIgnoreCameraDither": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Monster_W4_PolluxPart_00_RLBoss_Skill02_Camera",
+      "TargetInfo": {
+        "TargetType": "SkillTargetEntityList",
+        "MaxTargetCount": 3
+      },
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.VCameraConfigChange",
+          "CameraConfig": {
+            "NormalConfig": {
+              "CameraState": "CastAnimation",
+              "AnchorTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "AimTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "SkillTargetEntityList"
+              }
+            },
+            "AdditiveNormalConfig": {
+              "AnchorTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "AnchorOffset": {
+                "X": 7.55,
+                "Y": 0.08,
+                "Z": -14.99
+              },
+              "AimTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "SkillTargetEntityList"
+              },
+              "AimOffset": {
+                "X": 0.14,
+                "Y": 1.13
+              }
+            },
+            "BlendConfig": {
+              "BlendType": "Cut"
+            },
+            "ShowEntityConfig": {
+              "ShowTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Monster_W4_Pollux_00_WithSummonMillions  + AbilityTargetAndAdjoinEntity"
+              }
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchCaster"
+          },
+          "AnimStateName": "Skill02",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.264
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.VCameraConfigChange",
+          "CameraConfig": {
+            "ShakeConfigV2": {
+              "ShakeRange": 0.25,
+              "ShakeTime": 0.4,
+              "IsUseFullPeriod": true,
+              "ShakeDistance": 30,
+              "ShakeDir": {
+                "X": 0.05,
+                "Y": 1,
+                "Z": 0.05
+              },
+              "BaseCycle": 0.055,
+              "CycleDamping": 0.055,
+              "RangeAttenuationDelay": 0,
+              "RangeAttenuationDuration": 0.35
+            },
+            "ShowEntityConfig": {
+              "ShowTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Monster_W4_Pollux_00_WithSummonMillions  + AbilityTargetAndAdjoinEntity"
+              },
+              "IsTargetIgnoreCameraDither": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Monster_W4_PolluxPart_00_RLBoss_Skill02_L_Camera",
+      "TargetInfo": {
+        "TargetType": "SkillTargetEntityList",
+        "MaxTargetCount": 3
+      },
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.VCameraConfigChange",
+          "CameraConfig": {
+            "NormalConfig": {
+              "CameraState": "CastAnimation",
+              "AnchorTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "AimTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "SkillTargetEntityList"
+              }
+            },
+            "AdditiveNormalConfig": {
+              "AnchorTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "UseLightTeamOffsetByTeamWidth": true,
+              "AnchorOffset": {
+                "X": -1,
+                "Y": 0.08,
+                "Z": -14.99
+              },
+              "AimTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "SkillTargetEntityList"
+              },
+              "AimOffset": {
+                "X": -6.3,
+                "Y": 1.13
+              }
+            },
+            "BlendConfig": {
+              "BlendType": "Cut"
+            },
+            "ShowEntityConfig": {
+              "ShowTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Monster_W4_Pollux_00_WithSummonMillions  + AbilityTargetAndAdjoinEntity"
+              }
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchCaster"
+          },
+          "AnimStateName": "Skill02",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.264
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.VCameraConfigChange",
+          "CameraConfig": {
+            "ShakeConfigV2": {
+              "ShakeRange": 0.25,
+              "ShakeTime": 0.4,
+              "IsUseFullPeriod": true,
+              "ShakeDistance": 30,
+              "ShakeDir": {
+                "X": 0.05,
+                "Y": 1,
+                "Z": 0.05
+              },
+              "BaseCycle": 0.055,
+              "CycleDamping": 0.055,
+              "RangeAttenuationDelay": 0,
+              "RangeAttenuationDuration": 0.35
+            },
+            "ShowEntityConfig": {
+              "ShowTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Monster_W4_Pollux_00_WithSummonMillions  + AbilityTargetAndAdjoinEntity"
+              },
+              "IsTargetIgnoreCameraDither": true
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

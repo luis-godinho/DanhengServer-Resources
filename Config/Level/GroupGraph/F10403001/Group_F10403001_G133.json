@@ -1,0 +1,103 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvDistrictSetupTrigger",
+          "GroupID": {
+            "FixedValue": {
+              "Value": 133
+            }
+          },
+          "DistrictID": {
+            "FixedValue": {
+              "Value": 500001
+            }
+          },
+          "TickInterval": 0.1,
+          "OnEnter": [
+            {
+              "$type": "RPG.GameCore.PlayNPCBubbleTalk",
+              "BubbleTalkInfoList": [
+                {
+                  "AutoSkipTime": 4,
+                  "GroupID": 133,
+                  "GroupNpcID": 400001,
+                  "TalkSentenceID": 500079401
+                },
+                {
+                  "AutoSkipTime": 3,
+                  "GroupID": 133,
+                  "GroupNpcID": 400001,
+                  "TalkSentenceID": 500079402
+                },
+                {
+                  "AutoSkipTime": 3,
+                  "GroupID": 133,
+                  "GroupNpcID": 400005,
+                  "TalkSentenceID": 500079403
+                },
+                {
+                  "AutoSkipTime": 3,
+                  "GroupID": 133,
+                  "GroupNpcID": 400006,
+                  "TalkSentenceID": 500079404
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvSetupButtonListTrigger",
+          "TargetType": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "TargetType": "Prop",
+            "Targets": [
+              300001
+            ]
+          },
+          "TriggerName": "MissionTrigger",
+          "ButtonsByName": [],
+          "ButtonConfigs": [
+            {
+              "ID": "Press01",
+              "IconType": "SecretMissionIcon",
+              "ButtonText": {
+                "Value": "PropInteractTitle_12"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvOnButtonPressed",
+          "ButtonName": "Press01",
+          "OnPressedCallback": [
+            {
+              "$type": "RPG.GameCore.TriggerPerformance",
+              "ValueSource": {},
+              "PerformanceType": "D",
+              "PerformanceID": 500041401,
+              "MaskConfig": {
+                "UseExcelData": false
+              }
+            },
+            {
+              "$type": "RPG.GameCore.ClientFinishMission",
+              "SubmissionID": 500041401
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "Type": "Group"
+}

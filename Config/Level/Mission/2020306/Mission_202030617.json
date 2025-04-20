@@ -12,12 +12,7 @@
           },
           "AnchorName": {
             "Value": "Anchor1"
-          },
-          "ResetAnimation": true,
-          "ResetCamera": true,
-          "ClearSpecialVision": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         }
       ]
     },
@@ -26,21 +21,19 @@
         {
           "$type": "RPG.GameCore.CreateNPC",
           "GroupID": {
-            "fixedValue": {
-              "RawValue": 365072220160
+            "FixedValue": {
+              "Value": 85
             }
           },
           "GroupNpcID": {
-            "fixedValue": {
-              "RawValue": 1717999803301888
+            "FixedValue": {
+              "Value": 400003
             }
           },
           "NPCUniqueName": {
             "Value": "npc_Yunqijun_202030617"
           },
-          "CreateList": [],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "CreateList": []
         }
       ]
     },
@@ -53,20 +46,18 @@
             "FetchType": "SingleNpcByNpcID",
             "SingleNpcID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 365072220160
+                "FixedValue": {
+                  "Value": 85
                 }
               },
               "GroupNpcID": {
-                "fixedValue": {
-                  "RawValue": 1717999803301888
+                "FixedValue": {
+                  "Value": 400003
                 }
               }
             }
           },
-          "UsageType": "TaskFollow",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "UsageType": "TaskFollow"
         },
         {
           "$type": "RPG.GameCore.SetNpcStatus",
@@ -75,20 +66,18 @@
             "FetchType": "SingleNpcByNpcID",
             "SingleNpcID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 365072220160
+                "FixedValue": {
+                  "Value": 85
                 }
               },
               "GroupNpcID": {
-                "fixedValue": {
-                  "RawValue": 1717999803301888
+                "FixedValue": {
+                  "Value": 400003
                 }
               }
             }
           },
-          "Status": "FollowByPlayer",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Status": "FollowByPlayer"
         }
       ]
     },
@@ -97,21 +86,18 @@
         {
           "$type": "RPG.GameCore.CaptureNPCToCharacter",
           "GroupID": {
-            "fixedValue": {
-              "RawValue": 365072220160
+            "FixedValue": {
+              "Value": 85
             }
           },
           "GroupNpcID": {
-            "fixedValue": {
-              "RawValue": 1717999803301888
+            "FixedValue": {
+              "Value": 400003
             }
           },
           "CharacterUniqueName": {
             "Value": "npc_Yunqijun_202030617"
-          },
-          "ReleaseIfPerformanceEnd": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         }
       ]
     },
@@ -120,13 +106,10 @@
         {
           "$type": "RPG.GameCore.WaitSecond",
           "WaitTime": {
-            "fixedValue": {
-              "RawValue": 8589934592
+            "FixedValue": {
+              "Value": 2
             }
-          },
-          "MaxAdvencePerTick": -1.0,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         }
       ]
     },
@@ -136,26 +119,19 @@
           "$type": "RPG.GameCore.NpcToPlayerDistanceTrigger",
           "GroupID": 85,
           "GroupNpcID": 400003,
-          "NearDistance": 5.0,
+          "NearDistance": 5,
           "NearTask": [
             {
               "$type": "RPG.GameCore.PlayerForceWalk",
-              "ForceWalk": true,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "ForceWalk": true
             }
           ],
-          "FarDistance": 10.0,
+          "FarDistance": 10,
           "FarTask": [
             {
-              "$type": "RPG.GameCore.PlayerForceWalk",
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "$type": "RPG.GameCore.PlayerForceWalk"
             }
-          ],
-          "AwakeWaitTime": -1.0,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     },
@@ -168,46 +144,46 @@
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 365072220160
+                "FixedValue": {
+                  "Value": 85
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288498778734592
+                "FixedValue": {
+                  "Value": 300002
                 }
               }
             }
           },
-          "TargetGroupID": {},
-          "TargetID": {},
+          "TargetGroupID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "TargetID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
           "TargetTypes": [],
           "OnTriggerEnter": [
             {
               "$type": "RPG.GameCore.ClearNpcDistanceTrigger",
               "GroupID": 85,
-              "GroupNpcID": 400003,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "GroupNpcID": 400003
             },
             {
               "$type": "RPG.GameCore.FinishPerformanceMission",
-              "Key": "Mission_202030617",
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "Key": "Mission_202030617"
             }
-          ],
-          "SkipFakeAvatar": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     },
     {
       "TaskList": [
         {
-          "$type": "RPG.GameCore.ChangePropState",
-          "TaskEnabled": true
+          "$type": "RPG.GameCore.ChangePropState"
         }
       ]
     },
@@ -216,26 +192,22 @@
         {
           "$type": "RPG.GameCore.PropTriggerAnimState",
           "AnimStateName": "Close",
-          "TransitionDuration": 0.05,
-          "FixedTransitionDuration": true,
           "TargetType": {
             "$type": "RPG.GameCore.TargetFetchAdvPropEx",
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 150323855360
+                "FixedValue": {
+                  "Value": 35
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288494483767296
+                "FixedValue": {
+                  "Value": 300001
                 }
               }
             }
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         }
       ]
     }

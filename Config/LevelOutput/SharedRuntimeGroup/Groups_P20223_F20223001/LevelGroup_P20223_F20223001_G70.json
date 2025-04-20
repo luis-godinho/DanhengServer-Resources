@@ -1,4 +1,5 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "Heliobus_ChallengeTower5",
   "AreaAnchorName": "LevelArea_P20223_F20223001_G70",
   "SaveType": "Reset",
@@ -6,7 +7,6 @@
     "Conditions": [
       {
         "SavedValueName": "HeliobusTower4",
-        "Operation": "Equal",
         "Value": 1
       }
     ],
@@ -17,15 +17,15 @@
   "ConflictIDList": [],
   "IsHoyoGroup": true,
   "HoYoGroupType": "Container",
-  "StreamingTemplateType": "Standard",
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
   "ConflictWhiteList": [],
-  "TagContainer": [
-    {
-      "Tag": "Group.Level.SpecialEntrance",
-      "TagHash": -1446353026
-    }
-  ],
+  "TagContainer": {
+    "List": [
+      {
+        "Tag": "Group.Level.SpecialEntrance",
+        "TagHash": -1446353026
+      }
+    ]
+  },
   "AnchorList": [
     {
       "Name": "Anchor1",
@@ -58,45 +58,20 @@
   "MonsterList": [],
   "PropList": [
     {
-      "RotX": 3e-06,
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
+      "RotX": 3E-06,
       "PropID": 110,
-      "LoadOnInitial": true,
       "ValueSource": {},
       "Trigger": {
-        "Radius": 3.0,
+        "Radius": 3,
         "PointList": []
       },
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
       "AnchorGroupID": 70,
       "AnchorID": 1,
       "MappingInfoID": 2346,
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
@@ -108,18 +83,13 @@
             "Name": "Challenge",
             "LevelGraph": "Config/Level/PropDialogue/P20223/F20223001_G70/DialoguePack_Challenge_F20223001_G70_P300001.json"
           }
-        ],
-        "EnableDialogCamera": true
+        ]
       },
       "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "InteractTitle": {
-        "Hash": -837387747,
-        "Hash64": 3072597261859422674
+        "Hash": 3072597261859422674
       },
       "CameraCenterEntityList": [],
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {},
       "Name": "Prop1",
       "ID": 300001,
@@ -135,34 +105,19 @@
   "NPCList": [
     {
       "NPCID": 3038,
+      "LoadOnInitial": false,
       "ValueSource": {},
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "ServerInteractVerificationIDList": [],
-      "DefaultLookAtMode": "LookPlayer",
       "BoardShowList": [],
       "TalkDialogGroupIDList": [],
-      "DefaultAnimationType": "FreeStyle",
       "DefaultIdleFreeStyleMotionID": 900100000,
-      "BornType": "Mission",
       "InitialHiddenNodeList": [],
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "CameraCenterEntityList": [],
       "SpawnConfig": {
-        "TryCapture": true,
-        "CaptureDistanceTolerance": 1.5,
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
-      "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true
-      },
+      "TriggerValidGuest": {},
       "Name": "NPC1",
       "RotY": 226.2811,
       "ID": 400001,

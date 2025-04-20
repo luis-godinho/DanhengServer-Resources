@@ -1,4 +1,5 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "NPC",
   "Category": "Atmosphere",
   "AreaAnchorName": "LevelArea_P20001_F20001001_G82",
@@ -13,14 +14,14 @@
   },
   "ValueSource": {},
   "ConflictIDList": [],
-  "StreamingTemplateType": "Standard",
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
-  "TagContainer": [
-    {
-      "Tag": "Group.Atomsphere.NPC",
-      "TagHash": -882113524
-    }
-  ],
+  "TagContainer": {
+    "List": [
+      {
+        "Tag": "Group.Atomsphere.NPC",
+        "TagHash": -882113524
+      }
+    ]
+  },
   "AnchorList": [],
   "MonsterList": [],
   "PropList": [],
@@ -31,16 +32,14 @@
   "NPCList": [
     {
       "NPCID": 1013,
-      "LoadOnInitial": true,
       "ValueSource": {},
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [
         500002105
       ],
       "ServerInteractVerificationIDList": [],
+      "DefaultLookAtMode": "Closed",
       "BoardShowList": [],
       "TalkDialogGroupIDList": [],
-      "DefaultAnimationType": "FreeStyle",
       "DefaultIdleFreeStyleMotionID": 310130000,
       "BornType": "Permanent",
       "InitialHiddenNodeList": [],
@@ -51,29 +50,16 @@
             "Name": "SubMission",
             "LevelGraph": "Config/Level/NPCDialogue/P20001/F20001001_G82/DialoguePack_SubMission_F20001001_G82_N400001.json"
           }
-        ],
-        "EnableDialogCamera": true
+        ]
       },
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "OverrideReplaceMaterialKeyList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
       "SpawnConfig": {
-        "TryCapture": true,
-        "CaptureDistanceTolerance": 1.5,
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
-      "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true
-      },
+      "TriggerValidGuest": {},
       "Name": "NPC1",
       "ID": 400001,
       "PosX": -29.0547,

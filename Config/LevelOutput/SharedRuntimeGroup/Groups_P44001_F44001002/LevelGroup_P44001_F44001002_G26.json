@@ -1,16 +1,14 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "MainMission4070012_New Group",
   "Category": "Mission",
   "LevelGraph": "Config/Level/GroupGraph/F44001002/Group_F44001002_G26.json",
   "AreaAnchorName": "LevelArea_P44001_F44001002_G26",
-  "SaveType": "Permanent",
   "LoadSide": "Server",
   "OwnerMainMissionID": 4070012,
   "ValueSource": {},
   "ConflictIDList": [],
   "IsHoyoGroup": true,
-  "StreamingTemplateType": "Standard",
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
   "ConflictWhiteList": [],
   "AnchorList": [],
   "MonsterList": [
@@ -20,7 +18,6 @@
         "PathwayList": [],
         "SlaveConfigList": []
       },
-      "LoadOnInitial": true,
       "ValueSource": {},
       "CampID": 3,
       "BattleArea": {
@@ -31,9 +28,7 @@
       "BoardShowList": [
         2
       ],
-      "DefaultLookAtMode": "LookPlayer",
       "TagList": [],
-      "InteractIconType": "ChatIcon",
       "Name": "Monster1",
       "RotY": 66.82546,
       "ID": 200001,
@@ -50,46 +45,28 @@
   "NPCList": [
     {
       "NPCID": 3015,
-      "LoadOnInitial": true,
       "ValueSource": {
         "Values": [
           {
             "$type": "RPG.GameCore.SharedString",
             "Key": "Portal"
           }
-        ],
-        "SharedValues": [
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Key": "Portal"
-          }
         ]
       },
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "ServerInteractVerificationIDList": [],
+      "DefaultLookAtMode": "Closed",
       "BoardShowList": [
         8
       ],
       "TalkDialogGroupIDList": [],
-      "BornType": "Mission",
+      "DefaultAnimationType": "IdleState",
       "InitialHiddenNodeList": [],
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "SpawnConfig": {
-        "TryCapture": true,
-        "CaptureDistanceTolerance": 10.0,
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "CaptureDistanceTolerance": 10,
+        "EntitySpawnConfig": {}
       },
-      "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true
-      },
+      "TriggerValidGuest": {},
       "Name": "NPC1",
       "RotY": 1.013466,
       "ID": 400001,
@@ -106,39 +83,28 @@
         {
           "PointList": [
             {
+              "RestartMode": "RestartFromSO",
               "RootTask": {
                 "$type": "RPG.GameCore.SO_Sequence",
                 "Tasks": [
                   {
                     "$type": "RPG.GameCore.SO_KeepDistanceMoveTo",
-                    "MoveStance": "Run",
-                    "StartRunDistance": 10.0,
-                    "StartSprintDistance": 8.0,
-                    "FreeScaleDistance": 6.0,
+                    "StartRunDistance": 10,
+                    "StartSprintDistance": 8,
+                    "FreeScaleDistance": 6,
                     "ScaleInterval": 0.1,
-                    "TransitionTime": 0.25,
-                    "PlayerSpeedRatio": 1.0,
-                    "ScaleStep": 0.3,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "PlayerSpeedRatio": 1,
+                    "ScaleStep": 0.3
                   },
                   {
-                    "$type": "RPG.GameCore.SO_Wait",
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "$type": "RPG.GameCore.SO_Wait"
                   },
                   {
                     "$type": "RPG.GameCore.SO_PlayFreeStyle",
-                    "StoryMotionID": 900030243,
-                    "ForceStart": true,
-                    "NormalizedTransitionDuration": 0.05,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "StoryMotionID": 900030243
                   }
                 ],
-                "WaitMessages": [],
-                "TaskEnabled": true,
-                "IsClientOnly": true
+                "WaitMessages": []
               }
             }
           ]

@@ -7,98 +7,85 @@
         {
           "$type": "RPG.GameCore.CreateNPC",
           "GroupID": {
-            "fixedValue": {
-              "RawValue": 566935683072
+            "FixedValue": {
+              "Value": 132
             }
           },
           "GroupNpcID": {
-            "fixedValue": {
-              "RawValue": 1717991213367296
+            "FixedValue": {
+              "Value": 400001
             }
           },
-          "CreateList": [],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "CreateList": []
         },
         {
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Mission_201020101"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.PerformanceTransition",
-          "SwitchInTime": 0.5,
-          "SwitchKeepTime": 0.5,
-          "SwitchOutTime": 0.5,
           "CreateNpcList": [],
           "CaptureNpcList": [],
           "DestroyNpcList": [
             {
               "GroupID": 132,
               "GroupNpcID": 400001,
-              "DestroyList": [],
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "DestroyList": []
             }
           ],
           "CreateProp": {
-            "GroupID": {},
-            "GroupPropID": {},
-            "IsClientOnly": true
+            "GroupID": {
+              "FixedValue": {
+                "Value": 0
+              }
+            },
+            "GroupPropID": {
+              "FixedValue": {
+                "Value": 0
+              }
+            },
+            "TaskEnabled": false
           },
           "DestroyProp": {
             "TargetType": {
               "$type": "RPG.GameCore.TargetFetchAdvPropEx"
             },
-            "ID": {},
-            "GroupID": {},
-            "IsClientOnly": true
+            "ID": {
+              "FixedValue": {
+                "Value": 0
+              }
+            },
+            "GroupID": {
+              "FixedValue": {
+                "Value": 0
+              }
+            },
+            "TaskEnabled": false
           },
           "AdvCreateGroupEntity": {
-            "IsClientOnly": true
+            "TaskEnabled": false
           },
           "AdvDestroyGroupEntity": {
-            "IsClientOnly": true
+            "TaskEnabled": false
           },
-          "DisactiveVCamOnGraphEnd": true,
           "ActiveVirtualCamera": {
-            "IsActive": true,
-            "VCameraDitherMaxDistance": 1.0,
-            "CenterPosX": -1.0,
-            "CenterPosY": -1.0,
-            "IsClientOnly": true
+            "TaskEnabled": false
           },
           "ActiveTemplateVirtualCamera": {
-            "IsActive": true,
-            "IsClientOnly": true
+            "TaskEnabled": false
           },
           "SwitchCharacterAnchor": {
-            "ResetAnimation": true,
-            "ResetCamera": true,
-            "ClearSpecialVision": true,
-            "IsClientOnly": true
+            "TaskEnabled": false
           },
           "AdvNpcFaceToPlayer": {
-            "FromDialog": true,
-            "TryFaceToFace": true,
-            "NpcLookAtPlayer": true,
-            "PlayerLookAtNpc": true,
-            "StopLookAtOnGraphEnd": true,
-            "TurnBackOnGraphEnd": true,
-            "WaitFinishMode": "WaitFaceAngle",
-            "ForceToStandBy": true,
-            "IsClientOnly": true
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+            "TaskEnabled": false
+          }
         },
         {
           "$type": "RPG.GameCore.SaveMessage",
-          "MessageSectionID": 1115000,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "MessageSectionID": 1115000
         }
       ]
     }

@@ -1,0 +1,178 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.ShowTutorialUI",
+          "AssociatedUIName": "BattleGamePageContext"
+        },
+        {
+          "$type": "RPG.GameCore.WaitTurnCount",
+          "CalcMethod": "LightTeam"
+        },
+        {
+          "$type": "RPG.GameCore.TutorialNotify",
+          "Type": "TutorialCleanUI",
+          "Param": "1"
+        },
+        {
+          "$type": "RPG.GameCore.TutorialLockPlayerAction",
+          "Lock": true
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideHintWithText",
+          "Block": true,
+          "TargetEvent": [
+            {
+              "$type": "RPG.GameCore.WaitPlayerAction",
+              "ActionType": "AnyAction"
+            }
+          ],
+          "NodeIDList": [
+            "BattleGamePhaseUI.1003"
+          ],
+          "GuideTextType": "InfoTip",
+          "GuideText": "TutorialTextmap_300403",
+          "GuideHintShowConfig": {},
+          "GuideTextShowConfig": {},
+          "GuideUIContextConfig": {},
+          "EnableActionList": []
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideHintWithText",
+          "Block": true,
+          "TargetEvent": [
+            {
+              "$type": "RPG.GameCore.WaitPlayerAction",
+              "ActionType": "AnyAction"
+            }
+          ],
+          "NodeIDList": [
+            "BattleGamePhaseUI.PassiveSkill.1003"
+          ],
+          "GuideTextType": "InfoTip",
+          "GuideText": "TutorialTextmap_300401",
+          "GuideHintShowConfig": {},
+          "GuideTextShowConfig": {},
+          "GuideUIContextConfig": {},
+          "EnableActionList": []
+        },
+        {
+          "$type": "RPG.GameCore.TutorialLockPlayerAction"
+        },
+        {
+          "$type": "RPG.GameCore.TutorialNotify",
+          "Type": "TutorialCleanUI",
+          "Param": "0"
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitTurnCount",
+          "CalcMethod": "LightTeam"
+        },
+        {
+          "$type": "RPG.GameCore.ByIsTutorialFinish",
+          "TutorialID": 3004,
+          "Inverse": true
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByCompareDynamicValue",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetFetchAvatarByID",
+              "AvatarID": 1003
+            },
+            "DynamicKey": {
+              "Value": "MDF_Pursuit_Layer"
+            },
+            "ContextScope": "TargetEntity",
+            "CompareType": "Equal",
+            "CompareValue": {
+              "FixedValue": {
+                "Value": 3
+              }
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByHasInsertActionByTarget",
+                "TargetType": {
+                  "$type": "RPG.GameCore.TargetAlias",
+                  "Alias": "AllLightTeam"
+                },
+                "IncludeActiveAction": true,
+                "Inverse": true
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.PauseGame",
+                  "Pause": true
+                },
+                {
+                  "$type": "RPG.GameCore.ShowGuideHintWithText",
+                  "Block": true,
+                  "TargetEvent": [
+                    {
+                      "$type": "RPG.GameCore.WaitPlayerAction",
+                      "ActionType": "AnyAction"
+                    }
+                  ],
+                  "NodeIDList": [
+                    "BattleGamePhaseUI.PassiveSkill.1003"
+                  ],
+                  "GuideTextType": "InfoTip",
+                  "GuideText": "TutorialTextmap_300402",
+                  "GuideHintShowConfig": {},
+                  "GuideTextShowConfig": {},
+                  "GuideUIContextConfig": {},
+                  "EnableActionList": []
+                },
+                {
+                  "$type": "RPG.GameCore.PauseGame"
+                },
+                {
+                  "$type": "RPG.GameCore.ShowTutorialUI",
+                  "IsHide": true,
+                  "AssociatedUIName": "BattleGamePageContext"
+                },
+                {
+                  "$type": "RPG.GameCore.TutorialNotify",
+                  "Type": "TutorialCleanUI",
+                  "Param": "0"
+                },
+                {
+                  "$type": "RPG.GameCore.TutorialClose"
+                }
+              ],
+              "FailedTaskList": [
+                {
+                  "$type": "RPG.GameCore.ShowTutorialUI",
+                  "IsHide": true,
+                  "AssociatedUIName": "BattleGamePageContext"
+                },
+                {
+                  "$type": "RPG.GameCore.TutorialNotify",
+                  "Type": "TutorialCleanUI",
+                  "Param": "0"
+                },
+                {
+                  "$type": "RPG.GameCore.TutorialClose"
+                }
+              ]
+            }
+          ],
+          "FailedTaskList": []
+        }
+      ]
+    }
+  ],
+  "EntityEventList": []
+}

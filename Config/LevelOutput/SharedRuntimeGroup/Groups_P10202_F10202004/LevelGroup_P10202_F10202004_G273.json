@@ -1,8 +1,8 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "NPC04",
   "Category": "Atmosphere",
   "AreaAnchorName": "LevelArea_P10202_F10202004_G273",
-  "SaveType": "Permanent",
   "LoadCondition": {
     "Conditions": [
       {
@@ -17,14 +17,14 @@
   "ConflictIDList": [
     1217201
   ],
-  "StreamingTemplateType": "Standard",
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
-  "TagContainer": [
-    {
-      "Tag": "Group.Atomsphere.NPC",
-      "TagHash": -882113524
-    }
-  ],
+  "TagContainer": {
+    "List": [
+      {
+        "Tag": "Group.Atomsphere.NPC",
+        "TagHash": -882113524
+      }
+    ]
+  },
   "AnchorList": [],
   "MonsterList": [],
   "PropList": [],
@@ -35,12 +35,11 @@
   "NPCList": [
     {
       "NPCID": 12172,
-      "LoadOnInitial": true,
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "ServerInteractVerificationIDList": [
         35
       ],
+      "DefaultLookAtMode": "Closed",
       "MappingInfoID": 2301,
       "BoardShowList": [
         1,
@@ -49,7 +48,6 @@
         64
       ],
       "TalkDialogGroupIDList": [],
-      "DefaultAnimationType": "FreeStyle",
       "DefaultIdleFreeStyleMotionID": 100010298,
       "IsMapContent": true,
       "MiniMapIconType": 4,
@@ -66,21 +64,12 @@
             "Name": "Common",
             "LevelGraph": "Config/Level/NPCDialogue/P10202/F10202004_G273/DialoguePack_Common_F10202004_G273_N400001.json"
           }
-        ],
-        "EnableDialogCamera": true
+        ]
       },
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "CameraCenterEntityList": [],
       "SpawnConfig": {
-        "TryCapture": true,
-        "CaptureDistanceTolerance": 10.0,
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "CaptureDistanceTolerance": 10,
+        "EntitySpawnConfig": {}
       },
       "Name": "NPC1",
       "RotY": 171.6031,

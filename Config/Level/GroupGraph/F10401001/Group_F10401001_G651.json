@@ -1,0 +1,60 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "TriggerPerformance_G651"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.TriggerPerformance",
+              "ValueSource": {},
+              "PerformanceType": "D",
+              "PerformanceID": 803210035,
+              "MaskConfig": {
+                "UseExcelData": false
+              }
+            },
+            {
+              "$type": "RPG.GameCore.EnterMarblePVEMatch",
+              "MatchID": 1,
+              "HeroTeamMarbleSealIDList": [
+                202,
+                201,
+                202
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.HideEntityV2",
+          "Target": {
+            "$type": "RPG.GameCore.TargetFetchAdvNpcEx",
+            "FetchType": "SingleNpcByNpcID",
+            "SingleNpcID": {
+              "GroupID": {
+                "FixedValue": {
+                  "Value": 417
+                }
+              },
+              "GroupNpcID": {
+                "FixedValue": {
+                  "Value": 400001
+                }
+              }
+            }
+          },
+          "IsHide": true
+        }
+      ]
+    }
+  ],
+  "Type": "Group"
+}

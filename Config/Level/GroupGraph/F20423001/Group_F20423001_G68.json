@@ -1,0 +1,73 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvOnButtonPressed",
+          "ButtonName": "Interaction_G68",
+          "OnPressedCallback": [
+            {
+              "$type": "RPG.GameCore.TriggerPerformance",
+              "ValueSource": {},
+              "PerformanceType": "E",
+              "PerformanceID": 104030737,
+              "MaskConfig": {
+                "UseExcelData": false,
+                "StartBlack": "None",
+                "EndBlack": "NoPost",
+                "MaskColor": "White"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.TriggerPerformance",
+              "ValueSource": {},
+              "PerformanceType": "D",
+              "PerformanceID": 104030711,
+              "MaskConfig": {
+                "UseExcelData": false,
+                "StartBlack": "NoPre",
+                "EndBlack": "None",
+                "MaskColor": "White"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.PlayFullScreenTransfer",
+              "PrevDuration": 0
+            },
+            {
+              "$type": "RPG.GameCore.ClientFinishMission",
+              "SubmissionID": 104030707
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvSetupButtonListTrigger",
+          "TargetType": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "TargetType": "Prop",
+            "Targets": [
+              300001
+            ]
+          },
+          "TriggerName": "MissionTrigger",
+          "ButtonsByName": [],
+          "ButtonConfigs": [
+            {
+              "ID": "Interaction_G68",
+              "IconType": "ChatIcon",
+              "ButtonText": {
+                "Value": "PropInteractTitle_5"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "Type": "Group"
+}

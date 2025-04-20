@@ -1,0 +1,99 @@
+{
+  "OnInitSequece": [
+    {
+      "TaskList": []
+    }
+  ],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PlayCollectionMorse",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+            "PropIDInOwnerGroup": {
+              "FixedValue": {
+                "Value": 300004
+              }
+            }
+          },
+          "StartEvent": {
+            "Value": "TriggerBubbleTalk"
+          },
+          "PlayerMorse": [
+            {
+              "$type": "RPG.GameCore.TriggerSound",
+              "SoundName": {
+                "Value": "Ev_sfx_amphoreus_prop_bug_butterfly_sing"
+              },
+              "EmitterType": "TargetEvaluator",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                "PropIDInOwnerGroup": {
+                  "FixedValue": {
+                    "Value": 300004
+                  }
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.PlayNPCSingleBubbleTalk",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                "PropIDInOwnerGroup": {
+                  "FixedValue": {
+                    "Value": 300004
+                  }
+                }
+              },
+              "TalkSentenceID": {
+                "FixedValue": {
+                  "Value": 404019520
+                }
+              },
+              "InstantFinish": false
+            },
+            {
+              "$type": "RPG.GameCore.WaitSecond",
+              "WaitTime": {
+                "FixedValue": {
+                  "Value": 3
+                }
+              }
+            }
+          ],
+          "MinTime": 15,
+          "MaxTime": 30,
+          "BubbleSkipTime": 2,
+          "TalkSentenceIdList": {
+            "Value": [
+              "404019510"
+            ]
+          },
+          "GapMinTime": 30,
+          "GapMaxTime": 60
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitSecond",
+          "WaitTime": {
+            "FixedValue": {
+              "Value": 1
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TriggerGroupEvent",
+          "EventName": {
+            "Value": "TriggerBubbleTalk"
+          }
+        }
+      ]
+    }
+  ],
+  "Type": "EntityInstance",
+  "EntityEventList": []
+}

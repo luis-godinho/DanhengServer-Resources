@@ -1,13 +1,12 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "Timeline_Sword_Day_SideMission",
   "LevelGraph": "Config/Level/GroupGraph/F20413001/Group_F20413001_G245.json",
   "AreaAnchorName": "LevelArea_P20413_F20413001_G245",
-  "SaveType": "Permanent",
   "SavedValueCondition": {
     "Conditions": [
       {
         "SavedValueName": "FSV_R11_Puzzle_State",
-        "Operation": "Equal",
         "Value": 1
       }
     ],
@@ -18,55 +17,26 @@
   "ValueSource": {},
   "ConflictIDList": [],
   "IsHoyoGroup": true,
-  "StreamingTemplateType": "Standard",
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
   "ConflictWhiteList": [],
-  "TagContainer": [
-    {
-      "Tag": "Group.Level.Gameplay",
-      "TagHash": -141571921
-    },
-    {
-      "Tag": "GameModule.EraFlip.State.Day",
-      "TagHash": 1090843668
-    }
-  ],
+  "TagContainer": {
+    "List": [
+      {
+        "Tag": "Group.Level.Gameplay",
+        "TagHash": -141571921
+      },
+      {
+        "Tag": "GameModule.EraFlip.State.Day",
+        "TagHash": 1090843668
+      }
+    ]
+  },
   "AnchorList": [],
   "MonsterList": [],
   "PropList": [
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 104035,
-      "LoadOnInitial": true,
       "ValueSource": {
         "Values": [
-          {
-            "$type": "RPG.GameCore.SharedInt",
-            "Value": 1,
-            "Key": "start_state"
-          }
-        ],
-        "SharedValues": [
           {
             "$type": "RPG.GameCore.SharedInt",
             "Value": 1,
@@ -76,18 +46,13 @@
       },
       "CampID": 4,
       "State": "CustomState01",
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
       "DisableDither": true,
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
@@ -95,22 +60,14 @@
         "TagComponents": [
           {
             "$type": "RPG.GameCore.PropTagTimeRewindEntityComponent",
-            "RebuildWhenHitPlayer": true,
+            "EnablePersistence": false,
             "RewindDisableCameraDamp": true,
             "LookAtAttachPoint": "FocusPoint",
-            "LockRangeOverride": 10.0,
+            "LockRangeOverride": 10,
             "SelectTargetAttachPoint": "SelectPoint",
             "LookAtOffsetOverride": {
-              "y": 1.5,
-              "z": -4.0,
-              "normalized": {
-                "y": 0.351123452,
-                "z": -0.9363292,
-                "magnitude": 1.0,
-                "sqrMagnitude": 1.0
-              },
-              "magnitude": 4.27200174,
-              "sqrMagnitude": 18.25
+              "Y": 1.5,
+              "Z": -4
             },
             "AnimStateOverride": [],
             "TimeRewindAnimEventJson": "Config/Gameplays/TimeRewind/TimeRewinder_GaintSword.json",
@@ -125,15 +82,8 @@
           }
         ]
       },
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Prop1",
       "RotY": 215.017,
@@ -145,38 +95,9 @@
     {
       "RotX": 359.9908,
       "RotZ": 359.9894,
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 104035,
-      "LoadOnInitial": true,
       "ValueSource": {
         "Values": [
-          {
-            "$type": "RPG.GameCore.SharedInt",
-            "Value": 1,
-            "Key": "start_state"
-          }
-        ],
-        "SharedValues": [
           {
             "$type": "RPG.GameCore.SharedInt",
             "Value": 1,
@@ -185,18 +106,13 @@
         ]
       },
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
       "DisableDither": true,
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
@@ -204,22 +120,14 @@
         "TagComponents": [
           {
             "$type": "RPG.GameCore.PropTagTimeRewindEntityComponent",
-            "RebuildWhenHitPlayer": true,
+            "EnablePersistence": false,
             "RewindDisableCameraDamp": true,
             "LookAtAttachPoint": "FocusPoint",
-            "LockRangeOverride": 10.0,
+            "LockRangeOverride": 10,
             "SelectTargetAttachPoint": "SelectPoint",
             "LookAtOffsetOverride": {
-              "y": 1.5,
-              "z": -4.0,
-              "normalized": {
-                "y": 0.351123452,
-                "z": -0.9363292,
-                "magnitude": 1.0,
-                "sqrMagnitude": 1.0
-              },
-              "magnitude": 4.27200174,
-              "sqrMagnitude": 18.25
+              "Y": 1.5,
+              "Z": -4
             },
             "AnimStateOverride": [],
             "TimeRewindAnimEventJson": "Config/Gameplays/TimeRewind/TimeRewinder_GaintSword.json",
@@ -234,15 +142,8 @@
           }
         ]
       },
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Prop2",
       "RotY": 146.7321,
@@ -254,38 +155,9 @@
     {
       "RotX": -0.002584,
       "RotZ": -0.001546,
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 104035,
-      "LoadOnInitial": true,
       "ValueSource": {
         "Values": [
-          {
-            "$type": "RPG.GameCore.SharedInt",
-            "Value": 1,
-            "Key": "start_state"
-          }
-        ],
-        "SharedValues": [
           {
             "$type": "RPG.GameCore.SharedInt",
             "Value": 1,
@@ -295,18 +167,13 @@
       },
       "CampID": 4,
       "State": "CustomState01",
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
       "DisableDither": true,
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
@@ -314,22 +181,14 @@
         "TagComponents": [
           {
             "$type": "RPG.GameCore.PropTagTimeRewindEntityComponent",
-            "RebuildWhenHitPlayer": true,
+            "EnablePersistence": false,
             "RewindDisableCameraDamp": true,
             "LookAtAttachPoint": "FocusPoint",
-            "LockRangeOverride": 10.0,
+            "LockRangeOverride": 10,
             "SelectTargetAttachPoint": "SelectPoint",
             "LookAtOffsetOverride": {
-              "y": 1.5,
-              "z": -4.0,
-              "normalized": {
-                "y": 0.351123452,
-                "z": -0.9363292,
-                "magnitude": 1.0,
-                "sqrMagnitude": 1.0
-              },
-              "magnitude": 4.27200174,
-              "sqrMagnitude": 18.25
+              "Y": 1.5,
+              "Z": -4
             },
             "AnimStateOverride": [],
             "TimeRewindAnimEventJson": "Config/Gameplays/TimeRewind/TimeRewinder_GaintSword.json",
@@ -344,15 +203,8 @@
           }
         ]
       },
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Prop3",
       "RotY": 39.35543,
@@ -362,46 +214,12 @@
       "PosZ": 155.94
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 104028,
-      "LoadOnInitial": true,
       "ValueSource": {
         "Values": [
           {
             "$type": "RPG.GameCore.SharedFloat",
-            "Value": 5.0,
-            "Key": "CatchablePropType"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "247,300002",
-            "Key": "SwitchHandProp"
-          }
-        ],
-        "SharedValues": [
-          {
-            "$type": "RPG.GameCore.SharedFloat",
-            "Value": 5.0,
+            "Value": 5,
             "Key": "CatchablePropType"
           },
           {
@@ -413,34 +231,22 @@
       },
       "CampID": 4,
       "State": "Open",
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {
         "InteractTrigger": {
-          "Radius": 7.0,
+          "Radius": 7,
           "PointList": []
         }
       },
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Prop4",
       "RotY": 35.01904,
@@ -450,46 +256,12 @@
       "PosZ": 236.539
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 104028,
-      "LoadOnInitial": true,
       "ValueSource": {
         "Values": [
           {
             "$type": "RPG.GameCore.SharedFloat",
-            "Value": 5.0,
-            "Key": "CatchablePropType"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "247,300002",
-            "Key": "SwitchHandProp"
-          }
-        ],
-        "SharedValues": [
-          {
-            "$type": "RPG.GameCore.SharedFloat",
-            "Value": 5.0,
+            "Value": 5,
             "Key": "CatchablePropType"
           },
           {
@@ -501,34 +273,22 @@
       },
       "CampID": 4,
       "State": "Open",
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {
         "InteractTrigger": {
-          "Radius": 7.0,
+          "Radius": 7,
           "PointList": []
         }
       },
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Prop5",
       "RotY": 38.78207,
@@ -540,46 +300,12 @@
     {
       "RotX": 359.8932,
       "RotZ": 0.097424,
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 104028,
-      "LoadOnInitial": true,
       "ValueSource": {
         "Values": [
           {
             "$type": "RPG.GameCore.SharedFloat",
-            "Value": 5.0,
-            "Key": "CatchablePropType"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "247,300002",
-            "Key": "SwitchHandProp"
-          }
-        ],
-        "SharedValues": [
-          {
-            "$type": "RPG.GameCore.SharedFloat",
-            "Value": 5.0,
+            "Value": 5,
             "Key": "CatchablePropType"
           },
           {
@@ -591,34 +317,22 @@
       },
       "CampID": 4,
       "State": "Open",
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {
         "InteractTrigger": {
-          "Radius": 7.0,
+          "Radius": 7,
           "PointList": []
         }
       },
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Prop6",
       "RotY": 58.89958,
@@ -630,37 +344,14 @@
   ],
   "DistrictList": [
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "Trigger": {
         "Radius": 7.5,
-        "DimX": 1.0,
-        "DimY": 1.0,
-        "DimZ": 1.0,
+        "DimX": 1,
+        "DimY": 1,
+        "DimZ": 1,
         "PointList": []
       },
-      "LoadOnInitial": true,
       "DistrictType": "Level",
-      "NPCCrowdRadius": 25.0,
       "ValueSource": {},
       "Name": "District1",
       "ID": 1,
@@ -669,37 +360,14 @@
       "PosZ": 218.11
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "Trigger": {
         "Radius": 7.5,
-        "DimX": 1.0,
-        "DimY": 1.0,
-        "DimZ": 1.0,
+        "DimX": 1,
+        "DimY": 1,
+        "DimZ": 1,
         "PointList": []
       },
-      "LoadOnInitial": true,
       "DistrictType": "Level",
-      "NPCCrowdRadius": 25.0,
       "ValueSource": {},
       "Name": "District2",
       "ID": 2,
@@ -708,37 +376,14 @@
       "PosZ": 174.61
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "Trigger": {
         "Radius": 7.5,
-        "DimX": 1.0,
-        "DimY": 1.0,
-        "DimZ": 1.0,
+        "DimX": 1,
+        "DimY": 1,
+        "DimZ": 1,
         "PointList": []
       },
-      "LoadOnInitial": true,
       "DistrictType": "Level",
-      "NPCCrowdRadius": 25.0,
       "ValueSource": {},
       "Name": "District3",
       "ID": 3,

@@ -10,20 +10,28 @@
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 4294967296
+                "FixedValue": {
+                  "Value": 1
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288541728407552
+                "FixedValue": {
+                  "Value": 300012
                 }
               }
             }
           },
           "TargetEntityType": "LocalPlayer",
-          "TargetGroupID": {},
-          "TargetID": {},
+          "TargetGroupID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "TargetID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
           "TargetTypes": [],
           "ColliderRelativePath": "Trigger",
           "DestroyAfterTriggered": true,
@@ -32,13 +40,9 @@
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "101140201_C"
-              },
-              "TaskEnabled": true
+              }
             }
-          ],
-          "SkipFakeAvatar": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     },
@@ -48,24 +52,15 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "101140201_C"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.PerformanceTransition",
-          "SwitchInTime": 0.5,
-          "SwitchKeepTime": 0.5,
-          "SwitchOutTime": 0.5,
           "CreateNpcList": [],
           "CaptureNpcList": [],
           "DestroyNpcList": [],
-          "DisactiveVCamOnGraphEnd": true,
           "ActiveVirtualCamera": {
-            "IsActive": true,
-            "VCameraDitherMaxDistance": 1.0,
-            "CenterPosX": -1.0,
-            "CenterPosY": -1.0,
-            "IsClientOnly": true
+            "TaskEnabled": false
           },
           "SwitchCharacterAnchor": {
             "IsLocalPlayer": true,
@@ -76,27 +71,18 @@
             "AnchorName": {
               "Value": "Anchor8"
             },
-            "ResetAnimation": true,
-            "ResetCamera": true,
-            "ClearSpecialVision": true,
-            "IsClientOnly": true
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+            "TaskEnabled": false
+          }
         },
         {
           "$type": "RPG.GameCore.TriggerPerformance",
           "ValueSource": {},
           "PerformanceType": "C",
-          "PerformanceID": 101140204,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 101140204
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_101140201",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_101140201"
         }
       ]
     }

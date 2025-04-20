@@ -1,0 +1,48 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.TriggerPerformance",
+          "ValueSource": {},
+          "PerformanceType": "E",
+          "PerformanceID": 101020125
+        },
+        {
+          "$type": "RPG.GameCore.TriggerCustomString",
+          "CustomString": {
+            "Value": "Talk_101020105"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.FinishLevelGraph"
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CaptureNPCToCharacter",
+          "GroupID": {
+            "FixedValue": {
+              "Value": 7
+            }
+          },
+          "GroupNpcID": {
+            "FixedValue": {
+              "Value": 400012
+            }
+          },
+          "CharacterUniqueName": {
+            "Value": "Pela_Talk101020105"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.CharacterDisableLookAt",
+          "CharacterUniqueName": "Pela_Talk101020105"
+        }
+      ]
+    }
+  ]
+}

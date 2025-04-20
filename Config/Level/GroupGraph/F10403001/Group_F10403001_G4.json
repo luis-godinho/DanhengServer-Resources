@@ -1,0 +1,43 @@
+{
+  "OnInitSequece": [
+    {
+      "TaskList": []
+    }
+  ],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitSecond",
+          "WaitTime": {
+            "FixedValue": {
+              "Value": 10
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.AdvClientChangePropState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+            "FetchType": "SinglePropByPropID",
+            "SinglePropID": {
+              "GroupID": {
+                "FixedValue": {
+                  "Value": 4
+                }
+              },
+              "ID": {
+                "FixedValue": {
+                  "Value": 300001
+                }
+              }
+            }
+          },
+          "FromState": "Locked",
+          "CanChangeServerProp": true
+        }
+      ]
+    }
+  ],
+  "Type": "Group"
+}

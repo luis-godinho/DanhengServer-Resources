@@ -1,0 +1,99 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.ShowGuideHintWithText",
+          "Block": true,
+          "TargetEvent": [
+            {
+              "$type": "RPG.GameCore.WaitPlayerAction",
+              "ActionType": "AnyAction",
+              "ProtectTime": 0
+            }
+          ],
+          "NodeIDList": [
+            "PlanetFes.BuffChange.01"
+          ],
+          "IsAutoMatchGuideHintType": false,
+          "GuideTextType": "Talk",
+          "GuideText": "TutorialTextmap_552101",
+          "GuideTalkID": 575029,
+          "CustomTextDirection": "RightUp",
+          "GuideHintShowConfig": {},
+          "GuideTextShowConfig": {
+            "UseCustomConfig": true,
+            "OffsetX": 200,
+            "OffsetY": 200
+          },
+          "GuideUIContextConfig": {},
+          "EnableActionList": [],
+          "EnableBattleOperationList": [],
+          "DisableBlackMask": true
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideHintWithText",
+          "Block": true,
+          "TargetEvent": [
+            {
+              "$type": "RPG.GameCore.WaitPlayerAction",
+              "ActionType": "AnyAction",
+              "ProtectTime": 0.5
+            }
+          ],
+          "NodeIDList": [
+            "PlanetFes.BuffChange.01"
+          ],
+          "IsAutoMatchGuideHintType": false,
+          "GuideTextType": "Talk",
+          "GuideText": "TutorialTextmap_552101",
+          "GuideTalkID": 575047,
+          "CustomTextDirection": "RightUp",
+          "GuideHintShowConfig": {},
+          "GuideTextShowConfig": {
+            "UseCustomConfig": true,
+            "OffsetX": 200,
+            "OffsetY": 200
+          },
+          "GuideUIContextConfig": {},
+          "EnableActionList": [],
+          "EnableBattleOperationList": [],
+          "DisableBlackMask": true
+        },
+        {
+          "$type": "RPG.GameCore.WaitUIControllerClose",
+          "UIControllerName": "PlanetFesBuffChangeDialog"
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideHintWithText",
+          "TargetEvent": [
+            {
+              "$type": "RPG.GameCore.WaitPlayerAction",
+              "ActionType": "AnyAction",
+              "Param": "PlanetFesMainPage.Manage.01"
+            }
+          ],
+          "NodeIDList": [
+            "PlanetFesMainPage.Buff.01"
+          ],
+          "GuideHintType": "ClickRect",
+          "GuideTextType": "Talk",
+          "GuideText": "TutorialTextmap_552101",
+          "GuideTalkID": 575048,
+          "GuideHintShowConfig": {},
+          "GuideTextShowConfig": {},
+          "GuideUIContextConfig": {},
+          "EnableActionList": [],
+          "EnableBattleOperationList": [],
+          "DisableBlackMask": true
+        },
+        {
+          "$type": "RPG.GameCore.TutorialClose"
+        }
+      ]
+    }
+  ],
+  "ValueSource": {},
+  "EntityEventList": []
+}

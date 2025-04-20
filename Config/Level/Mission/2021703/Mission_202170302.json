@@ -8,8 +8,7 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Raid_43211_Open"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.StartDialogueEntityInteract",
@@ -18,13 +17,13 @@
             "FetchType": "SingleNpcByNpcID",
             "SingleNpcID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 120259084288
+                "FixedValue": {
+                  "Value": 28
                 }
               },
               "GroupNpcID": {
-                "fixedValue": {
-                  "RawValue": 1717991213367296
+                "FixedValue": {
+                  "Value": 400001
                 }
               }
             }
@@ -50,48 +49,20 @@
               },
               {
                 "$type": "RPG.GameCore.SharedFloat",
-                "Value": 1.0,
-                "Key": "ResetEntityTransform"
-              }
-            ],
-            "SharedValues": [
-              {
-                "$type": "RPG.GameCore.SharedString",
-                "Value": "Level/Common_Adventure/UseInteractNPCFront.prefab",
-                "Key": "DialogueEntityInteract_AreaPath"
-              },
-              {
-                "$type": "RPG.GameCore.SharedString",
-                "Value": "UseInteractNPCFront,UseInteractNPCFront_Camera",
-                "Key": "DialogueEntityInteract_CameraKey"
-              },
-              {
-                "$type": "RPG.GameCore.SharedString",
-                "Value": "UseInteractNPCFront",
-                "Key": "DialogueEntityInteract_AreaName"
-              },
-              {
-                "$type": "RPG.GameCore.SharedFloat",
-                "Value": 1.0,
+                "Value": 1,
                 "Key": "ResetEntityTransform"
               }
             ]
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
           "$type": "RPG.GameCore.OpenTreasureChallenge",
           "RaidID": 43211,
           "OnCancel": [
             {
-              "$type": "RPG.GameCore.EndDialogueEntityInteract",
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "$type": "RPG.GameCore.EndDialogueEntityInteract"
             }
-          ],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     }

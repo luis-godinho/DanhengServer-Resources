@@ -1,0 +1,215 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropSetupUITrigger",
+          "DisableWhenTriggered": true,
+          "ButtonText": {
+            "Hash": 2846910092830467020
+          },
+          "ButtonCallback": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByComparePropState",
+                "TargetType": {
+                  "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                  "FetchType": "SinglePropByPropKey",
+                  "SinglePropKey": {
+                    "Custom": true,
+                    "Key": "WaterLevel"
+                  }
+                },
+                "State": "Locked"
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.ToastPile",
+                  "DescTextID": {
+                    "Hash": 8286638299139591354
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.WaitSecond",
+                  "WaitTime": {
+                    "FixedValue": {
+                      "Value": 1.5
+                    }
+                  }
+                }
+              ],
+              "FailedTaskList": [
+                {
+                  "$type": "RPG.GameCore.PropReqInteract",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                    "FetchType": "SinglePropByPropKey",
+                    "SinglePropKey": {
+                      "Custom": true,
+                      "Key": "Gate"
+                    }
+                  },
+                  "InteractID": {
+                    "FixedValue": {
+                      "Value": 1010
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropStateChangeListenerConfig",
+          "ToState": "Open",
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.WaitSecond",
+              "WaitTime": {
+                "FixedValue": {
+                  "Value": 1.5
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.PropSetupUITrigger",
+              "DisableAfterTriggered": true,
+              "ButtonText": {
+                "Hash": 7827061848939527088
+              },
+              "ButtonCallback": [
+                {
+                  "$type": "RPG.GameCore.PropReqInteract",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                    "FetchType": "SinglePropByPropKey",
+                    "SinglePropKey": {
+                      "Custom": true,
+                      "Key": "Gate"
+                    }
+                  },
+                  "InteractID": {
+                    "FixedValue": {
+                      "Value": 1100
+                    }
+                  }
+                }
+              ],
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+              }
+            }
+          ],
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+            "FetchType": "SinglePropByPropKey",
+            "SinglePropKey": {
+              "Custom": true,
+              "Key": "Gate"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropStateChangeListenerConfig",
+          "FromState": "Open",
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.WaitSecond",
+              "WaitTime": {
+                "FixedValue": {
+                  "Value": 1.5
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.PropSetupUITrigger",
+              "DisableWhenTriggered": true,
+              "ButtonText": {
+                "Hash": 2846910092830467020
+              },
+              "ButtonCallback": [
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByComparePropState",
+                    "TargetType": {
+                      "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                      "FetchType": "SinglePropByPropKey",
+                      "SinglePropKey": {
+                        "Custom": true,
+                        "Key": "WaterLevel"
+                      }
+                    },
+                    "State": "Locked"
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.ToastPile",
+                      "DescTextID": {
+                        "Hash": 8286638299139591354
+                      }
+                    }
+                  ],
+                  "FailedTaskList": [
+                    {
+                      "$type": "RPG.GameCore.PropReqInteract",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                        "FetchType": "SinglePropByPropKey",
+                        "SinglePropKey": {
+                          "Custom": true,
+                          "Key": "Gate"
+                        }
+                      },
+                      "InteractID": {
+                        "FixedValue": {
+                          "Value": 1010
+                        }
+                      }
+                    }
+                  ]
+                }
+              ],
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+              }
+            }
+          ],
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+            "FetchType": "SinglePropByPropKey",
+            "SinglePropKey": {
+              "Custom": true,
+              "Key": "Gate"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ValueSource": {
+    "Values": [
+      {
+        "$type": "RPG.GameCore.SharedString",
+        "Key": "WaterLevel"
+      },
+      {
+        "$type": "RPG.GameCore.SharedString",
+        "Key": "Gate"
+      }
+    ]
+  }
+}

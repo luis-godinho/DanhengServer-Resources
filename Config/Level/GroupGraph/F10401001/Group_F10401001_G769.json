@@ -1,0 +1,72 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AddStreamingSource",
+          "StreamingSource": {
+            "CenterName": "Mission_Performance_8032104",
+            "AreaName": "LevelArea_P10401_F10401001_G769",
+            "AnchorName": "Anchor1"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TriggerPerformance",
+          "ValueSource": {},
+          "PerformanceType": "D",
+          "PerformanceID": 803210406,
+          "MaskConfig": {
+            "UseExcelData": false,
+            "StartBlack": "NoPre"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.PerformanceEndSeq",
+          "BeforeCases": [
+            {
+              "$type": "RPG.GameCore.SwitchCharacterAnchorV2",
+              "SwitchCharacterAnchorConfig": {
+                "IsLocalPlayer": true,
+                "CharacterUniqueName": "LocalPlayer",
+                "AreaName": {
+                  "Value": "LevelArea_P10401_F10401001_G767"
+                },
+                "AnchorName": {
+                  "Value": "Anchor1"
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.RemoveStreamingSource",
+              "StreamingSource": "Mission_Performance_8032104"
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByHeroGender",
+            "Gender": "GENDER_MAN"
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.ClientFinishMission",
+              "SubmissionID": 803210403
+            }
+          ],
+          "FailedTaskList": [
+            {
+              "$type": "RPG.GameCore.ClientFinishMission",
+              "SubmissionID": 803210404
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": []
+    }
+  ],
+  "Type": "Group"
+}

@@ -1,0 +1,76 @@
+{
+  "CharacterSlotList": [
+    {
+      "UniqueName": "1",
+      "CharacterType": "AssemNpc"
+    },
+    {
+      "UniqueName": "2",
+      "CharacterType": "AssemNpc"
+    }
+  ],
+  "StartNodeName": "Node0",
+  "NodeList": [
+    {
+      "MunicipalNodeName": "NodeBreak",
+      "TransitionList": [],
+      "ActionList": []
+    },
+    {
+      "MunicipalNodeName": "Node0",
+      "TransitionList": [
+        {
+          "MunicipalNodeName": "Node1"
+        }
+      ],
+      "ActionList": [
+        {
+          "$type": "RPG.GameCore.MunicipalChatActionTalk",
+          "TalkSentenceID": 304007447,
+          "UniqueName": "2"
+        }
+      ]
+    },
+    {
+      "MunicipalNodeName": "Node1",
+      "TransitionList": [
+        {
+          "MunicipalNodeName": "Node2"
+        }
+      ],
+      "ActionList": [
+        {
+          "$type": "RPG.GameCore.MunicipalChatActionTalk",
+          "TalkSentenceID": 304007448,
+          "UniqueName": "1"
+        }
+      ]
+    },
+    {
+      "MunicipalNodeName": "Node2",
+      "TransitionList": [
+        {
+          "MunicipalNodeName": "Node3"
+        }
+      ],
+      "ActionList": [
+        {
+          "$type": "RPG.GameCore.MunicipalChatActionTalk",
+          "TalkSentenceID": 304007449,
+          "UniqueName": "1"
+        }
+      ]
+    },
+    {
+      "MunicipalNodeName": "Node3",
+      "TransitionList": [],
+      "ActionList": [
+        {
+          "$type": "RPG.GameCore.MunicipalChatActionTalk",
+          "TalkSentenceID": 304007450,
+          "UniqueName": "2"
+        }
+      ]
+    }
+  ]
+}

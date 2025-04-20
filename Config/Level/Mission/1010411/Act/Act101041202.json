@@ -1,0 +1,98 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.LevelPerformanceInitialize",
+          "CreateCharacterList": [],
+          "EntityVisiableList": []
+        },
+        {
+          "$type": "RPG.GameCore.AdvEnablePropDialogMode",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+            "FetchType": "SinglePropByPropID",
+            "SinglePropID": {
+              "GroupID": {
+                "FixedValue": {
+                  "Value": 10
+                }
+              },
+              "ID": {
+                "FixedValue": {
+                  "Value": 300001
+                }
+              }
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.PlayOptionTalk",
+          "OptionList": [
+            {
+              "$type": "RPG.GameCore.OptionTalkInfo",
+              "OptionTextmapID": {
+                "Hash": 17776944000727633345
+              },
+              "OptionIconType": "SpecialChatIcon",
+              "TriggerCustomString": "Mission_101041203_1"
+            },
+            {
+              "$type": "RPG.GameCore.OptionTalkInfo",
+              "OptionTextmapID": {
+                "Hash": 6670452676575104672
+              },
+              "OptionIconType": "ChatIcon",
+              "TriggerCustomString": "Mission_101041203_2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "Mission_101041203_2"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.AdvEnablePropDialogMode",
+          "Enable": false,
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+            "FetchType": "SinglePropByPropID",
+            "SinglePropID": {
+              "GroupID": {
+                "FixedValue": {
+                  "Value": 10
+                }
+              },
+              "ID": {
+                "FixedValue": {
+                  "Value": 300001
+                }
+              }
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.EndPerformance"
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitPerformanceEnd"
+        },
+        {
+          "$type": "RPG.GameCore.FinishLevelGraph"
+        }
+      ]
+    }
+  ]
+}

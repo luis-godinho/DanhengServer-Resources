@@ -1,0 +1,2263 @@
+{
+  "AbilityList": [
+    {
+      "Modifiers": {
+        "MStrongChallenge_GameMode_StageAbility_02_Core": {
+          "_CallbackList": [
+            {
+              "Event": "OnListenCharacterCreate",
+              "CallbackConfig": [
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByTargetTeam",
+                    "TargetType": {
+                      "$type": "RPG.GameCore.TargetAlias",
+                      "Alias": "ParamEntity"
+                    },
+                    "Team": "TeamDark"
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.PredicateTaskList",
+                      "Predicate": {
+                        "$type": "RPG.GameCore.ByAnd",
+                        "PredicateList": [
+                          {
+                            "$type": "RPG.GameCore.ByCompareMonsterRank",
+                            "TargetType": {
+                              "$type": "RPG.GameCore.TargetAlias",
+                              "Alias": "ParamEntity"
+                            },
+                            "CompareType": "GreaterEqual",
+                            "CompareValue": 4
+                          }
+                        ]
+                      },
+                      "SuccessTaskList": [
+                        {
+                          "$type": "RPG.GameCore.AddModifier",
+                          "TargetType": {
+                            "$type": "RPG.GameCore.TargetAlias",
+                            "Alias": "ParamEntity"
+                          },
+                          "ModifierName": {
+                            "Value": "MStrongChallenge_GameMode_StageAbility_02_Boss"
+                          }
+                        }
+                      ],
+                      "FailedTaskList": [
+                        {
+                          "$type": "RPG.GameCore.AddModifier",
+                          "TargetType": {
+                            "$type": "RPG.GameCore.TargetAlias",
+                            "Alias": "ParamEntity"
+                          },
+                          "ModifierName": {
+                            "Value": "MStrongChallenge_GameMode_StageAbility_02_Minion"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByTargetTeam",
+                    "TargetType": {
+                      "$type": "RPG.GameCore.TargetAlias",
+                      "Alias": "ParamEntity"
+                    },
+                    "Team": "TeamLight"
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.AddModifier",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetAlias",
+                        "Alias": "ParamEntity"
+                      },
+                      "ModifierName": {
+                        "Value": "MStrongChallenge_GameMode_StageAbility_02_PLY"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Event": "OnListenBeforeSkillUse",
+              "CallbackConfig": [
+                {
+                  "$type": "RPG.GameCore.Retarget",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "AllDarkTeam"
+                  },
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByAnd",
+                    "PredicateList": [
+                      {
+                        "$type": "RPG.GameCore.ByIsContainModifier",
+                        "TargetType": {
+                          "$type": "RPG.GameCore.TargetAlias",
+                          "Alias": "ParamEntity"
+                        },
+                        "ModifierName": {
+                          "Value": "Monster_IF_BOSS_Common_BreakBonus"
+                        }
+                      }
+                    ]
+                  },
+                  "ByRandom": true,
+                  "MaxNumber": {
+                    "FixedValue": {
+                      "Value": 1
+                    }
+                  },
+                  "TaskList": [
+                    {
+                      "$type": "RPG.GameCore.RemoveModifier",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetAlias",
+                        "Alias": "ParamEntity"
+                      },
+                      "ModifierName": {
+                        "Value": "Monster_IF_BOSS_Common_BreakBonus"
+                      }
+                    },
+                    {
+                      "$type": "RPG.GameCore.RemoveModifier",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetAlias",
+                        "Alias": "ParamEntity"
+                      },
+                      "ModifierName": {
+                        "Value": "Monster_IF_BOSS_Common_BreakBonus_Show"
+                      }
+                    },
+                    {
+                      "$type": "RPG.GameCore.RemoveModifier",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetAlias",
+                        "Alias": "ParamEntity"
+                      },
+                      "ModifierName": {
+                        "Value": "Monster_IF_BOSS_Common_Defence"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.RemoveModifier",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "AllDarkTeam"
+                  },
+                  "ModifierName": {
+                    "Value": "OneMorePerTurn"
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.RemoveModifier",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "AllDarkTeam"
+                  },
+                  "ModifierName": {
+                    "Value": "OneMore"
+                  }
+                }
+              ]
+            },
+            {
+              "Event": "OnListenAfterSkillUse",
+              "CallbackConfig": [
+                {
+                  "$type": "RPG.GameCore.RemoveModifier",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "AllDarkTeam"
+                  },
+                  "ModifierName": {
+                    "Value": "OneMorePerTurn"
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.RemoveModifier",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "AllDarkTeam"
+                  },
+                  "ModifierName": {
+                    "Value": "OneMore"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "MStrongChallenge_GameMode_StageAbility_02_Boss": {
+          "BehaviorFlagList": [
+            "STAT_SpeedUp"
+          ],
+          "_CallbackList": [
+            {
+              "Event": "OnStack",
+              "CallbackConfig": [
+                {
+                  "$type": "RPG.GameCore.StackProperty",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "ModifierOwnerEntity"
+                  },
+                  "Property": "SpeedAddedRatio",
+                  "PropertyValue": {
+                    "FixedValue": {
+                      "Value": 1.3
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "Event": "OnAfterAttack",
+              "CallbackConfig": [
+                {
+                  "$type": "RPG.GameCore.SetDynamicValueByAddValue",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "LevelEntity"
+                  },
+                  "Key": {
+                    "Value": "VSCount_DarkTeam_Delta"
+                  },
+                  "AddValue": {
+                    "FixedValue": {
+                      "Value": 15
+                    }
+                  },
+                  "Min": {
+                    "FixedValue": {
+                      "Value": 0
+                    }
+                  },
+                  "Max": {
+                    "FixedValue": {
+                      "Value": 100
+                    }
+                  },
+                  "ContextScope": "TargetEntity"
+                },
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByCurrentSkillName",
+                    "SkillName": "Skill07"
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.SetDynamicValueByAddValue",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetAlias",
+                        "Alias": "LevelEntity"
+                      },
+                      "Key": {
+                        "Value": "VSCount_DarkTeam_Delta"
+                      },
+                      "AddValue": {
+                        "FixedValue": {
+                          "Value": 15
+                        }
+                      },
+                      "Min": {
+                        "FixedValue": {
+                          "Value": 0
+                        }
+                      },
+                      "Max": {
+                        "FixedValue": {
+                          "Value": 100
+                        }
+                      },
+                      "ContextScope": "TargetEntity"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Event": "OnListenBeforeSkillUse",
+              "CallbackConfig": [
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByAnd",
+                    "PredicateList": [
+                      {
+                        "$type": "RPG.GameCore.ByCompareMonsterID",
+                        "TargetType": {
+                          "$type": "RPG.GameCore.TargetAlias",
+                          "Alias": "ParamEntity"
+                        },
+                        "TargetMonsterID": {
+                          "FixedValue": {
+                            "Value": 1004013
+                          }
+                        }
+                      },
+                      {
+                        "$type": "RPG.GameCore.ByCompareMonsterID",
+                        "TargetType": {
+                          "$type": "RPG.GameCore.TargetAlias",
+                          "Alias": "ModifierOwnerEntity"
+                        },
+                        "TargetMonsterID": {
+                          "FixedValue": {
+                            "Value": 1004013
+                          }
+                        }
+                      },
+                      {
+                        "$type": "RPG.GameCore.ByCurrentSkillName",
+                        "SkillName": "Skill05"
+                      }
+                    ]
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.AddModifier",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetAlias",
+                        "Alias": "ModifierOwnerEntity"
+                      },
+                      "ModifierName": {
+                        "Value": "MStrongChallenge_GameMode_StageAbility_02_Boss_Weakness"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByAnd",
+                    "PredicateList": [
+                      {
+                        "$type": "RPG.GameCore.ByCompareMonsterID",
+                        "TargetType": {
+                          "$type": "RPG.GameCore.TargetAlias",
+                          "Alias": "ParamEntity"
+                        },
+                        "TargetMonsterID": {
+                          "FixedValue": {
+                            "Value": 1004013
+                          }
+                        }
+                      },
+                      {
+                        "$type": "RPG.GameCore.ByCurrentSkillName",
+                        "SkillName": "Skill03"
+                      }
+                    ]
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.SetDynamicValueByAddValue",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetAlias",
+                        "Alias": "LevelEntity"
+                      },
+                      "Key": {
+                        "Value": "VSCount_DarkTeam_Delta"
+                      },
+                      "AddValue": {
+                        "FixedValue": {
+                          "Value": 100
+                        }
+                      },
+                      "Min": {
+                        "FixedValue": {
+                          "Value": 0
+                        }
+                      },
+                      "Max": {
+                        "FixedValue": {
+                          "Value": 100
+                        }
+                      },
+                      "ContextScope": "TargetEntity"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Event": "OnEnterBattle",
+              "CallbackConfig": [
+                {
+                  "$type": "RPG.GameCore.SetActionDelay",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "ModifierOwnerEntity"
+                  },
+                  "Value": {
+                    "FixedValue": {
+                      "Value": 2.5
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "MStrongChallenge_GameMode_StageAbility_02_Boss_Weakness": {
+          "_CallbackList": [
+            {
+              "Event": "OnPhase1",
+              "CallbackConfig": [
+                {
+                  "$type": "RPG.GameCore.RemoveSelfModifier"
+                }
+              ]
+            },
+            {
+              "Event": "OnAfterBeingAttackedEnd",
+              "CallbackConfig": [
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByCurrentSkillType",
+                    "SkillType": "Ultra"
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.SetDynamicValueByAddValue",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetAlias",
+                        "Alias": "LevelEntity"
+                      },
+                      "Key": {
+                        "Value": "VSCount_LightTeam_Delta"
+                      },
+                      "AddValue": {
+                        "FixedValue": {
+                          "Value": 6
+                        }
+                      },
+                      "Min": {
+                        "FixedValue": {
+                          "Value": 0
+                        }
+                      },
+                      "Max": {
+                        "FixedValue": {
+                          "Value": 100
+                        }
+                      },
+                      "ContextScope": "TargetEntity"
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.SetDynamicValueByAddValue",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "LevelEntity"
+                  },
+                  "Key": {
+                    "Value": "VSCount_LightTeam_Delta"
+                  },
+                  "AddValue": {
+                    "FixedValue": {
+                      "Value": 8
+                    }
+                  },
+                  "Min": {
+                    "FixedValue": {
+                      "Value": 0
+                    }
+                  },
+                  "Max": {
+                    "FixedValue": {
+                      "Value": 100
+                    }
+                  },
+                  "ContextScope": "TargetEntity"
+                }
+              ]
+            }
+          ]
+        },
+        "MStrongChallenge_GameMode_StageAbility_02_Minion": {
+          "_CallbackList": [
+            {
+              "Event": "OnAfterAttack",
+              "CallbackConfig": [
+                {
+                  "$type": "RPG.GameCore.SetDynamicValueByAddValue",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "LevelEntity"
+                  },
+                  "Key": {
+                    "Value": "VSCount_DarkTeam_Delta"
+                  },
+                  "AddValue": {
+                    "FixedValue": {
+                      "Value": 3
+                    }
+                  },
+                  "Min": {
+                    "FixedValue": {
+                      "Value": 0
+                    }
+                  },
+                  "Max": {
+                    "FixedValue": {
+                      "Value": 100
+                    }
+                  },
+                  "ContextScope": "TargetEntity"
+                }
+              ]
+            }
+          ]
+        },
+        "MStrongChallenge_GameMode_StageAbility_02_PLY": {
+          "_CallbackList": [
+            {
+              "Event": "OnAfterAttack",
+              "CallbackConfig": [
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByCurrentSkillType",
+                    "SkillType": "Skill"
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.SetDynamicValueByAddValue",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetAlias",
+                        "Alias": "LevelEntity"
+                      },
+                      "Key": {
+                        "Value": "VSCount_LightTeam_Delta"
+                      },
+                      "AddValue": {
+                        "FixedValue": {
+                          "Value": 4
+                        }
+                      },
+                      "Min": {
+                        "FixedValue": {
+                          "Value": 0
+                        }
+                      },
+                      "Max": {
+                        "FixedValue": {
+                          "Value": 100
+                        }
+                      },
+                      "ContextScope": "TargetEntity"
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByCurrentSkillType",
+                    "SkillType": "Ultra"
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.SetDynamicValueByAddValue",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetAlias",
+                        "Alias": "LevelEntity"
+                      },
+                      "Key": {
+                        "Value": "VSCount_LightTeam_Delta"
+                      },
+                      "AddValue": {
+                        "FixedValue": {
+                          "Value": 8
+                        }
+                      },
+                      "Min": {
+                        "FixedValue": {
+                          "Value": 0
+                        }
+                      },
+                      "Max": {
+                        "FixedValue": {
+                          "Value": 100
+                        }
+                      },
+                      "ContextScope": "TargetEntity"
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.SetDynamicValueByAddValue",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "LevelEntity"
+                  },
+                  "Key": {
+                    "Value": "VSCount_LightTeam_Delta"
+                  },
+                  "AddValue": {
+                    "FixedValue": {
+                      "Value": 4
+                    }
+                  },
+                  "Min": {
+                    "FixedValue": {
+                      "Value": 0
+                    }
+                  },
+                  "Max": {
+                    "FixedValue": {
+                      "Value": 100
+                    }
+                  },
+                  "ContextScope": "TargetEntity"
+                }
+              ]
+            }
+          ]
+        },
+        "MStrongChallenge_GameMode_StageAbility_02_Calculation": {
+          "OnDynamicValueChange": [
+            {
+              "Key": {
+                "Hash": 138205161
+              },
+              "ContextScope": "ContextOwner",
+              "Ranges": [
+                {
+                  "Min": {
+                    "FixedValue": {
+                      "Value": 1
+                    }
+                  },
+                  "Max": {
+                    "FixedValue": {
+                      "Value": 100
+                    }
+                  },
+                  "MaxInclusive": true,
+                  "OnEnterRange": [
+                    {
+                      "$type": "RPG.GameCore.LoopExecuteTaskList",
+                      "MaxLoopCount": {
+                        "IsDynamic": true,
+                        "PostfixExpr": {
+                          "OpCodes": "AQAR",
+                          "FixedValues": [],
+                          "DynamicHashes": [
+                            138205161
+                          ]
+                        }
+                      },
+                      "TaskList": [
+                        {
+                          "$type": "RPG.GameCore.SetDynamicValueByAddValue",
+                          "TargetType": {
+                            "$type": "RPG.GameCore.TargetAlias",
+                            "Alias": "ModifierOwnerEntity"
+                          },
+                          "Key": {
+                            "Value": "VSCount_LightTeam"
+                          },
+                          "AddValue": {
+                            "IsDynamic": true,
+                            "PostfixExpr": {
+                              "OpCodes": "AQABAQEAAwECBQEDBAIR",
+                              "FixedValues": [],
+                              "DynamicHashes": [
+                                1315396875,
+                                959166525,
+                                -1449499952,
+                                292481906
+                              ]
+                            }
+                          },
+                          "Min": {
+                            "FixedValue": {
+                              "Value": 0
+                            }
+                          },
+                          "Max": {
+                            "FixedValue": {
+                              "Value": 100
+                            }
+                          },
+                          "ContextScope": "TargetEntity"
+                        },
+                        {
+                          "$type": "RPG.GameCore.PredicateTaskList",
+                          "Predicate": {
+                            "$type": "RPG.GameCore.ByCompareDynamicValue",
+                            "TargetType": {
+                              "$type": "RPG.GameCore.TargetAlias",
+                              "Alias": "ModifierOwnerEntity"
+                            },
+                            "DynamicKey": {
+                              "Value": "VSCount_LightTeam"
+                            },
+                            "CompareType": "Greater",
+                            "CompareValue": {
+                              "IsDynamic": true,
+                              "PostfixExpr": {
+                                "OpCodes": "AQABAQMR",
+                                "FixedValues": [],
+                                "DynamicHashes": [
+                                  -1449499952,
+                                  -409918396
+                                ]
+                              }
+                            }
+                          },
+                          "SuccessTaskList": [
+                            {
+                              "$type": "RPG.GameCore.SetDynamicValue",
+                              "Value": {
+                                "IsDynamic": true,
+                                "PostfixExpr": {
+                                  "OpCodes": "AQAAAAQBAQEABAEAAQICBQAABAIR",
+                                  "FixedValues": [
+                                    {
+                                      "Value": 0.5
+                                    }
+                                  ],
+                                  "DynamicHashes": [
+                                    292481906,
+                                    -1449499952,
+                                    -409918396
+                                  ]
+                                }
+                              },
+                              "DynamicKey": {
+                                "Value": "VSCount_LightTeam"
+                              }
+                            },
+                            {
+                              "$type": "RPG.GameCore.SetDynamicValue",
+                              "Value": {
+                                "IsDynamic": true,
+                                "PostfixExpr": {
+                                  "OpCodes": "AQABAQMR",
+                                  "FixedValues": [],
+                                  "DynamicHashes": [
+                                    -1449499952,
+                                    292481906
+                                  ]
+                                }
+                              },
+                              "DynamicKey": {
+                                "Value": "VSCount_DarkTeam"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "$type": "RPG.GameCore.SetDynamicValue",
+                      "Value": {
+                        "FixedValue": {
+                          "Value": 0
+                        }
+                      },
+                      "DynamicKey": {
+                        "Value": "VSCount_LightTeam_Delta"
+                      }
+                    },
+                    {
+                      "$type": "RPG.GameCore.DebugLog",
+                      "Message": "==============VSCount {VSCount_LightTeam}  {VSCount_DarkTeam}  {VSCount_MaxLimit}======================"
+                    },
+                    {
+                      "$type": "RPG.GameCore.SetVersusBar"
+                    },
+                    {
+                      "$type": "RPG.GameCore.PredicateTaskList",
+                      "Predicate": {
+                        "$type": "RPG.GameCore.ByAnd",
+                        "PredicateList": [
+                          {
+                            "$type": "RPG.GameCore.ByCompareDynamicValue",
+                            "TargetType": {
+                              "$type": "RPG.GameCore.TargetAlias",
+                              "Alias": "ModifierOwnerEntity"
+                            },
+                            "DynamicKey": {
+                              "Value": "VSCount_LightTeam"
+                            },
+                            "CompareType": "GreaterEqual",
+                            "CompareValue": {
+                              "FixedValue": {
+                                "Value": 80
+                              }
+                            }
+                          },
+                          {
+                            "$type": "RPG.GameCore.ByCompareDynamicValue",
+                            "TargetType": {
+                              "$type": "RPG.GameCore.TargetAlias",
+                              "Alias": "ModifierOwnerEntity"
+                            },
+                            "DynamicKey": {
+                              "Value": "InsertFlag"
+                            },
+                            "ContextScope": "ContextModifier",
+                            "CompareType": "Equal",
+                            "CompareValue": {
+                              "FixedValue": {
+                                "Value": 1
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      "SuccessTaskList": [
+                        {
+                          "$type": "RPG.GameCore.SetDynamicValue",
+                          "TargetType": {
+                            "$type": "RPG.GameCore.TargetAlias",
+                            "Alias": "ModifierOwnerEntity"
+                          },
+                          "ContextScope": "ContextModifier",
+                          "Value": {
+                            "FixedValue": {
+                              "Value": 0
+                            }
+                          },
+                          "DynamicKey": {
+                            "Value": "InsertFlag"
+                          }
+                        },
+                        {
+                          "$type": "RPG.GameCore.DebugLog",
+                          "Message": "==============VSCount VSCount_LightTeamGreaterEqual90 {VSCount_LightTeam}  {VSCount_DarkTeam}  {VSCount_MaxLimit}======================"
+                        },
+                        {
+                          "$type": "RPG.GameCore.TurnInsertAbility",
+                          "AbilityName": {
+                            "Value": "BattleEventAbility_StrongChallenge_GameMode_02_DeadLine_Insert"
+                          },
+                          "TargetType": {
+                            "$type": "RPG.GameCore.TargetAlias",
+                            "Alias": "LevelEntity"
+                          },
+                          "AbilityTarget": {
+                            "$type": "RPG.GameCore.TargetAlias",
+                            "Alias": "AllDarkTeam"
+                          },
+                          "InsertAbilityPriority": "MonsterBattleCry"
+                        },
+                        {
+                          "$type": "RPG.GameCore.SetDynamicValue",
+                          "TargetType": {
+                            "$type": "RPG.GameCore.TargetAlias",
+                            "Alias": "ModifierOwnerEntity"
+                          },
+                          "ContextScope": "ContextModifier",
+                          "Value": {
+                            "FixedValue": {
+                              "Value": 1
+                            }
+                          },
+                          "DynamicKey": {
+                            "Value": "InsertFlag"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Key": {
+                "Hash": -443862613
+              },
+              "ContextScope": "ContextOwner",
+              "Ranges": [
+                {
+                  "Min": {
+                    "FixedValue": {
+                      "Value": 1
+                    }
+                  },
+                  "Max": {
+                    "FixedValue": {
+                      "Value": 100
+                    }
+                  },
+                  "MaxInclusive": true,
+                  "OnEnterRange": [
+                    {
+                      "$type": "RPG.GameCore.LoopExecuteTaskList",
+                      "MaxLoopCount": {
+                        "IsDynamic": true,
+                        "PostfixExpr": {
+                          "OpCodes": "AQAR",
+                          "FixedValues": [],
+                          "DynamicHashes": [
+                            -443862613
+                          ]
+                        }
+                      },
+                      "TaskList": [
+                        {
+                          "$type": "RPG.GameCore.SetDynamicValueByAddValue",
+                          "TargetType": {
+                            "$type": "RPG.GameCore.TargetAlias",
+                            "Alias": "ModifierOwnerEntity"
+                          },
+                          "Key": {
+                            "Value": "VSCount_DarkTeam"
+                          },
+                          "AddValue": {
+                            "IsDynamic": true,
+                            "PostfixExpr": {
+                              "OpCodes": "AQABAQEAAwECBQEDBAIR",
+                              "FixedValues": [],
+                              "DynamicHashes": [
+                                1315396875,
+                                959166525,
+                                -1449499952,
+                                -409918396
+                              ]
+                            }
+                          },
+                          "Min": {
+                            "FixedValue": {
+                              "Value": 0
+                            }
+                          },
+                          "Max": {
+                            "FixedValue": {
+                              "Value": 100
+                            }
+                          },
+                          "ContextScope": "TargetEntity"
+                        },
+                        {
+                          "$type": "RPG.GameCore.PredicateTaskList",
+                          "Predicate": {
+                            "$type": "RPG.GameCore.ByCompareDynamicValue",
+                            "TargetType": {
+                              "$type": "RPG.GameCore.TargetAlias",
+                              "Alias": "ModifierOwnerEntity"
+                            },
+                            "DynamicKey": {
+                              "Value": "VSCount_DarkTeam"
+                            },
+                            "CompareType": "Greater",
+                            "CompareValue": {
+                              "IsDynamic": true,
+                              "PostfixExpr": {
+                                "OpCodes": "AQABAQMR",
+                                "FixedValues": [],
+                                "DynamicHashes": [
+                                  -1449499952,
+                                  292481906
+                                ]
+                              }
+                            }
+                          },
+                          "SuccessTaskList": [
+                            {
+                              "$type": "RPG.GameCore.SetDynamicValue",
+                              "Value": {
+                                "IsDynamic": true,
+                                "PostfixExpr": {
+                                  "OpCodes": "AQAAAAQBAQEABAECAQACBQAABAIR",
+                                  "FixedValues": [
+                                    {
+                                      "Value": 0.5
+                                    }
+                                  ],
+                                  "DynamicHashes": [
+                                    -409918396,
+                                    -1449499952,
+                                    292481906
+                                  ]
+                                }
+                              },
+                              "DynamicKey": {
+                                "Value": "VSCount_DarkTeam"
+                              }
+                            },
+                            {
+                              "$type": "RPG.GameCore.SetDynamicValue",
+                              "Value": {
+                                "IsDynamic": true,
+                                "PostfixExpr": {
+                                  "OpCodes": "AQABAQMR",
+                                  "FixedValues": [],
+                                  "DynamicHashes": [
+                                    -1449499952,
+                                    -409918396
+                                  ]
+                                }
+                              },
+                              "DynamicKey": {
+                                "Value": "VSCount_LightTeam"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "$type": "RPG.GameCore.SetDynamicValue",
+                      "Value": {
+                        "FixedValue": {
+                          "Value": 0
+                        }
+                      },
+                      "DynamicKey": {
+                        "Value": "VSCount_DarkTeam_Delta"
+                      }
+                    },
+                    {
+                      "$type": "RPG.GameCore.DebugLog",
+                      "Message": "==============VSCount {VSCount_LightTeam}  {VSCount_DarkTeam}  {VSCount_MaxLimit}======================"
+                    },
+                    {
+                      "$type": "RPG.GameCore.SetVersusBar"
+                    },
+                    {
+                      "$type": "RPG.GameCore.PredicateTaskList",
+                      "Predicate": {
+                        "$type": "RPG.GameCore.ByAnd",
+                        "PredicateList": [
+                          {
+                            "$type": "RPG.GameCore.ByCompareDynamicValue",
+                            "TargetType": {
+                              "$type": "RPG.GameCore.TargetAlias",
+                              "Alias": "ModifierOwnerEntity"
+                            },
+                            "DynamicKey": {
+                              "Value": "VSCount_DarkTeam"
+                            },
+                            "CompareType": "GreaterEqual",
+                            "CompareValue": {
+                              "FixedValue": {
+                                "Value": 80
+                              }
+                            }
+                          },
+                          {
+                            "$type": "RPG.GameCore.ByCompareDynamicValue",
+                            "TargetType": {
+                              "$type": "RPG.GameCore.TargetAlias",
+                              "Alias": "ModifierOwnerEntity"
+                            },
+                            "DynamicKey": {
+                              "Value": "InsertFlag"
+                            },
+                            "ContextScope": "ContextModifier",
+                            "CompareType": "Equal",
+                            "CompareValue": {
+                              "FixedValue": {
+                                "Value": 1
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      "SuccessTaskList": [
+                        {
+                          "$type": "RPG.GameCore.SetDynamicValue",
+                          "TargetType": {
+                            "$type": "RPG.GameCore.TargetAlias",
+                            "Alias": "ModifierOwnerEntity"
+                          },
+                          "ContextScope": "ContextModifier",
+                          "Value": {
+                            "FixedValue": {
+                              "Value": 0
+                            }
+                          },
+                          "DynamicKey": {
+                            "Value": "InsertFlag"
+                          }
+                        },
+                        {
+                          "$type": "RPG.GameCore.DebugLog",
+                          "Message": "==============VSCount VSCount_DarkTeamGreaterEqual90 {VSCount_LightTeam}  {VSCount_DarkTeam}  {VSCount_MaxLimit}======================"
+                        },
+                        {
+                          "$type": "RPG.GameCore.TurnInsertAbility",
+                          "AbilityName": {
+                            "Value": "BattleEventAbility_StrongChallenge_GameMode_02_DeadLine_Insert"
+                          },
+                          "TargetType": {
+                            "$type": "RPG.GameCore.TargetAlias",
+                            "Alias": "LevelEntity"
+                          },
+                          "AbilityTarget": {
+                            "$type": "RPG.GameCore.TargetAlias",
+                            "Alias": "AllDarkTeam"
+                          },
+                          "InsertAbilityPriority": "MonsterBattleCry"
+                        },
+                        {
+                          "$type": "RPG.GameCore.SetDynamicValue",
+                          "TargetType": {
+                            "$type": "RPG.GameCore.TargetAlias",
+                            "Alias": "ModifierOwnerEntity"
+                          },
+                          "ContextScope": "ContextModifier",
+                          "Value": {
+                            "FixedValue": {
+                              "Value": 1
+                            }
+                          },
+                          "DynamicKey": {
+                            "Value": "InsertFlag"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "DynamicValues": {
+            "Floats": {
+              "1315396875": {},
+              "959166525": {},
+              "1843609279": {}
+            }
+          }
+        },
+        "MStrongChallenge_GameMode_StageAbility_02_DeadLine": {
+          "_CallbackList": [
+            {
+              "Event": "OnListenTurnEnd",
+              "CallbackConfig": [
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByCompareDynamicValue",
+                    "TargetType": {
+                      "$type": "RPG.GameCore.TargetSequence",
+                      "Sequence": [
+                        {
+                          "$type": "RPG.GameCore.TargetAlias",
+                          "Alias": "AllDarkTeam"
+                        },
+                        {
+                          "$type": "RPG.GameCore.TargetFilter",
+                          "Predicate": {
+                            "$type": "RPG.GameCore.ByCompareMonsterID",
+                            "TargetType": {
+                              "$type": "RPG.GameCore.TargetAlias",
+                              "Alias": "ParamEntity"
+                            },
+                            "TargetMonsterID": {
+                              "FixedValue": {
+                                "Value": 1004013
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    "DynamicKey": {
+                      "Value": "AIFlag"
+                    },
+                    "CompareType": "Equal",
+                    "CompareValue": {
+                      "FixedValue": {
+                        "Value": 1
+                      }
+                    }
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.SetVersusBar"
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByCompareDynamicValue",
+                    "TargetType": {
+                      "$type": "RPG.GameCore.TargetSequence",
+                      "Sequence": [
+                        {
+                          "$type": "RPG.GameCore.TargetAlias",
+                          "Alias": "AllDarkTeam"
+                        },
+                        {
+                          "$type": "RPG.GameCore.TargetFilter",
+                          "Predicate": {
+                            "$type": "RPG.GameCore.ByCompareMonsterID",
+                            "TargetType": {
+                              "$type": "RPG.GameCore.TargetAlias",
+                              "Alias": "ParamEntity"
+                            },
+                            "TargetMonsterID": {
+                              "FixedValue": {
+                                "Value": 1004013
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    "DynamicKey": {
+                      "Value": "AIFlag"
+                    },
+                    "CompareType": "Equal",
+                    "CompareValue": {
+                      "FixedValue": {
+                        "Value": 2
+                      }
+                    }
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.SetVersusBar"
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByCompareDynamicValue",
+                    "TargetType": {
+                      "$type": "RPG.GameCore.TargetSequence",
+                      "Sequence": [
+                        {
+                          "$type": "RPG.GameCore.TargetAlias",
+                          "Alias": "AllDarkTeam"
+                        },
+                        {
+                          "$type": "RPG.GameCore.TargetFilter",
+                          "Predicate": {
+                            "$type": "RPG.GameCore.ByCompareMonsterID",
+                            "TargetType": {
+                              "$type": "RPG.GameCore.TargetAlias",
+                              "Alias": "ParamEntity"
+                            },
+                            "TargetMonsterID": {
+                              "FixedValue": {
+                                "Value": 1004013
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    "DynamicKey": {
+                      "Value": "AIFlag"
+                    },
+                    "CompareType": "Equal",
+                    "CompareValue": {
+                      "FixedValue": {
+                        "Value": 3
+                      }
+                    }
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.SetVersusBar"
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByCompareDynamicValue",
+                    "TargetType": {
+                      "$type": "RPG.GameCore.TargetSequence",
+                      "Sequence": [
+                        {
+                          "$type": "RPG.GameCore.TargetAlias",
+                          "Alias": "AllDarkTeam"
+                        },
+                        {
+                          "$type": "RPG.GameCore.TargetFilter",
+                          "Predicate": {
+                            "$type": "RPG.GameCore.ByCompareMonsterID",
+                            "TargetType": {
+                              "$type": "RPG.GameCore.TargetAlias",
+                              "Alias": "ParamEntity"
+                            },
+                            "TargetMonsterID": {
+                              "FixedValue": {
+                                "Value": 1004013
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    "DynamicKey": {
+                      "Value": "AIFlag"
+                    },
+                    "CompareType": "Equal",
+                    "CompareValue": {
+                      "FixedValue": {
+                        "Value": 4
+                      }
+                    }
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.SetVersusBar"
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByCompareDynamicValue",
+                    "TargetType": {
+                      "$type": "RPG.GameCore.TargetSequence",
+                      "Sequence": [
+                        {
+                          "$type": "RPG.GameCore.TargetAlias",
+                          "Alias": "AllDarkTeam"
+                        },
+                        {
+                          "$type": "RPG.GameCore.TargetFilter",
+                          "Predicate": {
+                            "$type": "RPG.GameCore.ByCompareMonsterID",
+                            "TargetType": {
+                              "$type": "RPG.GameCore.TargetAlias",
+                              "Alias": "ParamEntity"
+                            },
+                            "TargetMonsterID": {
+                              "FixedValue": {
+                                "Value": 1004013
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    "DynamicKey": {
+                      "Value": "AIFlag"
+                    },
+                    "CompareType": "Equal",
+                    "CompareValue": {
+                      "FixedValue": {
+                        "Value": 5
+                      }
+                    }
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.SetVersusBar"
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByCompareDynamicValue",
+                    "TargetType": {
+                      "$type": "RPG.GameCore.TargetSequence",
+                      "Sequence": [
+                        {
+                          "$type": "RPG.GameCore.TargetAlias",
+                          "Alias": "AllDarkTeam"
+                        },
+                        {
+                          "$type": "RPG.GameCore.TargetFilter",
+                          "Predicate": {
+                            "$type": "RPG.GameCore.ByCompareMonsterID",
+                            "TargetType": {
+                              "$type": "RPG.GameCore.TargetAlias",
+                              "Alias": "ParamEntity"
+                            },
+                            "TargetMonsterID": {
+                              "FixedValue": {
+                                "Value": 1004013
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    "DynamicKey": {
+                      "Value": "AIFlag"
+                    },
+                    "CompareType": "Equal",
+                    "CompareValue": {
+                      "FixedValue": {
+                        "Value": 6
+                      }
+                    }
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.SetVersusBar"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "DynamicValues": {
+            "Floats": {
+              "-800957302": {},
+              "1157875818": {},
+              "-1893744239": {},
+              "1193759155": {}
+            }
+          }
+        }
+      },
+      "Name": "StrongChallenge_GameMode_StageAbility_02",
+      "OnAdd": [
+        {
+          "$type": "RPG.GameCore.DefineDynamicValue",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "LevelEntity"
+          },
+          "DynamicKey": {
+            "Value": "VSCount_LightTeam"
+          },
+          "ContextScope": "TargetEntity"
+        },
+        {
+          "$type": "RPG.GameCore.DefineDynamicValue",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "LevelEntity"
+          },
+          "DynamicKey": {
+            "Value": "VSCount_LightTeam_Delta"
+          },
+          "ContextScope": "TargetEntity"
+        },
+        {
+          "$type": "RPG.GameCore.DefineDynamicValue",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "LevelEntity"
+          },
+          "DynamicKey": {
+            "Value": "VSCount_DarkTeam"
+          },
+          "ContextScope": "TargetEntity"
+        },
+        {
+          "$type": "RPG.GameCore.DefineDynamicValue",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "LevelEntity"
+          },
+          "DynamicKey": {
+            "Value": "VSCount_DarkTeam_Delta"
+          },
+          "ContextScope": "TargetEntity"
+        },
+        {
+          "$type": "RPG.GameCore.DefineDynamicValue",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "LevelEntity"
+          },
+          "DynamicKey": {
+            "Value": "VSCount_MaxLimit"
+          },
+          "ResetValue": {
+            "FixedValue": {
+              "Value": 100
+            }
+          },
+          "ContextScope": "TargetEntity"
+        },
+        {
+          "$type": "RPG.GameCore.DefineDynamicValue",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "LevelEntity"
+          },
+          "DynamicKey": {
+            "Value": "VSCount_Grid"
+          },
+          "ResetValue": {
+            "FixedValue": {
+              "Value": 10
+            }
+          },
+          "ContextScope": "TargetEntity"
+        },
+        {
+          "$type": "RPG.GameCore.AddModifier",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "ModifierName": {
+            "Value": "MStrongChallenge_GameMode_StageAbility_02_Core"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.AddModifier",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "ModifierName": {
+            "Value": "MStrongChallenge_GameMode_StageAbility_02_Calculation"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.AddModifier",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "ModifierName": {
+            "Value": "MStrongChallenge_GameMode_StageAbility_02_DeadLine"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.AddStageAbilityByName",
+          "StageAbilityName": {
+            "Value": "BattleEventAbility_StrongChallenge_GameMode_02_DeadLine_Insert"
+          },
+          "CanReplace": false,
+          "DynamicValues": {}
+        },
+        {
+          "$type": "RPG.GameCore.SetVersusBar"
+        }
+      ]
+    },
+    {
+      "Modifiers": {},
+      "Name": "BattleEventAbility_StrongChallenge_GameMode_02_DeadLine_Insert",
+      "TargetInfo": {
+        "TargetType": "InherentTargetEntity"
+      },
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByAny",
+            "PredicateList": [
+              {
+                "$type": "RPG.GameCore.ByCompareDynamicValue",
+                "TargetType": {
+                  "$type": "RPG.GameCore.TargetAlias",
+                  "Alias": "ModifierOwnerEntity"
+                },
+                "DynamicKey": {
+                  "Value": "VSCount_LightTeam"
+                },
+                "CompareType": "GreaterEqual",
+                "CompareValue": {
+                  "FixedValue": {
+                    "Value": 80
+                  }
+                }
+              },
+              {
+                "$type": "RPG.GameCore.ByCompareDynamicValue",
+                "TargetType": {
+                  "$type": "RPG.GameCore.TargetAlias",
+                  "Alias": "ModifierOwnerEntity"
+                },
+                "DynamicKey": {
+                  "Value": "VSCount_DarkTeam"
+                },
+                "CompareType": "GreaterEqual",
+                "CompareValue": {
+                  "FixedValue": {
+                    "Value": 80
+                  }
+                }
+              }
+            ]
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.SetTeamFormation",
+              "Team": "TeamLight",
+              "FormationType": "LightTeamNormal",
+              "CustomFormationIgnoreDying": false
+            },
+            {
+              "$type": "RPG.GameCore.TriggerSound",
+              "SoundName": {
+                "Value": "Ev_sfx_forgottenhall_debuff"
+              },
+              "EmitterType": "DefaultEmitter"
+            },
+            {
+              "$type": "RPG.GameCore.GlobalMainIntensityEffect",
+              "TargetIntensity": 0.3,
+              "FadeDuration": 0.55
+            },
+            {
+              "$type": "RPG.GameCore.VCameraConfigChange",
+              "CameraConfig": {
+                "NormalConfig": {
+                  "CameraState": "UseSkillPerform",
+                  "AnchorTargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "AllTeamCenter"
+                  },
+                  "IsLocalOffset": true,
+                  "AnchorOffset": {
+                    "X": 0.01,
+                    "Y": 3,
+                    "Z": 0.01
+                  },
+                  "AimTargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "AllTeamCenter"
+                  },
+                  "AimOffset": {
+                    "X": 0.01,
+                    "Y": 4,
+                    "Z": 0.01
+                  },
+                  "FollowPoleAngle": 90,
+                  "FollowRadius": 2
+                },
+                "BlendConfig": {
+                  "BlendType": "Cut"
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.TriggerEffect",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AllTeamCenter"
+              },
+              "EffectPath": "Effects/Eff_Prefab/Eff_Common/Eff_BattleEvent_ShenYuan_DeBuff.prefab",
+              "PositionOffset": {
+                "Y": 3.8
+              }
+            },
+            {
+              "$type": "RPG.GameCore.WaitSecond",
+              "WaitTime": {
+                "FixedValue": {
+                  "Value": 0.1
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.VCameraConfigChange",
+              "CameraConfig": {
+                "NormalConfig": {
+                  "CameraState": "UseSkillPerform",
+                  "AnchorTargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "AllTeamCenter"
+                  },
+                  "IsLocalOffset": true,
+                  "AnchorOffset": {
+                    "X": 0.01,
+                    "Y": 3,
+                    "Z": 0.01
+                  },
+                  "AimTargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "AllTeamCenter"
+                  },
+                  "AimOffset": {
+                    "X": 0.01,
+                    "Y": 4.6,
+                    "Z": 0.01
+                  },
+                  "FollowPoleAngle": 90,
+                  "FollowRadius": 2,
+                  "FollowDamp": 1.4,
+                  "AimDamp": 1.4
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.WaitSecond",
+              "WaitTime": {
+                "FixedValue": {
+                  "Value": 0.9
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.VCameraConfigChange",
+              "CameraConfig": {
+                "NormalConfig": {
+                  "CameraState": "UseSkillPerform",
+                  "AnchorTargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "AllTeamCenter"
+                  },
+                  "IsLocalOffset": true,
+                  "AnchorOffset": {
+                    "X": 0.01,
+                    "Y": 2,
+                    "Z": 0.01
+                  },
+                  "AimTargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "AllTeamCenter"
+                  },
+                  "AimOffset": {
+                    "X": 0.01,
+                    "Y": 5,
+                    "Z": 0.01
+                  },
+                  "FollowPoleAngle": 90,
+                  "FollowRadius": 3
+                },
+                "BlendConfig": {
+                  "BlendType": "Linear",
+                  "BlendTime": 0.15
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.WaitSecond",
+              "WaitTime": {
+                "FixedValue": {
+                  "Value": 0.15
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.GlobalMainIntensityEffect",
+              "IsRevert": true,
+              "FadeDuration": 0.5
+            },
+            {
+              "$type": "RPG.GameCore.VCameraConfigChange",
+              "CameraConfig": {
+                "NormalConfig": {
+                  "CameraState": "UseSkillPerform",
+                  "AnchorTargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "DarkTeamCenter"
+                  },
+                  "IsLocalOffset": true,
+                  "AnchorOffset": {
+                    "X": 0.001,
+                    "Y": 2,
+                    "Z": 0.001
+                  },
+                  "AimTargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "DarkTeamCenter"
+                  },
+                  "AimOffset": {
+                    "X": 0.001,
+                    "Y": 0.7,
+                    "Z": 0.001
+                  },
+                  "FollowPoleAngle": 90,
+                  "FollowRadius": 7.5
+                },
+                "BlendConfig": {
+                  "BlendType": "Cut"
+                },
+                "ShowEntityConfig": {
+                  "ShowTargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "AllDarkTeam"
+                  },
+                  "IsAliveOnly": false
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.WaitSecond",
+              "WaitTime": {
+                "FixedValue": {
+                  "Value": 0.05
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.RemoveModifier",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AllLightTeam"
+              },
+              "ModifierName": {
+                "Value": "MCommon_AllDamageTypeAddedRatio"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.RemoveModifier",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AllDarkTeam"
+              },
+              "ModifierName": {
+                "Value": "MCommon_AllDamageTypeResistance"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareDynamicValue",
+                "TargetType": {
+                  "$type": "RPG.GameCore.TargetAlias",
+                  "Alias": "ModifierOwnerEntity"
+                },
+                "DynamicKey": {
+                  "Value": "VSCount_LightTeam"
+                },
+                "CompareType": "GreaterEqual",
+                "CompareValue": {
+                  "IsDynamic": true,
+                  "PostfixExpr": {
+                    "OpCodes": "AQAR",
+                    "FixedValues": [],
+                    "DynamicHashes": [
+                      -409918396
+                    ]
+                  }
+                }
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.DebugLog",
+                  "Message": "==============VSCount LightTeamWin {VSCount_LightTeam}  {VSCount_DarkTeam}  {VSCount_MaxLimit}======================"
+                },
+                {
+                  "$type": "RPG.GameCore.ShowUIPage",
+                  "AssetPath": "UI/Common/Widget/BattleSelfStatusHint.prefab",
+                  "UITextNodes": [
+                    {
+                      "TextPath": "AreaInfoPanel/Title/Text",
+                      "TextContent": {
+                        "Hash": 2354297445719442575
+                      }
+                    }
+                  ],
+                  "LifeTime": 3
+                },
+                {
+                  "$type": "RPG.GameCore.ModifySPNew",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "AllLightTeam"
+                  },
+                  "FixedAddValue": {
+                    "FixedValue": {
+                      "Value": 200
+                    }
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.ModifyTeamBoostPoint",
+                  "ModifyFunction": "Add",
+                  "ModifyValue": {
+                    "FixedValue": {
+                      "Value": 5
+                    }
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.AddModifier",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "AllLightTeam"
+                  },
+                  "ModifierName": {
+                    "Value": "MCommon_AllDamageTypeAddedRatio"
+                  },
+                  "LifeTime": {
+                    "FixedValue": {
+                      "Value": 2
+                    }
+                  },
+                  "DynamicValues": {
+                    "MDF_PropertyValue": {
+                      "IsDynamic": true,
+                      "PostfixExpr": {
+                        "OpCodes": "AQABAQUR",
+                        "FixedValues": [],
+                        "DynamicHashes": [
+                          292481906,
+                          -1449499952
+                        ]
+                      }
+                    }
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.TriggerBreak",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "AllDarkTeam"
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.RemoveModifier",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "AllDarkTeam"
+                  },
+                  "ModifierName": {
+                    "Value": "MStrongChallenge_GameMode_StageAbility_02_Boss_Weakness"
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.ModifyActionDelay",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "AllDarkTeam"
+                  },
+                  "AddNormalizedValue": {
+                    "FixedValue": {
+                      "Value": 1
+                    }
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.WaitSecond",
+                  "WaitTime": {
+                    "FixedValue": {
+                      "Value": 1
+                    }
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.ExitBreakState",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "AllDarkTeam"
+                  },
+                  "CancelRecoverAnim": true
+                },
+                {
+                  "$type": "RPG.GameCore.DefineDynamicValue",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "AllDarkTeam"
+                  },
+                  "DynamicKey": {
+                    "Value": "AIFlag"
+                  },
+                  "ResetValue": {
+                    "FixedValue": {
+                      "Value": 1
+                    }
+                  },
+                  "ContextScope": "TargetEntity"
+                },
+                {
+                  "$type": "RPG.GameCore.SetDynamicValue",
+                  "Value": {
+                    "FixedValue": {
+                      "Value": 0
+                    }
+                  },
+                  "DynamicKey": {
+                    "Value": "VSCount_LightTeam"
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.AddModifier",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "AllLightTeam"
+                  },
+                  "ModifierName": {
+                    "Value": "MStrongChallenge_GameMode_StageAbility_02_Bonus_Player"
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.AddModifier",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "LevelEntity"
+                  },
+                  "ModifierName": {
+                    "Value": "MStrongChallenge_GameMode_StageAbility_02_Bonus_LE"
+                  }
+                }
+              ],
+              "FailedTaskList": [
+                {
+                  "$type": "RPG.GameCore.DebugLog",
+                  "Message": "==============VSCount DarkTeamWin {VSCount_LightTeam}  {VSCount_DarkTeam}  {VSCount_MaxLimit}======================"
+                },
+                {
+                  "$type": "RPG.GameCore.ShowUIPage",
+                  "AssetPath": "UI/Common/Widget/BattleAlertHint.prefab",
+                  "UITextNodes": [
+                    {
+                      "TextPath": "AreaInfoPanel/Title/Text",
+                      "TextContent": {
+                        "Hash": 1043823714333854188
+                      }
+                    }
+                  ],
+                  "LifeTime": 3
+                },
+                {
+                  "$type": "RPG.GameCore.AddModifier",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "AllDarkTeam"
+                  },
+                  "ModifierName": {
+                    "Value": "MCommon_AllDamageTypeResistance"
+                  },
+                  "LifeTime": {
+                    "FixedValue": {
+                      "Value": 2
+                    }
+                  },
+                  "DynamicValues": {
+                    "MDF_PropertyValue": {
+                      "IsDynamic": true,
+                      "PostfixExpr": {
+                        "OpCodes": "AQABAQUR",
+                        "FixedValues": [],
+                        "DynamicHashes": [
+                          -409918396,
+                          -1449499952
+                        ]
+                      }
+                    }
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.SetDynamicValue",
+                  "Value": {
+                    "FixedValue": {
+                      "Value": 0
+                    }
+                  },
+                  "DynamicKey": {
+                    "Value": "VSCount_DarkTeam"
+                  }
+                }
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.SetVersusBar"
+            },
+            {
+              "$type": "RPG.GameCore.VCameraConfigChange",
+              "CameraConfig": {
+                "NormalConfig": {
+                  "CameraState": "UseSkillPerform",
+                  "AnchorTargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "DarkTeamCenter"
+                  },
+                  "IsLocalOffset": true,
+                  "AnchorOffset": {
+                    "X": 0.001,
+                    "Y": 2.5,
+                    "Z": 0.001
+                  },
+                  "AimTargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "DarkTeamCenter"
+                  },
+                  "AimOffset": {
+                    "X": 0.001,
+                    "Y": 0.7,
+                    "Z": 0.001
+                  },
+                  "FollowPoleAngle": 90,
+                  "FollowRadius": 9.5,
+                  "FollowDamp": 0.5,
+                  "AimDamp": 0.5
+                },
+                "ShowEntityConfig": {
+                  "ShowTargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "AllDarkTeam"
+                  },
+                  "IsAliveOnly": false
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.WaitSecond",
+              "WaitTime": {
+                "FixedValue": {
+                  "Value": 0.1
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.VCameraConfigChange",
+              "CameraConfig": {
+                "ShakeTemplateName": "Punch_Middle",
+                "OverrideShakeConfigV2": {
+                  "ShakeScale": 1,
+                  "ShakeTime": 0.22,
+                  "ShakeDir": {
+                    "Z": 0.1
+                  }
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.WaitSecond",
+              "WaitTime": {
+                "FixedValue": {
+                  "Value": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "GlobalModifiers": {
+    "MStrongChallenge_GameMode_StageAbility_02_Bonus_LE": {
+      "_CallbackList": [
+        {
+          "Event": "OnStack",
+          "CallbackConfig": []
+        },
+        {
+          "Event": "OnListenModifierAdd",
+          "CallbackConfig": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCheckModifierCallBackName",
+                "ModifierName": "MStrongChallenge_GameMode_StageAbility_02_Bonus_Player"
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.SetDynamicValueByAddValue",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "ModifierOwnerEntity"
+                  },
+                  "Key": {
+                    "Value": "Bonus_Buff_Count"
+                  },
+                  "AddValue": {
+                    "FixedValue": {
+                      "Value": 1
+                    }
+                  },
+                  "Min": {
+                    "FixedValue": {
+                      "Value": 0
+                    }
+                  },
+                  "Max": {
+                    "FixedValue": {
+                      "Value": 100
+                    }
+                  },
+                  "ContextScope": "ContextModifier"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Event": "OnListenModifierRemove",
+          "CallbackConfig": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCheckModifierCallBackName",
+                "ModifierName": "MStrongChallenge_GameMode_StageAbility_02_Bonus_Player"
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.SetDynamicValueByAddValue",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "ModifierOwnerEntity"
+                  },
+                  "Key": {
+                    "Value": "Bonus_Buff_Count"
+                  },
+                  "AddValue": {
+                    "FixedValue": {
+                      "Value": -1
+                    }
+                  },
+                  "Min": {
+                    "FixedValue": {
+                      "Value": 0
+                    }
+                  },
+                  "Max": {
+                    "FixedValue": {
+                      "Value": 100
+                    }
+                  },
+                  "ContextScope": "ContextModifier"
+                }
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.RemoveSelfModifier"
+            }
+          ]
+        }
+      ],
+      "DynamicValues": {
+        "Floats": {
+          "-815846347": {}
+        }
+      }
+    },
+    "MStrongChallenge_GameMode_StageAbility_02_Bonus_Player": {
+      "_CallbackList": [
+        {
+          "Event": "OnPhase2",
+          "CallbackConfig": [
+            {
+              "$type": "RPG.GameCore.RemoveSelfModifier"
+            }
+          ]
+        },
+        {
+          "Event": "OnStack",
+          "CallbackConfig": [
+            {
+              "$type": "RPG.GameCore.SetActionDelay",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "ModifierOwnerEntity"
+              },
+              "Value": {
+                "FixedValue": {
+                  "Value": 0
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "DynamicValues": {
+        "Floats": {
+          "-1991529097": {}
+        }
+      }
+    }
+  }
+}

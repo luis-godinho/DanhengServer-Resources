@@ -1,0 +1,122 @@
+{
+  "AbilityList": [
+    {
+      "Name": "NPCMonster_W2_Lycan_01_Attack",
+      "TargetInfo": {
+        "TargetType": "SkillPointEntity"
+      },
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.AdventureTriggerAnimStateWithMove",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimLogicState": "NormalAtk",
+          "AnimStateName": "Attack",
+          "StopWhenHitOthers": false,
+          "MovingRangeList": [
+            {
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AbilityTargetEntity"
+              },
+              "OffsetTargetDistance": {
+                "FixedValue": {
+                  "Value": 1
+                }
+              },
+              "NormalizedTimeStart": {
+                "FixedValue": {
+                  "Value": 0.055
+                }
+              },
+              "NormalizedTimeEnd": {
+                "FixedValue": {
+                  "Value": 0.207
+                }
+              },
+              "MaxMoveDistance": {
+                "FixedValue": {
+                  "Value": 1
+                }
+              },
+              "MaxSpeed": {
+                "FixedValue": {
+                  "Value": 60
+                }
+              },
+              "SteerNormalizedTimeStart": {
+                "FixedValue": {
+                  "Value": 0.05
+                }
+              },
+              "SteerNormalizedTimeEnd": {
+                "FixedValue": {
+                  "Value": 0.24
+                }
+              },
+              "MaxSteerSpeed": {
+                "FixedValue": {
+                  "Value": 300
+                }
+              }
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Attack",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.208589
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.AdventureTriggerAttack",
+          "AttackTargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "AllEnemy"
+          },
+          "TriggerBattleDelay": 0.1,
+          "AttackDetectConfig": {
+            "$type": "RPG.GameCore.AdventureAttackDetectCircleConfig",
+            "MaxRadius": 2.3,
+            "FanAngle": 150,
+            "Offset": {
+              "Y": 0.5
+            }
+          },
+          "HitConfig": {
+            "HitAnimation": "Hit",
+            "HitEffect": "Effects/Eff_Prefab/Eff_Monster/Eff_W2_Lycan_01/Eff_Monster_W2_Lycan_01_MazeAttack_Hit01.prefab"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.VCameraConfigChange",
+          "CameraConfig": {
+            "ShakeTemplateName": "Impact_Middle"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Attack",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 1
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

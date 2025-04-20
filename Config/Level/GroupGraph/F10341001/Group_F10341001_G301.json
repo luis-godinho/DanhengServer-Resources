@@ -1,0 +1,171 @@
+{
+  "OnInitSequece": [
+    {
+      "TaskList": []
+    }
+  ],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "UpdateProjectorProgram"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareFloorCustomFloat",
+                "Name": {
+                  "Value": "FCV_ProjectorProgram"
+                },
+                "CompareType": "Equal",
+                "CompareValue": {
+                  "FixedValue": {
+                    "Value": 0
+                  }
+                }
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.SetFloorCustomFloat",
+                  "Name": {
+                    "Value": "FCV_ProjectorProgram"
+                  },
+                  "Value": {
+                    "FixedValue": {
+                      "Value": 1
+                    }
+                  }
+                }
+              ],
+              "FailedTaskList": [
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByCompareFloorCustomFloat",
+                    "Name": {
+                      "Value": "FCV_ProjectorProgram"
+                    },
+                    "CompareType": "Equal",
+                    "CompareValue": {
+                      "FixedValue": {
+                        "Value": 1
+                      }
+                    }
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.SetFloorCustomFloat",
+                      "Name": {
+                        "Value": "FCV_ProjectorProgram"
+                      },
+                      "Value": {
+                        "FixedValue": {
+                          "Value": 2
+                        }
+                      }
+                    }
+                  ],
+                  "FailedTaskList": [
+                    {
+                      "$type": "RPG.GameCore.PredicateTaskList",
+                      "Predicate": {
+                        "$type": "RPG.GameCore.ByCompareFloorCustomFloat",
+                        "Name": {
+                          "Value": "FCV_ProjectorProgram"
+                        },
+                        "CompareType": "Equal",
+                        "CompareValue": {
+                          "FixedValue": {
+                            "Value": 2
+                          }
+                        }
+                      },
+                      "SuccessTaskList": [
+                        {
+                          "$type": "RPG.GameCore.SetFloorCustomFloat",
+                          "Name": {
+                            "Value": "FCV_ProjectorProgram"
+                          },
+                          "Value": {
+                            "FixedValue": {
+                              "Value": 3
+                            }
+                          }
+                        }
+                      ],
+                      "FailedTaskList": [
+                        {
+                          "$type": "RPG.GameCore.PredicateTaskList",
+                          "Predicate": {
+                            "$type": "RPG.GameCore.ByCompareFloorCustomFloat",
+                            "Name": {
+                              "Value": "FCV_ProjectorProgram"
+                            },
+                            "CompareType": "Equal",
+                            "CompareValue": {
+                              "FixedValue": {
+                                "Value": 3
+                              }
+                            }
+                          },
+                          "SuccessTaskList": [
+                            {
+                              "$type": "RPG.GameCore.SetFloorCustomFloat",
+                              "Name": {
+                                "Value": "FCV_ProjectorProgram"
+                              },
+                              "Value": {
+                                "FixedValue": {
+                                  "Value": 4
+                                }
+                              }
+                            }
+                          ],
+                          "FailedTaskList": [
+                            {
+                              "$type": "RPG.GameCore.PredicateTaskList",
+                              "Predicate": {
+                                "$type": "RPG.GameCore.ByCompareFloorCustomFloat",
+                                "Name": {
+                                  "Value": "FCV_ProjectorProgram"
+                                },
+                                "CompareType": "Equal",
+                                "CompareValue": {
+                                  "FixedValue": {
+                                    "Value": 4
+                                  }
+                                }
+                              },
+                              "SuccessTaskList": [
+                                {
+                                  "$type": "RPG.GameCore.SetFloorCustomFloat",
+                                  "Name": {
+                                    "Value": "FCV_ProjectorProgram"
+                                  },
+                                  "Value": {
+                                    "FixedValue": {
+                                      "Value": 0
+                                    }
+                                  }
+                                }
+                              ],
+                              "FailedTaskList": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "Type": "Group"
+}

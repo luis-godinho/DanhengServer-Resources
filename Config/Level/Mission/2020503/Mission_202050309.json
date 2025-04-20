@@ -8,8 +8,7 @@
           "CustomString": {
             "Value": "BattleStart_202050302_3"
           },
-          "GoNextImmediately": true,
-          "TaskEnabled": true
+          "GoNextImmediately": true
         },
         {
           "$type": "RPG.GameCore.SetEntityTalkEnable",
@@ -18,44 +17,39 @@
             "FetchType": "SingleNpcByNpcID",
             "SingleNpcID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 17179869184
+                "FixedValue": {
+                  "Value": 4
                 }
               },
               "GroupNpcID": {
-                "fixedValue": {
-                  "RawValue": 1717999803301888
+                "FixedValue": {
+                  "Value": 400003
                 }
               }
             }
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
           "$type": "RPG.GameCore.DestroyNPC",
           "DestroyList": [
             {
+              "$type": "RPG.GameCore.GroupEntityInfo",
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 17179869184
+                "FixedValue": {
+                  "Value": 4
                 }
               },
               "GroupInstanceID": {
-                "fixedValue": {
-                  "RawValue": 1717999803301888
+                "FixedValue": {
+                  "Value": 400003
                 }
               }
             }
-          ],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_202050309",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_202050309"
         }
       ]
     },
@@ -64,18 +58,16 @@
         {
           "$type": "RPG.GameCore.CreateNPC",
           "GroupID": {
-            "fixedValue": {
-              "RawValue": 17179869184
+            "FixedValue": {
+              "Value": 4
             }
           },
           "GroupNpcID": {
-            "fixedValue": {
-              "RawValue": 1717999803301888
+            "FixedValue": {
+              "Value": 400003
             }
           },
-          "CreateList": [],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "CreateList": []
         }
       ]
     },
@@ -87,31 +79,26 @@
           "CustomString": {
             "Value": "PropT_202050309"
           },
-          "GoNextImmediately": true,
-          "TaskEnabled": true
+          "GoNextImmediately": true
         },
         {
           "$type": "RPG.GameCore.PlayNPCBubbleTalk",
           "BubbleTalkInfoList": [
             {
-              "AutoSkipTime": 3.0,
+              "AutoSkipTime": 3,
               "GroupID": 4,
               "GroupNpcID": 400003,
               "TalkSentenceID": 202180568
             },
             {
-              "AutoSkipTime": 3.0,
+              "AutoSkipTime": 3,
               "GroupID": 4,
               "GroupNpcID": 400003,
               "TalkSentenceID": 202180569
             }
           ],
-          "BubbleTalkType": "Normal",
-          "LoopInterval": 5.0,
-          "InstantFinish": true,
-          "UniqueID": 202050309,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "LoopInterval": 5,
+          "UniqueID": 202050309
         }
       ]
     },
@@ -124,13 +111,13 @@
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 17179869184
+                "FixedValue": {
+                  "Value": 4
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288511663636480
+                "FixedValue": {
+                  "Value": 300005
                 }
               }
             },
@@ -142,14 +129,10 @@
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "PropT_202050309"
-              },
-              "TaskEnabled": true
+              }
             }
           ],
-          "OnTriggerExit": [],
-          "SkipFakeAvatar": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "OnTriggerExit": []
         }
       ]
     }

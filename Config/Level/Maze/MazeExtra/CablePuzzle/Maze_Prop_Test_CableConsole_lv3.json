@@ -1,0 +1,179 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "Maze_CablePuzzle_lv3"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.PropEnableCollider",
+          "SpecifiedRelativePaths": [],
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+            "FetchType": "SinglePropByPropID",
+            "SinglePropID": {
+              "GroupID": {
+                "FixedValue": {
+                  "Value": 3
+                }
+              },
+              "ID": {
+                "FixedValue": {
+                  "Value": 300002
+                }
+              }
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.AdvEnablePropDialogMode",
+          "EnablePropCamera": false,
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+            "FetchType": "SinglePropByPropID",
+            "SinglePropID": {
+              "GroupID": {
+                "FixedValue": {
+                  "Value": 3
+                }
+              },
+              "ID": {
+                "FixedValue": {
+                  "Value": 300003
+                }
+              }
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.ActiveVirtualCamera",
+          "AreaName": "CablePuzzle_Cameras",
+          "AnchorName": "Camera_CablePuzzle_1",
+          "BlendConfig": {
+            "ExportToJson": true,
+            "BlendType": "EaseInOut",
+            "BlendTime": 1
+          }
+        },
+        {
+          "$type": "RPG.GameCore.ToastPile",
+          "DescTextID": {
+            "Hash": 638466394587657899
+          }
+        },
+        {
+          "$type": "RPG.GameCore.PropInitPuzzle",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          },
+          "BoardPath": {
+            "Value": "Props/DesignerBackup/CablePuzzle/CablePuzzleBoard_lv3.prefab"
+          },
+          "LocalPosition": {
+            "X": -0.584,
+            "Y": 1.226,
+            "Z": -1.409
+          },
+          "LocalRotation": {
+            "Y": 142.493
+          },
+          "LocalScale": {
+            "X": 2,
+            "Y": 2,
+            "Z": 1
+          }
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropPuzzleEventListener",
+          "FinishCallback": [
+            {
+              "$type": "RPG.GameCore.ToastPile",
+              "DescTextID": {
+                "Hash": 3996599906351609204
+              }
+            },
+            {
+              "$type": "RPG.GameCore.WaitSecond",
+              "WaitTime": {
+                "FixedValue": {
+                  "Value": 1
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.AdvEnablePropDialogMode",
+              "Enable": false,
+              "PlayerFaceToProp": false,
+              "EnablePropCamera": false,
+              "LockPlayerControl": false,
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                "FetchType": "SinglePropByPropID",
+                "SinglePropID": {
+                  "GroupID": {
+                    "FixedValue": {
+                      "Value": 3
+                    }
+                  },
+                  "ID": {
+                    "FixedValue": {
+                      "Value": 300003
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.ActiveVirtualCamera",
+              "AreaName": "CablePuzzle_Cameras",
+              "AnchorName": "Camera_CablePuzzle_1",
+              "IsActive": false,
+              "BlendConfig": {
+                "ExportToJson": true,
+                "BlendType": "EaseInOut",
+                "BlendTime": 1
+              }
+            },
+            {
+              "$type": "RPG.GameCore.PropEnableCollider",
+              "Enabled": true,
+              "SpecifiedRelativePaths": [],
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                "FetchType": "SinglePropByPropID",
+                "SinglePropID": {
+                  "GroupID": {
+                    "FixedValue": {
+                      "Value": 3
+                    }
+                  },
+                  "ID": {
+                    "FixedValue": {
+                      "Value": 300002
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.PropClosePuzzle",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

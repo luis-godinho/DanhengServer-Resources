@@ -1,0 +1,46 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.TutorialNotify",
+          "Type": "TutorialCleanUI",
+          "Param": "1"
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideHintWithText",
+          "Block": true,
+          "TargetEvent": [
+            {
+              "$type": "RPG.GameCore.WaitPlayerAction",
+              "ActionType": "ClickBtn",
+              "Param": "PlanetFesMainPage.TaskReward",
+              "ProtectTime": 0.5
+            }
+          ],
+          "NodeIDList": [
+            "PlanetFesMainPage.TaskReward"
+          ],
+          "IsAutoMatchGuideHintType": false,
+          "GuideHintType": "ClickCircle",
+          "GuideTextType": "Talk",
+          "GuideText": "TutorialTextmap_552101",
+          "GuideTalkID": 575062,
+          "CustomTextDirection": "Right",
+          "GuideHintShowConfig": {},
+          "GuideTextShowConfig": {},
+          "GuideUIContextConfig": {},
+          "EnableActionList": [],
+          "EnableBattleOperationList": [],
+          "DisableBlackMask": true
+        },
+        {
+          "$type": "RPG.GameCore.TutorialClose"
+        }
+      ]
+    }
+  ],
+  "ValueSource": {},
+  "EntityEventList": []
+}

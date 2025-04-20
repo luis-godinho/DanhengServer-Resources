@@ -1,0 +1,205 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.LoopWaitServerPropStateChange"
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.LoopWaitServerPropStateChange"
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByComparePropState",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+              "FetchType": "SinglePropByPropKey",
+              "SinglePropKey": {
+                "Custom": true,
+                "Key": "FollowAnchor"
+              },
+              "SinglePropID": {},
+              "PropIDInOwnerGroup": {
+                "FixedValue": {
+                  "Value": 300002
+                }
+              }
+            },
+            "State": "Open"
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.SetFlipperLightDeviceFollowPlayer",
+              "DevicePropTarget": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                "FetchType": "SinglePropByPropKey",
+                "SinglePropKey": {
+                  "Custom": true,
+                  "Key": "EraFlipperOwner"
+                },
+                "SinglePropID": {},
+                "PropIDInOwnerGroup": {
+                  "FixedValue": {
+                    "Value": 300002
+                  }
+                }
+              },
+              "PointPropTarget": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                "FetchType": "SinglePropByPropKey",
+                "SinglePropKey": {
+                  "Custom": true,
+                  "Key": "FollowAnchor"
+                }
+              },
+              "AimAttachPoint": "Root",
+              "FollowOffset": {
+                "Y": 9
+              }
+            }
+          ],
+          "FailedTaskList": []
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvDistrictSetupTrigger",
+          "DistrictID": {
+            "FixedValue": {
+              "Value": 1
+            }
+          },
+          "OnEnter": [
+            {
+              "$type": "RPG.GameCore.AnimSetParameter",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                "FetchType": "SinglePropByPropKey",
+                "SinglePropKey": {
+                  "Custom": true,
+                  "Key": "FollowAnchor"
+                }
+              },
+              "ParameterName": "OptionIndex",
+              "ParameterType": "Int",
+              "Value": {
+                "FixedValue": {
+                  "Value": 1
+                }
+              }
+            }
+          ],
+          "OnExit": [
+            {
+              "$type": "RPG.GameCore.AnimSetParameter",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                "FetchType": "SinglePropByPropKey",
+                "SinglePropKey": {
+                  "Custom": true,
+                  "Key": "FollowAnchor"
+                }
+              },
+              "ParameterName": "OptionIndex",
+              "ParameterType": "Int"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByComparePropState",
+            "TargetType": {
+              "$type": "RPG.GameCore.GroupFetchLocalTarget",
+              "TargetType": "Prop",
+              "Targets": [
+                300012
+              ]
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.SetFloorSavedValue"
+            }
+          ],
+          "FailedTaskList": [
+            {
+              "$type": "RPG.GameCore.SetFloorSavedValue"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.LoopWaitServerPropStateChange"
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.LoopWaitServerPropStateChange"
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByComparePropState",
+            "TargetType": {
+              "$type": "RPG.GameCore.GroupFetchLocalTarget",
+              "TargetType": "Prop",
+              "Targets": [
+                300005
+              ]
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.SetFloorSavedValue"
+            }
+          ],
+          "FailedTaskList": [
+            {
+              "$type": "RPG.GameCore.SetFloorSavedValue"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "ValueSource": {
+    "Values": [
+      {
+        "$type": "RPG.GameCore.SharedString",
+        "Key": "FollowAnchor"
+      },
+      {
+        "$type": "RPG.GameCore.SharedString",
+        "Key": "EraFlipperOwner"
+      }
+    ]
+  },
+  "Type": "Group",
+  "EntityEventList": []
+}

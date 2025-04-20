@@ -1,0 +1,100 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "EnterDistrict_G760"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.TriggerPerformance",
+              "ValueSource": {},
+              "PerformanceType": "D",
+              "PerformanceID": 803210306,
+              "MaskConfig": {
+                "UseExcelData": false
+              }
+            },
+            {
+              "$type": "RPG.GameCore.PerformanceEndSeq",
+              "BeforeCases": [
+                {
+                  "$type": "RPG.GameCore.SwitchCharacterAnchorV2",
+                  "SwitchCharacterAnchorConfig": {
+                    "IsLocalPlayer": true,
+                    "CharacterUniqueName": "LocalPlayer",
+                    "AreaName": {
+                      "Value": "LevelArea_P10401_F10401001_G417"
+                    },
+                    "AnchorName": {
+                      "Value": "Transform"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.ClientFinishMission",
+              "SubmissionID": 803210304
+            },
+            {
+              "$type": "RPG.GameCore.TriggerCustomString",
+              "CustomString": {
+                "Value": "ShowUI_ActivityMarbleMainPage"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvDistrictSetupTrigger",
+          "GroupID": {
+            "FixedValue": {
+              "Value": 760
+            }
+          },
+          "DistrictID": {
+            "FixedValue": {
+              "Value": 500001
+            }
+          },
+          "DisableAfterTrigger": true,
+          "TickInterval": 0.3,
+          "OnEnter": [
+            {
+              "$type": "RPG.GameCore.TriggerGroupEvent",
+              "EventName": {
+                "Value": "EnterDistrict_G760"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PlayMissionTalk",
+          "StartSentenceID": {
+            "FixedValue": {
+              "Value": 803210300
+            }
+          },
+          "EndSentenceID": {
+            "FixedValue": {
+              "Value": 803210300
+            }
+          },
+          "SimpleTalkList": []
+        }
+      ]
+    }
+  ],
+  "Type": "Group"
+}

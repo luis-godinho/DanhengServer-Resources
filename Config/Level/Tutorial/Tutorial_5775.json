@@ -1,0 +1,52 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CheckUIMode",
+          "OnMobileOrPC": [
+            {
+              "$type": "RPG.GameCore.ShowGuideHintWithText",
+              "Block": true,
+              "TargetEvent": [
+                {
+                  "$type": "RPG.GameCore.WaitPlayerAction",
+                  "ActionType": "AnyAction",
+                  "ProtectTime": 0.6
+                }
+              ],
+              "NodeIDList": [
+                "PlanetFes.Land04.Tutorial01"
+              ],
+              "GuideHintType": "NormalRect",
+              "GuideTextType": "Talk",
+              "GuideText": "TutorialTextmap_552101",
+              "GuideTalkID": 575066,
+              "CustomTextDirection": "Up",
+              "GuideHintShowConfig": {},
+              "GuideTextShowConfig": {
+                "OffsetX": 200,
+                "OffsetY": 50
+              },
+              "GuideUIContextConfig": {},
+              "EnableActionList": [],
+              "EnableBattleOperationList": [],
+              "DisableBlackMask": true
+            },
+            {
+              "$type": "RPG.GameCore.TutorialClose"
+            }
+          ],
+          "OnController": [
+            {
+              "$type": "RPG.GameCore.TutorialClose"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "ValueSource": {},
+  "EntityEventList": []
+}

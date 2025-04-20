@@ -1,0 +1,45 @@
+{
+  "OnInitSequece": [
+    {
+      "TaskList": []
+    }
+  ],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitFloorSavedValueChangeV2",
+          "Name": {
+            "Value": "AllMonsterKilled"
+          },
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.ArchiveWolfBroPuzzle",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                "FetchType": "SinglePropByPropID",
+                "SinglePropKey": {
+                  "Custom": true,
+                  "Key": "PuzzleInit_Obj"
+                },
+                "SinglePropID": {
+                  "GroupID": {
+                    "FixedValue": {
+                      "Value": 3
+                    }
+                  },
+                  "ID": {
+                    "FixedValue": {
+                      "Value": 300001
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "Type": "EntityInstance"
+}

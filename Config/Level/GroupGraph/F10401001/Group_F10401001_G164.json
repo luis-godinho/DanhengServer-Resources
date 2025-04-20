@@ -1,0 +1,229 @@
+{
+  "OnInitSequece": [
+    {
+      "TaskList": []
+    }
+  ],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "WaitForStreamingResume"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.SetFloorCustomBoolV2",
+              "Name": {
+                "Value": "FCV_CavalryBeast_Teleport"
+              },
+              "Value": {
+                "Value": true
+              }
+            },
+            {
+              "$type": "RPG.GameCore.WaitSecond",
+              "WaitTime": {
+                "FixedValue": {
+                  "Value": 10
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.FormationMoveResume",
+              "StreamId": 85
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CollectDataConditions",
+          "TaskIDList": [
+            500041201,
+            500041202,
+            500041203,
+            500041207,
+            500041208
+          ],
+          "MainMissionIDList": [],
+          "PerformanceIDList": [],
+          "PerformanceIDDsList": [],
+          "CustomValueMainMissionIDList": []
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByAny",
+            "PredicateList": [
+              {
+                "$type": "RPG.GameCore.ByCompareSubMissionState",
+                "SubMissionID": 500041201,
+                "SubMissionState": "Started"
+              },
+              {
+                "$type": "RPG.GameCore.ByCompareSubMissionState",
+                "SubMissionID": 500041202,
+                "SubMissionState": "Started"
+              },
+              {
+                "$type": "RPG.GameCore.ByCompareSubMissionState",
+                "SubMissionID": 500041203,
+                "SubMissionState": "Started"
+              },
+              {
+                "$type": "RPG.GameCore.ByCompareSubMissionState",
+                "SubMissionID": 500041207,
+                "SubMissionState": "Started"
+              },
+              {
+                "$type": "RPG.GameCore.ByCompareSubMissionState",
+                "SubMissionID": 500041208,
+                "SubMissionState": "Started"
+              }
+            ]
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.AdvEnableTrigger",
+              "TargetType": {
+                "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                "TargetType": "Prop",
+                "Targets": [
+                  300001
+                ]
+              },
+              "TriggerName": "InteractTrigger"
+            },
+            {
+              "$type": "RPG.GameCore.AdvEnableTrigger",
+              "TargetType": {
+                "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                "TargetType": "Prop",
+                "Targets": [
+                  300002
+                ]
+              },
+              "TriggerName": "InteractTrigger"
+            },
+            {
+              "$type": "RPG.GameCore.AdvEnableTrigger",
+              "TargetType": {
+                "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                "TargetType": "Prop",
+                "Targets": [
+                  300003
+                ]
+              },
+              "TriggerName": "InteractTrigger"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitSubMissionStateChange",
+          "SubMissions": [
+            500041208
+          ],
+          "State": "Finish",
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.AdvEnableTrigger",
+              "TargetType": {
+                "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                "TargetType": "Prop",
+                "Targets": [
+                  300001
+                ]
+              },
+              "IsEnable": true,
+              "TriggerName": "InteractTrigger"
+            },
+            {
+              "$type": "RPG.GameCore.AdvEnableTrigger",
+              "TargetType": {
+                "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                "TargetType": "Prop",
+                "Targets": [
+                  300002
+                ]
+              },
+              "IsEnable": true,
+              "TriggerName": "InteractTrigger"
+            },
+            {
+              "$type": "RPG.GameCore.AdvEnableTrigger",
+              "TargetType": {
+                "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                "TargetType": "Prop",
+                "Targets": [
+                  300003
+                ]
+              },
+              "IsEnable": true,
+              "TriggerName": "InteractTrigger"
+            }
+          ],
+          "TriggerOnMissionInit": false
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitSubMissionStateChange",
+          "SubMissions": [
+            500041203
+          ],
+          "State": "Finish",
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.AdvEnableTrigger",
+              "TargetType": {
+                "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                "TargetType": "Prop",
+                "Targets": [
+                  300001
+                ]
+              },
+              "IsEnable": true,
+              "TriggerName": "InteractTrigger"
+            },
+            {
+              "$type": "RPG.GameCore.AdvEnableTrigger",
+              "TargetType": {
+                "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                "TargetType": "Prop",
+                "Targets": [
+                  300002
+                ]
+              },
+              "IsEnable": true,
+              "TriggerName": "InteractTrigger"
+            },
+            {
+              "$type": "RPG.GameCore.AdvEnableTrigger",
+              "TargetType": {
+                "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                "TargetType": "Prop",
+                "Targets": [
+                  300003
+                ]
+              },
+              "IsEnable": true,
+              "TriggerName": "InteractTrigger"
+            }
+          ],
+          "TriggerOnMissionInit": false
+        }
+      ]
+    }
+  ],
+  "Type": "Group"
+}

@@ -30,7 +30,7 @@
     },
     {
       "$type": "RPG.GameCore.FloorCustomFloatConfig",
-      "DefaultValue": 2.0,
+      "DefaultValue": 2,
       "ID": 10008,
       "Name": "FCV_Balance"
     },
@@ -787,7 +787,7 @@
       "ID": 133
     },
     {
-      "GroupPath": "Config/LevelOutput/RuntimeGroup/Groups_P20412_F20412001/LevelGroup_P20412_F20412001_G134.json",
+      "GroupPath": "Config/LevelOutput/SharedRuntimeGroup/Groups_P20412_F20412001/LevelGroup_P20412_F20412001_G134.json",
       "Name": "MainMission1040208_06",
       "ID": 134
     },
@@ -1381,7 +1381,7 @@
           "Tags": [
             "BattleArea01"
           ],
-          "TagContainer": [],
+          "TagContainer": {},
           "AudioEnterEvent": [
             "Ev_WwiseMatrixReverb_VO_05_datingxiaoxing"
           ],
@@ -1396,7 +1396,7 @@
           "Tags": [
             "BattleArea02"
           ],
-          "TagContainer": [],
+          "TagContainer": {},
           "AudioEnterEvent": [
             "Ev_WwiseMatrixReverb_VO_05_datingxiaoxing"
           ],
@@ -2082,7 +2082,7 @@
           "Tags": [
             "BattleArea01"
           ],
-          "TagContainer": [],
+          "TagContainer": {},
           "AudioEnterEvent": [
             "Ev_WwiseMatrixReverb_VO_05_datingxiaoxing"
           ],
@@ -2097,7 +2097,7 @@
           "Tags": [
             "BattleArea02"
           ],
-          "TagContainer": [],
+          "TagContainer": {},
           "AudioEnterEvent": [
             "Ev_WwiseMatrixReverb_VO_05_datingxiaoxing"
           ],
@@ -2545,7 +2545,7 @@
           "MaxValue": 1
         }
       ],
-      "TagContainer": [],
+      "TagContainer": {},
       "GroupIndexList": [
         0,
         1,
@@ -2788,7 +2788,7 @@
           "Tags": [
             "BattleArea01"
           ],
-          "TagContainer": [],
+          "TagContainer": {},
           "AudioEnterEvent": [
             "Ev_WwiseMatrixReverb_VO_05_datingxiaoxing"
           ],
@@ -2803,7 +2803,7 @@
           "Tags": [
             "BattleArea02"
           ],
-          "TagContainer": [],
+          "TagContainer": {},
           "AudioEnterEvent": [
             "Ev_WwiseMatrixReverb_VO_05_datingxiaoxing"
           ],
@@ -3312,12 +3312,14 @@
           "IsExclusiveSaved": true
         }
       },
-      "TagContainer": [
-        {
-          "Tag": "Group.Activity.300Battle",
-          "TagHash": 1642116679
-        }
-      ],
+      "TagContainer": {
+        "List": [
+          {
+            "Tag": "Group.Activity.300Battle",
+            "TagHash": 1642116679
+          }
+        ]
+      },
       "IsExclusiveSaveMapSection": true,
       "UnlockAllMapSectionOnInitial": true,
       "GroupIndexList": [
@@ -4737,8 +4739,7 @@
       "SystemUnlockCondition": {
         "Conditions": [
           23422
-        ],
-        "Operation": "And"
+        ]
       }
     }
   },
@@ -4756,8 +4757,5 @@
       "NearbyTeleportMappingInfoID": 2041202
     }
   ],
-  "IsRestartLevelGraph": true,
-  "EnableGroupStreaming": true,
-  "EnableGroupSpaceConflict": true,
-  "EnableGroupRegionStreaming": true
+  "IsRestartLevelGraph": true
 }

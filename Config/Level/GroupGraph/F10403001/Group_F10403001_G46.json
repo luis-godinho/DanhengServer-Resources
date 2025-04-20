@@ -1,0 +1,165 @@
+{
+  "OnInitSequece": [
+    {
+      "TaskList": []
+    }
+  ],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.SetTimelineEntityState",
+          "Target": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "TargetType": "Prop",
+            "Targets": [
+              300002
+            ]
+          },
+          "StateName": {
+            "Value": "L4_X04"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.SetTimelineEntityState",
+          "Target": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "TargetType": "Prop",
+            "Targets": [
+              300003
+            ]
+          },
+          "StateName": {
+            "Value": "L4_Y04"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.SetTimelineEntityState",
+          "Target": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "TargetType": "Prop",
+            "Targets": [
+              300004
+            ]
+          },
+          "StateName": {
+            "Value": "L4_Z04"
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvLoopTimer",
+          "WaitInterval": 1.5,
+          "OnTimeUp": [
+            {
+              "$type": "RPG.GameCore.TriggerEntityEventV2",
+              "EventName": {
+                "Value": "Clt_TriggerRotate"
+              },
+              "TargetType": {
+                "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                "TargetType": "Prop",
+                "Targets": [
+                  300002,
+                  300003,
+                  300004
+                ]
+              }
+            },
+            {
+              "$type": "RPG.GameCore.DebugLog",
+              "Message": "Timer_TriggerRotate"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitFloorCustomValueChange",
+          "Name": {
+            "Value": "FCV_KindlingBoxState"
+          },
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.TriggerEntityEventV2",
+              "EventName": {
+                "Value": "Clt_TriggerClose"
+              },
+              "TargetType": {
+                "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                "TargetType": "Prop",
+                "Targets": [
+                  300001,
+                  300002,
+                  300003,
+                  300004,
+                  300006
+                ]
+              }
+            }
+          ],
+          "Condition": {
+            "$type": "RPG.GameCore.ByCompareFloorCustomFloat",
+            "Name": {
+              "Value": "FCV_KindlingBoxState"
+            },
+            "CompareType": "Equal",
+            "CompareValue": {
+              "FixedValue": {
+                "Value": 0
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitFloorCustomValueChange",
+          "Name": {
+            "Value": "FCV_KindlingBoxState"
+          },
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.TriggerEntityEventV2",
+              "EventName": {
+                "Value": "Clt_TriggerOpen"
+              },
+              "TargetType": {
+                "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                "TargetType": "Prop",
+                "Targets": [
+                  300001,
+                  300002,
+                  300003,
+                  300004,
+                  300006
+                ]
+              }
+            }
+          ],
+          "Condition": {
+            "$type": "RPG.GameCore.ByCompareFloorCustomFloat",
+            "Name": {
+              "Value": "FCV_KindlingBoxState"
+            },
+            "CompareType": "Equal",
+            "CompareValue": {
+              "FixedValue": {
+                "Value": 1
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "Type": "Group",
+  "EntityEventList": []
+}

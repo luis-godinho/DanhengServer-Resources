@@ -6,10 +6,8 @@
         {
           "$type": "RPG.GameCore.PropSetupUITrigger",
           "DestroyAfterTriggered": true,
-          "IconType": "Default",
           "ButtonText": {
-            "Hash": 1451812254,
-            "Hash64": 13798948500670309412
+            "Hash": 13798948500670309412
           },
           "ButtonCallback": [
             {
@@ -17,76 +15,54 @@
               "PerformanceType": "E",
               "CreateCharacterList": [],
               "EntityVisiableList": [],
-              "HideMonster": true,
+              "HideMunicipalCrowd": false,
+              "HideMunicipalPedestrian": false,
+              "HideMunicipalOther": false,
               "PropVisiableList": [],
-              "UseNewStreamingSourceType": true,
-              "MarkStreamingItems": [],
-              "ResetEnvironment": true,
-              "ResetMonster": true,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "MarkStreamingItems": []
             },
             {
               "$type": "RPG.GameCore.PlaySimpleTalk",
-              "KeepDisplay": true,
               "SimpleTalkList": [
                 {
-                  "TextSpeed": 20.0,
-                  "TalkSentenceID": 407131134,
-                  "ProtectTime": 0.8
+                  "TalkSentenceID": 407131134
                 },
                 {
-                  "TextSpeed": 20.0,
-                  "TalkSentenceID": 407131135,
-                  "ProtectTime": 0.8
+                  "TalkSentenceID": 407131135
                 },
                 {
-                  "TextSpeed": 20.0,
-                  "TalkSentenceID": 407131136,
-                  "ProtectTime": 0.8
+                  "TalkSentenceID": 407131136
                 }
-              ],
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              ]
             },
             {
-              "$type": "RPG.GameCore.WaitSimpleTalkFinish",
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "$type": "RPG.GameCore.WaitSimpleTalkFinish"
             },
             {
-              "$type": "RPG.GameCore.EndPerformance",
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "$type": "RPG.GameCore.EndPerformance"
             },
             {
               "$type": "RPG.GameCore.FinishPerformanceMission",
-              "Key": "Mission_407131105",
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "Key": "Mission_407131105"
             }
           ],
-          "InteractAngleRange": 180.0,
           "OverrideTargetTypes": [],
-          "SkipFakeAvatar": true,
           "TargetType": {
             "$type": "RPG.GameCore.TargetFetchAdvPropEx",
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 73014444032
+                "FixedValue": {
+                  "Value": 17
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288494483767296
+                "FixedValue": {
+                  "Value": 300001
                 }
               }
             }
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         }
       ]
     },
@@ -96,9 +72,7 @@
           "$type": "RPG.GameCore.TriggerPerformance",
           "ValueSource": {},
           "PerformanceType": "E",
-          "PerformanceID": 407131105,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 407131105
         }
       ]
     }

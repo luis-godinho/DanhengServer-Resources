@@ -8,15 +8,10 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Talk_203010221"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.PlayFullScreenTransfer",
-          "Type": "Black",
-          "PrevDuration": 0.5,
-          "KeepDuration": 0.5,
-          "PostDuration": 0.5,
           "Action": [
             {
               "$type": "RPG.GameCore.ScrTrfActTaskList",
@@ -26,26 +21,16 @@
                   "SpecialNPCID": 20001,
                   "IsCancel": true,
                   "UseLocalPlayerPosition": true,
-                  "TaskEnabled": true,
-                  "IsClientOnly": true
+                  "SupportRush": false
                 },
                 {
                   "$type": "RPG.GameCore.SetHudTemplate",
-                  "TemplateID": 1015,
-                  "TaskEnabled": true,
-                  "IsClientOnly": true
+                  "TemplateID": 1015
                 },
                 {
                   "$type": "RPG.GameCore.PPFilterStackEffect",
-                  "Active": true,
-                  "StartRate": 1.0,
-                  "Rate": 1.0,
-                  "RecoverDuration": 0.5,
-                  "AssetPath": "EnviroSystem/PostProcessFilterAsset/BlackWhite.asset",
-                  "MaxAttenuationDistance": 10,
-                  "MinAttenuationDistanceRate": 1.0,
-                  "TaskEnabled": true,
-                  "IsClientOnly": true
+                  "StartRate": 1,
+                  "AssetPath": "EnviroSystem/PostProcessFilterAsset/BlackWhite.asset"
                 },
                 {
                   "$type": "RPG.GameCore.SwitchCharacterAnchorV2",
@@ -57,27 +42,16 @@
                     },
                     "AnchorName": {
                       "Value": "Anchor1"
-                    },
-                    "ResetAnimation": true,
-                    "ResetCamera": true,
-                    "ClearSpecialVision": true,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
-                  },
-                  "TaskEnabled": true,
-                  "IsClientOnly": true
+                    }
+                  }
                 }
               ]
             }
-          ],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_203010236",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_203010236"
         }
       ]
     }

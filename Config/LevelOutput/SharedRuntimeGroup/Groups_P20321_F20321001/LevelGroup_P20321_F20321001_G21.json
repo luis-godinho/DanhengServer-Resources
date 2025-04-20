@@ -1,8 +1,8 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "Shrink_Gameplay_Manager",
   "LevelGraph": "Config/Level/GroupGraph/F20321001/Group_F20321001_G21.json",
   "AreaAnchorName": "LevelArea_P20321_F20321001_G21",
-  "SaveType": "Permanent",
   "SavedValueCondition": {
     "Conditions": [],
     "Operation": "And"
@@ -13,12 +13,12 @@
   "GroupStateList": [
     {},
     {
-      "Comment": "\u53d8\u5c0f",
+      "Comment": "变小",
       "SrcState": 1,
       "DstState": 2
     },
     {
-      "Comment": "\u53d8\u5927",
+      "Comment": "变大",
       "SrcState": 2,
       "DstState": 1
     }
@@ -26,10 +26,8 @@
   "ValueSource": {},
   "ConflictIDList": [],
   "IsHoyoGroup": true,
-  "StreamingTemplateType": "Standard",
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
   "ConflictWhiteList": [],
-  "TagContainer": [],
+  "TagContainer": {},
   "AnchorList": [
     {
       "Name": "Born01_Case1",
@@ -49,7 +47,7 @@
     },
     {
       "RotX": 18.83864,
-      "RotZ": 1.4e-05,
+      "RotZ": 1.4E-05,
       "Usage": "Camera",
       "CustomParameter": {
         "$type": "RPG.GameCore.LevelAnchorCameraParameter"
@@ -107,7 +105,7 @@
     },
     {
       "RotX": 25.02621,
-      "RotZ": -4.1e-05,
+      "RotZ": -4.1E-05,
       "Usage": "Camera",
       "CustomParameter": {
         "$type": "RPG.GameCore.LevelAnchorCameraParameter"
@@ -135,7 +133,7 @@
     },
     {
       "Name": "Born03_Case2",
-      "RotY": 257.0,
+      "RotY": 257,
       "ID": 10,
       "PosX": -20.512,
       "PosY": -51.372,
@@ -150,7 +148,6 @@
         "SlaveConfigList": []
       },
       "AIVariableSource": {},
-      "LoadOnInitial": true,
       "ValueSource": {},
       "CampID": 2,
       "BattleArea": {
@@ -161,16 +158,9 @@
       "BoardShowList": [
         2
       ],
-      "DefaultLookAtMode": "LookPlayer",
       "TagList": [],
-      "InteractIconType": "ChatIcon",
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Monster_ShrinkGameplay",
       "ID": 200001
@@ -178,43 +168,9 @@
   ],
   "PropList": [
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 103042,
-      "LoadOnInitial": true,
       "ValueSource": {
         "Values": [
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "LevelArea_P20321_F20321001_G21,Born02_Case1",
-            "Key": "Born01"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "LevelArea_P20321_F20321001_G21,TVCam_02_Case1",
-            "Key": "TVCam"
-          }
-        ],
-        "SharedValues": [
           {
             "$type": "RPG.GameCore.SharedString",
             "Value": "LevelArea_P20321_F20321001_G21,Born02_Case1",
@@ -228,43 +184,28 @@
         ]
       },
       "Trigger": {
-        "Radius": 1.0,
-        "DimX": 1.0,
-        "DimY": 1.0,
-        "DimZ": 1.0,
+        "Radius": 1,
+        "DimX": 1,
+        "DimY": 1,
+        "DimZ": 1,
         "PointList": []
       },
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
       "OverrideMapStateIcons": [
         {},
         {
           "State": "Locked"
         }
       ],
-      "DialogueTriggerSkipFakeAvatar": true,
-      "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true
-      },
+      "TriggerValidGuest": {},
       "CameraCenterEntityList": [],
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Shrink_TV_02_Case1",
       "RotY": 76.99911,
@@ -274,43 +215,9 @@
       "PosZ": -136.961
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 103042,
-      "LoadOnInitial": true,
       "ValueSource": {
         "Values": [
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "LevelArea_P20321_F20321001_G21,Born01_Case1",
-            "Key": "Born01"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "LevelArea_P20321_F20321001_G21,TVCam_01_Case1",
-            "Key": "TVCam"
-          }
-        ],
-        "SharedValues": [
           {
             "$type": "RPG.GameCore.SharedString",
             "Value": "LevelArea_P20321_F20321001_G21,Born01_Case1",
@@ -324,38 +231,23 @@
         ]
       },
       "Trigger": {
-        "Radius": 1.0,
-        "DimX": 1.0,
-        "DimY": 1.0,
-        "DimZ": 1.0,
+        "Radius": 1,
+        "DimX": 1,
+        "DimY": 1,
+        "DimZ": 1,
         "PointList": []
       },
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "MappingInfoID": 10062,
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
-      "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true
-      },
+      "TriggerValidGuest": {},
       "CameraCenterEntityList": [],
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Shrink_TV_01_Case1",
       "RotY": 169.0436,
@@ -365,29 +257,7 @@
       "PosZ": -131.976
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 100,
-      "LoadOnInitial": true,
       "IsOverrideInitLevelGraph": true,
       "InitLevelGraph": "Config/Level/Props/Chap03/InitLevelGraph_Prop_Chap03_WolfBroSaveManagar_01.json",
       "ValueSource": {
@@ -402,91 +272,30 @@
             "Value": "Props/Outputs/Chap03/Chap03_Prop_WolfBro/Chap03_Prop_PuzzleWolfBro_P201.prefab",
             "Key": "PuzzlePrefab"
           }
-        ],
-        "SharedValues": [
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "21,200001",
-            "Key": "ReplaceMonster"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "Props/Outputs/Chap03/Chap03_Prop_WolfBro/Chap03_Prop_PuzzleWolfBro_P201.prefab",
-            "Key": "PuzzlePrefab"
-          }
         ]
       },
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
-      "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true
-      },
+      "TriggerValidGuest": {},
       "CameraCenterEntityList": [],
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Controller",
-      "RotY": 165.0,
+      "RotY": 165,
       "ID": 300003,
       "PosX": -10.73,
       "PosY": 53.81236,
       "PosZ": -136.73
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 103042,
-      "LoadOnInitial": true,
       "ValueSource": {
         "Values": [
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "LevelArea_P20321_F20321001_G21,Born01_Case2",
-            "Key": "Born01"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "LevelArea_P20321_F20321001_G21,TV_Cam01_Case2",
-            "Key": "TVCam"
-          }
-        ],
-        "SharedValues": [
           {
             "$type": "RPG.GameCore.SharedString",
             "Value": "LevelArea_P20321_F20321001_G21,Born01_Case2",
@@ -500,50 +309,36 @@
         ]
       },
       "Trigger": {
-        "Radius": 1.0,
-        "DimX": 1.0,
-        "DimY": 1.0,
-        "DimZ": 1.0,
+        "Radius": 1,
+        "DimX": 1,
+        "DimY": 1,
+        "DimZ": 1,
         "PointList": []
       },
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {
         "CustomTrigger_01": {
-          "Radius": 6.0,
+          "Radius": 6,
           "PointList": []
         }
       },
       "CustomTriggerMapV2": {
         "InteractTrigger": {
-          "Radius": 1.0,
+          "Radius": 1,
           "PointList": []
         }
       },
       "MappingInfoID": 10062,
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "OverrideTriggerValidGuestConfig": true,
       "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true,
         "FakePlayer": true
       },
       "CameraCenterEntityList": [],
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Shrink_TV_01",
       "RotY": 256.3865,
@@ -553,43 +348,9 @@
       "PosZ": 137.087
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 103042,
-      "LoadOnInitial": true,
       "ValueSource": {
         "Values": [
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "LevelArea_P20321_F20321001_G21,Born02_Case2",
-            "Key": "Born01"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "LevelArea_P20321_F20321001_G21,TV_Cam02_Case2",
-            "Key": "TVCam"
-          }
-        ],
-        "SharedValues": [
           {
             "$type": "RPG.GameCore.SharedString",
             "Value": "LevelArea_P20321_F20321001_G21,Born02_Case2",
@@ -603,45 +364,31 @@
         ]
       },
       "Trigger": {
-        "Radius": 1.0,
-        "DimX": 1.0,
-        "DimY": 1.0,
-        "DimZ": 1.0,
+        "Radius": 1,
+        "DimX": 1,
+        "DimY": 1,
+        "DimZ": 1,
         "PointList": []
       },
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
       "OverrideMapStateIcons": [
         {},
         {
           "State": "Locked"
         }
       ],
-      "DialogueTriggerSkipFakeAvatar": true,
       "OverrideTriggerValidGuestConfig": true,
       "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true,
         "FakePlayer": true
       },
       "CameraCenterEntityList": [],
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Shrink_TV_02",
       "RotY": 256.9991,
@@ -651,43 +398,9 @@
       "PosZ": 145.84
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 103042,
-      "LoadOnInitial": true,
       "ValueSource": {
         "Values": [
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "LevelArea_P20321_F20321001_G21,Born03_Case2",
-            "Key": "Born01"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "LevelArea_P20321_F20321001_G21,TV_Cam03_Case2",
-            "Key": "TVCam"
-          }
-        ],
-        "SharedValues": [
           {
             "$type": "RPG.GameCore.SharedString",
             "Value": "LevelArea_P20321_F20321001_G21,Born03_Case2",
@@ -701,43 +414,28 @@
         ]
       },
       "Trigger": {
-        "Radius": 1.0,
-        "DimX": 1.0,
-        "DimY": 1.0,
-        "DimZ": 1.0,
+        "Radius": 1,
+        "DimX": 1,
+        "DimY": 1,
+        "DimZ": 1,
         "PointList": []
       },
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
       "OverrideMapStateIcons": [
         {},
         {
           "State": "Locked"
         }
       ],
-      "DialogueTriggerSkipFakeAvatar": true,
-      "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true
-      },
+      "TriggerValidGuest": {},
       "CameraCenterEntityList": [],
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Shrink_TV_03",
       "RotY": 76.99914,
@@ -747,29 +445,7 @@
       "PosZ": 154.533
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 100,
-      "LoadOnInitial": true,
       "IsOverrideInitLevelGraph": true,
       "InitLevelGraph": "Config/Level/Props/Chap03/InitLevelGraph_Prop_Chap03_WolfBroSavePoint_01.json",
       "ValueSource": {
@@ -779,97 +455,53 @@
             "Value": "21,300003",
             "Key": "PuzzleInit_Obj"
           }
-        ],
-        "SharedValues": [
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "21,300003",
-            "Key": "PuzzleInit_Obj"
-          }
         ]
       },
       "Trigger": {
         "Shape": "Box",
-        "Radius": 3.0,
-        "DimX": 8.0,
-        "DimY": 6.0,
-        "DimZ": 3.0,
+        "Radius": 3,
+        "DimX": 8,
+        "DimY": 6,
+        "DimZ": 3,
         "PointList": []
       },
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {
         "MissionTrigger": {
           "Shape": "Box",
-          "Radius": 3.0,
-          "DimX": 8.0,
-          "DimY": 6.0,
-          "DimZ": 3.0,
+          "Radius": 3,
+          "DimX": 8,
+          "DimY": 6,
+          "DimZ": 3,
           "PointList": []
         },
         "InteractTrigger": {
           "Shape": "Box",
-          "Radius": 3.0,
-          "DimX": 8.0,
-          "DimY": 6.0,
-          "DimZ": 3.0,
+          "Radius": 3,
+          "DimX": 8,
+          "DimY": 6,
+          "DimZ": 3,
           "PointList": []
         }
       },
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
-      "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true
-      },
+      "TriggerValidGuest": {},
       "CameraCenterEntityList": [],
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "SavePoint1",
-      "RotY": 165.0,
+      "RotY": 165,
       "ID": 300007,
       "PosX": -11.99,
       "PosY": 53.81236,
       "PosZ": -134.18
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 100,
-      "LoadOnInitial": true,
       "IsOverrideInitLevelGraph": true,
       "InitLevelGraph": "Config/Level/Props/Chap03/InitLevelGraph_Prop_Chap03_WolfBroSavePoint_01.json",
       "ValueSource": {
@@ -879,65 +511,43 @@
             "Value": "21,300003",
             "Key": "PuzzleInit_Obj"
           }
-        ],
-        "SharedValues": [
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "21,300003",
-            "Key": "PuzzleInit_Obj"
-          }
         ]
       },
       "Trigger": {
         "Shape": "Box",
-        "Radius": 3.0,
-        "DimX": 14.0,
-        "DimY": 6.0,
-        "DimZ": 6.0,
+        "Radius": 3,
+        "DimX": 14,
+        "DimY": 6,
+        "DimZ": 6,
         "PointList": []
       },
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {
         "MissionTrigger": {
           "Shape": "Box",
-          "Radius": 3.0,
-          "DimX": 14.0,
-          "DimY": 6.0,
-          "DimZ": 6.0,
+          "Radius": 3,
+          "DimX": 14,
+          "DimY": 6,
+          "DimZ": 6,
           "PointList": []
         },
         "InteractTrigger": {
           "Shape": "Box",
-          "Radius": 3.0,
-          "DimX": 14.0,
-          "DimY": 6.0,
-          "DimZ": 6.0,
+          "Radius": 3,
+          "DimX": 14,
+          "DimY": 6,
+          "DimZ": 6,
           "PointList": []
         }
       },
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
-      "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true
-      },
+      "TriggerValidGuest": {},
       "CameraCenterEntityList": [],
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "SavePoint1",
       "RotY": 345.0001,
@@ -947,29 +557,7 @@
       "PosZ": 145.16
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 100,
-      "LoadOnInitial": true,
       "IsOverrideInitLevelGraph": true,
       "InitLevelGraph": "Config/Level/Props/Chap03/InitLevelGraph_Prop_Chap03_WolfTreasureBoxHint_01.json",
       "ValueSource": {
@@ -979,72 +567,28 @@
             "Value": "183,300016",
             "Key": "TargetBox"
           }
-        ],
-        "SharedValues": [
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "183,300016",
-            "Key": "TargetBox"
-          }
         ]
       },
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
-      "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true
-      },
+      "TriggerValidGuest": {},
       "CameraCenterEntityList": [],
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Chest_Icon_Case2",
-      "RotY": 166.0,
+      "RotY": 166,
       "ID": 300009,
       "PosX": -20.28,
       "PosY": -43.619,
       "PosZ": 165.32
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 100,
-      "LoadOnInitial": true,
       "IsOverrideInitLevelGraph": true,
       "InitLevelGraph": "Config/Level/Props/Chap03/InitLevelGraph_Prop_Chap03_WolfBroSavePoint_01.json",
       "ValueSource": {
@@ -1054,65 +598,43 @@
             "Value": "21,300003",
             "Key": "PuzzleInit_Obj"
           }
-        ],
-        "SharedValues": [
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "21,300003",
-            "Key": "PuzzleInit_Obj"
-          }
         ]
       },
       "Trigger": {
         "Shape": "Box",
-        "Radius": 3.0,
-        "DimX": 14.0,
-        "DimY": 1.0,
-        "DimZ": 2.0,
+        "Radius": 3,
+        "DimX": 14,
+        "DimY": 1,
+        "DimZ": 2,
         "PointList": []
       },
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {
         "MissionTrigger": {
           "Shape": "Box",
-          "Radius": 3.0,
-          "DimX": 14.0,
-          "DimY": 1.0,
-          "DimZ": 2.0,
+          "Radius": 3,
+          "DimX": 14,
+          "DimY": 1,
+          "DimZ": 2,
           "PointList": []
         },
         "InteractTrigger": {
           "Shape": "Box",
-          "Radius": 3.0,
-          "DimX": 14.0,
-          "DimY": 2.0,
-          "DimZ": 2.0,
+          "Radius": 3,
+          "DimX": 14,
+          "DimY": 2,
+          "DimZ": 2,
           "PointList": []
         }
       },
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
-      "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true
-      },
+      "TriggerValidGuest": {},
       "CameraCenterEntityList": [],
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "SavePoint1",
       "RotY": 345.0001,
@@ -1122,29 +644,7 @@
       "PosZ": 169.104
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 100,
-      "LoadOnInitial": true,
       "IsOverrideInitLevelGraph": true,
       "InitLevelGraph": "Config/Level/Props/Chap03/InitLevelGraph_Prop_Chap03_WolfTreasureBoxHint_01.json",
       "ValueSource": {
@@ -1154,40 +654,18 @@
             "Value": "199,300006",
             "Key": "TargetBox"
           }
-        ],
-        "SharedValues": [
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "199,300006",
-            "Key": "TargetBox"
-          }
         ]
       },
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
-      "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true
-      },
+      "TriggerValidGuest": {},
       "CameraCenterEntityList": [],
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Chest_Icon_Case2",
       "ID": 300011,
@@ -1196,65 +674,28 @@
       "PosZ": -142.789
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 100,
-      "LoadOnInitial": true,
       "IsOverrideInitLevelGraph": true,
       "InitLevelGraph": "Config/Level/Props/Chap03/InitLevelGraph_Prop_Chap03_WolfResetGun_01.json",
       "ValueSource": {},
       "Trigger": {
         "Shape": "Box",
-        "Radius": 1.0,
-        "DimX": 10.0,
-        "DimY": 5.0,
-        "DimZ": 2.0,
+        "Radius": 1,
+        "DimX": 10,
+        "DimY": 5,
+        "DimZ": 2,
         "PointList": []
       },
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
-      "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true
-      },
+      "TriggerValidGuest": {},
       "CameraCenterEntityList": [],
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Prop12",
       "RotY": 256.3865,
@@ -1264,66 +705,30 @@
       "PosZ": 132.92
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 100,
-      "LoadOnInitial": true,
       "IsOverrideInitLevelGraph": true,
       "InitLevelGraph": "Config/Level/Props/Chap03/InitLevelGraph_Prop_Chap03_WolfResetGun_01.json",
       "ValueSource": {},
       "Trigger": {
         "Shape": "Box",
-        "Radius": 1.0,
-        "DimX": 1.0,
-        "DimY": 5.0,
-        "DimZ": 7.0,
+        "Radius": 1,
+        "DimX": 1,
+        "DimY": 5,
+        "DimZ": 7,
         "PointList": []
       },
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true,
         "TargetList": []
       },
       "CameraCenterEntityList": [],
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Prop13",
       "RotY": 166.9991,
@@ -1333,29 +738,7 @@
       "PosZ": -139.61
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 100,
-      "LoadOnInitial": true,
       "IsOverrideInitLevelGraph": true,
       "InitLevelGraph": "Config/Level/Props/Chap03/InitLevelGraph_Prop_Chap03_WolfBroSavePoint_01.json",
       "ValueSource": {
@@ -1365,133 +748,74 @@
             "Value": "21,300003",
             "Key": "PuzzleInit_Obj"
           }
-        ],
-        "SharedValues": [
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "21,300003",
-            "Key": "PuzzleInit_Obj"
-          }
         ]
       },
       "Trigger": {
         "Shape": "Box",
-        "Radius": 3.0,
-        "DimX": 14.0,
-        "DimY": 6.0,
-        "DimZ": 6.0,
+        "Radius": 3,
+        "DimX": 14,
+        "DimY": 6,
+        "DimZ": 6,
         "PointList": []
       },
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {
         "MissionTrigger": {
           "Shape": "Box",
-          "Radius": 3.0,
-          "DimX": 14.0,
-          "DimY": 6.0,
-          "DimZ": 6.0,
+          "Radius": 3,
+          "DimX": 14,
+          "DimY": 6,
+          "DimZ": 6,
           "PointList": []
         },
         "InteractTrigger": {
           "Shape": "Box",
-          "Radius": 3.0,
-          "DimX": 14.0,
-          "DimY": 6.0,
-          "DimZ": 6.0,
+          "Radius": 3,
+          "DimX": 14,
+          "DimY": 6,
+          "DimZ": 6,
           "PointList": []
         }
       },
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
-      "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true
-      },
+      "TriggerValidGuest": {},
       "CameraCenterEntityList": [],
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "SavePoint1",
       "RotY": 170.8,
       "ID": 300014,
-      "PosX": -22.0,
+      "PosX": -22,
       "PosY": 51.614,
       "PosZ": 136.5
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 100,
-      "LoadOnInitial": true,
       "IsOverrideInitLevelGraph": true,
       "InitLevelGraph": "Config/Level/Props/Chap03/InitLevelGraph_Prop_Chap03_WolfResetGun_01.json",
       "ValueSource": {},
       "Trigger": {
         "Shape": "Box",
-        "Radius": 1.0,
-        "DimX": 1.0,
-        "DimY": 5.0,
-        "DimZ": 7.0,
+        "Radius": 1,
+        "DimX": 1,
+        "DimY": 5,
+        "DimZ": 7,
         "PointList": []
       },
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
-      "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true
-      },
+      "TriggerValidGuest": {},
       "CameraCenterEntityList": [],
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Prop15",
       "RotY": 76.99911,

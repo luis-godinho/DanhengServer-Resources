@@ -1,0 +1,59 @@
+{
+  "OnInitSequece": [
+    {
+      "TaskList": []
+    }
+  ],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByAnd",
+            "PredicateList": [
+              {
+                "$type": "RPG.GameCore.ByCompareFloorSavedValue",
+                "Name": "Rougue2.5Finish",
+                "CompareType": "Equal",
+                "CompareValue": 1
+              },
+              {
+                "$type": "RPG.GameCore.ByComparePropState",
+                "TargetType": {
+                  "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                  "FetchType": "SinglePropByPropID",
+                  "SinglePropID": {
+                    "GroupID": {
+                      "FixedValue": {
+                        "Value": 330
+                      }
+                    },
+                    "ID": {
+                      "FixedValue": {
+                        "Value": 300001
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.ChangePropState"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitServerFloorSavedValueChange"
+        }
+      ]
+    }
+  ],
+  "Type": "Group"
+}

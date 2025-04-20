@@ -1,0 +1,66 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CollectDataConditions",
+          "TaskIDList": [
+            404035605
+          ],
+          "MainMissionIDList": [],
+          "PerformanceIDList": [],
+          "PerformanceIDDsList": [],
+          "CustomValueMainMissionIDList": []
+        },
+        {
+          "$type": "RPG.GameCore.AddMenuItem",
+          "MenuIconType": "DreamlandIcon",
+          "MenuItemID": 993005280,
+          "DialoguePath": "Config/Level/Common_LG/DreamlandTrigger.json",
+          "Important": true
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByCompareSubMissionState",
+            "SubMissionID": 404035605,
+            "SubMissionState": "Started"
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.AddMenuItem",
+              "MenuIconType": "SecretMissionIcon",
+              "MenuItemTextID": {
+                "Hash": 9970337608640121301
+              },
+              "PerformanceType": "E",
+              "PerformanceID": 503111005,
+              "Important": true
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.AddMenuItem",
+          "MenuIconType": "ShopIcon",
+          "MenuItemTextID": {
+            "Hash": 16047276771906098768
+          },
+          "PerformanceType": "E",
+          "PerformanceID": 503111004,
+          "Important": true
+        },
+        {
+          "$type": "RPG.GameCore.AddMenuItem",
+          "MenuIconType": "ChatOutIcon",
+          "MenuItemTextID": {
+            "Hash": 8931388650867530860
+          },
+          "PerformanceType": "E",
+          "PerformanceID": 503111003,
+          "Important": true
+        }
+      ]
+    }
+  ]
+}

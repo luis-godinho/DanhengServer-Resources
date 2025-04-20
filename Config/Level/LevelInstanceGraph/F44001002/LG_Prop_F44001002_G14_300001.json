@@ -1,0 +1,181 @@
+{
+  "OnInitSequece": [
+    {
+      "TaskList": []
+    }
+  ],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "ChangeAvatar1"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.PlayerRemoteControlOtherEntity",
+          "TargetEntity": {
+            "$type": "RPG.GameCore.TargetFetchAdvNpcEx",
+            "FetchType": "SingleNpcByNpcID",
+            "SingleNpcID": {
+              "GroupID": {
+                "FixedValue": {
+                  "Value": 14
+                }
+              },
+              "GroupNpcID": {
+                "FixedValue": {
+                  "Value": 400001
+                }
+              }
+            }
+          },
+          "SpecialNPCID": 16001,
+          "LevelAreaKey": {
+            "Custom": true,
+            "Key": "Portal"
+          },
+          "ShowReleaseButton": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "ChangeAvatar2"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.PlayerRemoteControlOtherEntity",
+          "TargetEntity": {
+            "$type": "RPG.GameCore.TargetFetchAdvNpcEx",
+            "FetchType": "SingleNpcByNpcID",
+            "SingleNpcID": {
+              "GroupID": {
+                "FixedValue": {
+                  "Value": 14
+                }
+              },
+              "GroupNpcID": {
+                "FixedValue": {
+                  "Value": 400001
+                }
+              }
+            }
+          },
+          "SpecialNPCID": 16001,
+          "LevelAreaKey": {
+            "Custom": true,
+            "Key": "Portal"
+          },
+          "ShowReleaseButton": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "ChangeAvatar3"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.PlayerRemoteControlOtherEntity",
+          "TargetEntity": {
+            "$type": "RPG.GameCore.TargetFetchAdvNpcEx",
+            "FetchType": "SingleNpcByNpcID",
+            "SingleNpcID": {
+              "GroupID": {
+                "FixedValue": {
+                  "Value": 14
+                }
+              },
+              "GroupNpcID": {
+                "FixedValue": {
+                  "Value": 400001
+                }
+              }
+            }
+          },
+          "SpecialNPCID": 16001,
+          "LevelAreaKey": {
+            "Custom": true,
+            "Key": "Portal"
+          },
+          "ShowReleaseButton": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "ChangeAvatar4"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.PlayerRemoteControlOtherEntity",
+          "TargetEntity": {
+            "$type": "RPG.GameCore.TargetFetchAdvNpcEx",
+            "FetchType": "SingleNpcByNpcID",
+            "SingleNpcID": {
+              "GroupID": {
+                "FixedValue": {
+                  "Value": 14
+                }
+              },
+              "GroupNpcID": {
+                "FixedValue": {
+                  "Value": 400001
+                }
+              }
+            }
+          },
+          "SpecialNPCID": 16001,
+          "LevelAreaKey": {
+            "Custom": true,
+            "Key": "Portal"
+          },
+          "ShowReleaseButton": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropSetupTrigger",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          },
+          "IsSingle": true,
+          "TargetEntityType": "NPC",
+          "TargetGroupID": {
+            "FixedValue": {
+              "Value": 14
+            }
+          },
+          "TargetID": {
+            "FixedValue": {
+              "Value": 400001
+            }
+          },
+          "TargetTypes": [
+            "NPC"
+          ],
+          "OnTriggerEnter": [
+            {
+              "$type": "RPG.GameCore.DebugLog",
+              "Message": "PeiPeiEntered"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "Type": "EntityInstance"
+}

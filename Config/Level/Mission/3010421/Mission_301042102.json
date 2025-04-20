@@ -6,64 +6,53 @@
         {
           "$type": "RPG.GameCore.WaitSecond",
           "WaitTime": {
-            "fixedValue": {
-              "RawValue": 1073741825
+            "FixedValue": {
+              "Value": 0.25
             }
-          },
-          "MaxAdvencePerTick": -1.0,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
           "$type": "RPG.GameCore.PropSetupUITrigger",
           "DestroyAfterTriggered": true,
           "ButtonIcon": "SpriteOutput/TalkIcon/ChatMissionIcon.png",
+          "IconType": "ChatMissionIcon",
           "ButtonText": {
-            "Hash": 655042295,
-            "Hash64": 12903567142410941584
+            "Hash": 12903567142410941584
           },
           "ButtonCallback": [
             {
               "$type": "RPG.GameCore.PlayMissionTalk",
               "SimpleTalkList": [
                 {
-                  "TextSpeed": 20.0,
                   "TalkSentenceID": 301042202,
-                  "ProtectTime": 4.0
+                  "ProtectTime": 4
                 }
-              ],
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              ]
             },
             {
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "301042102_Finish"
-              },
-              "TaskEnabled": true
+              }
             }
           ],
-          "InteractAngleRange": 180.0,
           "OverrideTargetTypes": [],
-          "SkipFakeAvatar": true,
           "TargetType": {
             "$type": "RPG.GameCore.TargetFetchAdvPropEx",
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 373662154752
+                "FixedValue": {
+                  "Value": 87
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288498778734592
+                "FixedValue": {
+                  "Value": 300002
                 }
               }
             }
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         }
       ]
     },
@@ -73,14 +62,11 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "301042102_Finish"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_301042102",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_301042102"
         }
       ]
     }

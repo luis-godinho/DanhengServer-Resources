@@ -8,21 +8,17 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Talk_102150107_PropTrigger"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.TriggerCustomString",
           "CustomString": {
             "Value": "Mission_102150107_PropTrigger"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_102150107",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_102150107"
         }
       ]
     },
@@ -31,34 +27,30 @@
         {
           "$type": "RPG.GameCore.CreateProp",
           "GroupID": {
-            "fixedValue": {
-              "RawValue": 85899345920
+            "FixedValue": {
+              "Value": 20
             }
           },
           "GroupPropID": {
-            "fixedValue": {
-              "RawValue": 1288507368669184
+            "FixedValue": {
+              "Value": 300004
             }
           },
-          "CreateList": [],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "CreateList": []
         },
         {
           "$type": "RPG.GameCore.CreateProp",
           "GroupID": {
-            "fixedValue": {
-              "RawValue": 85899345920
+            "FixedValue": {
+              "Value": 20
             }
           },
           "GroupPropID": {
-            "fixedValue": {
-              "RawValue": 1288511663636480
+            "FixedValue": {
+              "Value": 300005
             }
           },
-          "CreateList": [],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "CreateList": []
         },
         {
           "$type": "RPG.GameCore.PropSetupTrigger",
@@ -67,19 +59,27 @@
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 85899345920
+                "FixedValue": {
+                  "Value": 20
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288507368669184
+                "FixedValue": {
+                  "Value": 300004
                 }
               }
             }
           },
-          "TargetGroupID": {},
-          "TargetID": {},
+          "TargetGroupID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "TargetID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
           "TargetTypes": [],
           "DisableAfterTriggered": true,
           "OnTriggerEnter": [
@@ -87,13 +87,9 @@
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "Talk_102150107_PropTrigger"
-              },
-              "TaskEnabled": true
+              }
             }
-          ],
-          "SkipFakeAvatar": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     }

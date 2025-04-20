@@ -1,0 +1,50 @@
+{
+  "OnInitSequece": [
+    {
+      "TaskList": []
+    }
+  ],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "propon"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.PropSetupUITrigger",
+          "DisableAfterTriggered": true,
+          "ButtonText": {
+            "Hash": 5583478887924487567
+          },
+          "ButtonCallback": [
+            {
+              "$type": "RPG.GameCore.TriggerCustomString",
+              "CustomString": {
+                "Value": "801515607p"
+              }
+            }
+          ],
+          "OverrideTargetTypes": [],
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+            "SinglePropID": {
+              "GroupID": {
+                "FixedValue": {
+                  "Value": 6
+                }
+              },
+              "ID": {
+                "FixedValue": {
+                  "Value": 300012
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -21,40 +21,31 @@
                   0,
                   1
                 ]
-              },
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              }
             },
             {
               "$type": "RPG.GameCore.UpdateTreasureChallengeProgress",
               "RaidTargetID": 443050039,
               "IsIncrease": true,
-              "DeltaValue": 1,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "DeltaValue": 1
             },
             {
               "$type": "RPG.GameCore.UpdateTreasureChallengeProgress",
               "RaidTargetID": 443050040,
               "IsIncrease": true,
-              "DeltaValue": 1,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "DeltaValue": 1
             },
             {
               "$type": "RPG.GameCore.FinishPerformanceMission",
               "Key": "Mission_802212505",
-              "MainMissionID": 8022125,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "MainMissionID": 8022125
             }
           ],
           "OnFail": [
             {
               "$type": "RPG.GameCore.PlayFullScreenTransfer",
-              "Type": "Black",
-              "PrevDuration": 0.5,
               "KeepDuration": 0.1,
+              "PostDuration": 0,
               "Action": [
                 {
                   "$type": "RPG.GameCore.ScrTrfActTaskList",
@@ -69,29 +60,18 @@
                         },
                         "AnchorName": {
                           "Value": "Anchor2"
-                        },
-                        "ResetAnimation": true,
-                        "ResetCamera": true,
-                        "ClearSpecialVision": true,
-                        "TaskEnabled": true,
-                        "IsClientOnly": true
-                      },
-                      "TaskEnabled": true,
-                      "IsClientOnly": true
+                        }
+                      }
                     }
                   ]
                 }
-              ],
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              ]
             },
             {
               "$type": "RPG.GameCore.TriggerPerformance",
               "ValueSource": {},
               "PerformanceType": "D",
-              "PerformanceID": 802212526,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "PerformanceID": 802212526
             },
             {
               "$type": "RPG.GameCore.PerformanceEndSeq",
@@ -100,12 +80,10 @@
                   "OnSuccess": [
                     {
                       "$type": "RPG.GameCore.PlayFullScreenTransfer",
-                      "Type": "Black",
+                      "PrevDuration": 0,
                       "KeepDuration": 0.1,
-                      "PostDuration": -1.0,
-                      "Action": [],
-                      "TaskEnabled": true,
-                      "IsClientOnly": true
+                      "PostDuration": -1,
+                      "Action": []
                     },
                     {
                       "$type": "RPG.GameCore.SetMissionCustomValue",
@@ -117,16 +95,13 @@
                           1
                         ]
                       },
-                      "CustomValue": 1,
-                      "TaskEnabled": true,
-                      "IsClientOnly": true
+                      "CustomValue": 1
                     },
                     {
                       "$type": "RPG.GameCore.TriggerCustomString",
                       "CustomString": {
                         "Value": "802212505_End"
-                      },
-                      "TaskEnabled": true
+                      }
                     }
                   ]
                 },
@@ -135,30 +110,19 @@
                   "OnSuccess": [
                     {
                       "$type": "RPG.GameCore.PlayFullScreenTransfer",
-                      "Type": "Black",
-                      "KeepDuration": 0.5,
-                      "PostDuration": 0.5,
-                      "TaskEnabled": true,
-                      "IsClientOnly": true
+                      "PrevDuration": 0
                     },
                     {
                       "$type": "RPG.GameCore.ResetPhotoGraphTargets",
                       "BindName": {
                         "Value": "Camera_2_1"
-                      },
-                      "TaskEnabled": true,
-                      "IsClientOnly": true
+                      }
                     }
                   ]
                 }
-              ],
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              ]
             }
-          ],
-          "IsLoop": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     },
@@ -168,16 +132,13 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "802212505_End"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
           "Key": "Mission_802212505",
           "MainMissionID": 8022125,
-          "KeepScreenTransferUntilGroupRefresh": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "KeepScreenTransferUntilGroupRefresh": true
         }
       ]
     }

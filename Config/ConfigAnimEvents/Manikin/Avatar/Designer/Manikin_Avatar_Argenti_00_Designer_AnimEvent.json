@@ -1,0 +1,112 @@
+{
+  "AnimatorStateEvents": [],
+  "AnimatorStateGroupEvents": [
+    {
+      "States": [
+        {
+          "Name": "Idle_Show_01"
+        },
+        {
+          "Name": "Idle_Show_02"
+        }
+      ],
+      "OnEnter": [
+        {
+          "$type": "RPG.GameCore.EnableEmotion",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          }
+        }
+      ],
+      "OnExit": [
+        {
+          "$type": "RPG.GameCore.EnableEmotion",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "Enable": true
+        }
+      ]
+    },
+    {
+      "States": [
+        {
+          "Name": "StandBy"
+        }
+      ],
+      "OnEnter": [
+        {
+          "$type": "RPG.GameCore.SetAttachmentScale",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AttachPoints": [
+            {
+              "Name": "Weapon"
+            },
+            {
+              "Name": "Flower"
+            }
+          ],
+          "Scale": {}
+        }
+      ],
+      "OnExit": []
+    },
+    {
+      "States": [
+        {
+          "Name": "TeamStandBy"
+        }
+      ],
+      "OnEnter": [
+        {
+          "$type": "RPG.GameCore.SetAttachmentScaleForUI",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AttachPoints": [
+            {
+              "Name": "Flower"
+            }
+          ],
+          "Scale": {}
+        },
+        {
+          "$type": "RPG.GameCore.SetAttachmentScaleForUI",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AttachPoints": [
+            {
+              "Name": "Weapon"
+            }
+          ]
+        }
+      ],
+      "OnExit": [
+        {
+          "$type": "RPG.GameCore.SetAttachmentScale",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AttachPoints": [
+            {
+              "Name": "Weapon"
+            },
+            {
+              "Name": "Flower"
+            }
+          ],
+          "Scale": {}
+        }
+      ]
+    }
+  ]
+}

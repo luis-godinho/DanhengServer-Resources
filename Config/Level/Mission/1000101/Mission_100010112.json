@@ -8,18 +8,14 @@
           "$type": "RPG.GameCore.PlayMissionTalk",
           "SimpleTalkList": [
             {
-              "TextSpeed": 20.0,
               "TalkSentenceID": 200010808,
-              "ProtectTime": 2.0
+              "ProtectTime": 2
             },
             {
-              "TextSpeed": 20.0,
               "TalkSentenceID": 200010809,
-              "ProtectTime": 2.0
+              "ProtectTime": 2
             }
-          ],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     },
@@ -32,34 +28,37 @@
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 60129542144
+                "FixedValue": {
+                  "Value": 14
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288567498211328
+                "FixedValue": {
+                  "Value": 300018
                 }
               }
             }
           },
-          "TargetGroupID": {},
-          "TargetID": {},
+          "TargetGroupID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "TargetID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
           "TargetTypes": [],
           "ColliderRelativePath": "Trigger",
           "DestroyAfterTriggered": true,
           "OnTriggerEnter": [
             {
               "$type": "RPG.GameCore.FinishPerformanceMission",
-              "Key": "Mission_100010112",
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "Key": "Mission_100010112"
             }
           ],
-          "OnTriggerExit": [],
-          "SkipFakeAvatar": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "OnTriggerExit": []
         }
       ]
     }

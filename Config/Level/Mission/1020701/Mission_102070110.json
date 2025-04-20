@@ -10,19 +10,27 @@
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 77309411328
+                "FixedValue": {
+                  "Value": 18
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288494483767296
+                "FixedValue": {
+                  "Value": 300001
                 }
               }
             }
           },
-          "TargetGroupID": {},
-          "TargetID": {},
+          "TargetGroupID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "TargetID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
           "TargetTypes": [],
           "DestroyAfterTriggered": true,
           "OnTriggerEnter": [
@@ -30,13 +38,9 @@
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "Mission_102070110_Prop_18_300001_OnEnter"
-              },
-              "TaskEnabled": true
+              }
             }
-          ],
-          "SkipFakeAvatar": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     },
@@ -46,99 +50,68 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Mission_102070110_Prop_18_300001_OnEnter"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.SetAudioEmotionState",
           "StateName": "State_Joyful",
-          "SubMissionID": 102070110,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "SubMissionID": 102070110
         },
         {
           "$type": "RPG.GameCore.TriggerPerformance",
           "ValueSource": {},
           "PerformanceType": "C",
-          "PerformanceID": 102070110,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 102070110
         },
         {
           "$type": "RPG.GameCore.PerformanceTransition",
-          "SwitchKeepTime": 0.5,
-          "SwitchOutTime": 0.5,
+          "SwitchInTime": 0,
           "CreateNpcList": [],
           "CaptureNpcList": [],
           "DestroyNpcList": [
             {
               "GroupID": 24,
-              "GroupNpcID": 400001,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "GroupNpcID": 400001
             }
           ],
           "CreateProp": {
-            "IsClientOnly": true
+            "TaskEnabled": false
           },
           "DestroyProp": {
             "TargetType": {
               "$type": "RPG.GameCore.TargetFetchAdvPropEx"
             },
-            "IsClientOnly": true
+            "TaskEnabled": false
           },
           "AdvCreateGroupEntity": {
-            "IsClientOnly": true
+            "TaskEnabled": false
           },
           "AdvDestroyGroupEntity": {
-            "IsClientOnly": true
+            "TaskEnabled": false
           },
-          "DisactiveVCamOnGraphEnd": true,
           "ActiveVirtualCamera": {
-            "IsActive": true,
-            "VCameraDitherMaxDistance": 1.0,
-            "CenterPosX": -1.0,
-            "CenterPosY": -1.0,
-            "IsClientOnly": true
+            "TaskEnabled": false
           },
           "ActiveTemplateVirtualCamera": {
-            "IsActive": true,
-            "IsClientOnly": true
+            "TaskEnabled": false
           },
           "SwitchCharacterAnchor": {
-            "ResetAnimation": true,
-            "ResetCamera": true,
-            "ClearSpecialVision": true,
-            "IsClientOnly": true
+            "TaskEnabled": false
           },
           "AdvNpcFaceToPlayer": {
-            "FromDialog": true,
-            "TryFaceToFace": true,
-            "NpcLookAtPlayer": true,
-            "PlayerLookAtNpc": true,
-            "StopLookAtOnGraphEnd": true,
-            "TurnBackOnGraphEnd": true,
             "SteerImmediately": true,
             "FinishImmadiate": true,
-            "WaitFinishMode": "WaitFaceAngle",
-            "ForceToStandBy": true,
-            "IsClientOnly": true
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+            "TaskEnabled": false
+          }
         },
         {
           "$type": "RPG.GameCore.SetAudioEmotionState",
           "ResetToFloorDefault": true,
-          "SubMissionID": 102070110,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "SubMissionID": 102070110
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_102070110",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_102070110"
         }
       ]
     }

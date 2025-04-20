@@ -1,0 +1,295 @@
+{
+  "AnimatorStateEvents": [
+    {
+      "AnimatorStateName": "Attack_1",
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.SetAttachmentScale",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AttachPoints": [
+            {
+              "Name": "Weapon"
+            }
+          ],
+          "Scale": {}
+        }
+      ],
+      "AllowTriggeringOnTransitionOut": false
+    },
+    {
+      "AnimatorStateName": "Attack_1",
+      "NormalizedTime": 0.01,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.SetAttachmentScale",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AttachPoints": [
+            {
+              "Name": "Weapon",
+              "TriggerEffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_PlayerBoy_20/Eff_Avatar_PlayerBoy_20_MazeAttack01_WeaponStart_02.prefab"
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.TriggerEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_PlayerBoy_20/Eff_Avatar_PlayerBoy_20_MazeAttack01_WeaponStart.prefab",
+          "AttachPoint": "Weapon"
+        }
+      ],
+      "AllowTriggeringOnTransitionOut": false
+    },
+    {
+      "AnimatorStateName": "Attack_1",
+      "NormalizedTime": 0.041,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.SetAttachmentScale",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AttachPoints": [
+            {
+              "Name": "Weapon"
+            }
+          ],
+          "Scale": {}
+        }
+      ],
+      "AllowTriggeringOnTransitionOut": false
+    },
+    {
+      "AnimatorStateName": "MazeSkill",
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.SetAttachmentScale",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AttachPoints": [
+            {
+              "Name": "Weapon"
+            }
+          ],
+          "Scale": {}
+        }
+      ],
+      "AllowTriggeringOnTransitionOut": false
+    },
+    {
+      "AnimatorStateName": "MazeSkill",
+      "NormalizedTime": 0.01,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.SetAttachmentScale",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AttachPoints": [
+            {
+              "Name": "Weapon",
+              "TriggerEffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_PlayerBoy_20/Eff_Avatar_PlayerBoy_20_MazeSkill_WeaponStart.prefab"
+            }
+          ]
+        }
+      ],
+      "AllowTriggeringOnTransitionOut": false
+    },
+    {
+      "AnimatorStateName": "MazeSkill",
+      "NormalizedTime": 0.582,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.SetAttachmentScale",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AttachPoints": [
+            {
+              "Name": "Weapon",
+              "OverridePrefabAttachPoint": true,
+              "TriggerEffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_PlayerBoy_20/Eff_Avatar_PlayerBoy_20_Common_WeaponEnd.prefab"
+            }
+          ],
+          "Scale": {}
+        }
+      ],
+      "AllowTriggeringOnTransitionOut": false
+    },
+    {
+      "AnimatorStateName": "Idle_Show_02",
+      "NormalizedTime": 0.87,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.CreatePhoneOnCharacter",
+          "IsDestroy": true,
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          }
+        }
+      ]
+    }
+  ],
+  "AnimatorStateGroupEvents": [
+    {
+      "States": [
+        {
+          "Name": "StandBy"
+        }
+      ],
+      "OnEnter": [
+        {
+          "$type": "RPG.GameCore.SetAttachmentScale",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AttachPoints": [
+            {
+              "Name": "Weapon"
+            }
+          ],
+          "Scale": {}
+        }
+      ],
+      "OnExit": []
+    },
+    {
+      "States": [
+        {
+          "Name": "Attack_1",
+          "NormalizedTime": 0.01
+        }
+      ],
+      "OnEnter": [
+        {
+          "$type": "RPG.GameCore.SetAttachmentScale",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AttachPoints": [
+            {
+              "Name": "Weapon",
+              "TriggerEffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_PlayerBoy_20/Eff_Avatar_PlayerBoy_20_MazeAttack01_WeaponStart_02.prefab"
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.TriggerEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_PlayerBoy_20/Eff_Avatar_PlayerBoy_20_MazeAttack01_WeaponStart.prefab",
+          "AttachPoint": "Weapon"
+        }
+      ],
+      "OnExit": [
+        {
+          "$type": "RPG.GameCore.SetAttachmentScale",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AttachPoints": [
+            {
+              "Name": "Weapon",
+              "OverridePrefabAttachPoint": true
+            }
+          ],
+          "Scale": {}
+        }
+      ]
+    },
+    {
+      "States": [
+        {
+          "Name": "MazeSkill",
+          "NormalizedTime": 0.02,
+          "ExitInTransition": true
+        }
+      ],
+      "OnEnter": [
+        {
+          "$type": "RPG.GameCore.SetAttachmentScale",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AttachPoints": [
+            {
+              "Name": "Weapon",
+              "TriggerEffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_PlayerBoy_20/Eff_Avatar_PlayerBoy_20_MazeSkill_WeaponStart.prefab"
+            }
+          ]
+        }
+      ],
+      "OnExit": [
+        {
+          "$type": "RPG.GameCore.SetAttachmentScale",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AttachPoints": [
+            {
+              "Name": "Weapon",
+              "OverridePrefabAttachPoint": true,
+              "TriggerEffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_PlayerBoy_20/Eff_Avatar_PlayerBoy_20_Common_WeaponEnd.prefab"
+            }
+          ],
+          "Scale": {}
+        }
+      ]
+    },
+    {
+      "States": [
+        {
+          "Name": "Idle_Show_02",
+          "NormalizedTime": 0.03,
+          "ExitInTransition": true
+        }
+      ],
+      "OnEnter": [
+        {
+          "$type": "RPG.GameCore.CreatePhoneOnCharacter",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AttachPoint": "IdleShowPhoneRoot",
+          "RotationOffset": {
+            "X": -90,
+            "Y": 180,
+            "Z": 90
+          }
+        }
+      ],
+      "OnExit": [
+        {
+          "$type": "RPG.GameCore.CreatePhoneOnCharacter",
+          "IsDestroy": true,
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          }
+        }
+      ]
+    }
+  ]
+}

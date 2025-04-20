@@ -1,0 +1,1241 @@
+{
+  "AnimatorStateEvents": [
+    {
+      "AnimatorStateName": "Idle_Show_02",
+      "NormalizedTime": 0.093,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.TriggerEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_idleshow02_03.prefab"
+        }
+      ],
+      "AllowTriggeringOnTransitionOut": false
+    },
+    {
+      "AnimatorStateName": "Attack_1",
+      "NormalizedTime": 0.013,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.SetAttachmentScale",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AttachPoints": [
+            {
+              "Name": "Weapon",
+              "TriggerEffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_Common_WeaponStart.prefab"
+            }
+          ]
+        }
+      ],
+      "AllowTriggeringOnTransitionOut": false
+    },
+    {
+      "AnimatorStateName": "Attack_1",
+      "NormalizedTime": 0.272,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.SetAttachmentScale",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AttachPoints": [
+            {
+              "Name": "Weapon",
+              "TriggerEffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_Common_WeaponEnd.prefab"
+            }
+          ],
+          "Scale": {}
+        }
+      ],
+      "AllowTriggeringOnTransitionOut": false
+    },
+    {
+      "AnimatorStateName": "MazeSkill",
+      "NormalizedTime": 0.03,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.SetAttachmentScale",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AttachPoints": [
+            {
+              "Name": "Weapon",
+              "TriggerEffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_Common_WeaponStart.prefab"
+            }
+          ]
+        }
+      ],
+      "AllowTriggeringOnTransitionOut": false
+    },
+    {
+      "AnimatorStateName": "MazeSkill",
+      "NormalizedTime": 0.423,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.SetAttachmentScale",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AttachPoints": [
+            {
+              "Name": "Weapon",
+              "TriggerEffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_Common_WeaponEnd.prefab"
+            }
+          ],
+          "Scale": {}
+        }
+      ],
+      "AllowTriggeringOnTransitionOut": false
+    },
+    {
+      "AnimatorStateName": "RunBS_L",
+      "NormalizedTime": 0.5,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByTargetVisible",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetFetchSummonUnit",
+              "Summoner": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AdvLocalPlayer"
+              },
+              "SummonUnitID": 14071
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.TriggerEffect",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_MazeSkill01_Walk_02.prefab"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "AnimatorStateName": "RunBS_R",
+      "NormalizedTime": 0.5,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByTargetVisible",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetFetchSummonUnit",
+              "Summoner": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AdvLocalPlayer"
+              },
+              "SummonUnitID": 14071
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.TriggerEffect",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_MazeSkill01_Walk_02.prefab"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "AnimatorStateName": "Run",
+      "NormalizedTime": 0.46,
+      "CompareParam": {
+        "ParameterKey": "MotionGait",
+        "MinValue": -0.5,
+        "MaxValue": 1
+      },
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByTargetVisible",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetFetchSummonUnit",
+              "Summoner": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AdvLocalPlayer"
+              },
+              "SummonUnitID": 14071
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.TriggerEffect",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_MazeSkill01_Walk_02.prefab"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "AnimatorStateName": "Run",
+      "NormalizedTime": 0.46,
+      "CompareParam": {
+        "ParameterKey": "MotionGait",
+        "MinValue": -1,
+        "MaxValue": -0.5
+      },
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByTargetVisible",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetFetchSummonUnit",
+              "Summoner": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AdvLocalPlayer"
+              },
+              "SummonUnitID": 14071
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.TriggerEffect",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_MazeSkill01_Walk_02.prefab"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "AnimatorStateName": "Run",
+      "NormalizedTime": 0.96,
+      "CompareParam": {
+        "ParameterKey": "MotionGait",
+        "MinValue": -0.5,
+        "MaxValue": 1
+      },
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByTargetVisible",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetFetchSummonUnit",
+              "Summoner": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AdvLocalPlayer"
+              },
+              "SummonUnitID": 14071
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.TriggerEffect",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_MazeSkill01_Walk_02.prefab"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "AnimatorStateName": "Run",
+      "NormalizedTime": 0.96,
+      "CompareParam": {
+        "ParameterKey": "MotionGait",
+        "MinValue": -1,
+        "MaxValue": -0.5
+      },
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByTargetVisible",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetFetchSummonUnit",
+              "Summoner": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AdvLocalPlayer"
+              },
+              "SummonUnitID": 14071
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.TriggerEffect",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_MazeSkill01_Walk_02.prefab"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "AnimatorStateName": "Walk",
+      "NormalizedTime": 0.6,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByTargetVisible",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetFetchSummonUnit",
+              "Summoner": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AdvLocalPlayer"
+              },
+              "SummonUnitID": 14071
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.TriggerEffect",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_MazeSkill01_Walk_02.prefab"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "AnimatorStateName": "WalktoStop_R",
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByTargetVisible",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetFetchSummonUnit",
+              "Summoner": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AdvLocalPlayer"
+              },
+              "SummonUnitID": 14071
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.TriggerEffect",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_MazeSkill01_Walk_02.prefab"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "AnimatorStateName": "RunBS_L",
+      "NormalizedTime": 0.72,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByTargetVisible",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetFetchSummonUnit",
+              "Summoner": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AdvLocalPlayer"
+              },
+              "SummonUnitID": 14071
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.TriggerEffect",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_MazeSkill01_Walk_02.prefab"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "AnimatorStateName": "RunStop_L",
+      "NormalizedTime": 0.08,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByTargetVisible",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetFetchSummonUnit",
+              "Summoner": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AdvLocalPlayer"
+              },
+              "SummonUnitID": 14071
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.TriggerEffect",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_MazeSkill01_Walk_02.prefab"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "AnimatorStateName": "FastRun_TurnRight_L",
+      "NormalizedTime": 0.45,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByTargetVisible",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetFetchSummonUnit",
+              "Summoner": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AdvLocalPlayer"
+              },
+              "SummonUnitID": 14071
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.TriggerEffect",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_MazeSkill01_Walk_02.prefab"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "AnimatorStateName": "Run_TurnRight_R",
+      "NormalizedTime": 0.45,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByTargetVisible",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetFetchSummonUnit",
+              "Summoner": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AdvLocalPlayer"
+              },
+              "SummonUnitID": 14071
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.TriggerEffect",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_MazeSkill01_Walk_02.prefab"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "AnimatorStateName": "Run_TurnRight_L",
+      "NormalizedTime": 0.5,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByTargetVisible",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetFetchSummonUnit",
+              "Summoner": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AdvLocalPlayer"
+              },
+              "SummonUnitID": 14071
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.TriggerEffect",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_MazeSkill01_Walk_02.prefab"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "AnimatorStateName": "Run_TurnLeft_R",
+      "NormalizedTime": 0.75,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByTargetVisible",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetFetchSummonUnit",
+              "Summoner": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AdvLocalPlayer"
+              },
+              "SummonUnitID": 14071
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.TriggerEffect",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_MazeSkill01_Walk_02.prefab"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "AnimatorStateName": "Run_TurnLeft_L",
+      "NormalizedTime": 0.75,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByTargetVisible",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetFetchSummonUnit",
+              "Summoner": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AdvLocalPlayer"
+              },
+              "SummonUnitID": 14071
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.TriggerEffect",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_MazeSkill01_Walk_02.prefab"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "AnimatorStateName": "Walk",
+      "NormalizedTime": 0.1,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByTargetVisible",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetFetchSummonUnit",
+              "Summoner": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AdvLocalPlayer"
+              },
+              "SummonUnitID": 14071
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.TriggerEffect",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_MazeSkill01_Walk_02.prefab"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "AnimatorStateName": "WalktoStop_L",
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByTargetVisible",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetFetchSummonUnit",
+              "Summoner": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AdvLocalPlayer"
+              },
+              "SummonUnitID": 14071
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.TriggerEffect",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_MazeSkill01_Walk_02.prefab"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "AnimatorStateName": "RunBS_R",
+      "NormalizedTime": 0.72,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByTargetVisible",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetFetchSummonUnit",
+              "Summoner": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AdvLocalPlayer"
+              },
+              "SummonUnitID": 14071
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.TriggerEffect",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_MazeSkill01_Walk_02.prefab"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "AnimatorStateName": "RunStop_R",
+      "NormalizedTime": 0.08,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByTargetVisible",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetFetchSummonUnit",
+              "Summoner": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AdvLocalPlayer"
+              },
+              "SummonUnitID": 14071
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.TriggerEffect",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_MazeSkill01_Walk_02.prefab"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "AnimatorStateName": "FastRun_TurnRight_L",
+      "NormalizedTime": 0.85,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByTargetVisible",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetFetchSummonUnit",
+              "Summoner": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AdvLocalPlayer"
+              },
+              "SummonUnitID": 14071
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.TriggerEffect",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_MazeSkill01_Walk_02.prefab"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "AnimatorStateName": "Run_TurnRight_R",
+      "NormalizedTime": 0.75,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByTargetVisible",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetFetchSummonUnit",
+              "Summoner": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AdvLocalPlayer"
+              },
+              "SummonUnitID": 14071
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.TriggerEffect",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_MazeSkill01_Walk_02.prefab"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "AnimatorStateName": "Run_TurnRight_L",
+      "NormalizedTime": 0.75,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByTargetVisible",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetFetchSummonUnit",
+              "Summoner": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AdvLocalPlayer"
+              },
+              "SummonUnitID": 14071
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.TriggerEffect",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_MazeSkill01_Walk_02.prefab"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "AnimatorStateName": "Run_TurnLeft_R",
+      "NormalizedTime": 0.45,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByTargetVisible",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetFetchSummonUnit",
+              "Summoner": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AdvLocalPlayer"
+              },
+              "SummonUnitID": 14071
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.TriggerEffect",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_MazeSkill01_Walk_02.prefab"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "AnimatorStateName": "Run_TurnLeft_L",
+      "NormalizedTime": 0.5,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByTargetVisible",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetFetchSummonUnit",
+              "Summoner": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AdvLocalPlayer"
+              },
+              "SummonUnitID": 14071
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.TriggerEffect",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_MazeSkill01_Walk_02.prefab"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "AnimatorStateGroupEvents": [
+    {
+      "States": [
+        {
+          "Name": "Idle_Show_01"
+        },
+        {
+          "Name": "Idle_Show_02"
+        }
+      ],
+      "OnEnter": [
+        {
+          "$type": "RPG.GameCore.EnableEmotion",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          }
+        }
+      ],
+      "OnExit": [
+        {
+          "$type": "RPG.GameCore.EnableEmotion",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "Enable": true
+        }
+      ]
+    },
+    {
+      "States": [
+        {
+          "Name": "StandBy"
+        }
+      ],
+      "OnEnter": [
+        {
+          "$type": "RPG.GameCore.SetAttachmentScale",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AttachPoints": [
+            {
+              "Name": "Weapon"
+            }
+          ],
+          "Scale": {}
+        }
+      ],
+      "OnExit": []
+    },
+    {
+      "States": [
+        {
+          "Name": "Walk",
+          "NormalizedTime": 0.82
+        },
+        {
+          "Name": "WalktoStop_R"
+        },
+        {
+          "Name": "Run",
+          "NormalizedTime": 0.62,
+          "ReEnterOnStateLoop": true
+        },
+        {
+          "Name": "RunBS_L",
+          "NormalizedTime": 0.72
+        },
+        {
+          "Name": "RunStop_L",
+          "NormalizedTime": 0.25
+        },
+        {
+          "Name": "FastRun_TurnRight_L",
+          "NormalizedTime": 0.45
+        },
+        {
+          "Name": "Run_TurnRight_R",
+          "NormalizedTime": 0.45
+        },
+        {
+          "Name": "Run_TurnRight_L",
+          "NormalizedTime": 0.5
+        },
+        {
+          "Name": "Run_TurnLeft_R",
+          "NormalizedTime": 0.75
+        },
+        {
+          "Name": "Run_TurnLeft_L",
+          "NormalizedTime": 0.75
+        }
+      ],
+      "OnEnter": [],
+      "OnExit": []
+    },
+    {
+      "States": [
+        {
+          "Name": "Walk",
+          "NormalizedTime": 0.32
+        },
+        {
+          "Name": "WalktoStop_L"
+        },
+        {
+          "Name": "Run",
+          "NormalizedTime": 0.12,
+          "ReEnterOnStateLoop": true
+        },
+        {
+          "Name": "RunBS_R",
+          "NormalizedTime": 0.72
+        },
+        {
+          "Name": "RunStop_R",
+          "NormalizedTime": 0.25
+        },
+        {
+          "Name": "FastRun_TurnRight_L",
+          "NormalizedTime": 0.85
+        },
+        {
+          "Name": "Run_TurnRight_R",
+          "NormalizedTime": 0.75
+        },
+        {
+          "Name": "Run_TurnRight_L",
+          "NormalizedTime": 0.75
+        },
+        {
+          "Name": "Run_TurnLeft_R",
+          "NormalizedTime": 0.45
+        },
+        {
+          "Name": "Run_TurnLeft_L",
+          "NormalizedTime": 0.5
+        }
+      ],
+      "OnEnter": [],
+      "OnExit": []
+    },
+    {
+      "States": [
+        {
+          "Name": "Attack_1",
+          "NormalizedTime": 0.013,
+          "EnterInTransition": false,
+          "ExitInTransition": true
+        }
+      ],
+      "OnEnter": [
+        {
+          "$type": "RPG.GameCore.SetAttachmentScale",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AttachPoints": [
+            {
+              "Name": "Weapon",
+              "TriggerEffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_Common_WeaponStart.prefab"
+            }
+          ]
+        }
+      ],
+      "OnExit": [
+        {
+          "$type": "RPG.GameCore.SetAttachmentScale",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AttachPoints": [
+            {
+              "Name": "Weapon",
+              "TriggerEffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_Common_WeaponEnd.prefab"
+            }
+          ],
+          "Scale": {}
+        }
+      ]
+    },
+    {
+      "States": [
+        {
+          "Name": "MazeSkill",
+          "NormalizedTime": 0.03,
+          "EnterInTransition": false,
+          "ExitInTransition": true
+        }
+      ],
+      "OnEnter": [
+        {
+          "$type": "RPG.GameCore.SetAttachmentScale",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AttachPoints": [
+            {
+              "Name": "Weapon",
+              "TriggerEffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_Common_WeaponStart.prefab"
+            }
+          ]
+        }
+      ],
+      "OnExit": [
+        {
+          "$type": "RPG.GameCore.SetAttachmentScale",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AttachPoints": [
+            {
+              "Name": "Weapon",
+              "TriggerEffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_Common_WeaponEnd.prefab"
+            }
+          ],
+          "Scale": {}
+        },
+        {
+          "$type": "RPG.GameCore.RemoveEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_MazeSkill01_Weapon.prefab",
+          "IsNeedFadeOut": false
+        }
+      ]
+    },
+    {
+      "States": [
+        {
+          "Name": "Idle_Show_01",
+          "ExitInTransition": true
+        }
+      ],
+      "OnEnter": [
+        {
+          "$type": "RPG.GameCore.RemoveEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_idleshow01_1.prefab",
+          "IsNeedFadeOut": false
+        },
+        {
+          "$type": "RPG.GameCore.RemoveEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_idleshow01_2.prefab",
+          "IsNeedFadeOut": false
+        },
+        {
+          "$type": "RPG.GameCore.TriggerEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_idleshow01_1.prefab"
+        },
+        {
+          "$type": "RPG.GameCore.TriggerEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_idleshow01_2.prefab"
+        }
+      ],
+      "OnExit": [
+        {
+          "$type": "RPG.GameCore.RemoveEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_idleshow01_1.prefab"
+        },
+        {
+          "$type": "RPG.GameCore.RemoveEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_idleshow01_2.prefab"
+        }
+      ]
+    },
+    {
+      "States": [
+        {
+          "Name": "Idle_Show_02",
+          "ExitInTransition": true
+        }
+      ],
+      "OnEnter": [
+        {
+          "$type": "RPG.GameCore.RemoveEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_idleshow02_1.prefab",
+          "IsNeedFadeOut": false
+        },
+        {
+          "$type": "RPG.GameCore.RemoveEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_idleshow02_03.prefab",
+          "IsNeedFadeOut": false
+        },
+        {
+          "$type": "RPG.GameCore.RemoveEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_idleshow02_Flower.prefab",
+          "IsNeedFadeOut": false
+        },
+        {
+          "$type": "RPG.GameCore.TriggerEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_idleshow02_1.prefab"
+        }
+      ],
+      "OnExit": []
+    },
+    {
+      "States": [
+        {
+          "Name": "Idle_Show_02",
+          "NormalizedTime": 0.054,
+          "ExitInTransition": true
+        }
+      ],
+      "OnEnter": [
+        {
+          "$type": "RPG.GameCore.TriggerEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_idleshow02_Flower.prefab"
+        }
+      ],
+      "OnExit": []
+    },
+    {
+      "States": [
+        {
+          "Name": "Idle_Show_02",
+          "ExitNormalizedTime": 0.862,
+          "ExitInTransition": true,
+          "ResetOnSameStateEnter": true
+        }
+      ],
+      "OnEnter": [],
+      "OnExit": [
+        {
+          "$type": "RPG.GameCore.RemoveEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_idleshow02_1.prefab"
+        },
+        {
+          "$type": "RPG.GameCore.RemoveEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_idleshow02_03.prefab"
+        },
+        {
+          "$type": "RPG.GameCore.RemoveEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_idleshow02_Flower.prefab"
+        }
+      ]
+    }
+  ]
+}

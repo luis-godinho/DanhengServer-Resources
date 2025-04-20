@@ -1,0 +1,155 @@
+{
+  "OnInitSequece": [
+    {
+      "TaskList": []
+    }
+  ],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByCompareGraphDynamicFloat",
+            "Name": "T01",
+            "Value": {
+              "FixedValue": {
+                "Value": 20
+              }
+            },
+            "CompareType": "Equal"
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.DebugLog",
+              "Message": "MtoMInitChange_Error"
+            }
+          ],
+          "FailedTaskList": [
+            {
+              "$type": "RPG.GameCore.DebugLog",
+              "Message": "MtoMInitNoChange"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByCompareGraphDynamicFloat",
+            "Name": "T02",
+            "Value": {
+              "FixedValue": {
+                "Value": 15
+              }
+            },
+            "CompareType": "Equal"
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.DebugLog",
+              "Message": "GToMInitChange"
+            }
+          ],
+          "FailedTaskList": [
+            {
+              "$type": "RPG.GameCore.DebugLog",
+              "Message": "GToMInitNoChange"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGraphDynamicValueChange",
+          "Name": "T01",
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareGraphDynamicFloat",
+                "Name": "T01",
+                "Value": {
+                  "FixedValue": {
+                    "Value": 20
+                  }
+                },
+                "CompareType": "Equal"
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.DebugLog",
+                  "Message": "MToM_Succ"
+                }
+              ],
+              "FailedTaskList": [
+                {
+                  "$type": "RPG.GameCore.DebugLog",
+                  "Message": "MToM_Fail"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGraphDynamicValueChange",
+          "Name": "T02",
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareGraphDynamicFloat",
+                "Name": "T02",
+                "Value": {
+                  "FixedValue": {
+                    "Value": 15
+                  }
+                },
+                "CompareType": "Equal"
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.DebugLog",
+                  "Message": "GToM_Succ"
+                }
+              ],
+              "FailedTaskList": [
+                {
+                  "$type": "RPG.GameCore.DebugLog",
+                  "Message": "GToM_Fail"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "ValueSource": {
+    "Values": [
+      {
+        "$type": "RPG.GameCore.SharedFloat",
+        "Key": "T01"
+      },
+      {
+        "$type": "RPG.GameCore.SharedFloat",
+        "Key": "T02"
+      },
+      {
+        "$type": "RPG.GameCore.SharedFloat",
+        "Key": "T03"
+      }
+    ]
+  },
+  "Type": "EntityInstance",
+  "EntityEventList": []
+}

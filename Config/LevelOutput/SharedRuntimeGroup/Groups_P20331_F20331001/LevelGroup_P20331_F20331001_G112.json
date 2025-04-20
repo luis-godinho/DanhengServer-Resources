@@ -1,13 +1,12 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "Elevator",
   "LevelGraph": "Config/Level/GroupGraph/F20331001/Group_F20331001_G112.json",
   "AreaAnchorName": "LevelArea_P20331_F20331001_G112",
-  "SaveType": "Permanent",
   "SavedValueCondition": {
     "Conditions": [
       {
         "SavedValueName": "B1MonsterWave",
-        "Operation": "Equal",
         "Value": 4
       }
     ],
@@ -17,94 +16,94 @@
   "LoadOnInitial": true,
   "GroupStateList": [
     {
-      "Comment": "1\u5c42\u52302\u5c42",
+      "Comment": "1层到2层",
       "DstState": 1
     },
     {
-      "Comment": "1\u5c42\u52303\u5c42",
+      "Comment": "1层到3层",
       "DstState": 2
     },
     {
-      "Comment": "1\u5c42\u52304\u5c42",
+      "Comment": "1层到4层",
       "DstState": 3
     },
     {
-      "Comment": "\u9501\u57281\u5c42",
+      "Comment": "锁在1层",
       "DstState": 4
     },
     {
-      "Comment": "2\u5c42\u52301\u5c42",
+      "Comment": "2层到1层",
       "SrcState": 1
     },
     {
-      "Comment": "2\u5c42\u52303\u5c42",
+      "Comment": "2层到3层",
       "SrcState": 1,
       "DstState": 2
     },
     {
-      "Comment": "2\u5c42\u52304\u5c42",
+      "Comment": "2层到4层",
       "SrcState": 1,
       "DstState": 3
     },
     {
-      "Comment": "\u9501\u57282\u5c42",
+      "Comment": "锁在2层",
       "SrcState": 1,
       "DstState": 5
     },
     {
-      "Comment": "3\u5c42\u52301\u5c42",
+      "Comment": "3层到1层",
       "SrcState": 2
     },
     {
-      "Comment": "3\u5c42\u52302\u5c42",
+      "Comment": "3层到2层",
       "SrcState": 2,
       "DstState": 1
     },
     {
-      "Comment": "3\u5c42\u52304\u5c42",
+      "Comment": "3层到4层",
       "SrcState": 2,
       "DstState": 3
     },
     {
-      "Comment": "\u9501\u57283\u5c42",
+      "Comment": "锁在3层",
       "SrcState": 2,
       "DstState": 6
     },
     {
-      "Comment": "4\u5c42\u52301\u5c42",
+      "Comment": "4层到1层",
       "SrcState": 3
     },
     {
-      "Comment": "4\u5c42\u52302\u5c42",
+      "Comment": "4层到2层",
       "SrcState": 3,
       "DstState": 1
     },
     {
-      "Comment": "4\u5c42\u52303\u5c42",
+      "Comment": "4层到3层",
       "SrcState": 3,
       "DstState": 2
     },
     {
-      "Comment": "\u9501\u57284\u5c42",
+      "Comment": "锁在4层",
       "SrcState": 3,
       "DstState": 7
     },
     {
-      "Comment": "\u89e3\u9501\u57281\u5c42",
+      "Comment": "解锁在1层",
       "SrcState": 4
     },
     {
-      "Comment": "\u89e3\u9501\u57282\u5c42",
+      "Comment": "解锁在2层",
       "SrcState": 5,
       "DstState": 1
     },
     {
-      "Comment": "\u89e3\u9501\u57283\u5c42",
+      "Comment": "解锁在3层",
       "SrcState": 6,
       "DstState": 2
     },
     {
-      "Comment": "\u89e3\u9501\u57284\u5c42",
+      "Comment": "解锁在4层",
       "SrcState": 7,
       "DstState": 3
     }
@@ -131,41 +130,20 @@
         "Value": "LevelArea_P20331_F20331001_G112,1stFloorAnchor",
         "Key": "4thFloorAnchor"
       }
-    ],
-    "SharedValues": [
-      {
-        "$type": "RPG.GameCore.SharedString",
-        "Value": "LevelArea_P20331_F20331001_G112,4thFloorAnchor",
-        "Key": "1stFloorAnchor"
-      },
-      {
-        "$type": "RPG.GameCore.SharedString",
-        "Value": "LevelArea_P20331_F20331001_G112,3rdFloorAnchor",
-        "Key": "2ndFloorAnchor"
-      },
-      {
-        "$type": "RPG.GameCore.SharedString",
-        "Value": "LevelArea_P20331_F20331001_G112,2ndFloorAnchor",
-        "Key": "3rdFloorAnchor"
-      },
-      {
-        "$type": "RPG.GameCore.SharedString",
-        "Value": "LevelArea_P20331_F20331001_G112,1stFloorAnchor",
-        "Key": "4thFloorAnchor"
-      }
     ]
   },
   "ConflictIDList": [],
   "IsHoyoGroup": true,
   "StreamingTemplateType": "Far",
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
   "ConflictWhiteList": [],
-  "TagContainer": [
-    {
-      "Tag": "Group.Level.Connection",
-      "TagHash": -295833477
-    }
-  ],
+  "TagContainer": {
+    "List": [
+      {
+        "Tag": "Group.Level.Connection",
+        "TagHash": -295833477
+      }
+    ]
+  },
   "AnchorList": [
     {
       "Name": "1stFloorAnchor",
@@ -199,57 +177,22 @@
   "MonsterList": [],
   "PropList": [
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 103135,
-      "LoadOnInitial": true,
       "ValueSource": {
-        "Values": [],
-        "SharedValues": []
+        "Values": []
       },
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "IsClientOnly": true,
       "CameraCenterEntityList": [],
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Elevator",
       "ID": 300001,
@@ -258,87 +201,9 @@
       "PosZ": 403.568
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 103202,
-      "LoadOnInitial": true,
       "ValueSource": {
         "Values": [
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "SpriteOutput/TalkIcon/TriggerProp.png",
-            "Key": "1stFloorButtonIcon"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "MazeText_Maze_GamePlay_Resha_Station_Area03_1F",
-            "Key": "1stFloorButtonText"
-          },
-          {
-            "$type": "RPG.GameCore.SharedInt",
-            "Key": "Value1stFloor"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "SpriteOutput/TalkIcon/TriggerProp.png",
-            "Key": "2ndFloorButtonIcon"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "MazeText_Maze_GamePlay_Resha_Station_Area03_0F",
-            "Key": "2ndFloorButtonText"
-          },
-          {
-            "$type": "RPG.GameCore.SharedInt",
-            "Value": 1,
-            "Key": "Value2ndFloor"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "SpriteOutput/TalkIcon/TriggerProp.png",
-            "Key": "3rdFloorButtonIcon"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "MazeText_Maze_GamePlay_Resha_Station_Area03_-1F",
-            "Key": "3rdFloorButtonText"
-          },
-          {
-            "$type": "RPG.GameCore.SharedInt",
-            "Value": 2,
-            "Key": "Value3rdFloor"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "SpriteOutput/TalkIcon/TriggerProp.png",
-            "Key": "SecretFloorButtonIcon"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "MazeText_Maze_GamePlay_Resha_Station_Area03_2F",
-            "Key": "SecretFloorButtonText"
-          }
-        ],
-        "SharedValues": [
           {
             "$type": "RPG.GameCore.SharedString",
             "Value": "SpriteOutput/TalkIcon/TriggerProp.png",
@@ -396,29 +261,17 @@
         ]
       },
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "IsClientOnly": true,
       "CameraCenterEntityList": [],
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "ElvConsole01",
       "ID": 300002,
@@ -427,87 +280,9 @@
       "PosZ": 407.284
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 103202,
-      "LoadOnInitial": true,
       "ValueSource": {
         "Values": [
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "SpriteOutput/TalkIcon/TriggerProp.png",
-            "Key": "1stFloorButtonIcon"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "MazeText_Maze_GamePlay_Resha_Station_Area03_1F",
-            "Key": "1stFloorButtonText"
-          },
-          {
-            "$type": "RPG.GameCore.SharedInt",
-            "Key": "Value1stFloor"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "SpriteOutput/TalkIcon/TriggerProp.png",
-            "Key": "2ndFloorButtonIcon"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "MazeText_Maze_GamePlay_Resha_Station_Area03_0F",
-            "Key": "2ndFloorButtonText"
-          },
-          {
-            "$type": "RPG.GameCore.SharedInt",
-            "Value": 1,
-            "Key": "Value2ndFloor"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "SpriteOutput/TalkIcon/WolfBroIcon.png",
-            "Key": "3rdFloorButtonIcon"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "MazeText_Maze_GamePlay_Resha_Station_Area03_2F",
-            "Key": "3rdFloorButtonText"
-          },
-          {
-            "$type": "RPG.GameCore.SharedInt",
-            "Value": 3,
-            "Key": "Value3rdFloor"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "SpriteOutput/TalkIcon/WolfBroIcon.png",
-            "Key": "SecretFloorButtonIcon"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "MazeText_Maze_GamePlay_Resha_Station_Area03_2F",
-            "Key": "SecretFloorButtonText"
-          }
-        ],
-        "SharedValues": [
           {
             "$type": "RPG.GameCore.SharedString",
             "Value": "SpriteOutput/TalkIcon/TriggerProp.png",
@@ -565,29 +340,17 @@
         ]
       },
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "IsClientOnly": true,
       "CameraCenterEntityList": [],
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "ElvConsole02",
       "ID": 300003,
@@ -596,87 +359,9 @@
       "PosZ": 407.284
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 103202,
-      "LoadOnInitial": true,
       "ValueSource": {
         "Values": [
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "SpriteOutput/TalkIcon/TriggerProp.png",
-            "Key": "1stFloorButtonIcon"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "MazeText_Maze_GamePlay_Resha_Station_Area03_1F",
-            "Key": "1stFloorButtonText"
-          },
-          {
-            "$type": "RPG.GameCore.SharedInt",
-            "Key": "Value1stFloor"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "SpriteOutput/TalkIcon/TriggerProp.png",
-            "Key": "2ndFloorButtonIcon"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "MazeText_Maze_GamePlay_Resha_Station_Area03_-1F ",
-            "Key": "2ndFloorButtonText"
-          },
-          {
-            "$type": "RPG.GameCore.SharedInt",
-            "Value": 2,
-            "Key": "Value2ndFloor"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "SpriteOutput/TalkIcon/WolfBroIcon.png",
-            "Key": "3rdFloorButtonIcon"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "MazeText_Maze_GamePlay_Resha_Station_Area03_2F",
-            "Key": "3rdFloorButtonText"
-          },
-          {
-            "$type": "RPG.GameCore.SharedInt",
-            "Value": 3,
-            "Key": "Value3rdFloor"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "SpriteOutput/TalkIcon/WolfBroIcon.png",
-            "Key": "SecretFloorButtonIcon"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "MazeText_Maze_GamePlay_Resha_Station_Area03_2F",
-            "Key": "SecretFloorButtonText"
-          }
-        ],
-        "SharedValues": [
           {
             "$type": "RPG.GameCore.SharedString",
             "Value": "SpriteOutput/TalkIcon/TriggerProp.png",
@@ -734,29 +419,17 @@
         ]
       },
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "IsClientOnly": true,
       "CameraCenterEntityList": [],
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "ElvConsole03",
       "ID": 300004,
@@ -765,88 +438,9 @@
       "PosZ": 407.284
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 103202,
-      "LoadOnInitial": true,
       "ValueSource": {
         "Values": [
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "SpriteOutput/TalkIcon/TriggerProp.png",
-            "Key": "1stFloorButtonIcon"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "MazeText_Maze_GamePlay_Resha_Station_Area03_0F",
-            "Key": "1stFloorButtonText"
-          },
-          {
-            "$type": "RPG.GameCore.SharedInt",
-            "Value": 1,
-            "Key": "Value1stFloor"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "SpriteOutput/TalkIcon/TriggerProp.png",
-            "Key": "2ndFloorButtonIcon"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "MazeText_Maze_GamePlay_Resha_Station_Area03_-1F ",
-            "Key": "2ndFloorButtonText"
-          },
-          {
-            "$type": "RPG.GameCore.SharedInt",
-            "Value": 2,
-            "Key": "Value2ndFloor"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "SpriteOutput/TalkIcon/WolfBroIcon.png",
-            "Key": "3rdFloorButtonIcon"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "MazeText_Maze_GamePlay_Resha_Station_Area03_2F",
-            "Key": "3rdFloorButtonText"
-          },
-          {
-            "$type": "RPG.GameCore.SharedInt",
-            "Value": 3,
-            "Key": "Value3rdFloor"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "SpriteOutput/TalkIcon/WolfBroIcon.png",
-            "Key": "SecretFloorButtonIcon"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "MazeText_Maze_GamePlay_Resha_Station_Area03_2F",
-            "Key": "SecretFloorButtonText"
-          }
-        ],
-        "SharedValues": [
           {
             "$type": "RPG.GameCore.SharedString",
             "Value": "SpriteOutput/TalkIcon/TriggerProp.png",
@@ -905,29 +499,17 @@
         ]
       },
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "IsClientOnly": true,
       "CameraCenterEntityList": [],
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "ElvConsole04",
       "ID": 300005,
@@ -937,46 +519,24 @@
     },
     {
       "Scale": {
-        "x": 1.5,
-        "y": 1.5,
-        "z": 0.5,
-        "normalized": {
-          "x": 0.6882472,
-          "y": 0.6882472,
-          "z": 0.22941573,
-          "magnitude": 1.0,
-          "sqrMagnitude": 1.0
-        },
-        "magnitude": 2.17944956,
-        "sqrMagnitude": 4.75
+        "X": 1.5,
+        "Y": 1.5,
+        "Z": 0.5
       },
       "PropID": 102,
-      "LoadOnInitial": true,
       "ValueSource": {},
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "IsClientOnly": true,
       "CameraCenterEntityList": [],
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Airwall01",
       "ID": 300006,
@@ -986,46 +546,24 @@
     },
     {
       "Scale": {
-        "x": 1.5,
-        "y": 1.5,
-        "z": 0.5,
-        "normalized": {
-          "x": 0.6882472,
-          "y": 0.6882472,
-          "z": 0.22941573,
-          "magnitude": 1.0,
-          "sqrMagnitude": 1.0
-        },
-        "magnitude": 2.17944956,
-        "sqrMagnitude": 4.75
+        "X": 1.5,
+        "Y": 1.5,
+        "Z": 0.5
       },
       "PropID": 102,
-      "LoadOnInitial": true,
       "ValueSource": {},
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "IsClientOnly": true,
       "CameraCenterEntityList": [],
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Airwall02",
       "ID": 300007,
@@ -1035,46 +573,24 @@
     },
     {
       "Scale": {
-        "x": 1.5,
-        "y": 1.5,
-        "z": 0.5,
-        "normalized": {
-          "x": 0.6882472,
-          "y": 0.6882472,
-          "z": 0.22941573,
-          "magnitude": 1.0,
-          "sqrMagnitude": 1.0
-        },
-        "magnitude": 2.17944956,
-        "sqrMagnitude": 4.75
+        "X": 1.5,
+        "Y": 1.5,
+        "Z": 0.5
       },
       "PropID": 102,
-      "LoadOnInitial": true,
       "ValueSource": {},
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "IsClientOnly": true,
       "CameraCenterEntityList": [],
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Airwall03",
       "ID": 300008,
@@ -1084,46 +600,24 @@
     },
     {
       "Scale": {
-        "x": 1.5,
-        "y": 1.5,
-        "z": 0.5,
-        "normalized": {
-          "x": 0.6882472,
-          "y": 0.6882472,
-          "z": 0.22941573,
-          "magnitude": 1.0,
-          "sqrMagnitude": 1.0
-        },
-        "magnitude": 2.17944956,
-        "sqrMagnitude": 4.75
+        "X": 1.5,
+        "Y": 1.5,
+        "Z": 0.5
       },
       "PropID": 102,
-      "LoadOnInitial": true,
       "ValueSource": {},
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "IsClientOnly": true,
       "CameraCenterEntityList": [],
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Airwall04",
       "ID": 300009,
@@ -1133,46 +627,24 @@
     },
     {
       "Scale": {
-        "x": 1.5,
-        "y": 1.5,
-        "z": 0.5,
-        "normalized": {
-          "x": 0.6882472,
-          "y": 0.6882472,
-          "z": 0.22941573,
-          "magnitude": 1.0,
-          "sqrMagnitude": 1.0
-        },
-        "magnitude": 2.17944956,
-        "sqrMagnitude": 4.75
+        "X": 1.5,
+        "Y": 1.5,
+        "Z": 0.5
       },
       "PropID": 102,
-      "LoadOnInitial": true,
       "ValueSource": {},
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "IsClientOnly": true,
       "CameraCenterEntityList": [],
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Airwall05",
       "ID": 300010,

@@ -8,82 +8,49 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Talk_800320906"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.CreateLevelAreas",
           "AssetPath": {
             "Value": "Level/Common_Adventure/Alley_TopView.prefab"
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
           "$type": "RPG.GameCore.TriggerSound",
           "SoundName": {
             "Value": "Ev_sfx_ui_menu_activity_alley_transportPage_fadeIn_long"
           },
-          "EmitterType": "DefaultEmitter",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "EmitterType": "DefaultEmitter"
         },
         {
           "$type": "RPG.GameCore.BlockInputController",
           "Enable": true,
-          "ActionNameList": [],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "ActionNameList": []
         },
         {
           "$type": "RPG.GameCore.RadialBlurEffect",
-          "TargetType": {
-            "$type": "RPG.GameCore.TargetAlias",
-            "Alias": "None"
-          },
-          "Active": true,
-          "Duration": -1.0,
-          "BlurX": 0.5,
-          "BlurY": 0.5,
-          "BlurRadius": 0.5,
-          "Iteration": 6,
-          "BlurStart": 0.25,
-          "BlurFeather": 0.1,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "BlurStart": 0.25
         },
         {
           "$type": "RPG.GameCore.SpeedLineEffect",
-          "TargetType": {
-            "$type": "RPG.GameCore.TargetAlias",
-            "Alias": "None"
-          },
-          "Active": true,
           "Speed": 0.8,
-          "WhitePercent": 0.5,
           "Divide": 0.6,
           "Start": 0.4,
-          "End": 1.0,
           "Brightness": 0.2,
           "Density": 0.4,
-          "PosX": 0.5,
-          "PosY": 0.5,
-          "SpeedlineSeedPath": "Effects/Eff_Texture/Special/Noise/Eff_Noise_35.tga",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "SpeedlineSeedPath": "Effects/Eff_Texture/Special/Noise/Eff_Noise_35.tga"
         },
         {
           "$type": "RPG.GameCore.TriggerCustomString",
           "CustomString": {
             "Value": "Alley_ShowShopUI"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.ActiveVirtualCamera",
           "AreaName": "Alley_TopView",
           "AnchorName": "TopCam",
-          "IsActive": true,
           "FollowTargetUniqueName": "LocalPlayer",
           "FollowTargetAttachPoint": "CameraRoot",
           "LookAtTargetUniqueName": "LocalPlayer",
@@ -92,19 +59,11 @@
           "BlendConfig": {
             "ExportToJson": true,
             "BlendType": "EaseInOut",
-            "BlendTime": 2.0,
-            "FOVSmoothDampTime": -1.0,
-            "FrameBlendWeightStart": 1.0,
-            "FrameBlendDuration": 1.0
+            "BlendTime": 2
           },
-          "VCameraDitherMaxDistance": 1.0,
-          "CenterPosX": -1.0,
-          "CenterPosY": -1.0,
           "DynamicParams": {
             "OrbitalTransposerBias": true
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         }
       ]
     },
@@ -116,43 +75,22 @@
           "CustomString": {
             "Value": "Alley_ShowShopUI"
           },
-          "WaitOwnerOnly": true,
-          "TaskEnabled": true
+          "WaitOwnerOnly": true
         },
         {
           "$type": "RPG.GameCore.RadialBlurEffect",
-          "TargetType": {
-            "$type": "RPG.GameCore.TargetAlias",
-            "Alias": "None"
-          },
-          "Duration": -1.0,
-          "BlurX": 0.5,
-          "BlurY": 0.5,
-          "BlurRadius": 0.5,
-          "Iteration": 6,
-          "BlurStart": 0.25,
-          "BlurFeather": 0.1,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Active": false,
+          "BlurStart": 0.25
         },
         {
           "$type": "RPG.GameCore.SpeedLineEffect",
-          "TargetType": {
-            "$type": "RPG.GameCore.TargetAlias",
-            "Alias": "None"
-          },
+          "Active": false,
           "Speed": 0.8,
-          "WhitePercent": 0.5,
           "Divide": 0.6,
           "Start": 0.4,
-          "End": 1.0,
           "Brightness": 0.2,
           "Density": 0.4,
-          "PosX": 0.5,
-          "PosY": 0.5,
-          "SpeedlineSeedPath": "Effects/Eff_Texture/Special/Noise/Eff_Noise_35.tga",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "SpeedlineSeedPath": "Effects/Eff_Texture/Special/Noise/Eff_Noise_35.tga"
         }
       ]
     },
@@ -164,25 +102,19 @@
           "CustomString": {
             "Value": "Alley_ShowShopUI"
           },
-          "WaitOwnerOnly": true,
-          "TaskEnabled": true
+          "WaitOwnerOnly": true
         },
         {
           "$type": "RPG.GameCore.WaitSecond",
           "WaitTime": {
-            "fixedValue": {
-              "RawValue": 1116691498
+            "FixedValue": {
+              "Value": 0.26
             }
-          },
-          "MaxAdvencePerTick": -1.0,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
           "$type": "RPG.GameCore.ShowTransitionLoadingUI",
-          "Name": "Ui.Activity.ActivityAlley.Transport.AlleyTransportTransitionDialog",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Name": "Ui.Activity.ActivityAlley.Transport.AlleyTransportTransitionDialog"
         },
         {
           "$type": "RPG.GameCore.ShowUI",
@@ -193,45 +125,33 @@
           },
           "OnUIEnter": [
             {
-              "$type": "RPG.GameCore.ExitTransitionLoadingUI",
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "$type": "RPG.GameCore.ExitTransitionLoadingUI"
             },
             {
               "$type": "RPG.GameCore.BlockInputController",
-              "ActionNameList": [],
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "ActionNameList": []
             },
             {
               "$type": "RPG.GameCore.ActiveVirtualCamera",
               "AreaName": "Alley_TopView",
               "AnchorName": "TopCam",
+              "IsActive": false,
               "FollowTargetUniqueName": "LocalPlayer",
               "FollowTargetAttachPoint": "CameraRoot",
               "LookAtTargetUniqueName": "LocalPlayer",
               "LookAtTargetAttachPoint": "CameraRoot",
-              "VCameraDitherMaxDistance": 1.0,
-              "CenterPosX": -1.0,
-              "CenterPosY": -1.0,
               "DynamicParams": {
                 "OrbitalTransposerBias": true
-              },
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              }
             },
             {
               "$type": "RPG.GameCore.RemoveLevelAreas",
               "AreaName": {
                 "Value": "Alley_TopView"
-              },
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              }
             }
           ],
-          "OnUIExitImmediately": [],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "OnUIExitImmediately": []
         }
       ]
     }

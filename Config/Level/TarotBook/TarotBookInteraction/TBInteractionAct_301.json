@@ -1,0 +1,132 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.StartTarotBookTalk"
+        },
+        {
+          "$type": "RPG.GameCore.PlayTarotBookTalk",
+          "TalkInfoList": [
+            {
+              "TalkSentenceID": 401330101
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.PlayTarotBookOptionTalk",
+          "OptionList": [
+            {
+              "$type": "RPG.GameCore.OptionTalkInfo",
+              "TalkSentenceID": 401330102,
+              "TriggerCustomString": "opt11"
+            },
+            {
+              "$type": "RPG.GameCore.OptionTalkInfo",
+              "TalkSentenceID": 401330105,
+              "TriggerCustomString": "opt12"
+            },
+            {
+              "$type": "RPG.GameCore.OptionTalkInfo",
+              "TalkSentenceID": 401330107,
+              "TriggerCustomString": "opt13"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "opt11"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.PlayTarotBookTalk",
+          "TalkInfoList": [
+            {
+              "TalkSentenceID": 401330103
+            },
+            {
+              "TalkSentenceID": 401330104
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.TriggerCustomString",
+          "CustomString": {
+            "Value": "talk2"
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "opt12"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.PlayTarotBookTalk",
+          "TalkInfoList": [
+            {
+              "TalkSentenceID": 401330106
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.TriggerCustomString",
+          "CustomString": {
+            "Value": "talk2"
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "opt13"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.PlayTarotBookTalk",
+          "TalkInfoList": [
+            {
+              "TalkSentenceID": 401330108
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.TriggerCustomString",
+          "CustomString": {
+            "Value": "talk2"
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "talk2"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.FinishTarotBookTalk"
+        },
+        {
+          "$type": "RPG.GameCore.FinishLevelGraph"
+        }
+      ]
+    }
+  ],
+  "EntityEventList": []
+}

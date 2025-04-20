@@ -1,0 +1,120 @@
+{
+  "OnInitSequece": [
+    {
+      "TaskList": []
+    }
+  ],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropSetupTrigger",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          },
+          "TargetGroupID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "TargetID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "TargetTypes": [
+            "NPC"
+          ],
+          "DisableAfterTriggered": true,
+          "OnTriggerEnter": [
+            {
+              "$type": "RPG.GameCore.SetNpcStatus",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvNpcEx",
+                "FetchType": "SingleNpcByNpcID",
+                "SingleNpcID": {
+                  "GroupID": {
+                    "FixedValue": {
+                      "Value": 95
+                    }
+                  },
+                  "GroupNpcID": {
+                    "FixedValue": {
+                      "Value": 400001
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.PropEnableCollider",
+              "OPType": "TriggerOnly",
+              "Enabled": true,
+              "TriggerSelect": "PropInteractionTrigger",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.PlayMissionTalk",
+              "SimpleTalkList": [
+                {
+                  "TalkSentenceID": 407020115,
+                  "ProtectTime": 2
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropSetupUITrigger",
+          "DisableWhenTriggered": true,
+          "ButtonText": {
+            "Hash": 15884757849518020635
+          },
+          "ButtonCallback": [
+            {
+              "$type": "RPG.GameCore.SetNpcStatus",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvNpcEx",
+                "FetchType": "SingleNpcByNpcID",
+                "SingleNpcID": {
+                  "GroupID": {
+                    "FixedValue": {
+                      "Value": 95
+                    }
+                  },
+                  "GroupNpcID": {
+                    "FixedValue": {
+                      "Value": 400001
+                    }
+                  }
+                }
+              },
+              "Status": "FollowByPlayer"
+            },
+            {
+              "$type": "RPG.GameCore.AdvLogisticsRobotTriggerLoad"
+            }
+          ],
+          "OverrideTargetTypes": [],
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.PropEnableCollider",
+          "OPType": "TriggerOnly",
+          "TriggerSelect": "PropInteractionTrigger",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          }
+        }
+      ]
+    }
+  ]
+}

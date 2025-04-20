@@ -5,18 +5,12 @@
       "TaskList": [
         {
           "$type": "RPG.GameCore.PerformanceTransition",
-          "SwitchKeepTime": 0.5,
-          "SwitchOutTime": 0.5,
+          "SwitchInTime": 0,
           "CreateNpcList": [],
           "CaptureNpcList": [],
           "DestroyNpcList": [],
-          "DisactiveVCamOnGraphEnd": true,
           "ActiveVirtualCamera": {
-            "IsActive": true,
-            "VCameraDitherMaxDistance": 1.0,
-            "CenterPosX": -1.0,
-            "CenterPosY": -1.0,
-            "IsClientOnly": true
+            "TaskEnabled": false
           },
           "SwitchCharacterAnchor": {
             "IsLocalPlayer": true,
@@ -26,56 +20,37 @@
             },
             "AnchorName": {
               "Value": "Anchor2"
-            },
-            "ResetAnimation": true,
-            "ResetCamera": true,
-            "ClearSpecialVision": true,
-            "TaskEnabled": true,
-            "IsClientOnly": true
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+            }
+          }
         },
         {
           "$type": "RPG.GameCore.BlockInputController",
           "Enable": true,
-          "ActionNameList": [],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "ActionNameList": []
         },
         {
           "$type": "RPG.GameCore.PlayMissionTalk",
           "SimpleTalkList": [
             {
-              "TextSpeed": 20.0,
               "TalkSentenceID": 403012403,
-              "ProtectTime": 3.0
+              "ProtectTime": 3
             },
             {
-              "TextSpeed": 20.0,
               "TalkSentenceID": 403012404,
-              "ProtectTime": 3.0
+              "ProtectTime": 3
             }
-          ],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         },
         {
-          "$type": "RPG.GameCore.WaitMissionTalkFinish",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "$type": "RPG.GameCore.WaitMissionTalkFinish"
         },
         {
           "$type": "RPG.GameCore.BlockInputController",
-          "ActionNameList": [],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "ActionNameList": []
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_403000908",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_403000908"
         }
       ]
     }

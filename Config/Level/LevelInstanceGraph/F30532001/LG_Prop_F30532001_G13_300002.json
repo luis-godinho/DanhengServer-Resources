@@ -1,0 +1,255 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvSetupCustomTaskTrigger",
+          "TriggerName": "MissionTrigger",
+          "OnEnter": [
+            {
+              "$type": "RPG.GameCore.TriggerEntityEventV2",
+              "EventName": {
+                "Value": "InMazeSkillTrigger1"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByAnd",
+                "PredicateList": [
+                  {
+                    "$type": "RPG.GameCore.ByCompareFloorSavedValue",
+                    "DynamicName": {
+                      "Value": "MonsterKilled"
+                    },
+                    "CompareType": "Equal"
+                  },
+                  {
+                    "$type": "RPG.GameCore.ByIsContainAdventureModifier",
+                    "TargetType": {
+                      "$type": "RPG.GameCore.TargetFetchAdvLocalPlayer"
+                    },
+                    "ModifierName": "ADV_StageAbility_Maze_Castorice_Radius"
+                  }
+                ]
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.TriggerGroupEvent",
+                  "EventName": {
+                    "Value": "Phase1UseMazeSkill"
+                  }
+                }
+              ],
+              "FailedTaskList": [
+                {
+                  "$type": "RPG.GameCore.TriggerGroupEvent",
+                  "EventName": {
+                    "Value": "Phase2UseMazeSkill"
+                  }
+                }
+              ]
+            }
+          ],
+          "OnExit": [],
+          "DisableAfterTriggered": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "Phase1UseMazeSkill"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareFloorSavedValue",
+                "DynamicName": {
+                  "Value": "MonsterKilled"
+                },
+                "CompareType": "Equal"
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.ShowTutorialUI",
+                  "ForceShowDialog": true
+                },
+                {
+                  "$type": "RPG.GameCore.ShowGuideHintWithText",
+                  "TargetEvent": [
+                    {
+                      "$type": "RPG.GameCore.WaitForWithTaskList",
+                      "Predicate": {
+                        "$type": "RPG.GameCore.ByIsContainAdventureModifier",
+                        "TargetType": {
+                          "$type": "RPG.GameCore.TargetFetchAdvLocalPlayer"
+                        },
+                        "ModifierName": "ADV_StageAbility_Maze_Castorice_Radius",
+                        "Inverse": true
+                      },
+                      "TaskListClientOnly": [
+                        {
+                          "$type": "RPG.GameCore.TutorialLockControl",
+                          "Reset": true
+                        },
+                        {
+                          "$type": "RPG.GameCore.WaitTutorial",
+                          "Event": "UseMazeSkill",
+                          "Param": "1",
+                          "OnSuccessImmediate": []
+                        }
+                      ]
+                    }
+                  ],
+                  "NodeIDList": [
+                    "MazeMainPage.MazeSkill_1407"
+                  ],
+                  "GuideTextType": "InfoTip",
+                  "GuideText": "TutorialTextmap_Avatar_1407_Hint06",
+                  "GuideHintShowConfig": {},
+                  "GuideTextShowConfig": {},
+                  "GuideUIContextConfig": {
+                    "Type": "MainPage"
+                  },
+                  "EnableClickInHintArea": true,
+                  "EnableActionList": [
+                    "Menu_MazeSkill"
+                  ],
+                  "EnableBattleOperationList": []
+                },
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByAny",
+                    "PredicateList": [
+                      {
+                        "$type": "RPG.GameCore.ByIsContainAdventureModifier",
+                        "TargetType": {
+                          "$type": "RPG.GameCore.TargetFetchAdvLocalPlayer"
+                        },
+                        "ModifierName": "ADV_StageAbility_Maze_Castorice_Radius"
+                      },
+                      {
+                        "$type": "RPG.GameCore.ByIsContainAdventureModifier",
+                        "TargetType": {
+                          "$type": "RPG.GameCore.TargetFetchAdvLocalPlayer"
+                        },
+                        "ModifierName": "ADV_StageAbility_Maze_Castorice_Attack"
+                      }
+                    ]
+                  },
+                  "FailedTaskList": [
+                    {
+                      "$type": "RPG.GameCore.TriggerGroupEvent",
+                      "EventName": {
+                        "Value": "Phase2UseMazeSkill"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "Phase2UseMazeSkill"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByAnd",
+                "PredicateList": [
+                  {
+                    "$type": "RPG.GameCore.ByCompareFloorSavedValue",
+                    "DynamicName": {
+                      "Value": "MonsterKilled"
+                    },
+                    "CompareType": "Equal"
+                  },
+                  {
+                    "$type": "RPG.GameCore.AdventureByCompareMP",
+                    "CompareType": "Greater"
+                  }
+                ]
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.EnableNPCMonsterAI",
+                  "GroupMonsterIDs": [],
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchCurrentGroupNPCMonsters"
+                  },
+                  "UniqueNames": [],
+                  "ResetStateOnDisable": false
+                },
+                {
+                  "$type": "RPG.GameCore.ShowTutorialUI",
+                  "ForceShowDialog": true
+                },
+                {
+                  "$type": "RPG.GameCore.ShowGuideHintWithText",
+                  "Block": true,
+                  "TargetEvent": [
+                    {
+                      "$type": "RPG.GameCore.TutorialLockControl",
+                      "Reset": true
+                    },
+                    {
+                      "$type": "RPG.GameCore.WaitTutorial",
+                      "Event": "UseMazeSkill",
+                      "Param": "1"
+                    }
+                  ],
+                  "NodeIDList": [
+                    "MazeMainPage.MazeSkill"
+                  ],
+                  "GuideTextType": "InfoTip",
+                  "GuideText": "TutorialTextmap_Avatar_1407_Hint05",
+                  "GuideHintShowConfig": {},
+                  "GuideTextShowConfig": {},
+                  "GuideUIContextConfig": {
+                    "Type": "MainPage"
+                  },
+                  "EnableClickInHintArea": true,
+                  "EnableActionList": [
+                    "Menu_MazeSkill"
+                  ],
+                  "EnableBattleOperationList": []
+                },
+                {
+                  "$type": "RPG.GameCore.EnableNPCMonsterAI",
+                  "Enable": true,
+                  "GroupMonsterIDs": [],
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchCurrentGroupNPCMonsters"
+                  },
+                  "UniqueNames": []
+                },
+                {
+                  "$type": "RPG.GameCore.TriggerGroupEvent",
+                  "EventName": {
+                    "Value": "Phase1UseMazeSkill"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "Type": "EntityInstance",
+  "EntityEventList": []
+}

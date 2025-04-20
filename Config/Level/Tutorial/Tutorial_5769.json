@@ -1,0 +1,149 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.ShowGuideHintWithText",
+          "Block": true,
+          "TargetEvent": [
+            {
+              "$type": "RPG.GameCore.WaitPlayerAction",
+              "ActionType": "ClickBtn",
+              "Param": "PlanetFesMainPage.Gacha.01"
+            }
+          ],
+          "NodeIDList": [
+            "PlanetFesMainPage.Gacha.01"
+          ],
+          "GuideHintType": "ClickRect",
+          "GuideTextType": "Talk",
+          "GuideText": "TutorialTextmap_552101",
+          "GuideTalkID": 575058,
+          "GuideHintShowConfig": {},
+          "GuideTextShowConfig": {},
+          "GuideUIContextConfig": {},
+          "EnableActionList": [],
+          "EnableBattleOperationList": []
+        },
+        {
+          "$type": "RPG.GameCore.CheckUIMode",
+          "OnMobileOrPC": [
+            {
+              "$type": "RPG.GameCore.ShowGuideHintWithText",
+              "Block": true,
+              "TargetEvent": [
+                {
+                  "$type": "RPG.GameCore.WaitPlayerAction",
+                  "ActionType": "ClickBtn",
+                  "Param": "PlanetFesGachaAlbumTabItem.2"
+                }
+              ],
+              "NodeIDList": [
+                "PlanetFesGachaAlbumTabItem.2"
+              ],
+              "GuideHintType": "ClickRect",
+              "GuideTextType": "Talk",
+              "GuideText": "TutorialTextmap_552101",
+              "GuideTalkID": 575059,
+              "GuideHintShowConfig": {},
+              "GuideTextShowConfig": {},
+              "GuideUIContextConfig": {},
+              "EnableActionList": [],
+              "EnableBattleOperationList": []
+            },
+            {
+              "$type": "RPG.GameCore.ShowGuideHintWithText",
+              "Block": true,
+              "TargetEvent": [
+                {
+                  "$type": "RPG.GameCore.WaitPlayerAction",
+                  "ActionType": "AnyAction",
+                  "Param": "PlanetFesMainPage.GachaDraw.02",
+                  "ProtectTime": 0
+                }
+              ],
+              "NodeIDList": [
+                "PlanetFesMainPage.GachaDraw.02"
+              ],
+              "GuideHintType": "ClickRect",
+              "GuideTextType": "Talk",
+              "GuideText": "TutorialTextmap_552101",
+              "GuideTalkID": 575060,
+              "GuideHintShowConfig": {},
+              "GuideTextShowConfig": {},
+              "GuideUIContextConfig": {},
+              "EnableClickInHintArea": true,
+              "EnableActionList": [],
+              "EnableBattleOperationList": []
+            },
+            {
+              "$type": "RPG.GameCore.TutorialClose"
+            }
+          ],
+          "OnController": [
+            {
+              "$type": "RPG.GameCore.ShowGuideHintWithText",
+              "Block": true,
+              "TargetEvent": [
+                {
+                  "$type": "RPG.GameCore.WaitPlayerAction",
+                  "ActionType": "AnyAction",
+                  "Param": "PlanetFesGachaAlbumTabItem.2",
+                  "ProtectTime": 0.5
+                },
+                {
+                  "$type": "RPG.GameCore.TutorialClickBtn",
+                  "NodeID": "PlanetFesGachaAlbumTabItem.2"
+                }
+              ],
+              "NodeIDList": [
+                "PlanetFesGachaAlbumTabItem.2"
+              ],
+              "GuideHintType": "ClickRect",
+              "GuideTextType": "Talk",
+              "GuideText": "TutorialTextmap_552101",
+              "GuideTalkID": 575059,
+              "OverrideActionName": "Menu_UnchangeRightBumper",
+              "GuideHintShowConfig": {},
+              "GuideTextShowConfig": {},
+              "GuideUIContextConfig": {},
+              "EnableActionList": [],
+              "EnableBattleOperationList": []
+            },
+            {
+              "$type": "RPG.GameCore.ShowGuideHintWithText",
+              "Block": true,
+              "TargetEvent": [
+                {
+                  "$type": "RPG.GameCore.WaitPlayerAction",
+                  "ActionType": "AnyAction",
+                  "Param": "PlanetFesMainPage.GachaDraw.02",
+                  "ProtectTime": 0
+                }
+              ],
+              "NodeIDList": [
+                "PlanetFesMainPage.GachaDraw.02"
+              ],
+              "GuideHintType": "ClickRect",
+              "GuideTextType": "Talk",
+              "GuideText": "TutorialTextmap_552101",
+              "GuideTalkID": 575060,
+              "GuideHintShowConfig": {},
+              "GuideTextShowConfig": {},
+              "GuideUIContextConfig": {},
+              "EnableClickInHintArea": true,
+              "EnableActionList": [],
+              "EnableBattleOperationList": []
+            },
+            {
+              "$type": "RPG.GameCore.TutorialClose"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "ValueSource": {},
+  "EntityEventList": []
+}

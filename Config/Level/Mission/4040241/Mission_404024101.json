@@ -9,38 +9,31 @@
             404024102
           ],
           "MainMissionIDList": [],
-          "PerformanceIDList": [],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceIDList": []
         },
         {
           "$type": "RPG.GameCore.PredicateTaskList",
           "Predicate": {
             "$type": "RPG.GameCore.ByCompareSubMissionState",
             "SubMissionID": 404024102,
-            "SubMissionState": "Finish",
-            "TaskEnabled": true,
-            "IsClientOnly": true
+            "SubMissionState": "Finish"
           },
           "SuccessTaskList": [
             {
               "$type": "RPG.GameCore.CreateNPC",
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 760209211392
+                "FixedValue": {
+                  "Value": 177
                 }
               },
               "GroupNpcID": {
-                "fixedValue": {
-                  "RawValue": 1718012688203776
+                "FixedValue": {
+                  "Value": 400006
                 }
               },
-              "CreateList": [],
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "CreateList": []
             }
-          ],
-          "TaskEnabled": true
+          ]
         }
       ]
     },
@@ -49,34 +42,30 @@
         {
           "$type": "RPG.GameCore.CreateNPC",
           "GroupID": {
-            "fixedValue": {
-              "RawValue": 760209211392
+            "FixedValue": {
+              "Value": 177
             }
           },
           "GroupNpcID": {
-            "fixedValue": {
-              "RawValue": 1717991213367296
+            "FixedValue": {
+              "Value": 400001
             }
           },
-          "CreateList": [],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "CreateList": []
         },
         {
           "$type": "RPG.GameCore.CreateProp",
           "GroupID": {
-            "fixedValue": {
-              "RawValue": 760209211392
+            "FixedValue": {
+              "Value": 177
             }
           },
           "GroupPropID": {
-            "fixedValue": {
-              "RawValue": 1288494483767296
+            "FixedValue": {
+              "Value": 300001
             }
           },
-          "CreateList": [],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "CreateList": []
         }
       ]
     },
@@ -89,13 +78,13 @@
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 760209211392
+                "FixedValue": {
+                  "Value": 177
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288494483767296
+                "FixedValue": {
+                  "Value": 300001
                 }
               }
             }
@@ -106,23 +95,16 @@
               "$type": "RPG.GameCore.PlayNPCBubbleTalk",
               "BubbleTalkInfoList": [
                 {
-                  "AutoSkipTime": 5.0,
+                  "AutoSkipTime": 5,
                   "GroupID": 177,
                   "GroupNpcID": 400001,
                   "TalkSentenceID": 404033115
                 }
               ],
-              "BubbleTalkType": "Normal",
               "IsLoop": true,
-              "LoopInterval": 5.0,
-              "InstantFinish": true,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "LoopInterval": 5
             }
-          ],
-          "SkipFakeAvatar": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     },
@@ -132,14 +114,11 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Talk_404024101"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_404024101",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_404024101"
         }
       ]
     }

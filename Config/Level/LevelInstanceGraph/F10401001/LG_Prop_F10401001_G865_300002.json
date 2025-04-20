@@ -1,0 +1,48 @@
+{
+  "OnInitSequece": [
+    {
+      "TaskList": []
+    }
+  ],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PlayCollectionMorse",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          },
+          "StartEvent": {
+            "Value": "Clt_A203Bubble"
+          },
+          "StopEvent": {
+            "Value": "Clt_A203BubbleStop"
+          },
+          "MinTime": 15,
+          "MaxTime": 30,
+          "BubbleSkipTime": 2,
+          "TalkSentenceIdList": {
+            "Value": [
+              "404019532",
+              "404019533"
+            ]
+          },
+          "GapMinTime": 10,
+          "GapMaxTime": 20
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.TriggerGroupEvent",
+          "EventName": {
+            "Value": "Clt_A203Bubble"
+          }
+        }
+      ]
+    }
+  ],
+  "Type": "EntityInstance",
+  "EntityEventList": []
+}

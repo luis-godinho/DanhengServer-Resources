@@ -7,14 +7,11 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Talk_201140401"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_201140401",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_201140401"
         }
       ]
     },
@@ -22,9 +19,7 @@
       "TaskList": [
         {
           "$type": "RPG.GameCore.ChangeTrackingMission",
-          "TrackingMainMissionID": 2011404,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "TrackingMainMissionID": 2011404
         }
       ]
     },
@@ -35,16 +30,13 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Mission_201140401_PropTrigger02"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.TriggerPerformance",
           "ValueSource": {},
           "PerformanceType": "D",
-          "PerformanceID": 201140418,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 201140418
         }
       ]
     },
@@ -57,32 +49,36 @@
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 17179869184
+                "FixedValue": {
+                  "Value": 4
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288533138472960
+                "FixedValue": {
+                  "Value": 300010
                 }
               }
             }
           },
-          "TargetGroupID": {},
-          "TargetID": {},
+          "TargetGroupID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "TargetID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
           "TargetTypes": [],
           "OnTriggerEnter": [
             {
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "Mission_201140401_PropTrigger02"
-              },
-              "TaskEnabled": true
+              }
             }
-          ],
-          "SkipFakeAvatar": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     }

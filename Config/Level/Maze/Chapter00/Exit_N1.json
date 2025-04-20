@@ -1,0 +1,95 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropSetupOptionsTrigger",
+          "OptionList": [
+            {
+              "OptionTextmapID": {
+                "Hash": 4744880630583194353
+              },
+              "TriggerCustomString": "Exit_Option_1"
+            },
+            {
+              "OptionTextmapID": {
+                "Hash": 14346041317616939480
+              },
+              "TriggerCustomString": "Exit_Option_2"
+            },
+            {
+              "OptionTextmapID": {
+                "Hash": 8654279655450952451
+              },
+              "TriggerCustomString": "Exit_Option_3"
+            }
+          ],
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "Exit_Option_1"
+          },
+          "WaitOwnerOnly": true
+        },
+        {
+          "$type": "RPG.GameCore.EnterMapByCondition",
+          "EntranceID": {
+            "FixedValue": {
+              "Value": 200020100
+            }
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "Exit_Option_2"
+          },
+          "WaitOwnerOnly": true
+        },
+        {
+          "$type": "RPG.GameCore.EnterMapByCondition",
+          "EntranceID": {
+            "FixedValue": {
+              "Value": 1000101
+            }
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "Exit_Option_3"
+          },
+          "WaitOwnerOnly": true
+        },
+        {
+          "$type": "RPG.GameCore.EnterMapByCondition",
+          "EntranceID": {
+            "FixedValue": {
+              "Value": 200030100
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ValueSource": {
+    "Values": []
+  }
+}

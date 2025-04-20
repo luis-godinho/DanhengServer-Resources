@@ -1,0 +1,78 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.TutorialNotify",
+          "Type": "TutorialCleanUI",
+          "Param": "1"
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideHintWithText",
+          "Block": true,
+          "TargetEvent": [
+            {
+              "$type": "RPG.GameCore.WaitPlayerAction",
+              "ActionType": "AnyAction",
+              "ProtectTime": 0.5
+            }
+          ],
+          "NodeIDList": [
+            "PlanetFes.MainPage"
+          ],
+          "IsAutoMatchGuideHintType": false,
+          "GuideTextType": "Talk",
+          "GuideText": "TutorialTextmap_552101",
+          "GuideTalkID": 575064,
+          "CustomTextDirection": "RightUp",
+          "GuideHintShowConfig": {},
+          "GuideTextShowConfig": {
+            "UseCustomConfig": true,
+            "OffsetX": 50,
+            "OffsetY": -50
+          },
+          "GuideUIContextConfig": {},
+          "EnableActionList": [],
+          "EnableBattleOperationList": [],
+          "DisableBlackMask": true
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideHintWithText",
+          "TargetEvent": [
+            {
+              "$type": "RPG.GameCore.WaitPlayerAction",
+              "ActionType": "AnyAction",
+              "ProtectTime": 0.5
+            }
+          ],
+          "NodeIDList": [
+            "PlanetFes.Building02.All",
+            "PlanetFes.Building01.All"
+          ],
+          "IsAutoMatchGuideHintType": false,
+          "GuideHintType": "SwipeAToB",
+          "GuideTextType": "Talk",
+          "GuideText": "TutorialTextmap_552101",
+          "GuideTalkID": 575025,
+          "CustomTextDirection": "LeftUp",
+          "GuideHintShowConfig": {},
+          "GuideTextShowConfig": {
+            "UseCustomConfig": true,
+            "OffsetX": -75,
+            "OffsetY": 125
+          },
+          "GuideUIContextConfig": {},
+          "EnableActionList": [],
+          "EnableBattleOperationList": [],
+          "DisableBlackMask": true
+        },
+        {
+          "$type": "RPG.GameCore.TutorialClose"
+        }
+      ]
+    }
+  ],
+  "ValueSource": {},
+  "EntityEventList": []
+}

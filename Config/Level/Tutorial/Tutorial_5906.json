@@ -1,0 +1,104 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.ShowGuideHintWithText",
+          "Block": true,
+          "TargetEvent": [
+            {
+              "$type": "RPG.GameCore.WaitPlayerAction",
+              "ActionType": "ClickBtn",
+              "Param": "ActivityMarbleMatchPage.Seal2"
+            }
+          ],
+          "NodeIDList": [
+            "ActivityMarbleMatchPage.Seal2"
+          ],
+          "IsAutoMatchGuideHintType": false,
+          "GuideHintType": "ClickCircle",
+          "GuideTextType": "Talk",
+          "GuideText": "TutorialTextmap_552101",
+          "GuideTalkID": 590601,
+          "CustomTextDirection": "Right",
+          "GuideHintShowConfig": {},
+          "GuideTextShowConfig": {},
+          "GuideUIContextConfig": {
+            "Type": "MainPage"
+          },
+          "EnableActionList": [],
+          "EnableBattleOperationList": []
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideHintWithText",
+          "Block": true,
+          "TargetEvent": [
+            {
+              "$type": "RPG.GameCore.WaitPlayerAction",
+              "ActionType": "AnyAction"
+            }
+          ],
+          "NodeIDList": [
+            "ActivityMarbleBattleChoseDialog.Content"
+          ],
+          "GuideHintType": "SwipeLeft",
+          "GuideTextType": "Talk",
+          "GuideText": "TutorialTextmap_552101",
+          "GuideTalkID": 590602,
+          "GuideHintShowConfig": {},
+          "GuideTextShowConfig": {},
+          "GuideUIContextConfig": {
+            "Type": "MainPage"
+          },
+          "EnableActionList": [],
+          "EnableBattleOperationList": []
+        },
+        {
+          "$type": "RPG.GameCore.WaitUIControllerClose",
+          "UIControllerName": "MarbleSealTeamEditPage"
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "ADV_Marble_Team_Full"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideHintWithText",
+          "Block": true,
+          "TargetEvent": [
+            {
+              "$type": "RPG.GameCore.WaitPlayerAction",
+              "ActionType": "ClickBtn",
+              "Param": "ActivityMarbleMatchPage.BtnBegin"
+            }
+          ],
+          "NodeIDList": [
+            "ActivityMarbleMatchPage.BtnBegin"
+          ],
+          "GuideHintType": "SwipeLeft",
+          "GuideTextType": "Talk",
+          "GuideText": "TutorialTextmap_552101",
+          "GuideTalkID": 590603,
+          "GuideHintShowConfig": {},
+          "GuideTextShowConfig": {},
+          "GuideUIContextConfig": {
+            "Type": "MainPage"
+          },
+          "EnableActionList": [],
+          "EnableBattleOperationList": []
+        },
+        {
+          "$type": "RPG.GameCore.TutorialClose"
+        }
+      ]
+    }
+  ],
+  "ValueSource": {},
+  "EntityEventList": []
+}

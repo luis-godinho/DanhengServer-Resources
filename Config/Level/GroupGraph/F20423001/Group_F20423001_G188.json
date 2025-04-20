@@ -1,0 +1,169 @@
+{
+  "OnInitSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.GroupInitMemberEntityDynamicValues",
+          "EntityInstanceID": 300001,
+          "InitDynamicValueSet": {
+            "FloatOverrides": [
+              {
+                "Name": "FlySpeed",
+                "Value": {
+                  "FixedValue": {
+                    "Value": 5
+                  }
+                }
+              }
+            ],
+            "StringOverrides": [
+              {
+                "Name": "TargetPointAlias",
+                "Value": {
+                  "Value": "Start"
+                }
+              }
+            ],
+            "UIntOverrides": [
+              {
+                "Name": "TestInt",
+                "Value": {
+                  "FixedValue": {
+                    "Value": 99
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "GroupEvent_G188A"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.PlayMissionTalk",
+              "SimpleTalkList": [
+                {
+                  "TalkSentenceID": 140309401,
+                  "ProtectTime": 2
+                },
+                {
+                  "TalkSentenceID": 140309402,
+                  "ProtectTime": 2
+                }
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.AdvClientChangePropState",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                "FetchType": "SinglePropByPropID",
+                "SinglePropID": {
+                  "GroupID": {
+                    "FixedValue": {
+                      "Value": 188
+                    }
+                  },
+                  "ID": {
+                    "FixedValue": {
+                      "Value": 300001
+                    }
+                  }
+                }
+              },
+              "FromState": "Locked"
+            },
+            {
+              "$type": "RPG.GameCore.SetGraphDynamicString",
+              "Name": "TargetPointAlias",
+              "TargetSelf": false,
+              "TargetIDs": [
+                300001
+              ],
+              "Value": {
+                "Value": "End"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.WaitSecond",
+              "WaitTime": {
+                "FixedValue": {
+                  "Value": 10
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.AdvClientChangePropState",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                "FetchType": "SinglePropByPropID",
+                "SinglePropID": {
+                  "GroupID": {
+                    "FixedValue": {
+                      "Value": 188
+                    }
+                  },
+                  "ID": {
+                    "FixedValue": {
+                      "Value": 300001
+                    }
+                  }
+                }
+              },
+              "ToState": "Open"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvSetupCustomTaskTrigger",
+          "TargetType": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "TargetType": "Prop",
+            "Targets": [
+              300002
+            ]
+          },
+          "TriggerName": "MissionTrigger",
+          "OnEnter": [
+            {
+              "$type": "RPG.GameCore.TriggerGroupEvent",
+              "EventName": {
+                "Value": "GroupEvent_G188A"
+              }
+            }
+          ],
+          "DisableAfterTriggered": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.SetGraphDynamicString",
+          "Name": "TargetPointAlias",
+          "TargetSelf": false,
+          "TargetIDs": [
+            300001
+          ],
+          "Value": {
+            "Value": "Start"
+          }
+        }
+      ]
+    }
+  ],
+  "Type": "Group",
+  "EntityEventList": []
+}

@@ -12,9 +12,7 @@
           "MainMissionIDList": [],
           "PerformanceIDList": [],
           "PerformanceIDDsList": [],
-          "CustomValueMainMissionIDList": [],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "CustomValueMainMissionIDList": []
         }
       ]
     },
@@ -23,25 +21,22 @@
         {
           "$type": "RPG.GameCore.CreateProp",
           "GroupID": {
-            "fixedValue": {
-              "RawValue": 103079215104
+            "FixedValue": {
+              "Value": 24
             }
           },
           "GroupPropID": {
-            "fixedValue": {
-              "RawValue": 1288494483767296
+            "FixedValue": {
+              "Value": 300001
             }
           },
-          "CreateList": [],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "CreateList": []
         },
         {
           "$type": "RPG.GameCore.TriggerCustomString",
           "CustomString": {
             "Value": "201073001prop"
-          },
-          "TaskEnabled": true
+          }
         }
       ]
     },
@@ -51,8 +46,7 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "201073001prop"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.PropSetupTrigger",
@@ -61,13 +55,13 @@
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 103079215104
+                "FixedValue": {
+                  "Value": 24
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288494483767296
+                "FixedValue": {
+                  "Value": 300001
                 }
               }
             }
@@ -79,9 +73,7 @@
               "Predicate": {
                 "$type": "RPG.GameCore.ByCompareSubMissionState",
                 "SubMissionID": 201072010,
-                "SubMissionState": "Finish",
-                "TaskEnabled": true,
-                "IsClientOnly": true
+                "SubMissionState": "Finish"
               },
               "SuccessTaskList": [
                 {
@@ -89,24 +81,18 @@
                   "Predicate": {
                     "$type": "RPG.GameCore.ByCompareSubMissionState",
                     "SubMissionID": 801520201,
-                    "SubMissionState": "Finish",
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "SubMissionState": "Finish"
                   },
                   "SuccessTaskList": [
                     {
                       "$type": "RPG.GameCore.TriggerPerformance",
                       "ValueSource": {},
                       "PerformanceType": "E",
-                      "PerformanceID": 801520203,
-                      "TaskEnabled": true,
-                      "IsClientOnly": true
+                      "PerformanceID": 801520203
                     },
                     {
                       "$type": "RPG.GameCore.FinishPerformanceMission",
-                      "Key": "Mission_201073001",
-                      "TaskEnabled": true,
-                      "IsClientOnly": true
+                      "Key": "Mission_201073001"
                     }
                   ],
                   "FailedTaskList": [
@@ -114,18 +100,13 @@
                       "$type": "RPG.GameCore.TriggerPerformance",
                       "ValueSource": {},
                       "PerformanceType": "D",
-                      "PerformanceID": 201073001,
-                      "TaskEnabled": true,
-                      "IsClientOnly": true
+                      "PerformanceID": 201073001
                     },
                     {
                       "$type": "RPG.GameCore.FinishPerformanceMission",
-                      "Key": "Mission_201073001",
-                      "TaskEnabled": true,
-                      "IsClientOnly": true
+                      "Key": "Mission_201073001"
                     }
-                  ],
-                  "TaskEnabled": true
+                  ]
                 }
               ],
               "FailedTaskList": [
@@ -134,42 +115,32 @@
                   "Predicate": {
                     "$type": "RPG.GameCore.ByCompareSubMissionState",
                     "SubMissionID": 801520201,
-                    "SubMissionState": "Finish",
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "SubMissionState": "Finish"
                   },
                   "SuccessTaskList": [
                     {
                       "$type": "RPG.GameCore.WaitCustomString",
                       "CustomString": {
                         "Value": "Performance_201073001"
-                      },
-                      "TaskEnabled": true
+                      }
                     },
                     {
                       "$type": "RPG.GameCore.WaitSecond",
                       "WaitTime": {
-                        "fixedValue": {
-                          "RawValue": 2147483650
+                        "FixedValue": {
+                          "Value": 0.5
                         }
-                      },
-                      "MaxAdvencePerTick": -1.0,
-                      "TaskEnabled": true,
-                      "IsClientOnly": true
+                      }
                     },
                     {
                       "$type": "RPG.GameCore.TriggerPerformance",
                       "ValueSource": {},
                       "PerformanceType": "E",
-                      "PerformanceID": 801520203,
-                      "TaskEnabled": true,
-                      "IsClientOnly": true
+                      "PerformanceID": 801520203
                     },
                     {
                       "$type": "RPG.GameCore.FinishPerformanceMission",
-                      "Key": "Mission_201073001",
-                      "TaskEnabled": true,
-                      "IsClientOnly": true
+                      "Key": "Mission_201073001"
                     }
                   ],
                   "FailedTaskList": [
@@ -177,44 +148,31 @@
                       "$type": "RPG.GameCore.WaitCustomString",
                       "CustomString": {
                         "Value": "Performance_201073001"
-                      },
-                      "TaskEnabled": true
+                      }
                     },
                     {
                       "$type": "RPG.GameCore.WaitSecond",
                       "WaitTime": {
-                        "fixedValue": {
-                          "RawValue": 2147483650
+                        "FixedValue": {
+                          "Value": 0.5
                         }
-                      },
-                      "MaxAdvencePerTick": -1.0,
-                      "TaskEnabled": true,
-                      "IsClientOnly": true
+                      }
                     },
                     {
                       "$type": "RPG.GameCore.TriggerPerformance",
                       "ValueSource": {},
                       "PerformanceType": "D",
-                      "PerformanceID": 201073001,
-                      "TaskEnabled": true,
-                      "IsClientOnly": true
+                      "PerformanceID": 201073001
                     },
                     {
                       "$type": "RPG.GameCore.FinishPerformanceMission",
-                      "Key": "Mission_201073001",
-                      "TaskEnabled": true,
-                      "IsClientOnly": true
+                      "Key": "Mission_201073001"
                     }
-                  ],
-                  "TaskEnabled": true
+                  ]
                 }
-              ],
-              "TaskEnabled": true
+              ]
             }
-          ],
-          "SkipFakeAvatar": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     }

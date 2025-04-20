@@ -7,23 +7,19 @@
           "$type": "RPG.GameCore.TriggerPerformance",
           "ValueSource": {},
           "PerformanceType": "D",
-          "PerformanceID": 103030206,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 103030206
         },
         {
           "$type": "RPG.GameCore.PlayFullScreenTransfer",
-          "Type": "Black",
-          "KeepDuration": 0.5,
-          "PostDuration": 0.5,
+          "PrevDuration": 0,
           "Action": [
             {
               "$type": "RPG.GameCore.ScrTrfActPerformanceGroup",
               "AdvCreateGroupEntity": {
-                "IsClientOnly": true
+                "TaskEnabled": false
               },
               "AdvDestroyGroupEntity": {
-                "IsClientOnly": true
+                "TaskEnabled": false
               },
               "CaptureNpc": [],
               "SwitchCharacterAnchor": {
@@ -34,48 +30,26 @@
                 },
                 "AnchorName": {
                   "Value": "Anchor1"
-                },
-                "ResetAnimation": true,
-                "ResetCamera": true,
-                "ClearSpecialVision": true,
-                "TaskEnabled": true,
-                "IsClientOnly": true
+                }
               },
               "ActiveVirtualCamera": {
-                "IsActive": true,
-                "VCameraDitherMaxDistance": 1.0,
-                "CenterPosX": -1.0,
-                "CenterPosY": -1.0,
-                "IsClientOnly": true
+                "TaskEnabled": false
               },
               "ActiveTemplateVirtualCamera": {
-                "IsActive": true,
-                "IsClientOnly": true
+                "TaskEnabled": false
               },
               "AdvNpcFaceToPlayer": {
-                "FromDialog": true,
-                "TryFaceToFace": true,
-                "NpcLookAtPlayer": true,
-                "PlayerLookAtNpc": true,
-                "StopLookAtOnGraphEnd": true,
-                "TurnBackOnGraphEnd": true,
                 "SteerImmediately": true,
                 "FinishImmadiate": true,
-                "WaitFinishMode": "WaitFaceAngle",
-                "ForceToStandBy": true,
-                "IsClientOnly": true
+                "TaskEnabled": false
               }
             }
-          ],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
           "Key": "Mission_103030206",
-          "KeepScreenTransferUntilGroupRefresh": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "KeepScreenTransferUntilGroupRefresh": true
         }
       ]
     }

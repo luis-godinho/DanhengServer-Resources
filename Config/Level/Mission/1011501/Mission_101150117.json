@@ -10,20 +10,28 @@
             "MultiGroupFetch": [
               {
                 "GroupID": {
-                  "fixedValue": {
-                    "RawValue": 257698037760
+                  "FixedValue": {
+                    "Value": 60
                   }
                 },
                 "ID": {
-                  "fixedValue": {
-                    "RawValue": 1288503073701888
+                  "FixedValue": {
+                    "Value": 300003
                   }
                 }
               }
             ]
           },
-          "TargetGroupID": {},
-          "TargetID": {},
+          "TargetGroupID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "TargetID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
           "TargetTypes": [],
           "DestroyAfterTriggered": true,
           "DisableAfterTriggered": true,
@@ -32,13 +40,9 @@
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "Mission_101150117_PropTrigger"
-              },
-              "TaskEnabled": true
+              }
             }
-          ],
-          "SkipFakeAvatar": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     },
@@ -48,16 +52,13 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Mission_101150117_PropTrigger"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.TriggerPerformance",
           "ValueSource": {},
           "PerformanceType": "C",
-          "PerformanceID": 101150117,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 101150117
         },
         {
           "$type": "RPG.GameCore.SwitchCharacterAnchor",
@@ -68,18 +69,11 @@
           },
           "AnchorName": {
             "Value": "Anchor1"
-          },
-          "ResetAnimation": true,
-          "ResetCamera": true,
-          "ClearSpecialVision": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_101150117",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_101150117"
         }
       ]
     }

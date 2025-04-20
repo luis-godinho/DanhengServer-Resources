@@ -10,45 +10,33 @@
             8013102
           ],
           "PerformanceIDList": [],
-          "CustomValueMainMissionIDList": [],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "CustomValueMainMissionIDList": []
         },
         {
           "$type": "RPG.GameCore.PredicateTaskList",
           "Predicate": {
             "$type": "RPG.GameCore.ByCompareMainMissionState",
-            "MainMissionID": 8013102,
-            "MainMissionState": "Finish",
-            "TaskEnabled": true,
-            "IsClientOnly": true
+            "MainMissionID": 8013102
           },
           "SuccessTaskList": [
             {
               "$type": "RPG.GameCore.WaitSecond",
               "WaitTime": {
-                "fixedValue": {
-                  "RawValue": 6442450946
+                "FixedValue": {
+                  "Value": 1.5
                 }
-              },
-              "MaxAdvencePerTick": -1.0,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              }
             },
             {
               "$type": "RPG.GameCore.PlayMissionTalk",
               "SimpleTalkList": [
                 {
-                  "TextSpeed": 20.0,
                   "TalkSentenceID": 403055322,
-                  "ProtectTime": 2.0
+                  "ProtectTime": 2
                 }
-              ],
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              ]
             }
-          ],
-          "TaskEnabled": true
+          ]
         }
       ]
     }

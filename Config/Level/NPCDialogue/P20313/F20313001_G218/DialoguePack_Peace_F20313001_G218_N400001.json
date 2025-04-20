@@ -1,0 +1,73 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CollectDataConditions",
+          "TaskIDList": [],
+          "MainMissionIDList": [
+            4040327
+          ],
+          "PerformanceIDList": [],
+          "PerformanceIDDsList": [],
+          "CustomValueMainMissionIDList": []
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByCompareMainMissionState",
+            "MainMissionID": 4040327
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.AddMenuItem",
+              "MenuIconType": "DreamlandIcon",
+              "MenuItemID": 993005280,
+              "DialoguePath": "Config/Level/Common_LG/DreamlandTrigger.json",
+              "Important": true
+            },
+            {
+              "$type": "RPG.GameCore.AddMenuItem",
+              "MenuIconType": "ChatOutIcon",
+              "MenuItemTextID": {
+                "Hash": 14279048901847045422
+              },
+              "PerformanceType": "E",
+              "PerformanceID": 424031617,
+              "Important": true
+            }
+          ],
+          "FailedTaskList": [
+            {
+              "$type": "RPG.GameCore.AddMenuItem",
+              "MenuIconType": "DreamlandIcon",
+              "MenuItemID": 993005280,
+              "DialoguePath": "Config/Level/Common_LG/DreamlandTrigger.json",
+              "Important": true
+            },
+            {
+              "$type": "RPG.GameCore.AddMenuItem",
+              "MenuIconType": "SecretMissionIcon",
+              "MenuItemTextID": {
+                "Hash": 16318575791785596966
+              },
+              "PerformanceType": "E",
+              "PerformanceID": 424031618
+            },
+            {
+              "$type": "RPG.GameCore.AddMenuItem",
+              "MenuIconType": "ChatOutIcon",
+              "MenuItemTextID": {
+                "Hash": 14279048901847045422
+              },
+              "PerformanceType": "E",
+              "PerformanceID": 424031617,
+              "Important": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

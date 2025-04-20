@@ -1,0 +1,1151 @@
+{
+  "OnInitSequece": [
+    {
+      "TaskList": []
+    }
+  ],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvSetupCustomTaskTrigger",
+          "TargetType": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "TargetType": "Prop",
+            "Targets": [
+              300012
+            ]
+          },
+          "TriggerName": "StopTrigger",
+          "OnEnter": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCheckTimelineEntityState",
+                "Target": {
+                  "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                  "TargetType": "Prop",
+                  "Targets": [
+                    300012
+                  ]
+                },
+                "StateName": {
+                  "Value": "L0_Idle"
+                }
+              },
+              "SuccessTaskList": [],
+              "FailedTaskList": [
+                {
+                  "$type": "RPG.GameCore.PauseTimeRewindTarget",
+                  "Target": {
+                    "$type": "RPG.GameCore.TargetFetchTaskActionTarget"
+                  },
+                  "PauseReason": "PauseItem"
+                }
+              ]
+            }
+          ],
+          "OnExit": [
+            {
+              "$type": "RPG.GameCore.PauseTimeRewindTarget",
+              "IsPause": false,
+              "Target": {
+                "$type": "RPG.GameCore.TargetFetchTaskActionTarget"
+              },
+              "PauseReason": "PauseItem"
+            }
+          ],
+          "IsOverrideValidGuestConfig": true,
+          "OverridedValidGuestConfig": {
+            "ConfigType": "ByInstanceID",
+            "TargetList": [
+              {
+                "GroupID": {
+                  "FixedValue": {
+                    "Value": 167
+                  }
+                },
+                "InstancecID": {
+                  "FixedValue": {
+                    "Value": 300009
+                  }
+                }
+              },
+              {
+                "GroupID": {
+                  "FixedValue": {
+                    "Value": 167
+                  }
+                },
+                "InstancecID": {
+                  "FixedValue": {
+                    "Value": 300001
+                  }
+                }
+              },
+              {
+                "GroupID": {
+                  "FixedValue": {
+                    "Value": 167
+                  }
+                },
+                "InstancecID": {
+                  "FixedValue": {
+                    "Value": 300002
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByCheckTimelineEntityState",
+            "Target": {
+              "$type": "RPG.GameCore.GroupFetchLocalTarget",
+              "TargetType": "Prop",
+              "Targets": [
+                300012
+              ]
+            },
+            "StateName": {
+              "Value": "L1_Broken"
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.AdvEnableTrigger",
+              "TargetType": {
+                "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                "TargetType": "Prop",
+                "Targets": [
+                  300012
+                ]
+              },
+              "IsEnable": true,
+              "TriggerName": "StopTrigger"
+            }
+          ],
+          "FailedTaskList": [
+            {
+              "$type": "RPG.GameCore.AdvEnableTrigger",
+              "TargetType": {
+                "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                "TargetType": "Prop",
+                "Targets": [
+                  300012
+                ]
+              },
+              "TriggerName": "StopTrigger"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitEntityEventV2",
+          "EventName": {
+            "Value": "enter_pad"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.SetTimelineEntityState",
+              "Target": {
+                "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                "TargetType": "Prop",
+                "Targets": [
+                  300041
+                ]
+              },
+              "StateName": {
+                "Value": "L1_RightCollapse"
+              },
+              "CutIn": false
+            }
+          ],
+          "TargetType": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "TargetType": "Prop",
+            "Targets": [
+              300042
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitEntityEventV2",
+          "EventName": {
+            "Value": "Change_To_Close"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.SetTimelineEntityState",
+              "Target": {
+                "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                "TargetType": "Prop",
+                "Targets": [
+                  300041
+                ]
+              },
+              "StateName": {
+                "Value": "L1_RightCollapse"
+              },
+              "CutIn": false
+            }
+          ],
+          "TargetType": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "TargetType": "Prop",
+            "Targets": [
+              300043
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByTimeRewindTargetMotionPause",
+            "Target": {
+              "$type": "RPG.GameCore.GroupFetchLocalTarget",
+              "TargetType": "Prop",
+              "Targets": [
+                300009
+              ]
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.SetFloorCustomFloatV2",
+              "Name": {
+                "Value": "FCV_Third01"
+              },
+              "Value": {
+                "FixedValue": {
+                  "Value": 1
+                }
+              }
+            }
+          ],
+          "FailedTaskList": [
+            {
+              "$type": "RPG.GameCore.SetFloorCustomFloatV2",
+              "Name": {
+                "Value": "FCV_Third01"
+              },
+              "Value": {
+                "FixedValue": {
+                  "Value": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByTimeRewindTargetMotionPause",
+            "Target": {
+              "$type": "RPG.GameCore.GroupFetchLocalTarget",
+              "TargetType": "Prop",
+              "Targets": [
+                300001
+              ]
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.SetFloorCustomFloatV2",
+              "Name": {
+                "Value": "FCV_Third02"
+              },
+              "Value": {
+                "FixedValue": {
+                  "Value": 1
+                }
+              }
+            }
+          ],
+          "FailedTaskList": [
+            {
+              "$type": "RPG.GameCore.SetFloorCustomFloatV2",
+              "Name": {
+                "Value": "FCV_Third02"
+              },
+              "Value": {
+                "FixedValue": {
+                  "Value": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByTimeRewindTargetMotionPause",
+            "Target": {
+              "$type": "RPG.GameCore.GroupFetchLocalTarget",
+              "TargetType": "Prop",
+              "Targets": [
+                300002
+              ]
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.SetFloorCustomFloatV2",
+              "Name": {
+                "Value": "FCV_Third03"
+              },
+              "Value": {
+                "FixedValue": {
+                  "Value": 1
+                }
+              }
+            }
+          ],
+          "FailedTaskList": [
+            {
+              "$type": "RPG.GameCore.SetFloorCustomFloatV2",
+              "Name": {
+                "Value": "FCV_Third03"
+              },
+              "Value": {
+                "FixedValue": {
+                  "Value": 0
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AddTimelineEntityEventListener",
+          "Target": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "TargetType": "Prop",
+            "Targets": [
+              300009
+            ]
+          },
+          "OnPause": [
+            {
+              "$type": "RPG.GameCore.SetFloorCustomFloatV2",
+              "Name": {
+                "Value": "FCV_Third01"
+              },
+              "Value": {
+                "FixedValue": {
+                  "Value": 1
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByTimeRewindTargetMotionPause",
+                "Target": {
+                  "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                  "TargetType": "Prop",
+                  "Targets": [
+                    300001
+                  ]
+                }
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.SetFloorCustomFloatV2",
+                  "Name": {
+                    "Value": "FCV_Third02"
+                  },
+                  "Value": {
+                    "FixedValue": {
+                      "Value": 1
+                    }
+                  }
+                }
+              ],
+              "FailedTaskList": [
+                {
+                  "$type": "RPG.GameCore.SetFloorCustomFloatV2",
+                  "Name": {
+                    "Value": "FCV_Third02"
+                  },
+                  "Value": {
+                    "FixedValue": {
+                      "Value": 0
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByTimeRewindTargetMotionPause",
+                "Target": {
+                  "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                  "TargetType": "Prop",
+                  "Targets": [
+                    300002
+                  ]
+                }
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.SetFloorCustomFloatV2",
+                  "Name": {
+                    "Value": "FCV_Third03"
+                  },
+                  "Value": {
+                    "FixedValue": {
+                      "Value": 1
+                    }
+                  }
+                }
+              ],
+              "FailedTaskList": [
+                {
+                  "$type": "RPG.GameCore.SetFloorCustomFloatV2",
+                  "Name": {
+                    "Value": "FCV_Third03"
+                  },
+                  "Value": {
+                    "FixedValue": {
+                      "Value": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "OnResumePause": [
+            {
+              "$type": "RPG.GameCore.SetFloorCustomFloatV2",
+              "Name": {
+                "Value": "FCV_Third01"
+              },
+              "Value": {
+                "FixedValue": {
+                  "Value": 0
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitEntityEventV2",
+          "EventName": {
+            "Value": "DestroyBySelf"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareFloorCustomFloatV2",
+                "Name": {
+                  "Value": "FCV_BallToBox"
+                },
+                "CompareType": "Equal",
+                "CompareValue": {
+                  "FixedValue": {
+                    "Value": 0
+                  }
+                }
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.SetFloorCustomFloatV2",
+                  "Name": {
+                    "Value": "FCV_BallToBox"
+                  },
+                  "Value": {
+                    "FixedValue": {
+                      "Value": 1
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "TargetType": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "TargetType": "Prop",
+            "Targets": [
+              300013,
+              300015,
+              300016,
+              300017,
+              300018,
+              300019,
+              300020,
+              300021,
+              300022,
+              300023,
+              300024,
+              300025,
+              300026,
+              300027,
+              300028,
+              300029
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": []
+    },
+    {
+      "TaskList": []
+    },
+    {
+      "TaskList": []
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitFloorCustomValueChangeV2",
+          "Name": {
+            "Value": "FCV_RebuildBall"
+          },
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareFloorCustomFloatV2",
+                "Name": {
+                  "Value": "FCV_RebuildBall"
+                },
+                "CompareType": "Equal",
+                "CompareValue": {
+                  "FixedValue": {
+                    "Value": 1
+                  }
+                }
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByCompareFloorCustomFloatV2",
+                    "Name": {
+                      "Value": "FCV_ErrorBall01"
+                    },
+                    "CompareType": "Equal",
+                    "CompareValue": {
+                      "FixedValue": {
+                        "Value": 1
+                      }
+                    }
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.PredicateTaskList",
+                      "Predicate": {
+                        "$type": "RPG.GameCore.ByTimeRewindTargetCurrentState",
+                        "Target": {
+                          "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                          "TargetType": "Prop",
+                          "Targets": [
+                            300003
+                          ]
+                        },
+                        "CurrentState": "Rewind"
+                      },
+                      "SuccessTaskList": [
+                        {
+                          "$type": "RPG.GameCore.PredicateTaskList",
+                          "Predicate": {
+                            "$type": "RPG.GameCore.ByTimeRewindTargetMotionPause",
+                            "Target": {
+                              "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                              "TargetType": "Prop",
+                              "Targets": [
+                                300003
+                              ]
+                            }
+                          },
+                          "FailedTaskList": [
+                            {
+                              "$type": "RPG.GameCore.RebuildTimeRewindEntity",
+                              "Target": {
+                                "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                                "TargetType": "Prop",
+                                "Targets": [
+                                  300003
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitFloorCustomValueChangeV2",
+          "Name": {
+            "Value": "FCV_RebuildBall"
+          },
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareFloorCustomFloatV2",
+                "Name": {
+                  "Value": "FCV_RebuildBall"
+                },
+                "CompareType": "Equal",
+                "CompareValue": {
+                  "FixedValue": {
+                    "Value": 1
+                  }
+                }
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByCompareFloorCustomFloatV2",
+                    "Name": {
+                      "Value": "FCV_ErrorBall02"
+                    },
+                    "CompareType": "Equal",
+                    "CompareValue": {
+                      "FixedValue": {
+                        "Value": 1
+                      }
+                    }
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.PredicateTaskList",
+                      "Predicate": {
+                        "$type": "RPG.GameCore.ByTimeRewindTargetCurrentState",
+                        "Target": {
+                          "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                          "TargetType": "Prop",
+                          "Targets": [
+                            300004
+                          ]
+                        },
+                        "CurrentState": "Rewind"
+                      },
+                      "SuccessTaskList": [
+                        {
+                          "$type": "RPG.GameCore.PredicateTaskList",
+                          "Predicate": {
+                            "$type": "RPG.GameCore.ByTimeRewindTargetMotionPause",
+                            "Target": {
+                              "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                              "TargetType": "Prop",
+                              "Targets": [
+                                300004
+                              ]
+                            }
+                          },
+                          "FailedTaskList": [
+                            {
+                              "$type": "RPG.GameCore.RebuildTimeRewindEntity",
+                              "Target": {
+                                "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                                "TargetType": "Prop",
+                                "Targets": [
+                                  300004
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.LoopWaitServerGroupPropertyChange"
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AddTimelineEntityEventListener",
+          "Target": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "TargetType": "Prop",
+            "Targets": [
+              300001
+            ]
+          },
+          "OnPause": [
+            {
+              "$type": "RPG.GameCore.SetFloorCustomFloatV2",
+              "Name": {
+                "Value": "FCV_Third02"
+              },
+              "Value": {
+                "FixedValue": {
+                  "Value": 1
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByTimeRewindTargetMotionPause",
+                "Target": {
+                  "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                  "TargetType": "Prop",
+                  "Targets": [
+                    300009
+                  ]
+                }
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.SetFloorCustomFloatV2",
+                  "Name": {
+                    "Value": "FCV_Third01"
+                  },
+                  "Value": {
+                    "FixedValue": {
+                      "Value": 1
+                    }
+                  }
+                }
+              ],
+              "FailedTaskList": [
+                {
+                  "$type": "RPG.GameCore.SetFloorCustomFloatV2",
+                  "Name": {
+                    "Value": "FCV_Third01"
+                  },
+                  "Value": {
+                    "FixedValue": {
+                      "Value": 0
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByTimeRewindTargetMotionPause",
+                "Target": {
+                  "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                  "TargetType": "Prop",
+                  "Targets": [
+                    300002
+                  ]
+                }
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.SetFloorCustomFloatV2",
+                  "Name": {
+                    "Value": "FCV_Third03"
+                  },
+                  "Value": {
+                    "FixedValue": {
+                      "Value": 1
+                    }
+                  }
+                }
+              ],
+              "FailedTaskList": [
+                {
+                  "$type": "RPG.GameCore.SetFloorCustomFloatV2",
+                  "Name": {
+                    "Value": "FCV_Third03"
+                  },
+                  "Value": {
+                    "FixedValue": {
+                      "Value": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "OnResumePause": [
+            {
+              "$type": "RPG.GameCore.SetFloorCustomFloatV2",
+              "Name": {
+                "Value": "FCV_Third02"
+              },
+              "Value": {
+                "FixedValue": {
+                  "Value": 0
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AddTimelineEntityEventListener",
+          "Target": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "TargetType": "Prop",
+            "Targets": [
+              300002
+            ]
+          },
+          "OnPause": [
+            {
+              "$type": "RPG.GameCore.SetFloorCustomFloatV2",
+              "Name": {
+                "Value": "FCV_Third03"
+              },
+              "Value": {
+                "FixedValue": {
+                  "Value": 1
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByTimeRewindTargetMotionPause",
+                "Target": {
+                  "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                  "TargetType": "Prop",
+                  "Targets": [
+                    300001
+                  ]
+                }
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.SetFloorCustomFloatV2",
+                  "Name": {
+                    "Value": "FCV_Third02"
+                  },
+                  "Value": {
+                    "FixedValue": {
+                      "Value": 1
+                    }
+                  }
+                }
+              ],
+              "FailedTaskList": [
+                {
+                  "$type": "RPG.GameCore.SetFloorCustomFloatV2",
+                  "Name": {
+                    "Value": "FCV_Third02"
+                  },
+                  "Value": {
+                    "FixedValue": {
+                      "Value": 0
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByTimeRewindTargetMotionPause",
+                "Target": {
+                  "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                  "TargetType": "Prop",
+                  "Targets": [
+                    300009
+                  ]
+                }
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.SetFloorCustomFloatV2",
+                  "Name": {
+                    "Value": "FCV_Third01"
+                  },
+                  "Value": {
+                    "FixedValue": {
+                      "Value": 1
+                    }
+                  }
+                }
+              ],
+              "FailedTaskList": [
+                {
+                  "$type": "RPG.GameCore.SetFloorCustomFloatV2",
+                  "Name": {
+                    "Value": "FCV_Third01"
+                  },
+                  "Value": {
+                    "FixedValue": {
+                      "Value": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "OnResumePause": [
+            {
+              "$type": "RPG.GameCore.SetFloorCustomFloatV2",
+              "Name": {
+                "Value": "FCV_Third03"
+              },
+              "Value": {
+                "FixedValue": {
+                  "Value": 0
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": []
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AddTimelineEntityEventListener",
+          "Target": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "TargetType": "Prop",
+            "Targets": [
+              300009
+            ]
+          },
+          "StateEnterListener": [
+            {
+              "ListenState": [
+                "L0_Root"
+              ],
+              "Callback": [
+                {
+                  "$type": "RPG.GameCore.SetFloorCustomFloatV2",
+                  "Name": {
+                    "Value": "FCV_ErrorBall01"
+                  },
+                  "Value": {
+                    "FixedValue": {
+                      "Value": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "StateLeaveListener": [
+            {
+              "ListenState": [
+                "L1_Angle03"
+              ],
+              "Callback": [
+                {
+                  "$type": "RPG.GameCore.SetFloorCustomFloatV2",
+                  "Name": {
+                    "Value": "FCV_ErrorBall01"
+                  },
+                  "Value": {
+                    "FixedValue": {
+                      "Value": 1
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AddTimelineEntityEventListener",
+          "Target": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "TargetType": "Prop",
+            "Targets": [
+              300002
+            ]
+          },
+          "StateEnterListener": [
+            {
+              "ListenState": [
+                "L0_Root"
+              ],
+              "Callback": [
+                {
+                  "$type": "RPG.GameCore.SetFloorCustomFloatV2",
+                  "Name": {
+                    "Value": "FCV_ErrorBall02"
+                  },
+                  "Value": {
+                    "FixedValue": {
+                      "Value": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "StateLeaveListener": [
+            {
+              "ListenState": [
+                "L1_Angle02"
+              ],
+              "Callback": [
+                {
+                  "$type": "RPG.GameCore.SetFloorCustomFloatV2",
+                  "Name": {
+                    "Value": "FCV_ErrorBall02"
+                  },
+                  "Value": {
+                    "FixedValue": {
+                      "Value": 1
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AddTimelineEntityEventListener",
+          "Target": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "TargetType": "Prop",
+            "Targets": [
+              300041
+            ]
+          },
+          "StateEnterListener": [
+            {
+              "ListenState": [
+                "L0_Idle"
+              ],
+              "Callback": [
+                {
+                  "$type": "RPG.GameCore.AdvClientChangePropState",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                    "TargetType": "Prop",
+                    "Targets": [
+                      300010
+                    ]
+                  },
+                  "FromState": "Open"
+                }
+              ]
+            },
+            {
+              "ListenState": [
+                "L1_RightCollapse"
+              ],
+              "Callback": [
+                {
+                  "$type": "RPG.GameCore.AdvClientChangePropState",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                    "TargetType": "Prop",
+                    "Targets": [
+                      300010
+                    ]
+                  },
+                  "ToState": "Open"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByCheckTimelineEntityState",
+            "Target": {
+              "$type": "RPG.GameCore.GroupFetchLocalTarget",
+              "TargetType": "Prop",
+              "Targets": [
+                300041
+              ]
+            },
+            "StateName": {
+              "Value": "L0_Idle"
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.AdvClientChangePropState",
+              "TargetType": {
+                "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                "TargetType": "Prop",
+                "Targets": [
+                  300010
+                ]
+              },
+              "FromState": "Open"
+            }
+          ],
+          "FailedTaskList": [
+            {
+              "$type": "RPG.GameCore.AdvClientChangePropState",
+              "TargetType": {
+                "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                "TargetType": "Prop",
+                "Targets": [
+                  300010
+                ]
+              },
+              "ToState": "Open"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "Type": "Group",
+  "EntityEventList": []
+}

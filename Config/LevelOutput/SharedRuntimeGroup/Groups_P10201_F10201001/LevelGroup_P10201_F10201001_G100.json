@@ -1,4 +1,5 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "SimpleMission",
   "AreaAnchorName": "LevelArea_P10201_F10201001_G100",
   "SaveType": "Reset",
@@ -16,14 +17,14 @@
   },
   "ValueSource": {},
   "ConflictIDList": [],
-  "StreamingTemplateType": "Standard",
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
-  "TagContainer": [
-    {
-      "Tag": "Group.Mission.LegacyNormal",
-      "TagHash": 439974373
-    }
-  ],
+  "TagContainer": {
+    "List": [
+      {
+        "Tag": "Group.Mission.LegacyNormal",
+        "TagHash": 439974373
+      }
+    ]
+  },
   "AnchorList": [
     {
       "Name": "Anchor1",
@@ -61,53 +62,24 @@
   "MonsterList": [],
   "PropList": [
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 100,
-      "LoadOnInitial": true,
       "IsOverrideInitLevelGraph": true,
       "ValueSource": {},
       "Trigger": {
-        "Radius": 4.0,
-        "DimX": 1.0,
-        "DimY": 1.0,
-        "DimZ": 1.0,
+        "Radius": 4,
+        "DimX": 1,
+        "DimY": 1,
+        "DimZ": 1,
         "PointList": []
       },
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "CameraCenterEntityList": [],
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {},
       "Name": "Prop1",
       "ID": 300001,
@@ -123,18 +95,15 @@
   "NPCList": [
     {
       "NPCID": 12304,
-      "DialogueTriggerAngle": 120,
+      "LoadOnInitial": false,
       "DialogueGroups": [],
       "ServerInteractVerificationIDList": [],
       "DefaultIdleStateName": "Exciting01Loop",
-      "DefaultLookAtMode": "LookPlayer",
       "BoardShowList": [],
       "OverrideNPCName": {
-        "Hash": -755248198,
-        "Hash64": 5907870632612783122
+        "Hash": 5907870632612783122
       },
       "TalkDialogGroupIDList": [],
-      "DefaultAnimationType": "FreeStyle",
       "DefaultIdleFreeStyleMotionID": 100040328,
       "BornType": "Permanent",
       "InitialHiddenNodeList": [],
@@ -148,11 +117,8 @@
               "ID": 404021403
             }
           ]
-        },
-        "EnableDialogCamera": true
+        }
       },
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "CameraCenterEntityList": [],
       "Name": "NPC1",
       "RotY": 357.3963,
@@ -163,18 +129,15 @@
     },
     {
       "NPCID": 12151,
-      "DialogueTriggerAngle": 120,
+      "LoadOnInitial": false,
       "DialogueGroups": [],
       "ServerInteractVerificationIDList": [],
       "DefaultIdleStateName": "HoldArm01Loop",
-      "DefaultLookAtMode": "LookPlayer",
       "BoardShowList": [],
       "OverrideNPCName": {
-        "Hash": 1132205696,
-        "Hash64": 6536618628739267740
+        "Hash": 6536618628739267740
       },
       "TalkDialogGroupIDList": [],
-      "DefaultAnimationType": "FreeStyle",
       "DefaultIdleFreeStyleMotionID": 100010231,
       "BornType": "Permanent",
       "InitialHiddenNodeList": [],
@@ -188,11 +151,8 @@
               "ID": 404021402
             }
           ]
-        },
-        "EnableDialogCamera": true
+        }
       },
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "CameraCenterEntityList": [],
       "Name": "NPC2",
       "RotY": 34.00135,
@@ -203,25 +163,20 @@
     },
     {
       "NPCID": 12219,
-      "DialogueTriggerAngle": 120,
+      "LoadOnInitial": false,
       "DialogueGroups": [],
       "ServerInteractVerificationIDList": [],
       "DefaultIdleStateName": "ServiceStand01Loop",
-      "DefaultLookAtMode": "LookPlayer",
       "BoardShowList": [],
       "TalkDialogGroupIDList": [],
-      "DefaultAnimationType": "FreeStyle",
       "DefaultIdleFreeStyleMotionID": 100020336,
       "OverrideSeriesID": 4294967295,
       "BornType": "Permanent",
       "InitialHiddenNodeList": [],
       "Dialog": {
         "LevelGraph": "Config/Level/NPCDialogue/P10201/F10201001_G100/DialogueMain_F10201001_G100_N400003.json",
-        "PackList": [],
-        "EnableDialogCamera": true
+        "PackList": []
       },
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "CameraCenterEntityList": [],
       "Name": "NPC3",
       "RotY": 179.1837,
@@ -233,18 +188,14 @@
     },
     {
       "NPCID": 1991,
-      "DialogueTriggerAngle": 120,
+      "LoadOnInitial": false,
       "DialogueGroups": [],
       "ServerInteractVerificationIDList": [],
-      "DefaultLookAtMode": "LookPlayer",
       "BoardShowList": [],
       "TalkDialogGroupIDList": [],
-      "DefaultAnimationType": "FreeStyle",
       "DefaultIdleFreeStyleMotionID": 380010000,
       "BornType": "Permanent",
       "InitialHiddenNodeList": [],
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "CameraCenterEntityList": [],
       "Name": "NPC4",
       "RotY": 39.24649,
@@ -255,18 +206,15 @@
     },
     {
       "NPCID": 12304,
-      "DialogueTriggerAngle": 120,
+      "LoadOnInitial": false,
       "DialogueGroups": [],
       "ServerInteractVerificationIDList": [],
       "DefaultIdleStateName": "Exciting01Loop",
-      "DefaultLookAtMode": "LookPlayer",
       "BoardShowList": [],
       "OverrideNPCName": {
-        "Hash": -755248198,
-        "Hash64": 5907870632612783122
+        "Hash": 5907870632612783122
       },
       "TalkDialogGroupIDList": [],
-      "DefaultAnimationType": "FreeStyle",
       "DefaultIdleFreeStyleMotionID": 100040328,
       "BornType": "Permanent",
       "InitialHiddenNodeList": [],
@@ -280,11 +228,8 @@
               "ID": 404021403
             }
           ]
-        },
-        "EnableDialogCamera": true
+        }
       },
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "CameraCenterEntityList": [],
       "Name": "NPC5",
       "RotY": 3.67986,
@@ -295,18 +240,15 @@
     },
     {
       "NPCID": 12151,
-      "DialogueTriggerAngle": 120,
+      "LoadOnInitial": false,
       "DialogueGroups": [],
       "ServerInteractVerificationIDList": [],
       "DefaultIdleStateName": "HoldArm01Loop",
-      "DefaultLookAtMode": "LookPlayer",
       "BoardShowList": [],
       "OverrideNPCName": {
-        "Hash": 1132205696,
-        "Hash64": 6536618628739267740
+        "Hash": 6536618628739267740
       },
       "TalkDialogGroupIDList": [],
-      "DefaultAnimationType": "FreeStyle",
       "DefaultIdleFreeStyleMotionID": 100010231,
       "BornType": "Permanent",
       "InitialHiddenNodeList": [],
@@ -320,11 +262,8 @@
               "ID": 404021402
             }
           ]
-        },
-        "EnableDialogCamera": true
+        }
       },
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "CameraCenterEntityList": [],
       "Name": "NPC6",
       "RotY": 21.22431,
@@ -335,18 +274,14 @@
     },
     {
       "NPCID": 1991,
-      "DialogueTriggerAngle": 120,
+      "LoadOnInitial": false,
       "DialogueGroups": [],
       "ServerInteractVerificationIDList": [],
-      "DefaultLookAtMode": "LookPlayer",
       "BoardShowList": [],
       "TalkDialogGroupIDList": [],
-      "DefaultAnimationType": "FreeStyle",
       "DefaultIdleFreeStyleMotionID": 380010000,
       "BornType": "Permanent",
       "InitialHiddenNodeList": [],
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "CameraCenterEntityList": [],
       "Name": "NPC7",
       "RotY": 333.7257,

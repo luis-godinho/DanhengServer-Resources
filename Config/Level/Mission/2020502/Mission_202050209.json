@@ -8,8 +8,7 @@
           "CustomString": {
             "Value": "BattleStart_202050209"
           },
-          "GoNextImmediately": true,
-          "TaskEnabled": true
+          "GoNextImmediately": true
         },
         {
           "$type": "RPG.GameCore.SetEntityTalkEnable",
@@ -18,44 +17,39 @@
             "FetchType": "SingleNpcByNpcID",
             "SingleNpcID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 17179869184
+                "FixedValue": {
+                  "Value": 4
                 }
               },
               "GroupNpcID": {
-                "fixedValue": {
-                  "RawValue": 1717995508334592
+                "FixedValue": {
+                  "Value": 400002
                 }
               }
             }
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
           "$type": "RPG.GameCore.DestroyNPC",
           "DestroyList": [
             {
+              "$type": "RPG.GameCore.GroupEntityInfo",
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 17179869184
+                "FixedValue": {
+                  "Value": 4
                 }
               },
               "GroupInstanceID": {
-                "fixedValue": {
-                  "RawValue": 1717995508334592
+                "FixedValue": {
+                  "Value": 400002
                 }
               }
             }
-          ],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_202050209",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_202050209"
         }
       ]
     },
@@ -64,18 +58,16 @@
         {
           "$type": "RPG.GameCore.CreateNPC",
           "GroupID": {
-            "fixedValue": {
-              "RawValue": 17179869184
+            "FixedValue": {
+              "Value": 4
             }
           },
           "GroupNpcID": {
-            "fixedValue": {
-              "RawValue": 1717995508334592
+            "FixedValue": {
+              "Value": 400002
             }
           },
-          "CreateList": [],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "CreateList": []
         }
       ]
     },
@@ -88,13 +80,13 @@
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 17179869184
+                "FixedValue": {
+                  "Value": 4
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288498778734592
+                "FixedValue": {
+                  "Value": 300002
                 }
               }
             }
@@ -105,14 +97,10 @@
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "PropT_202050209"
-              },
-              "TaskEnabled": true
+              }
             }
           ],
-          "OnTriggerExit": [],
-          "SkipFakeAvatar": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "OnTriggerExit": []
         }
       ]
     },
@@ -124,25 +112,20 @@
           "CustomString": {
             "Value": "PropT_202050209"
           },
-          "GoNextImmediately": true,
-          "TaskEnabled": true
+          "GoNextImmediately": true
         },
         {
           "$type": "RPG.GameCore.PlayNPCBubbleTalk",
           "BubbleTalkInfoList": [
             {
-              "AutoSkipTime": 3.0,
+              "AutoSkipTime": 3,
               "GroupID": 4,
               "GroupNpcID": 400002,
               "TalkSentenceID": 202180562
             }
           ],
-          "BubbleTalkType": "Normal",
-          "LoopInterval": 5.0,
-          "InstantFinish": true,
-          "UniqueID": 202050209,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "LoopInterval": 5,
+          "UniqueID": 202050209
         }
       ]
     }

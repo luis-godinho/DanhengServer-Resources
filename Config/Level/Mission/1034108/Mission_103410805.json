@@ -5,28 +5,26 @@
       "TaskList": [
         {
           "$type": "RPG.GameCore.PlayFullScreenTransfer",
-          "Type": "Black",
-          "PrevDuration": -1.0,
-          "KeepDuration": 0.5,
-          "PostDuration": -1.0,
+          "PrevDuration": -1,
+          "PostDuration": -1,
           "Action": [
             {
               "$type": "RPG.GameCore.ScrTrfActPerformance",
               "CreateNpc": {
-                "IsClientOnly": true
+                "TaskEnabled": false
               },
               "DestroyNpc": {
                 "Hide": true,
-                "IsClientOnly": true
+                "TaskEnabled": false
               },
               "CreateProp": {
-                "IsClientOnly": true
+                "TaskEnabled": false
               },
               "DestroyProp": {
                 "TargetType": {
                   "$type": "RPG.GameCore.TargetFetchAdvPropEx"
                 },
-                "IsClientOnly": true
+                "TaskEnabled": false
               },
               "CaptureNpc": [],
               "SwitchCharacterAnchor": {
@@ -37,78 +35,48 @@
                 },
                 "AnchorName": {
                   "Value": "Anchor1"
-                },
-                "ResetAnimation": true,
-                "ResetCamera": true,
-                "ClearSpecialVision": true,
-                "TaskEnabled": true,
-                "IsClientOnly": true
+                }
               },
               "ActiveVirtualCamera": {
-                "IsActive": true,
-                "VCameraDitherMaxDistance": 1.0,
-                "CenterPosX": -1.0,
-                "CenterPosY": -1.0,
-                "IsClientOnly": true
+                "TaskEnabled": false
               },
               "ActiveTemplateVirtualCamera": {
-                "IsActive": true,
-                "IsClientOnly": true
+                "TaskEnabled": false
               },
               "AdvNpcFaceToPlayer": {
-                "FromDialog": true,
-                "TryFaceToFace": true,
-                "NpcLookAtPlayer": true,
-                "PlayerLookAtNpc": true,
-                "StopLookAtOnGraphEnd": true,
-                "TurnBackOnGraphEnd": true,
                 "SteerImmediately": true,
                 "FinishImmadiate": true,
-                "WaitFinishMode": "WaitFaceAngle",
-                "ForceToStandBy": true,
-                "IsClientOnly": true
+                "TaskEnabled": false
               }
             }
-          ],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         },
         {
           "$type": "RPG.GameCore.TriggerPerformance",
           "ValueSource": {},
           "PerformanceType": "C",
-          "PerformanceID": 103410805,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 103410805
         },
         {
           "$type": "RPG.GameCore.SetMissionAudioState",
           "SetBGMEmotionState": true,
-          "BGMEmotionStateName": "State_Bgm_E2",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "BGMEmotionStateName": "State_Bgm_E2"
         },
         {
           "$type": "RPG.GameCore.TriggerPerformance",
           "ValueSource": {},
           "PerformanceType": "PlayVideo",
-          "PerformanceID": 103410855,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 103410855
         },
         {
           "$type": "RPG.GameCore.TriggerPerformance",
           "ValueSource": {},
           "PerformanceType": "D",
-          "PerformanceID": 103410856,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 103410856
         },
         {
           "$type": "RPG.GameCore.ClientFinishMission",
-          "SubmissionID": 103410805,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "SubmissionID": 103410805
         }
       ]
     }

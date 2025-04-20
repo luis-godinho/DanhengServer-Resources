@@ -11,9 +11,7 @@
           "MainMissionIDList": [],
           "PerformanceIDList": [],
           "PerformanceIDDsList": [],
-          "CustomValueMainMissionIDList": [],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "CustomValueMainMissionIDList": []
         },
         {
           "$type": "RPG.GameCore.ShowUI",
@@ -21,18 +19,14 @@
           "WaitForExit": true,
           "Param": {
             "Value": "1"
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
           "$type": "RPG.GameCore.PredicateTaskList",
           "Predicate": {
             "$type": "RPG.GameCore.ByCompareSubMissionState",
             "SubMissionID": 802110204,
-            "SubMissionState": "Finish",
-            "TaskEnabled": true,
-            "IsClientOnly": true
+            "SubMissionState": "Finish"
           },
           "SuccessTaskList": [
             {
@@ -41,26 +35,19 @@
               "WaitForExit": true,
               "Param": {
                 "Value": "802110208"
-              },
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              }
             },
             {
               "$type": "RPG.GameCore.FinishPerformanceMission",
-              "Key": "Mission_802112104",
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "Key": "Mission_802112104"
             }
           ],
           "FailedTaskList": [
             {
               "$type": "RPG.GameCore.FinishPerformanceMission",
-              "Key": "Mission_802112104",
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "Key": "Mission_802112104"
             }
-          ],
-          "TaskEnabled": true
+          ]
         }
       ]
     }

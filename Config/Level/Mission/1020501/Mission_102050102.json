@@ -7,14 +7,11 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Mission_102050102_1"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_102050102",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_102050102"
         }
       ]
     },
@@ -25,28 +22,23 @@
           "Predicate": {
             "$type": "RPG.GameCore.ByTargetNpcExists",
             "GroupID": 6,
-            "GroupNpcID": 400001,
-            "TaskEnabled": true,
-            "IsClientOnly": true
+            "GroupNpcID": 400001
           },
           "FailedTaskList": [
             {
               "$type": "RPG.GameCore.CreateNPC",
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 25769803776
+                "FixedValue": {
+                  "Value": 6
                 }
               },
               "GroupNpcID": {
-                "fixedValue": {
-                  "RawValue": 1717991213367296
+                "FixedValue": {
+                  "Value": 400001
                 }
-              },
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              }
             }
-          ],
-          "TaskEnabled": true
+          ]
         }
       ]
     }

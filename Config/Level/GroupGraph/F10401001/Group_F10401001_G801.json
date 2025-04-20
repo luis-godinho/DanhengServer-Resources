@@ -1,0 +1,60 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitFloorCustomValueChangeV2",
+          "Name": {
+            "Value": "FCV_MissionCavalryBeastRun04"
+          },
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.AdvCreateGroupEntity",
+              "InstanceIDList": [
+                400001
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.WaitSecond",
+              "WaitTime": {
+                "FixedValue": {
+                  "Value": 0.5
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.AdvSetAIMoveTo",
+              "EntityInstanceID": {
+                "FixedValue": {
+                  "Value": 400001
+                }
+              },
+              "GroupId": 801,
+              "PointID": 1,
+              "MotionFlag": "Run",
+              "SpeedScale": 5
+            },
+            {
+              "$type": "RPG.GameCore.TriggerAnimState",
+              "TargetType": {
+                "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                "Targets": [
+                  400001
+                ]
+              },
+              "AnimStateName": "Run"
+            }
+          ],
+          "Condition": {
+            "$type": "RPG.GameCore.ByCheckFloorCustomBoolV2",
+            "Name": {
+              "Value": "FCV_MissionCavalryBeastRun04"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "Type": "Group"
+}

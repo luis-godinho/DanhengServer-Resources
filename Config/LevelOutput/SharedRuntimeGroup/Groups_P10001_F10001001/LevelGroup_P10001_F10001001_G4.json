@@ -1,4 +1,5 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "NPC",
   "Category": "Atmosphere",
   "AreaAnchorName": "LevelArea_P10001_F10001001_G4",
@@ -6,18 +7,18 @@
   "LoadOnInitial": true,
   "ValueSource": {},
   "ConflictIDList": [],
-  "StreamingTemplateType": "Standard",
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
-  "TagContainer": [
-    {
-      "Tag": "Group.Atomsphere.NPC",
-      "TagHash": -882113524
-    }
-  ],
+  "TagContainer": {
+    "List": [
+      {
+        "Tag": "Group.Atomsphere.NPC",
+        "TagHash": -882113524
+      }
+    ]
+  },
   "AnchorList": [
     {
       "Name": "Anchor1",
-      "RotY": -9.1e-05,
+      "RotY": -9.1E-05,
       "ID": 1,
       "PosX": 2.25,
       "PosY": 0.175017,
@@ -40,9 +41,7 @@
   "NPCList": [
     {
       "NPCID": 1009,
-      "LoadOnInitial": true,
       "ValueSource": {},
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [
         100030114,
         100050103,
@@ -67,16 +66,13 @@
         202030358
       ],
       "ServerInteractVerificationIDList": [],
-      "DefaultLookAtMode": "LookPlayer",
       "BoardShowList": [
         4
       ],
       "TalkDialogGroupIDList": [
         500002200
       ],
-      "DefaultAnimationType": "FreeStyle",
       "DefaultIdleFreeStyleMotionID": 310090000,
-      "BornType": "Mission",
       "InitialHiddenNodeList": [],
       "Dialog": {
         "LevelGraph": "Config/Level/NPCDialogue/P10001/F10001001_G4/DialogueMain_F10001001_G4_N400001.json",
@@ -121,26 +117,14 @@
             "Name": "2000202",
             "LevelGraph": "Config/Level/NPCDialogue/P10001/F10001001_G4/DialoguePack_2000202_F10001001_G4_N400001.json"
           }
-        ],
-        "EnableDialogCamera": true
+        ]
       },
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "CameraCenterEntityList": [],
       "SpawnConfig": {
-        "TryCapture": true,
-        "CaptureDistanceTolerance": 10.0,
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "CaptureDistanceTolerance": 10,
+        "EntitySpawnConfig": {}
       },
-      "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true
-      },
+      "TriggerValidGuest": {},
       "Name": "NPC1",
       "RotY": 5.159172,
       "ID": 400001,

@@ -8,37 +8,31 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Mission_DeployStart_4015321"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.PredicateTaskList",
           "Predicate": {
             "$type": "RPG.GameCore.ByTargetNpcExists",
             "GroupID": 153,
-            "GroupNpcID": 400001,
-            "TaskEnabled": true,
-            "IsClientOnly": true
+            "GroupNpcID": 400001
           },
           "FailedTaskList": [
             {
               "$type": "RPG.GameCore.CreateNPC",
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 657129996288
+                "FixedValue": {
+                  "Value": 153
                 }
               },
               "GroupNpcID": {
-                "fixedValue": {
-                  "RawValue": 1717991213367296
+                "FixedValue": {
+                  "Value": 400001
                 }
               },
-              "CreateList": [],
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "CreateList": []
             }
-          ],
-          "TaskEnabled": true
+          ]
         },
         {
           "$type": "RPG.GameCore.PropSetupTrigger",
@@ -47,19 +41,27 @@
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 657129996288
+                "FixedValue": {
+                  "Value": 153
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288498778734592
+                "FixedValue": {
+                  "Value": 300002
                 }
               }
             }
           },
-          "TargetGroupID": {},
-          "TargetID": {},
+          "TargetGroupID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "TargetID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
           "TargetTypes": [],
           "OnTriggerEnter": [
             {
@@ -67,53 +69,35 @@
               "Predicate": {
                 "$type": "RPG.GameCore.ByTargetNpcExists",
                 "GroupID": 153,
-                "GroupNpcID": 400001,
-                "TaskEnabled": true,
-                "IsClientOnly": true
+                "GroupNpcID": 400001
               },
               "SuccessTaskList": [
                 {
                   "$type": "RPG.GameCore.PlayNPCBubbleTalk",
                   "BubbleTalkInfoList": [
                     {
-                      "AutoSkipTime": 3.0,
+                      "AutoSkipTime": 3,
                       "GroupID": 153,
                       "GroupNpcID": 400001,
                       "TalkSentenceID": 401539909
                     }
-                  ],
-                  "BubbleTalkType": "Normal",
-                  "LoopInterval": 1.0,
-                  "InstantFinish": true,
-                  "TaskEnabled": true,
-                  "IsClientOnly": true
+                  ]
                 }
               ],
-              "FailedTaskList": [],
-              "TaskEnabled": true
+              "FailedTaskList": []
             }
-          ],
-          "SkipFakeAvatar": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         },
         {
           "$type": "RPG.GameCore.PerformanceTransition",
-          "SwitchInTime": 0.5,
-          "SwitchKeepTime": 2.0,
-          "SwitchOutTime": 0.5,
+          "SwitchKeepTime": 2,
           "TextEnabled": true,
           "TalkSentenceID": 401539906,
           "CreateNpcList": [],
           "CaptureNpcList": [],
           "DestroyNpcList": [],
-          "DisactiveVCamOnGraphEnd": true,
           "ActiveVirtualCamera": {
-            "IsActive": true,
-            "VCameraDitherMaxDistance": 1.0,
-            "CenterPosX": -1.0,
-            "CenterPosY": -1.0,
-            "IsClientOnly": true
+            "TaskEnabled": false
           },
           "SwitchCharacterAnchor": {
             "IsLocalPlayer": true,
@@ -123,16 +107,9 @@
             },
             "AnchorName": {
               "Value": "Transistion3"
-            },
-            "ResetAnimation": true,
-            "ResetCamera": true,
-            "ClearSpecialVision": true,
-            "TaskEnabled": true,
-            "IsClientOnly": true
+            }
           },
-          "WaitStreamingFinish": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "WaitStreamingFinish": true
         }
       ]
     }

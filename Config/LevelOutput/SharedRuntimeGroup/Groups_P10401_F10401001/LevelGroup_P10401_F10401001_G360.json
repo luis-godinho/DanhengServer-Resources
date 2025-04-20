@@ -1,4 +1,5 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "ChangZhu NPC",
   "Category": "Atmosphere",
   "AreaAnchorName": "LevelArea_P10401_F10401001_G360",
@@ -9,23 +10,22 @@
         "$type": "RPG.GameCore.LevelGroupSubMissionCompleteCondition",
         "SubMissionID": 104010320
       }
-    ],
-    "Operation": "And"
+    ]
   },
   "LoadOnInitial": true,
   "ValueSource": {},
   "ConflictIDList": [],
   "IsHoyoGroup": true,
   "HoYoGroupType": "Container",
-  "StreamingTemplateType": "Standard",
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
   "ConflictWhiteList": [],
-  "TagContainer": [
-    {
-      "Tag": "Group.Atomsphere.NPC",
-      "TagHash": -882113524
-    }
-  ],
+  "TagContainer": {
+    "List": [
+      {
+        "Tag": "Group.Atomsphere.NPC",
+        "TagHash": -882113524
+      }
+    ]
+  },
   "AnchorList": [],
   "MonsterList": [],
   "PropList": [],
@@ -36,22 +36,19 @@
   "NPCList": [
     {
       "NPCID": 14221,
-      "LoadOnInitial": true,
       "ValueSource": {},
       "StaticNPC": true,
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "ServerInteractVerificationIDList": [],
       "DefaultBlendShapeConfigName": "Close01",
+      "DefaultLookAtMode": "Closed",
       "BoardShowList": [
         1,
         64
       ],
       "TalkDialogGroupIDList": [],
-      "DefaultAnimationType": "FreeStyle",
       "DefaultIdleFreeStyleMotionID": 100020309,
       "AdditiveResidentEffect": [],
-      "BornType": "Mission",
       "InitialHiddenNodeList": [],
       "Dialog": {
         "LevelGraph": "Config/Level/NPCDialogue/P10401/F10401001_G360/DialogueMain_F10401001_G360_N400001.json",
@@ -60,35 +57,22 @@
             "Name": "Common",
             "LevelGraph": "Config/Level/NPCDialogue/P10401/F10401001_G360/DialoguePack_Common_F10401001_G360_N400001.json"
           }
-        ],
-        "EnableDialogCamera": true
+        ]
       },
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "OverrideReplaceMaterialKeyList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
       "SpawnConfig": {
-        "TryCapture": true,
-        "CaptureDistanceTolerance": 1.5,
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
-      "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true
-      },
+      "TriggerValidGuest": {},
       "Name": "NPC1",
       "RotY": 24.06783,
       "ID": 400001,
       "PosX": 197.154,
       "PosY": 102.213,
-      "PosZ": 288.0
+      "PosZ": 288
     }
   ],
   "CrowdList": [],

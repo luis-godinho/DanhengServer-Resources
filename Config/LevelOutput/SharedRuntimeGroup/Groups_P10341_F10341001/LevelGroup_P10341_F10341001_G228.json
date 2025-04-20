@@ -1,60 +1,37 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "MainMission4340168_Trash1",
   "Category": "Mission",
   "LevelGraph": "Config/Level/GroupGraph/F10341001/Group_F10341001_G228.json",
   "AreaAnchorName": "LevelArea_P10341_F10341001_G228",
-  "SaveType": "Permanent",
   "LoadSide": "Server",
   "OwnerMainMissionID": 4340168,
   "ValueSource": {},
   "ConflictIDList": [],
   "IsHoyoGroup": true,
-  "StreamingTemplateType": "Standard",
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
   "ConflictWhiteList": [],
-  "TagContainer": [
-    {
-      "Tag": "Group.Level.SpecialMonster",
-      "TagHash": -1267591894
-    }
-  ],
+  "TagContainer": {
+    "List": [
+      {
+        "Tag": "Group.Level.SpecialMonster",
+        "TagHash": -1267591894
+      }
+    ]
+  },
   "AnchorList": [],
   "MonsterList": [],
   "PropList": [],
   "DistrictList": [
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "Trigger": {
         "Shape": "GeometryBox",
-        "Radius": 1.0,
-        "DimX": 10.0,
-        "DimY": 1.0,
-        "DimZ": 5.0,
+        "Radius": 1,
+        "DimX": 10,
+        "DimY": 1,
+        "DimZ": 5,
         "PointList": []
       },
-      "LoadOnInitial": true,
       "DistrictType": "Level",
-      "NPCCrowdRadius": 25.0,
       "ValueSource": {},
       "Name": "District1",
       "ID": 1,
@@ -69,23 +46,19 @@
   "NPCList": [
     {
       "NPCID": 2302,
-      "LoadOnInitial": true,
       "ValueSource": {},
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "ServerInteractVerificationIDList": [],
+      "DefaultLookAtMode": "Closed",
       "BoardShowList": [
         1,
         8
       ],
       "OverrideNPCName": {
-        "Hash": -708515733,
-        "Hash64": 4425281106760636764
+        "Hash": 4425281106760636764
       },
       "TalkDialogGroupIDList": [],
-      "DefaultAnimationType": "FreeStyle",
       "DefaultIdleFreeStyleMotionID": 200380248,
-      "BornType": "Mission",
       "InitialHiddenNodeList": [],
       "Dialog": {
         "LevelGraph": "Config/Level/NPCDialogue/P10341/F10341001_G228/DialogueMain_F10341001_G228_N400001.json",
@@ -97,30 +70,21 @@
               "ID": 434016801
             }
           ]
-        },
-        "EnableDialogCamera": true
+        }
       },
       "InteractIconType": "SecretMissionIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "OverrideReplaceMaterialKeyList": [],
       "CameraCenterEntityList": [],
       "SpawnConfig": {
-        "TryCapture": true,
-        "CaptureDistanceTolerance": 1.5,
         "OverrideSpawn": true,
         "EntitySpawnConfig": {
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
+          "NeedBlackIn": false
         }
       },
-      "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true
-      },
+      "TriggerValidGuest": {},
       "Name": "NPC1",
-      "RotY": 180.0,
+      "RotY": 180,
       "ID": 400001,
       "PosX": 0.162,
       "PosY": -6.571476,

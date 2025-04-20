@@ -1,25 +1,24 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "NPC",
   "Category": "Atmosphere",
   "AreaAnchorName": "LevelArea_P10305_F10305001_G50",
   "SaveType": "Reset",
-  "AtmosphereCondition": {
-    "Operation": "And"
-  },
+  "AtmosphereCondition": {},
   "LoadOnInitial": true,
   "ValueSource": {},
   "ConflictIDList": [],
   "IsHoyoGroup": true,
   "HoYoGroupType": "Container",
-  "StreamingTemplateType": "Standard",
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
   "ConflictWhiteList": [],
-  "TagContainer": [
-    {
-      "Tag": "Group.Atomsphere.NPC",
-      "TagHash": -882113524
-    }
-  ],
+  "TagContainer": {
+    "List": [
+      {
+        "Tag": "Group.Atomsphere.NPC",
+        "TagHash": -882113524
+      }
+    ]
+  },
   "AnchorList": [],
   "MonsterList": [],
   "PropList": [],
@@ -30,44 +29,26 @@
   "NPCList": [
     {
       "NPCID": 13402,
-      "LoadOnInitial": true,
       "ValueSource": {},
       "SOConfig": {
         "InstanceID": 1
       },
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "ServerInteractVerificationIDList": [],
-      "DefaultLookAtMode": "LookPlayer",
       "BoardShowList": [],
       "OverrideNPCTitle": {
-        "Hash": -1987642313,
-        "Hash64": 2693534622008310077
+        "Hash": 2693534622008310077
       },
       "TalkDialogGroupIDList": [],
-      "DefaultAnimationType": "FreeStyle",
       "DefaultIdleFreeStyleMotionID": 100030000,
-      "BornType": "Mission",
       "InitialHiddenNodeList": [],
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "OverrideReplaceMaterialKeyList": [],
       "CameraCenterEntityList": [],
       "SpawnConfig": {
-        "TryCapture": true,
-        "CaptureDistanceTolerance": 1.5,
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
-      "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true
-      },
+      "TriggerValidGuest": {},
       "Name": "NPC1",
       "RotY": 185.1671,
       "ID": 400001,
@@ -87,22 +68,18 @@
           "PlayeMode": "Loop",
           "PointList": [
             {
+              "RestartMode": "RestartFromSO",
               "RootTask": {
                 "$type": "RPG.GameCore.SO_PlayFreeStyle",
                 "StoryAvatarID": "3",
-                "StoryMotionID": 100030325,
-                "ForceStart": true,
-                "NormalizedTransitionDuration": 0.05,
-                "TaskEnabled": true,
-                "IsClientOnly": true
+                "StoryMotionID": 100030325
               }
             },
             {
+              "RestartMode": "RestartFromSO",
               "RootTask": {
                 "$type": "RPG.GameCore.SO_Wait",
-                "Time": 10.0,
-                "TaskEnabled": true,
-                "IsClientOnly": true
+                "Time": 10
               }
             }
           ]

@@ -1,0 +1,194 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.SetRogueRoomFinish"
+        },
+        {
+          "$type": "RPG.GameCore.SetAllRogueDoorState"
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropStateExecute",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+            "FetchType": "SinglePropByPropKey",
+            "SinglePropKey": {
+              "Custom": true,
+              "Key": "ship"
+            },
+            "SinglePropID": {
+              "GroupID": {
+                "FixedValue": {
+                  "Value": 125
+                }
+              },
+              "ID": {
+                "FixedValue": {
+                  "Value": 300004
+                }
+              }
+            }
+          },
+          "Execute": [
+            {
+              "$type": "RPG.GameCore.TriggerCustomString",
+              "CustomString": {
+                "Value": "Puzzle_isFinished"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropStateExecute",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+            "FetchType": "SinglePropByPropKey",
+            "SinglePropKey": {
+              "Custom": true,
+              "Key": "ship"
+            },
+            "SinglePropID": {
+              "GroupID": {
+                "FixedValue": {
+                  "Value": 125
+                }
+              },
+              "ID": {
+                "FixedValue": {
+                  "Value": 300004
+                }
+              }
+            }
+          },
+          "Execute": [
+            {
+              "$type": "RPG.GameCore.WaitCustomString",
+              "CustomString": {
+                "Value": "ShipArrived"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.PropReqInteract",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                "FetchType": "SinglePropByPropKey",
+                "SinglePropKey": {
+                  "Custom": true,
+                  "Key": "Chest"
+                },
+                "SinglePropID": {
+                  "GroupID": {
+                    "FixedValue": {
+                      "Value": 25
+                    }
+                  },
+                  "ID": {
+                    "FixedValue": {
+                      "Value": 300001
+                    }
+                  }
+                },
+                "PropIDInOwnerGroup": {
+                  "FixedValue": {
+                    "Value": 300001
+                  }
+                }
+              },
+              "InteractID": {
+                "FixedValue": {
+                  "Value": 120120
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropStateExecute",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+            "FetchType": "SinglePropByPropKey",
+            "SinglePropKey": {
+              "Custom": true,
+              "Key": "ship"
+            },
+            "SinglePropID": {
+              "GroupID": {
+                "FixedValue": {
+                  "Value": 125
+                }
+              },
+              "ID": {
+                "FixedValue": {
+                  "Value": 300004
+                }
+              }
+            }
+          },
+          "State": "Open",
+          "Execute": [
+            {
+              "$type": "RPG.GameCore.PropReqInteract",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                "FetchType": "SinglePropByPropKey",
+                "SinglePropKey": {
+                  "Custom": true,
+                  "Key": "Chest"
+                },
+                "SinglePropID": {
+                  "GroupID": {
+                    "FixedValue": {
+                      "Value": 25
+                    }
+                  },
+                  "ID": {
+                    "FixedValue": {
+                      "Value": 300001
+                    }
+                  }
+                },
+                "PropIDInOwnerGroup": {
+                  "FixedValue": {
+                    "Value": 300001
+                  }
+                }
+              },
+              "InteractID": {
+                "FixedValue": {
+                  "Value": 120120
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "ValueSource": {
+    "Values": [
+      {
+        "$type": "RPG.GameCore.SharedString",
+        "Key": "Chest"
+      },
+      {
+        "$type": "RPG.GameCore.SharedString",
+        "Key": "ship"
+      }
+    ]
+  },
+  "Type": "Group"
+}

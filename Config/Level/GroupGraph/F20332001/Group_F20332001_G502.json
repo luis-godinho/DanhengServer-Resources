@@ -1,0 +1,220 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.BindSwitchPhotoGraphFuncBtn",
+          "SimpleMode": false,
+          "MissionID": {
+            "FixedValue": {
+              "Value": 8027203
+            }
+          },
+          "RangeTriggerProp": {
+            "FetchType": "SinglePropByPropID",
+            "SinglePropID": {
+              "GroupID": {
+                "FixedValue": {
+                  "Value": 502
+                }
+              },
+              "ID": {
+                "FixedValue": {
+                  "Value": 300001
+                }
+              }
+            }
+          },
+          "ColliderRelativePathList": [],
+          "PhotoGraphMode": "MultiTakePhoto",
+          "IdentifyDisplayType": "PhotoExhibition",
+          "AimTargetContainerConfig": [
+            {
+              "LogicOperator": "Or",
+              "InnerContainers": [
+                {
+                  "AimTargetConfig": {
+                    "$type": "RPG.GameCore.PhotoGraphAimContaierTarget",
+                    "AimTargetType": {
+                      "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                      "FetchType": "SinglePropByPropID",
+                      "SinglePropID": {
+                        "GroupID": {
+                          "FixedValue": {
+                            "Value": 502
+                          }
+                        },
+                        "ID": {
+                          "FixedValue": {
+                            "Value": 300002
+                          }
+                        }
+                      }
+                    },
+                    "GameObjectNode": {
+                      "Value": "Root"
+                    }
+                  },
+                  "TipConfigs": [],
+                  "IsAimTargetConfig": true
+                }
+              ],
+              "OnlyShow": true,
+              "OverrideCameraTip": true,
+              "TipPriority": 1,
+              "TipConfigs": [
+                {
+                  "MinDistance": 10,
+                  "MaxDistance": 99,
+                  "TipText": {
+                    "Hash": 4021565249410092732
+                  }
+                }
+              ],
+              "ContainerFlagName": "Target_802720301",
+              "IsTopContainer": true,
+              "IsAimTargetConfig": true
+            }
+          ],
+          "OverrideConfig": {
+            "IdentifyRadiusOverride": {
+              "FixedValue": {
+                "Value": 10
+              }
+            },
+            "IdentifyLookAt": {
+              "$type": "RPG.GameCore.TargetFetchAdvNpcEx",
+              "FetchType": "SingleNpcByNpcID",
+              "SingleNpcID": {
+                "GroupID": {
+                  "FixedValue": {
+                    "Value": 502
+                  }
+                },
+                "GroupNpcID": {
+                  "FixedValue": {
+                    "Value": 400002
+                  }
+                }
+              }
+            }
+          },
+          "ExtraSettings": {
+            "LookAtCameraTarget": {
+              "$type": "RPG.GameCore.TargetFetchAdvNpcEx",
+              "FetchType": "SingleNpcByNpcID",
+              "SingleNpcID": {
+                "GroupID": {
+                  "FixedValue": {
+                    "Value": 502
+                  }
+                },
+                "GroupNpcID": {
+                  "FixedValue": {
+                    "Value": 400002
+                  }
+                }
+              }
+            },
+            "ShowBubbleTalk": true
+          },
+          "NotStartPhotoInTriggerRangeMode": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CaptureNPCToCharacter",
+          "GroupID": {
+            "FixedValue": {
+              "Value": 502
+            }
+          },
+          "GroupNpcID": {
+            "FixedValue": {
+              "Value": 400002
+            }
+          },
+          "CharacterUniqueName": {
+            "Value": "G502_NPC400002"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.SetCharacterAtlasFaceEmotion",
+          "CharacterUniqueName": "G502_NPC400002",
+          "EmotionIndex": 12
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "PhotoGraphStartCustomString"
+          },
+          "GoNextImmediately": true
+        },
+        {
+          "$type": "RPG.GameCore.WaitSecond",
+          "WaitTime": {
+            "FixedValue": {
+              "Value": 1.5
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.CharacterTriggerFreeStyle",
+          "CharacterUniqueName": "G502_NPC400002",
+          "TargetAlias": {
+            "$type": "RPG.GameCore.TargetFetchAdvNpcEx",
+            "FetchType": "SingleNpcByNpcID",
+            "SingleNpcID": {
+              "GroupID": {
+                "FixedValue": {
+                  "Value": 502
+                }
+              },
+              "GroupNpcID": {
+                "FixedValue": {
+                  "Value": 400002
+                }
+              }
+            }
+          },
+          "StoryAvatarID": "NPC_Special_OrigamiBird_00",
+          "StoryMotionID": 900090265
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "PhotoGraphStartCustomString"
+          },
+          "GoNextImmediately": true
+        },
+        {
+          "$type": "RPG.GameCore.PlayNPCBubbleTalk",
+          "BubbleTalkInfoList": [
+            {
+              "AutoSkipTime": 2,
+              "GroupID": 502,
+              "GroupNpcID": 400002,
+              "TalkSentenceID": 802721310
+            }
+          ],
+          "InstantFinish": false,
+          "UniqueID": 1
+        }
+      ]
+    }
+  ],
+  "Type": "Group"
+}

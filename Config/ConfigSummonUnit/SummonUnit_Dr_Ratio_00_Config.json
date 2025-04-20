@@ -1,45 +1,12 @@
 {
   "GroupConfigName": "StaticUnit",
   "ConfigEntityPath": "Config/ConfigEntity/SummonUnit/SummonUnit_Dr_Ratio_00_MazeSkill_Entity.json",
-  "TickLodTemplateName": "DefaultStaticEntity",
   "ResidentEffects": [
     {
-      "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Dr_Ratio_00/Eff_Avatar_Dr_Ratio_00_MazeSkill_Appear01.prefab",
-      "Scale": {
-        "x": -1.0,
-        "y": -1.0,
-        "z": -1.0,
-        "normalized": {
-          "x": -0.577350259,
-          "y": -0.577350259,
-          "z": -0.577350259,
-          "normalized": {
-            "x": -0.5773503,
-            "y": -0.5773503,
-            "z": -0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
-      "IsNeedFadeIn": true,
-      "ParamEntityUsage": "LookAt",
-      "TowardMaxPitchAngle": 90.0,
-      "MaxMutexCount": 1,
-      "TaskEnabled": true,
-      "IsClientOnly": true
+      "$type": "RPG.GameCore.TriggerEffect",
+      "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Dr_Ratio_00/Eff_Avatar_Dr_Ratio_00_MazeSkill_Appear01.prefab"
     }
   ],
-  "ShoesType": "boot",
-  "Duration": {
-    "fixedValue": {
-      "RawValue": -4294967296
-    }
-  },
   "OnCreate": [
     {
       "$type": "RPG.GameCore.AdvMarkAsTauntProxy",
@@ -50,9 +17,7 @@
       "ProxyTargetType": {
         "$type": "RPG.GameCore.TargetAlias",
         "Alias": "Caster"
-      },
-      "TaskEnabled": true,
-      "IsClientOnly": true
+      }
     }
   ],
   "OnDestroy": [],
@@ -60,19 +25,16 @@
     "CustomTriggers": [
       {
         "TriggerName": "HitNpcMonsterTrigger",
-        "DefaultEnable": true,
         "Radius": {
-          "fixedValue": {
-            "RawValue": 25769803776
+          "FixedValue": {
+            "Value": 6
           }
         },
         "UseVerticalBound": true,
         "NeedRaycast": true,
-        "RayStartOffsetY": 1.0,
         "TargetTypes": [
           "NPCMonster"
         ],
-        "OnlyCheckFilterOnEnter": true,
         "ColliderRelativePath": "Trigger",
         "OnTriggerEnter": [
           {
@@ -81,9 +43,7 @@
               "$type": "RPG.GameCore.TargetAlias",
               "Alias": "TaskActionTarget"
             },
-            "ID": 130501,
-            "TaskEnabled": true,
-            "IsClientOnly": true
+            "ID": 130501
           }
         ],
         "OnTriggerExit": [
@@ -93,12 +53,9 @@
               "$type": "RPG.GameCore.TargetAlias",
               "Alias": "TaskActionTarget"
             },
-            "ID": 130501,
-            "TaskEnabled": true,
-            "IsClientOnly": true
+            "ID": 130501
           }
-        ],
-        "SkipFakeAvatar": true
+        ]
       }
     ]
   },
@@ -110,35 +67,13 @@
           "$type": "RPG.GameCore.TargetAlias",
           "Alias": "Caster"
         },
-        "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Dr_Ratio_00/Eff_Avatar_Dr_Ratio_00_MazeSkill_Hit.prefab",
-        "Scale": {
-          "x": -1.0,
-          "y": -1.0,
-          "z": -1.0,
-          "normalized": {
-            "x": -0.577350259,
-            "y": -0.577350259,
-            "z": -0.577350259,
-            "normalized": {
-              "x": -0.5773503,
-              "y": -0.5773503,
-              "z": -0.5773503,
-              "magnitude": 1.00000012,
-              "sqrMagnitude": 1.00000024
-            },
-            "magnitude": 0.99999994,
-            "sqrMagnitude": 0.99999994
-          },
-          "magnitude": 1.73205078,
-          "sqrMagnitude": 3.0
-        },
-        "IsNeedFadeIn": true,
-        "ParamEntityUsage": "LookAt",
-        "TowardMaxPitchAngle": 90.0,
-        "MaxMutexCount": 1,
-        "TaskEnabled": true,
-        "IsClientOnly": true
+        "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Dr_Ratio_00/Eff_Avatar_Dr_Ratio_00_MazeSkill_Hit.prefab"
       }
     ]
+  },
+  "DynamicValues": {
+    "Floats": {
+      "1930809102": {}
+    }
   }
 }

@@ -1,0 +1,92 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.SetLuaActionQueuePause"
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideHintWithText",
+          "Block": true,
+          "TargetEvent": [
+            {
+              "$type": "RPG.GameCore.WaitPlayerAction",
+              "ActionType": "AnyAction"
+            }
+          ],
+          "NodeIDList": [
+            "PlanetFes.Building02.All"
+          ],
+          "IsAutoMatchGuideHintType": false,
+          "GuideTextType": "Talk",
+          "GuideText": "TutorialTextmap_552101",
+          "GuideTalkID": 575016,
+          "CustomTextDirection": "LeftUp",
+          "GuideHintShowConfig": {},
+          "GuideTextShowConfig": {},
+          "GuideUIContextConfig": {},
+          "EnableActionList": [],
+          "EnableBattleOperationList": [],
+          "DisableBlackMask": true
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideHintWithText",
+          "Block": true,
+          "TargetEvent": [
+            {
+              "$type": "RPG.GameCore.WaitPlayerAction",
+              "ActionType": "ClickBtn",
+              "Param": "PlanetFesMainPage.Manage.01"
+            }
+          ],
+          "NodeIDList": [
+            "PlanetFesMainPage.Manage.01"
+          ],
+          "GuideHintType": "ClickRect",
+          "GuideTextType": "Talk",
+          "GuideText": "TutorialTextmap_552101",
+          "GuideTalkID": 575022,
+          "GuideHintShowConfig": {},
+          "GuideTextShowConfig": {},
+          "GuideUIContextConfig": {},
+          "EnableActionList": [],
+          "EnableBattleOperationList": []
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideHintWithText",
+          "Block": true,
+          "TargetEvent": [
+            {
+              "$type": "RPG.GameCore.WaitPlayerAction",
+              "ActionType": "ClickBtn",
+              "Param": "PlanetFes.Building01.All",
+              "ProtectTime": 0.5
+            }
+          ],
+          "NodeIDList": [
+            "PlanetFes.Building01.All"
+          ],
+          "GuideHintType": "ClickRect",
+          "GuideTextType": "Talk",
+          "GuideText": "TutorialTextmap_552101",
+          "GuideTalkID": 575023,
+          "GuideHintShowConfig": {},
+          "GuideTextShowConfig": {},
+          "GuideUIContextConfig": {},
+          "EnableActionList": [],
+          "EnableBattleOperationList": []
+        },
+        {
+          "$type": "RPG.GameCore.TutorialClose"
+        },
+        {
+          "$type": "RPG.GameCore.SetLuaActionQueuePause",
+          "IsPause": false
+        }
+      ]
+    }
+  ],
+  "ValueSource": {},
+  "EntityEventList": []
+}

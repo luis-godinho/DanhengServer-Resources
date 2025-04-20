@@ -1,4 +1,5 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "avatar",
   "Category": "Atmosphere",
   "AreaAnchorName": "LevelArea_P10401_F10401001_G310",
@@ -9,23 +10,22 @@
         "$type": "RPG.GameCore.LevelGroupAtmosphereMainMissionCompleteCondition",
         "MainMissionID": 1040114
       }
-    ],
-    "Operation": "And"
+    ]
   },
   "LoadOnInitial": true,
   "ValueSource": {},
   "ConflictIDList": [],
   "IsHoyoGroup": true,
   "HoYoGroupType": "Container",
-  "StreamingTemplateType": "Standard",
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
   "ConflictWhiteList": [],
-  "TagContainer": [
-    {
-      "Tag": "Group.Atomsphere.NPC",
-      "TagHash": -882113524
-    }
-  ],
+  "TagContainer": {
+    "List": [
+      {
+        "Tag": "Group.Atomsphere.NPC",
+        "TagHash": -882113524
+      }
+    ]
+  },
   "AnchorList": [
     {
       "Name": "Anchor1",
@@ -61,19 +61,16 @@
   "NPCList": [
     {
       "NPCID": 1402,
-      "LoadOnInitial": true,
       "ValueSource": {},
       "StaticNPC": true,
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "ServerInteractVerificationIDList": [],
       "BoneEmotionName": "Happy01",
+      "DefaultLookAtMode": "Closed",
       "BoardShowList": [],
       "TalkDialogGroupIDList": [],
-      "DefaultAnimationType": "FreeStyle",
       "DefaultIdleFreeStyleMotionID": 314020230,
       "AdditiveResidentEffect": [],
-      "BornType": "Mission",
       "InitialHiddenNodeList": [],
       "Dialog": {
         "LevelGraph": "Config/Level/NPCDialogue/P10401/F10401001_G310/DialogueMain_F10401001_G310_N400001.json",
@@ -82,29 +79,16 @@
             "Name": "Common",
             "LevelGraph": "Config/Level/NPCDialogue/P10401/F10401001_G310/DialoguePack_Common_F10401001_G310_N400001.json"
           }
-        ],
-        "EnableDialogCamera": true
+        ]
       },
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "OverrideReplaceMaterialKeyList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
       "SpawnConfig": {
-        "TryCapture": true,
-        "CaptureDistanceTolerance": 1.5,
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
-      "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true
-      },
+      "TriggerValidGuest": {},
       "Name": "NPC1",
       "RotY": 112.5853,
       "ID": 400001,

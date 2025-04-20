@@ -1,0 +1,119 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropSetupOptionsTrigger",
+          "OptionList": [
+            {
+              "OptionTextmapID": {
+                "Hash": 5515464114109395709
+              },
+              "TriggerCustomString": "AllBomb"
+            },
+            {
+              "OptionTextmapID": {
+                "Hash": 14048902624073768257
+              },
+              "TriggerCustomString": "KeepLive"
+            },
+            {
+              "OptionTextmapID": {
+                "Hash": 5470437706483493109
+              },
+              "TriggerCustomString": "DontKill"
+            }
+          ],
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "AllBomb"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TriggerBattle",
+          "EventID": {
+            "FixedValue": {
+              "Value": 900017
+            }
+          },
+          "GroupID": {
+            "FixedValue": {
+              "Value": 2
+            }
+          },
+          "BattleAreaID": {
+            "FixedValue": {
+              "Value": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "KeepLive"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TriggerBattle",
+          "EventID": {
+            "FixedValue": {
+              "Value": 900018
+            }
+          },
+          "GroupID": {
+            "FixedValue": {
+              "Value": 2
+            }
+          },
+          "BattleAreaID": {
+            "FixedValue": {
+              "Value": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "DontKill"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TriggerBattle",
+          "EventID": {
+            "FixedValue": {
+              "Value": 900019
+            }
+          },
+          "GroupID": {
+            "FixedValue": {
+              "Value": 2
+            }
+          },
+          "BattleAreaID": {
+            "FixedValue": {
+              "Value": 1
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

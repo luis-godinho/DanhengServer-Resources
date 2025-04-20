@@ -1,7 +1,7 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "Gameplay TimeRewind 4",
   "AreaAnchorName": "LevelArea_P40404_F40404001_G86",
-  "SaveType": "Permanent",
   "SavedValueCondition": {
     "Conditions": [],
     "Operation": "And"
@@ -12,51 +12,27 @@
   "ConflictIDList": [],
   "IsHoyoGroup": true,
   "HoYoGroupType": "Container",
-  "StreamingTemplateType": "Standard",
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
   "ConflictWhiteList": [],
-  "TagContainer": [
-    {
-      "Tag": "Group.Level.Gameplay",
-      "TagHash": -141571921
-    }
-  ],
+  "TagContainer": {
+    "List": [
+      {
+        "Tag": "Group.Level.Gameplay",
+        "TagHash": -141571921
+      }
+    ]
+  },
   "AnchorList": [],
   "MonsterList": [],
   "PropList": [
     {
       "Scale": {
-        "x": 0.6,
-        "y": 0.6,
-        "z": 0.6,
-        "normalized": {
-          "x": 0.5773503,
-          "y": 0.5773503,
-          "z": 0.5773503,
-          "normalized": {
-            "x": 0.577350259,
-            "y": 0.577350259,
-            "z": 0.577350259,
-            "magnitude": 0.99999994,
-            "sqrMagnitude": 0.99999994
-          },
-          "magnitude": 1.00000012,
-          "sqrMagnitude": 1.00000024
-        },
-        "magnitude": 1.03923047,
-        "sqrMagnitude": 1.08
+        "X": 0.6,
+        "Y": 0.6,
+        "Z": 0.6
       },
       "PropID": 104072,
-      "LoadOnInitial": true,
       "ValueSource": {
         "Values": [
-          {
-            "$type": "RPG.GameCore.SharedInt",
-            "Value": 2,
-            "Key": "type"
-          }
-        ],
-        "SharedValues": [
           {
             "$type": "RPG.GameCore.SharedInt",
             "Value": 2,
@@ -65,18 +41,13 @@
         ]
       },
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
       "DisableDither": true,
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
@@ -85,8 +56,7 @@
           {
             "$type": "RPG.GameCore.PropTagTimeRewindEntityComponent",
             "TimeRewindObjectType": "Carving",
-            "EnablePersistence": true,
-            "RebuildWhenHitPlayer": true,
+            "InitState": "L0_Idle",
             "AnimStateOverride": [],
             "TimeRewindAnimEventJson": "Config/Gameplays/TimeRewind/TimeRewinder_General02.json",
             "FoundationAndBallBind": {},
@@ -100,15 +70,8 @@
           }
         ]
       },
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Prop1",
       "ID": 300001,

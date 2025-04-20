@@ -1,24 +1,34 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "CavalryBeast_Stream",
   "Category": "Atmosphere",
   "LevelGraph": "Config/Level/GroupGraph/F10401001/Group_F10401001_G601.json",
   "AreaAnchorName": "LevelArea_P10401_F10401001_G601",
   "SaveType": "Reset",
   "AtmosphereCondition": {
-    "Operation": "And"
+    "Conditions": [
+      {
+        "$type": "RPG.GameCore.LevelGroupAtmosphereSavedValueCondition",
+        "SavedValueName": "FSV_Mission_DisableCavalryBeast"
+      }
+    ]
   },
   "LoadOnInitial": true,
-  "ValueSource": {},
+  "ValueSource": {
+    "Values": []
+  },
   "ConflictIDList": [],
   "IsHoyoGroup": true,
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
+  "StreamingTemplateType": "None",
   "ConflictWhiteList": [],
-  "TagContainer": [
-    {
-      "Tag": "Group.Atomsphere.NPC",
-      "TagHash": -882113524
-    }
-  ],
+  "TagContainer": {
+    "List": [
+      {
+        "Tag": "Group.Atomsphere.NPC",
+        "TagHash": -882113524
+      }
+    ]
+  },
   "AnchorList": [],
   "MonsterList": [],
   "PropList": [],
@@ -46,21 +56,14 @@
   "NPCList": [
     {
       "NPCID": 3185,
-      "LoadOnInitial": true,
       "ValueSource": {},
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "ServerInteractVerificationIDList": [],
-      "DefaultLookAtMode": "LookPlayer",
       "BoardShowList": [],
       "TalkDialogGroupIDList": [],
-      "DefaultAnimationType": "FreeStyle",
       "DefaultIdleFreeStyleMotionID": 900260000,
       "AdditiveResidentEffect": [],
-      "BornType": "Mission",
       "InitialHiddenNodeList": [],
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "OverrideReplaceMaterialKeyList": [
         "NPC_Special_CavalryBeast_00_01_Body_04",
@@ -69,31 +72,23 @@
       "CameraCenterEntityList": [],
       "CameraConfig": {},
       "SpawnConfig": {
-        "TryCapture": true,
-        "CaptureDistanceTolerance": 1.5,
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
-      "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true
-      },
+      "TriggerValidGuest": {},
       "TagOverrideConfig": {
         "Mode": "Override",
-        "OverrideTags": [
-          {
-            "Tag": "NPC.CavalryBeast",
-            "TagHash": 2136885204
-          },
-          {
-            "Tag": "NPC.EnableHitTrigger",
-            "TagHash": -2072772405
-          }
-        ]
+        "OverrideTags": {
+          "List": [
+            {
+              "Tag": "NPC.CavalryBeast",
+              "TagHash": 2136885204
+            },
+            {
+              "Tag": "NPC.EnableHitTrigger",
+              "TagHash": -2072772405
+            }
+          ]
+        }
       },
       "Name": "NPC1",
       "RotY": 345.3213,
@@ -104,39 +99,22 @@
     },
     {
       "NPCID": 3183,
-      "LoadOnInitial": true,
       "ValueSource": {},
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "ServerInteractVerificationIDList": [],
-      "DefaultLookAtMode": "LookPlayer",
       "BoardShowList": [],
       "TalkDialogGroupIDList": [],
-      "DefaultAnimationType": "FreeStyle",
       "DefaultIdleFreeStyleMotionID": 900250000,
       "AdditiveResidentEffect": [],
-      "BornType": "Mission",
       "InitialHiddenNodeList": [],
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "OverrideReplaceMaterialKeyList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
       "SpawnConfig": {
-        "TryCapture": true,
-        "CaptureDistanceTolerance": 1.5,
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
-      "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true
-      },
+      "TriggerValidGuest": {},
       "Name": "NPC2",
       "RotY": 341.8372,
       "ID": 400002,
@@ -146,40 +124,23 @@
     },
     {
       "NPCID": 14112,
-      "LoadOnInitial": true,
       "ValueSource": {},
       "StaticNPC": true,
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "ServerInteractVerificationIDList": [],
-      "DefaultLookAtMode": "LookPlayer",
       "BoardShowList": [],
       "TalkDialogGroupIDList": [],
-      "DefaultAnimationType": "FreeStyle",
       "DefaultIdleFreeStyleMotionID": 100010000,
       "AdditiveResidentEffect": [],
-      "BornType": "Mission",
       "InitialHiddenNodeList": [],
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "OverrideReplaceMaterialKeyList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
       "SpawnConfig": {
-        "TryCapture": true,
-        "CaptureDistanceTolerance": 1.5,
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
-      "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true
-      },
+      "TriggerValidGuest": {},
       "Name": "NPC3",
       "ID": 400003,
       "PosX": 88.43,
@@ -189,15 +150,12 @@
     },
     {
       "NPCID": 14112,
-      "LoadOnInitial": true,
       "ValueSource": {},
       "StaticNPC": true,
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "ServerInteractVerificationIDList": [
         80
       ],
-      "DefaultLookAtMode": "LookPlayer",
       "MappingInfoID": 2494,
       "BoardShowList": [
         1,
@@ -205,13 +163,11 @@
         64
       ],
       "TalkDialogGroupIDList": [],
-      "DefaultAnimationType": "FreeStyle",
       "DefaultIdleFreeStyleMotionID": 100010000,
       "AdditiveResidentEffect": [],
       "OverrideSeriesID": 4294967295,
       "IsMapContent": true,
       "MiniMapIconType": 319,
-      "BornType": "Mission",
       "InitialHiddenNodeList": [],
       "Dialog": {
         "LevelGraph": "Config/Level/NPCDialogue/P10401/F10401001_G601/DialogueMain_F10401001_G601_N400005.json",
@@ -220,29 +176,16 @@
             "Name": "Common",
             "LevelGraph": "Config/Level/NPCDialogue/P10401/F10401001_G601/DialoguePack_Common_F10401001_G601_N400005.json"
           }
-        ],
-        "EnableDialogCamera": true
+        ]
       },
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "OverrideReplaceMaterialKeyList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
       "SpawnConfig": {
-        "TryCapture": true,
-        "CaptureDistanceTolerance": 1.5,
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
-      "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true
-      },
+      "TriggerValidGuest": {},
       "Name": "NPC5",
       "ID": 400005,
       "PosX": 85.75,

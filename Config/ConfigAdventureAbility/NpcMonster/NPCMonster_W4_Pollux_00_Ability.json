@@ -1,0 +1,42 @@
+{
+  "AbilityList": [
+    {
+      "Name": "MazeMonster_W4_Pollux_00_OvalGround",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.TriggerEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "Flags": [
+            "Resident"
+          ],
+          "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_W4_Pollux_00/Eff_Monster_W4_Pollux_00_Ground1.prefab",
+          "PositionOffset": {
+            "Z": 1
+          }
+        }
+      ]
+    },
+    {
+      "Name": "ManikinMonster_W4_Pollux_00_OvalGround",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "OnAdd": [
+        {
+          "$type": "RPG.GameCore.TriggerEffectForUI",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_W4_Pollux_00/Eff_Monster_W4_Pollux_00_Ground_Manikin.prefab"
+        }
+      ]
+    }
+  ]
+}

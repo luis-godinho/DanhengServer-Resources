@@ -1,34 +1,17 @@
 {
+  "$type": "RPG.GameCore.CharacterConfig",
   "SomatoType": "MiddleAvatar",
-  "CharacterBodySize": "None",
   "BuffPanelOffset": {
-    "x": "Infinity",
-    "y": "Infinity",
-    "z": "Infinity",
-    "IsInfinity": true,
-    "IsPositiveInfinity": true,
-    "normalized": {
-      "x": "NaN",
-      "y": "NaN",
-      "z": "NaN",
-      "IsNaN": true,
-      "magnitude": "NaN",
-      "sqrMagnitude": "NaN"
-    },
-    "magnitude": "Infinity",
-    "sqrMagnitude": "Infinity"
+    "X": "Infinity",
+    "Y": "Infinity",
+    "Z": "Infinity"
   },
   "HitBoxWidth": 0.3,
-  "HitBoxLength": 1.0,
   "HitBoxHeight": 1.5,
-  "Resilience": "C",
   "Location": {
     "Width": 0.8
   },
-  "VisualRadius": 1.0,
-  "LookAtIKEnableRadius": 0.5,
   "SaveModelWhenDead": true,
-  "IsSpecialVisualCharacter": "Keep",
   "AnimEventConfigList": [
     "Config/ConfigAnimEvents/Avatar/Designer/Avatar_Lingsha_00_Designer_AnimEvent.json",
     "Config/ConfigAnimEvents/Avatar/Effect/Avatar_Lingsha_00_Effect_AnimEvent.json",
@@ -38,442 +21,211 @@
     {
       "Name": "Skill01",
       "UseType": "SelectEntity",
-      "ActivateAfterRevive": true,
-      "MaxCastTimes": -1,
       "TargetInfo": {
-        "TargetType": "EnemySelect",
-        "AdjoinSubTargetCount": 1,
-        "MaxTargetCount": 1,
-        "AllowFriendServant": "Allow",
-        "AllowEnemyServant": "Allow"
+        "TargetType": "EnemySelect"
       },
       "UseReadyTransitAnim": true,
-      "SkillNameHUD": true,
-      "CanOverkill": true,
       "ReadyAnimState": "Skill01_Ready",
       "CameraConfig": {
         "NormalConfig": {
           "CameraState": "SelectDarkTeamEntity",
-          "AnchorTargetType": {
-            "$type": "RPG.GameCore.TargetAlias",
-            "Alias": "Caster"
-          },
           "IsLocalOffset": true,
           "AnchorOffset": {
-            "x": 0.5,
-            "y": 0.24,
-            "z": -0.56,
-            "normalized": {
-              "x": 0.634387,
-              "y": 0.304505765,
-              "z": -0.7105135,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 0.7881624,
-            "sqrMagnitude": 0.621199965
-          },
-          "AimTargetType": {
-            "$type": "RPG.GameCore.TargetAlias",
-            "Alias": "SkillTargetEntityList"
+            "X": 0.5,
+            "Y": 0.24,
+            "Z": -0.56
           },
           "AimOffset": {
-            "x": -2.8,
-            "y": 0.45,
-            "normalized": {
-              "x": -0.9873304,
-              "y": 0.1586781,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 2.83593,
-            "sqrMagnitude": 8.0425
+            "X": -2.8,
+            "Y": 0.45
           },
-          "FollowRadius": 3.0,
-          "AnchorToAimAngle": 30.0,
-          "Dutch": 2.0,
-          "NearClipping": 0.1,
-          "ForbidDynamicOffset": true,
-          "ResetToDefault": true,
-          "UseSkillPerformIgnoreDynamicOffset": true,
-          "UseAimTargetToCameraFocus": true
+          "FollowRadius": 3,
+          "AnchorToAimAngle": 30,
+          "Dutch": 2
         },
         "BlendConfig": {
-          "BlendType": "Cut",
-          "FOVSmoothDampTime": -1.0,
-          "FrameBlendWeightStart": 1.0,
-          "FrameBlendDuration": 1.0
+          "BlendType": "Cut"
         }
       },
       "CameraConfigAdded": {
         "NormalConfig": {
           "CameraState": "SelectDarkTeamEntity",
-          "AnchorTargetType": {
-            "$type": "RPG.GameCore.TargetAlias",
-            "Alias": "Caster"
-          },
           "IsLocalOffset": true,
           "AnchorOffset": {
-            "x": 0.1,
-            "y": 0.12,
-            "z": -0.25,
-            "normalized": {
-              "x": 0.339226753,
-              "y": 0.4070721,
-              "z": -0.8480669,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 0.294788063,
-            "sqrMagnitude": 0.0868999958
-          },
-          "AimTargetType": {
-            "$type": "RPG.GameCore.TargetAlias",
-            "Alias": "SkillTargetEntityList"
+            "X": 0.1,
+            "Y": 0.12,
+            "Z": -0.25
           },
           "AimOffset": {
-            "x": -2.8,
-            "y": 0.45,
-            "normalized": {
-              "x": -0.9873304,
-              "y": 0.1586781,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 2.83593,
-            "sqrMagnitude": 8.0425
+            "X": -2.8,
+            "Y": 0.45
           },
           "FollowRadius": 2.65,
-          "AnchorToAimAngle": 23.0,
-          "NearClipping": 0.1,
-          "ForbidDynamicOffset": true,
-          "ResetToDefault": true,
-          "UseSkillPerformIgnoreDynamicOffset": true,
-          "UseAimTargetToCameraFocus": true
+          "AnchorToAimAngle": 23
         },
         "BlendConfig": {
           "BlendType": "Custom",
           "CustomCurveName": "BlendCut_05to1",
-          "BlendTime": 1.0,
-          "FOVSmoothDampTime": -1.0,
-          "FrameBlendWeightStart": 1.0,
-          "FrameBlendDuration": 1.0
+          "BlendTime": 1
         }
       },
       "FormationType": "LightTeamSelectTarget",
       "EntryAbility": "Avatar_Lingsha_00_Skill01_Phase01",
-      "DelayRatio": {
-        "RawValue": 4294967296
-      },
       "ComplexSkillAIPreCheck": {
-        "SkillBasicPower": {
-          "RawValue": 4294967296
-        },
         "Groups": [
           {
-            "GroupName": "DefaultNormalSkill_PreCheck",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "DefaultNormalSkill_PreCheck"
           },
           {
             "GroupName": "BaseWeight",
             "Weight": {
-              "RawValue": 2147483650
+              "Value": 0.5
             }
           },
           {
             "GroupName": "BasePp_Common_WeakBreak",
             "Weight": {
-              "RawValue": 2147483650
+              "Value": 0.5
             }
           }
         ]
       },
       "ComplexSkillAI": {
-        "SkillBasicPower": {
-          "RawValue": 4294967296
-        },
         "Groups": [
           {
-            "GroupName": "DefaultNormalSkill",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "DefaultNormalSkill"
           },
           {
             "GroupName": "BaseWeight",
             "Weight": {
-              "RawValue": 2147483650
+              "Value": 0.5
             }
           },
           {
             "GroupName": "BasePp_Common_WeakBreak",
             "Weight": {
-              "RawValue": 2147483650
+              "Value": 0.5
             }
           }
         ]
-      },
-      "AIUltraSkillPriority": "PROG_Default",
-      "CanBeInterrupted": true,
-      "AutoCostSpNeed": true,
-      "AutoStandbyOnSkillFinish": true,
-      "IsSkillInsertable": true
+      }
     },
     {
       "Name": "Skill02",
       "SkillType": "Skill",
       "UseType": "SelectEntity",
-      "ActivateAfterRevive": true,
-      "MaxCastTimes": -1,
       "TargetInfo": {
-        "TargetType": "AllEnemy",
-        "AdjoinSubTargetCount": 1,
-        "MaxTargetCount": 1,
-        "AllowFriendServant": "Allow",
-        "AllowEnemyServant": "Allow"
+        "TargetType": "AllEnemy"
       },
       "UseReadyTransitAnim": true,
-      "SkillNameHUD": true,
-      "CanOverkill": true,
       "ReadyAnimState": "Skill02_Ready_Loop",
       "ReadyAnimWaitTime": 0.3,
       "CameraConfig": {
         "NormalConfig": {
           "CameraState": "SelectDarkTeamEntity",
-          "AnchorTargetType": {
-            "$type": "RPG.GameCore.TargetAlias",
-            "Alias": "Caster"
-          },
           "IsLocalOffset": true,
           "AnchorOffset": {
-            "x": -0.3,
-            "y": -0.05,
-            "z": -0.03,
-            "normalized": {
-              "x": -0.98163,
-              "y": -0.16360499,
-              "z": -0.0981629938,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.00000012
-            },
-            "magnitude": 0.305614144,
-            "sqrMagnitude": 0.0934
-          },
-          "AimTargetType": {
-            "$type": "RPG.GameCore.TargetAlias",
-            "Alias": "SkillTargetEntityList"
+            "X": -0.3,
+            "Y": -0.05,
+            "Z": -0.03
           },
           "AimOffset": {
-            "x": -2.97,
-            "y": 0.8,
-            "normalized": {
-              "x": -0.965584338,
-              "y": 0.260090053,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 3.07585764,
-            "sqrMagnitude": 9.4609
+            "X": -2.97,
+            "Y": 0.8
           },
-          "FollowRadius": 3.0,
-          "AnchorToAimAngle": 25.0,
-          "NearClipping": 0.1,
-          "ForbidDynamicOffset": true,
-          "ResetToDefault": true,
-          "UseSkillPerformIgnoreDynamicOffset": true,
-          "UseAimTargetToCameraFocus": true
+          "FollowRadius": 3,
+          "AnchorToAimAngle": 25
         },
         "BlendConfig": {
           "BlendType": "Custom",
           "CustomCurveName": "BlendCut_05to1",
-          "BlendTime": 1.0,
-          "FOVSmoothDampTime": -1.0,
-          "FrameBlendWeightStart": 1.0,
-          "FrameBlendDuration": 1.0
+          "BlendTime": 1
         }
       },
       "EntryAbility": "Avatar_Lingsha_00_Skill02_Phase01",
-      "DelayRatio": {
-        "RawValue": 4294967296
-      },
       "ComplexSkillAIPreCheck": {
-        "SkillBasicPower": {
-          "RawValue": 4294967296
-        },
         "Groups": [
           {
-            "GroupName": "DefaultBPSkill_PreCheck",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "DefaultBPSkill_PreCheck"
           },
           {
             "GroupName": "Lingsha_TeamHPCheck_Skill02",
             "Weight": {
-              "RawValue": 6442450946
+              "Value": 1.5
             }
           },
           {
-            "GroupName": "Lingsha_CheckBENum_Skill02",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "Lingsha_CheckBENum_Skill02"
           },
           {
-            "GroupName": "Lingsha_TeamBoostPoint_Skill02",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "Lingsha_TeamBoostPoint_Skill02"
           }
         ]
       },
       "ComplexSkillAI": {
-        "SkillBasicPower": {
-          "RawValue": 4294967296
-        },
         "Groups": [
           {
-            "GroupName": "DefaultBPSkill",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "DefaultBPSkill"
           },
           {
-            "GroupName": "BaseWeight",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BaseWeight"
           }
         ]
-      },
-      "AIUltraSkillPriority": "PROG_Default",
-      "CanBeInterrupted": true,
-      "AutoCostSpNeed": true,
-      "AutoStandbyOnSkillFinish": true,
-      "IsSkillInsertable": true
+      }
     },
     {
       "Name": "Skill03",
       "SkillType": "Ultra",
       "UseType": "SelectEntity",
-      "ActivateAfterRevive": true,
-      "MaxCastTimes": -1,
       "TargetInfo": {
-        "TargetType": "AllEnemy",
-        "AdjoinSubTargetCount": 1,
-        "MaxTargetCount": 1,
-        "AllowFriendServant": "Allow",
-        "AllowEnemyServant": "Allow"
+        "TargetType": "AllEnemy"
       },
       "UseReadyTransitAnim": true,
-      "CanOverkill": true,
+      "SkillNameHUD": false,
       "ReadyAnimState": "Skill03_Ready",
       "ReadyAnimWaitTime": 0.3,
       "EntryAbility": "Avatar_Lingsha_00_Skill03_Phase01",
       "PrepareAbility": "Avatar_Lingsha_00_Skill03_EnterReady",
-      "DelayRatio": {
-        "RawValue": 4294967296
-      },
       "ComplexSkillAI": {
         "SkillBasicPower": {
-          "RawValue": 386547056640
+          "Value": 90
         },
         "Groups": [
           {
-            "GroupName": "DefaultUltra",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "DefaultUltra"
           },
           {
-            "GroupName": "Ultra_Common_ImmediateRelease",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "Ultra_Common_ImmediateRelease"
           }
         ]
       },
-      "AIUltraSkillPriority": "DamageAndBuff",
-      "CanBeInterrupted": true,
-      "AutoCostSpNeed": true,
-      "AutoStandbyOnSkillFinish": true,
-      "IsSkillInsertable": true
+      "AIUltraSkillPriority": "DamageAndBuff"
     },
     {
       "Name": "SkillP01",
       "SkillType": "Passive",
       "UseType": "Passive",
-      "ActivateAfterRevive": true,
-      "MaxCastTimes": -1,
       "TargetInfo": {
-        "TargetType": "Caster",
-        "AdjoinSubTargetCount": 1,
-        "MaxTargetCount": 1,
-        "AllowFriendServant": "Allow",
-        "AllowEnemyServant": "Allow"
+        "TargetType": "Caster"
       },
-      "SkillNameHUD": true,
-      "CanOverkill": true,
-      "EntryAbility": "Avatar_Lingsha_00_PassiveSkill01",
-      "DelayRatio": {
-        "RawValue": 4294967296
-      },
-      "AIUltraSkillPriority": "PROG_Default",
-      "CanBeInterrupted": true,
-      "AutoCostSpNeed": true,
-      "AutoStandbyOnSkillFinish": true,
-      "IsSkillInsertable": true
+      "EntryAbility": "Avatar_Lingsha_00_PassiveSkill01"
     },
     {
       "Name": "SkillMaze",
       "SkillType": "Maze",
-      "ActivateAfterRevive": true,
-      "MaxCastTimes": -1,
       "TargetInfo": {
-        "TargetType": "Caster",
-        "AdjoinSubTargetCount": 1,
-        "MaxTargetCount": 1,
-        "AllowFriendServant": "Allow",
-        "AllowEnemyServant": "Allow"
+        "TargetType": "Caster"
       },
-      "SkillNameHUD": true,
-      "CanOverkill": true,
-      "EntryAbility": "Avatar_Lingsha_00_SkillMazeInLevel",
-      "DelayRatio": {
-        "RawValue": 4294967296
-      },
-      "AIUltraSkillPriority": "PROG_Default",
-      "CanBeInterrupted": true,
-      "AutoCostSpNeed": true,
-      "AutoStandbyOnSkillFinish": true,
-      "IsSkillInsertable": true
+      "EntryAbility": "Avatar_Lingsha_00_SkillMazeInLevel"
     },
     {
       "Name": "PassiveSkill02",
       "SkillType": "Passive",
       "UseType": "Passive",
-      "ActivateAfterRevive": true,
-      "MaxCastTimes": -1,
       "TargetInfo": {
-        "TargetType": "Caster",
-        "AdjoinSubTargetCount": 1,
-        "MaxTargetCount": 1,
-        "AllowFriendServant": "Allow",
-        "AllowEnemyServant": "Allow"
+        "TargetType": "Caster"
       },
-      "SkillNameHUD": true,
-      "CanOverkill": true,
-      "EntryAbility": "Avatar_Common_PassiveSkill",
-      "DelayRatio": {
-        "RawValue": 4294967296
-      },
-      "AIUltraSkillPriority": "PROG_Default",
-      "CanBeInterrupted": true,
-      "AutoCostSpNeed": true,
-      "AutoStandbyOnSkillFinish": true,
-      "IsSkillInsertable": true
+      "EntryAbility": "Avatar_Common_PassiveSkill"
     }
   ],
   "AbilityList": [
@@ -519,6 +271,256 @@
       ]
     }
   ],
+  "DynamicValues": {
+    "Floats": {
+      "-1126825319": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill01"
+        }
+      },
+      "-1847083384": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill02"
+        }
+      },
+      "-1942792281": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill02",
+          "Index": 1
+        }
+      },
+      "-81702198": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill02",
+          "Index": 2
+        }
+      },
+      "-1277444792": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill02",
+          "Index": 3
+        }
+      },
+      "-56289053": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill03"
+        }
+      },
+      "1621500546": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill03",
+          "Index": 1
+        }
+      },
+      "-812376667": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill03",
+          "Index": 2
+        }
+      },
+      "-202930074": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill03",
+          "Index": 3
+        }
+      },
+      "241281619": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill03",
+          "Index": 4
+        }
+      },
+      "722784869": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill03",
+          "Index": 5
+        }
+      },
+      "1223654379": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP01"
+        }
+      },
+      "644848458": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP01",
+          "Index": 1
+        }
+      },
+      "-520983975": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP01",
+          "Index": 2
+        }
+      },
+      "-327200280": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP01",
+          "Index": 3
+        }
+      },
+      "2097258823": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP01",
+          "Index": 4
+        }
+      },
+      "-1472498311": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP01",
+          "Index": 5
+        }
+      },
+      "121154993": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP01",
+          "Index": 6
+        }
+      },
+      "603343932": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP01",
+          "Index": 7
+        }
+      },
+      "-422443133": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillMaze"
+        }
+      },
+      "-1232813235": {
+        "ReadInfo": {
+          "Type": "SkillTreeParam",
+          "TriggerKey": "PointB1"
+        }
+      },
+      "1910589092": {
+        "ReadInfo": {
+          "Type": "SkillTreeParam",
+          "TriggerKey": "PointB1",
+          "Index": 1
+        }
+      },
+      "-1953929584": {
+        "ReadInfo": {
+          "Type": "SkillTreeParam",
+          "TriggerKey": "PointB1",
+          "Index": 2
+        }
+      },
+      "1510916033": {
+        "ReadInfo": {
+          "Type": "SkillTreeParam",
+          "TriggerKey": "PointB1",
+          "Index": 3
+        }
+      },
+      "765240285": {},
+      "-347629456": {},
+      "-840792852": {
+        "ReadInfo": {
+          "Type": "SkillTreeParam",
+          "TriggerKey": "PointB2"
+        }
+      },
+      "1184440484": {
+        "ReadInfo": {
+          "Type": "SkillTreeParam",
+          "TriggerKey": "PointB3"
+        }
+      },
+      "-755873381": {
+        "ReadInfo": {
+          "Type": "SkillTreeParam",
+          "TriggerKey": "PointB3",
+          "Index": 1
+        }
+      },
+      "-1129996118": {
+        "ReadInfo": {
+          "Type": "SkillRank",
+          "TriggerKey": "Rank01"
+        }
+      },
+      "918231519": {
+        "ReadInfo": {
+          "Type": "SkillRank",
+          "TriggerKey": "Rank01",
+          "Index": 1
+        }
+      },
+      "-281878109": {
+        "ReadInfo": {
+          "Type": "SkillRank",
+          "TriggerKey": "Rank02"
+        }
+      },
+      "2131075020": {
+        "ReadInfo": {
+          "Type": "SkillRank",
+          "TriggerKey": "Rank02",
+          "Index": 1
+        }
+      },
+      "495206713": {
+        "ReadInfo": {
+          "Type": "SkillRank",
+          "TriggerKey": "Rank04"
+        }
+      },
+      "1775432883": {
+        "ReadInfo": {
+          "Type": "SkillRank",
+          "TriggerKey": "Rank06"
+        }
+      },
+      "716931022": {
+        "ReadInfo": {
+          "Type": "SkillRank",
+          "TriggerKey": "Rank06",
+          "Index": 1
+        }
+      },
+      "2096362695": {
+        "ReadInfo": {
+          "Type": "SkillRank",
+          "TriggerKey": "Rank06",
+          "Index": 2
+        }
+      },
+      "1840311216": {
+        "ReadInfo": {
+          "Type": "SkillRank",
+          "TriggerKey": "Rank06",
+          "Index": 3
+        }
+      },
+      "438191095": {},
+      "-519199763": {},
+      "-1339672240": {},
+      "592537088": {}
+    }
+  },
   "WeaponType": "WP_Magic",
   "SkillReadyTransits": [
     {
@@ -536,16 +538,17 @@
       "ReverseOutroTime": 0.06
     }
   ],
-  "InitAnimStateName": "StandBy",
-  "ModifierPerformTimeFactor": 1.0,
   "DisableAnimEventLayers": [
     "Riboon Layer"
   ],
-  "RepeatOccurAnimWhenBeHitNormalizedTime": -1.0,
-  "IgnoreDynamicOffsetBySelf": true,
-  "OverrideHeightForCameraOffset": -1.0,
-  "MonsterIgnoreGlobalDymanicOffset": true,
-  "MaxMonsterPhase": 1,
+  "AITagList": {
+    "Floats": {
+      "-2126289379": {},
+      "-833189093": {},
+      "762466": {},
+      "-2007610612": {}
+    }
+  },
   "GlobalAIFactorGroups": {
     "Lingsha_TeamHPCheck_Skill02": {
       "Factors": [
@@ -555,9 +558,7 @@
             "TeamType": "TeamLight",
             "Evaluator": {
               "$type": "RPG.GameCore.ComplexSkillAISourcePropertyCompareRatio",
-              "FromTargetA": true,
               "PropertyTypeA": "CurrentHP",
-              "FromTargetB": true,
               "PropertyTypeB": "MaxHP"
             },
             "ListCombineType": "Min"
@@ -567,27 +568,27 @@
             "Ranges": [
               {
                 "ymin": {
-                  "RawValue": 429496729600
+                  "Value": 100
                 },
                 "xmax": {
-                  "RawValue": 2147483650
+                  "Value": 0.5
                 },
                 "ymax": {
-                  "RawValue": 429496729600
+                  "Value": 100
                 }
               },
               {
                 "xmin": {
-                  "RawValue": 2147483650
+                  "Value": 0.5
                 },
                 "ymin": {
-                  "RawValue": 4294967296
+                  "Value": 1
                 },
                 "xmax": {
-                  "RawValue": 4294967296
+                  "Value": 1
                 },
                 "ymax": {
-                  "RawValue": 4294967296
+                  "Value": 1
                 }
               }
             ]
@@ -600,6 +601,7 @@
         {
           "Source": {
             "$type": "RPG.GameCore.ComplexSkillAISourceDynamicValue",
+            "IsTarget": false,
             "DynamicValueKey": "Lingsha_AttackTime"
           },
           "Mapper": {
@@ -607,21 +609,21 @@
             "Ranges": [
               {
                 "ymin": {
-                  "RawValue": 4294967296000
+                  "Value": 1000
                 },
                 "xmax": {
-                  "RawValue": 4294967296
+                  "Value": 1
                 },
                 "ymax": {
-                  "RawValue": 4294967296000
+                  "Value": 1000
                 }
               },
               {
                 "xmin": {
-                  "RawValue": 4295396793
+                  "Value": 1.0001
                 },
                 "xmax": {
-                  "RawValue": 4290672328704
+                  "Value": 999
                 }
               }
             ]
@@ -641,21 +643,21 @@
             "Ranges": [
               {
                 "xmax": {
-                  "RawValue": 15032385538
+                  "Value": 3.5
                 }
               },
               {
                 "xmin": {
-                  "RawValue": 15032385538
+                  "Value": 3.5
                 },
                 "ymin": {
-                  "RawValue": 4294967296000
+                  "Value": 1000
                 },
                 "xmax": {
-                  "RawValue": 21474836480
+                  "Value": 5
                 },
                 "ymax": {
-                  "RawValue": 4294967296000
+                  "Value": 1000
                 }
               }
             ]
@@ -663,6 +665,5 @@
         }
       ]
     }
-  },
-  "AlwaysCutOnSkillTargetTeamChange": true
+  }
 }

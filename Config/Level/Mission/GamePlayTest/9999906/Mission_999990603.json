@@ -1,0 +1,153 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.ChangePropState"
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropSetupOptionsTrigger",
+          "OptionList": [
+            {
+              "OptionTextmapID": {
+                "Hash": 14446317291346109426
+              },
+              "TriggerCustomString": "Maze_Boxing_Begin2"
+            },
+            {
+              "OptionTextmapID": {
+                "Hash": 15977012402947229507
+              },
+              "TriggerCustomString": "Maze_Boxing_BattleMessage2"
+            },
+            {
+              "OptionTextmapID": {
+                "Hash": 7868982908341410211
+              },
+              "TriggerCustomString": "Maze_Boxing_BattleMessageMore2"
+            }
+          ],
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+            "FetchType": "SinglePropByPropID",
+            "SinglePropID": {
+              "GroupID": {
+                "FixedValue": {
+                  "Value": 4
+                }
+              },
+              "ID": {
+                "FixedValue": {
+                  "Value": 300002
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "Maze_Boxing_Begin2"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByCompareCurrentTeammemberCount",
+            "EquationType": "Equal",
+            "TargetCount": 2
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.TriggerCustomString",
+              "CustomString": {
+                "Value": "Maze_Boxing_Begin2_Start"
+              }
+            }
+          ],
+          "FailedTaskList": [
+            {
+              "$type": "RPG.GameCore.ToastPile",
+              "DescTextID": {
+                "Hash": 1925689995113175945
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "Maze_Boxing_Begin2_Start"
+          },
+          "GoNextImmediately": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerBattle",
+          "EventID": {
+            "FixedValue": {
+              "Value": 900022
+            }
+          },
+          "GroupID": {
+            "FixedValue": {
+              "Value": 1
+            }
+          },
+          "BattleAreaID": {
+            "FixedValue": {
+              "Value": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "Maze_Boxing_BattleMessage2"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.ToastPile",
+          "DescTextID": {
+            "Hash": 14416584330235276221
+          }
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "Maze_Boxing_BattleMessageMore2"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.ToastPile",
+          "DescTextID": {
+            "Hash": 14642781153610778919
+          }
+        }
+      ]
+    }
+  ]
+}

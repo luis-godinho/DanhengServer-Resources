@@ -8,39 +8,33 @@
           "ButtonIcon": "SpriteOutput/TalkIcon/ChatIcon.png",
           "IconType": "ChatLoopIcon",
           "ButtonText": {
-            "Hash": -827542546,
-            "Hash64": 13610731199544143166
+            "Hash": 13610731199544143166
           },
           "ButtonCallback": [
             {
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "Mission_404010403_Prop_130_300001_BtnClick"
-              },
-              "TaskEnabled": true
+              }
             }
           ],
-          "InteractAngleRange": 180.0,
           "OverrideTargetTypes": [],
-          "SkipFakeAvatar": true,
           "TargetType": {
             "$type": "RPG.GameCore.TargetFetchAdvPropEx",
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 558345748480
+                "FixedValue": {
+                  "Value": 130
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288494483767296
+                "FixedValue": {
+                  "Value": 300001
                 }
               }
             }
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         }
       ]
     },
@@ -50,14 +44,11 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "SubMission_404010403_End"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_404010403",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_404010403"
         }
       ]
     },
@@ -68,16 +59,13 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Mission_404010403_Prop_130_300001_BtnClick"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.TriggerPerformance",
           "ValueSource": {},
           "PerformanceType": "E",
-          "PerformanceID": 404010403,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 404010403
         }
       ]
     }

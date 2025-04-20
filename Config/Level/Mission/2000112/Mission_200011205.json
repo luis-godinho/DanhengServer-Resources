@@ -9,39 +9,33 @@
           "ButtonIcon": "SpriteOutput/TalkIcon/ChatIcon.png",
           "IconType": "ChatLoopIcon",
           "ButtonText": {
-            "Hash": 1503101881,
-            "Hash64": 1572721205877718201
+            "Hash": 1572721205877718201
           },
           "ButtonCallback": [
             {
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "Mission_200011205_Prop_46_300007_BtnClick"
-              },
-              "TaskEnabled": true
+              }
             }
           ],
-          "InteractAngleRange": 180.0,
           "OverrideTargetTypes": [],
-          "SkipFakeAvatar": true,
           "TargetType": {
             "$type": "RPG.GameCore.TargetFetchAdvPropEx",
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 197568495616
+                "FixedValue": {
+                  "Value": 46
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288520253571072
+                "FixedValue": {
+                  "Value": 300007
                 }
               }
             }
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         }
       ]
     },
@@ -50,17 +44,15 @@
         {
           "$type": "RPG.GameCore.CreateProp",
           "GroupID": {
-            "fixedValue": {
-              "RawValue": 197568495616
+            "FixedValue": {
+              "Value": 46
             }
           },
           "GroupPropID": {
-            "fixedValue": {
-              "RawValue": 1288515958603776
+            "FixedValue": {
+              "Value": 300006
             }
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         }
       ]
     },
@@ -70,16 +62,13 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Mission_200011205_Prop_46_300007_BtnClick"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.TriggerPerformance",
           "ValueSource": {},
           "PerformanceType": "E",
-          "PerformanceID": 200011205,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 200011205
         },
         {
           "$type": "RPG.GameCore.DestroyProp",
@@ -87,23 +76,19 @@
             "$type": "RPG.GameCore.TargetFetchAdvPropEx"
           },
           "ID": {
-            "fixedValue": {
-              "RawValue": 1288515958603776
+            "FixedValue": {
+              "Value": 300006
             }
           },
           "GroupID": {
-            "fixedValue": {
-              "RawValue": 197568495616
+            "FixedValue": {
+              "Value": 46
             }
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_200011205",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_200011205"
         }
       ]
     }

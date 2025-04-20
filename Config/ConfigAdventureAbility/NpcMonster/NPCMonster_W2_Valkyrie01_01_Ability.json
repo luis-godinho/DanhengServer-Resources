@@ -1,0 +1,123 @@
+{
+  "AbilityList": [
+    {
+      "Name": "MazeMonster_W2_Valkyrie01_01_NormalAtk01",
+      "TargetInfo": {
+        "TargetType": "SkillPointEntity"
+      },
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.AdventureTriggerAnimStateWithMove",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimLogicState": "NormalAtk",
+          "AnimStateName": "Attack",
+          "MovingRangeList": [
+            {
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AbilityTargetEntity"
+              },
+              "OffsetTargetDistance": {
+                "FixedValue": {
+                  "Value": 1
+                }
+              },
+              "NormalizedTimeStart": {
+                "FixedValue": {
+                  "Value": 0.01
+                }
+              },
+              "NormalizedTimeEnd": {
+                "FixedValue": {
+                  "Value": 0.104
+                }
+              },
+              "MaxMoveDistance": {
+                "FixedValue": {
+                  "Value": 6
+                }
+              },
+              "OnlyMoveForward": true,
+              "MaxSpeed": {
+                "FixedValue": {
+                  "Value": 9
+                }
+              },
+              "SteerNormalizedTimeStart": {
+                "FixedValue": {
+                  "Value": 0.01
+                }
+              },
+              "SteerNormalizedTimeEnd": {
+                "FixedValue": {
+                  "Value": 0.104
+                }
+              },
+              "MaxSteerSpeed": {
+                "FixedValue": {
+                  "Value": 300
+                }
+              }
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Attack",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.198
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.AdventureTriggerAttack",
+          "AttackTargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "AllEnemy"
+          },
+          "TriggerBattleDelay": 0.1,
+          "AttackDetectConfig": {
+            "$type": "RPG.GameCore.AdventureAttackDetectCircleConfig",
+            "MaxRadius": 2.5,
+            "FanAngle": 100,
+            "Offset": {
+              "Y": 0.5,
+              "Z": -0.3
+            }
+          },
+          "HitConfig": {
+            "HitAnimation": "Hit",
+            "HitEffect": "Effects/Eff_Prefab/Eff_Monster/Eff_W2_Valkyrie01_01/Eff_Monster_W2_Valkyrie01_01_MazeAttack_Hit.prefab"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.VCameraConfigChange",
+          "CameraConfig": {
+            "ShakeTemplateName": "Impact_Middle"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Attack",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 1
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

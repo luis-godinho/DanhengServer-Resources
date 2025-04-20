@@ -5,9 +5,7 @@
       "TaskList": [
         {
           "$type": "RPG.GameCore.PlayerForceWalk",
-          "ForceWalk": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "ForceWalk": true
         }
       ]
     },
@@ -17,48 +15,36 @@
           "$type": "RPG.GameCore.PlayMissionTalk",
           "SimpleTalkList": [
             {
-              "TextSpeed": 20.0,
               "TalkSentenceID": 202180551,
-              "ProtectTime": 1.0
+              "ProtectTime": 1
             },
             {
-              "TextSpeed": 20.0,
               "TalkSentenceID": 202180552,
               "ProtectTime": 3.75
             },
             {
-              "TextSpeed": 20.0,
               "TalkSentenceID": 202180553,
               "ProtectTime": 5.25
             },
             {
-              "TextSpeed": 20.0,
               "TalkSentenceID": 202180554,
               "ProtectTime": 5.25
             },
             {
-              "TextSpeed": 20.0,
               "TalkSentenceID": 202180555,
               "ProtectTime": 4.25
             },
             {
-              "TextSpeed": 20.0,
               "TalkSentenceID": 202180556,
-              "ProtectTime": 1.0
+              "ProtectTime": 1
             }
-          ],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         },
         {
-          "$type": "RPG.GameCore.WaitMissionTalkFinish",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "$type": "RPG.GameCore.WaitMissionTalkFinish"
         },
         {
-          "$type": "RPG.GameCore.PlayerForceWalk",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "$type": "RPG.GameCore.PlayerForceWalk"
         }
       ]
     },
@@ -67,18 +53,16 @@
         {
           "$type": "RPG.GameCore.CreateProp",
           "GroupID": {
-            "fixedValue": {
-              "RawValue": 8589934592
+            "FixedValue": {
+              "Value": 2
             }
           },
           "GroupPropID": {
-            "fixedValue": {
-              "RawValue": 1288494483767296
+            "FixedValue": {
+              "Value": 300001
             }
           },
-          "CreateList": [],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "CreateList": []
         },
         {
           "$type": "RPG.GameCore.PropSetupTrigger",
@@ -87,19 +71,27 @@
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 8589934592
+                "FixedValue": {
+                  "Value": 2
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288494483767296
+                "FixedValue": {
+                  "Value": 300001
                 }
               }
             }
           },
-          "TargetGroupID": {},
-          "TargetID": {},
+          "TargetGroupID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "TargetID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
           "TargetTypes": [],
           "DestroyAfterTriggered": true,
           "OnTriggerEnter": [
@@ -107,13 +99,9 @@
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "Mission_202050601_PropTrigger"
-              },
-              "TaskEnabled": true
+              }
             }
-          ],
-          "SkipFakeAvatar": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     },
@@ -123,27 +111,20 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Mission_202050601_PropTrigger"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.TriggerPerformance",
           "ValueSource": {},
           "PerformanceType": "E",
-          "PerformanceID": 202050601,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 202050601
         },
         {
-          "$type": "RPG.GameCore.PlayerForceWalk",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "$type": "RPG.GameCore.PlayerForceWalk"
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_202050601",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_202050601"
         }
       ]
     },
@@ -151,9 +132,7 @@
       "TaskList": [
         {
           "$type": "RPG.GameCore.ChangeTrackingMission",
-          "TrackingMainMissionID": 2020506,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "TrackingMainMissionID": 2020506
         }
       ]
     }

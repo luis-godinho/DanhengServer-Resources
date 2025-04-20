@@ -5,26 +5,20 @@
       "TaskList": [
         {
           "$type": "RPG.GameCore.PlayerForceWalk",
-          "ForceWalk": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "ForceWalk": true
         },
         {
           "$type": "RPG.GameCore.PlayMissionTalk",
           "SimpleTalkList": [
             {
-              "TextSpeed": 20.0,
               "TalkSentenceID": 202180557,
               "ProtectTime": 2.75
             },
             {
-              "TextSpeed": 20.0,
               "TalkSentenceID": 202180558,
               "ProtectTime": 7.5
             }
-          ],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     },
@@ -33,21 +27,19 @@
         {
           "$type": "RPG.GameCore.CreateNPC",
           "GroupID": {
-            "fixedValue": {
-              "RawValue": 8589934592
+            "FixedValue": {
+              "Value": 2
             }
           },
           "GroupNpcID": {
-            "fixedValue": {
-              "RawValue": 1717991213367296
+            "FixedValue": {
+              "Value": 400001
             }
           },
           "NPCUniqueName": {
             "Value": "Messenger202050602"
           },
-          "CreateList": [],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "CreateList": []
         },
         {
           "$type": "RPG.GameCore.CharacterNavigateTo",
@@ -55,16 +47,10 @@
           "AreaName": "LevelArea_P43201_F43201005_G2",
           "AnchorName": "Anchor1",
           "MotionFlag": "Walk",
-          "WaitUntilFinish": true,
-          "Duration": -1.0,
-          "TurnInPlace": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "TurnInPlace": true
         },
         {
-          "$type": "RPG.GameCore.PlayerForceWalk",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "$type": "RPG.GameCore.PlayerForceWalk"
         }
       ]
     },
@@ -77,19 +63,27 @@
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 8589934592
+                "FixedValue": {
+                  "Value": 2
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288498778734592
+                "FixedValue": {
+                  "Value": 300002
                 }
               }
             }
           },
-          "TargetGroupID": {},
-          "TargetID": {},
+          "TargetGroupID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "TargetID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
           "TargetTypes": [],
           "DestroyAfterTriggered": true,
           "OnTriggerEnter": [
@@ -97,13 +91,9 @@
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "Mission_202050602_PropTrigger"
-              },
-              "TaskEnabled": true
+              }
             }
-          ],
-          "SkipFakeAvatar": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     },
@@ -113,47 +103,33 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Mission_202050602_PropTrigger"
-          },
-          "TaskEnabled": true
+          }
         },
         {
-          "$type": "RPG.GameCore.PlayerForceWalk",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "$type": "RPG.GameCore.PlayerForceWalk"
         },
         {
           "$type": "RPG.GameCore.PlayScreenTransfer",
-          "Type": "Black",
           "Mode": "SwitchOut",
-          "CustomTime": 2.0,
-          "SwitchInEndTaskAfterUIClose": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "CustomTime": 2
         },
         {
           "$type": "RPG.GameCore.WaitSecond",
           "WaitTime": {
-            "fixedValue": {
-              "RawValue": 8589934592
+            "FixedValue": {
+              "Value": 2
             }
-          },
-          "MaxAdvencePerTick": -1.0,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
           "$type": "RPG.GameCore.TriggerPerformance",
           "ValueSource": {},
           "PerformanceType": "C",
-          "PerformanceID": 202050602,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 202050602
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_202050602",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_202050602"
         }
       ]
     }

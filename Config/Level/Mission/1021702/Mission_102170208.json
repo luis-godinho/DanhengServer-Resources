@@ -10,13 +10,13 @@
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 8589934592
+                "FixedValue": {
+                  "Value": 2
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288494483767296
+                "FixedValue": {
+                  "Value": 300001
                 }
               }
             }
@@ -29,14 +29,10 @@
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "102170208_Missiontalk"
-              },
-              "TaskEnabled": true
+              }
             }
           ],
-          "DestroyAfterGraphEnd": true,
-          "SkipFakeAvatar": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "DestroyAfterGraphEnd": true
         }
       ]
     },
@@ -46,20 +42,16 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "102170208_Missiontalk"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.PlayMissionTalk",
           "SimpleTalkList": [
             {
-              "TextSpeed": 20.0,
               "TalkSentenceID": 102170105,
-              "ProtectTime": 2.0
+              "ProtectTime": 2
             }
-          ],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     },
@@ -70,22 +62,17 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Talk_102170208"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.SetAudioEmotionState",
           "ResetToFloorDefault": true,
-          "SubMissionID": 102170208,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "SubMissionID": 102170208
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
           "Key": "Mission_102170208",
-          "MainMissionID": 1021702,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "MainMissionID": 1021702
         }
       ]
     }

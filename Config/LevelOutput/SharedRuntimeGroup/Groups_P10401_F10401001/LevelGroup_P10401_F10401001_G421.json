@@ -1,24 +1,34 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "CavalryBeast_Stream",
   "Category": "Atmosphere",
   "LevelGraph": "Config/Level/GroupGraph/F10401001/Group_F10401001_G421.json",
   "AreaAnchorName": "LevelArea_P10401_F10401001_G421",
   "SaveType": "Reset",
   "AtmosphereCondition": {
-    "Operation": "And"
+    "Conditions": [
+      {
+        "$type": "RPG.GameCore.LevelGroupAtmosphereSavedValueCondition",
+        "SavedValueName": "FSV_Mission_DisableCavalryBeast"
+      }
+    ]
   },
   "LoadOnInitial": true,
-  "ValueSource": {},
+  "ValueSource": {
+    "Values": []
+  },
   "ConflictIDList": [],
   "IsHoyoGroup": true,
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
+  "StreamingTemplateType": "None",
   "ConflictWhiteList": [],
-  "TagContainer": [
-    {
-      "Tag": "Group.Atomsphere.NPC",
-      "TagHash": -882113524
-    }
-  ],
+  "TagContainer": {
+    "List": [
+      {
+        "Tag": "Group.Atomsphere.NPC",
+        "TagHash": -882113524
+      }
+    ]
+  },
   "AnchorList": [],
   "MonsterList": [],
   "PropList": [],
@@ -29,21 +39,14 @@
   "NPCList": [
     {
       "NPCID": 3186,
-      "LoadOnInitial": true,
       "ValueSource": {},
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "ServerInteractVerificationIDList": [],
-      "DefaultLookAtMode": "LookPlayer",
       "BoardShowList": [],
       "TalkDialogGroupIDList": [],
-      "DefaultAnimationType": "FreeStyle",
       "DefaultIdleFreeStyleMotionID": 900260000,
       "AdditiveResidentEffect": [],
-      "BornType": "Mission",
       "InitialHiddenNodeList": [],
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "OverrideReplaceMaterialKeyList": [
         "NPC_Special_CavalryBeast_00_00_Body_03"
@@ -51,33 +54,25 @@
       "CameraCenterEntityList": [],
       "CameraConfig": {},
       "SpawnConfig": {
-        "TryCapture": true,
-        "CaptureDistanceTolerance": 1.5,
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
-      "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true
-      },
+      "TriggerValidGuest": {},
       "TagOverrideConfig": {
         "Mode": "Override",
-        "OverrideTags": [
-          {
-            "Tag": "NPC.CavalryBeast",
-            "TagHash": 2136885204
-          },
-          {
-            "Tag": "NPC.EnableHitTrigger",
-            "TagHash": -2072772405
-          }
-        ],
-        "AdditiveTags": [],
-        "SubtractiveTags": []
+        "OverrideTags": {
+          "List": [
+            {
+              "Tag": "NPC.CavalryBeast",
+              "TagHash": 2136885204
+            },
+            {
+              "Tag": "NPC.EnableHitTrigger",
+              "TagHash": -2072772405
+            }
+          ]
+        },
+        "AdditiveTags": {},
+        "SubtractiveTags": {}
       },
       "Name": "NPC1",
       "RotY": 348.8523,
@@ -89,44 +84,33 @@
     {
       "NPCID": 14307,
       "LevelGraph": "Config/Level/LevelInstanceGraph/F10401001/LG_NPC_F10401001_G421_400002.json",
-      "LoadOnInitial": true,
       "ValueSource": {},
       "Trigger": {
-        "Radius": 5.0,
-        "DimX": 1.0,
-        "DimY": 1.0,
-        "DimZ": 1.0,
+        "Radius": 5,
+        "DimX": 1,
+        "DimY": 1,
+        "DimZ": 1,
         "Offset": {
-          "y": -3.0,
-          "normalized": {
-            "y": -1.0,
-            "magnitude": 1.0,
-            "sqrMagnitude": 1.0
-          },
-          "magnitude": 3.0,
-          "sqrMagnitude": 9.0
+          "Y": -3
         }
       },
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "ServerInteractVerificationIDList": [],
       "DefaultBlendShapeConfigName": "Happy01",
+      "DefaultLookAtMode": "Closed",
       "OverrideTriggerSound": true,
-      "SoundRange": 25.0,
+      "SoundRange": 25,
       "BoardShowList": [
         1,
         64
       ],
       "OverrideNPCTitle": {
-        "Hash": -174159544,
-        "Hash64": 14811588040908166293
+        "Hash": 14811588040908166293
       },
       "TalkDialogGroupIDList": [],
-      "DefaultAnimationType": "FreeStyle",
       "DefaultIdleFreeStyleMotionID": 100040000,
       "AdditiveResidentEffect": [],
       "OverrideSeriesID": 4294967295,
-      "BornType": "Mission",
       "InitialHiddenNodeList": [],
       "Dialog": {
         "LevelGraph": "Config/Level/NPCDialogue/P10401/F10401001_G421/DialogueMain_F10401001_G421_N400002.json",
@@ -135,41 +119,23 @@
             "Name": "Common",
             "LevelGraph": "Config/Level/NPCDialogue/P10401/F10401001_G421/DialoguePack_Common_F10401001_G421_N400002.json"
           }
-        ]
+        ],
+        "EnableDialogCamera": false
       },
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "OverrideReplaceMaterialKeyList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {
         "VCFollowOffset": {
-          "z": 0.8,
-          "normalized": {
-            "z": 1.0,
-            "magnitude": 1.0,
-            "sqrMagnitude": 1.0
-          },
-          "magnitude": 0.8,
-          "sqrMagnitude": 0.640000045
+          "Z": 0.8
         }
       },
       "SpawnConfig": {
-        "TryCapture": true,
-        "CaptureDistanceTolerance": 1.5,
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
-      "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true
-      },
+      "TriggerValidGuest": {},
       "SoundProfileOverrideID": 6,
-      "Name": "NPC2",
+      "Name": "NPC2 音乐配置",
       "ID": 400002,
       "PosX": 80.74,
       "PosY": -16.54,

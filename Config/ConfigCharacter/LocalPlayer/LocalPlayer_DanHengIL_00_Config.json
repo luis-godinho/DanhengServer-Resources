@@ -1,42 +1,13 @@
 {
   "FootScale": {
-    "x": 1.1,
-    "y": 1.0,
-    "z": 0.8,
-    "normalized": {
-      "x": 0.651583731,
-      "y": 0.5923489,
-      "z": 0.473879069,
-      "normalized": {
-        "x": 0.6515838,
-        "y": 0.592348933,
-        "z": 0.4738791,
-        "magnitude": 1.0,
-        "sqrMagnitude": 1.0
-      },
-      "magnitude": 0.99999994,
-      "sqrMagnitude": 0.99999994
-    },
-    "magnitude": 1.68819439,
-    "sqrMagnitude": 2.85000014
+    "X": 1.1,
+    "Y": 1,
+    "Z": 0.8
   },
-  "WalkSpeedRatio": 1.0,
-  "RunSpeedRatio": 1.0,
-  "RootMotionScale": 1.0,
-  "MaxWalkAnimSpeedRatio": 1.5,
-  "MaxRunAnimSpeedRatio": 1.5,
-  "ReferenceWalkSpeed": -1.0,
-  "ReferenceRunSpeed": -1.0,
-  "ReferenceFastRunSpeed": -1.0,
   "CharacterBodySize": "Lad",
-  "NpcBodySize": "None",
-  "NavMovingSteerTurnSpeed": 75.0,
-  "NavMovingSteerTurnBackTurnSpeed": 75.0,
-  "ShoesType": "boot",
   "FreeStyleCharacterID": "NPC_Avatar_Lad_DanHengIL_00",
   "FreeStyleCharacterConfigPath": "Config/ConfigCharacter/FreeStyle/Avatar/Avatar_Lad_DanHengIL_00_FreeStyle_Config.json",
-  "LockTargetDistance": 10.0,
-  "MazeSkillDistance": 10.0,
+  "LockTargetDistance": 10,
   "AnimEventConfigList": [
     "Config/ConfigAnimEvents/LocalPlayer/Effect/LocalPlayer_DanHengIL_00_Effect_AnimEvent.json",
     "Config/ConfigAnimEvents/LocalPlayer/Audio/LocalPlayer_DanHengIL_00_Audio_AnimEvent.json",
@@ -68,7 +39,7 @@
         "TargetType": "Caster"
       },
       "EntryAbility": "LocalPlayer_DanHengIL_MazeSkill",
-      "CoolDown": 1.0
+      "CoolDown": 1
     },
     {
       "Name": "MazeCommonPassve01",
@@ -84,19 +55,29 @@
     "LocalPlayer_DanHengIL_MazeSkill",
     "LocalPlayer_CommonAbility_AttackBreak"
   ],
-  "BeHitRotate": true,
+  "DynamicValues": {
+    "Floats": {
+      "-538784871": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillMaze"
+        }
+      },
+      "188860000": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillMaze",
+          "Index": 1
+        }
+      },
+      "-259873768": {}
+    }
+  },
   "EnableFootIK": true,
-  "EnableIdleShow": true,
-  "ModelScale": 1.0,
-  "ColliderScale": 1.0,
-  "DieDelay": -1.0,
   "DisableAnimEventLayers": [
     "Riboon Layer"
   ],
-  "UseDefaultSteerMode": true,
   "HideWeaponList": [
     "MainWeapon"
-  ],
-  "BreakRecoverStandByType": "StandBy",
-  "MoveDeltaPositionOtherDirectionConstraint": 0.15
+  ]
 }

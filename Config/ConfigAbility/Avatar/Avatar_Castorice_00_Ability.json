@@ -1,0 +1,4773 @@
+{
+  "AbilityList": [
+    {
+      "Name": "Avatar_Castorice_00_Skill01_Phase01",
+      "TargetInfo": {
+        "TargetType": "SkillTargetEntityList"
+      },
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.LookAt",
+          "TargetType": "AbilityTargetEntity"
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAbility",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AbilityName": {
+            "Value": "Avatar_Castorice_00_Skill01_Camera"
+          },
+          "IsSkillPerform": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAbility",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AbilityName": {
+            "Value": "Avatar_Castorice_00_Skill01_Phase02"
+          },
+          "IsSkillPerform": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAnimStateWithMove",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill01",
+          "MovingRangeList": [
+            {
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AbilityTargetEntity"
+              },
+              "OffsetTargetDistance": {
+                "FixedValue": {
+                  "Value": 1.45
+                }
+              },
+              "NormalizedTimeStart": {
+                "FixedValue": {
+                  "Value": 0.081
+                }
+              },
+              "NormalizedTimeEnd": {
+                "FixedValue": {
+                  "Value": 0.165
+                }
+              }
+            },
+            {
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "TeamFormation"
+              },
+              "OffsetTargetDistance": {
+                "FixedValue": {
+                  "Value": 0
+                }
+              },
+              "NormalizedTimeStart": {
+                "FixedValue": {
+                  "Value": 0.583
+                }
+              },
+              "NormalizedTimeEnd": {
+                "FixedValue": {
+                  "Value": 0.701
+                }
+              }
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill01",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.075
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.RadialBlurEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "AbilityTargetEntity"
+          },
+          "BlurRadius": 1,
+          "Iteration": 4,
+          "BlurStart": 0.1
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "AnimStateName": "Skill01",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.148
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.RadialBlurEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "AbilityTargetEntity"
+          },
+          "Active": false
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "AnimStateName": "Skill01",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.47
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.StopEffectFollow",
+          "EffectList": [
+            "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_Skill01_Attack02.prefab"
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill01",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.78
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Avatar_Castorice_00_Skill01_Phase02",
+      "TargetInfo": {
+        "TargetType": "SkillTargetEntityList"
+      },
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill01",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.163
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.DamageByAttackProperty",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "AbilityTargetEntity"
+          },
+          "AttackProperty": {
+            "$type": "RPG.GameCore.AttackData",
+            "DamageType": {
+              "DamageType": "Quantum"
+            },
+            "FormulaType": "ByMaxHP",
+            "DamagePercentage": {
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAR",
+                "FixedValues": [],
+                "DynamicHashes": [
+                  -1175712008
+                ]
+              }
+            },
+            "StanceValue": {
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAR",
+                "FixedValues": [],
+                "DynamicHashes": [
+                  1659254037
+                ]
+              }
+            },
+            "HitSplitRatio": {
+              "FixedValue": {
+                "Value": 0.2
+              }
+            },
+            "SPHitRatio": {
+              "FixedValue": {
+                "Value": 1
+              }
+            },
+            "StanceDamageType": {
+              "DamageType": "Quantum"
+            },
+            "AttackType": "Normal",
+            "HitAnimation": "Hit",
+            "HitEffect": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_Skill01_Hit01.prefab",
+            "HitPosHeight": 1
+          },
+          "CanTriggerLastKill": true
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill01",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.342
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.DamageByAttackProperty",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "AbilityTargetEntity"
+          },
+          "AttackProperty": {
+            "$type": "RPG.GameCore.AttackData",
+            "DamageType": {
+              "DamageType": "Quantum"
+            },
+            "FormulaType": "ByMaxHP",
+            "DamagePercentage": {
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAR",
+                "FixedValues": [],
+                "DynamicHashes": [
+                  -1175712008
+                ]
+              }
+            },
+            "StanceValue": {
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAR",
+                "FixedValues": [],
+                "DynamicHashes": [
+                  1659254037
+                ]
+              }
+            },
+            "HitSplitRatio": {
+              "FixedValue": {
+                "Value": 0.8
+              }
+            },
+            "SPHitRatio": {
+              "FixedValue": {
+                "Value": 1
+              }
+            },
+            "StanceDamageType": {
+              "DamageType": "Quantum"
+            },
+            "AttackType": "Normal",
+            "HitAnimation": "Hit",
+            "HitEffect": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_Skill01_Hit02.prefab",
+            "HitPosHeight": 1
+          },
+          "CanTriggerLastKill": true
+        },
+        {
+          "$type": "RPG.GameCore.DamagePerformFinish"
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill01",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.36
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TargetTimeSlow",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "AbilityTargetEntity"
+          },
+          "TimeScale": 0.1,
+          "UnscaledDuration": 0.07
+        },
+        {
+          "$type": "RPG.GameCore.SkillPerformFinish"
+        }
+      ]
+    },
+    {
+      "Name": "Avatar_Castorice_00_Skill02_Phase01",
+      "TargetInfo": {
+        "TargetType": "SkillTargetEntityList"
+      },
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.LookAt",
+          "TargetType": "AbilityTargetEntity",
+          "Duration": 0.2
+        },
+        {
+          "$type": "RPG.GameCore.PlayTimeline",
+          "TimelineName": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_Skill02_V1_TimeLine.playable"
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAbility",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AbilityName": {
+            "Value": "Avatar_Castorice_00_Skill02_Camera"
+          },
+          "IsSkillPerform": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAbility",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AbilityName": {
+            "Value": "Avatar_Castorice_00_Skill02_Phase02"
+          },
+          "IsSkillPerform": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAnimState",
+          "AnimStateName": "Skill02"
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill02",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.7
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Avatar_Castorice_00_Skill02_Phase02",
+      "TargetInfo": {
+        "TargetType": "SkillTargetEntityList"
+      },
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.LoseHPByRatio",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "AllTeamMember - CasterServant"
+          },
+          "AttackType": "Unknown",
+          "RatioType": "CurrentHP",
+          "Ratio": {
+            "IsDynamic": true,
+            "PostfixExpr": {
+              "OpCodes": "AQAR",
+              "FixedValues": [],
+              "DynamicHashes": [
+                2133001108
+              ]
+            }
+          },
+          "Floor": {
+            "FixedValue": {
+              "Value": 1
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill02",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.339
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "AbilityTargetAndAdjoinEntity"
+          },
+          "AnimLogicState": "OnHit",
+          "AnimStateName": "Hit"
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill02",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.341
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TriggerEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_Skill02_V1_Hit01.prefab"
+        },
+        {
+          "$type": "RPG.GameCore.TriggerEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_Skill02_V1_eye.prefab"
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill02",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.346
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.DamageByAttackProperty",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "AbilityTargetEntity"
+          },
+          "AttackProperty": {
+            "$type": "RPG.GameCore.AttackData",
+            "DamageType": {
+              "DamageType": "Quantum"
+            },
+            "FormulaType": "ByMaxHP",
+            "DamagePercentage": {
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAR",
+                "FixedValues": [],
+                "DynamicHashes": [
+                  1476844314
+                ]
+              }
+            },
+            "StanceValue": {
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAR",
+                "FixedValues": [],
+                "DynamicHashes": [
+                  1659254037
+                ]
+              }
+            },
+            "SPHitRatio": {
+              "FixedValue": {
+                "Value": 1
+              }
+            },
+            "StanceDamageType": {
+              "DamageType": "Quantum"
+            },
+            "AttackType": "BPSkill",
+            "HitAnimation": "Hit_H",
+            "HitEffect": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_Skill02_V1_Hit02.prefab"
+          },
+          "CanTriggerLastKill": true
+        },
+        {
+          "$type": "RPG.GameCore.DamageByAttackProperty",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "AbilityTargetAdjoinEntity"
+          },
+          "AttackProperty": {
+            "$type": "RPG.GameCore.AttackData",
+            "DamageType": {
+              "DamageType": "Quantum"
+            },
+            "FormulaType": "ByMaxHP",
+            "DamagePercentage": {
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAR",
+                "FixedValues": [],
+                "DynamicHashes": [
+                  -2087063973
+                ]
+              }
+            },
+            "StanceValue": {
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAR",
+                "FixedValues": [],
+                "DynamicHashes": [
+                  -1315627076
+                ]
+              }
+            },
+            "StanceDamageType": {
+              "DamageType": "Quantum"
+            },
+            "AttackType": "BPSkill",
+            "HitAnimation": "Hit_H",
+            "HitEffect": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_Skill02_V1_Hit02.prefab",
+            "HitEffectHeight": 1,
+            "HitPosHeight": 1
+          }
+        },
+        {
+          "$type": "RPG.GameCore.DamagePerformFinish"
+        },
+        {
+          "$type": "RPG.GameCore.SkillPerformFinish"
+        }
+      ]
+    },
+    {
+      "Name": "Avatar_Castorice_00_Skill21_Phase01",
+      "TargetInfo": {
+        "TargetType": "SkillTargetEntityList",
+        "MaxTargetCount": 5
+      },
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.PlayTimeline",
+          "TimelineName": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_Skill02_V2_TimeLine.playable"
+        },
+        {
+          "$type": "RPG.GameCore.LookAt",
+          "TargetType": "DarkTeamCenter"
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAbility",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AbilityName": {
+            "Value": "Avatar_Castorice_00_Skill21_Camera"
+          },
+          "IsSkillPerform": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAnimState",
+          "AnimStateName": "Skill21"
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "CasterServant"
+          },
+          "AnimStateName": "Skill01_02"
+        },
+        {
+          "$type": "RPG.GameCore.SetDynamicValue",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "CasterServant"
+          },
+          "Value": {
+            "IsDynamic": true,
+            "PostfixExpr": {
+              "OpCodes": "AQAR",
+              "FixedValues": [],
+              "DynamicHashes": [
+                1182064154
+              ]
+            }
+          },
+          "DynamicKey": {
+            "Value": "_PairStance"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TriggerParallelAbility",
+          "ParallelAbilityList": [
+            {
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "AbilityInherentTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AbilityTargetEntity"
+              },
+              "AbilityName": {
+                "Value": "Avatar_Castorice_00_Skill21_Phase02"
+              }
+            },
+            {
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "CasterServant"
+              },
+              "AbilityInherentTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AbilityTargetEntity"
+              },
+              "AbilityName": {
+                "Value": "Servant_CastoriceServant_Together_Phase01"
+              }
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill21",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.79
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.WaitFor",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByDieAnimFinished",
+            "TeamTypeMask": "TeamDark",
+            "EntityTypeMask": "Mask_TeamCharacters"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "CasterServant"
+          },
+          "AnimLogicState": "Idle",
+          "AnimStateName": "StandBy",
+          "ForceStart": true
+        }
+      ]
+    },
+    {
+      "Name": "Avatar_Castorice_00_Skill21_Phase02",
+      "TargetInfo": {
+        "TargetType": "InherentTargetEntity"
+      },
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.WaitParallelTimeStamp",
+          "WaitTime": {
+            "FixedValue": {
+              "Value": 0.015999999
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.LoseHPByRatio",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "AllTeamMember - CasterServant"
+          },
+          "AttackType": "Unknown",
+          "RatioType": "CurrentHP",
+          "Ratio": {
+            "IsDynamic": true,
+            "PostfixExpr": {
+              "OpCodes": "AQAR",
+              "FixedValues": [],
+              "DynamicHashes": [
+                -1052586619
+              ]
+            }
+          },
+          "Floor": {
+            "FixedValue": {
+              "Value": 1
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.WaitParallelTimeStamp",
+          "WaitTime": {
+            "FixedValue": {
+              "Value": 0.2
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.ShowBonusUIEffect",
+          "UIPrefabPath": "UI/Battle/SpecialAction/Avatar/SpecialAction_1407_D.prefab",
+          "TitleTextID": {
+            "Hash": 7566787589764997164
+          }
+        },
+        {
+          "$type": "RPG.GameCore.WaitParallelTimeStamp",
+          "WaitTime": {
+            "FixedValue": {
+              "Value": 1.3666667
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAbility",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AbilityName": {
+            "Value": "Avatar_Castorice_00_Skill21_Camera02"
+          },
+          "IsSkillPerform": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "AllEnemy"
+          },
+          "AnimLogicState": "OnHit",
+          "AnimStateName": "Hit"
+        },
+        {
+          "$type": "RPG.GameCore.WaitParallelTimeStamp",
+          "WaitTime": {
+            "FixedValue": {
+              "Value": 1.4332666
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TargetTimeSlow",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "AllEnemy"
+          },
+          "TimeScale": 0.1,
+          "UnscaledDuration": 2
+        },
+        {
+          "$type": "RPG.GameCore.WaitParallelTimeStamp",
+          "WaitTime": {
+            "FixedValue": {
+              "Value": 1.7499967
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.WaitParallelTimeStamp",
+          "WaitTime": {
+            "FixedValue": {
+              "Value": 2.1166666
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.ClearTargetTimeSlow",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "AllEnemy"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByRankActivated",
+            "TriggerKey": {
+              "Hash": 2089636447
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.Retarget",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AllEnemy"
+              },
+              "TaskList": [
+                {
+                  "$type": "RPG.GameCore.IncludeTaskListTemplate",
+                  "Name": "Avatar_Castorice_SetDamageRatio"
+                },
+                {
+                  "$type": "RPG.GameCore.DamageByAttackProperty",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "ParamEntity"
+                  },
+                  "AttackProperty": {
+                    "$type": "RPG.GameCore.AttackData",
+                    "DamageType": {
+                      "DamageType": "Quantum"
+                    },
+                    "FormulaType": "ByMaxHP",
+                    "DamagePercentage": {
+                      "IsDynamic": true,
+                      "PostfixExpr": {
+                        "OpCodes": "AQABAQQR",
+                        "FixedValues": [],
+                        "DynamicHashes": [
+                          -366218697,
+                          -639670508
+                        ]
+                      }
+                    },
+                    "StanceValue": {
+                      "IsDynamic": true,
+                      "PostfixExpr": {
+                        "OpCodes": "AQAAAAQR",
+                        "FixedValues": [
+                          {
+                            "Value": 0.5
+                          }
+                        ],
+                        "DynamicHashes": [
+                          1182064154
+                        ]
+                      }
+                    },
+                    "SPHitRatio": {
+                      "FixedValue": {
+                        "Value": 1
+                      }
+                    },
+                    "AttackType": "BPSkill",
+                    "DamageTag": [
+                      {
+                        "EnumIndex": 3,
+                        "Value": 40
+                      }
+                    ],
+                    "CustomName": "CastoricePairsDamage",
+                    "HitAnimation": "Hit_H",
+                    "HitEffect": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_Skill02_V2_Hit.prefab",
+                    "HitPosHeight": 1
+                  },
+                  "CanTriggerLastKill": true
+                }
+              ]
+            }
+          ],
+          "FailedTaskList": [
+            {
+              "$type": "RPG.GameCore.DamageByAttackProperty",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AllEnemy"
+              },
+              "AttackProperty": {
+                "$type": "RPG.GameCore.AttackData",
+                "DamageType": {
+                  "DamageType": "Quantum"
+                },
+                "FormulaType": "ByMaxHP",
+                "DamagePercentage": {
+                  "IsDynamic": true,
+                  "PostfixExpr": {
+                    "OpCodes": "AQAR",
+                    "FixedValues": [],
+                    "DynamicHashes": [
+                      -366218697
+                    ]
+                  }
+                },
+                "StanceValue": {
+                  "IsDynamic": true,
+                  "PostfixExpr": {
+                    "OpCodes": "AQAAAAQR",
+                    "FixedValues": [
+                      {
+                        "Value": 0.5
+                      }
+                    ],
+                    "DynamicHashes": [
+                      1182064154
+                    ]
+                  }
+                },
+                "SPHitRatio": {
+                  "FixedValue": {
+                    "Value": 1
+                  }
+                },
+                "AttackType": "BPSkill",
+                "DamageTag": [
+                  {
+                    "EnumIndex": 3,
+                    "Value": 40
+                  }
+                ],
+                "CustomName": "CastoricePairsDamage",
+                "HitAnimation": "Hit_H",
+                "HitEffect": "Effects/Eff_Prefab/Eff_Avatar/Eff_Castorice_00/Eff_Avatar_Castorice_00_Skill02_V2_Hit.prefab",
+                "HitPosHeight": 1
+              },
+              "CanTriggerLastKill": true
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.DamagePerformFinish",
+          "SkipDeathSettlement": true
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByAnd",
+            "PredicateList": [
+              {
+                "$type": "RPG.GameCore.ByRankActivated",
+                "TriggerKey": {
+                  "Hash": 523552506
+                }
+              },
+              {
+                "$type": "RPG.GameCore.ByIsContainModifier",
+                "TargetType": {
+                  "$type": "RPG.GameCore.TargetAlias",
+                  "Alias": "Caster"
+                },
+                "ModifierName": {
+                  "Value": "MAvatar_Castorice_00_Rank02_Check"
+                }
+              }
+            ]
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.SetDynamicValueByProperty",
+              "DynamicKey": "Castorice_Rank02_MaxSpecialSP",
+              "ReadTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "Value": "MaxSpecialSP"
+            },
+            {
+              "$type": "RPG.GameCore.ModifySpecialSP",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "FixedAddValue": {
+                "IsDynamic": true,
+                "PostfixExpr": {
+                  "OpCodes": "AQABAQQR",
+                  "FixedValues": [],
+                  "DynamicHashes": [
+                    -1145046975,
+                    -90193581
+                  ]
+                }
+              },
+              "IgnoreBlock": true
+            },
+            {
+              "$type": "RPG.GameCore.RemoveModifier",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "ModifierName": {
+                "Value": "MAvatar_Castorice_00_Rank02_Check"
+              }
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.WaitParallelTimeStamp",
+          "WaitTime": {
+            "FixedValue": {
+              "Value": 2.7166667
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.WaitParallelTimeStamp",
+          "WaitTime": {
+            "FixedValue": {
+              "Value": 3.1999967
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.SkillPerformFinish"
+        }
+      ]
+    },
+    {
+      "Name": "Avatar_Castorice_00_Skill03_EnterReady",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.SyncCharLightAndCameraDir"
+        },
+        {
+          "$type": "RPG.GameCore.AlignTargetToTeamCenter",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.LookAt",
+          "TargetType": "DarkTeamCenter"
+        },
+        {
+          "$type": "RPG.GameCore.WaitSecond",
+          "WaitTime": {
+            "FixedValue": {
+              "Value": 0.1
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.WaitSecond",
+          "WaitTime": {
+            "FixedValue": {
+              "Value": 0.5
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Avatar_Castorice_00_Skill03_Phase01",
+      "TargetInfo": {
+        "TargetType": "SkillTargetEntityList"
+      },
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.LevelAudioState",
+          "GroupName": "State_Battle_Avatar_Castorice",
+          "StateName": {
+            "Value": "Inside"
+          },
+          "SaveToCustomString": true
+        },
+        {
+          "$type": "RPG.GameCore.SyncCharLightAndCameraDir",
+          "IsSync": false
+        },
+        {
+          "$type": "RPG.GameCore.AlignTargetToTeamCenter",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.LookAt",
+          "TargetType": "DarkTeamCenter"
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAbility",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AbilityName": {
+            "Value": "Avatar_Castorice_00_Skill03_Camera"
+          },
+          "IsSkillPerform": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAbility",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AbilityName": {
+            "Value": "Avatar_Castorice_00_Skill03_Phase02"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.ShowBattleUI"
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAnimState",
+          "AnimStateName": "Skill03"
+        },
+        {
+          "$type": "RPG.GameCore.HideLevelStage",
+          "IsHide": true
+        },
+        {
+          "$type": "RPG.GameCore.SwitchBattleArea",
+          "AreaName": {
+            "Value": "CastoriceBattleArea"
+          },
+          "TagName": {
+            "Value": "BattleArea01"
+          },
+          "PriorityKey": "Character"
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill03",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.99
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.WaitTimelineFinish",
+          "TimelineName": "Character_Castorice_00_Skill03_Start_TimeLine",
+          "TriggerBeforeFinish": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAnimState",
+          "AnimStateName": "Skill03_02"
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "CasterServant"
+          },
+          "AnimStateName": "Skill03_02"
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAbility",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AbilityName": {
+            "Value": "Avatar_Castorice_00_Skill03_Camera02"
+          },
+          "IsSkillPerform": true
+        },
+        {
+          "$type": "RPG.GameCore.WaitTimelineFinish",
+          "TimelineName": "Character_Castorice_00_Skill03_Start02_TimeLine"
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "CasterServant"
+          },
+          "AnimLogicState": "Idle",
+          "AnimStateName": "StandBy",
+          "ForceStart": true
+        },
+        {
+          "$type": "RPG.GameCore.HideLevelStage"
+        },
+        {
+          "$type": "RPG.GameCore.ShowBattleUI",
+          "IsShow": true
+        },
+        {
+          "$type": "RPG.GameCore.MoveToTargetPosition",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "TeamFormation"
+          },
+          "IgnoreRadius": true,
+          "OffsetTargetDistance": {
+            "FixedValue": {
+              "Value": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Avatar_Castorice_00_Skill03_Phase02",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.HideLevelStage",
+          "IsHide": true
+        },
+        {
+          "$type": "RPG.GameCore.AddModifier",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "ModifierName": {
+            "Value": "MAvatar_Castorice_00_Skill03_Field"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.ModifySpecialSP",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "SetValue": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "IgnoreBlock": true
+        },
+        {
+          "$type": "RPG.GameCore.CreateServant",
+          "ServantID": {
+            "FixedValue": {
+              "Value": 11407
+            }
+          },
+          "DynamicValues": {
+            "Castorice_Skill21_P3_HPPercentage": {
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAR",
+                "FixedValues": [],
+                "DynamicHashes": [
+                  1793566328
+                ]
+              }
+            },
+            "CastoriceServant_BaseSpeed": {
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAR",
+                "FixedValues": [],
+                "DynamicHashes": [
+                  -1370918771
+                ]
+              }
+            },
+            "CastoriceServant_LifeTime": {
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAR",
+                "FixedValues": [],
+                "DynamicHashes": [
+                  242053466
+                ]
+              }
+            },
+            "CastoriceServant_CurrentHP": {
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAR",
+                "FixedValues": [],
+                "DynamicHashes": [
+                  778854283
+                ]
+              }
+            },
+            "CastoriceServant_MaxHP": {
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAR",
+                "FixedValues": [],
+                "DynamicHashes": [
+                  778854283
+                ]
+              }
+            },
+            "CastoriceServant_PointB2_SpeedRatio": {
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAR",
+                "FixedValues": [],
+                "DynamicHashes": [
+                  975277858
+                ]
+              }
+            },
+            "CastoriceServant_PointB3_AllDamageTypeAddedRatio": {
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAR",
+                "FixedValues": [],
+                "DynamicHashes": [
+                  348088544
+                ]
+              }
+            },
+            "CastoriceServant_PointB3_MaxLayer": {
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAR",
+                "FixedValues": [],
+                "DynamicHashes": [
+                  -1157561649
+                ]
+              }
+            },
+            "CastoriceServant_Rank01_HPRatio01": {
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAR",
+                "FixedValues": [],
+                "DynamicHashes": [
+                  -873920944
+                ]
+              }
+            },
+            "CastoriceServant_Rank01_HPRatio02": {
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAR",
+                "FixedValues": [],
+                "DynamicHashes": [
+                  867701803
+                ]
+              }
+            },
+            "CastoriceServant_Rank01_DamageRatio01": {
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAR",
+                "FixedValues": [],
+                "DynamicHashes": [
+                  -1917418607
+                ]
+              }
+            },
+            "CastoriceServant_Rank01_DamageRatio02": {
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAR",
+                "FixedValues": [],
+                "DynamicHashes": [
+                  -1291963496
+                ]
+              }
+            },
+            "CastoriceServant_Rank02_MaxCount": {
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAR",
+                "FixedValues": [],
+                "DynamicHashes": [
+                  -1604531662
+                ]
+              }
+            },
+            "CastoriceServant_Rank06_AddCount": {
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAR",
+                "FixedValues": [],
+                "DynamicHashes": [
+                  46509027
+                ]
+              }
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByRankActivated",
+            "TriggerKey": {
+              "Hash": 523552506
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.AddModifier",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "ModifierName": {
+                "Value": "MAvatar_Castorice_00_Rank02_Check"
+              }
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByRankActivated",
+            "TriggerKey": {
+              "Hash": 523552506
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.SetDynamicValue",
+              "Value": {
+                "IsDynamic": true,
+                "PostfixExpr": {
+                  "OpCodes": "AQAR",
+                  "FixedValues": [],
+                  "DynamicHashes": [
+                    -1227230863
+                  ]
+                }
+              },
+              "DynamicKey": {
+                "Value": "Castorice_Rank02_Count"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.SetDynamicValue",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "CasterServant"
+              },
+              "Value": {
+                "IsDynamic": true,
+                "PostfixExpr": {
+                  "OpCodes": "AQAR",
+                  "FixedValues": [],
+                  "DynamicHashes": [
+                    -1227230863
+                  ]
+                }
+              },
+              "DynamicKey": {
+                "Value": "CastoriceServant_Rank02_Count"
+              }
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.Remodifier",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "ModifierName": "MAvatar_Castorice_00_Passive_AllDamageTypeAddedRatio",
+          "TaskList": [
+            {
+              "$type": "RPG.GameCore.InfectModifier",
+              "SourceType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "CasterServant"
+              },
+              "StatusDispelFilter": "AnyStatus",
+              "InfectType": "Override",
+              "UseParamModifierToInfect": true
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "CasterServant"
+          },
+          "AnimStateName": "Skill03"
+        },
+        {
+          "$type": "RPG.GameCore.AlignTargetToTeamCenter",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "CasterServant"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.LookAt",
+          "PerformerType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "CasterServant"
+          },
+          "TargetType": "DarkTeamCenter"
+        },
+        {
+          "$type": "RPG.GameCore.ModifyActionDelay",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "CasterServant"
+          },
+          "AddNormalizedValue": {
+            "FixedValue": {
+              "Value": -1
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByRankActivated",
+            "TriggerKey": {
+              "Hash": 523552506
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.IncludeTaskListTemplate",
+              "Name": "ModifyNextActionDelay",
+              "DynamicValues": {
+                "Arg0_NormalizedValue": {
+                  "FixedValue": {
+                    "Value": 1
+                  }
+                }
+              },
+              "ParamTarget": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.SetActionDelayNearTarget",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster.GetServant"
+              },
+              "NearTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "NearType": "After"
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill03_02",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.9
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.SkillPerformFinish"
+        }
+      ]
+    },
+    {
+      "Modifiers": {
+        "MAvatar_Castorice_00_Passive": {
+          "BehaviorFlagList": [
+            "ListenBattleEventSkill",
+            "RemoveWhenCasterDead"
+          ],
+          "OnDynamicValueChange": [
+            {
+              "Key": {
+                "Hash": 298168687
+              },
+              "ContextScope": "ContextOwner",
+              "Ranges": [
+                {
+                  "Min": {
+                    "FixedValue": {
+                      "Value": 0
+                    }
+                  },
+                  "Max": {
+                    "FixedValue": {
+                      "Value": 9999999
+                    }
+                  },
+                  "OnChange": [
+                    {
+                      "$type": "RPG.GameCore.SetDynamicValueByChangeValue",
+                      "DynamicKey": "Castorice_DeltaAdd"
+                    },
+                    {
+                      "$type": "RPG.GameCore.PredicateTaskList",
+                      "Predicate": {
+                        "$type": "RPG.GameCore.ByIsContainModifier",
+                        "TargetType": {
+                          "$type": "RPG.GameCore.TargetAlias",
+                          "Alias": "Caster"
+                        },
+                        "ModifierName": {
+                          "Value": "MAvatar_Castorice_00_Skill03_Field"
+                        },
+                        "AddedOrAlive": true,
+                        "Inverse": true
+                      },
+                      "SuccessTaskList": [
+                        {
+                          "$type": "RPG.GameCore.SetSummonerEnergyBarState",
+                          "Active": "True",
+                          "BarType": "Number",
+                          "MaxCount": {
+                            "IsDynamic": true,
+                            "PostfixExpr": {
+                              "OpCodes": "AQAR",
+                              "FixedValues": [],
+                              "DynamicHashes": [
+                                778854283
+                              ]
+                            }
+                          },
+                          "CurrentCount": {
+                            "IsDynamic": true,
+                            "PostfixExpr": {
+                              "OpCodes": "AQAR",
+                              "FixedValues": [],
+                              "DynamicHashes": [
+                                298168687
+                              ]
+                            }
+                          },
+                          "NumBarTypeConfig": {
+                            "ShowIcon": "False",
+                            "SubType": "Percent"
+                          }
+                        }
+                      ],
+                      "FailedTaskList": []
+                    },
+                    {
+                      "$type": "RPG.GameCore.SetDynamicValue",
+                      "Value": {
+                        "FixedValue": {
+                          "Value": 0
+                        }
+                      },
+                      "DynamicKey": {
+                        "Value": "Castorice_DeltaAdd"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "OnAbilityPropertyChange": [
+            {
+              "Property": "CurrentSpecialSP",
+              "Ranges": [
+                {
+                  "Min": {
+                    "FixedValue": {
+                      "Value": 0
+                    }
+                  },
+                  "TriggerClampedChange": true,
+                  "OnChange": [
+                    {
+                      "$type": "RPG.GameCore.IncludeTaskListTemplate",
+                      "Name": "Castorice_CheckCurrentSpecialSPChange"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "_CallbackList": [
+            {
+              "Event": "OnDestroy",
+              "CallbackConfig": [
+                {
+                  "$type": "RPG.GameCore.LevelAudioState",
+                  "GroupName": "State_Battle_Avatar_Castorice",
+                  "StateName": {
+                    "Value": "Outside"
+                  },
+                  "SaveToCustomString": true
+                }
+              ]
+            },
+            {
+              "Event": "OnStack",
+              "CallbackConfig": [
+                {
+                  "$type": "RPG.GameCore.SwitchByCommandType"
+                },
+                {
+                  "$type": "RPG.GameCore.ModifySP",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "Caster"
+                  },
+                  "ModifyFunction": "Set",
+                  "ModifyValue": {
+                    "FixedValue": {
+                      "Value": 0
+                    }
+                  },
+                  "IgnoreBlock": true
+                }
+              ]
+            },
+            {
+              "Event": "OnListenCharacterCreate",
+              "CallbackConfig": [
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByCompareDynamicValue",
+                    "DynamicKey": {
+                      "Value": "Castorice_RefreshMaxSpecialSPFlag"
+                    },
+                    "CompareType": "Less",
+                    "CompareValue": {
+                      "FixedValue": {
+                        "Value": 1
+                      }
+                    }
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.IncludeTaskListTemplate",
+                      "Name": "Castorice_RefreshMaxSpecialSP"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Event": "OnListenHPChange",
+              "CallbackConfig": [
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByAnd",
+                    "PredicateList": [
+                      {
+                        "$type": "RPG.GameCore.ByTargetTeam",
+                        "TargetType": {
+                          "$type": "RPG.GameCore.TargetAlias",
+                          "Alias": "ParamEntity"
+                        },
+                        "Team": "TeamLight"
+                      },
+                      {
+                        "$type": "RPG.GameCore.ByCompareTarget",
+                        "TargetType": {
+                          "$type": "RPG.GameCore.TargetAlias",
+                          "Alias": "ParamEntity"
+                        },
+                        "CompareType": {
+                          "$type": "RPG.GameCore.TargetAlias",
+                          "Alias": "CasterServant"
+                        },
+                        "Inverse": true
+                      }
+                    ]
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.PredicateTaskList",
+                      "Predicate": {
+                        "$type": "RPG.GameCore.ByCompareParamValue",
+                        "CompareType": "Less",
+                        "CompareValue": {
+                          "FixedValue": {
+                            "Value": 0
+                          }
+                        }
+                      },
+                      "SuccessTaskList": [
+                        {
+                          "$type": "RPG.GameCore.SetDynamicValueByChangeValue",
+                          "DynamicKey": "Current_LostHP"
+                        },
+                        {
+                          "$type": "RPG.GameCore.PredicateTaskList",
+                          "Predicate": {
+                            "$type": "RPG.GameCore.ByIsContainModifier",
+                            "TargetType": {
+                              "$type": "RPG.GameCore.TargetAlias",
+                              "Alias": "Caster"
+                            },
+                            "ModifierName": {
+                              "Value": "MAvatar_Castorice_00_Skill03_Field"
+                            },
+                            "AddedOrAlive": true,
+                            "Inverse": true
+                          },
+                          "SuccessTaskList": [
+                            {
+                              "$type": "RPG.GameCore.ModifySpecialSP",
+                              "TargetType": {
+                                "$type": "RPG.GameCore.TargetAlias",
+                                "Alias": "Caster"
+                              },
+                              "FixedAddValue": {
+                                "IsDynamic": true,
+                                "PostfixExpr": {
+                                  "OpCodes": "AQAOEQ==",
+                                  "FixedValues": [],
+                                  "DynamicHashes": [
+                                    2048826282
+                                  ]
+                                }
+                              },
+                              "IgnoreBlock": true
+                            }
+                          ],
+                          "FailedTaskList": [
+                            {
+                              "$type": "RPG.GameCore.PredicateTaskList",
+                              "Predicate": {
+                                "$type": "RPG.GameCore.ByCompareTargetCount",
+                                "TargetType": {
+                                  "$type": "RPG.GameCore.TargetAlias",
+                                  "Alias": "CasterServant"
+                                },
+                                "AliveOnly": true,
+                                "Number": {
+                                  "FixedValue": {
+                                    "Value": 0
+                                  }
+                                },
+                                "CompareType": "Greater"
+                              },
+                              "SuccessTaskList": [
+                                {
+                                  "$type": "RPG.GameCore.SetDynamicValueByProperty",
+                                  "DynamicKey": "Passive_CastoriceServant_CurrentHP",
+                                  "ReadTargetType": {
+                                    "$type": "RPG.GameCore.TargetAlias",
+                                    "Alias": "CasterServant"
+                                  },
+                                  "Value": "CurrentHP"
+                                },
+                                {
+                                  "$type": "RPG.GameCore.SetHP",
+                                  "TargetType": {
+                                    "$type": "RPG.GameCore.TargetAlias",
+                                    "Alias": "CasterServant"
+                                  },
+                                  "ModifyValue": {
+                                    "IsDynamic": true,
+                                    "PostfixExpr": {
+                                      "OpCodes": "AQABAQECEAECEQ==",
+                                      "FixedValues": [],
+                                      "DynamicHashes": [
+                                        319336080,
+                                        1099313850,
+                                        2048826282
+                                      ]
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "$type": "RPG.GameCore.SetDynamicValue",
+                          "Value": {
+                            "FixedValue": {
+                              "Value": 0
+                            }
+                          },
+                          "DynamicKey": {
+                            "Value": "Current_LostHP"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Event": "OnEnterBattle",
+              "Priority": -80,
+              "CallbackConfig": [
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByAnd",
+                    "PredicateList": [
+                      {
+                        "$type": "RPG.GameCore.ByCompareDynamicValue",
+                        "DynamicKey": {
+                          "Value": "Castorice_SkillMaze_Flag"
+                        },
+                        "CompareType": "LessEqual",
+                        "CompareValue": {
+                          "FixedValue": {
+                            "Value": 0
+                          }
+                        }
+                      },
+                      {
+                        "$type": "RPG.GameCore.ByCompareWaveCount",
+                        "CompareType": "Equal",
+                        "CompareValue": {
+                          "FixedValue": {
+                            "Value": 1
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.ModifySpecialSP",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetAlias",
+                        "Alias": "Caster"
+                      },
+                      "FixedAddValue": {
+                        "IsDynamic": true,
+                        "PostfixExpr": {
+                          "OpCodes": "AQABAQQR",
+                          "FixedValues": [],
+                          "DynamicHashes": [
+                            778854283,
+                            1735306759
+                          ]
+                        }
+                      },
+                      "IgnoreBlock": true
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Event": "OnLeaveBattle",
+              "CallbackConfig": [
+                {
+                  "$type": "RPG.GameCore.LevelAudioState",
+                  "GroupName": "State_Battle_Avatar_Castorice",
+                  "StateName": {
+                    "Value": "Outside"
+                  },
+                  "SaveToCustomString": true
+                }
+              ]
+            }
+          ],
+          "AdditionConfig": {
+            "SubModifierList": [
+              {
+                "Name": "MAvatar_Castorice_00_Passive02_OnListenHPChange",
+                "TargetType": {
+                  "$type": "RPG.GameCore.TargetAlias",
+                  "Alias": "AllLightTeamWithAllUnselectableLightTeamWithoutBattleEvent"
+                },
+                "DynamicValues": {
+                  "MDF_AllDamageTypeAddedRatio": {
+                    "IsDynamic": true,
+                    "PostfixExpr": {
+                      "OpCodes": "AQAR",
+                      "FixedValues": [],
+                      "DynamicHashes": [
+                        1399499482
+                      ]
+                    }
+                  },
+                  "MDF_LifeTime": {
+                    "IsDynamic": true,
+                    "PostfixExpr": {
+                      "OpCodes": "AQAR",
+                      "FixedValues": [],
+                      "DynamicHashes": [
+                        770577398
+                      ]
+                    }
+                  },
+                  "MDF_MaxLayer": {
+                    "IsDynamic": true,
+                    "PostfixExpr": {
+                      "OpCodes": "AQAR",
+                      "FixedValues": [],
+                      "DynamicHashes": [
+                        560676287
+                      ]
+                    }
+                  }
+                },
+                "IsHaloStatus": true,
+                "AliveOnly": "False"
+              },
+              {
+                "Name": "MAvatar_Castorice_00_LoseHPPreShow",
+                "TargetType": {
+                  "$type": "RPG.GameCore.TargetAlias",
+                  "Alias": "AllLightTeamWithAllUnselectableLightTeamWithoutBattleEvent - CasterServant"
+                },
+                "DynamicValues": {
+                  "MDF_PreShowMaxHP": {
+                    "FixedValue": {
+                      "Value": 0
+                    }
+                  },
+                  "MDF_PreShowCurrentHP": {
+                    "FixedValue": {
+                      "Value": 0
+                    }
+                  },
+                  "MDF_LoseHPRatio01": {
+                    "IsDynamic": true,
+                    "PostfixExpr": {
+                      "OpCodes": "AQAR",
+                      "FixedValues": [],
+                      "DynamicHashes": [
+                        2133001108
+                      ]
+                    }
+                  },
+                  "MDF_LoseHPRatio02": {
+                    "IsDynamic": true,
+                    "PostfixExpr": {
+                      "OpCodes": "AQAR",
+                      "FixedValues": [],
+                      "DynamicHashes": [
+                        -1052586619
+                      ]
+                    }
+                  }
+                },
+                "IsHaloStatus": true,
+                "AliveOnly": "False"
+              }
+            ]
+          },
+          "DynamicValues": {
+            "Floats": {
+              "319336080": {}
+            }
+          },
+          "TaskListTemplate": [
+            {
+              "Name": "Castorice_RefreshMaxSpecialSP",
+              "TaskList": [
+                {
+                  "$type": "RPG.GameCore.SetDynamicValue",
+                  "Value": {
+                    "FixedValue": {
+                      "Value": 0
+                    }
+                  },
+                  "DynamicKey": {
+                    "Value": "Castorice_TeamLevel"
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.SetDynamicValueByWorldLevel",
+                  "DynamicKey": "Castorice_WorldLevel",
+                  "ReadTargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "Caster"
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByCompareDynamicValue",
+                    "DynamicKey": {
+                      "Value": "Castorice_WorldLevel"
+                    },
+                    "CompareType": "Less",
+                    "CompareValue": {
+                      "FixedValue": {
+                        "Value": 5
+                      }
+                    }
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.Retarget",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetSequence",
+                        "Sequence": [
+                          {
+                            "$type": "RPG.GameCore.TargetAlias",
+                            "Alias": "AllLightTeam.RemoveServant"
+                          },
+                          {
+                            "$type": "RPG.GameCore.TargetSortByProperty",
+                            "PropertyType": "Level",
+                            "HighestFirst": true,
+                            "AliveOnly": true
+                          }
+                        ]
+                      },
+                      "MaxNumber": {
+                        "FixedValue": {
+                          "Value": 1
+                        }
+                      },
+                      "TaskList": [
+                        {
+                          "$type": "RPG.GameCore.SetDynamicValueByProperty",
+                          "DynamicKey": "Castorice_Level",
+                          "ReadTargetType": {
+                            "$type": "RPG.GameCore.TargetAlias",
+                            "Alias": "ParamEntity"
+                          },
+                          "Value": "Level"
+                        },
+                        {
+                          "$type": "RPG.GameCore.SetDynamicValue",
+                          "Value": {
+                            "IsDynamic": true,
+                            "PostfixExpr": {
+                              "OpCodes": "AQABAQEBBAAABBABEQ==",
+                              "FixedValues": [
+                                {
+                                  "Value": 5.3125
+                                }
+                              ],
+                              "DynamicHashes": [
+                                1776456860,
+                                1398323094
+                              ]
+                            }
+                          },
+                          "DynamicKey": {
+                            "Value": "Castorice_Passive_MaxCount"
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  "FailedTaskList": [
+                    {
+                      "$type": "RPG.GameCore.SetDynamicValue",
+                      "Value": {
+                        "IsDynamic": true,
+                        "PostfixExpr": {
+                          "OpCodes": "AQAAAAAABAABBBABEQ==",
+                          "FixedValues": [
+                            {
+                              "Value": 80
+                            },
+                            {
+                              "Value": 5.3125
+                            }
+                          ],
+                          "DynamicHashes": [
+                            1776456860
+                          ]
+                        }
+                      },
+                      "DynamicKey": {
+                        "Value": "Castorice_Passive_MaxCount"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByCompareDynamicValue",
+                    "DynamicKey": {
+                      "Value": "Castorice_Passive_MaxCount"
+                    },
+                    "CompareType": "LessEqual",
+                    "CompareValue": {
+                      "FixedValue": {
+                        "Value": 2000
+                      }
+                    }
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.SetDynamicValue",
+                      "Value": {
+                        "FixedValue": {
+                          "Value": 2000
+                        }
+                      },
+                      "DynamicKey": {
+                        "Value": "Castorice_Passive_MaxCount"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.ChangeCharacterRowData",
+                  "SPNeedSet": {
+                    "IsDynamic": true,
+                    "PostfixExpr": {
+                      "OpCodes": "AQAR",
+                      "FixedValues": [],
+                      "DynamicHashes": [
+                        778854283
+                      ]
+                    }
+                  },
+                  "Skills": [
+                    {
+                      "TriggerKey": "Skill03",
+                      "SPNeedSet": {
+                        "IsDynamic": true,
+                        "PostfixExpr": {
+                          "OpCodes": "AQAR",
+                          "FixedValues": [],
+                          "DynamicHashes": [
+                            778854283
+                          ]
+                        }
+                      },
+                      "ParamList": {
+                        "5": {
+                          "IsDynamic": true,
+                          "PostfixExpr": {
+                            "OpCodes": "AQAR",
+                            "FixedValues": [],
+                            "DynamicHashes": [
+                              778854283
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.ModifySkillPropertyByName",
+                  "SkillTriggerKeyList": [
+                    "Skill03"
+                  ],
+                  "Properties": [
+                    {
+                      "PropertyType": "SPNeed",
+                      "Value": {
+                        "IsDynamic": true,
+                        "PostfixExpr": {
+                          "OpCodes": "AQAR",
+                          "FixedValues": [],
+                          "DynamicHashes": [
+                            778854283
+                          ]
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.StackProperty",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "Caster"
+                  },
+                  "Property": "MaxSpecialSP",
+                  "PropertyValue": {
+                    "IsDynamic": true,
+                    "PostfixExpr": {
+                      "OpCodes": "AQAR",
+                      "FixedValues": [],
+                      "DynamicHashes": [
+                        778854283
+                      ]
+                    }
+                  },
+                  "IsRefresh": true
+                },
+                {
+                  "$type": "RPG.GameCore.SetDynamicValueByProperty",
+                  "DynamicKey": "Castorice_Passive_Count",
+                  "ReadTargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "Caster"
+                  },
+                  "Value": "CurrentSpecialSP"
+                },
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByIsContainModifier",
+                    "TargetType": {
+                      "$type": "RPG.GameCore.TargetAlias",
+                      "Alias": "Caster"
+                    },
+                    "ModifierName": {
+                      "Value": "MAvatar_Castorice_00_Skill03_Field"
+                    },
+                    "AddedOrAlive": true,
+                    "Inverse": true
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.SetSummonerEnergyBarState",
+                      "MaxCount": {
+                        "IsDynamic": true,
+                        "PostfixExpr": {
+                          "OpCodes": "AQAR",
+                          "FixedValues": [],
+                          "DynamicHashes": [
+                            778854283
+                          ]
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Name": "Castorice_CheckCurrentSpecialSPChange",
+              "TaskList": [
+                {
+                  "$type": "RPG.GameCore.SetDynamicValueByChangeValue",
+                  "DynamicKey": "Castorice_ChangeValue"
+                },
+                {
+                  "$type": "RPG.GameCore.SetDynamicValue",
+                  "Value": {
+                    "IsDynamic": true,
+                    "PostfixExpr": {
+                      "OpCodes": "AQABAQIR",
+                      "FixedValues": [],
+                      "DynamicHashes": [
+                        -1510251399,
+                        298168687
+                      ]
+                    }
+                  },
+                  "DynamicKey": {
+                    "Value": "Castorice_Passive_Count"
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.SetDynamicValue",
+                  "Value": {
+                    "FixedValue": {
+                      "Value": 0
+                    }
+                  },
+                  "DynamicKey": {
+                    "Value": "Castorice_ChangeValue"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "MAvatar_Castorice_00_RefreshMaxSpecialSPFlag": {
+          "_CallbackList": [
+            {
+              "Event": "OnEnterBattle",
+              "Priority": 10001,
+              "CallbackConfig": [
+                {
+                  "$type": "RPG.GameCore.SetDynamicValue",
+                  "Value": {
+                    "FixedValue": {
+                      "Value": 1
+                    }
+                  },
+                  "DynamicKey": {
+                    "Value": "Castorice_RefreshMaxSpecialSPFlag"
+                  }
+                }
+              ]
+            }
+          ],
+          "Stacking": "ReplaceByCaster"
+        },
+        "MAvatar_Castorice_00_Passive02_OnListenHPChange": {
+          "_CallbackList": [
+            {
+              "Event": "OnHPChange",
+              "CallbackConfig": [
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByCompareParamValue",
+                    "CompareType": "Less",
+                    "CompareValue": {
+                      "FixedValue": {
+                        "Value": 0
+                      }
+                    }
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.PredicateTaskList",
+                      "Predicate": {
+                        "$type": "RPG.GameCore.ByCompareDynamicValue",
+                        "DynamicKey": {
+                          "Value": "MDF_Castorice_AttackFlag"
+                        },
+                        "CompareType": "Less",
+                        "CompareValue": {
+                          "FixedValue": {
+                            "Value": 1
+                          }
+                        }
+                      },
+                      "SuccessTaskList": [
+                        {
+                          "$type": "RPG.GameCore.PredicateTaskList",
+                          "Predicate": {
+                            "$type": "RPG.GameCore.ByCompareModifierValue",
+                            "ModifierName": "MAvatar_Castorice_00_Passive_AllDamageTypeAddedRatio",
+                            "ValueType": "Layer",
+                            "CompareType": "GreaterEqual",
+                            "CompareValue": {
+                              "IsDynamic": true,
+                              "PostfixExpr": {
+                                "OpCodes": "AQAR",
+                                "FixedValues": [],
+                                "DynamicHashes": [
+                                  931685943
+                                ]
+                              }
+                            }
+                          },
+                          "SuccessTaskList": [
+                            {
+                              "$type": "RPG.GameCore.AddModifier",
+                              "TargetType": {
+                                "$type": "RPG.GameCore.TargetAlias",
+                                "Alias": "Caster"
+                              },
+                              "ModifierName": {
+                                "Value": "MAvatar_Castorice_00_Passive_AllDamageTypeAddedRatio"
+                              },
+                              "LifeTime": {
+                                "IsDynamic": true,
+                                "PostfixExpr": {
+                                  "OpCodes": "AQAR",
+                                  "FixedValues": [],
+                                  "DynamicHashes": [
+                                    1820617363
+                                  ]
+                                }
+                              },
+                              "MaxLayer": {
+                                "IsDynamic": true,
+                                "PostfixExpr": {
+                                  "OpCodes": "AQAR",
+                                  "FixedValues": [],
+                                  "DynamicHashes": [
+                                    931685943
+                                  ]
+                                }
+                              },
+                              "LayerAddWhenStack": {
+                                "FixedValue": {
+                                  "Value": 1
+                                }
+                              },
+                              "DynamicValues": {
+                                "MDF_PropertyValue": {
+                                  "IsDynamic": true,
+                                  "PostfixExpr": {
+                                    "OpCodes": "AQAR",
+                                    "FixedValues": [],
+                                    "DynamicHashes": [
+                                      -831871865
+                                    ]
+                                  }
+                                },
+                                "MDF_MaxLayer": {
+                                  "IsDynamic": true,
+                                  "PostfixExpr": {
+                                    "OpCodes": "AQAR",
+                                    "FixedValues": [],
+                                    "DynamicHashes": [
+                                      931685943
+                                    ]
+                                  }
+                                }
+                              },
+                              "IsShowUIMessageOnUpdate": false
+                            },
+                            {
+                              "$type": "RPG.GameCore.AddModifier",
+                              "TargetType": {
+                                "$type": "RPG.GameCore.TargetAlias",
+                                "Alias": "CasterServant"
+                              },
+                              "ModifierName": {
+                                "Value": "MAvatar_Castorice_00_Passive_AllDamageTypeAddedRatio"
+                              },
+                              "LifeTime": {
+                                "IsDynamic": true,
+                                "PostfixExpr": {
+                                  "OpCodes": "AQAR",
+                                  "FixedValues": [],
+                                  "DynamicHashes": [
+                                    1820617363
+                                  ]
+                                }
+                              },
+                              "MaxLayer": {
+                                "IsDynamic": true,
+                                "PostfixExpr": {
+                                  "OpCodes": "AQAR",
+                                  "FixedValues": [],
+                                  "DynamicHashes": [
+                                    931685943
+                                  ]
+                                }
+                              },
+                              "LayerAddWhenStack": {
+                                "FixedValue": {
+                                  "Value": 1
+                                }
+                              },
+                              "DynamicValues": {
+                                "MDF_PropertyValue": {
+                                  "IsDynamic": true,
+                                  "PostfixExpr": {
+                                    "OpCodes": "AQAR",
+                                    "FixedValues": [],
+                                    "DynamicHashes": [
+                                      -831871865
+                                    ]
+                                  }
+                                },
+                                "MDF_MaxLayer": {
+                                  "IsDynamic": true,
+                                  "PostfixExpr": {
+                                    "OpCodes": "AQAR",
+                                    "FixedValues": [],
+                                    "DynamicHashes": [
+                                      931685943
+                                    ]
+                                  }
+                                }
+                              },
+                              "IsShowUIMessageOnUpdate": false
+                            }
+                          ],
+                          "FailedTaskList": [
+                            {
+                              "$type": "RPG.GameCore.AddModifier",
+                              "TargetType": {
+                                "$type": "RPG.GameCore.TargetAlias",
+                                "Alias": "Caster"
+                              },
+                              "ModifierName": {
+                                "Value": "MAvatar_Castorice_00_Passive_AllDamageTypeAddedRatio"
+                              },
+                              "LifeTime": {
+                                "IsDynamic": true,
+                                "PostfixExpr": {
+                                  "OpCodes": "AQAR",
+                                  "FixedValues": [],
+                                  "DynamicHashes": [
+                                    1820617363
+                                  ]
+                                }
+                              },
+                              "MaxLayer": {
+                                "IsDynamic": true,
+                                "PostfixExpr": {
+                                  "OpCodes": "AQAR",
+                                  "FixedValues": [],
+                                  "DynamicHashes": [
+                                    931685943
+                                  ]
+                                }
+                              },
+                              "LayerAddWhenStack": {
+                                "FixedValue": {
+                                  "Value": 1
+                                }
+                              },
+                              "DynamicValues": {
+                                "MDF_PropertyValue": {
+                                  "IsDynamic": true,
+                                  "PostfixExpr": {
+                                    "OpCodes": "AQAR",
+                                    "FixedValues": [],
+                                    "DynamicHashes": [
+                                      -831871865
+                                    ]
+                                  }
+                                },
+                                "MDF_MaxLayer": {
+                                  "IsDynamic": true,
+                                  "PostfixExpr": {
+                                    "OpCodes": "AQAR",
+                                    "FixedValues": [],
+                                    "DynamicHashes": [
+                                      931685943
+                                    ]
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "$type": "RPG.GameCore.AddModifier",
+                              "TargetType": {
+                                "$type": "RPG.GameCore.TargetAlias",
+                                "Alias": "CasterServant"
+                              },
+                              "ModifierName": {
+                                "Value": "MAvatar_Castorice_00_Passive_AllDamageTypeAddedRatio"
+                              },
+                              "LifeTime": {
+                                "IsDynamic": true,
+                                "PostfixExpr": {
+                                  "OpCodes": "AQAR",
+                                  "FixedValues": [],
+                                  "DynamicHashes": [
+                                    1820617363
+                                  ]
+                                }
+                              },
+                              "MaxLayer": {
+                                "IsDynamic": true,
+                                "PostfixExpr": {
+                                  "OpCodes": "AQAR",
+                                  "FixedValues": [],
+                                  "DynamicHashes": [
+                                    931685943
+                                  ]
+                                }
+                              },
+                              "LayerAddWhenStack": {
+                                "FixedValue": {
+                                  "Value": 1
+                                }
+                              },
+                              "DynamicValues": {
+                                "MDF_PropertyValue": {
+                                  "IsDynamic": true,
+                                  "PostfixExpr": {
+                                    "OpCodes": "AQAR",
+                                    "FixedValues": [],
+                                    "DynamicHashes": [
+                                      -831871865
+                                    ]
+                                  }
+                                },
+                                "MDF_MaxLayer": {
+                                  "IsDynamic": true,
+                                  "PostfixExpr": {
+                                    "OpCodes": "AQAR",
+                                    "FixedValues": [],
+                                    "DynamicHashes": [
+                                      931685943
+                                    ]
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "DynamicValues": {
+            "Floats": {
+              "1385610876": {},
+              "1688329959": {},
+              "-831871865": {},
+              "1820617363": {},
+              "931685943": {}
+            }
+          }
+        },
+        "MAvatar_Castorice_00_Rank04_Listen": {
+          "AdditionConfig": {
+            "SubModifierList": [
+              {
+                "Name": "MAvatar_Castorice_00_Rank04_HealTakenRatio",
+                "TargetType": {
+                  "$type": "RPG.GameCore.TargetAlias",
+                  "Alias": "AllLightTeamWithAllUnselectableLightTeamWithoutBattleEvent"
+                },
+                "DynamicValues": {
+                  "MDF_PropertyValue": {
+                    "IsDynamic": true,
+                    "PostfixExpr": {
+                      "OpCodes": "AQAR",
+                      "FixedValues": [],
+                      "DynamicHashes": [
+                        1830362926
+                      ]
+                    }
+                  }
+                },
+                "IsHaloStatus": true,
+                "AliveOnly": "False"
+              }
+            ]
+          }
+        },
+        "MAvatar_Castorice_00_Rank06_OnListen": {
+          "AdditionConfig": {
+            "SubModifierList": [
+              {
+                "Name": "MAvatar_Castorice_00_Rank06_QuantumPenetrate",
+                "TargetType": {
+                  "$type": "RPG.GameCore.TargetAlias",
+                  "Alias": "Caster"
+                },
+                "DynamicValues": {
+                  "MDF_PropertyValue": {
+                    "IsDynamic": true,
+                    "PostfixExpr": {
+                      "OpCodes": "AQAR",
+                      "FixedValues": [],
+                      "DynamicHashes": [
+                        1951983383
+                      ]
+                    }
+                  }
+                },
+                "IsHaloStatus": true,
+                "AliveOnly": "False"
+              },
+              {
+                "Name": "MAvatar_Castorice_00_Rank06_QuantumPenetrate",
+                "TargetType": {
+                  "$type": "RPG.GameCore.TargetAlias",
+                  "Alias": "CasterServant"
+                },
+                "DynamicValues": {
+                  "MDF_PropertyValue": {
+                    "IsDynamic": true,
+                    "PostfixExpr": {
+                      "OpCodes": "AQAR",
+                      "FixedValues": [],
+                      "DynamicHashes": [
+                        1951983383
+                      ]
+                    }
+                  }
+                },
+                "IsHaloStatus": true,
+                "AliveOnly": "False"
+              }
+            ]
+          }
+        }
+      },
+      "Name": "Avatar_Castorice_00_PassiveSkill_1",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.AutoUseUltraSkill",
+          "Target": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.AddModifier",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "ModifierName": {
+            "Value": "MAvatar_Castorice_00_Passive"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.BySkillPointActivated",
+            "PointTriggerKey": "PointB1"
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.AddModifier",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "ModifierName": {
+                "Value": "MAvatar_Castorice_00_PointB1_HealTaxes"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.SetDynamicValue",
+              "ContextScope": "AITag",
+              "Value": {
+                "FixedValue": {
+                  "Value": 1
+                }
+              },
+              "DynamicKey": {
+                "Value": "OverHeal"
+              }
+            }
+          ],
+          "FailedTaskList": [
+            {
+              "$type": "RPG.GameCore.SetDynamicValue",
+              "ContextScope": "AITag",
+              "Value": {
+                "FixedValue": {
+                  "Value": 0
+                }
+              },
+              "DynamicKey": {
+                "Value": "OverHeal"
+              }
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.BySkillPointActivated",
+            "PointTriggerKey": "PointB2"
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.AddModifier",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "ModifierName": {
+                "Value": "MServant_Castorice_PointB2_OnListen"
+              },
+              "DynamicValues": {
+                "Castorice_PointB2_HPRatio": {
+                  "IsDynamic": true,
+                  "PostfixExpr": {
+                    "OpCodes": "AQAR",
+                    "FixedValues": [],
+                    "DynamicHashes": [
+                      86500255
+                    ]
+                  }
+                },
+                "Castorice_PointB2_SpeedRatio": {
+                  "IsDynamic": true,
+                  "PostfixExpr": {
+                    "OpCodes": "AQAR",
+                    "FixedValues": [],
+                    "DynamicHashes": [
+                      860524227
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByRankActivated",
+            "TriggerKey": {
+              "Hash": 523552506
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.AddModifier",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "ModifierName": {
+                "Value": "MAvatar_Castorice_00_Rank02_OnListenValueChange"
+              }
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByRankActivated",
+            "TriggerKey": {
+              "Hash": 1686351920
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.AddModifier",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "ModifierName": {
+                "Value": "MAvatar_Castorice_00_Rank04_Listen"
+              }
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByRankActivated",
+            "TriggerKey": {
+              "Hash": -1445815962
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.AddModifier",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "ModifierName": {
+                "Value": "MAvatar_Castorice_00_Rank06_OnListen"
+              },
+              "DynamicValues": {
+                "MDF_QuantumPenetrate": {
+                  "IsDynamic": true,
+                  "PostfixExpr": {
+                    "OpCodes": "AQAR",
+                    "FixedValues": [],
+                    "DynamicHashes": [
+                      -581053323
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.AddModifier",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "ModifierName": {
+            "Value": "MAvatar_Castorice_00_RefreshMaxSpecialSPFlag"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.SetSummonerEnergyBarState",
+          "Active": "True",
+          "BarType": "Number",
+          "MaxCount": {
+            "IsDynamic": true,
+            "PostfixExpr": {
+              "OpCodes": "AQAR",
+              "FixedValues": [],
+              "DynamicHashes": [
+                778854283
+              ]
+            }
+          },
+          "CurrentCount": {
+            "IsDynamic": true,
+            "PostfixExpr": {
+              "OpCodes": "AQAR",
+              "FixedValues": [],
+              "DynamicHashes": [
+                298168687
+              ]
+            }
+          },
+          "NumBarTypeConfig": {
+            "ShowIcon": "False",
+            "SubType": "Percent"
+          }
+        }
+      ]
+    },
+    {
+      "Modifiers": {
+        "StageAbility_Maze_Castorice_00_Modifier": {
+          "_CallbackList": [
+            {
+              "Event": "OnEnterBattle",
+              "Priority": -81,
+              "CallbackConfig": [
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByAnd",
+                    "PredicateList": [
+                      {
+                        "$type": "RPG.GameCore.ByIsMazeSkillAffectCurrentWave"
+                      },
+                      {
+                        "$type": "RPG.GameCore.ByCompareWaveCount",
+                        "CompareType": "Equal",
+                        "CompareValue": {
+                          "FixedValue": {
+                            "Value": 1
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.LoseHPByRatio",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetAlias",
+                        "Alias": "AllTeamMember - CasterServant"
+                      },
+                      "AttackType": "Unknown",
+                      "RatioType": "CurrentHP",
+                      "Ratio": {
+                        "IsDynamic": true,
+                        "PostfixExpr": {
+                          "OpCodes": "AQAR",
+                          "FixedValues": [],
+                          "DynamicHashes": [
+                            1343020973
+                          ]
+                        }
+                      },
+                      "Floor": {
+                        "FixedValue": {
+                          "Value": 1
+                        }
+                      }
+                    },
+                    {
+                      "$type": "RPG.GameCore.RemoveSelfModifier"
+                    }
+                  ],
+                  "FailedTaskList": []
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "Name": "Avatar_Castorice_00_SkillMazeInLevel",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.LevelAudioState",
+          "GroupName": "State_Battle_Avatar_Castorice",
+          "StateName": {
+            "Value": "Inside"
+          },
+          "SaveToCustomString": true
+        },
+        {
+          "$type": "RPG.GameCore.SetDynamicValue",
+          "Value": {
+            "FixedValue": {
+              "Value": 1
+            }
+          },
+          "DynamicKey": {
+            "Value": "Castorice_SkillMaze_Flag"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.SetDynamicValue",
+          "Value": {
+            "IsDynamic": true,
+            "PostfixExpr": {
+              "OpCodes": "AQAR",
+              "FixedValues": [],
+              "DynamicHashes": [
+                778854283
+              ]
+            }
+          },
+          "DynamicKey": {
+            "Value": "Castorice_Passive_Count"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.AddModifier",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "ModifierName": {
+            "Value": "MAvatar_Castorice_00_Skill03_Field"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.ModifySpecialSP",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "SetValue": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "IgnoreBlock": true
+        },
+        {
+          "$type": "RPG.GameCore.CreateServant",
+          "ServantID": {
+            "FixedValue": {
+              "Value": 11407
+            }
+          },
+          "DynamicValues": {
+            "Castorice_Skill21_P3_HPPercentage": {
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAR",
+                "FixedValues": [],
+                "DynamicHashes": [
+                  1793566328
+                ]
+              }
+            },
+            "CastoriceServant_BaseSpeed": {
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAR",
+                "FixedValues": [],
+                "DynamicHashes": [
+                  -1370918771
+                ]
+              }
+            },
+            "CastoriceServant_LifeTime": {
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAR",
+                "FixedValues": [],
+                "DynamicHashes": [
+                  242053466
+                ]
+              }
+            },
+            "CastoriceServant_CurrentHP": {
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQABAQQR",
+                "FixedValues": [],
+                "DynamicHashes": [
+                  778854283,
+                  1364644032
+                ]
+              }
+            },
+            "CastoriceServant_MaxHP": {
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAR",
+                "FixedValues": [],
+                "DynamicHashes": [
+                  778854283
+                ]
+              }
+            },
+            "CastoriceServant_PointB2_SpeedRatio": {
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAR",
+                "FixedValues": [],
+                "DynamicHashes": [
+                  975277858
+                ]
+              }
+            },
+            "CastoriceServant_PointB3_AllDamageTypeAddedRatio": {
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAR",
+                "FixedValues": [],
+                "DynamicHashes": [
+                  348088544
+                ]
+              }
+            },
+            "CastoriceServant_PointB3_MaxLayer": {
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAR",
+                "FixedValues": [],
+                "DynamicHashes": [
+                  -1157561649
+                ]
+              }
+            },
+            "CastoriceServant_Rank01_HPRatio01": {
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAR",
+                "FixedValues": [],
+                "DynamicHashes": [
+                  -873920944
+                ]
+              }
+            },
+            "CastoriceServant_Rank01_HPRatio02": {
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAR",
+                "FixedValues": [],
+                "DynamicHashes": [
+                  867701803
+                ]
+              }
+            },
+            "CastoriceServant_Rank01_DamageRatio01": {
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAR",
+                "FixedValues": [],
+                "DynamicHashes": [
+                  -1917418607
+                ]
+              }
+            },
+            "CastoriceServant_Rank01_DamageRatio02": {
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAR",
+                "FixedValues": [],
+                "DynamicHashes": [
+                  -1291963496
+                ]
+              }
+            },
+            "CastoriceServant_Rank02_MaxCount": {
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAR",
+                "FixedValues": [],
+                "DynamicHashes": [
+                  -1604531662
+                ]
+              }
+            },
+            "CastoriceServant_Rank06_AddCount": {
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAR",
+                "FixedValues": [],
+                "DynamicHashes": [
+                  46509027
+                ]
+              }
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.SetDynamicValue",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "CasterServant"
+          },
+          "Value": {
+            "FixedValue": {
+              "Value": 1
+            }
+          },
+          "DynamicKey": {
+            "Value": "EnterBattlePlayTimes"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByRankActivated",
+            "TriggerKey": {
+              "Hash": 523552506
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.AddModifier",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "ModifierName": {
+                "Value": "MAvatar_Castorice_00_Rank02_Check"
+              }
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByRankActivated",
+            "TriggerKey": {
+              "Hash": 523552506
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.SetDynamicValue",
+              "Value": {
+                "IsDynamic": true,
+                "PostfixExpr": {
+                  "OpCodes": "AQAR",
+                  "FixedValues": [],
+                  "DynamicHashes": [
+                    -1227230863
+                  ]
+                }
+              },
+              "DynamicKey": {
+                "Value": "Castorice_Rank02_Count"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.SetDynamicValue",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "CasterServant"
+              },
+              "Value": {
+                "IsDynamic": true,
+                "PostfixExpr": {
+                  "OpCodes": "AQAR",
+                  "FixedValues": [],
+                  "DynamicHashes": [
+                    -1227230863
+                  ]
+                }
+              },
+              "DynamicKey": {
+                "Value": "CastoriceServant_Rank02_Count"
+              }
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.ModifyActionDelay",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "CasterServant"
+          },
+          "AddNormalizedValue": {
+            "FixedValue": {
+              "Value": -1
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByRankActivated",
+            "TriggerKey": {
+              "Hash": 523552506
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.IncludeTaskListTemplate",
+              "Name": "ModifyNextActionDelay",
+              "DynamicValues": {
+                "Arg0_NormalizedValue": {
+                  "FixedValue": {
+                    "Value": 1
+                  }
+                }
+              },
+              "ParamTarget": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.SetActionDelayNearTarget",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster.GetServant"
+              },
+              "NearTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "NearType": "After"
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.Remodifier",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "ModifierName": "MAvatar_Castorice_00_Passive_AllDamageTypeAddedRatio",
+          "TaskList": [
+            {
+              "$type": "RPG.GameCore.InfectModifier",
+              "SourceType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "CasterServant"
+              },
+              "StatusDispelFilter": "AnyStatus",
+              "InfectType": "Override",
+              "UseParamModifierToInfect": true
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.AddModifier",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "ModifierName": {
+            "Value": "StageAbility_Maze_Castorice_00_Modifier"
+          },
+          "DynamicValues": {
+            "MDF_LoseHP": {
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAR",
+                "FixedValues": [],
+                "DynamicHashes": [
+                  -751486911
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "TaskListTemplate": [
+        {
+          "Name": "Servant_Castorice_OnWaveMonsterPerform",
+          "TaskList": [
+            {
+              "$type": "RPG.GameCore.SetTeamFormation",
+              "Team": "TeamDark",
+              "FormationType": "DarkTeamNormal"
+            },
+            {
+              "$type": "RPG.GameCore.SetTeamRootOffset",
+              "Team": "TeamLight",
+              "Reset": true
+            },
+            {
+              "$type": "RPG.GameCore.SetTeamFormation",
+              "Team": "TeamLight",
+              "FormationType": "LightTeamNormal"
+            },
+            {
+              "$type": "RPG.GameCore.ShowSkillReadyCamera",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "ParamEntity"
+              },
+              "SkillType": "ControlSkill02"
+            },
+            {
+              "$type": "RPG.GameCore.SetDynamicValue",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "ParamEntity"
+              },
+              "Value": {
+                "FixedValue": {
+                  "Value": 1
+                }
+              },
+              "DynamicKey": {
+                "Value": "CL_EnterBattlePlayTimes"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.PlayCrossHairPreviewFadeIn",
+              "FadeInOverrideTime": 0.8,
+              "PlayOnAllTarget": true,
+              "FadeInOverrideAnimName": "BattleUI_HUD_TargetFadeIn_CastoriceReady"
+            },
+            {
+              "$type": "RPG.GameCore.WaitSecond",
+              "WaitTime": {
+                "FixedValue": {
+                  "Value": 0.78
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.SetTargetCrossHairVisible",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AllDarkTeam"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "GlobalModifiers": {
+    "MAvatar_Castorice_00_LoseHPPreShow": {
+      "BehaviorFlagList": [
+        "RemoveWhenCasterDead"
+      ],
+      "_CallbackList": [
+        {
+          "Event": "OnStack",
+          "CallbackConfig": []
+        },
+        {
+          "Event": "OnListenAimAtTargetsRefresh_CL",
+          "CallbackConfig": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareTarget",
+                "TargetType": {
+                  "$type": "RPG.GameCore.TargetAlias",
+                  "Alias": "ParamEntity"
+                },
+                "CompareType": {
+                  "$type": "RPG.GameCore.TargetAlias",
+                  "Alias": "Caster"
+                }
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByIsTargetUnselectable",
+                    "TargetType": {
+                      "$type": "RPG.GameCore.TargetAlias",
+                      "Alias": "ModifierOwnerEntity"
+                    }
+                  },
+                  "FailedTaskList": [
+                    {
+                      "$type": "RPG.GameCore.SetDynamicValueByPropertyClientOnly",
+                      "DynamicKey": "MDF_PreShowCurrentHP",
+                      "ReadTargetType": {
+                        "$type": "RPG.GameCore.TargetAlias",
+                        "Alias": "ModifierOwnerEntity"
+                      },
+                      "Value": "CurrentHP"
+                    },
+                    {
+                      "$type": "RPG.GameCore.PredicateTaskList",
+                      "Predicate": {
+                        "$type": "RPG.GameCore.ByIsContainModifier",
+                        "TargetType": {
+                          "$type": "RPG.GameCore.TargetAlias",
+                          "Alias": "Caster"
+                        },
+                        "ModifierName": {
+                          "Value": "MAvatar_Castorice_00_Skill03_Field"
+                        }
+                      },
+                      "SuccessTaskList": [
+                        {
+                          "$type": "RPG.GameCore.ToggleSkillPreShow",
+                          "Enable": true,
+                          "AllowSkillType": [
+                            "Skill"
+                          ],
+                          "TargetType": {
+                            "$type": "RPG.GameCore.TargetAlias",
+                            "Alias": "ModifierOwnerEntity"
+                          },
+                          "ChangeValue": {
+                            "IsDynamic": true,
+                            "PostfixExpr": {
+                              "OpCodes": "AQABAQQR",
+                              "FixedValues": [],
+                              "DynamicHashes": [
+                                796351941,
+                                -367552370
+                              ]
+                            }
+                          }
+                        }
+                      ],
+                      "FailedTaskList": [
+                        {
+                          "$type": "RPG.GameCore.ToggleSkillPreShow",
+                          "Enable": true,
+                          "AllowSkillType": [
+                            "Skill"
+                          ],
+                          "TargetType": {
+                            "$type": "RPG.GameCore.TargetAlias",
+                            "Alias": "ModifierOwnerEntity"
+                          },
+                          "ChangeValue": {
+                            "IsDynamic": true,
+                            "PostfixExpr": {
+                              "OpCodes": "AQABAQQR",
+                              "FixedValues": [],
+                              "DynamicHashes": [
+                                796351941,
+                                -367552371
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "DynamicValues": {
+        "Floats": {
+          "1270981910": {},
+          "796351941": {},
+          "-367552371": {},
+          "-367552370": {}
+        }
+      }
+    },
+    "MAvatar_Castorice_00_Skill03_Field": {
+      "BehaviorFlagList": [
+        "SpecialBattleArea"
+      ],
+      "_CallbackList": [
+        {
+          "Event": "OnDestroy",
+          "CallbackConfig": [
+            {
+              "$type": "RPG.GameCore.SetDynamicValue",
+              "ContextScope": "AITag",
+              "Value": {
+                "FixedValue": {
+                  "Value": 100
+                }
+              },
+              "DynamicKey": {
+                "Value": "DamageCarry"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.SetControlSkillMapping",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "ControlSkillType": "ControlSkill02",
+              "SkillTriggerKey": "Skill02"
+            },
+            {
+              "$type": "RPG.GameCore.ShowBattleSkillEnhanced",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "ModifierOwnerEntity"
+              },
+              "SkillType": "Skill"
+            },
+            {
+              "$type": "RPG.GameCore.SetSummonerEnergyBarState",
+              "Active": "True",
+              "BarType": "Number",
+              "MaxCount": {
+                "IsDynamic": true,
+                "PostfixExpr": {
+                  "OpCodes": "AQAR",
+                  "FixedValues": [],
+                  "DynamicHashes": [
+                    778854283
+                  ]
+                }
+              },
+              "CurrentCount": {
+                "IsDynamic": true,
+                "PostfixExpr": {
+                  "OpCodes": "AQAR",
+                  "FixedValues": [],
+                  "DynamicHashes": [
+                    298168687
+                  ]
+                }
+              },
+              "NumBarTypeConfig": {
+                "ShowIcon": "False",
+                "SubType": "Percent"
+              }
+            }
+          ]
+        },
+        {
+          "Event": "OnStack",
+          "CallbackConfig": [
+            {
+              "$type": "RPG.GameCore.SetDynamicValue",
+              "ContextScope": "AITag",
+              "Value": {
+                "FixedValue": {
+                  "Value": 1
+                }
+              },
+              "DynamicKey": {
+                "Value": "DamageCarry"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.AttachSkillTypeDisable",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "ModifierOwnerEntity"
+              },
+              "Types": [
+                "Ultra"
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.SetControlSkillMapping",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "ControlSkillType": "ControlSkill02",
+              "SkillTriggerKey": "Skill21"
+            },
+            {
+              "$type": "RPG.GameCore.ShowBattleSkillEnhanced",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "ModifierOwnerEntity"
+              },
+              "SkillType": "Skill",
+              "IsShow": true
+            }
+          ]
+        }
+      ],
+      "AdditionConfig": {
+        "SubModifierList": [
+          {
+            "Name": "MAvatar_Castorice_00_Skill03_AllDamageTypeResistance",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetAlias",
+              "Alias": "AllEnemyWithUnSelectable"
+            },
+            "DynamicValues": {
+              "MDF_PropertyValue": {
+                "IsDynamic": true,
+                "PostfixExpr": {
+                  "OpCodes": "AQAR",
+                  "FixedValues": [],
+                  "DynamicHashes": [
+                    1860629253
+                  ]
+                }
+              }
+            },
+            "IsHaloStatus": true,
+            "AliveOnly": "False"
+          }
+        ]
+      },
+      "Stacking": "ReplaceByCaster"
+    },
+    "MAvatar_Castorice_00_Skill03_AllDamageTypeResistance": {
+      "_CallbackList": [
+        {
+          "Event": "OnStack",
+          "CallbackConfig": [
+            {
+              "$type": "RPG.GameCore.StackProperty",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "ModifierOwnerEntity"
+              },
+              "Property": "AllDamageTypeResistance",
+              "PropertyValue": {
+                "IsDynamic": true,
+                "PostfixExpr": {
+                  "OpCodes": "AAABAAMR",
+                  "FixedValues": [
+                    {
+                      "Value": 0
+                    }
+                  ],
+                  "DynamicHashes": [
+                    2128130574
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "Stacking": "ReplaceByCaster",
+      "DynamicValues": {
+        "Floats": {
+          "2128130574": {}
+        }
+      }
+    },
+    "MAvatar_Castorice_00_Passive_AllDamageTypeAddedRatio": {
+      "_CallbackList": [
+        {
+          "Event": "OnStack",
+          "CallbackConfig": [
+            {
+              "$type": "RPG.GameCore.SetDynamicValueByModifierValue",
+              "ReadTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "ModifierOwnerEntity"
+              },
+              "ValueType": "Layer",
+              "Multiplier": {
+                "FixedValue": {
+                  "Value": 1
+                }
+              },
+              "DynamicKey": "MDF_Layer"
+            },
+            {
+              "$type": "RPG.GameCore.StackProperty",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "ModifierOwnerEntity"
+              },
+              "Property": "AllDamageTypeAddedRatio",
+              "PropertyValue": {
+                "IsDynamic": true,
+                "PostfixExpr": {
+                  "OpCodes": "AQABAQQR",
+                  "FixedValues": [],
+                  "DynamicHashes": [
+                    2128130574,
+                    1662446059
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "Stacking": "ReplaceByCaster",
+      "DynamicValues": {
+        "Floats": {
+          "2128130574": {},
+          "1662446059": {}
+        }
+      }
+    },
+    "MServant_Castorice_PointB2_OnListen": {
+      "OnAbilityPropertyChange": [
+        {
+          "Property": "CurrentHP",
+          "Ranges": [
+            {
+              "Min": {
+                "FixedValue": {
+                  "Value": 0
+                }
+              },
+              "OnChange": [
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByCompareHPRatio",
+                    "TargetType": {
+                      "$type": "RPG.GameCore.TargetAlias",
+                      "Alias": "ModifierOwnerEntity"
+                    },
+                    "CompareType": "GreaterEqual",
+                    "CompareValue": {
+                      "IsDynamic": true,
+                      "PostfixExpr": {
+                        "OpCodes": "AQAR",
+                        "FixedValues": [],
+                        "DynamicHashes": [
+                          -1408992950
+                        ]
+                      }
+                    }
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.PredicateTaskList",
+                      "Predicate": {
+                        "$type": "RPG.GameCore.ByIsContainModifier",
+                        "TargetType": {
+                          "$type": "RPG.GameCore.TargetAlias",
+                          "Alias": "ModifierOwnerEntity"
+                        },
+                        "ModifierName": {
+                          "Value": "MServant_Castorice_SpeedRatio"
+                        },
+                        "Inverse": true
+                      },
+                      "SuccessTaskList": [
+                        {
+                          "$type": "RPG.GameCore.AddModifier",
+                          "TargetType": {
+                            "$type": "RPG.GameCore.TargetAlias",
+                            "Alias": "ModifierOwnerEntity"
+                          },
+                          "ModifierName": {
+                            "Value": "MServant_Castorice_SpeedRatio"
+                          },
+                          "DynamicValues": {
+                            "MDF_PropertyValue": {
+                              "IsDynamic": true,
+                              "PostfixExpr": {
+                                "OpCodes": "AQAR",
+                                "FixedValues": [],
+                                "DynamicHashes": [
+                                  -1235208375
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  "FailedTaskList": [
+                    {
+                      "$type": "RPG.GameCore.PredicateTaskList",
+                      "Predicate": {
+                        "$type": "RPG.GameCore.ByIsContainModifier",
+                        "TargetType": {
+                          "$type": "RPG.GameCore.TargetAlias",
+                          "Alias": "ModifierOwnerEntity"
+                        },
+                        "ModifierName": {
+                          "Value": "MServant_Castorice_SpeedRatio"
+                        }
+                      },
+                      "SuccessTaskList": [
+                        {
+                          "$type": "RPG.GameCore.RemoveModifier",
+                          "TargetType": {
+                            "$type": "RPG.GameCore.TargetAlias",
+                            "Alias": "ModifierOwnerEntity"
+                          },
+                          "ModifierName": {
+                            "Value": "MServant_Castorice_SpeedRatio"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "_CallbackList": [
+        {
+          "Event": "OnStack",
+          "CallbackConfig": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareHPRatio",
+                "TargetType": {
+                  "$type": "RPG.GameCore.TargetAlias",
+                  "Alias": "ModifierOwnerEntity"
+                },
+                "CompareType": "GreaterEqual",
+                "CompareValue": {
+                  "IsDynamic": true,
+                  "PostfixExpr": {
+                    "OpCodes": "AQAR",
+                    "FixedValues": [],
+                    "DynamicHashes": [
+                      -1408992950
+                    ]
+                  }
+                }
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.AddModifier",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "ModifierOwnerEntity"
+                  },
+                  "ModifierName": {
+                    "Value": "MServant_Castorice_SpeedRatio"
+                  },
+                  "DynamicValues": {
+                    "MDF_PropertyValue": {
+                      "IsDynamic": true,
+                      "PostfixExpr": {
+                        "OpCodes": "AQAR",
+                        "FixedValues": [],
+                        "DynamicHashes": [
+                          -1235208375
+                        ]
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "Stacking": "ReplaceByCaster",
+      "DynamicValues": {
+        "Floats": {
+          "-1408992950": {},
+          "-1235208375": {}
+        }
+      }
+    },
+    "MServant_Castorice_SpeedRatio": {
+      "BehaviorFlagList": [
+        "STAT_SpeedUp"
+      ],
+      "_CallbackList": [
+        {
+          "Event": "OnStack",
+          "CallbackConfig": [
+            {
+              "$type": "RPG.GameCore.StackProperty",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "ModifierOwnerEntity"
+              },
+              "Property": "SpeedAddedRatio",
+              "PropertyValue": {
+                "IsDynamic": true,
+                "PostfixExpr": {
+                  "OpCodes": "AQAR",
+                  "FixedValues": [],
+                  "DynamicHashes": [
+                    2128130574
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "Stacking": "ReplaceByCaster"
+    },
+    "MAvatar_Castorice_00_PointB1_HealTaxes": {
+      "AdditionConfig": {
+        "SubModifierList": [
+          {
+            "Name": "MAvatar_Castorice_00_PointB1_HealTaxesListen",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetAlias",
+              "Alias": "AllTeamMemberWithUnselectable - Caster.GetServant"
+            },
+            "DynamicValues": {
+              "Castorice_PointB1_HPPercent": {
+                "IsDynamic": true,
+                "PostfixExpr": {
+                  "OpCodes": "AQAR",
+                  "FixedValues": [],
+                  "DynamicHashes": [
+                    -1268301392
+                  ]
+                }
+              },
+              "Castorice_PointB1_HealRatioDown": {
+                "IsDynamic": true,
+                "PostfixExpr": {
+                  "OpCodes": "AQAR",
+                  "FixedValues": [],
+                  "DynamicHashes": [
+                    1943744695
+                  ]
+                }
+              }
+            },
+            "IsHaloStatus": true
+          }
+        ]
+      }
+    },
+    "MAvatar_Castorice_00_PointB1_HealTaxesListen": {
+      "_CallbackList": [
+        {
+          "Event": "OnAfterBeingHeal",
+          "CallbackConfig": [
+            {
+              "$type": "RPG.GameCore.SetDynamicValueByHealDataProperty",
+              "DynamicKey": "Castorice_BeingHealValue",
+              "ReadTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "ParamEntity"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.SetDynamicValueByProperty",
+              "DynamicKey": "Castorice_MaxSpecialSP",
+              "ReadTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "Value": "MaxSpecialSP"
+            },
+            {
+              "$type": "RPG.GameCore.SetDynamicValue",
+              "Value": {
+                "IsDynamic": true,
+                "PostfixExpr": {
+                  "OpCodes": "AQABAQQR",
+                  "FixedValues": [],
+                  "DynamicHashes": [
+                    134428654,
+                    -1757789253
+                  ]
+                }
+              },
+              "DynamicKey": {
+                "Value": "Castorice_MaxSpecialSP"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.SetDynamicValue",
+              "Value": {
+                "IsDynamic": true,
+                "PostfixExpr": {
+                  "OpCodes": "AQABAQECBAEDAQQDEAIR",
+                  "FixedValues": [],
+                  "DynamicHashes": [
+                    339799074,
+                    1449986038,
+                    -1391058445,
+                    134428654,
+                    -348726377
+                  ]
+                }
+              },
+              "DynamicKey": {
+                "Value": "HealAmount_CasterAdd"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareDynamicValue",
+                "DynamicKey": {
+                  "Value": "HealAmount_CasterAdd"
+                },
+                "CompareType": "Greater",
+                "CompareValue": {
+                  "FixedValue": {
+                    "Value": 0
+                  }
+                }
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.SetDynamicValue",
+                  "Value": {
+                    "IsDynamic": true,
+                    "PostfixExpr": {
+                      "OpCodes": "AQABAQIR",
+                      "FixedValues": [],
+                      "DynamicHashes": [
+                        -348726377,
+                        1465151488
+                      ]
+                    }
+                  },
+                  "DynamicKey": {
+                    "Value": "Castorice_SumBeingHealValue"
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByIsContainModifier",
+                    "TargetType": {
+                      "$type": "RPG.GameCore.TargetAlias",
+                      "Alias": "Caster"
+                    },
+                    "ModifierName": {
+                      "Value": "MAvatar_Castorice_00_Skill03_Field"
+                    }
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.SetDynamicValue",
+                      "Value": {
+                        "IsDynamic": true,
+                        "PostfixExpr": {
+                          "OpCodes": "AQAR",
+                          "FixedValues": [],
+                          "DynamicHashes": [
+                            1465151488
+                          ]
+                        }
+                      },
+                      "DynamicKey": {
+                        "Value": "HealAmount_ServantAdd"
+                      }
+                    },
+                    {
+                      "$type": "RPG.GameCore.SetDynamicValueByProperty",
+                      "DynamicKey": "CastoriceServant_CurrentHP",
+                      "ReadTargetType": {
+                        "$type": "RPG.GameCore.TargetAlias",
+                        "Alias": "CasterServant"
+                      },
+                      "Value": "CurrentHP"
+                    },
+                    {
+                      "$type": "RPG.GameCore.PredicateTaskList",
+                      "Predicate": {
+                        "$type": "RPG.GameCore.ByIsContainModifier",
+                        "TargetType": {
+                          "$type": "RPG.GameCore.TargetAlias",
+                          "Alias": "CasterServant"
+                        },
+                        "ModifierName": {
+                          "Value": "MServant_CastoriceServant_GoDie"
+                        }
+                      },
+                      "FailedTaskList": [
+                        {
+                          "$type": "RPG.GameCore.SetHP",
+                          "TargetType": {
+                            "$type": "RPG.GameCore.TargetAlias",
+                            "Alias": "CasterServant"
+                          },
+                          "ModifyValue": {
+                            "IsDynamic": true,
+                            "PostfixExpr": {
+                              "OpCodes": "AQABAQIR",
+                              "FixedValues": [],
+                              "DynamicHashes": [
+                                -416657746,
+                                -701656133
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  "FailedTaskList": [
+                    {
+                      "$type": "RPG.GameCore.ModifySpecialSP",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetAlias",
+                        "Alias": "Caster"
+                      },
+                      "FixedAddValue": {
+                        "IsDynamic": true,
+                        "PostfixExpr": {
+                          "OpCodes": "AQAR",
+                          "FixedValues": [],
+                          "DynamicHashes": [
+                            1465151488
+                          ]
+                        }
+                      },
+                      "IgnoreBlock": true
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Event": "OnListenAfterSkillUse",
+          "CallbackConfig": [
+            {
+              "$type": "RPG.GameCore.SetDynamicValue",
+              "Value": {
+                "FixedValue": {
+                  "Value": 0
+                }
+              },
+              "DynamicKey": {
+                "Value": "Castorice_SumBeingHealValue"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.SetDynamicValue",
+              "Value": {
+                "FixedValue": {
+                  "Value": 0
+                }
+              },
+              "DynamicKey": {
+                "Value": "Castorice_MaxFlag"
+              }
+            }
+          ]
+        },
+        {
+          "Event": "OnListenInsertAbilityFinish",
+          "CallbackConfig": [
+            {
+              "$type": "RPG.GameCore.SetDynamicValue",
+              "Value": {
+                "FixedValue": {
+                  "Value": 0
+                }
+              },
+              "DynamicKey": {
+                "Value": "Castorice_SumBeingHealValue"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.SetDynamicValue",
+              "Value": {
+                "FixedValue": {
+                  "Value": 0
+                }
+              },
+              "DynamicKey": {
+                "Value": "Castorice_MaxFlag"
+              }
+            }
+          ]
+        }
+      ],
+      "DynamicValues": {
+        "Floats": {
+          "-1391058445": {},
+          "-1757789253": {},
+          "1449986038": {},
+          "-348726377": {},
+          "164829792": {},
+          "134428654": {},
+          "-664257011": {},
+          "-416657746": {},
+          "1465151488": {},
+          "-701656133": {}
+        }
+      }
+    },
+    "MAvatar_Castorice_00_PointB3_AllDamageTypeAddedRatio": {
+      "_CallbackList": [
+        {
+          "Event": "OnPhase2",
+          "CallbackConfig": [
+            {
+              "$type": "RPG.GameCore.RemoveSelfModifier"
+            }
+          ]
+        },
+        {
+          "Event": "OnStack",
+          "CallbackConfig": [
+            {
+              "$type": "RPG.GameCore.SetDynamicValueByModifierValue",
+              "ReadTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "ModifierOwnerEntity"
+              },
+              "ValueType": "Layer",
+              "Multiplier": {
+                "FixedValue": {
+                  "Value": 1
+                }
+              },
+              "DynamicKey": "MDF_Layer"
+            },
+            {
+              "$type": "RPG.GameCore.StackProperty",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "ModifierOwnerEntity"
+              },
+              "Property": "AllDamageTypeAddedRatio",
+              "PropertyValue": {
+                "IsDynamic": true,
+                "PostfixExpr": {
+                  "OpCodes": "AQABAQQR",
+                  "FixedValues": [],
+                  "DynamicHashes": [
+                    2128130574,
+                    1662446059
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "Stacking": "ReplaceByCaster",
+      "DynamicValues": {
+        "Floats": {
+          "2128130574": {},
+          "1662446059": {}
+        }
+      }
+    },
+    "MAvatar_Castorice_00_Rank02_Check": {
+      "_CallbackList": [
+        {
+          "Event": "OnStack",
+          "CallbackConfig": []
+        }
+      ],
+      "Stacking": "ReplaceByCaster"
+    },
+    "MAvatar_Castorice_00_Rank02_OnListenValueChange": {
+      "OnDynamicValueChange": [
+        {
+          "Key": {
+            "Hash": 1712564216
+          },
+          "ContextScope": "ContextOwner",
+          "Ranges": [
+            {
+              "Min": {
+                "FixedValue": {
+                  "Value": 0
+                }
+              },
+              "Max": {
+                "FixedValue": {
+                  "Value": 9999999
+                }
+              },
+              "OnChange": [
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByIsContainModifier",
+                    "TargetType": {
+                      "$type": "RPG.GameCore.TargetAlias",
+                      "Alias": "Caster"
+                    },
+                    "ModifierName": {
+                      "Value": "MAvatar_Castorice_00_Rank02_Count"
+                    }
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.RemoveModifier",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetAlias",
+                        "Alias": "Caster"
+                      },
+                      "ModifierName": {
+                        "Value": "MAvatar_Castorice_00_Rank02_Count"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByCompareDynamicValue",
+                    "DynamicKey": {
+                      "Value": "Castorice_Rank02_Count"
+                    },
+                    "CompareType": "Greater",
+                    "CompareValue": {
+                      "FixedValue": {
+                        "Value": 0
+                      }
+                    }
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.AddModifier",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetAlias",
+                        "Alias": "Caster"
+                      },
+                      "ModifierName": {
+                        "Value": "MAvatar_Castorice_00_Rank02_Count"
+                      },
+                      "Count": {
+                        "IsDynamic": true,
+                        "PostfixExpr": {
+                          "OpCodes": "AQAR",
+                          "FixedValues": [],
+                          "DynamicHashes": [
+                            1712564216
+                          ]
+                        }
+                      },
+                      "DynamicValues": {
+                        "MDF_MaxLayer": {
+                          "IsDynamic": true,
+                          "PostfixExpr": {
+                            "OpCodes": "AQAR",
+                            "FixedValues": [],
+                            "DynamicHashes": [
+                              -1604531662
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "Stacking": "ReplaceByCaster"
+    },
+    "MAvatar_Castorice_00_Rank02_Count": {
+      "_CallbackList": [
+        {
+          "Event": "OnStack",
+          "CallbackConfig": [
+            {
+              "$type": "RPG.GameCore.SetDynamicValueByModifierValue",
+              "ReadTargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "ModifierOwnerEntity"
+              },
+              "Multiplier": {
+                "FixedValue": {
+                  "Value": 1
+                }
+              },
+              "DynamicKey": "MDF_PropertyValue"
+            }
+          ]
+        }
+      ],
+      "Stacking": "ReplaceByCaster",
+      "DynamicValues": {
+        "Floats": {
+          "2128130574": {}
+        }
+      }
+    },
+    "MAvatar_Castorice_00_Rank04_HealTakenRatio": {
+      "_CallbackList": [
+        {
+          "Event": "OnStack",
+          "CallbackConfig": [
+            {
+              "$type": "RPG.GameCore.StackProperty",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "ModifierOwnerEntity"
+              },
+              "Property": "HealTakenRatio",
+              "PropertyValue": {
+                "IsDynamic": true,
+                "PostfixExpr": {
+                  "OpCodes": "AQAR",
+                  "FixedValues": [],
+                  "DynamicHashes": [
+                    2128130574
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "DynamicValues": {
+        "Floats": {
+          "2128130574": {}
+        }
+      }
+    },
+    "MAvatar_Castorice_00_Rank06_QuantumPenetrate": {
+      "_CallbackList": [
+        {
+          "Event": "OnBeforeHitAll",
+          "CallbackConfig": [
+            {
+              "$type": "RPG.GameCore.ModifyDamageData",
+              "Attacker_QuantumPenetrate": {
+                "IsDynamic": true,
+                "PostfixExpr": {
+                  "OpCodes": "AQAR",
+                  "FixedValues": [],
+                  "DynamicHashes": [
+                    2128130574
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "DynamicValues": {
+        "Floats": {
+          "2128130574": {}
+        }
+      }
+    }
+  },
+  "GlobalTemplates": [
+    {
+      "Name": "Avatar_Castorice_SetDamageRatio",
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByCompareHPRatio",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetAlias",
+              "Alias": "ParamEntity"
+            },
+            "CompareType": "Greater",
+            "CompareValue": {
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAR",
+                "FixedValues": [],
+                "DynamicHashes": [
+                  -873920944
+                ]
+              }
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.SetDynamicValue",
+              "Value": {
+                "FixedValue": {
+                  "Value": 1
+                }
+              },
+              "DynamicKey": {
+                "Value": "Avatar_Castorice_Rank01_DamageRatio"
+              }
+            }
+          ],
+          "FailedTaskList": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByAnd",
+                "PredicateList": [
+                  {
+                    "$type": "RPG.GameCore.ByCompareHPRatio",
+                    "TargetType": {
+                      "$type": "RPG.GameCore.TargetAlias",
+                      "Alias": "ParamEntity"
+                    },
+                    "CompareType": "LessEqual",
+                    "CompareValue": {
+                      "IsDynamic": true,
+                      "PostfixExpr": {
+                        "OpCodes": "AQAR",
+                        "FixedValues": [],
+                        "DynamicHashes": [
+                          -873920944
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "$type": "RPG.GameCore.ByCompareHPRatio",
+                    "TargetType": {
+                      "$type": "RPG.GameCore.TargetAlias",
+                      "Alias": "ParamEntity"
+                    },
+                    "CompareType": "Greater",
+                    "CompareValue": {
+                      "IsDynamic": true,
+                      "PostfixExpr": {
+                        "OpCodes": "AQAR",
+                        "FixedValues": [],
+                        "DynamicHashes": [
+                          867701803
+                        ]
+                      }
+                    }
+                  }
+                ]
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.SetDynamicValue",
+                  "Value": {
+                    "IsDynamic": true,
+                    "PostfixExpr": {
+                      "OpCodes": "AQAR",
+                      "FixedValues": [],
+                      "DynamicHashes": [
+                        -1917418607
+                      ]
+                    }
+                  },
+                  "DynamicKey": {
+                    "Value": "Avatar_Castorice_Rank01_DamageRatio"
+                  }
+                }
+              ],
+              "FailedTaskList": [
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByCompareHPRatio",
+                    "TargetType": {
+                      "$type": "RPG.GameCore.TargetAlias",
+                      "Alias": "ParamEntity"
+                    },
+                    "CompareType": "LessEqual",
+                    "CompareValue": {
+                      "IsDynamic": true,
+                      "PostfixExpr": {
+                        "OpCodes": "AQAR",
+                        "FixedValues": [],
+                        "DynamicHashes": [
+                          867701803
+                        ]
+                      }
+                    }
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.SetDynamicValue",
+                      "Value": {
+                        "IsDynamic": true,
+                        "PostfixExpr": {
+                          "OpCodes": "AQAR",
+                          "FixedValues": [],
+                          "DynamicHashes": [
+                            -1291963496
+                          ]
+                        }
+                      },
+                      "DynamicKey": {
+                        "Value": "Avatar_Castorice_Rank01_DamageRatio"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

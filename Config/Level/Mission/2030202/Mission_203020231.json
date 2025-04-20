@@ -6,37 +6,31 @@
       "TaskList": [
         {
           "$type": "RPG.GameCore.PerformanceTransition",
-          "SwitchKeepTime": 0.5,
-          "SwitchOutTime": -1.0,
+          "SwitchInTime": 0,
+          "SwitchOutTime": -1,
           "CreateNpcList": [],
           "CaptureNpcList": [],
           "DestroyNpcList": [],
           "CreateProp": {
-            "IsClientOnly": true
+            "TaskEnabled": false
           },
           "DestroyProp": {
             "TargetType": {
               "$type": "RPG.GameCore.TargetFetchAdvPropEx"
             },
-            "IsClientOnly": true
+            "TaskEnabled": false
           },
           "AdvCreateGroupEntity": {
-            "IsClientOnly": true
+            "TaskEnabled": false
           },
           "AdvDestroyGroupEntity": {
-            "IsClientOnly": true
+            "TaskEnabled": false
           },
-          "DisactiveVCamOnGraphEnd": true,
           "ActiveVirtualCamera": {
-            "IsActive": true,
-            "VCameraDitherMaxDistance": 1.0,
-            "CenterPosX": -1.0,
-            "CenterPosY": -1.0,
-            "IsClientOnly": true
+            "TaskEnabled": false
           },
           "ActiveTemplateVirtualCamera": {
-            "IsActive": true,
-            "IsClientOnly": true
+            "TaskEnabled": false
           },
           "SwitchCharacterAnchor": {
             "IsLocalPlayer": true,
@@ -46,42 +40,24 @@
             },
             "AnchorName": {
               "Value": "PlayerStart"
-            },
-            "ResetAnimation": true,
-            "ResetCamera": true,
-            "ClearSpecialVision": true,
-            "TaskEnabled": true,
-            "IsClientOnly": true
+            }
           },
           "AdvNpcFaceToPlayer": {
-            "FromDialog": true,
-            "TryFaceToFace": true,
-            "NpcLookAtPlayer": true,
-            "PlayerLookAtNpc": true,
-            "StopLookAtOnGraphEnd": true,
-            "TurnBackOnGraphEnd": true,
             "SteerImmediately": true,
             "FinishImmadiate": true,
-            "WaitFinishMode": "WaitFaceAngle",
-            "ForceToStandBy": true,
-            "IsClientOnly": true
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+            "TaskEnabled": false
+          }
         },
         {
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Talk_203020231"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
           "Key": "Mission_203020231",
-          "KeepScreenTransferUntilGroupRefresh": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "KeepScreenTransferUntilGroupRefresh": true
         }
       ]
     }

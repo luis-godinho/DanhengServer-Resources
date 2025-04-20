@@ -5,15 +5,12 @@
       "TaskList": [
         {
           "$type": "RPG.GameCore.ShowFuncBtn",
-          "Show": true,
-          "HideWhenGraphFinish": true,
           "PuzzleFunc": "Identify",
-          "CDDuration": 1.0,
+          "CDDuration": 1,
+          "ShowBtnFucHint": false,
           "CustomString": {
             "Value": "PhotoGraphGOGOGO"
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         }
       ]
     },
@@ -24,18 +21,17 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "PhotoGraphGOGOGO"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.SwitchPhotoGraphMode",
           "PhotoGraphMode": "Identify",
-          "ExitWhenPreViewDialogFinish": true,
           "SkipPhotoPreviewDialog": true,
-          "IdentifyRadiusOverride": {},
-          "InitFov": -1.0,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "IdentifyRadiusOverride": {
+            "FixedValue": {
+              "Value": 0
+            }
+          }
         }
       ]
     },
@@ -48,82 +44,77 @@
             "MultiGroupFetch": [
               {
                 "GroupID": {
-                  "fixedValue": {
-                    "RawValue": 141733920768
+                  "FixedValue": {
+                    "Value": 33
                   }
                 },
                 "ID": {
-                  "fixedValue": {
-                    "RawValue": 1288498778734592
+                  "FixedValue": {
+                    "Value": 300002
                   }
                 }
               },
               {
                 "GroupID": {
-                  "fixedValue": {
-                    "RawValue": 146028888064
+                  "FixedValue": {
+                    "Value": 34
                   }
                 },
                 "ID": {
-                  "fixedValue": {
-                    "RawValue": 1288498778734592
+                  "FixedValue": {
+                    "Value": 300002
                   }
                 }
               },
               {
                 "GroupID": {
-                  "fixedValue": {
-                    "RawValue": 154618822656
+                  "FixedValue": {
+                    "Value": 36
                   }
                 },
                 "ID": {
-                  "fixedValue": {
-                    "RawValue": 1288498778734592
+                  "FixedValue": {
+                    "Value": 300002
                   }
                 }
               },
               {
                 "GroupID": {
-                  "fixedValue": {
-                    "RawValue": 158913789952
+                  "FixedValue": {
+                    "Value": 37
                   }
                 },
                 "ID": {
-                  "fixedValue": {
-                    "RawValue": 1288498778734592
+                  "FixedValue": {
+                    "Value": 300002
                   }
                 }
               },
               {
                 "GroupID": {
-                  "fixedValue": {
-                    "RawValue": 188978561024
+                  "FixedValue": {
+                    "Value": 44
                   }
                 },
                 "ID": {
-                  "fixedValue": {
-                    "RawValue": 1288494483767296
+                  "FixedValue": {
+                    "Value": 300001
                   }
                 }
               }
             ]
           },
-          "IsAim": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "IsAim": true
         },
         {
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "200020541_Break"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_200020641",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_200020641"
         }
       ]
     },
@@ -136,13 +127,13 @@
             "MultiGroupFetch": [
               {
                 "GroupID": {
-                  "fixedValue": {
-                    "RawValue": 141733920768
+                  "FixedValue": {
+                    "Value": 33
                   }
                 },
                 "ID": {
-                  "fixedValue": {
-                    "RawValue": 1288498778734592
+                  "FixedValue": {
+                    "Value": 300002
                   }
                 }
               }
@@ -153,8 +144,7 @@
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "200020541_Success"
-              },
-              "TaskEnabled": true
+              }
             }
           ],
           "OnPreviewFinish": [
@@ -162,12 +152,9 @@
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "200020641_Marked_2"
-              },
-              "TaskEnabled": true
+              }
             }
-          ],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         },
         {
           "$type": "RPG.GameCore.PhotoGraphAimTarget",
@@ -176,21 +163,19 @@
             "MultiGroupFetch": [
               {
                 "GroupID": {
-                  "fixedValue": {
-                    "RawValue": 141733920768
+                  "FixedValue": {
+                    "Value": 33
                   }
                 },
                 "ID": {
-                  "fixedValue": {
-                    "RawValue": 1288498778734592
+                  "FixedValue": {
+                    "Value": 300002
                   }
                 }
               }
             ]
           },
-          "AimIdentifyType": "Manual",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "AimIdentifyType": "Manual"
         }
       ]
     },
@@ -203,13 +188,13 @@
             "MultiGroupFetch": [
               {
                 "GroupID": {
-                  "fixedValue": {
-                    "RawValue": 146028888064
+                  "FixedValue": {
+                    "Value": 34
                   }
                 },
                 "ID": {
-                  "fixedValue": {
-                    "RawValue": 1288498778734592
+                  "FixedValue": {
+                    "Value": 300002
                   }
                 }
               }
@@ -220,8 +205,7 @@
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "200020541_Success"
-              },
-              "TaskEnabled": true
+              }
             }
           ],
           "OnPreviewFinish": [
@@ -229,12 +213,9 @@
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "200020641_Marked_3"
-              },
-              "TaskEnabled": true
+              }
             }
-          ],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         },
         {
           "$type": "RPG.GameCore.PhotoGraphAimTarget",
@@ -243,21 +224,19 @@
             "MultiGroupFetch": [
               {
                 "GroupID": {
-                  "fixedValue": {
-                    "RawValue": 146028888064
+                  "FixedValue": {
+                    "Value": 34
                   }
                 },
                 "ID": {
-                  "fixedValue": {
-                    "RawValue": 1288498778734592
+                  "FixedValue": {
+                    "Value": 300002
                   }
                 }
               }
             ]
           },
-          "AimIdentifyType": "Manual",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "AimIdentifyType": "Manual"
         }
       ]
     },
@@ -270,13 +249,13 @@
             "MultiGroupFetch": [
               {
                 "GroupID": {
-                  "fixedValue": {
-                    "RawValue": 154618822656
+                  "FixedValue": {
+                    "Value": 36
                   }
                 },
                 "ID": {
-                  "fixedValue": {
-                    "RawValue": 1288498778734592
+                  "FixedValue": {
+                    "Value": 300002
                   }
                 }
               }
@@ -287,8 +266,7 @@
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "200020541_Success"
-              },
-              "TaskEnabled": true
+              }
             }
           ],
           "OnPreviewFinish": [
@@ -296,12 +274,9 @@
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "200020641_Marked_4"
-              },
-              "TaskEnabled": true
+              }
             }
-          ],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         },
         {
           "$type": "RPG.GameCore.PhotoGraphAimTarget",
@@ -310,21 +285,19 @@
             "MultiGroupFetch": [
               {
                 "GroupID": {
-                  "fixedValue": {
-                    "RawValue": 154618822656
+                  "FixedValue": {
+                    "Value": 36
                   }
                 },
                 "ID": {
-                  "fixedValue": {
-                    "RawValue": 1288498778734592
+                  "FixedValue": {
+                    "Value": 300002
                   }
                 }
               }
             ]
           },
-          "AimIdentifyType": "Manual",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "AimIdentifyType": "Manual"
         }
       ]
     },
@@ -337,13 +310,13 @@
             "MultiGroupFetch": [
               {
                 "GroupID": {
-                  "fixedValue": {
-                    "RawValue": 158913789952
+                  "FixedValue": {
+                    "Value": 37
                   }
                 },
                 "ID": {
-                  "fixedValue": {
-                    "RawValue": 1288498778734592
+                  "FixedValue": {
+                    "Value": 300002
                   }
                 }
               }
@@ -354,8 +327,7 @@
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "200020541_Success"
-              },
-              "TaskEnabled": true
+              }
             }
           ],
           "OnPreviewFinish": [
@@ -363,12 +335,9 @@
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "200020641_Marked_5"
-              },
-              "TaskEnabled": true
+              }
             }
-          ],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         },
         {
           "$type": "RPG.GameCore.PhotoGraphAimTarget",
@@ -377,21 +346,19 @@
             "MultiGroupFetch": [
               {
                 "GroupID": {
-                  "fixedValue": {
-                    "RawValue": 158913789952
+                  "FixedValue": {
+                    "Value": 37
                   }
                 },
                 "ID": {
-                  "fixedValue": {
-                    "RawValue": 1288498778734592
+                  "FixedValue": {
+                    "Value": 300002
                   }
                 }
               }
             ]
           },
-          "AimIdentifyType": "Manual",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "AimIdentifyType": "Manual"
         }
       ]
     },
@@ -402,20 +369,16 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "200020541_Success"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.PhotoGraphShowIdentifyResult",
           "IsIdentifySuccess": true,
           "IsShowToast": true,
           "ToastText": {
-            "Hash": 2081047187,
-            "Hash64": 6247561509245999753
+            "Hash": 6247561509245999753
           },
-          "IsShowAim": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "IsShowAim": true
         }
       ]
     },
@@ -426,19 +389,15 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "200020541_Fail"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.PhotoGraphShowIdentifyResult",
           "IsShowToast": true,
           "ToastText": {
-            "Hash": 2081047188,
-            "Hash64": 13547527406387288485
+            "Hash": 13547527406387288485
           },
-          "IsShowAim": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "IsShowAim": true
         }
       ]
     },
@@ -451,13 +410,13 @@
             "MultiGroupFetch": [
               {
                 "GroupID": {
-                  "fixedValue": {
-                    "RawValue": 188978561024
+                  "FixedValue": {
+                    "Value": 44
                   }
                 },
                 "ID": {
-                  "fixedValue": {
-                    "RawValue": 1288494483767296
+                  "FixedValue": {
+                    "Value": 300001
                   }
                 }
               }
@@ -468,8 +427,7 @@
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "200020541_Success"
-              },
-              "TaskEnabled": true
+              }
             }
           ],
           "OnPreviewFinish": [
@@ -477,12 +435,9 @@
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "200020641_Marked_6"
-              },
-              "TaskEnabled": true
+              }
             }
-          ],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         },
         {
           "$type": "RPG.GameCore.PhotoGraphAimTarget",
@@ -491,21 +446,19 @@
             "MultiGroupFetch": [
               {
                 "GroupID": {
-                  "fixedValue": {
-                    "RawValue": 188978561024
+                  "FixedValue": {
+                    "Value": 44
                   }
                 },
                 "ID": {
-                  "fixedValue": {
-                    "RawValue": 1288494483767296
+                  "FixedValue": {
+                    "Value": 300001
                   }
                 }
               }
             ]
           },
-          "AimIdentifyType": "Manual",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "AimIdentifyType": "Manual"
         }
       ]
     }

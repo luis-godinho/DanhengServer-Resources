@@ -1,0 +1,89 @@
+{
+  "OnInitSequece": [
+    {
+      "TaskList": []
+    }
+  ],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvDistrictSetupTrigger",
+          "GroupID": {
+            "FixedValue": {
+              "Value": 83
+            }
+          },
+          "DistrictID": {
+            "FixedValue": {
+              "Value": 1
+            }
+          },
+          "DisableAfterTrigger": true,
+          "OnEnter": [
+            {
+              "$type": "RPG.GameCore.PlayMissionTalk",
+              "SimpleTalkList": [
+                {
+                  "TalkSentenceID": 103112947,
+                  "ProtectTime": 2
+                },
+                {
+                  "TalkSentenceID": 103112948,
+                  "ProtectTime": 2
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvDistrictSetupTrigger",
+          "GroupID": {
+            "FixedValue": {
+              "Value": 83
+            }
+          },
+          "DistrictID": {
+            "FixedValue": {
+              "Value": 2
+            }
+          },
+          "OnEnter": [
+            {
+              "$type": "RPG.GameCore.SetMissionCustomValue",
+              "SubmissionID": 103110156,
+              "MissionCustomValue": {
+                "Index": 1,
+                "isLocal": true,
+                "ValidValueParamList": [
+                  0,
+                  1
+                ]
+              },
+              "CustomValue": 1
+            }
+          ],
+          "OnExit": [
+            {
+              "$type": "RPG.GameCore.SetMissionCustomValue",
+              "SubmissionID": 103110156,
+              "MissionCustomValue": {
+                "Index": 1,
+                "isLocal": true,
+                "ValidValueParamList": [
+                  0,
+                  1
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "Type": "Group"
+}

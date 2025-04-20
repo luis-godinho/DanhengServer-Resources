@@ -8,21 +8,12 @@
             "$type": "RPG.GameCore.TargetAlias",
             "Alias": "Caster"
           },
-          "Duration": -1.0,
-          "BlurX": 0.5,
-          "BlurY": 0.5,
-          "BlurRadius": 0.5,
-          "Iteration": 6,
-          "BlurStart": 0.2,
-          "BlurFeather": 0.1,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Active": false
         }
       ],
       "Name": "LocalPlayer_Yanqing_NormalAtk01",
       "TargetInfo": {
-        "TargetType": "SkillPointEntityOrNone",
-        "MaxTargetCount": 1
+        "TargetType": "SkillPointEntityOrNone"
       },
       "OnStart": [
         {
@@ -31,54 +22,27 @@
             "Freelook3rdConfig": {
               "DampChangeParam": {
                 "TargetValue": {
-                  "x": 1.0,
-                  "y": 1.0,
-                  "z": 1.0,
-                  "normalized": {
-                    "x": 0.577350259,
-                    "y": 0.577350259,
-                    "z": 0.577350259,
-                    "normalized": {
-                      "x": 0.5773503,
-                      "y": 0.5773503,
-                      "z": 0.5773503,
-                      "magnitude": 1.00000012,
-                      "sqrMagnitude": 1.00000024
-                    },
-                    "magnitude": 0.99999994,
-                    "sqrMagnitude": 0.99999994
-                  },
-                  "magnitude": 1.73205078,
-                  "sqrMagnitude": 3.0
+                  "X": 1,
+                  "Y": 1,
+                  "Z": 1
                 },
-                "Time": 0.1,
                 "ChangeCurvePath": "Camera/BlendCurve/AttackDampCurve.asset",
                 "RecoveryTime": 0.25,
                 "RecoveryCurvePath": "Camera/BlendCurve/AttackDampRecoverCurve.asset"
               }
             }
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
           "$type": "RPG.GameCore.PredicateTaskList",
           "Predicate": {
-            "$type": "RPG.GameCore.ByHaveAbilityTarget",
-            "TaskEnabled": true
+            "$type": "RPG.GameCore.ByHaveAbilityTarget"
           },
           "SuccessTaskList": [
             {
               "$type": "RPG.GameCore.LookAt",
-              "PerformerType": {
-                "$type": "RPG.GameCore.TargetAlias",
-                "Alias": "Caster"
-              },
               "TargetType": "AbilityTargetEntity",
-              "ToTargetRatio": 1.0,
-              "Duration": 0.1,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "Duration": 0.1
             },
             {
               "$type": "RPG.GameCore.AdventureTriggerAnimStateWithMove",
@@ -88,10 +52,8 @@
               },
               "AnimLogicState": "NormalAtk",
               "AnimStateName": "Attack_1",
-              "StopWhenHitOthers": true,
-              "MovingRangeList": [],
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "TransitionDuration": 0,
+              "MovingRangeList": []
             },
             {
               "$type": "RPG.GameCore.WaitAnimState",
@@ -101,12 +63,10 @@
               },
               "AnimStateName": "Attack_1",
               "NormalizedTimeEnd": {
-                "fixedValue": {
-                  "RawValue": 214748365
+                "FixedValue": {
+                  "Value": 0.05
                 }
-              },
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              }
             },
             {
               "$type": "RPG.GameCore.AdventureFireProjectile",
@@ -117,30 +77,13 @@
               "Projectile": {
                 "Behavior": "Static",
                 "EnableRayCast": true,
-                "FlyTime": -1.0,
-                "Gravity": -9.8,
-                "MaxLifeTime": 1.0,
+                "MaxLifeTime": 1,
                 "TargetOffset": {
-                  "z": 0.2,
-                  "normalized": {
-                    "z": 1.0,
-                    "magnitude": 1.0,
-                    "sqrMagnitude": 1.0
-                  },
-                  "magnitude": 0.2,
-                  "sqrMagnitude": 0.0400000028
+                  "Z": 0.2
                 },
                 "UseLookat": true,
-                "FlyEffect": "Effects/Eff_Prefab/Eff_Avatar/Eff_Yanqing_00/Eff_Avatar_Yanqing_00_MazeAttack.prefab",
-                "LinearPitchAngle": {},
-                "BoomerangEccentricity": 1.0,
-                "TriggerHitCallback": true,
-                "StaticProjectileCanPassAirWall": true,
-                "ParabolaUseWorldSpaceUp": true,
-                "SubCurveIndex": {}
-              },
-              "TaskEnabled": true,
-              "IsClientOnly": true
+                "FlyEffect": "Effects/Eff_Prefab/Eff_Avatar/Eff_Yanqing_00/Eff_Avatar_Yanqing_00_MazeAttack.prefab"
+              }
             },
             {
               "$type": "RPG.GameCore.WaitAnimState",
@@ -150,12 +93,10 @@
               },
               "AnimStateName": "Attack_1",
               "NormalizedTimeEnd": {
-                "fixedValue": {
-                  "RawValue": 300647711
+                "FixedValue": {
+                  "Value": 0.07
                 }
-              },
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              }
             },
             {
               "$type": "RPG.GameCore.AdventureFireProjectile",
@@ -166,38 +107,14 @@
               "Projectile": {
                 "Behavior": "Static",
                 "EnableRayCast": true,
-                "FlyTime": -1.0,
-                "Gravity": -9.8,
-                "MaxLifeTime": 1.0,
+                "MaxLifeTime": 1,
                 "TargetOffset": {
-                  "y": 0.8,
-                  "z": 0.1,
-                  "normalized": {
-                    "y": 0.992277861,
-                    "z": 0.124034733,
-                    "normalized": {
-                      "y": 0.9922779,
-                      "z": 0.12403474,
-                      "magnitude": 1.0,
-                      "sqrMagnitude": 1.00000012
-                    },
-                    "magnitude": 0.99999994,
-                    "sqrMagnitude": 0.99999994
-                  },
-                  "magnitude": 0.8062258,
-                  "sqrMagnitude": 0.650000036
+                  "Y": 0.8,
+                  "Z": 0.1
                 },
                 "UseLookat": true,
-                "FlyEffect": "Effects/Eff_Prefab/Eff_Avatar/Eff_Yanqing_00/Eff_Avatar_Yanqing_00_MazeSkill_Hit.prefab",
-                "LinearPitchAngle": {},
-                "BoomerangEccentricity": 1.0,
-                "TriggerHitCallback": true,
-                "StaticProjectileCanPassAirWall": true,
-                "ParabolaUseWorldSpaceUp": true,
-                "SubCurveIndex": {}
-              },
-              "TaskEnabled": true,
-              "IsClientOnly": true
+                "FlyEffect": "Effects/Eff_Prefab/Eff_Avatar/Eff_Yanqing_00/Eff_Avatar_Yanqing_00_MazeSkill_Hit.prefab"
+              }
             },
             {
               "$type": "RPG.GameCore.WaitAnimState",
@@ -207,12 +124,10 @@
               },
               "AnimStateName": "Attack_1",
               "NormalizedTimeEnd": {
-                "fixedValue": {
-                  "RawValue": 317827579
+                "FixedValue": {
+                  "Value": 0.074
                 }
-              },
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              }
             },
             {
               "$type": "RPG.GameCore.AdventureFireProjectile",
@@ -223,39 +138,19 @@
               "Projectile": {
                 "Behavior": "Static",
                 "EnableRayCast": true,
-                "FlyTime": -1.0,
-                "Gravity": -9.8,
-                "MaxLifeTime": 1.0,
+                "MaxLifeTime": 1,
                 "TargetOffset": {
-                  "z": 0.2,
-                  "normalized": {
-                    "z": 1.0,
-                    "magnitude": 1.0,
-                    "sqrMagnitude": 1.0
-                  },
-                  "magnitude": 0.2,
-                  "sqrMagnitude": 0.0400000028
+                  "Z": 0.2
                 },
                 "UseLookat": true,
-                "FlyEffect": "Effects/Eff_Prefab/Eff_Avatar/Eff_Yanqing_00/Eff_Avatar_Yanqing_00_MazeAttack_02.prefab",
-                "LinearPitchAngle": {},
-                "BoomerangEccentricity": 1.0,
-                "TriggerHitCallback": true,
-                "StaticProjectileCanPassAirWall": true,
-                "ParabolaUseWorldSpaceUp": true,
-                "SubCurveIndex": {}
-              },
-              "TaskEnabled": true,
-              "IsClientOnly": true
+                "FlyEffect": "Effects/Eff_Prefab/Eff_Avatar/Eff_Yanqing_00/Eff_Avatar_Yanqing_00_MazeAttack_02.prefab"
+              }
             },
             {
               "$type": "RPG.GameCore.StopEffectFollow",
               "EffectList": [
                 "Effects/Eff_Prefab/Eff_Avatar/Eff_Yanqing_00/Eff_Avatar_Yanqing_00_MazeAttack_03.prefab"
-              ],
-              "IsStop": true,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              ]
             },
             {
               "$type": "RPG.GameCore.AdventureFireProjectile",
@@ -266,15 +161,7 @@
               "Projectile": {
                 "Behavior": "Static",
                 "EnableRayCast": true,
-                "FlyTime": -1.0,
-                "Gravity": -9.8,
-                "MaxLifeTime": 0.1,
-                "LinearPitchAngle": {},
-                "BoomerangEccentricity": 1.0,
-                "TriggerHitCallback": true,
-                "StaticProjectileCanPassAirWall": true,
-                "ParabolaUseWorldSpaceUp": true,
-                "SubCurveIndex": {}
+                "MaxLifeTime": 0.1
               },
               "OnProjectileLifetimeFinish": [
                 {
@@ -287,34 +174,25 @@
                     "$type": "RPG.GameCore.TargetAlias",
                     "Alias": "ProjectileHitEntity"
                   },
-                  "TriggerBattle": true,
                   "TriggerBattleDelay": 0.2,
                   "AttackDetectConfig": {
                     "$type": "RPG.GameCore.AdventureAttackDetectCircleConfig",
-                    "MaxRadius": 2.0,
-                    "FanAngle": 360.0,
-                    "Hight": 2.0
+                    "MaxRadius": 2,
+                    "FanAngle": 360,
+                    "Hight": 2
                   },
                   "HitConfig": {
                     "HitAnimation": "Hit",
                     "HitEffect": "Effects/Eff_Prefab/Eff_Avatar/Eff_Yanqing_00/Eff_Avatar_Yanqing_00_MazeAttack_Hit.prefab"
-                  },
-                  "IncludeProps": true,
-                  "AttackDetectCollision": true,
-                  "TaskEnabled": true,
-                  "IsClientOnly": true
+                  }
                 }
-              ],
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              ]
             },
             {
               "$type": "RPG.GameCore.VCameraConfigChange",
               "CameraConfig": {
                 "ShakeTemplateName": "LocalPlayer_DanHeng_NormalAttack_OnTarget"
-              },
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              }
             },
             {
               "$type": "RPG.GameCore.WaitAnimState",
@@ -324,12 +202,10 @@
               },
               "AnimStateName": "Attack_1",
               "NormalizedTimeEnd": {
-                "fixedValue": {
-                  "RawValue": 597000452
+                "FixedValue": {
+                  "Value": 0.139
                 }
-              },
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              }
             }
           ],
           "FailedTaskList": [
@@ -341,10 +217,8 @@
               },
               "AnimLogicState": "NormalAtk",
               "AnimStateName": "Attack_1",
-              "StopWhenHitOthers": true,
-              "MovingRangeList": [],
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "TransitionDuration": 0,
+              "MovingRangeList": []
             },
             {
               "$type": "RPG.GameCore.WaitAnimState",
@@ -354,12 +228,10 @@
               },
               "AnimStateName": "Attack_1",
               "NormalizedTimeEnd": {
-                "fixedValue": {
-                  "RawValue": 214748365
+                "FixedValue": {
+                  "Value": 0.05
                 }
-              },
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              }
             },
             {
               "$type": "RPG.GameCore.AdventureFireProjectile",
@@ -370,29 +242,12 @@
               "Projectile": {
                 "Behavior": "Static",
                 "EnableRayCast": true,
-                "FlyTime": -1.0,
-                "Gravity": -9.8,
-                "MaxLifeTime": 1.0,
+                "MaxLifeTime": 1,
                 "AttachOffset": {
-                  "z": 2.5,
-                  "normalized": {
-                    "z": 1.0,
-                    "magnitude": 1.0,
-                    "sqrMagnitude": 1.0
-                  },
-                  "magnitude": 2.5,
-                  "sqrMagnitude": 6.25
+                  "Z": 2.5
                 },
-                "FlyEffect": "Effects/Eff_Prefab/Eff_Avatar/Eff_Yanqing_00/Eff_Avatar_Yanqing_00_MazeAttack.prefab",
-                "LinearPitchAngle": {},
-                "BoomerangEccentricity": 1.0,
-                "TriggerHitCallback": true,
-                "StaticProjectileCanPassAirWall": true,
-                "ParabolaUseWorldSpaceUp": true,
-                "SubCurveIndex": {}
-              },
-              "TaskEnabled": true,
-              "IsClientOnly": true
+                "FlyEffect": "Effects/Eff_Prefab/Eff_Avatar/Eff_Yanqing_00/Eff_Avatar_Yanqing_00_MazeAttack.prefab"
+              }
             },
             {
               "$type": "RPG.GameCore.WaitAnimState",
@@ -402,12 +257,10 @@
               },
               "AnimStateName": "Attack_1",
               "NormalizedTimeEnd": {
-                "fixedValue": {
-                  "RawValue": 317827579
+                "FixedValue": {
+                  "Value": 0.074
                 }
-              },
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              }
             },
             {
               "$type": "RPG.GameCore.AdventureFireProjectile",
@@ -418,30 +271,13 @@
               "Projectile": {
                 "Behavior": "Static",
                 "EnableRayCast": true,
-                "FlyTime": -1.0,
-                "Gravity": -9.8,
-                "MaxLifeTime": 1.0,
+                "MaxLifeTime": 1,
                 "AttachOffset": {
-                  "z": 2.5,
-                  "normalized": {
-                    "z": 1.0,
-                    "magnitude": 1.0,
-                    "sqrMagnitude": 1.0
-                  },
-                  "magnitude": 2.5,
-                  "sqrMagnitude": 6.25
+                  "Z": 2.5
                 },
                 "UseLookat": true,
-                "FlyEffect": "Effects/Eff_Prefab/Eff_Avatar/Eff_Yanqing_00/Eff_Avatar_Yanqing_00_MazeAttack_02.prefab",
-                "LinearPitchAngle": {},
-                "BoomerangEccentricity": 1.0,
-                "TriggerHitCallback": true,
-                "StaticProjectileCanPassAirWall": true,
-                "ParabolaUseWorldSpaceUp": true,
-                "SubCurveIndex": {}
-              },
-              "TaskEnabled": true,
-              "IsClientOnly": true
+                "FlyEffect": "Effects/Eff_Prefab/Eff_Avatar/Eff_Yanqing_00/Eff_Avatar_Yanqing_00_MazeAttack_02.prefab"
+              }
             },
             {
               "$type": "RPG.GameCore.WaitAnimState",
@@ -451,21 +287,16 @@
               },
               "AnimStateName": "Attack_1",
               "NormalizedTimeEnd": {
-                "fixedValue": {
-                  "RawValue": 433791697
+                "FixedValue": {
+                  "Value": 0.101
                 }
-              },
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              }
             },
             {
               "$type": "RPG.GameCore.StopEffectFollow",
               "EffectList": [
                 "Effects/Eff_Prefab/Eff_Avatar/Eff_Yanqing_00/Eff_Avatar_Yanqing_00_MazeAttack_03.prefab"
-              ],
-              "IsStop": true,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              ]
             },
             {
               "$type": "RPG.GameCore.AdventureFireProjectile",
@@ -476,25 +307,10 @@
               "Projectile": {
                 "Behavior": "Static",
                 "EnableRayCast": true,
-                "FlyTime": -1.0,
-                "Gravity": -9.8,
                 "MaxLifeTime": 0.1,
                 "TargetOffset": {
-                  "z": 1.5,
-                  "normalized": {
-                    "z": 1.0,
-                    "magnitude": 1.0,
-                    "sqrMagnitude": 1.0
-                  },
-                  "magnitude": 1.5,
-                  "sqrMagnitude": 2.25
-                },
-                "LinearPitchAngle": {},
-                "BoomerangEccentricity": 1.0,
-                "TriggerHitCallback": true,
-                "StaticProjectileCanPassAirWall": true,
-                "ParabolaUseWorldSpaceUp": true,
-                "SubCurveIndex": {}
+                  "Z": 1.5
+                }
               },
               "OnProjectileLifetimeFinish": [
                 {
@@ -507,26 +323,19 @@
                     "$type": "RPG.GameCore.TargetAlias",
                     "Alias": "ProjectileHitEntity"
                   },
-                  "TriggerBattle": true,
                   "TriggerBattleDelay": 0.2,
                   "AttackDetectConfig": {
                     "$type": "RPG.GameCore.AdventureAttackDetectCircleConfig",
-                    "MaxRadius": 2.0,
-                    "FanAngle": 360.0,
-                    "Hight": 2.0
+                    "MaxRadius": 2,
+                    "FanAngle": 360,
+                    "Hight": 2
                   },
                   "HitConfig": {
                     "HitAnimation": "Hit",
                     "HitEffect": "Effects/Eff_Prefab/Eff_Avatar/Eff_Yanqing_00/Eff_Avatar_Yanqing_00_MazeSkill_Hit.prefab"
-                  },
-                  "IncludeProps": true,
-                  "AttackDetectCollision": true,
-                  "TaskEnabled": true,
-                  "IsClientOnly": true
+                  }
                 }
-              ],
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              ]
             },
             {
               "$type": "RPG.GameCore.RadialBlurEffect",
@@ -534,16 +343,12 @@
                 "$type": "RPG.GameCore.TargetAlias",
                 "Alias": "Caster"
               },
-              "Active": true,
               "Duration": 0.05,
-              "BlurX": 0.5,
               "BlurY": 0.4,
-              "BlurRadius": 1.0,
+              "BlurRadius": 1,
               "Iteration": 4,
               "BlurStart": 0.005,
-              "BlurFeather": 0.01,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "BlurFeather": 0.01
             },
             {
               "$type": "RPG.GameCore.WaitAnimState",
@@ -553,23 +358,19 @@
               },
               "AnimStateName": "Attack_1",
               "NormalizedTimeEnd": {
-                "fixedValue": {
-                  "RawValue": 597000452
+                "FixedValue": {
+                  "Value": 0.139
                 }
-              },
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              }
             }
-          ],
-          "TaskEnabled": true
+          ]
         }
       ]
     },
     {
       "Name": "LocalPlayer_Yanqing_MazeSkill",
       "TargetInfo": {
-        "TargetType": "Caster",
-        "MaxTargetCount": 1
+        "TargetType": "Caster"
       },
       "OnStart": [
         {
@@ -579,11 +380,7 @@
             "Alias": "AdvLocalPlayer"
           },
           "AnimLogicState": "MazeSkill",
-          "AnimStateName": "MazeSkill",
-          "TransitionDuration": 0.05,
-          "StopWhenHitOthers": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "AnimStateName": "MazeSkill"
         },
         {
           "$type": "RPG.GameCore.WaitAnimState",
@@ -593,12 +390,10 @@
           },
           "AnimStateName": "MazeSkill",
           "NormalizedTimeEnd": {
-            "fixedValue": {
-              "RawValue": 498216205
+            "FixedValue": {
+              "Value": 0.116
             }
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
           "$type": "RPG.GameCore.AddMazeBuff",
@@ -608,21 +403,13 @@
           },
           "ID": 120901,
           "LifeTime": {
-            "fixedValue": {
-              "RawValue": -4294967296
+            "FixedValue": {
+              "Value": -1
             }
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
-          "$type": "RPG.GameCore.AdventureSubmitSkill",
-          "Caster": {
-            "$type": "RPG.GameCore.TargetAlias",
-            "Alias": "Caster"
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "$type": "RPG.GameCore.AdventureSubmitSkill"
         },
         {
           "$type": "RPG.GameCore.WaitAnimState",
@@ -632,12 +419,10 @@
           },
           "AnimStateName": "MazeSkill",
           "NormalizedTimeEnd": {
-            "fixedValue": {
-              "RawValue": 824633721
+            "FixedValue": {
+              "Value": 0.192
             }
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         }
       ]
     }

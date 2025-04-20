@@ -1,0 +1,95 @@
+{
+  "OnInitSequece": [
+    {
+      "TaskList": []
+    }
+  ],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitSecond",
+          "WaitTime": {
+            "FixedValue": {
+              "Value": 0.5
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.SetEntityFollowAttachPoint",
+          "TargetType": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "TargetType": "Prop",
+            "Targets": [
+              300001
+            ]
+          },
+          "AttachTarget": {
+            "$type": "RPG.GameCore.TargetFetchAdvLocalPlayer"
+          },
+          "AttachPoint": "Origin"
+        },
+        {
+          "$type": "RPG.GameCore.SetEntityFollowAttachPoint",
+          "TargetType": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "TargetType": "Prop",
+            "Targets": [
+              300002
+            ]
+          },
+          "AttachTarget": {
+            "$type": "RPG.GameCore.TargetFetchAdvLocalPlayer"
+          },
+          "AttachPoint": "Origin"
+        },
+        {
+          "$type": "RPG.GameCore.WaitSecond",
+          "WaitTime": {
+            "FixedValue": {
+              "Value": 0.5
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TriggerEntityEvent",
+          "EventName": {
+            "Value": "InitLightDevice"
+          },
+          "InstanceID": {
+            "FixedValue": {
+              "Value": 300001
+            }
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": []
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.LoopWaitServerFloorSavedValueChange"
+        }
+      ]
+    }
+  ],
+  "ValueSource": {
+    "Values": [
+      {
+        "$type": "RPG.GameCore.SharedString",
+        "Key": "TargetNPC"
+      },
+      {
+        "$type": "RPG.GameCore.SharedString",
+        "Key": "TargetLight"
+      },
+      {
+        "$type": "RPG.GameCore.SharedString",
+        "Key": "TargetPoint"
+      }
+    ]
+  },
+  "Type": "Group"
+}

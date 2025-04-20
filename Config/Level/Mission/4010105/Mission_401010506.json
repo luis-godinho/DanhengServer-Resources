@@ -9,10 +9,8 @@
           "ID": 300001,
           "GroupID": 47,
           "EditHeight": true,
-          "MinHeight": -100.0,
-          "MaxHeight": -100.0,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "MinHeight": -100,
+          "MaxHeight": -100
         }
       ]
     },
@@ -21,17 +19,15 @@
         {
           "$type": "RPG.GameCore.CreateProp",
           "GroupID": {
-            "fixedValue": {
-              "RawValue": 206158430208
+            "FixedValue": {
+              "Value": 48
             }
           },
           "GroupPropID": {
-            "fixedValue": {
-              "RawValue": 1288507368669184
+            "FixedValue": {
+              "Value": 300004
             }
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         }
       ]
     },
@@ -40,13 +36,10 @@
         {
           "$type": "RPG.GameCore.WaitSecond",
           "WaitTime": {
-            "fixedValue": {
-              "RawValue": 1073741825
+            "FixedValue": {
+              "Value": 0.25
             }
-          },
-          "MaxAdvencePerTick": -1.0,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
           "$type": "RPG.GameCore.PropSetupUITrigger",
@@ -54,39 +47,33 @@
           "ButtonIcon": "SpriteOutput/TalkIcon/CheckIcon.png",
           "IconType": "CheckIcon",
           "ButtonText": {
-            "Hash": 278713937,
-            "Hash64": 16304550243505668348
+            "Hash": 16304550243505668348
           },
           "ButtonCallback": [
             {
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "401010506_performance"
-              },
-              "TaskEnabled": true
+              }
             }
           ],
-          "InteractAngleRange": 180.0,
           "OverrideTargetTypes": [],
-          "SkipFakeAvatar": true,
           "TargetType": {
             "$type": "RPG.GameCore.TargetFetchAdvPropEx",
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 206158430208
+                "FixedValue": {
+                  "Value": 48
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288507368669184
+                "FixedValue": {
+                  "Value": 300004
                 }
               }
             }
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         }
       ]
     },
@@ -96,23 +83,19 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "401010506_performance"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.TriggerPerformance",
           "ValueSource": {},
           "PerformanceType": "E",
-          "PerformanceID": 401010506,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 401010506
         },
         {
           "$type": "RPG.GameCore.TriggerCustomString",
           "CustomString": {
             "Value": "401010506_end"
-          },
-          "TaskEnabled": true
+          }
         }
       ]
     },
@@ -122,35 +105,29 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "401010506_end"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.TriggerCustomString",
           "CustomString": {
             "Value": "Talk_401010561"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.TriggerCustomString",
           "CustomString": {
             "Value": "Talk_401010563"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.TriggerCustomString",
           "CustomString": {
             "Value": "Talk_401010565"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_401010506",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_401010506"
         }
       ]
     }

@@ -139,6 +139,16 @@
       "$type": "RPG.GameCore.FloorCustomFloatConfig",
       "ID": 10047,
       "Name": "FCV_Catchable_isHand"
+    },
+    {
+      "$type": "RPG.GameCore.FloorCustomFloatConfig",
+      "ID": 10048,
+      "Name": "FCV_BallLight"
+    },
+    {
+      "$type": "RPG.GameCore.FloorCustomFloatConfig",
+      "ID": 10049,
+      "Name": "FCV_GreenGuide"
     }
   ],
   "GroupInstanceList": [
@@ -370,12 +380,14 @@
     {
       "GroupPath": "Config/LevelOutput/SharedRuntimeGroup/Groups_P20411_F20411001/LevelGroup_P20411_F20411001_G73.json",
       "Name": "MainMission1040105_24",
-      "ID": 73
+      "ID": 73,
+      "IsDelete": true
     },
     {
       "GroupPath": "Config/LevelOutput/SharedRuntimeGroup/Groups_P20411_F20411001/LevelGroup_P20411_F20411001_G74.json",
       "Name": "MainMission1040105_25",
-      "ID": 74
+      "ID": 74,
+      "IsDelete": true
     },
     {
       "GroupPath": "Config/LevelOutput/SharedRuntimeGroup/Groups_P20411_F20411001/LevelGroup_P20411_F20411001_G75.json",
@@ -1063,7 +1075,8 @@
     {
       "GroupPath": "Config/LevelOutput/SharedRuntimeGroup/Groups_P20411_F20411001/LevelGroup_P20411_F20411001_G248.json",
       "Name": "MainMission1040105_79",
-      "ID": 248
+      "ID": 248,
+      "IsDelete": true
     },
     {
       "GroupPath": "Config/LevelOutput/SharedRuntimeGroup/Groups_P20411_F20411001/LevelGroup_P20411_F20411001_G249.json",
@@ -1266,7 +1279,7 @@
           "Tags": [
             "BattleArea01"
           ],
-          "TagContainer": [],
+          "TagContainer": {},
           "AudioEnterEvent": [
             "Ev_sfx_amb_monster_w4_nikadory",
             "Ev_WwiseMatrixReverb_VO_04_datingdaxing"
@@ -1282,7 +1295,7 @@
           "Tags": [
             "BattleArea02"
           ],
-          "TagContainer": [],
+          "TagContainer": {},
           "AudioEnterEvent": [
             "Ev_WwiseMatrixReverb_VO_04_datingdaxing"
           ],
@@ -1297,7 +1310,7 @@
           "Tags": [
             "BattleArea03"
           ],
-          "TagContainer": [],
+          "TagContainer": {},
           "AudioEnterEvent": [
             "Ev_sfx_amb_monster_w4_hearse",
             "Ev_WwiseMatrixReverb_VO_04_datingdaxing"
@@ -1904,7 +1917,7 @@
           "Tags": [
             "BattleArea01"
           ],
-          "TagContainer": [],
+          "TagContainer": {},
           "AudioEnterEvent": [
             "Ev_sfx_amb_monster_w4_nikadory",
             "Ev_WwiseMatrixReverb_VO_04_datingdaxing"
@@ -1920,7 +1933,7 @@
           "Tags": [
             "BattleArea02"
           ],
-          "TagContainer": [],
+          "TagContainer": {},
           "AudioEnterEvent": [
             "Ev_WwiseMatrixReverb_VO_04_datingdaxing"
           ],
@@ -1935,7 +1948,7 @@
           "Tags": [
             "BattleArea03"
           ],
-          "TagContainer": [],
+          "TagContainer": {},
           "AudioEnterEvent": [
             "Ev_sfx_amb_monster_w4_hearse",
             "Ev_WwiseMatrixReverb_VO_04_datingdaxing"
@@ -2367,12 +2380,14 @@
           "IsExclusiveSaved": true
         }
       },
-      "TagContainer": [
-        {
-          "Tag": "Group.Activity.300Battle",
-          "TagHash": 1642116679
-        }
-      ],
+      "TagContainer": {
+        "List": [
+          {
+            "Tag": "Group.Activity.300Battle",
+            "TagHash": 1642116679
+          }
+        ]
+      },
       "IsExclusiveSaveMapSection": true,
       "UnlockAllMapSectionOnInitial": true,
       "GroupIndexList": [
@@ -2770,11 +2785,13 @@
       "IsHoyoGroup": true
     },
     "73": {
+      "IsDelete": true,
       "Category": "Mission",
       "SaveType": "Reset",
       "IsHoyoGroup": true
     },
     "74": {
+      "IsDelete": true,
       "Category": "Mission",
       "SaveType": "Reset",
       "IsHoyoGroup": true
@@ -3467,8 +3484,7 @@
       "SystemUnlockCondition": {
         "Conditions": [
           23524
-        ],
-        "Operation": "And"
+        ]
       }
     },
     "244": {
@@ -3489,6 +3505,7 @@
       "LoadOnInitial": true
     },
     "248": {
+      "IsDelete": true,
       "Category": "Mission",
       "SaveType": "Reset",
       "IsHoyoGroup": true
@@ -3708,14 +3725,10 @@
       "SystemUnlockCondition": {
         "Conditions": [
           23526
-        ],
-        "Operation": "And"
+        ]
       }
     }
   },
   "ValidSubmapList": [],
-  "IsRestartLevelGraph": true,
-  "EnableGroupStreaming": true,
-  "EnableGroupSpaceConflict": true,
-  "EnableGroupRegionStreaming": true
+  "IsRestartLevelGraph": true
 }

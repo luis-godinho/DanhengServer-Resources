@@ -8,13 +8,12 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Talk_203010015"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.PlayFullScreenTransfer",
-          "Type": "Black",
-          "PostDuration": 0.5,
+          "PrevDuration": 0,
+          "KeepDuration": 0,
           "Action": [
             {
               "$type": "RPG.GameCore.ScrTrfActTaskList",
@@ -29,21 +28,12 @@
                     },
                     "AnchorName": {
                       "Value": "Anchor1"
-                    },
-                    "ResetAnimation": true,
-                    "ResetCamera": true,
-                    "ClearSpecialVision": true,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
-                  },
-                  "TaskEnabled": true,
-                  "IsClientOnly": true
+                    }
+                  }
                 }
               ]
             }
-          ],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         },
         {
           "$type": "RPG.GameCore.SetMissionCustomValue",
@@ -55,9 +45,7 @@
               2
             ]
           },
-          "CustomValue": 1,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "CustomValue": 1
         },
         {
           "$type": "RPG.GameCore.ShowHeartDialToast",
@@ -67,27 +55,23 @@
             "FetchType": "SingleNpcByNpcID",
             "SingleNpcID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 1563368095744
+                "FixedValue": {
+                  "Value": 364
                 }
               },
               "GroupNpcID": {
-                "fixedValue": {
-                  "RawValue": 1717991213367296
+                "FixedValue": {
+                  "Value": 400001
                 }
               }
             }
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
           "Key": "Mission_203010109",
           "MainMissionID": 2030101,
-          "KeepScreenTransferUntilGroupRefresh": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "KeepScreenTransferUntilGroupRefresh": true
         }
       ]
     }

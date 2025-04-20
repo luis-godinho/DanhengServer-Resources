@@ -6,17 +6,15 @@
         {
           "$type": "RPG.GameCore.CreateNPC",
           "GroupID": {
-            "fixedValue": {
-              "RawValue": 154618822656
+            "FixedValue": {
+              "Value": 36
             }
           },
           "GroupNpcID": {
-            "fixedValue": {
-              "RawValue": 1717999803301888
+            "FixedValue": {
+              "Value": 400003
             }
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         }
       ]
     },
@@ -27,45 +25,27 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Mission_200010805"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.PerformanceTransition",
-          "SwitchInTime": 0.5,
-          "SwitchKeepTime": 0.5,
-          "SwitchOutTime": 0.5,
           "CreateNpcList": [],
           "DestroyNpcList": [
             {
               "GroupID": 36,
-              "GroupNpcID": 400003,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "GroupNpcID": 400003
             }
           ],
-          "DisactiveVCamOnGraphEnd": true,
           "ActiveVirtualCamera": {
-            "IsActive": true,
-            "VCameraDitherMaxDistance": 1.0,
-            "CenterPosX": -1.0,
-            "CenterPosY": -1.0,
-            "IsClientOnly": true
+            "TaskEnabled": false
           },
           "SwitchCharacterAnchor": {
-            "ResetAnimation": true,
-            "ResetCamera": true,
-            "ClearSpecialVision": true,
-            "IsClientOnly": true
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+            "TaskEnabled": false
+          }
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_200010805",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_200010805"
         }
       ]
     }

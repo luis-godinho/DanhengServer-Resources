@@ -1,0 +1,451 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitEntityEvent",
+          "EventName": {
+            "Value": "Clt_TriggerOpen"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareEntityAuthoritySide"
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.AdvClientChangePropState",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                  },
+                  "ToState": "Open"
+                }
+              ],
+              "FailedTaskList": [
+                {
+                  "$type": "RPG.GameCore.PropReqInteract",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                  },
+                  "InteractID": {
+                    "FixedValue": {
+                      "Value": 1010
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitEntityEvent",
+          "EventName": {
+            "Value": "Clt_TriggerClose"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareEntityAuthoritySide"
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.AdvClientChangePropState",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                  },
+                  "FromState": "Open"
+                }
+              ],
+              "FailedTaskList": [
+                {
+                  "$type": "RPG.GameCore.PropReqInteract",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                  },
+                  "InteractID": {
+                    "FixedValue": {
+                      "Value": 1100
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.LoopWaitEntityServerEvent"
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.LoopWaitEntityServerEvent"
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitEntityEvent",
+          "EventName": {
+            "Value": "Clt_TriggerOpenPerf"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.AdvClientChangePropState",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+              },
+              "ToState": "Open",
+              "CanChangeServerProp": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitEntityEvent",
+          "EventName": {
+            "Value": "Clt_TriggerClosePerf"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.AdvClientChangePropState",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+              },
+              "FromState": "Open",
+              "CanChangeServerProp": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.GenericSwitchCase",
+          "SwitchRef": {
+            "$type": "RPG.GameCore.SwitchRefGraphDynamicFloat",
+            "Name": "EffectType"
+          },
+          "Cases": [
+            {
+              "$type": "RPG.GameCore.NumberCaseContainer",
+              "Case": {
+                "FixedValue": {
+                  "Value": 0
+                }
+              },
+              "OnSuccess": [
+                {
+                  "$type": "RPG.GameCore.TriggerEffectList",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                  },
+                  "EffectList": [
+                    {
+                      "EffectPath": "Effects/Eff_Prefab/Eff_Scene/InteractiveProp/Eff_Chap04_Prop_MagicCircle_01_Resident01_Lod0.prefab",
+                      "IsAttachToTargetEntity": true,
+                      "SyncPropState": true
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.NumberCaseContainer",
+              "Case": {
+                "FixedValue": {
+                  "Value": 1
+                }
+              },
+              "OnSuccess": [
+                {
+                  "$type": "RPG.GameCore.TriggerEffectList",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                  },
+                  "EffectList": [
+                    {
+                      "EffectPath": "Effects/Eff_Prefab/Eff_Scene/InteractiveProp/Eff_Chap04_Prop_MagicCircle_01_Resident02_Lod0.prefab",
+                      "IsAttachToTargetEntity": true,
+                      "SyncPropState": true
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.NumberCaseContainer",
+              "Case": {
+                "FixedValue": {
+                  "Value": 2
+                }
+              },
+              "OnSuccess": [
+                {
+                  "$type": "RPG.GameCore.TriggerEffectList",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                  },
+                  "EffectList": [
+                    {
+                      "EffectPath": "Effects/Eff_Prefab/Eff_Scene/InteractiveProp/Eff_Chap04_Prop_MagicCircle_01_Resident03_Lod0.prefab",
+                      "IsAttachToTargetEntity": true,
+                      "SyncPropState": true
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.NumberCaseContainer",
+              "Case": {
+                "FixedValue": {
+                  "Value": 3
+                }
+              },
+              "OnSuccess": [
+                {
+                  "$type": "RPG.GameCore.TriggerEffectList",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                  },
+                  "EffectList": [
+                    {
+                      "EffectPath": "Effects/Eff_Prefab/Eff_Scene/InteractiveProp/Eff_Chap04_Prop_MagicCircle_01_Resident04_Lod0.prefab",
+                      "IsAttachToTargetEntity": true,
+                      "SyncPropState": true
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.NumberCaseContainer",
+              "Case": {
+                "FixedValue": {
+                  "Value": 4
+                }
+              },
+              "OnSuccess": [
+                {
+                  "$type": "RPG.GameCore.TriggerEffectList",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                  },
+                  "EffectList": [
+                    {
+                      "EffectPath": "Effects/Eff_Prefab/Eff_Scene/InteractiveProp/Eff_Chap04_Prop_MagicCircle_01_Resident05_Lod0.prefab",
+                      "IsAttachToTargetEntity": true,
+                      "SyncPropState": true
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitPropStateChangeV2",
+          "FromAnyState": true,
+          "ToAnyState": true,
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.GenericSwitchCase",
+              "SwitchRef": {
+                "$type": "RPG.GameCore.SwitchRefPropState"
+              },
+              "Cases": [
+                {
+                  "$type": "RPG.GameCore.PropStateCaseContainer",
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.GenericSwitchCase",
+                      "SwitchRef": {
+                        "$type": "RPG.GameCore.SwitchRefGraphDynamicFloat",
+                        "Name": "EffectType"
+                      },
+                      "Cases": [
+                        {
+                          "$type": "RPG.GameCore.NumberCaseContainer",
+                          "Case": {
+                            "FixedValue": {
+                              "Value": 0
+                            }
+                          },
+                          "OnSuccess": [
+                            {
+                              "$type": "RPG.GameCore.TriggerSound",
+                              "SoundName": {
+                                "Value": "Ev_sfx_amphoreus_prop_soul_magiccircle_loop_stop"
+                              },
+                              "TargetType": {
+                                "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.PropStateCaseContainer",
+                  "Case": "Open",
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.GenericSwitchCase",
+                      "SwitchRef": {
+                        "$type": "RPG.GameCore.SwitchRefGraphDynamicFloat",
+                        "Name": "EffectType"
+                      },
+                      "Cases": [
+                        {
+                          "$type": "RPG.GameCore.NumberCaseContainer",
+                          "Case": {
+                            "FixedValue": {
+                              "Value": 0
+                            }
+                          },
+                          "OnSuccess": [
+                            {
+                              "$type": "RPG.GameCore.TriggerSound",
+                              "SoundName": {
+                                "Value": "Ev_sfx_amphoreus_prop_soul_magiccircle"
+                              },
+                              "TargetType": {
+                                "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                              }
+                            },
+                            {
+                              "$type": "RPG.GameCore.TriggerSound",
+                              "SoundName": {
+                                "Value": "Ev_sfx_amphoreus_prop_soul_magiccircle_loop"
+                              },
+                              "TargetType": {
+                                "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                              }
+                            }
+                          ]
+                        }
+                      ],
+                      "Default": [
+                        {
+                          "$type": "RPG.GameCore.TriggerSound",
+                          "SoundName": {
+                            "Value": "Ev_sfx_amphoreus_prop_soul_magiccircle_small"
+                          },
+                          "TargetType": {
+                            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.GenericSwitchCase",
+          "SwitchRef": {
+            "$type": "RPG.GameCore.SwitchRefPropState"
+          },
+          "Cases": [
+            {
+              "$type": "RPG.GameCore.PropStateCaseContainer",
+              "Case": "Open",
+              "OnSuccess": [
+                {
+                  "$type": "RPG.GameCore.GenericSwitchCase",
+                  "SwitchRef": {
+                    "$type": "RPG.GameCore.SwitchRefGraphDynamicFloat",
+                    "Name": "EffectType"
+                  },
+                  "Cases": [
+                    {
+                      "$type": "RPG.GameCore.NumberCaseContainer",
+                      "Case": {
+                        "FixedValue": {
+                          "Value": 0
+                        }
+                      },
+                      "OnSuccess": [
+                        {
+                          "$type": "RPG.GameCore.TriggerSound",
+                          "SoundName": {
+                            "Value": "Ev_sfx_amphoreus_prop_soul_magiccircle_loop"
+                          },
+                          "TargetType": {
+                            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  "Default": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "ValueSource": {
+    "Values": [
+      {
+        "$type": "RPG.GameCore.SharedInt",
+        "Key": "EffectType"
+      }
+    ]
+  },
+  "Type": "Entity",
+  "EntityEventList": [
+    {
+      "Name": "Clt_TriggerClose"
+    },
+    {
+      "Name": "Clt_TriggerOpen"
+    },
+    {
+      "Name": "Srv_TriggerClose",
+      "IsClient": false
+    },
+    {
+      "Name": "Srv_TriggerOpen",
+      "IsClient": false
+    },
+    {
+      "Name": "Clt_TriggerClosePerf"
+    },
+    {
+      "Name": "Clt_TriggerOpenPerf"
+    }
+  ]
+}

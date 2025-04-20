@@ -1,0 +1,86 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropSetupUITrigger",
+          "ButtonIcon": "SpriteOutput/TalkIcon/CheckIcon.png",
+          "IconType": "CheckIcon",
+          "ButtonText": {
+            "Hash": 7024235098889686053
+          },
+          "ButtonCallback": [
+            {
+              "$type": "RPG.GameCore.RandomConfig",
+              "OddsList": [
+                {
+                  "FixedValue": {
+                    "Value": 0.25
+                  }
+                },
+                {
+                  "FixedValue": {
+                    "Value": 0.25
+                  }
+                },
+                {
+                  "FixedValue": {
+                    "Value": 0.25
+                  }
+                },
+                {
+                  "FixedValue": {
+                    "Value": 0.25
+                  }
+                }
+              ],
+              "TaskList": [
+                {
+                  "$type": "RPG.GameCore.PlayMissionTalk",
+                  "SimpleTalkList": [
+                    {
+                      "TalkSentenceID": 502555603,
+                      "ProtectTime": 13
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.PlayMissionTalk",
+                  "SimpleTalkList": [
+                    {
+                      "TalkSentenceID": 502555604,
+                      "ProtectTime": 13.75
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.PlayMissionTalk",
+                  "SimpleTalkList": [
+                    {
+                      "TalkSentenceID": 502555605,
+                      "ProtectTime": 13
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.PlayMissionTalk",
+                  "SimpleTalkList": [
+                    {
+                      "TalkSentenceID": 502555602,
+                      "ProtectTime": 7
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "OverrideTargetTypes": [],
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          }
+        }
+      ]
+    }
+  ]
+}

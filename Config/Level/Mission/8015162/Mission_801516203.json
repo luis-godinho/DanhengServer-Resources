@@ -12,22 +12,17 @@
           "PerformanceIDDsList": [],
           "CustomValueMainMissionIDList": [
             8015162
-          ],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         },
         {
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Talk_801516203"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_801516203",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_801516203"
         }
       ]
     },
@@ -38,47 +33,29 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "OnStart_SuiSubmission"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.NpcPossession",
-          "GroupID": {},
-          "GroupNpcID": {},
-          "PossessionInfo": {
-            "Name": "Possession_RobCraneBox_A_01",
-            "LocalScale": {
-              "x": 1.0,
-              "y": 1.0,
-              "z": 1.0,
-              "normalized": {
-                "x": 0.577350259,
-                "y": 0.577350259,
-                "z": 0.577350259,
-                "normalized": {
-                  "x": 0.5773503,
-                  "y": 0.5773503,
-                  "z": 0.5773503,
-                  "magnitude": 1.00000012,
-                  "sqrMagnitude": 1.00000024
-                },
-                "magnitude": 0.99999994,
-                "sqrMagnitude": 0.99999994
-              },
-              "magnitude": 1.73205078,
-              "sqrMagnitude": 3.0
+          "GroupID": {
+            "FixedValue": {
+              "Value": 0
             }
           },
-          "TargetType": {
-            "$type": "RPG.GameCore.TargetFetchAdvLocalPlayer",
-            "IncludeStoryPlayer": true
+          "GroupNpcID": {
+            "FixedValue": {
+              "Value": 0
+            }
           },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PossessionInfo": {
+            "Name": "Possession_RobCraneBox_A_01"
+          },
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvLocalPlayer"
+          }
         },
         {
           "$type": "RPG.GameCore.SwitchCase",
-          "WithBreak": true,
           "TaskList": [
             {
               "Predicate": {
@@ -94,9 +71,7 @@
                   ]
                 },
                 "EquationType": "Equal",
-                "TargetValue": 2,
-                "TaskEnabled": true,
-                "IsClientOnly": true
+                "TargetValue": 2
               },
               "SuccessTaskList": [
                 {
@@ -107,12 +82,9 @@
                   "OverideWayPointGroupID": true,
                   "WayPointGroupID": 217,
                   "OverideWayPointEntityID": true,
-                  "WayPointEntityID": 300002,
-                  "TaskEnabled": true,
-                  "IsClientOnly": true
+                  "WayPointEntityID": 300002
                 }
-              ],
-              "TaskEnabled": true
+              ]
             },
             {
               "Predicate": {
@@ -128,9 +100,7 @@
                   ]
                 },
                 "EquationType": "Equal",
-                "TargetValue": 3,
-                "TaskEnabled": true,
-                "IsClientOnly": true
+                "TargetValue": 3
               },
               "SuccessTaskList": [
                 {
@@ -141,12 +111,9 @@
                   "OverideWayPointGroupID": true,
                   "WayPointGroupID": 217,
                   "OverideWayPointEntityID": true,
-                  "WayPointEntityID": 300003,
-                  "TaskEnabled": true,
-                  "IsClientOnly": true
+                  "WayPointEntityID": 300003
                 }
-              ],
-              "TaskEnabled": true
+              ]
             }
           ],
           "DefaultTask": [
@@ -158,13 +125,9 @@
               "OverideWayPointGroupID": true,
               "WayPointGroupID": 217,
               "OverideWayPointEntityID": true,
-              "WayPointEntityID": 300001,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "WayPointEntityID": 300001
             }
-          ],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     },
@@ -175,8 +138,7 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "OnClose_SuiSubmission"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.SetMissionWayPoint",
@@ -186,9 +148,7 @@
           "OverideWayPointGroupID": true,
           "WayPointGroupID": 216,
           "OverideWayPointEntityID": true,
-          "WayPointEntityID": 400001,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "WayPointEntityID": 400001
         }
       ]
     },
@@ -202,9 +162,7 @@
           "OverideWayPointGroupID": true,
           "WayPointGroupID": 216,
           "OverideWayPointEntityID": true,
-          "WayPointEntityID": 400001,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "WayPointEntityID": 400001
         }
       ]
     }

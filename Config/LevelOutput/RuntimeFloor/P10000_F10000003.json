@@ -16,7 +16,7 @@
     },
     {
       "$type": "RPG.GameCore.FloorCustomFloatConfig",
-      "DefaultValue": 1.0,
+      "DefaultValue": 1,
       "ID": 10002,
       "Name": "IsComplete"
     },
@@ -49,6 +49,16 @@
       "$type": "RPG.GameCore.FloorCustomFloatConfig",
       "ID": 10011,
       "Name": "FCV_LightOff"
+    },
+    {
+      "$type": "RPG.GameCore.FloorCustomFloatConfig",
+      "ID": 10012,
+      "Name": "FCV_AnniversaryCase"
+    },
+    {
+      "$type": "RPG.GameCore.FloorCustomFloatConfig",
+      "ID": 10013,
+      "Name": "FCV_AnniversaryOpenUI"
     }
   ],
   "GroupInstanceList": [
@@ -698,6 +708,16 @@
       "ID": 175
     },
     {
+      "GroupPath": "Config/LevelOutput/SharedRuntimeGroup/Groups_P10000_F10000003/LevelGroup_P10000_F10000003_G176.json",
+      "Name": "MainMission8032201_01",
+      "ID": 176
+    },
+    {
+      "GroupPath": "Config/LevelOutput/SharedRuntimeGroup/Groups_P10000_F10000003/LevelGroup_P10000_F10000003_G177.json",
+      "Name": "MainMission8032202_01",
+      "ID": 177
+    },
+    {
       "GroupPath": "Config/LevelOutput/SharedRuntimeGroup/Groups_P10000_F10000003/LevelGroup_P10000_F10000003_G178.json",
       "Name": "New Group",
       "ID": 178,
@@ -707,6 +727,26 @@
       "GroupPath": "Config/LevelOutput/SharedRuntimeGroup/Groups_P10000_F10000003/LevelGroup_P10000_F10000003_G179.json",
       "Name": "MainMission2001501_New Group",
       "ID": 179
+    },
+    {
+      "GroupPath": "Config/LevelOutput/SharedRuntimeGroup/Groups_P10000_F10000003/LevelGroup_P10000_F10000003_G180.json",
+      "Name": "MainMission8032202_02",
+      "ID": 180
+    },
+    {
+      "GroupPath": "Config/LevelOutput/SharedRuntimeGroup/Groups_P10000_F10000003/LevelGroup_P10000_F10000003_G181.json",
+      "Name": "MainMission8032202_03",
+      "ID": 181
+    },
+    {
+      "GroupPath": "Config/LevelOutput/SharedRuntimeGroup/Groups_P10000_F10000003/LevelGroup_P10000_F10000003_G184.json",
+      "Name": "Book",
+      "ID": 184
+    },
+    {
+      "GroupPath": "Config/LevelOutput/SharedRuntimeGroup/Groups_P10000_F10000003/LevelGroup_P10000_F10000003_G185.json",
+      "Name": "MainMission8032202_02",
+      "ID": 185
     }
   ],
   "DimensionList": [
@@ -966,6 +1006,12 @@
           "Name": "Build_LightSwitch",
           "AllowedValues": [],
           "MaxValue": 1
+        },
+        {
+          "ID": 38,
+          "Name": "FSV_AnniversaryCase",
+          "AllowedValues": [],
+          "MaxValue": 5
         }
       ],
       "IsExclusiveSaveMapSection": true,
@@ -1096,7 +1142,13 @@
         123,
         124,
         125,
-        126
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132
       ],
       "ExclusiveSavedGroupIDList": [],
       "StartAnchorID": 1
@@ -1358,6 +1410,12 @@
           "Name": "Build_LightSwitch",
           "AllowedValues": [],
           "MaxValue": 1
+        },
+        {
+          "ID": 38,
+          "Name": "FSV_AnniversaryCase",
+          "AllowedValues": [],
+          "MaxValue": 5
         }
       ],
       "SavedValueConfigDict": {
@@ -1365,12 +1423,14 @@
           "IsExclusiveSaved": true
         }
       },
-      "TagContainer": [
-        {
-          "Tag": "Group.TrailblazeContinuance.270Penacony",
-          "TagHash": 1527830612
-        }
-      ],
+      "TagContainer": {
+        "List": [
+          {
+            "Tag": "Group.TrailblazeContinuance.270Penacony",
+            "TagHash": 1527830612
+          }
+        ]
+      },
       "IsExclusiveSaveMapSection": true,
       "UnlockAllMapSectionOnInitial": true,
       "GroupIndexList": [
@@ -1471,7 +1531,12 @@
         123,
         124,
         125,
-        126
+        126,
+        127,
+        128,
+        129,
+        130,
+        132
       ],
       "ExclusiveSavedGroupIDList": [
         31,
@@ -2161,6 +2226,16 @@
       "IsHoyoGroup": true,
       "LoadOnInitial": true
     },
+    "176": {
+      "Category": "Mission",
+      "SaveType": "Reset",
+      "IsHoyoGroup": true
+    },
+    "177": {
+      "Category": "Mission",
+      "SaveType": "Reset",
+      "IsHoyoGroup": true
+    },
     "178": {
       "IsDelete": true,
       "Category": "Mission",
@@ -2171,11 +2246,30 @@
       "Category": "Mission",
       "SaveType": "Reset",
       "IsHoyoGroup": true
+    },
+    "180": {
+      "Category": "Mission",
+      "SaveType": "Reset",
+      "IsHoyoGroup": true
+    },
+    "181": {
+      "Category": "Mission",
+      "SaveType": "Reset",
+      "IsHoyoGroup": true
+    },
+    "184": {
+      "Category": "Atmosphere",
+      "SaveType": "Permanent",
+      "IsHoyoGroup": true,
+      "LoadSide": "Server",
+      "LoadOnInitial": true
+    },
+    "185": {
+      "Category": "Mission",
+      "SaveType": "Reset",
+      "IsHoyoGroup": true
     }
   },
   "ValidSubmapList": [],
-  "IsRestartLevelGraph": true,
-  "EnableGroupStreaming": true,
-  "EnableGroupSpaceConflict": true,
-  "EnableGroupRegionStreaming": true
+  "IsRestartLevelGraph": true
 }

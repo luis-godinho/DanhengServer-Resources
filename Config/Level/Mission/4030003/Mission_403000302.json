@@ -8,9 +8,7 @@
           "TaskIDList": [
             403000310
           ],
-          "PerformanceIDList": [],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceIDList": []
         },
         {
           "$type": "RPG.GameCore.PropSetupTrigger",
@@ -19,19 +17,27 @@
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 98784247808
+                "FixedValue": {
+                  "Value": 23
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288503073701888
+                "FixedValue": {
+                  "Value": 300003
                 }
               }
             }
           },
-          "TargetGroupID": {},
-          "TargetID": {},
+          "TargetGroupID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "TargetID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
           "TargetTypes": [],
           "DestroyAfterTriggered": true,
           "OnTriggerEnter": [
@@ -39,13 +45,9 @@
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "Performance_403000302"
-              },
-              "TaskEnabled": true
+              }
             }
-          ],
-          "SkipFakeAvatar": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     },
@@ -55,41 +57,31 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Performance_403000302"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.PredicateTaskList",
           "Predicate": {
             "$type": "RPG.GameCore.ByCompareSubMissionState",
             "SubMissionID": 403000310,
-            "SubMissionState": "Finish",
-            "TaskEnabled": true,
-            "IsClientOnly": true
+            "SubMissionState": "Finish"
           },
           "SuccessTaskList": [
             {
               "$type": "RPG.GameCore.FinishPerformanceMission",
-              "Key": "Mission_403000302",
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "Key": "Mission_403000302"
             }
           ],
           "FailedTaskList": [
             {
               "$type": "RPG.GameCore.TriggerRogueDialogue",
-              "DialoguePath": "Config/Level/Mission/4030003/Act/Act403000302.json",
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "DialoguePath": "Config/Level/Mission/4030003/Act/Act403000302.json"
             },
             {
               "$type": "RPG.GameCore.FinishPerformanceMission",
-              "Key": "Mission_403000302",
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "Key": "Mission_403000302"
             }
-          ],
-          "TaskEnabled": true
+          ]
         }
       ]
     }

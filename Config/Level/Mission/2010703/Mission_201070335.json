@@ -8,61 +8,45 @@
           "TaskIDList": [
             201070327
           ],
-          "PerformanceIDList": [],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceIDList": []
         },
         {
           "$type": "RPG.GameCore.PredicateTaskList",
           "Predicate": {
             "$type": "RPG.GameCore.ByCompareSubMissionState",
             "SubMissionID": 201070327,
-            "SubMissionState": "Started",
-            "TaskEnabled": true,
-            "IsClientOnly": true
+            "SubMissionState": "Started"
           },
           "SuccessTaskList": [
             {
               "$type": "RPG.GameCore.WaitSecond",
               "WaitTime": {
-                "fixedValue": {
-                  "RawValue": 8589934592
+                "FixedValue": {
+                  "Value": 2
                 }
-              },
-              "MaxAdvencePerTick": -1.0,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              }
             },
             {
               "$type": "RPG.GameCore.PlayMissionTalk",
               "SimpleTalkList": [
                 {
-                  "TextSpeed": 20.0,
                   "TalkSentenceID": 201071101,
-                  "ProtectTime": 2.0
+                  "ProtectTime": 2
                 },
                 {
-                  "TextSpeed": 20.0,
                   "TalkSentenceID": 201071102,
-                  "ProtectTime": 2.0
+                  "ProtectTime": 2
                 }
-              ],
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              ]
             },
             {
-              "$type": "RPG.GameCore.WaitMissionTalkFinish",
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "$type": "RPG.GameCore.WaitMissionTalkFinish"
             },
             {
               "$type": "RPG.GameCore.FinishPerformanceMission",
-              "Key": "Mission_201070335",
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "Key": "Mission_201070335"
             }
-          ],
-          "TaskEnabled": true
+          ]
         }
       ]
     }

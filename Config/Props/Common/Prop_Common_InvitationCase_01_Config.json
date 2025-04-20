@@ -1,0 +1,41 @@
+{
+  "DisableAnimEventLayers": [
+    "Dissolve Layer"
+  ],
+  "AnimatorStateGroupEvents": [
+    {
+      "States": [
+        {
+          "Name": "Closed01"
+        }
+      ],
+      "OnEnter": [
+        {
+          "$type": "RPG.GameCore.TriggerEffectList",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          },
+          "EffectList": [
+            {
+              "EffectPath": "Effects/Eff_Prefab/Eff_Scene/InteractiveProp/Eff_Common_Prop_InvitationCase_01_Open01_Lod0.prefab",
+              "AttachPoint": "Root",
+              "PositionOffset": {
+                "Y": 0.03
+              }
+            }
+          ]
+        }
+      ],
+      "OnExit": [
+        {
+          "$type": "RPG.GameCore.RemoveEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Scene/InteractiveProp/Eff_Common_Prop_InvitationCase_01_Open01_Lod0.prefab"
+        }
+      ]
+    }
+  ],
+  "DefaultLevelGraphPath": "Config/Level/Props/Common/InitLevelGraph_Prop_Common_InvitationCase_01.json"
+}

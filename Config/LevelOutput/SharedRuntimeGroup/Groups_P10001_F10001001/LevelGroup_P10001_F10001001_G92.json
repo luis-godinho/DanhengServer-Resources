@@ -1,4 +1,5 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "NPC",
   "Category": "Atmosphere",
   "AreaAnchorName": "LevelArea_P10001_F10001001_G92",
@@ -13,14 +14,14 @@
   },
   "ValueSource": {},
   "ConflictIDList": [],
-  "StreamingTemplateType": "Standard",
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
-  "TagContainer": [
-    {
-      "Tag": "Group.Atomsphere.NPC",
-      "TagHash": -882113524
-    }
-  ],
+  "TagContainer": {
+    "List": [
+      {
+        "Tag": "Group.Atomsphere.NPC",
+        "TagHash": -882113524
+      }
+    ]
+  },
   "AnchorList": [],
   "MonsterList": [],
   "PropList": [],
@@ -31,11 +32,10 @@
   "NPCList": [
     {
       "NPCID": 10110,
-      "LoadOnInitial": true,
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "ServerInteractVerificationIDList": [],
       "DefaultBlendShapeConfigName": "Close01",
+      "DefaultLookAtMode": "Closed",
       "BoardShowList": [
         1,
         4,
@@ -43,15 +43,12 @@
         64
       ],
       "OverrideNPCName": {
-        "Hash": 2092631330,
-        "Hash64": 15916947631825755430
+        "Hash": 15916947631825755430
       },
       "OverrideNPCTitle": {
-        "Hash": 1502199981,
-        "Hash64": 13031052948653626286
+        "Hash": 13031052948653626286
       },
       "TalkDialogGroupIDList": [],
-      "DefaultAnimationType": "FreeStyle",
       "DefaultIdleFreeStyleMotionID": 100010236,
       "OverrideSeriesID": 1011001,
       "BornType": "Permanent",
@@ -71,21 +68,12 @@
             "Name": "Common",
             "LevelGraph": "Config/Level/NPCDialogue/P10001/F10001001_G92/DialoguePack_Common_F10001001_G92_N400001.json"
           }
-        ],
-        "EnableDialogCamera": true
+        ]
       },
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "CameraCenterEntityList": [],
       "SpawnConfig": {
-        "TryCapture": true,
-        "CaptureDistanceTolerance": 10.0,
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "CaptureDistanceTolerance": 10,
+        "EntitySpawnConfig": {}
       },
       "Name": "NPC1",
       "RotY": 282.9659,

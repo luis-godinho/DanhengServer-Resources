@@ -10,33 +10,37 @@
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 536870912000
+                "FixedValue": {
+                  "Value": 125
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288494483767296
+                "FixedValue": {
+                  "Value": 300001
                 }
               }
             }
           },
-          "TargetGroupID": {},
-          "TargetID": {},
+          "TargetGroupID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "TargetID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
           "TargetTypes": [],
           "OnTriggerEnter": [
             {
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "Performance_301120302"
-              },
-              "TaskEnabled": true
+              }
             }
           ],
-          "DestroyAfterGraphEnd": true,
-          "SkipFakeAvatar": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "DestroyAfterGraphEnd": true
         }
       ]
     },
@@ -46,23 +50,19 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Performance_301120302"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.TriggerPerformance",
           "ValueSource": {},
           "PerformanceType": "E",
-          "PerformanceID": 301120302,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 301120302
         },
         {
           "$type": "RPG.GameCore.TriggerCustomString",
           "CustomString": {
             "Value": "Talk_301120302"
-          },
-          "TaskEnabled": true
+          }
         }
       ]
     },
@@ -72,14 +72,11 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Talk_301120302"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_301120302",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_301120302"
         }
       ]
     }

@@ -1,0 +1,333 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitStartMarbleGame",
+          "OnStart": [
+            {
+              "$type": "RPG.GameCore.LockPlayerControl"
+            },
+            {
+              "$type": "RPG.GameCore.CreateLevelAreas",
+              "AssetPath": {
+                "Value": "Gameplays/Marble/MarbleCamera/MarbleGameCamera.prefab"
+              }
+            }
+          ],
+          "LocalPosition": {
+            "X": -6.4,
+            "Y": 0.65,
+            "Z": -3.98
+          },
+          "localRotation": {
+            "Y": -30
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.MarbleEventListener",
+          "Finish": [
+            {
+              "$type": "RPG.GameCore.StopCurrentLittleGame"
+            },
+            {
+              "$type": "RPG.GameCore.UnLockPlayerControl"
+            },
+            {
+              "$type": "RPG.GameCore.RemoveLevelAreas",
+              "AreaName": {
+                "Value": "MarbleGameCamera"
+              }
+            }
+          ],
+          "SealDie": [
+            {
+              "$type": "RPG.GameCore.TriggerGroupEvent",
+              "EventName": {
+                "Value": "SealDead"
+              }
+            }
+          ],
+          "SealDieFinish": [],
+          "LastHit": [
+            {
+              "$type": "RPG.GameCore.TriggerGroupEvent",
+              "EventName": {
+                "Value": "SealDead"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "ActivityMarbleUnloadGameArea"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.SetLocalPlayerDitherAlpha",
+              "DitherAlpha": 1
+            },
+            {
+              "$type": "RPG.GameCore.HideAllEntity",
+              "HideNPC": true,
+              "NotHideEntity": []
+            },
+            {
+              "$type": "RPG.GameCore.PlayFullScreenTransfer",
+              "PrevDuration": 0,
+              "Action": [
+                {
+                  "$type": "RPG.GameCore.ScrTrfActTaskList",
+                  "TaskList": [
+                    {
+                      "$type": "RPG.GameCore.UnloadLittleGameArea",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                      }
+                    },
+                    {
+                      "$type": "RPG.GameCore.WaitStreamingJobFinished"
+                    },
+                    {
+                      "$type": "RPG.GameCore.TriggerMarbleAfterStreamingAction"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "ActivityMarbleLoadGameArea"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.SetLocalPlayerDitherAlpha"
+            },
+            {
+              "$type": "RPG.GameCore.HideAllEntity",
+              "IsHide": true,
+              "HideNPC": true,
+              "NotHideEntity": [
+                {
+                  "GroupID": 867,
+                  "GroupNpcID": 400001
+                },
+                {
+                  "GroupID": 867,
+                  "GroupNpcID": 400002
+                },
+                {
+                  "GroupID": 867,
+                  "GroupNpcID": 400003
+                },
+                {
+                  "GroupID": 867,
+                  "GroupNpcID": 400004
+                },
+                {
+                  "GroupID": 867,
+                  "GroupNpcID": 400005
+                },
+                {
+                  "GroupID": 867,
+                  "GroupNpcID": 400006
+                },
+                {
+                  "GroupID": 867,
+                  "GroupNpcID": 400007
+                },
+                {
+                  "GroupID": 868,
+                  "GroupNpcID": 400002
+                },
+                {
+                  "GroupID": 868,
+                  "GroupNpcID": 400003
+                },
+                {
+                  "GroupID": 868,
+                  "GroupNpcID": 400004
+                },
+                {
+                  "GroupID": 868,
+                  "GroupNpcID": 400005
+                },
+                {
+                  "GroupID": 868,
+                  "GroupNpcID": 400006
+                },
+                {
+                  "GroupID": 868,
+                  "GroupNpcID": 400007
+                },
+                {
+                  "GroupID": 868,
+                  "GroupNpcID": 400008
+                }
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.LoadLittleGameArea",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+              },
+              "Area": {
+                "Value": "MarblePlayBG"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.WaitStreamingJobFinished"
+            },
+            {
+              "$type": "RPG.GameCore.TriggerMarbleAfterStreamingAction"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "ShowUI_G417"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.OpenMarbleMainPage",
+              "OnUIEnterImmediately": [],
+              "OnUIExitImmediately": []
+            },
+            {
+              "$type": "RPG.GameCore.TriggerCustomString",
+              "CustomString": {
+                "Value": "ShowUI_ActivityMarbleMainPage_Finish"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "ShowUI_ActivityMarbleMainPage"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TriggerGroupEvent",
+          "EventName": {
+            "Value": "ShowUI_G417"
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "SealDead"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.ActiveMarbleVirtualCamera",
+              "FollowObject": "DeadSeal",
+              "FollowPoint": "PlayerBall__Art",
+              "LookAtObject": "DeadSeal",
+              "LookAtPoint": "PlayerBall__Art",
+              "AreaName": "MarbleGameCamera",
+              "AnchorName": "Kill_Camera",
+              "BlendConfig": {
+                "ExportToJson": true,
+                "BlendType": "EaseOut",
+                "BlendTime": 0.1
+              }
+            },
+            {
+              "$type": "RPG.GameCore.LittleGameRadialBlurEffect",
+              "BlurRadius": 1,
+              "Iteration": 7,
+              "BlurStart": 0,
+              "BlurFeather": 0.4
+            },
+            {
+              "$type": "RPG.GameCore.LittleGameSpeedLineEffect",
+              "Mode": "Line",
+              "Speed": 0.8,
+              "Start": 0.35,
+              "SpeedlineSeedPath": "Effects/Eff_Texture/Special/Noise/Eff_Noise_35.tga"
+            },
+            {
+              "$type": "RPG.GameCore.WaitSecond",
+              "WaitTime": {
+                "FixedValue": {
+                  "Value": 0.5
+                }
+              },
+              "IsRealtime": true
+            },
+            {
+              "$type": "RPG.GameCore.LittleGameRadialBlurEffect",
+              "Active": false,
+              "BlurRadius": 0.6,
+              "Iteration": 7,
+              "BlurStart": 0.18,
+              "BlurFeather": 0.4
+            },
+            {
+              "$type": "RPG.GameCore.LittleGameSpeedLineEffect",
+              "Active": false
+            },
+            {
+              "$type": "RPG.GameCore.WaitSecond",
+              "WaitTime": {
+                "FixedValue": {
+                  "Value": 0.2
+                }
+              },
+              "IsRealtime": true
+            },
+            {
+              "$type": "RPG.GameCore.ActiveMarbleVirtualCamera",
+              "FollowObject": "DeadSeal",
+              "FollowPoint": "PlayerBall__Art",
+              "LookAtObject": "DeadSeal",
+              "LookAtPoint": "PlayerBall__Art",
+              "AreaName": "MarbleGameCamera",
+              "AnchorName": "Kill_Camera",
+              "IsActive": false,
+              "BlendConfig": {
+                "ExportToJson": true,
+                "BlendType": "EaseOut",
+                "BlendTime": 0.6
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "Type": "Group",
+  "EntityEventList": []
+}

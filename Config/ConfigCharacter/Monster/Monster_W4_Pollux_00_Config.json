@@ -1,0 +1,476 @@
+{
+  "$type": "RPG.GameCore.CharacterConfig",
+  "SomatoType": "LargeMonster",
+  "CharacterHUDOffset": {
+    "X": 0.15,
+    "Y": 2
+  },
+  "BuffPanelOffset": {
+    "X": 1,
+    "Y": 1.8
+  },
+  "HitBoxWidth": 2.1,
+  "HitBoxHeight": 2.8,
+  "Resilience": "B",
+  "Location": {
+    "Width": 2.4
+  },
+  "VisualRadius": 2.7,
+  "AnimEventConfigList": [
+    "Config/ConfigAnimEvents/Monster/Designer/Monster_W4_Pollux_00_Designer_AnimEvent.json",
+    "Config/ConfigAnimEvents/Monster/Effect/Monster_W4_Pollux_00_Effect_AnimEvent.json",
+    "Config/ConfigAnimEvents/Monster/Audio/Monster_W4_Pollux_00_Audio_AnimEvent.json"
+  ],
+  "SkillList": [
+    {
+      "Name": "Skill01",
+      "UseType": "SelectEntity",
+      "TargetInfo": {
+        "TargetType": "EnemySelect"
+      },
+      "ReadyAnimState": "StandBy",
+      "EntryAbility": "Monster_W4_Pollux_00_Skill01_Phase01"
+    },
+    {
+      "Name": "Skill02",
+      "UseType": "SelectEntity",
+      "TargetInfo": {
+        "TargetType": "AllEnemy"
+      },
+      "ReadyAnimState": "StandBy",
+      "EntryAbility": "Monster_W4_Pollux_00_Skill02_Phase01"
+    },
+    {
+      "Name": "Skill03",
+      "UseType": "SelectEntity",
+      "TargetInfo": {
+        "TargetType": "AllEnemy"
+      },
+      "ReadyAnimState": "StandBy",
+      "EntryAbility": "Monster_W4_Pollux_00_Skill03_Phase01"
+    },
+    {
+      "Name": "Skill04",
+      "SkillType": "Skill",
+      "UseType": "SelectEntity",
+      "TargetInfo": {
+        "TargetType": "FriendSelect"
+      },
+      "ReadyAnimState": "StandBy",
+      "EntryAbility": "Monster_W4_Pollux_00_Skill04_Phase01"
+    },
+    {
+      "Name": "Skill05",
+      "UseType": "SelectEntity",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "ReadyAnimState": "StandBy",
+      "EntryAbility": "Monster_W4_Pollux_00_Skill05_Phase01"
+    },
+    {
+      "Name": "Skill06",
+      "UseType": "SelectEntity",
+      "TargetInfo": {
+        "TargetType": "AllEnemy"
+      },
+      "ReadyAnimState": "StandBy",
+      "EntryAbility": "Monster_W4_Pollux_00_Skill06_Phase01"
+    },
+    {
+      "Name": "Passive",
+      "SkillType": "Passive",
+      "UseType": "Passive",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "EntryAbility": "Monster_W4_Pollux_00_PassiveSkill_Initiate"
+    },
+    {
+      "Name": "PassiveSkill01",
+      "SkillType": "Passive",
+      "UseType": "Passive",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "EntryAbility": "Monster_Common_PassiveSkill_StanceBreak_Action"
+    },
+    {
+      "Name": "PassiveSkill02",
+      "SkillType": "Passive",
+      "UseType": "Passive",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "EntryAbility": "Monster_Common_MuteHitFly"
+    },
+    {
+      "Name": "Passive_BGM",
+      "UseType": "Passive",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "EntryAbility": "Monster_W4_Pollux_00_PassiveSkill_BGM"
+    }
+  ],
+  "AbilityList": [
+    "Monster_W4_Pollux_00_PassiveSkill_Initiate",
+    "Monster_W4_Pollux_00_PassiveSkill_Insert",
+    "Monster_Common_PassiveSkill_StanceBreak_Action",
+    "Monster_Common_MuteHitFly",
+    "Monster_W4_Pollux_00_StunRecover_Insert",
+    "Monster_W4_Pollux_00_StunRecover_Insert_Camera",
+    "Monster_W4_Pollux_00_Stun_Insert",
+    "Monster_W4_Pollux_00_Stun_Insert_Camera",
+    "Monster_W4_Pollux_00_PassiveSkill_BGM",
+    "Monster_W4_Pollux_00_EndInsert_Phase01",
+    "Monster_W4_Pollux_00_EndInsert_Phase02",
+    "Monster_W4_Pollux_00_EndInsert_Camera",
+    "Monster_W4_Pollux_00_SpecailSkill05"
+  ],
+  "SkillAbilityList": [
+    {
+      "Skill": "Skill01",
+      "AbilityList": [
+        "Monster_W4_Pollux_00_Skill01_Phase01",
+        "Monster_W4_Pollux_00_Skill01_Phase02",
+        "Monster_W4_Pollux_00_Skill01_Camera"
+      ]
+    },
+    {
+      "Skill": "Skill02",
+      "AbilityList": [
+        "Monster_W4_Pollux_00_Skill02_Phase01",
+        "Monster_W4_Pollux_00_Skill02_Phase02",
+        "Monster_W4_Pollux_00_Skill02_Camera"
+      ]
+    },
+    {
+      "Skill": "Skill03",
+      "AbilityList": [
+        "Monster_W4_Pollux_00_Skill03_Phase01",
+        "Monster_W4_Pollux_00_Skill03_Phase02",
+        "Monster_W4_Pollux_00_Skill03_Camera"
+      ]
+    },
+    {
+      "Skill": "Skill04",
+      "AbilityList": [
+        "Monster_W4_Pollux_00_Skill04_Phase01",
+        "Monster_W4_Pollux_00_Skill04_Phase02",
+        "Monster_W4_Pollux_00_Skill04_Camera"
+      ]
+    },
+    {
+      "Skill": "Skill05",
+      "AbilityList": [
+        "Monster_W4_Pollux_00_Skill05_Phase01",
+        "Monster_W4_Pollux_00_Skill05_Phase02",
+        "Monster_W4_Pollux_00_Skill05_Camera"
+      ]
+    },
+    {
+      "Skill": "Skill06",
+      "AbilityList": [
+        "Monster_W4_Pollux_00_Skill06_Phase01",
+        "Monster_W4_Pollux_00_Skill06_Phase02",
+        "Monster_W4_Pollux_00_Skill06_Camera"
+      ]
+    }
+  ],
+  "DynamicValues": {
+    "Floats": {
+      "1850673830": {},
+      "680676060": {},
+      "-1309867853": {},
+      "44320779": {},
+      "1849655343": {},
+      "-1630779707": {},
+      "1144614290": {},
+      "1222875122": {},
+      "1384465267": {},
+      "1899726403": {},
+      "-1165700200": {},
+      "1894847923": {},
+      "734513939": {},
+      "-902319937": {},
+      "-1126825319": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill01"
+        }
+      },
+      "-425490571": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill01",
+          "Index": 1
+        }
+      },
+      "-239451124": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill01",
+          "Index": 2
+        }
+      },
+      "-1160533612": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill01",
+          "Index": 3
+        }
+      },
+      "-1847083384": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill02"
+        }
+      },
+      "1102737658": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill02",
+          "Index": 1
+        }
+      },
+      "-1897262277": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill02",
+          "Index": 2
+        }
+      },
+      "-1880791677": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill02",
+          "Index": 3
+        }
+      },
+      "1347443890": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill03"
+        }
+      },
+      "-1452128018": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill04"
+        }
+      },
+      "-1228180910": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill04",
+          "Index": 1
+        }
+      },
+      "-1297552395": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill05"
+        }
+      },
+      "-895599575": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill05",
+          "Index": 1
+        }
+      },
+      "-1269800829": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill05",
+          "Index": 2
+        }
+      },
+      "-1360986566": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill05",
+          "Index": 3
+        }
+      },
+      "-505009538": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill05",
+          "Index": 4
+        }
+      },
+      "-100649199": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill05",
+          "Index": 5
+        }
+      },
+      "1949489177": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill06"
+        }
+      },
+      "-1660554348": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill06",
+          "Index": 1
+        }
+      },
+      "-298852185": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill06",
+          "Index": 2
+        }
+      },
+      "1534698139": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill06",
+          "Index": 3
+        }
+      },
+      "474398503": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill06",
+          "Index": 4
+        }
+      },
+      "657684721": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill06",
+          "Index": 5
+        }
+      },
+      "1102644108": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "PassiveSkill01"
+        }
+      },
+      "549443026": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "PassiveSkill01",
+          "Index": 1
+        }
+      },
+      "-1815230329": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "PassiveSkill01",
+          "Index": 2
+        }
+      },
+      "2054892880": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "PassiveSkill01",
+          "Index": 3
+        }
+      },
+      "-384737908": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "PassiveSkill01",
+          "Index": 4
+        }
+      },
+      "-2143598209": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "PassiveSkill01",
+          "Index": 5
+        }
+      },
+      "1670699332": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "PassiveSkill02"
+        }
+      },
+      "2013689220": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "PassiveSkill02",
+          "Index": 1
+        }
+      },
+      "58268708": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "PassiveSkill02",
+          "Index": 2
+        }
+      },
+      "785931544": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "PassiveSkill02",
+          "Index": 3
+        }
+      },
+      "-2056867382": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "PassiveSkill02",
+          "Index": 4
+        }
+      },
+      "1553225301": {},
+      "-1298847438": {},
+      "-624753168": {},
+      "508031149": {},
+      "-9890204": {}
+    }
+  },
+  "CustomValues": {
+    "AIFlag": 0,
+    "SummonID0": 4012070,
+    "SummonID1": 4012071,
+    "StoryMode": 0
+  },
+  "WeaponType": "WP_Scythe",
+  "DisableAnimEventLayers": [
+    "Riboon Layer"
+  ],
+  "CameraNamedDynamicOffset": "Monster_4014030",
+  "MonsterIgnoreGlobalDymanicOffset": false,
+  "MaxMonsterPhase": 2,
+  "PhaseList": [
+    {
+      "PhaseNum": 1
+    },
+    {
+      "PhaseNum": 2
+    }
+  ],
+  "OverrideWaveMonsterPerform": "4014030StartCamera",
+  "OverrideColliderCameraByName": "Monster_4014030",
+  "EffectAdaptionList": [
+    {
+      "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_BlackSwan_00/Eff_Avatar_BlackSwan_00_Card_DOT_Stack.prefab",
+      "AttachPoint": "Egg"
+    },
+    {
+      "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_BlackSwan_00/Eff_Avatar_BlackSwan_00_Card_DOT_Stack_02.prefab",
+      "AttachPoint": "Egg"
+    },
+    {
+      "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_BlackSwan_00/Eff_Avatar_BlackSwan_00_Card_DOT_Stack_03.prefab",
+      "AttachPoint": "Egg"
+    },
+    {
+      "EffectPath": "Effects/Eff_Prefab/Eff_Common/Eff_Buff_Common_Confine.prefab",
+      "AttachPoint": "ConfineRoot",
+      "Scale": 1.6
+    }
+  ]
+}

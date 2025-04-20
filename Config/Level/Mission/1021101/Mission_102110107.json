@@ -6,55 +6,61 @@
         {
           "$type": "RPG.GameCore.SetAudioEmotionState",
           "StateName": "State_Tense",
-          "SubMissionID": 102110107,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "SubMissionID": 102110107
         },
         {
           "$type": "RPG.GameCore.TriggerPerformance",
           "ValueSource": {},
           "PerformanceType": "C",
-          "PerformanceID": 102110107,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 102110107
         },
         {
           "$type": "RPG.GameCore.PerformanceTransition",
-          "SwitchKeepTime": 0.5,
-          "SwitchOutTime": -1.0,
+          "SwitchInTime": 0,
+          "SwitchOutTime": -1,
           "CreateNpcList": [],
           "CaptureNpcList": [],
           "DestroyNpcList": [],
           "CreateProp": {
-            "GroupID": {},
-            "GroupPropID": {},
-            "IsClientOnly": true
+            "GroupID": {
+              "FixedValue": {
+                "Value": 0
+              }
+            },
+            "GroupPropID": {
+              "FixedValue": {
+                "Value": 0
+              }
+            },
+            "TaskEnabled": false
           },
           "DestroyProp": {
             "TargetType": {
               "$type": "RPG.GameCore.TargetFetchAdvPropEx"
             },
-            "ID": {},
-            "GroupID": {},
-            "IsClientOnly": true
+            "ID": {
+              "FixedValue": {
+                "Value": 0
+              }
+            },
+            "GroupID": {
+              "FixedValue": {
+                "Value": 0
+              }
+            },
+            "TaskEnabled": false
           },
           "AdvCreateGroupEntity": {
-            "IsClientOnly": true
+            "TaskEnabled": false
           },
           "AdvDestroyGroupEntity": {
-            "IsClientOnly": true
+            "TaskEnabled": false
           },
-          "DisactiveVCamOnGraphEnd": true,
           "ActiveVirtualCamera": {
-            "IsActive": true,
-            "VCameraDitherMaxDistance": 1.0,
-            "CenterPosX": -1.0,
-            "CenterPosY": -1.0,
-            "IsClientOnly": true
+            "TaskEnabled": false
           },
           "ActiveTemplateVirtualCamera": {
-            "IsActive": true,
-            "IsClientOnly": true
+            "TaskEnabled": false
           },
           "SwitchCharacterAnchor": {
             "IsLocalPlayer": true,
@@ -64,47 +70,26 @@
             },
             "AnchorName": {
               "Value": "Anchor1"
-            },
-            "ResetAnimation": true,
-            "ResetCamera": true,
-            "ClearSpecialVision": true,
-            "TaskEnabled": true,
-            "IsClientOnly": true
+            }
           },
           "AdvNpcFaceToPlayer": {
-            "FromDialog": true,
-            "TryFaceToFace": true,
-            "NpcLookAtPlayer": true,
-            "PlayerLookAtNpc": true,
-            "StopLookAtOnGraphEnd": true,
-            "TurnBackOnGraphEnd": true,
-            "WaitFinishMode": "WaitFaceAngle",
-            "ForceToStandBy": true,
-            "IsClientOnly": true
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+            "TaskEnabled": false
+          }
         },
         {
           "$type": "RPG.GameCore.SetAudioEmotionState",
           "ResetToFloorDefault": true,
-          "SubMissionID": 102110107,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "SubMissionID": 102110107
         },
         {
           "$type": "RPG.GameCore.TriggerPerformance",
           "ValueSource": {},
           "PerformanceType": "C",
-          "PerformanceID": 102110198,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 102110198
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_102110107",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_102110107"
         }
       ]
     }

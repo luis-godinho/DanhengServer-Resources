@@ -10,32 +10,36 @@
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 558345748480
+                "FixedValue": {
+                  "Value": 130
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288515958603776
+                "FixedValue": {
+                  "Value": 300006
                 }
               }
             }
           },
-          "TargetGroupID": {},
-          "TargetID": {},
+          "TargetGroupID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "TargetID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
           "TargetTypes": [],
           "OnTriggerEnter": [
             {
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "Mission_401510110"
-              },
-              "TaskEnabled": true
+              }
             }
-          ],
-          "SkipFakeAvatar": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     },
@@ -47,27 +51,16 @@
           "CustomString": {
             "Value": "Mission_401510110"
           },
-          "WaitOwnerOnly": true,
-          "TaskEnabled": true
+          "WaitOwnerOnly": true
         },
         {
           "$type": "RPG.GameCore.PerformanceTransition",
-          "SwitchInTime": 0.5,
-          "SwitchKeepTime": 0.5,
-          "SwitchOutTime": 0.5,
           "CreateNpcList": [],
           "CaptureNpcList": [],
           "DestroyNpcList": [],
-          "DisactiveVCamOnGraphEnd": true,
           "ActiveVirtualCamera": {
             "AreaName": "LevelArea_P20211_F20211001_G181",
-            "AnchorName": "401510110Cam",
-            "IsActive": true,
-            "VCameraDitherMaxDistance": 1.0,
-            "CenterPosX": -1.0,
-            "CenterPosY": -1.0,
-            "TaskEnabled": true,
-            "IsClientOnly": true
+            "AnchorName": "401510110Cam"
           },
           "SwitchCharacterAnchor": {
             "IsLocalPlayer": true,
@@ -77,39 +70,24 @@
             },
             "AnchorName": {
               "Value": "PlayerAnchorAfterBattle"
-            },
-            "ResetAnimation": true,
-            "ResetCamera": true,
-            "ClearSpecialVision": true,
-            "TaskEnabled": true,
-            "IsClientOnly": true
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+            }
+          }
         },
         {
           "$type": "RPG.GameCore.TriggerPerformance",
           "ValueSource": {},
           "PerformanceType": "E",
-          "PerformanceID": 401510102,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 401510102
         },
         {
           "$type": "RPG.GameCore.ActiveVirtualCamera",
           "AreaName": "LevelArea_P20211_F20211001_G181",
           "AnchorName": "401510110Cam",
-          "VCameraDitherMaxDistance": 1.0,
-          "CenterPosX": -1.0,
-          "CenterPosY": -1.0,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "IsActive": false
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_401510110",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_401510110"
         }
       ]
     }

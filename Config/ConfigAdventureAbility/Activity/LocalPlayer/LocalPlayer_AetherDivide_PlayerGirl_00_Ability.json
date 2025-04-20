@@ -8,21 +8,12 @@
             "$type": "RPG.GameCore.TargetAlias",
             "Alias": "Caster"
           },
-          "Duration": -1.0,
-          "BlurX": 0.5,
-          "BlurY": 0.5,
-          "BlurRadius": 0.5,
-          "Iteration": 6,
-          "BlurStart": 0.2,
-          "BlurFeather": 0.1,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Active": false
         }
       ],
       "Name": "LocalPlayer_AetherDivide_PlayerGirl_NormalAtk01",
       "TargetInfo": {
-        "TargetType": "SkillPointEntityOrNone",
-        "MaxTargetCount": 1
+        "TargetType": "SkillPointEntityOrNone"
       },
       "OnStart": [
         {
@@ -31,41 +22,21 @@
             "Freelook3rdConfig": {
               "DampChangeParam": {
                 "TargetValue": {
-                  "x": 1.0,
-                  "y": 1.0,
-                  "z": 1.0,
-                  "normalized": {
-                    "x": 0.577350259,
-                    "y": 0.577350259,
-                    "z": 0.577350259,
-                    "normalized": {
-                      "x": 0.5773503,
-                      "y": 0.5773503,
-                      "z": 0.5773503,
-                      "magnitude": 1.00000012,
-                      "sqrMagnitude": 1.00000024
-                    },
-                    "magnitude": 0.99999994,
-                    "sqrMagnitude": 0.99999994
-                  },
-                  "magnitude": 1.73205078,
-                  "sqrMagnitude": 3.0
+                  "X": 1,
+                  "Y": 1,
+                  "Z": 1
                 },
-                "Time": 0.1,
                 "ChangeCurvePath": "Camera/BlendCurve/AttackDampCurve.asset",
                 "RecoveryTime": 0.25,
                 "RecoveryCurvePath": "Camera/BlendCurve/AttackDampRecoverCurve.asset"
               }
             }
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
           "$type": "RPG.GameCore.PredicateTaskList",
           "Predicate": {
-            "$type": "RPG.GameCore.ByHaveAbilityTarget",
-            "TaskEnabled": true
+            "$type": "RPG.GameCore.ByHaveAbilityTarget"
           },
           "SuccessTaskList": [
             {
@@ -75,23 +46,12 @@
                 "Alias": "AdvLocalPlayer"
               },
               "AnimLogicState": "NormalAtk",
-              "AnimStateName": "Attack_1",
-              "TransitionDuration": 0.05,
-              "StopWhenHitOthers": true,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "AnimStateName": "Attack_1"
             },
             {
               "$type": "RPG.GameCore.LookAt",
-              "PerformerType": {
-                "$type": "RPG.GameCore.TargetAlias",
-                "Alias": "Caster"
-              },
               "TargetType": "AbilityTargetEntity",
-              "ToTargetRatio": 1.0,
-              "Duration": 0.2,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "Duration": 0.2
             },
             {
               "$type": "RPG.GameCore.WaitAnimState",
@@ -101,12 +61,10 @@
               },
               "AnimStateName": "Attack_1",
               "NormalizedTimeEnd": {
-                "fixedValue": {
-                  "RawValue": 167503722
+                "FixedValue": {
+                  "Value": 0.039
                 }
-              },
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              }
             },
             {
               "$type": "RPG.GameCore.AdventureFireProjectile",
@@ -117,19 +75,9 @@
               "Projectile": {
                 "Behavior": "Static",
                 "EnableRayCast": true,
-                "FlyTime": -1.0,
-                "Gravity": -9.8,
                 "MaxLifeTime": 2.5,
-                "FlyEffect": "Effects/Eff_Prefab/Eff_ActivityProp/Eff_AetherDivide_PlayerGirl/Eff_Avatar_AetherDivide_PlayerGirl_00_MazeAttack01_02.prefab",
-                "LinearPitchAngle": {},
-                "BoomerangEccentricity": 1.0,
-                "TriggerHitCallback": true,
-                "StaticProjectileCanPassAirWall": true,
-                "ParabolaUseWorldSpaceUp": true,
-                "SubCurveIndex": {}
-              },
-              "TaskEnabled": true,
-              "IsClientOnly": true
+                "FlyEffect": "Effects/Eff_Prefab/Eff_ActivityProp/Eff_AetherDivide_PlayerGirl/Eff_Avatar_AetherDivide_PlayerGirl_00_MazeAttack01_02.prefab"
+              }
             },
             {
               "$type": "RPG.GameCore.WaitAnimState",
@@ -139,12 +87,10 @@
               },
               "AnimStateName": "Attack_1",
               "NormalizedTimeEnd": {
-                "fixedValue": {
-                  "RawValue": 180388626
+                "FixedValue": {
+                  "Value": 0.042
                 }
-              },
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              }
             },
             {
               "$type": "RPG.GameCore.RadialBlurEffect",
@@ -152,16 +98,12 @@
                 "$type": "RPG.GameCore.TargetAlias",
                 "Alias": "Caster"
               },
-              "Active": true,
               "Duration": 0.05,
-              "BlurX": 0.5,
               "BlurY": 0.4,
-              "BlurRadius": 1.0,
+              "BlurRadius": 1,
               "Iteration": 4,
               "BlurStart": 0.005,
-              "BlurFeather": 0.01,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "BlurFeather": 0.01
             },
             {
               "$type": "RPG.GameCore.AdventureFireProjectile",
@@ -172,25 +114,10 @@
               "Projectile": {
                 "Behavior": "Static",
                 "EnableRayCast": true,
-                "FlyTime": -1.0,
-                "Gravity": -9.8,
                 "MaxLifeTime": 0.01,
                 "TargetOffset": {
-                  "y": 1.5,
-                  "normalized": {
-                    "y": 1.0,
-                    "magnitude": 1.0,
-                    "sqrMagnitude": 1.0
-                  },
-                  "magnitude": 1.5,
-                  "sqrMagnitude": 2.25
-                },
-                "LinearPitchAngle": {},
-                "BoomerangEccentricity": 1.0,
-                "TriggerHitCallback": true,
-                "StaticProjectileCanPassAirWall": true,
-                "ParabolaUseWorldSpaceUp": true,
-                "SubCurveIndex": {}
+                  "Y": 1.5
+                }
               },
               "OnProjectileLifetimeFinish": [
                 {
@@ -203,36 +130,22 @@
                     "$type": "RPG.GameCore.TargetAlias",
                     "Alias": "ProjectileHitEntity"
                   },
-                  "TriggerBattle": true,
                   "TriggerBattleDelay": 0.1,
                   "AttackDetectConfig": {
                     "$type": "RPG.GameCore.AdventureAttackDetectCircleConfig",
-                    "MaxRadius": 2.0,
-                    "FanAngle": 360.0,
-                    "Hight": 2.0,
+                    "MaxRadius": 2,
+                    "FanAngle": 360,
+                    "Hight": 2,
                     "Offset": {
-                      "y": -1.5,
-                      "normalized": {
-                        "y": -1.0,
-                        "magnitude": 1.0,
-                        "sqrMagnitude": 1.0
-                      },
-                      "magnitude": 1.5,
-                      "sqrMagnitude": 2.25
+                      "Y": -1.5
                     }
                   },
                   "HitConfig": {
                     "HitAnimation": "Hit",
                     "HitEffect": "Effects/Eff_Prefab/Eff_ActivityProp/Eff_AetherDivide_PlayerGirl/Eff_Avatar_AetherDivide_PlayerGirl_00_MazeAttack01_Hit.prefab"
-                  },
-                  "IncludeProps": true,
-                  "AttackDetectCollision": true,
-                  "TaskEnabled": true,
-                  "IsClientOnly": true
+                  }
                 }
-              ],
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              ]
             }
           ],
           "FailedTaskList": [
@@ -243,11 +156,7 @@
                 "Alias": "Caster"
               },
               "AnimLogicState": "NormalAtk",
-              "AnimStateName": "Attack_1",
-              "TransitionDuration": 0.05,
-              "StopWhenHitOthers": true,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "AnimStateName": "Attack_1"
             },
             {
               "$type": "RPG.GameCore.WaitAnimState",
@@ -257,12 +166,10 @@
               },
               "AnimStateName": "Attack_1",
               "NormalizedTimeEnd": {
-                "fixedValue": {
-                  "RawValue": 167503722
+                "FixedValue": {
+                  "Value": 0.039
                 }
-              },
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              }
             },
             {
               "$type": "RPG.GameCore.AdventureFireProjectile",
@@ -273,19 +180,9 @@
               "Projectile": {
                 "Behavior": "Static",
                 "EnableRayCast": true,
-                "FlyTime": -1.0,
-                "Gravity": -9.8,
                 "MaxLifeTime": 2.5,
-                "FlyEffect": "Effects/Eff_Prefab/Eff_ActivityProp/Eff_AetherDivide_PlayerGirl/Eff_Avatar_AetherDivide_PlayerGirl_00_MazeAttack01_02.prefab",
-                "LinearPitchAngle": {},
-                "BoomerangEccentricity": 1.0,
-                "TriggerHitCallback": true,
-                "StaticProjectileCanPassAirWall": true,
-                "ParabolaUseWorldSpaceUp": true,
-                "SubCurveIndex": {}
-              },
-              "TaskEnabled": true,
-              "IsClientOnly": true
+                "FlyEffect": "Effects/Eff_Prefab/Eff_ActivityProp/Eff_AetherDivide_PlayerGirl/Eff_Avatar_AetherDivide_PlayerGirl_00_MazeAttack01_02.prefab"
+              }
             },
             {
               "$type": "RPG.GameCore.WaitAnimState",
@@ -295,12 +192,10 @@
               },
               "AnimStateName": "Attack_1",
               "NormalizedTimeEnd": {
-                "fixedValue": {
-                  "RawValue": 180388626
+                "FixedValue": {
+                  "Value": 0.042
                 }
-              },
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              }
             },
             {
               "$type": "RPG.GameCore.RadialBlurEffect",
@@ -308,16 +203,12 @@
                 "$type": "RPG.GameCore.TargetAlias",
                 "Alias": "Caster"
               },
-              "Active": true,
               "Duration": 0.05,
-              "BlurX": 0.5,
               "BlurY": 0.4,
-              "BlurRadius": 1.0,
+              "BlurRadius": 1,
               "Iteration": 4,
               "BlurStart": 0.005,
-              "BlurFeather": 0.01,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "BlurFeather": 0.01
             },
             {
               "$type": "RPG.GameCore.AdventureFireProjectile",
@@ -328,25 +219,10 @@
               "Projectile": {
                 "Behavior": "Static",
                 "EnableRayCast": true,
-                "FlyTime": -1.0,
-                "Gravity": -9.8,
                 "MaxLifeTime": 0.01,
                 "TargetOffset": {
-                  "y": 1.5,
-                  "normalized": {
-                    "y": 1.0,
-                    "magnitude": 1.0,
-                    "sqrMagnitude": 1.0
-                  },
-                  "magnitude": 1.5,
-                  "sqrMagnitude": 2.25
-                },
-                "LinearPitchAngle": {},
-                "BoomerangEccentricity": 1.0,
-                "TriggerHitCallback": true,
-                "StaticProjectileCanPassAirWall": true,
-                "ParabolaUseWorldSpaceUp": true,
-                "SubCurveIndex": {}
+                  "Y": 1.5
+                }
               },
               "OnProjectileLifetimeFinish": [
                 {
@@ -359,47 +235,25 @@
                     "$type": "RPG.GameCore.TargetAlias",
                     "Alias": "ProjectileHitEntity"
                   },
-                  "TriggerBattle": true,
                   "TriggerBattleDelay": 0.1,
                   "AttackDetectConfig": {
                     "$type": "RPG.GameCore.AdventureAttackDetectCircleConfig",
-                    "MaxRadius": 2.0,
-                    "FanAngle": 360.0,
-                    "Hight": 2.0,
+                    "MaxRadius": 2,
+                    "FanAngle": 360,
+                    "Hight": 2,
                     "Offset": {
-                      "y": -1.5,
-                      "z": 10.0,
-                      "normalized": {
-                        "y": -0.148340449,
-                        "z": 0.9889363,
-                        "normalized": {
-                          "y": -0.148340464,
-                          "z": 0.988936365,
-                          "magnitude": 1.0,
-                          "sqrMagnitude": 1.0
-                        },
-                        "magnitude": 0.99999994,
-                        "sqrMagnitude": 0.99999994
-                      },
-                      "magnitude": 10.1118746,
-                      "sqrMagnitude": 102.25
+                      "Y": -1.5,
+                      "Z": 10
                     }
                   },
                   "HitConfig": {
                     "HitAnimation": "Hit",
                     "HitEffect": "Effects/Eff_Prefab/Eff_ActivityProp/Eff_AetherDivide_PlayerGirl/Eff_Avatar_AetherDivide_PlayerGirl_00_MazeAttack01_Hit.prefab"
-                  },
-                  "IncludeProps": true,
-                  "AttackDetectCollision": true,
-                  "TaskEnabled": true,
-                  "IsClientOnly": true
+                  }
                 }
-              ],
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              ]
             }
-          ],
-          "TaskEnabled": true
+          ]
         }
       ]
     }

@@ -10,9 +10,7 @@
           ],
           "MainMissionIDList": [],
           "PerformanceIDList": [],
-          "CustomValueMainMissionIDList": [],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "CustomValueMainMissionIDList": []
         },
         {
           "$type": "RPG.GameCore.PropSetupTrigger",
@@ -21,25 +19,25 @@
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 34359738368
+                "FixedValue": {
+                  "Value": 8
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288494483767296
+                "FixedValue": {
+                  "Value": 300001
                 }
               }
             }
           },
           "TargetGroupID": {
-            "fixedValue": {
-              "RawValue": 86424212398407680
+            "FixedValue": {
+              "Value": 20122204
             }
           },
           "TargetID": {
-            "fixedValue": {
-              "RawValue": 86424212398407680
+            "FixedValue": {
+              "Value": 20122204
             }
           },
           "TargetTypes": [],
@@ -49,13 +47,9 @@
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "Mission_201020319_PropTrigger"
-              },
-              "TaskEnabled": true
+              }
             }
-          ],
-          "SkipFakeAvatar": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     },
@@ -65,41 +59,30 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Mission_201020319_PropTrigger"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.PredicateTaskList",
           "Predicate": {
             "$type": "RPG.GameCore.ByCompareSubMissionState",
             "SubMissionID": 801410104,
-            "SubMissionState": "Finish",
-            "TaskEnabled": true,
-            "IsClientOnly": true
+            "SubMissionState": "Finish"
           },
           "SuccessTaskList": [
             {
               "$type": "RPG.GameCore.PlayMissionTalk",
               "SimpleTalkList": [
                 {
-                  "TextSpeed": 20.0,
-                  "TalkSentenceID": 201023061,
-                  "ProtectTime": 0.8
+                  "TalkSentenceID": 201023061
                 },
                 {
-                  "TextSpeed": 20.0,
-                  "TalkSentenceID": 201023062,
-                  "ProtectTime": 0.8
+                  "TalkSentenceID": 201023062
                 }
-              ],
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              ]
             },
             {
               "$type": "RPG.GameCore.FinishPerformanceMission",
-              "Key": "Mission_201020319",
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "Key": "Mission_201020319"
             }
           ],
           "FailedTaskList": [
@@ -107,27 +90,18 @@
               "$type": "RPG.GameCore.PlayMissionTalk",
               "SimpleTalkList": [
                 {
-                  "TextSpeed": 20.0,
-                  "TalkSentenceID": 201023063,
-                  "ProtectTime": 0.8
+                  "TalkSentenceID": 201023063
                 },
                 {
-                  "TextSpeed": 20.0,
-                  "TalkSentenceID": 201023064,
-                  "ProtectTime": 0.8
+                  "TalkSentenceID": 201023064
                 }
-              ],
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              ]
             },
             {
               "$type": "RPG.GameCore.FinishPerformanceMission",
-              "Key": "Mission_201020319",
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "Key": "Mission_201020319"
             }
-          ],
-          "TaskEnabled": true
+          ]
         }
       ]
     }

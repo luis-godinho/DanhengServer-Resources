@@ -1,0 +1,161 @@
+{
+  "$type": "RPG.GameCore.CharacterConfig",
+  "SomatoType": "LargeMonster",
+  "CharacterHUDOffset": {
+    "X": 0.3,
+    "Y": 2.7,
+    "Z": 0.9
+  },
+  "BuffPanelOffset": {
+    "X": 0.6,
+    "Y": 1.8
+  },
+  "HitBoxWidth": 1.3,
+  "HitBoxHeight": 0.4,
+  "Location": {
+    "Width": 1.26,
+    "RotateWithOtherTeammate": true,
+    "RotateByRootOffset": true
+  },
+  "VisualRadius": 2.3,
+  "IsSpecialVisualCharacter": "True",
+  "AnimEventConfigList": [
+    "Config/ConfigAnimEvents/Monster/Designer/Monster_W4_PolluxPart_00_Designer_AnimEvent.json",
+    "Config/ConfigAnimEvents/Monster/Effect/Monster_W4_PolluxPart_01_Effect_AnimEvent.json",
+    "Config/ConfigAnimEvents/Monster/Audio/Monster_W4_PolluxPart_01_Audio_AnimEvent.json"
+  ],
+  "SkillList": [
+    {
+      "Name": "Skill01",
+      "UseType": "SelectEntity",
+      "TargetInfo": {
+        "TargetType": "EnemySelect"
+      },
+      "ReadyAnimState": "StandBy",
+      "EntryAbility": "Monster_W4_PolluxPart_00_Skill01_L_Phase01"
+    },
+    {
+      "Name": "Skill02",
+      "SkillType": "Skill",
+      "UseType": "SelectEntity",
+      "TargetInfo": {
+        "TargetType": "EnemySelect",
+        "SubTargetType": "TargetAdjoinEntity"
+      },
+      "EntryAbility": "Monster_W4_PolluxPart_00_Skill02_L_Phase01"
+    },
+    {
+      "Name": "Passive",
+      "SkillType": "Passive",
+      "UseType": "Passive",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "EntryAbility": "Monster_W4_PolluxPart_00_L_PassiveSkill_Initiate"
+    },
+    {
+      "Name": "PassiveSkill01",
+      "SkillType": "Passive",
+      "UseType": "Passive",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "EntryAbility": "Monster_Common_PassiveSkill_StanceBreak_Action"
+    },
+    {
+      "Name": "PassiveSkill02",
+      "SkillType": "Passive",
+      "UseType": "Passive",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "EntryAbility": "Monster_Common_MuteHitFly"
+    }
+  ],
+  "AbilityList": [
+    "Monster_W4_PolluxPart_00_L_PassiveSkill_Initiate",
+    "Monster_Common_PassiveSkill_StanceBreak_Action",
+    "Monster_Common_MuteHitFly"
+  ],
+  "SkillAbilityList": [
+    {
+      "Skill": "Skill01",
+      "AbilityList": [
+        "Monster_W4_PolluxPart_00_Skill01_L_Phase01",
+        "Monster_W4_PolluxPart_00_Skill01_L_Phase02",
+        "Monster_W4_PolluxPart_00_Skill01_L_Camera"
+      ]
+    },
+    {
+      "Skill": "Skill02",
+      "AbilityList": [
+        "Monster_W4_PolluxPart_00_Skill02_L_Phase01",
+        "Monster_W4_PolluxPart_00_Skill02_L_Phase02",
+        "Monster_W4_PolluxPart_00_Skill02_L_Camera"
+      ]
+    }
+  ],
+  "DynamicValues": {
+    "Floats": {
+      "-1309867853": {},
+      "680676060": {},
+      "-428166381": {},
+      "-1126825319": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill01"
+        }
+      },
+      "-1847083384": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill02"
+        }
+      },
+      "1102737658": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill02",
+          "Index": 1
+        }
+      },
+      "-1897262277": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill02",
+          "Index": 2
+        }
+      },
+      "-1880791677": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill02",
+          "Index": 3
+        }
+      }
+    }
+  },
+  "WeaponType": "WP_Scythe",
+  "DisableAnimEventLayers": [
+    "Riboon Layer"
+  ],
+  "MonsterIgnoreGlobalDymanicOffset": false,
+  "OverrideColliderCameraByName": "Monster_4012070_R",
+  "EffectAdaptionList": [
+    {
+      "EffectPath": "Effects/Eff_Prefab/Eff_Common/Eff_Buff_Common_Confine.prefab",
+      "AttachPoint": "ConfineRoot",
+      "Scale": 1.6
+    }
+  ],
+  "MonsterConfig": {
+    "ModelRotation": {
+      "Y": -45
+    },
+    "ModelScale": {
+      "X": "Infinity",
+      "Y": "Infinity",
+      "Z": "Infinity"
+    }
+  }
+}

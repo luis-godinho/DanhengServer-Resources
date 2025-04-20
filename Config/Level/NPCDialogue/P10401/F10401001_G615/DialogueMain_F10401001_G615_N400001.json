@@ -1,0 +1,47 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PlayFullScreenTransfer",
+          "PostDuration": -1,
+          "Action": [
+            {
+              "$type": "RPG.GameCore.ScrTrfActTaskList",
+              "TaskList": [
+                {
+                  "$type": "RPG.GameCore.SwitchCharacterAnchorV2",
+                  "SwitchCharacterAnchorConfig": {
+                    "IsLocalPlayer": true,
+                    "CharacterUniqueName": "LocalPlayer",
+                    "AreaName": {
+                      "Value": "LevelArea_P10401_F10401001_G615"
+                    },
+                    "AnchorName": {
+                      "Value": "Anchor1"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.TriggerPerformance",
+          "ValueSource": {},
+          "PerformanceType": "D",
+          "PerformanceID": 104030606,
+          "MaskConfig": {
+            "UseExcelData": false,
+            "StartBlack": "NoPre"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.ClientFinishMission",
+          "SubmissionID": 104030607
+        }
+      ]
+    }
+  ]
+}

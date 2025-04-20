@@ -1,0 +1,339 @@
+{
+  "OnInitSequece": [
+    {
+      "TaskList": []
+    }
+  ],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AddTimelineEntityEventListener",
+          "Target": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "StateEnterListener": [
+            {
+              "ListenState": [
+                "L0_Idle"
+              ],
+              "Callback": [
+                {
+                  "$type": "RPG.GameCore.RemoveEffect",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                  },
+                  "EffectPath": "Effects/Eff_Prefab/Eff_Scene/InteractiveProp/Eff_Chap04_Prop_TimeSandClock_03_BackwardData_Lod0.prefab",
+                  "UniqueEffectName": "TestEffect",
+                  "Flags": []
+                },
+                {
+                  "$type": "RPG.GameCore.AdvEnableTrigger",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                  },
+                  "TriggerName": "StopTrigger"
+                },
+                {
+                  "$type": "RPG.GameCore.PropSetupHitBox",
+                  "OnBeHit": [
+                    {
+                      "$type": "RPG.GameCore.PredicateTaskList",
+                      "Predicate": {
+                        "$type": "RPG.GameCore.ByTimeRewindTargetMotionPause",
+                        "Target": {
+                          "$type": "RPG.GameCore.TargetAlias",
+                          "Alias": "Caster"
+                        }
+                      },
+                      "SuccessTaskList": [
+                        {
+                          "$type": "RPG.GameCore.ToastPile",
+                          "DescTextID": {
+                            "Hash": 7102577144157730621
+                          }
+                        }
+                      ],
+                      "FailedTaskList": [
+                        {
+                          "$type": "RPG.GameCore.SetTimelineEntityState",
+                          "Target": {
+                            "$type": "RPG.GameCore.TargetAlias",
+                            "Alias": "Caster"
+                          },
+                          "StateName": {
+                            "Value": "L1_Broken"
+                          },
+                          "CutIn": false
+                        },
+                        {
+                          "$type": "RPG.GameCore.PropUnloadHitBox"
+                        }
+                      ]
+                    }
+                  ],
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                  }
+                }
+              ]
+            },
+            {
+              "ListenState": [
+                "L1_Broken"
+              ],
+              "Callback": [
+                {
+                  "$type": "RPG.GameCore.AdvEnableTrigger",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                  },
+                  "IsEnable": true,
+                  "TriggerName": "StopTrigger"
+                },
+                {
+                  "$type": "RPG.GameCore.TriggerSound",
+                  "SoundName": {
+                    "Value": "Ev_sfx_amphoreus_timeline_hourglass_loop"
+                  },
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                  }
+                }
+              ]
+            }
+          ],
+          "StateLeaveListener": [
+            {
+              "ListenState": [
+                "L0_Idle"
+              ],
+              "Callback": [
+                {
+                  "$type": "RPG.GameCore.PropUnloadHitBox"
+                }
+              ]
+            },
+            {
+              "ListenState": [
+                "L1_Broken"
+              ],
+              "Callback": [
+                {
+                  "$type": "RPG.GameCore.TriggerSound",
+                  "SoundName": {
+                    "Value": "Ev_sfx_amphoreus_timeline_hourglass_loop_stop"
+                  },
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByCheckTimelineEntityState",
+            "Target": {
+              "$type": "RPG.GameCore.TargetAlias",
+              "Alias": "Caster"
+            },
+            "StateName": {
+              "Value": "L0_Idle"
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.TriggerEffectList",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+              },
+              "EffectList": [
+                {
+                  "EffectPath": "Effects/Eff_Prefab/Eff_Scene/InteractiveProp/Eff_Chap04_Prop_TimeSandClock_01_ShutDown_Lod0.prefab",
+                  "IsAttachToTargetEntity": true,
+                  "AttachPoint": "EffRoot"
+                }
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.PropSetupHitBox",
+              "OnBeHit": [
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByTimeRewindTargetMotionPause",
+                    "Target": {
+                      "$type": "RPG.GameCore.TargetAlias",
+                      "Alias": "Caster"
+                    }
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.ToastPile",
+                      "DescTextID": {
+                        "Hash": 7102577144157730621
+                      }
+                    }
+                  ],
+                  "FailedTaskList": [
+                    {
+                      "$type": "RPG.GameCore.SetTimelineEntityState",
+                      "Target": {
+                        "$type": "RPG.GameCore.TargetAlias",
+                        "Alias": "Caster"
+                      },
+                      "StateName": {
+                        "Value": "L1_Broken"
+                      },
+                      "CutIn": false
+                    },
+                    {
+                      "$type": "RPG.GameCore.PropUnloadHitBox"
+                    }
+                  ]
+                }
+              ],
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+              }
+            }
+          ],
+          "FailedTaskList": [
+            {
+              "$type": "RPG.GameCore.TriggerEffectList",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+              },
+              "EffectList": [
+                {
+                  "EffectPath": "Effects/Eff_Prefab/Eff_Scene/InteractiveProp/Eff_Chap04_Prop_TimeSandClock_01_Open_Lod0.prefab",
+                  "AttachPoint": "EffRoot"
+                }
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.TriggerEffect",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+              },
+              "Flags": [],
+              "EffectPath": "Effects/Eff_Prefab/Eff_Scene/InteractiveProp/Eff_Chap04_Prop_TimeSandClock_03_BackwardData_Lod0.prefab",
+              "UniqueEffectName": "TestEffect",
+              "AttachPoint": "EffRoot",
+              "SubObjectModifyDataList": []
+            },
+            {
+              "$type": "RPG.GameCore.PropUnloadHitBox"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitEntityEventV2",
+          "EventName": {
+            "Value": "Event1_TriggerLoop"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.TriggerEffectList",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+              },
+              "EffectList": [
+                {
+                  "EffectPath": "Effects/Eff_Prefab/Eff_Scene/InteractiveProp/Eff_Chap04_Prop_TimeSandClock_01_ShutDown_Lod0.prefab",
+                  "IsAttachToTargetEntity": true,
+                  "AttachPoint": "EffRoot02"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitEntityEventV2",
+          "EventName": {
+            "Value": "Event2_TriggerLoop"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.TriggerEffectList",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+              },
+              "EffectList": [
+                {
+                  "EffectPath": "Effects/Eff_Prefab/Eff_Scene/InteractiveProp/Eff_Chap04_Prop_TimeSandClock_01_Open_Lod0.prefab",
+                  "AttachPoint": "EffRoot02"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitEntityEventV2",
+          "EventName": {
+            "Value": "Event1_RemoveLoop"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.RemoveEffect",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+              },
+              "EffectPath": "Effects/Eff_Prefab/Eff_Scene/InteractiveProp/Eff_Chap04_Prop_TimeSandClock_01_ShutDown_Lod0.prefab",
+              "Flags": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitEntityEventV2",
+          "EventName": {
+            "Value": "Event2_RemoveLoop"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.RemoveEffect",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+              },
+              "EffectPath": "Effects/Eff_Prefab/Eff_Scene/InteractiveProp/Eff_Chap04_Prop_TimeSandClock_01_Open_Lod0.prefab",
+              "Flags": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Order": 1,
+      "TaskList": []
+    }
+  ],
+  "ValueSource": {
+    "Values": []
+  },
+  "Type": "Entity",
+  "EntityEventList": []
+}

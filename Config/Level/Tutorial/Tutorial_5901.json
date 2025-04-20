@@ -1,0 +1,564 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.TutorialLockPlayerAction",
+          "Lock": true
+        },
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "Activity_Marble_Self_Turn_Begin"
+          },
+          "ResetWhenTaskBegin": true
+        },
+        {
+          "$type": "RPG.GameCore.TutorialLockPlayerAction"
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideHintWithText",
+          "Block": true,
+          "TargetEvent": [
+            {
+              "$type": "RPG.GameCore.WaitPlayerAction",
+              "ActionType": "AnyAction"
+            }
+          ],
+          "NodeIDList": [
+            "PlayerBall_07.3"
+          ],
+          "IsAutoMatchGuideHintType": false,
+          "GuideTextType": "Talk",
+          "GuideText": "TutorialTextmap_552101",
+          "GuideTalkID": 590100,
+          "CustomTextDirection": "RightDown",
+          "GuideHintShowConfig": {},
+          "GuideTextShowConfig": {},
+          "GuideUIContextConfig": {
+            "Type": "MainPage"
+          },
+          "EnableActionList": [],
+          "EnableBattleOperationList": [],
+          "ShowDelay": 1.7,
+          "DisableBlackMask": true
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideHintWithText",
+          "Block": true,
+          "TargetEvent": [
+            {
+              "$type": "RPG.GameCore.WaitPlayerAction",
+              "ActionType": "AnyAction"
+            }
+          ],
+          "NodeIDList": [
+            "PlayerBall_07.3"
+          ],
+          "IsAutoMatchGuideHintType": false,
+          "GuideHintType": "ClickCircle",
+          "GuideTextType": "Talk",
+          "GuideText": "TutorialTextmap_552101",
+          "GuideTalkID": 590101,
+          "CustomTextDirection": "RightDown",
+          "GuideHintShowConfig": {},
+          "GuideTextShowConfig": {},
+          "GuideUIContextConfig": {
+            "Type": "MainPage"
+          },
+          "EnableActionList": [],
+          "EnableBattleOperationList": [],
+          "DisableBlackMask": true
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideHintWithText",
+          "TargetEvent": [
+            {
+              "$type": "RPG.GameCore.MarbleWaitBattleInput",
+              "SealTeamIndex": 3,
+              "ForceShootVector": {
+                "X": 0.548,
+                "Y": -0.077
+              }
+            }
+          ],
+          "NodeIDList": [],
+          "IsAutoMatchGuideHintType": false,
+          "GuideTextType": "CommonCenterTalk",
+          "GuideTalkID": 590102,
+          "GuideHintShowConfig": {},
+          "GuideTextShowConfig": {},
+          "GuideUIContextConfig": {
+            "Type": "Normal",
+            "Name": "MarbleBattlePage"
+          },
+          "EnableActionList": [],
+          "EnableBattleOperationList": []
+        },
+        {
+          "$type": "RPG.GameCore.MarbleSimulateListener",
+          "OnSimulateEnd": [
+            {
+              "$type": "RPG.GameCore.MarblePauseGame",
+              "IsPause": true
+            },
+            {
+              "$type": "RPG.GameCore.ShowGuideHintWithText",
+              "Block": true,
+              "TargetEvent": [
+                {
+                  "$type": "RPG.GameCore.WaitPlayerAction",
+                  "ActionType": "AnyAction"
+                }
+              ],
+              "NodeIDList": [
+                "PlayerBall_07.enm.3"
+              ],
+              "IsAutoMatchGuideHintType": false,
+              "GuideHintType": "ClickCircle",
+              "GuideTextType": "Talk",
+              "GuideText": "TutorialTextmap_552101",
+              "GuideTalkID": 590103,
+              "CustomTextDirection": "LeftDown",
+              "GuideHintShowConfig": {},
+              "GuideTextShowConfig": {},
+              "GuideUIContextConfig": {
+                "Type": "MainPage"
+              },
+              "EnableActionList": [],
+              "EnableBattleOperationList": [],
+              "DisableBlackMask": true
+            },
+            {
+              "$type": "RPG.GameCore.MarblePauseGame"
+            },
+            {
+              "$type": "RPG.GameCore.TriggerCustomString",
+              "CustomString": {
+                "Value": "turn1end"
+              }
+            }
+          ],
+          "Round": 1,
+          "InstanceId": 202
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "turn1end"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TutorialLockPlayerAction",
+          "Lock": true
+        },
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "Activity_Marble_Self_Turn_Begin"
+          },
+          "ResetWhenTaskBegin": true
+        },
+        {
+          "$type": "RPG.GameCore.TutorialLockPlayerAction"
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideHintWithText",
+          "Block": true,
+          "TargetEvent": [
+            {
+              "$type": "RPG.GameCore.WaitPlayerAction",
+              "ActionType": "AnyAction",
+              "Param": "ActivityMarbleBattlePage.BtnComFrameText3A"
+            }
+          ],
+          "NodeIDList": [
+            "ActivityMarbleBattlePage.BtnSealInfoItem3"
+          ],
+          "GuideHintType": "ClickCircle",
+          "GuideTextType": "Talk",
+          "GuideText": "TutorialTextmap_552101",
+          "GuideTalkID": 590104,
+          "CustomTextDirection": "RightDown",
+          "GuideHintShowConfig": {},
+          "GuideTextShowConfig": {},
+          "GuideUIContextConfig": {
+            "Type": "MainPage"
+          },
+          "EnableActionList": [],
+          "EnableBattleOperationList": [],
+          "ShowDelay": 1.7,
+          "DisableBlackMask": true
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideHintWithText",
+          "TargetEvent": [
+            {
+              "$type": "RPG.GameCore.MarbleWaitBattleInput",
+              "SealTeamIndex": 1,
+              "ForceShootVector": {
+                "X": 1
+              }
+            }
+          ],
+          "NodeIDList": [],
+          "IsAutoMatchGuideHintType": false,
+          "GuideTextType": "CommonCenterTalk",
+          "GuideTalkID": 590105,
+          "GuideHintShowConfig": {},
+          "GuideTextShowConfig": {},
+          "GuideUIContextConfig": {
+            "Type": "Normal",
+            "Name": "MarbleBattlePage"
+          },
+          "EnableActionList": [],
+          "EnableBattleOperationList": []
+        },
+        {
+          "$type": "RPG.GameCore.MarbleSimulateListener",
+          "OnSimulateEnd": [
+            {
+              "$type": "RPG.GameCore.MarblePauseGame",
+              "IsPause": true
+            },
+            {
+              "$type": "RPG.GameCore.ShowGuideHintWithText",
+              "Block": true,
+              "TargetEvent": [
+                {
+                  "$type": "RPG.GameCore.WaitPlayerAction",
+                  "ActionType": "AnyAction"
+                }
+              ],
+              "NodeIDList": [
+                "PlayerBall_07.enm.1"
+              ],
+              "IsAutoMatchGuideHintType": false,
+              "GuideHintType": "ClickCircle",
+              "GuideTextType": "Talk",
+              "GuideText": "TutorialTextmap_552101",
+              "GuideTalkID": 590106,
+              "CustomTextDirection": "LeftUp",
+              "GuideHintShowConfig": {},
+              "GuideTextShowConfig": {},
+              "GuideUIContextConfig": {
+                "Type": "MainPage"
+              },
+              "EnableActionList": [],
+              "EnableBattleOperationList": [],
+              "DisableBlackMask": true
+            },
+            {
+              "$type": "RPG.GameCore.ShowGuideHintWithText",
+              "Block": true,
+              "TargetEvent": [
+                {
+                  "$type": "RPG.GameCore.WaitPlayerAction",
+                  "ActionType": "AnyAction"
+                }
+              ],
+              "NodeIDList": [
+                "PlayerBall_07.enm.1"
+              ],
+              "IsAutoMatchGuideHintType": false,
+              "GuideHintType": "ClickCircle",
+              "GuideTextType": "Talk",
+              "GuideText": "TutorialTextmap_552101",
+              "GuideTalkID": 590113,
+              "CustomTextDirection": "LeftUp",
+              "GuideHintShowConfig": {},
+              "GuideTextShowConfig": {},
+              "GuideUIContextConfig": {
+                "Type": "MainPage"
+              },
+              "EnableActionList": [],
+              "EnableBattleOperationList": [],
+              "DisableBlackMask": true
+            },
+            {
+              "$type": "RPG.GameCore.MarblePauseGame"
+            },
+            {
+              "$type": "RPG.GameCore.TriggerCustomString",
+              "CustomString": {
+                "Value": "turn2end"
+              }
+            }
+          ],
+          "Round": 1,
+          "InstanceId": 200
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "turn2end"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TutorialLockPlayerAction",
+          "Lock": true
+        },
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "Activity_Marble_Self_Turn_Begin"
+          },
+          "ResetWhenTaskBegin": true
+        },
+        {
+          "$type": "RPG.GameCore.TutorialLockPlayerAction"
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideHintWithText",
+          "Block": true,
+          "TargetEvent": [
+            {
+              "$type": "RPG.GameCore.WaitPlayerAction",
+              "ActionType": "AnyAction",
+              "Param": "ActivityMarbleBattlePage.BtnSealInfoItem2"
+            },
+            {
+              "$type": "RPG.GameCore.TutorialClickBtn",
+              "NodeID": "ActivityMarbleBattlePage.BtnSealInfoItem2"
+            }
+          ],
+          "NodeIDList": [
+            "ActivityMarbleBattlePage.BtnSealInfoItem2"
+          ],
+          "GuideHintType": "ClickCircle",
+          "GuideTextType": "Talk",
+          "GuideText": "TutorialTextmap_552101",
+          "GuideTalkID": 590107,
+          "GuideHintShowConfig": {},
+          "GuideTextShowConfig": {},
+          "GuideUIContextConfig": {
+            "Type": "MainPage"
+          },
+          "EnableActionList": [],
+          "EnableBattleOperationList": [],
+          "ShowDelay": 1.7
+        },
+        {
+          "$type": "RPG.GameCore.TutorialLockPlayerAction",
+          "Lock": true
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideHintWithText",
+          "TargetEvent": [
+            {
+              "$type": "RPG.GameCore.WaitPlayerAction",
+              "ActionType": "AnyAction",
+              "Param": "ActivityMarbleBattlePage.BtnSealInfoItem2"
+            },
+            {
+              "$type": "RPG.GameCore.TutorialLockPlayerAction"
+            },
+            {
+              "$type": "RPG.GameCore.TutorialClickBtn",
+              "NodeID": "ActivityMarbleBattlePage.SkillBtnEmptyClose"
+            }
+          ],
+          "NodeIDList": [
+            "ActivityMarbleBattlePage.BtnSealInfoItem2"
+          ],
+          "IsAutoMatchGuideHintType": false,
+          "GuideTextType": "Talk",
+          "GuideText": "TutorialTextmap_552101",
+          "GuideTalkID": 590203,
+          "CustomTextDirection": "Right",
+          "GuideHintShowConfig": {},
+          "GuideTextShowConfig": {
+            "UseCustomConfig": true,
+            "OffsetX": 105,
+            "OffsetY": -139
+          },
+          "GuideUIContextConfig": {
+            "Type": "MainPage"
+          },
+          "EnableActionList": [],
+          "EnableBattleOperationList": []
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideHintWithText",
+          "TargetEvent": [
+            {
+              "$type": "RPG.GameCore.MarbleWaitBattleInput",
+              "SealTeamIndex": 2,
+              "ForceShootVector": {
+                "X": 0.965,
+                "Y": 0.263
+              }
+            },
+            {
+              "$type": "RPG.GameCore.TriggerCustomString",
+              "CustomString": {
+                "Value": "actionagain"
+              }
+            }
+          ],
+          "NodeIDList": [],
+          "IsAutoMatchGuideHintType": false,
+          "GuideTextType": "CommonCenterTalk",
+          "GuideTalkID": 590108,
+          "GuideHintShowConfig": {},
+          "GuideTextShowConfig": {},
+          "GuideUIContextConfig": {
+            "Type": "Normal",
+            "Name": "MarbleBattlePage"
+          },
+          "EnableActionList": [],
+          "EnableBattleOperationList": []
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "actionagain"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TutorialLockPlayerAction",
+          "Lock": true
+        },
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "Activity_Marble_Self_Turn_Begin"
+          },
+          "ResetWhenTaskBegin": true
+        },
+        {
+          "$type": "RPG.GameCore.TutorialLockPlayerAction"
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideHintWithText",
+          "Block": true,
+          "TargetEvent": [
+            {
+              "$type": "RPG.GameCore.WaitPlayerAction",
+              "ActionType": "AnyAction",
+              "Param": "ActivityMarbleBattlePage.BtnSealInfoItem2"
+            }
+          ],
+          "NodeIDList": [
+            "ActivityMarbleBattlePage.TurnDisplayPanel"
+          ],
+          "GuideTextType": "Talk",
+          "GuideTalkID": 590109,
+          "CustomTextDirection": "RightDown",
+          "GuideHintShowConfig": {},
+          "GuideTextShowConfig": {},
+          "GuideUIContextConfig": {},
+          "EnableActionList": [],
+          "ShowDelay": 1.7,
+          "DisableBlackMask": true
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideHintWithText",
+          "Block": true,
+          "TargetEvent": [
+            {
+              "$type": "RPG.GameCore.WaitPlayerAction",
+              "ActionType": "AnyAction"
+            }
+          ],
+          "NodeIDList": [
+            "PlayerBall_07.enm.1"
+          ],
+          "IsAutoMatchGuideHintType": false,
+          "GuideHintType": "ClickCircle",
+          "GuideTextType": "Talk",
+          "GuideText": "TutorialTextmap_552101",
+          "GuideTalkID": 590110,
+          "CustomTextDirection": "LeftUp",
+          "GuideHintShowConfig": {},
+          "GuideTextShowConfig": {},
+          "GuideUIContextConfig": {
+            "Type": "MainPage"
+          },
+          "EnableActionList": [],
+          "EnableBattleOperationList": [],
+          "DisableBlackMask": true
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideHintWithText",
+          "Block": true,
+          "TargetEvent": [
+            {
+              "$type": "RPG.GameCore.WaitPlayerAction",
+              "ActionType": "AnyAction"
+            }
+          ],
+          "NodeIDList": [
+            "PlayerBall_04"
+          ],
+          "IsAutoMatchGuideHintType": false,
+          "GuideHintType": "ClickCircle",
+          "GuideTextType": "Talk",
+          "GuideText": "TutorialTextmap_552101",
+          "GuideTalkID": 590111,
+          "CustomTextDirection": "RightDown",
+          "GuideHintShowConfig": {},
+          "GuideTextShowConfig": {},
+          "GuideUIContextConfig": {
+            "Type": "MainPage"
+          },
+          "EnableActionList": [],
+          "EnableBattleOperationList": [],
+          "DisableBlackMask": true
+        },
+        {
+          "$type": "RPG.GameCore.MarbleSimulateListener",
+          "OnSimulateEnd": [
+            {
+              "$type": "RPG.GameCore.MarblePauseGame",
+              "IsPause": true
+            },
+            {
+              "$type": "RPG.GameCore.ShowGuideHintWithText",
+              "Block": true,
+              "TargetEvent": [
+                {
+                  "$type": "RPG.GameCore.WaitPlayerAction",
+                  "ActionType": "AnyAction"
+                }
+              ],
+              "NodeIDList": [
+                "ActivityMarbleBattlePage.RoundPanel"
+              ],
+              "GuideTextType": "Talk",
+              "GuideTalkID": 590112,
+              "GuideHintShowConfig": {},
+              "GuideTextShowConfig": {},
+              "GuideUIContextConfig": {},
+              "EnableActionList": [],
+              "DisableBlackMask": true
+            },
+            {
+              "$type": "RPG.GameCore.MarblePauseGame"
+            },
+            {
+              "$type": "RPG.GameCore.TutorialClose"
+            }
+          ],
+          "Round": 1,
+          "InstanceId": 301
+        }
+      ]
+    }
+  ],
+  "ValueSource": {},
+  "EntityEventList": []
+}

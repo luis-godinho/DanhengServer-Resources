@@ -11,20 +11,28 @@
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 4294967296
+                "FixedValue": {
+                  "Value": 1
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288511663636480
+                "FixedValue": {
+                  "Value": 300005
                 }
               }
             }
           },
           "TargetEntityType": "LocalPlayer",
-          "TargetGroupID": {},
-          "TargetID": {},
+          "TargetGroupID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "TargetID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
           "TargetTypes": [],
           "ColliderRelativePath": "Trigger",
           "OnTriggerEnter": [
@@ -32,13 +40,9 @@
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "Mission_101140202"
-              },
-              "TaskEnabled": true
+              }
             }
-          ],
-          "SkipFakeAvatar": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     },
@@ -48,12 +52,10 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Mission_101140202"
-          },
-          "TaskEnabled": true
+          }
         },
         {
-          "$type": "RPG.GameCore.CreateTrialPlayer",
-          "TaskEnabled": true
+          "$type": "RPG.GameCore.CreateTrialPlayer"
         }
       ]
     },
@@ -63,31 +65,25 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Mission_101140202"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.TriggerPerformance",
           "ValueSource": {},
           "PerformanceType": "C",
-          "PerformanceID": 101140203,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 101140203
         },
         {
           "$type": "RPG.GameCore.TriggerPerformance",
           "ValueSource": {},
           "PerformanceType": "PlayVideo",
-          "PerformanceID": 101140202,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 101140202
         },
         {
           "$type": "RPG.GameCore.TriggerCustomString",
           "CustomString": {
             "Value": "battle_101140401"
-          },
-          "TaskEnabled": true
+          }
         }
       ]
     },
@@ -98,28 +94,25 @@
           "CustomString": {
             "Value": "battle_101140401"
           },
-          "GoNextImmediately": true,
-          "TaskEnabled": true
+          "GoNextImmediately": true
         },
         {
           "$type": "RPG.GameCore.TriggerBattle",
           "EventID": {
-            "fixedValue": {
-              "RawValue": 86470589455269888
+            "FixedValue": {
+              "Value": 20133004
             }
           },
           "GroupID": {
-            "fixedValue": {
-              "RawValue": 4294967296
+            "FixedValue": {
+              "Value": 1
             }
           },
           "BattleAreaID": {
-            "fixedValue": {
-              "RawValue": 4294967296
+            "FixedValue": {
+              "Value": 1
             }
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         }
       ]
     }

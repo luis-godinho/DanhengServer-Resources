@@ -1,0 +1,3204 @@
+{
+  "AbilityList": [
+    {
+      "Modifiers": {
+        "MMonster_XP_Elite01_02_MuteHitFly": {
+          "BehaviorFlagList": [
+            "MuteHitFly"
+          ]
+        },
+        "MMonster_XP_Elite01_02_Charge_Controller": {
+          "_CallbackList": [
+            {
+              "Event": "OnDestroy",
+              "CallbackConfig": [
+                {
+                  "$type": "RPG.GameCore.RemoveModifier",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "ModifierOwnerEntity"
+                  },
+                  "ModifierName": {
+                    "Value": "MMonster_XP_Elite01_02_Charge_Complete"
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.SetMonsterEnergyBarState",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "ModifierOwnerEntity"
+                  },
+                  "Active": "False",
+                  "CenterStyle": 3,
+                  "IconPath": "SpriteOutput/BuffIcon/Inlevel/IconMonsterBookBomb.png",
+                  "MaxCount": {
+                    "IsDynamic": true,
+                    "PostfixExpr": {
+                      "OpCodes": "AQAR",
+                      "FixedValues": [],
+                      "DynamicHashes": [
+                        1733046403
+                      ]
+                    }
+                  },
+                  "CurrentCount": {
+                    "FixedValue": {
+                      "Value": 0
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "Event": "OnStack",
+              "CallbackConfig": [
+                {
+                  "$type": "RPG.GameCore.SetMonsterEnergyBarState",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "ModifierOwnerEntity"
+                  },
+                  "Active": "True",
+                  "CenterStyle": 3,
+                  "IconPath": "SpriteOutput/BuffIcon/Inlevel/IconMonsterBookBomb.png",
+                  "MaxCount": {
+                    "IsDynamic": true,
+                    "PostfixExpr": {
+                      "OpCodes": "AQAR",
+                      "FixedValues": [],
+                      "DynamicHashes": [
+                        1733046403
+                      ]
+                    }
+                  },
+                  "CurrentCount": {
+                    "FixedValue": {
+                      "Value": 0
+                    }
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.TriggerEnergyBarEffect",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "ModifierOwnerEntity"
+                  }
+                }
+              ]
+            },
+            {
+              "Event": "OnAfterSkillUse",
+              "CallbackConfig": [
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByCurrentSkillName",
+                    "SkillNameList": [
+                      "Skill05"
+                    ]
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.RemoveModifier",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetAlias",
+                        "Alias": "ModifierOwnerEntity"
+                      },
+                      "ModifierName": {
+                        "Value": "MMonster_XP_Elite01_02_Charge_Complete"
+                      }
+                    },
+                    {
+                      "$type": "RPG.GameCore.SetDynamicValue",
+                      "Value": {
+                        "FixedValue": {
+                          "Value": 0
+                        }
+                      },
+                      "DynamicKey": {
+                        "Value": "_CurrentCount"
+                      }
+                    },
+                    {
+                      "$type": "RPG.GameCore.SetMonsterEnergyBarState",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetAlias",
+                        "Alias": "ModifierOwnerEntity"
+                      },
+                      "Active": "True",
+                      "CenterStyle": 3,
+                      "IconPath": "SpriteOutput/BuffIcon/Inlevel/IconMonsterBookBomb.png",
+                      "MaxCount": {
+                        "IsDynamic": true,
+                        "PostfixExpr": {
+                          "OpCodes": "AQAR",
+                          "FixedValues": [],
+                          "DynamicHashes": [
+                            1733046403
+                          ]
+                        }
+                      },
+                      "CurrentCount": {
+                        "IsDynamic": true,
+                        "PostfixExpr": {
+                          "OpCodes": "AQAR",
+                          "FixedValues": [],
+                          "DynamicHashes": [
+                            -224024795
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "$type": "RPG.GameCore.TriggerEnergyBarEffect",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetAlias",
+                        "Alias": "ModifierOwnerEntity"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Event": "OnModifierOnStack",
+              "CallbackConfig": [
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByCheckModifierCallBackName",
+                    "ModifierName": "MMonster_XP_Elite01_02_Charge"
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.SetDynamicValue",
+                      "Value": {
+                        "IsDynamic": true,
+                        "PostfixExpr": {
+                          "OpCodes": "AQAAAAIR",
+                          "FixedValues": [
+                            {
+                              "Value": 1
+                            }
+                          ],
+                          "DynamicHashes": [
+                            -224024795
+                          ]
+                        }
+                      },
+                      "DynamicKey": {
+                        "Value": "_CurrentCount"
+                      }
+                    },
+                    {
+                      "$type": "RPG.GameCore.PredicateTaskList",
+                      "Predicate": {
+                        "$type": "RPG.GameCore.ByCompareDynamicValue",
+                        "DynamicKey": {
+                          "Value": "_CurrentCount"
+                        },
+                        "CompareType": "GreaterEqual",
+                        "CompareValue": {
+                          "IsDynamic": true,
+                          "PostfixExpr": {
+                            "OpCodes": "AQAR",
+                            "FixedValues": [],
+                            "DynamicHashes": [
+                              1733046403
+                            ]
+                          }
+                        }
+                      },
+                      "SuccessTaskList": [
+                        {
+                          "$type": "RPG.GameCore.SetDynamicValue",
+                          "Value": {
+                            "IsDynamic": true,
+                            "PostfixExpr": {
+                              "OpCodes": "AQAR",
+                              "FixedValues": [],
+                              "DynamicHashes": [
+                                1733046403
+                              ]
+                            }
+                          },
+                          "DynamicKey": {
+                            "Value": "_CurrentCount"
+                          }
+                        },
+                        {
+                          "$type": "RPG.GameCore.AddModifier",
+                          "TargetType": {
+                            "$type": "RPG.GameCore.TargetAlias",
+                            "Alias": "Caster"
+                          },
+                          "ModifierName": {
+                            "Value": "MMonster_XP_Elite01_02_Charge_Complete"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "$type": "RPG.GameCore.SetMonsterEnergyBarState",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetAlias",
+                        "Alias": "ModifierOwnerEntity"
+                      },
+                      "Active": "True",
+                      "CenterStyle": 3,
+                      "IconPath": "SpriteOutput/BuffIcon/Inlevel/IconMonsterBookBomb.png",
+                      "MaxCount": {
+                        "IsDynamic": true,
+                        "PostfixExpr": {
+                          "OpCodes": "AQAR",
+                          "FixedValues": [],
+                          "DynamicHashes": [
+                            1733046403
+                          ]
+                        }
+                      },
+                      "CurrentCount": {
+                        "IsDynamic": true,
+                        "PostfixExpr": {
+                          "OpCodes": "AQAR",
+                          "FixedValues": [],
+                          "DynamicHashes": [
+                            -224024795
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "$type": "RPG.GameCore.TriggerEnergyBarEffect",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetAlias",
+                        "Alias": "ModifierOwnerEntity"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "DynamicValues": {
+            "Floats": {
+              "-224024795": {}
+            }
+          }
+        },
+        "MMonster_XP_Elite01_02_Charge_Complete": {
+          "_CallbackList": [
+            {
+              "Event": "OnBeingBreak",
+              "CallbackConfig": [
+                {
+                  "$type": "RPG.GameCore.DefineDynamicValue",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "Caster"
+                  },
+                  "DynamicKey": {
+                    "Value": "AIFlag"
+                  },
+                  "ResetValue": {
+                    "FixedValue": {
+                      "Value": 4
+                    }
+                  },
+                  "ContextScope": "TargetEntity"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "Name": "Monster_XP_Elite01_02_PassiveSkill01",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.AddModifier",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "ModifierName": {
+            "Value": "OneMorePerTurn"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.AddModifier",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "ModifierName": {
+            "Value": "MMonster_XP_Elite01_02_MuteHitFly"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.AddModifier",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "ModifierName": {
+            "Value": "MMonster_XP_Elite01_02_Charge_Controller"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Monster_XP_Elite01_02_Skill01_Phase01",
+      "TargetInfo": {
+        "TargetType": "SkillTargetEntityList"
+      },
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.SetTeamFormation",
+          "Team": "TeamLight",
+          "FormationType": "LightTeamNormal",
+          "ServantState": "DefaultFollow",
+          "CustomFormationIgnoreDying": false
+        },
+        {
+          "$type": "RPG.GameCore.SetTeamRootOffset",
+          "Team": "TeamLight",
+          "OriginPosTargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "DarkTeamCenter"
+          },
+          "Offset": {
+            "Z": 6
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAbility",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AbilityName": {
+            "Value": "Monster_XP_Elite01_02_Skill01_Phase02"
+          },
+          "IsSkillPerform": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAbility",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AbilityName": {
+            "Value": "Monster_XP_Elite01_02_Skill01_Camera"
+          },
+          "IsSkillPerform": true
+        },
+        {
+          "$type": "RPG.GameCore.LookAt",
+          "TargetType": "AbilityTargetEntity"
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAnimState",
+          "AnimStateName": "Skill01",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 1
+            }
+          },
+          "NormalizedTransitionDuration": {
+            "FixedValue": {
+              "Value": 0.15
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAnimState",
+          "AnimLogicState": "Idle",
+          "NormalizedTransitionDuration": {
+            "FixedValue": {
+              "Value": 0.25
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Monster_XP_Elite01_02_Skill01_Phase02",
+      "TargetInfo": {
+        "TargetType": "SkillTargetEntityList"
+      },
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "AnimStateName": "Skill01",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.0625
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.SkillExecutionStart"
+        },
+        {
+          "$type": "RPG.GameCore.TriggerEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_XP_Elite01_02/Eff_XP_Elite01_02_Skill01_Loop.prefab",
+          "UniqueEffectName": "Skill01",
+          "AttachPoint": "Origin",
+          "PositionOffset": {
+            "X": 1.5,
+            "Y": 3.5
+          },
+          "RotationOffset": {
+            "X": 30,
+            "Y": 25
+          }
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "AnimStateName": "Skill01",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.376
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.FireProjectile",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "AbilityTargetEntity"
+          },
+          "Projectile": {
+            "FlyTime": 0.15,
+            "TargetAttachPoint": "Root",
+            "FlyEffectUniqueName": "Skill01",
+            "HitEffect": "Effects/Eff_Prefab/Eff_Monster/Eff_XP_Elite01_02/Eff_XP_Elite01_02_Skill01_Hit.prefab",
+            "AlignHitEffect": true,
+            "BoomerangEccentricity": 0.5,
+            "BoomerangAngleRoll": -45,
+            "WriteProgressToEffectAnimator": true
+          },
+          "OnProjectileHit": [
+            {
+              "$type": "RPG.GameCore.AddModifier",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "ProjectileHitEntity"
+              },
+              "ModifierName": {
+                "Value": "MMonster_AML_Minion02_01_RallyHP_Controller_V2"
+              },
+              "DynamicValues": {
+                "MDF_RallyTransferRatio": {
+                  "IsDynamic": true,
+                  "PostfixExpr": {
+                    "OpCodes": "AQAR",
+                    "FixedValues": [],
+                    "DynamicHashes": [
+                      984371189
+                    ]
+                  }
+                },
+                "MDF_Rally_HealPercentage": {
+                  "IsDynamic": true,
+                  "PostfixExpr": {
+                    "OpCodes": "AQAR",
+                    "FixedValues": [],
+                    "DynamicHashes": [
+                      1692846945
+                    ]
+                  }
+                },
+                "MDF_Rally_HealUpRatio": {
+                  "IsDynamic": true,
+                  "PostfixExpr": {
+                    "OpCodes": "AQAR",
+                    "FixedValues": [],
+                    "DynamicHashes": [
+                      2099490446
+                    ]
+                  }
+                },
+                "MDF_Rally_Strongth_AllDamageTypeAddedRatio": {
+                  "IsDynamic": true,
+                  "PostfixExpr": {
+                    "OpCodes": "AQAR",
+                    "FixedValues": [],
+                    "DynamicHashes": [
+                      -1722292946
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.DamageByAttackProperty",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "ProjectileHitEntity"
+              },
+              "AttackProperty": {
+                "$type": "RPG.GameCore.AttackData",
+                "DamageType": {
+                  "DamageType": "Physical"
+                },
+                "DamagePercentage": {
+                  "IsDynamic": true,
+                  "PostfixExpr": {
+                    "OpCodes": "AQAR",
+                    "FixedValues": [],
+                    "DynamicHashes": [
+                      -1126825319
+                    ]
+                  }
+                },
+                "SPHitRatio": {
+                  "FixedValue": {
+                    "Value": 1
+                  }
+                },
+                "AttackType": "Normal",
+                "HitAnimation": "Hit_H"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.VCameraConfigChange",
+              "CameraConfig": {
+                "ShakeConfigV2": {
+                  "ShakeRange": 0.2,
+                  "ShakeTime": 0.2,
+                  "ShakeDir": {
+                    "Y": 0.2
+                  },
+                  "BaseCycle": 0.1,
+                  "CycleDamping": 0,
+                  "RangeAttenuation": 0.95,
+                  "PerlinNoiseAmplitude": {
+                    "X": 0.02,
+                    "Y": 0.03
+                  },
+                  "PerlinNoiseFreq": {
+                    "X": 5,
+                    "Y": 5
+                  },
+                  "RotationFreqV3": {
+                    "Z": 2
+                  }
+                }
+              }
+            }
+          ],
+          "WaitProjectileFinish": true
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "AnimStateName": "Skill01",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.38
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.DamagePerformFinish"
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "AnimStateName": "Skill01",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.8
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.SkillPerformFinish"
+        }
+      ]
+    },
+    {
+      "Name": "Monster_XP_Elite01_02_Skill02_Phase01",
+      "TargetInfo": {
+        "TargetType": "AllEnemy"
+      },
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.SetTeamFormation",
+          "Team": "TeamLight",
+          "FormationType": "LightTeamNormal",
+          "ServantState": "DefaultFollow",
+          "CustomFormationIgnoreDying": false
+        },
+        {
+          "$type": "RPG.GameCore.SetTeamRootOffset",
+          "Team": "TeamLight",
+          "OriginPosTargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "DarkTeamCenter"
+          },
+          "Offset": {
+            "Z": 6
+          }
+        },
+        {
+          "$type": "RPG.GameCore.MoveToTargetPosition",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "DarkTeamCenter"
+          },
+          "IgnoreRadius": true,
+          "OffsetTargetDistance": {
+            "FixedValue": {
+              "Value": 0
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.LookAt",
+          "TargetType": "EnemyTeamCenter"
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAbility",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AbilityName": {
+            "Value": "Monster_XP_Elite01_02_Skill02_Phase02"
+          },
+          "IsSkillPerform": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAbility",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AbilityName": {
+            "Value": "Monster_XP_Elite01_02_Skill02_Camera"
+          },
+          "IsSkillPerform": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAnimState",
+          "AnimStateName": "Skill05",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 1
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAnimState",
+          "AnimLogicState": "Idle",
+          "AnimStateName": "StandBy"
+        },
+        {
+          "$type": "RPG.GameCore.LookAt",
+          "TargetType": "TeamFormation"
+        }
+      ]
+    },
+    {
+      "Modifiers": {
+        "MMonster_XP_Elite01_02_Skill02AlreadyAttacked": {}
+      },
+      "Name": "Monster_XP_Elite01_02_Skill02_Phase02",
+      "TargetInfo": {
+        "TargetType": "AllEnemy"
+      },
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill05",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.05
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.SkillExecutionStart"
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill05",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.118
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TriggerEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_XP_Elite01_02/Eff_XP_Elite01_02_Skill02_Loop.prefab",
+          "UniqueEffectName": "FireBall1",
+          "AttachPoint": "Origin",
+          "PositionOffset": {
+            "X": 2.5,
+            "Y": 2.8
+          },
+          "RotationOffset": {
+            "X": 30,
+            "Y": -10
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TriggerEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_XP_Elite01_02/Eff_XP_Elite01_02_Skill02_Loop.prefab",
+          "UniqueEffectName": "FireBall4",
+          "AttachPoint": "Origin",
+          "PositionOffset": {
+            "X": -2.5,
+            "Y": 2.8
+          },
+          "RotationOffset": {
+            "X": 30,
+            "Y": 10
+          }
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill05",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.194
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TriggerEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_XP_Elite01_02/Eff_XP_Elite01_02_Skill02_Loop.prefab",
+          "UniqueEffectName": "FireBall3",
+          "AttachPoint": "Origin",
+          "PositionOffset": {
+            "X": 1.6,
+            "Y": 4.15
+          },
+          "RotationOffset": {
+            "X": 45
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TriggerEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_XP_Elite01_02/Eff_XP_Elite01_02_Skill02_Loop.prefab",
+          "UniqueEffectName": "FireBall2",
+          "AttachPoint": "Origin",
+          "PositionOffset": {
+            "X": -1.6,
+            "Y": 4.15
+          },
+          "RotationOffset": {
+            "X": 45
+          }
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill05",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.271
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TriggerEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_XP_Elite01_02/Eff_XP_Elite01_02_Skill02_Loop.prefab",
+          "UniqueEffectName": "FireBall5",
+          "AttachPoint": "Origin",
+          "PositionOffset": {
+            "Y": 4.9
+          },
+          "RotationOffset": {
+            "X": 45
+          }
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill05",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.525
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.SetDynamicValue",
+          "ContextScope": "ContextAbility",
+          "Value": {
+            "FixedValue": {
+              "Value": 1
+            }
+          },
+          "DynamicKey": {
+            "Value": "FireBallNum"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TriggerParallelTaskListTemplate",
+          "Templates": [
+            {
+              "Name": "Monster_XP_Elite01_02_Skill02_Ball_ParallelTargetFinding",
+              "DelayInterval": {
+                "FixedValue": {
+                  "Value": 0.2537
+                }
+              },
+              "ParallelCount": {
+                "FixedValue": {
+                  "Value": 5
+                }
+              }
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill05",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.9
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.RemoveEffect",
+          "UniqueEffectName": "FireBall1",
+          "IsNeedFadeOut": false
+        },
+        {
+          "$type": "RPG.GameCore.RemoveEffect",
+          "UniqueEffectName": "FireBall2",
+          "IsNeedFadeOut": false
+        },
+        {
+          "$type": "RPG.GameCore.RemoveEffect",
+          "UniqueEffectName": "FireBall3",
+          "IsNeedFadeOut": false
+        },
+        {
+          "$type": "RPG.GameCore.RemoveEffect",
+          "UniqueEffectName": "FireBall4",
+          "IsNeedFadeOut": false
+        },
+        {
+          "$type": "RPG.GameCore.RemoveEffect",
+          "UniqueEffectName": "FireBall5",
+          "IsNeedFadeOut": false
+        },
+        {
+          "$type": "RPG.GameCore.DamagePerformFinish"
+        },
+        {
+          "$type": "RPG.GameCore.SkillPerformFinish"
+        }
+      ],
+      "DynamicValues": {
+        "Floats": {
+          "-1625654895": {}
+        }
+      },
+      "TaskListTemplate": [
+        {
+          "Name": "Monster_XP_Elite01_02_Skill02_Ball_ParallelTargetFinding",
+          "TaskList": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareDynamicValue",
+                "DynamicKey": {
+                  "Value": "FireBallNum"
+                },
+                "ContextScope": "ContextAbility",
+                "CompareType": "Equal",
+                "CompareValue": {
+                  "FixedValue": {
+                    "Value": 1
+                  }
+                }
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.Retarget",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "TauntOrRandomEnemy"
+                  },
+                  "MaxNumber": {
+                    "FixedValue": {
+                      "Value": 1
+                    }
+                  },
+                  "TaskList": [
+                    {
+                      "$type": "RPG.GameCore.TriggerParallelTaskListTemplate",
+                      "Templates": [
+                        {
+                          "Name": "Monster_XP_Elite01_02_Skill02_Ball_Fire"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "FailedTaskList": [
+                {
+                  "$type": "RPG.GameCore.Retarget",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "AllEnemy"
+                  },
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByIsContainModifier",
+                    "TargetType": {
+                      "$type": "RPG.GameCore.TargetAlias",
+                      "Alias": "ParamEntity"
+                    },
+                    "ModifierName": {
+                      "Value": "MMonster_XP_Elite01_02_Skill02AlreadyAttacked"
+                    },
+                    "Inverse": true
+                  },
+                  "ByRandom": true,
+                  "MaxNumber": {
+                    "FixedValue": {
+                      "Value": 1
+                    }
+                  },
+                  "TaskList": [
+                    {
+                      "$type": "RPG.GameCore.TriggerParallelTaskListTemplate",
+                      "Templates": [
+                        {
+                          "Name": "Monster_XP_Elite01_02_Skill02_Ball_Fire"
+                        }
+                      ]
+                    }
+                  ],
+                  "FailedTaskList": [
+                    {
+                      "$type": "RPG.GameCore.RemoveModifier",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetAlias",
+                        "Alias": "AllEnemy"
+                      },
+                      "ModifierName": {
+                        "Value": "MMonster_XP_Elite01_02_Skill02AlreadyAttacked"
+                      }
+                    },
+                    {
+                      "$type": "RPG.GameCore.Retarget",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetAlias",
+                        "Alias": "AllEnemy"
+                      },
+                      "ByRandom": true,
+                      "MaxNumber": {
+                        "FixedValue": {
+                          "Value": 1
+                        }
+                      },
+                      "TaskList": [
+                        {
+                          "$type": "RPG.GameCore.TriggerParallelTaskListTemplate",
+                          "Templates": [
+                            {
+                              "Name": "Monster_XP_Elite01_02_Skill02_Ball_Fire"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Name": "Monster_XP_Elite01_02_Skill02_Ball_Fire",
+          "TaskList": [
+            {
+              "$type": "RPG.GameCore.RemoveModifier",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "AllEnemy"
+              },
+              "ModifierName": {
+                "Value": "MMonster_XP_Elite01_02_Skill02AlreadyAttacked"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.AddModifier",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "ParamEntity"
+              },
+              "ModifierName": {
+                "Value": "MMonster_XP_Elite01_02_Skill02AlreadyAttacked"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.SwitchCaseByDynamicValue",
+              "Switch": {
+                "IsDynamic": true,
+                "PostfixExpr": {
+                  "OpCodes": "AQAR",
+                  "FixedValues": [],
+                  "DynamicHashes": [
+                    -1625654895
+                  ]
+                }
+              },
+              "CaseTaskList": [
+                {
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 1
+                    }
+                  },
+                  "TaskList": [
+                    {
+                      "$type": "RPG.GameCore.TriggerEffect",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetAlias",
+                        "Alias": "Caster"
+                      },
+                      "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_XP_Elite01_02/Eff_XP_Elite01_02_Skill02_Loop_end.prefab",
+                      "AttachPoint": "Origin",
+                      "PositionOffset": {
+                        "X": 2.5,
+                        "Y": 2.8
+                      }
+                    }
+                  ]
+                },
+                {
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 2
+                    }
+                  },
+                  "TaskList": [
+                    {
+                      "$type": "RPG.GameCore.TriggerEffect",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetAlias",
+                        "Alias": "Caster"
+                      },
+                      "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_XP_Elite01_02/Eff_XP_Elite01_02_Skill02_Loop_end.prefab",
+                      "AttachPoint": "Origin",
+                      "PositionOffset": {
+                        "X": -1.6,
+                        "Y": 4.15
+                      }
+                    }
+                  ]
+                },
+                {
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 3
+                    }
+                  },
+                  "TaskList": [
+                    {
+                      "$type": "RPG.GameCore.TriggerEffect",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetAlias",
+                        "Alias": "Caster"
+                      },
+                      "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_XP_Elite01_02/Eff_XP_Elite01_02_Skill02_Loop_end.prefab",
+                      "AttachPoint": "Origin",
+                      "PositionOffset": {
+                        "X": 1.6,
+                        "Y": 4.15
+                      }
+                    }
+                  ]
+                },
+                {
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 4
+                    }
+                  },
+                  "TaskList": [
+                    {
+                      "$type": "RPG.GameCore.TriggerEffect",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetAlias",
+                        "Alias": "Caster"
+                      },
+                      "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_XP_Elite01_02/Eff_XP_Elite01_02_Skill02_Loop_end.prefab",
+                      "AttachPoint": "Origin",
+                      "PositionOffset": {
+                        "X": -2.5,
+                        "Y": 2.8
+                      }
+                    }
+                  ]
+                },
+                {
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 5
+                    }
+                  },
+                  "TaskList": [
+                    {
+                      "$type": "RPG.GameCore.TriggerEffect",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetAlias",
+                        "Alias": "Caster"
+                      },
+                      "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_XP_Elite01_02/Eff_XP_Elite01_02_Skill02_Loop_end.prefab",
+                      "AttachPoint": "Origin",
+                      "PositionOffset": {
+                        "Y": 4.9
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.WaitParallelTimeStamp",
+              "WaitTime": {
+                "FixedValue": {
+                  "Value": 0.086
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.FireProjectile",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "ParamEntity"
+              },
+              "Projectile": {
+                "FlyTime": 0.2,
+                "TargetAttachPoint": "Root",
+                "FlyEffectUniqueName": "FireBall{FireBallNum}",
+                "HitEffect": "Effects/Eff_Prefab/Eff_Monster/Eff_XP_Elite01_02/Eff_XP_Elite01_02_Skill01_Hit.prefab",
+                "AlignHitEffect": true,
+                "BoomerangEccentricity": 0.5,
+                "BoomerangAngleRoll": -45,
+                "WriteProgressToEffectAnimator": true
+              },
+              "OnProjectileHit": [
+                {
+                  "$type": "RPG.GameCore.VCameraConfigChange",
+                  "CameraConfig": {
+                    "ShakeConfigV2": {
+                      "ShakeRange": 0.2,
+                      "ShakeTime": 0.2,
+                      "ShakeDir": {
+                        "Y": 0.2
+                      },
+                      "BaseCycle": 0.1,
+                      "CycleDamping": 0,
+                      "RangeAttenuation": 0.95,
+                      "PerlinNoiseAmplitude": {
+                        "X": 0.02,
+                        "Y": 0.03
+                      },
+                      "PerlinNoiseFreq": {
+                        "X": 5,
+                        "Y": 5
+                      },
+                      "RotationFreqV3": {
+                        "Z": 2
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.SetDynamicValueByAddValue",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "Key": {
+                "Value": "FireBallNum"
+              },
+              "AddValue": {
+                "FixedValue": {
+                  "Value": 1
+                }
+              },
+              "Min": {
+                "FixedValue": {
+                  "Value": 0
+                }
+              },
+              "Max": {
+                "FixedValue": {
+                  "Value": 100
+                }
+              },
+              "ContextScope": "ContextAbility"
+            },
+            {
+              "$type": "RPG.GameCore.WaitParallelTimeStamp",
+              "WaitTime": {
+                "FixedValue": {
+                  "Value": 0.286
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareHPRatio",
+                "TargetType": {
+                  "$type": "RPG.GameCore.TargetAlias",
+                  "Alias": "ParamEntity"
+                },
+                "CompareType": "Greater",
+                "CompareValue": {
+                  "FixedValue": {
+                    "Value": 0
+                  }
+                }
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.AddModifier",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "ParamEntity"
+                  },
+                  "ModifierName": {
+                    "Value": "MMonster_AML_Minion02_01_RallyHP_Controller_V2"
+                  },
+                  "DynamicValues": {
+                    "MDF_RallyTransferRatio": {
+                      "IsDynamic": true,
+                      "PostfixExpr": {
+                        "OpCodes": "AQAR",
+                        "FixedValues": [],
+                        "DynamicHashes": [
+                          984371189
+                        ]
+                      }
+                    },
+                    "MDF_Rally_HealPercentage": {
+                      "IsDynamic": true,
+                      "PostfixExpr": {
+                        "OpCodes": "AQAR",
+                        "FixedValues": [],
+                        "DynamicHashes": [
+                          1692846945
+                        ]
+                      }
+                    },
+                    "MDF_Rally_HealUpRatio": {
+                      "IsDynamic": true,
+                      "PostfixExpr": {
+                        "OpCodes": "AQAR",
+                        "FixedValues": [],
+                        "DynamicHashes": [
+                          2099490446
+                        ]
+                      }
+                    },
+                    "MDF_Rally_Strongth_AllDamageTypeAddedRatio": {
+                      "IsDynamic": true,
+                      "PostfixExpr": {
+                        "OpCodes": "AQAR",
+                        "FixedValues": [],
+                        "DynamicHashes": [
+                          -1722292946
+                        ]
+                      }
+                    }
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.DamageByAttackProperty",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "ParamEntity"
+                  },
+                  "AttackProperty": {
+                    "$type": "RPG.GameCore.AttackData",
+                    "DamageType": {
+                      "DamageType": "Physical"
+                    },
+                    "DamagePercentage": {
+                      "IsDynamic": true,
+                      "PostfixExpr": {
+                        "OpCodes": "AQAR",
+                        "FixedValues": [],
+                        "DynamicHashes": [
+                          -1847083384
+                        ]
+                      }
+                    },
+                    "SPHitRatio": {
+                      "FixedValue": {
+                        "Value": 1
+                      }
+                    },
+                    "HitAnimation": "Hit_H",
+                    "HitPosHeight": 1
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "Monster_XP_Elite01_02_Skill03_Phase01",
+      "TargetInfo": {
+        "TargetType": "AllEnemy"
+      },
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.MoveToTargetPosition",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "DarkTeamCenter"
+          },
+          "IgnoreRadius": true,
+          "OffsetTargetDistance": {
+            "FixedValue": {
+              "Value": 0
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.SetTeamFormation",
+          "Team": "TeamLight",
+          "FormationType": "LightTeamNormal",
+          "ServantState": "DefaultFollow",
+          "CustomFormationIgnoreDying": false
+        },
+        {
+          "$type": "RPG.GameCore.SetTeamRootOffset",
+          "Team": "TeamLight",
+          "OriginPosTargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "DarkTeamCenter"
+          },
+          "Offset": {
+            "Z": 6
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAbility",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AbilityName": {
+            "Value": "Monster_XP_Elite01_02_Skill03_Camera"
+          },
+          "IsSkillPerform": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAbility",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AbilityName": {
+            "Value": "Monster_XP_Elite01_02_Skill03_Phase02"
+          },
+          "IsSkillPerform": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAnimState",
+          "AnimStateName": "Skill08",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 1
+            }
+          },
+          "NormalizedTimeWait": {
+            "FixedValue": {
+              "Value": 0.87
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAnimState",
+          "AnimLogicState": "Idle"
+        }
+      ]
+    },
+    {
+      "Name": "Monster_XP_Elite01_02_Skill03_Phase02",
+      "TargetInfo": {
+        "TargetType": "AllEnemy"
+      },
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill08",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.0009999999
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.GlobalMainIntensityEffect",
+          "TargetIntensity": 0.4,
+          "FadeDuration": 0.5
+        },
+        {
+          "$type": "RPG.GameCore.Retarget",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "AllEnemy"
+          },
+          "Predicate": {
+            "$type": "RPG.GameCore.ByIsContainModifier",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetAlias",
+              "Alias": "ParamEntity"
+            },
+            "ModifierName": {
+              "Value": "MMonster_AML_Minion02_01_RallyHP_V2"
+            }
+          },
+          "TaskList": [
+            {
+              "$type": "RPG.GameCore.SetDynamicValue",
+              "Value": {
+                "IsDynamic": true,
+                "PostfixExpr": {
+                  "OpCodes": "AQAAAAIR",
+                  "FixedValues": [
+                    {
+                      "Value": 1
+                    }
+                  ],
+                  "DynamicHashes": [
+                    1097317365
+                  ]
+                }
+              },
+              "DynamicKey": {
+                "Value": "RallyCount"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.TriggerEffect",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "ParamEntity"
+              },
+              "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_XP_Elite01_02/Eff_XP_Elite01_02_Skill03_xi_01.prefab",
+              "UniqueEffectName": "Line1{RallyCount}"
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill08",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.0019999999
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.ConditionLoopExecuteTaskListWithInterval",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByCompareDynamicValue",
+            "DynamicKey": {
+              "Value": "RallyCount"
+            },
+            "CompareType": "Greater",
+            "CompareValue": {
+              "FixedValue": {
+                "Value": 0
+              }
+            }
+          },
+          "TaskList": [
+            {
+              "$type": "RPG.GameCore.FireProjectile",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "Projectile": {
+                "Behavior": "HalfBoomerang",
+                "FlyTime": 0.7,
+                "TargetOffset": {
+                  "Y": 2.5
+                },
+                "FlyEffectUniqueName": "Line1{RallyCount}",
+                "FlyEffectFadeOut": true,
+                "BoomerangEccentricity": 0.8,
+                "BoomerangAngleRoll": 90,
+                "WriteProgressToEffectAnimator": true,
+                "TriggerHitCallback": false
+              }
+            },
+            {
+              "$type": "RPG.GameCore.SetDynamicValue",
+              "Value": {
+                "IsDynamic": true,
+                "PostfixExpr": {
+                  "OpCodes": "AQAAAAMR",
+                  "FixedValues": [
+                    {
+                      "Value": 1
+                    }
+                  ],
+                  "DynamicHashes": [
+                    1097317365
+                  ]
+                }
+              },
+              "DynamicKey": {
+                "Value": "RallyCount"
+              }
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill08",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.086
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TriggerEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_XP_Elite01_02/Eff_XP_Elite01_02_Skill03_Loop_start.prefab"
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill08",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.111
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.Retarget",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "AllEnemy"
+          },
+          "Predicate": {
+            "$type": "RPG.GameCore.ByIsContainModifier",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetAlias",
+              "Alias": "ParamEntity"
+            },
+            "ModifierName": {
+              "Value": "MMonster_AML_Minion02_01_RallyHP_V2"
+            }
+          },
+          "TaskList": [
+            {
+              "$type": "RPG.GameCore.SetDynamicValue",
+              "Value": {
+                "IsDynamic": true,
+                "PostfixExpr": {
+                  "OpCodes": "AQAAAAIR",
+                  "FixedValues": [
+                    {
+                      "Value": 1
+                    }
+                  ],
+                  "DynamicHashes": [
+                    1097317365
+                  ]
+                }
+              },
+              "DynamicKey": {
+                "Value": "RallyCount"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.TriggerEffect",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "ParamEntity"
+              },
+              "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_XP_Elite01_02/Eff_XP_Elite01_02_Skill03_xi_01.prefab",
+              "UniqueEffectName": "Line2{RallyCount}"
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill08",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.112
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.ConditionLoopExecuteTaskListWithInterval",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByCompareDynamicValue",
+            "DynamicKey": {
+              "Value": "RallyCount"
+            },
+            "CompareType": "Greater",
+            "CompareValue": {
+              "FixedValue": {
+                "Value": 0
+              }
+            }
+          },
+          "TaskList": [
+            {
+              "$type": "RPG.GameCore.FireProjectile",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "Projectile": {
+                "Behavior": "HalfBoomerang",
+                "FlyTime": 0.7,
+                "TargetOffset": {
+                  "Y": 2.5
+                },
+                "FlyEffectUniqueName": "Line2{RallyCount}",
+                "FlyEffectFadeOut": true,
+                "BoomerangEccentricity": 0.8,
+                "BoomerangAngleRoll": 90,
+                "WriteProgressToEffectAnimator": true,
+                "TriggerHitCallback": false
+              }
+            },
+            {
+              "$type": "RPG.GameCore.SetDynamicValue",
+              "Value": {
+                "IsDynamic": true,
+                "PostfixExpr": {
+                  "OpCodes": "AQAAAAMR",
+                  "FixedValues": [
+                    {
+                      "Value": 1
+                    }
+                  ],
+                  "DynamicHashes": [
+                    1097317365
+                  ]
+                }
+              },
+              "DynamicKey": {
+                "Value": "RallyCount"
+              }
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill08",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.221
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.Retarget",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "AllEnemy"
+          },
+          "Predicate": {
+            "$type": "RPG.GameCore.ByIsContainModifier",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetAlias",
+              "Alias": "ParamEntity"
+            },
+            "ModifierName": {
+              "Value": "MMonster_AML_Minion02_01_RallyHP_V2"
+            }
+          },
+          "TaskList": [
+            {
+              "$type": "RPG.GameCore.SetDynamicValue",
+              "Value": {
+                "IsDynamic": true,
+                "PostfixExpr": {
+                  "OpCodes": "AQAAAAIR",
+                  "FixedValues": [
+                    {
+                      "Value": 1
+                    }
+                  ],
+                  "DynamicHashes": [
+                    1097317365
+                  ]
+                }
+              },
+              "DynamicKey": {
+                "Value": "RallyCount"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.TriggerEffect",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "ParamEntity"
+              },
+              "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_XP_Elite01_02/Eff_XP_Elite01_02_Skill03_xi_01.prefab",
+              "UniqueEffectName": "Line3{RallyCount}"
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill08",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.222
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.ConditionLoopExecuteTaskListWithInterval",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByCompareDynamicValue",
+            "DynamicKey": {
+              "Value": "RallyCount"
+            },
+            "CompareType": "Greater",
+            "CompareValue": {
+              "FixedValue": {
+                "Value": 0
+              }
+            }
+          },
+          "TaskList": [
+            {
+              "$type": "RPG.GameCore.FireProjectile",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "Projectile": {
+                "Behavior": "HalfBoomerang",
+                "FlyTime": 0.7,
+                "TargetOffset": {
+                  "Y": 2.5
+                },
+                "FlyEffectUniqueName": "Line3{RallyCount}",
+                "FlyEffectFadeOut": true,
+                "BoomerangEccentricity": 0.8,
+                "BoomerangAngleRoll": 90,
+                "WriteProgressToEffectAnimator": true,
+                "TriggerHitCallback": false
+              }
+            },
+            {
+              "$type": "RPG.GameCore.SetDynamicValue",
+              "Value": {
+                "IsDynamic": true,
+                "PostfixExpr": {
+                  "OpCodes": "AQAAAAMR",
+                  "FixedValues": [
+                    {
+                      "Value": 1
+                    }
+                  ],
+                  "DynamicHashes": [
+                    1097317365
+                  ]
+                }
+              },
+              "DynamicKey": {
+                "Value": "RallyCount"
+              }
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.Retarget",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "AllEnemy"
+          },
+          "Predicate": {
+            "$type": "RPG.GameCore.ByIsContainModifier",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetAlias",
+              "Alias": "ParamEntity"
+            },
+            "ModifierName": {
+              "Value": "MMonster_AML_Minion02_01_RallyHP_V2"
+            }
+          },
+          "TaskList": [
+            {
+              "$type": "RPG.GameCore.SetDynamicValue",
+              "Value": {
+                "IsDynamic": true,
+                "PostfixExpr": {
+                  "OpCodes": "AQAAAAIR",
+                  "FixedValues": [
+                    {
+                      "Value": 1
+                    }
+                  ],
+                  "DynamicHashes": [
+                    1097317365
+                  ]
+                }
+              },
+              "DynamicKey": {
+                "Value": "RallyCount"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.TriggerEffect",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "ParamEntity"
+              },
+              "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_XP_Elite01_02/Eff_XP_Elite01_02_Skill03_Loop.prefab",
+              "UniqueEffectName": "AvatarEnergy{RallyCount}"
+            },
+            {
+              "$type": "RPG.GameCore.TriggerEffect",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "ParamEntity"
+              },
+              "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_XP_Elite01_02/Eff_XP_Elite01_02_Skill03_Hit.prefab"
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill08",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.223
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.Retarget",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "AllEnemy"
+          },
+          "Predicate": {
+            "$type": "RPG.GameCore.ByIsContainModifier",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetAlias",
+              "Alias": "ParamEntity"
+            },
+            "ModifierName": {
+              "Value": "MMonster_AML_Minion02_01_RallyHP_V2"
+            }
+          },
+          "TaskList": [
+            {
+              "$type": "RPG.GameCore.ShowEntityFloatMessage",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "ParamEntity"
+              },
+              "AliveOnly": true,
+              "ContentID": {
+                "Hash": 987026338209847633
+              }
+            },
+            {
+              "$type": "RPG.GameCore.TriggerAnimState",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "ParamEntity"
+              },
+              "AnimLogicState": "OnHit",
+              "AnimStateName": "Hit_H"
+            },
+            {
+              "$type": "RPG.GameCore.RemoveModifier",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "ParamEntity"
+              },
+              "ModifierName": {
+                "Value": "MMonster_AML_Minion02_01_RallyHP_V2"
+              }
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill08",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.224
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.ConditionLoopExecuteTaskListWithInterval",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByCompareDynamicValue",
+            "DynamicKey": {
+              "Value": "RallyCount"
+            },
+            "CompareType": "Greater",
+            "CompareValue": {
+              "FixedValue": {
+                "Value": 1
+              }
+            }
+          },
+          "TaskList": [
+            {
+              "$type": "RPG.GameCore.FireProjectile",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "Projectile": {
+                "Behavior": "HalfBoomerang",
+                "FlyTime": 1,
+                "TargetOffset": {
+                  "Y": 2.5
+                },
+                "FlyEffectUniqueName": "AvatarEnergy{RallyCount}",
+                "FlyEffectFadeOut": true,
+                "BoomerangEccentricity": 0.8,
+                "BoomerangAngleRoll": 90,
+                "WriteProgressToEffectAnimator": true
+              },
+              "OnProjectileHit": [
+                {
+                  "$type": "RPG.GameCore.AddModifier",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "Caster"
+                  },
+                  "ModifierName": {
+                    "Value": "MMonster_XP_Elite01_02_Charge"
+                  }
+                }
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.SetDynamicValue",
+              "Value": {
+                "IsDynamic": true,
+                "PostfixExpr": {
+                  "OpCodes": "AQAAAAMR",
+                  "FixedValues": [
+                    {
+                      "Value": 1
+                    }
+                  ],
+                  "DynamicHashes": [
+                    1097317365
+                  ]
+                }
+              },
+              "DynamicKey": {
+                "Value": "RallyCount"
+              }
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.FireProjectile",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "Projectile": {
+            "Behavior": "HalfBoomerang",
+            "FlyTime": 1,
+            "TargetOffset": {
+              "Y": 2.5
+            },
+            "FlyEffectUniqueName": "AvatarEnergy{RallyCount}",
+            "FlyEffectFadeOut": true,
+            "BoomerangEccentricity": 0.8,
+            "BoomerangAngleRoll": 90,
+            "WriteProgressToEffectAnimator": true
+          },
+          "OnProjectileHit": [
+            {
+              "$type": "RPG.GameCore.AddModifier",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "ModifierName": {
+                "Value": "MMonster_XP_Elite01_02_Charge"
+              }
+            }
+          ],
+          "WaitProjectileFinish": true
+        },
+        {
+          "$type": "RPG.GameCore.SetDynamicValue",
+          "Value": {
+            "IsDynamic": true,
+            "PostfixExpr": {
+              "OpCodes": "AQAAAAMR",
+              "FixedValues": [
+                {
+                  "Value": 1
+                }
+              ],
+              "DynamicHashes": [
+                1097317365
+              ]
+            }
+          },
+          "DynamicKey": {
+            "Value": "RallyCount"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill08",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.52
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TriggerEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_XP_Elite01_02/Eff_XP_Elite01_02_Skill03_Success.prefab"
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill08",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.61
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.GlobalMainIntensityEffect",
+          "IsRevert": true,
+          "FadeDuration": 0.4
+        },
+        {
+          "$type": "RPG.GameCore.SkillPerformFinish"
+        }
+      ],
+      "DynamicValues": {
+        "Floats": {
+          "1097317365": {}
+        }
+      }
+    },
+    {
+      "Name": "Monster_XP_Elite01_02_Skill06_Phase01",
+      "TargetInfo": {
+        "TargetType": "AllEnemy"
+      },
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.TriggerAbility",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AbilityName": {
+            "Value": "Monster_XP_Elite01_02_Skill06_Camera"
+          },
+          "IsSkillPerform": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAbility",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AbilityName": {
+            "Value": "Monster_XP_Elite01_02_Skill06_Phase02"
+          },
+          "IsSkillPerform": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAnimState",
+          "AnimStateName": "Skill07",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 1
+            }
+          },
+          "NormalizedTimeWait": {
+            "FixedValue": {
+              "Value": 0.7
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAnimState",
+          "AnimLogicState": "Idle"
+        }
+      ],
+      "DynamicValues": {
+        "Floats": {
+          "1097317365": {}
+        }
+      }
+    },
+    {
+      "Modifiers": {
+        "MMonster_XP_Elite01_02_DefenceDown": {
+          "_CallbackList": [
+            {
+              "Event": "OnStack",
+              "CallbackConfig": [
+                {
+                  "$type": "RPG.GameCore.TriggerEffect",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "ModifierOwnerEntity"
+                  },
+                  "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_XP_Elite01_02/Eff_XP_Elite01_02_Skill03_Fail.prefab"
+                },
+                {
+                  "$type": "RPG.GameCore.StackProperty",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "ModifierOwnerEntity"
+                  },
+                  "Property": "DefenceAddedRatio",
+                  "PropertyValue": {
+                    "IsDynamic": true,
+                    "PostfixExpr": {
+                      "OpCodes": "AAAOAQAEEQ==",
+                      "FixedValues": [
+                        {
+                          "Value": 1
+                        }
+                      ],
+                      "DynamicHashes": [
+                        -1553598528
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "Stacking": "Replace"
+        }
+      },
+      "Name": "Monster_XP_Elite01_02_Skill06_Phase02",
+      "TargetInfo": {
+        "TargetType": "AllEnemy"
+      },
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill07",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.076
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.GlobalMainIntensityEffect",
+          "TargetIntensity": 0.4,
+          "FadeDuration": 0.5
+        },
+        {
+          "$type": "RPG.GameCore.TriggerEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_XP_Elite01_02/Eff_XP_Elite01_02_Skill03_Loop_start.prefab"
+        },
+        {
+          "$type": "RPG.GameCore.SetTeamFormation",
+          "Team": "TeamLight",
+          "FormationType": "LightTeamNormal",
+          "CustomFormationIgnoreDying": false
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill07",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.422
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.AddModifier",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "ModifierName": {
+            "Value": "MMonster_XP_Elite01_02_DefenceDown"
+          },
+          "LifeTime": {
+            "IsDynamic": true,
+            "PostfixExpr": {
+              "OpCodes": "AQAR",
+              "FixedValues": [],
+              "DynamicHashes": [
+                1541391009
+              ]
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.SetBattleAchievement",
+          "AchievementID": 30193
+        },
+        {
+          "$type": "RPG.GameCore.GlobalMainIntensityEffect",
+          "IsRevert": true,
+          "FadeDuration": 0.4
+        },
+        {
+          "$type": "RPG.GameCore.SkillPerformFinish"
+        }
+      ],
+      "DynamicValues": {
+        "Floats": {
+          "1097317365": {}
+        }
+      }
+    },
+    {
+      "Name": "Monster_XP_Elite01_02_Skill04_Phase01",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.TriggerAbility",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AbilityName": {
+            "Value": "Monster_XP_Elite01_02_Skill04_Phase02"
+          },
+          "IsSkillPerform": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAbility",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AbilityName": {
+            "Value": "Monster_XP_Elite01_02_Skill04_Camera"
+          },
+          "IsSkillPerform": true
+        },
+        {
+          "$type": "RPG.GameCore.AnimSetParameter",
+          "ParameterName": "Skill",
+          "ParameterType": "Int",
+          "Value": {
+            "FixedValue": {
+              "Value": 2
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAnimState",
+          "AnimStateName": "Skill02",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 1
+            }
+          },
+          "NormalizedTransitionDuration": {
+            "FixedValue": {
+              "Value": 0.15
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.AnimSetParameter",
+          "ParameterName": "Skill",
+          "ParameterType": "Int"
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAnimState",
+          "AnimLogicState": "Idle",
+          "NormalizedTransitionDuration": {
+            "FixedValue": {
+              "Value": 0.25
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Modifiers": {
+        "MMonster_XP_Elite01_02_Charge_Enhance": {
+          "_CallbackList": [
+            {
+              "Event": "OnDestroy",
+              "CallbackConfig": [
+                {
+                  "$type": "RPG.GameCore.RemoveEffect",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "ModifierOwnerEntity"
+                  },
+                  "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_XP_Elite01_02/Eff_XP_Elite01_02_Skill04_Enhance.prefab"
+                },
+                {
+                  "$type": "RPG.GameCore.RemoveEffect",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "ModifierOwnerEntity"
+                  },
+                  "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_XP_Elite01_02/Eff_XP_Elite01_02_Skill04_Enhance_1.prefab"
+                },
+                {
+                  "$type": "RPG.GameCore.RemoveEffect",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "ModifierOwnerEntity"
+                  },
+                  "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_XP_Elite01_02/Eff_XP_Elite01_02_Skill04_Enhance_Head.prefab"
+                },
+                {
+                  "$type": "RPG.GameCore.RemoveEffect",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "ModifierOwnerEntity"
+                  },
+                  "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_XP_Elite01_02/Eff_XP_Elite01_02_Skill04_Charge_body.prefab"
+                },
+                {
+                  "$type": "RPG.GameCore.RemoveEffect",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "ModifierOwnerEntity"
+                  },
+                  "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_XP_Elite01_02/Eff_XP_Elite01_02_Skill04_Charge_Head.prefab"
+                }
+              ]
+            },
+            {
+              "Event": "OnBeingBreak",
+              "CallbackConfig": [
+                {
+                  "$type": "RPG.GameCore.RemoveSelfModifier"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "Name": "Monster_XP_Elite01_02_Skill04_Phase02",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.GlobalMainIntensityEffect",
+          "TargetIntensity": 0.4,
+          "FadeDuration": 0.5
+        },
+        {
+          "$type": "RPG.GameCore.TriggerEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_XP_Elite01_02/Eff_XP_Elite01_02_Skill04_Charge.prefab"
+        },
+        {
+          "$type": "RPG.GameCore.TriggerEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_XP_Elite01_02/Eff_XP_Elite01_02_Skill04_Charge_Head.prefab"
+        },
+        {
+          "$type": "RPG.GameCore.TriggerEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_XP_Elite01_02/Eff_XP_Elite01_02_Skill04_Charge_body.prefab"
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill02",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.25
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.SkillExecutionStart"
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill02",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.3
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.VCameraConfigChange",
+          "CameraConfig": {
+            "ShakeConfigV2": {
+              "ShakeRange": 0.05,
+              "ShakeTime": 0.7,
+              "ShakeDir": {
+                "Y": 0.05
+              },
+              "BaseCycle": 0.05,
+              "CycleDamping": 0,
+              "RangeAttenuation": 0.95,
+              "PerlinNoiseAmplitude": {
+                "X": 0.02,
+                "Y": 0.03
+              },
+              "PerlinNoiseFreq": {
+                "X": 5,
+                "Y": 20
+              },
+              "RotationFreqV3": {
+                "Z": 2
+              }
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill02",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.485
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TriggerEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_XP_Elite01_02/Eff_XP_Elite01_02_Skill04_Charge_bao.prefab"
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill02",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.5794
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.GlobalMainIntensityEffect",
+          "IsRevert": true,
+          "FadeDuration": 1.5
+        },
+        {
+          "$type": "RPG.GameCore.TriggerEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_XP_Elite01_02/Eff_XP_Elite01_02_Skill04_Enhance_Head.prefab"
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill02",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.729
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TriggerEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_XP_Elite01_02/Eff_XP_Elite01_02_Skill04_Enhance.prefab"
+        },
+        {
+          "$type": "RPG.GameCore.TriggerEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_XP_Elite01_02/Eff_XP_Elite01_02_Skill04_Enhance_1.prefab"
+        },
+        {
+          "$type": "RPG.GameCore.AddModifier",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "ModifierName": {
+            "Value": "MMonster_XP_Elite01_02_Charge_Enhance"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill02",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.95
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.RemoveModifier",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "ModifierName": {
+            "Value": "OneMorePerTurn"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.SkillPerformFinish"
+        }
+      ]
+    },
+    {
+      "Name": "Monster_XP_Elite01_02_Skill05_Phase01",
+      "TargetInfo": {
+        "TargetType": "AllEnemy"
+      },
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.MoveToTargetPosition",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "DarkTeamCenter"
+          },
+          "IgnoreRadius": true,
+          "OffsetTargetDistance": {
+            "FixedValue": {
+              "Value": 0
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.SetTeamFormation",
+          "Team": "TeamLight",
+          "FormationType": "LightTeamNormal",
+          "ServantState": "DefaultFollow",
+          "CustomFormationIgnoreDying": false
+        },
+        {
+          "$type": "RPG.GameCore.SetTeamRootOffset",
+          "Team": "TeamLight",
+          "OriginPosTargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "DarkTeamCenter"
+          },
+          "Offset": {
+            "Z": 10
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAbility",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AbilityName": {
+            "Value": "Monster_XP_Elite01_02_Skill05_Phase02"
+          },
+          "IsSkillPerform": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAbility",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AbilityName": {
+            "Value": "Monster_XP_Elite01_02_Skill05_Camera"
+          },
+          "IsSkillPerform": true
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAnimState",
+          "AnimStateName": "Skill06",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 1
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TriggerAnimState",
+          "AnimLogicState": "Idle"
+        },
+        {
+          "$type": "RPG.GameCore.WaitSecond",
+          "WaitTime": {
+            "FixedValue": {
+              "Value": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Monster_XP_Elite01_02_Skill05_Phase02",
+      "TargetInfo": {
+        "TargetType": "AllEnemy"
+      },
+      "OnStart": [
+        {
+          "$type": "RPG.GameCore.RemoveModifier",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "ModifierName": {
+            "Value": "MMonster_XP_Elite01_02_Charge_Enhance"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TriggerEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_XP_Elite01_02/Eff_XP_Elite01_02_Skill05_Main.prefab"
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill06",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.1
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.SkillExecutionStart"
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill06",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.285
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.GlobalMainIntensityEffect",
+          "TargetIntensity": 0.3,
+          "FadeDuration": 0.2
+        },
+        {
+          "$type": "RPG.GameCore.TriggerEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_XP_Elite01_02/Eff_XP_Elite01_02_Skill05_Main_zadi.prefab"
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill06",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.615
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.DamageByAttackProperty",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "AllEnemy"
+          },
+          "AttackProperty": {
+            "$type": "RPG.GameCore.AttackData",
+            "DamageType": {
+              "DamageType": "Physical"
+            },
+            "DamagePercentage": {
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAR",
+                "FixedValues": [],
+                "DynamicHashes": [
+                  -402291451
+                ]
+              }
+            },
+            "SPHitRatio": {
+              "FixedValue": {
+                "Value": 1
+              }
+            },
+            "AttackType": "Normal",
+            "HitAnimation": "Hit_H",
+            "HitEffect": "Effects/Eff_Prefab/Eff_Monster/Eff_XP_Elite01_02/Eff_XP_Elite01_02_Skill05_Hit.prefab"
+          },
+          "DisplayData": {
+            "UIMessageHeight": 1,
+            "DitherRangeX": 0.02,
+            "DitherRangeY": 0.02
+          }
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill06",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.62
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TriggerEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_XP_Elite01_02/Eff_XP_Elite01_02_Skill05_Main_floor.prefab"
+        },
+        {
+          "$type": "RPG.GameCore.VCameraConfigChange",
+          "CameraConfig": {
+            "ShakeTemplateName": "OneShake_Heavy_03s_XY",
+            "OverrideShakeConfigV2": {
+              "ShakeScale": 6,
+              "ShakeTime": 0.6,
+              "ShakeDir": {
+                "Y": -1,
+                "Z": -0.3
+              },
+              "RangeAttenuationDelay": 999
+            },
+            "BlendConfig": {
+              "BlendType": "Cut"
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.Retarget",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "AllEnemy"
+          },
+          "TaskList": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByIsContainModifier",
+                "TargetType": {
+                  "$type": "RPG.GameCore.TargetAlias",
+                  "Alias": "ParamEntity"
+                },
+                "ModifierName": {
+                  "Value": "MMonster_AML_Minion02_01_RallyHP_V2"
+                }
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.LoseHPByRatio",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "ParamEntity"
+                  },
+                  "RatioType": "MaxHP",
+                  "Ratio": {
+                    "IsDynamic": true,
+                    "PostfixExpr": {
+                      "OpCodes": "AQAR",
+                      "FixedValues": [],
+                      "DynamicHashes": [
+                        -714581356
+                      ]
+                    }
+                  },
+                  "Floor": {
+                    "FixedValue": {
+                      "Value": 1
+                    }
+                  },
+                  "DisplayData": {
+                    "UIMessageHeight": 1,
+                    "DitherRangeX": 0.02,
+                    "DitherRangeY": -10
+                  }
+                }
+              ],
+              "FailedTaskList": [
+                {
+                  "$type": "RPG.GameCore.SetDynamicValueByProperty",
+                  "DynamicKey": "_CurrentHP",
+                  "ReadTargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "ParamEntity"
+                  },
+                  "Value": "CurrentHP"
+                },
+                {
+                  "$type": "RPG.GameCore.AddModifier",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "ParamEntity"
+                  },
+                  "ModifierName": {
+                    "Value": "MMonster_AML_Minion02_01_RallyHP_Controller_V2"
+                  },
+                  "DynamicValues": {
+                    "MDF_RallyTransferRatio": {
+                      "IsDynamic": true,
+                      "PostfixExpr": {
+                        "OpCodes": "AQAR",
+                        "FixedValues": [],
+                        "DynamicHashes": [
+                          984371189
+                        ]
+                      }
+                    },
+                    "MDF_Rally_HealPercentage": {
+                      "IsDynamic": true,
+                      "PostfixExpr": {
+                        "OpCodes": "AQAR",
+                        "FixedValues": [],
+                        "DynamicHashes": [
+                          1692846945
+                        ]
+                      }
+                    },
+                    "MDF_Rally_HealUpRatio": {
+                      "IsDynamic": true,
+                      "PostfixExpr": {
+                        "OpCodes": "AQAR",
+                        "FixedValues": [],
+                        "DynamicHashes": [
+                          2099490446
+                        ]
+                      }
+                    },
+                    "MDF_Rally_Strongth_AllDamageTypeAddedRatio": {
+                      "IsDynamic": true,
+                      "PostfixExpr": {
+                        "OpCodes": "AQAR",
+                        "FixedValues": [],
+                        "DynamicHashes": [
+                          -1722292946
+                        ]
+                      }
+                    }
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.AddModifier",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "ParamEntity"
+                  },
+                  "ModifierName": {
+                    "Value": "MMonster_AML_Minion02_01_RallyHP_V2"
+                  },
+                  "DynamicValues": {
+                    "MDF_RallyHP": {
+                      "IsDynamic": true,
+                      "PostfixExpr": {
+                        "OpCodes": "AQAR",
+                        "FixedValues": [],
+                        "DynamicHashes": [
+                          -978103932
+                        ]
+                      }
+                    },
+                    "MDF_HealPercentage": {
+                      "IsDynamic": true,
+                      "PostfixExpr": {
+                        "OpCodes": "AQAR",
+                        "FixedValues": [],
+                        "DynamicHashes": [
+                          1692846945
+                        ]
+                      }
+                    },
+                    "MDF_HealUpRatio": {
+                      "IsDynamic": true,
+                      "PostfixExpr": {
+                        "OpCodes": "AQAR",
+                        "FixedValues": [],
+                        "DynamicHashes": [
+                          2099490446
+                        ]
+                      }
+                    }
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.LoseHPByRatio",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "ParamEntity"
+                  },
+                  "RatioType": "MaxHP",
+                  "Ratio": {
+                    "IsDynamic": true,
+                    "PostfixExpr": {
+                      "OpCodes": "AQAR",
+                      "FixedValues": [],
+                      "DynamicHashes": [
+                        -714581356
+                      ]
+                    }
+                  },
+                  "Floor": {
+                    "FixedValue": {
+                      "Value": 1
+                    }
+                  },
+                  "DisplayData": {
+                    "UIMessageHeight": 1,
+                    "DitherRangeX": 0.02,
+                    "DitherRangeY": -10
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.DamagePerformFinish"
+        },
+        {
+          "$type": "RPG.GameCore.AddModifier",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "ModifierName": {
+            "Value": "OneMorePerTurn"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.WaitAnimState",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AnimStateName": "Skill06",
+          "NormalizedTimeEnd": {
+            "FixedValue": {
+              "Value": 0.8
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.GlobalMainIntensityEffect",
+          "IsRevert": true,
+          "FadeDuration": 0.4
+        },
+        {
+          "$type": "RPG.GameCore.SkillPerformFinish"
+        }
+      ],
+      "DynamicValues": {
+        "Floats": {
+          "-978103932": {}
+        }
+      }
+    }
+  ],
+  "GlobalModifiers": {
+    "MMonster_XP_Elite01_02_Charge": {
+      "_CallbackList": [
+        {
+          "Event": "OnStack",
+          "CallbackConfig": [
+            {
+              "$type": "RPG.GameCore.RemoveSelfModifier"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

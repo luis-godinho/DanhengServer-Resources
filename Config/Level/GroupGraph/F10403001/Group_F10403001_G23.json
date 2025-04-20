@@ -1,0 +1,71 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvDistrictSetupTrigger",
+          "GroupID": {
+            "FixedValue": {
+              "Value": 23
+            }
+          },
+          "DistrictID": {
+            "FixedValue": {
+              "Value": 500001
+            }
+          },
+          "TickInterval": 0.1,
+          "OnEnter": [
+            {
+              "$type": "RPG.GameCore.PlayNPCBubbleTalk",
+              "BubbleTalkInfoList": [
+                {
+                  "GroupID": 23,
+                  "GroupNpcID": 400001,
+                  "TalkSentenceID": 304005600,
+                  "EnableVoice": true
+                }
+              ],
+              "UniqueID": 2301
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvDistrictSetupTrigger",
+          "GroupID": {
+            "FixedValue": {
+              "Value": 23
+            }
+          },
+          "DistrictID": {
+            "FixedValue": {
+              "Value": 500002
+            }
+          },
+          "TickInterval": 0.1,
+          "OnEnter": [
+            {
+              "$type": "RPG.GameCore.PlayNPCBubbleTalk",
+              "BubbleTalkInfoList": [
+                {
+                  "GroupID": 23,
+                  "GroupNpcID": 400002,
+                  "TalkSentenceID": 304005629,
+                  "EnableVoice": true
+                }
+              ],
+              "UniqueID": 2302
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "Type": "Group",
+  "EntityEventList": []
+}

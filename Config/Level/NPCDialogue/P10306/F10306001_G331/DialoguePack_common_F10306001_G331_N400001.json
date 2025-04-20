@@ -1,0 +1,74 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CollectDataConditions",
+          "TaskIDList": [
+            404035602
+          ],
+          "MainMissionIDList": [],
+          "PerformanceIDList": [],
+          "PerformanceIDDsList": [],
+          "CustomValueMainMissionIDList": []
+        },
+        {
+          "$type": "RPG.GameCore.AddMenuItem",
+          "MenuIconType": "DreamlandIcon",
+          "MenuItemID": 993005280,
+          "PerformanceType": "E",
+          "PerformanceID": 503106007,
+          "Important": true
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByCompareSubMissionState",
+            "SubMissionID": 404035602,
+            "SubMissionState": "Started"
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.AddMenuItem",
+              "MenuIconType": "SecretMissionIcon",
+              "MenuItemTextID": {
+                "Hash": 11939988177211871216
+              },
+              "PerformanceType": "E",
+              "PerformanceID": 503106003
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.AddMenuItem",
+          "MenuIconType": "PickUpIcon",
+          "MenuItemTextID": {
+            "Hash": 13419925399264108265
+          },
+          "PerformanceType": "E",
+          "PerformanceID": 503106005
+        },
+        {
+          "$type": "RPG.GameCore.AddMenuItem",
+          "MenuIconType": "ChatIcon",
+          "MenuItemTextID": {
+            "Hash": 18430283228858995119
+          },
+          "PerformanceType": "E",
+          "PerformanceID": 503106004
+        },
+        {
+          "$type": "RPG.GameCore.AddMenuItem",
+          "MenuIconType": "ChatOutIcon",
+          "MenuItemTextID": {
+            "Hash": 14538100959721521609
+          },
+          "PerformanceType": "E",
+          "PerformanceID": 503106006,
+          "Important": true
+        }
+      ]
+    }
+  ]
+}

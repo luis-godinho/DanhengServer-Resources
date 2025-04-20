@@ -1,0 +1,250 @@
+{
+  "$type": "RPG.GameCore.CharacterConfig",
+  "SomatoType": "LargeMonster",
+  "CharacterHUDOffset": {
+    "Y": 3.8
+  },
+  "BuffPanelOffset": {
+    "Y": 1.8
+  },
+  "HitBoxWidth": 0.3,
+  "HitBoxHeight": 2.8,
+  "Location": {
+    "Width": 3.2
+  },
+  "VisualRadius": 0.8,
+  "AnimEventConfigList": [
+    "Config/ConfigAnimEvents/Monster/Designer/Monster_XP_Elite01_02_Designer_AnimEvent.json",
+    "Config/ConfigAnimEvents/Monster/Effect/Monster_XP_Elite01_02_Effect_AnimEvent.json",
+    "Config/ConfigAnimEvents/Monster/Audio/Monster_XP_Elite01_02_Audio_AnimEvent.json"
+  ],
+  "SkillList": [
+    {
+      "Name": "Skill01",
+      "UseType": "SelectEntity",
+      "TargetInfo": {
+        "TargetType": "EnemySelect"
+      },
+      "ReadyAnimState": "StandBy",
+      "EntryAbility": "Monster_XP_Elite01_02_Skill01_Phase01"
+    },
+    {
+      "Name": "Skill02",
+      "SkillType": "Skill",
+      "UseType": "SelectEntity",
+      "TargetInfo": {
+        "TargetType": "AllEnemy"
+      },
+      "ReadyAnimState": "StandBy",
+      "EntryAbility": "Monster_XP_Elite01_02_Skill02_Phase01",
+      "ImmunizeProtect": true
+    },
+    {
+      "Name": "Skill03",
+      "SkillType": "Skill",
+      "UseType": "SelectEntity",
+      "TargetInfo": {
+        "TargetType": "AllEnemy"
+      },
+      "ReadyAnimState": "StandBy",
+      "EntryAbility": "Monster_XP_Elite01_02_Skill03_Phase01"
+    },
+    {
+      "Name": "Skill04",
+      "SkillType": "Skill",
+      "UseType": "SelectEntity",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "ReadyAnimState": "StandBy",
+      "EntryAbility": "Monster_XP_Elite01_02_Skill04_Phase01"
+    },
+    {
+      "Name": "Skill05",
+      "SkillType": "Skill",
+      "UseType": "SelectEntity",
+      "TargetInfo": {
+        "TargetType": "AllEnemy"
+      },
+      "ReadyAnimState": "StandBy",
+      "EntryAbility": "Monster_XP_Elite01_02_Skill05_Phase01",
+      "ImmunizeProtect": true
+    },
+    {
+      "Name": "Skill06",
+      "SkillType": "Skill",
+      "UseType": "SelectEntity",
+      "TargetInfo": {
+        "TargetType": "AllEnemy"
+      },
+      "ReadyAnimState": "StandBy",
+      "EntryAbility": "Monster_XP_Elite01_02_Skill06_Phase01"
+    },
+    {
+      "Name": "SkillP01",
+      "SkillType": "Passive",
+      "UseType": "Passive",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "EntryAbility": "Monster_XP_Elite01_02_PassiveSkill01"
+    },
+    {
+      "Name": "PassiveSkill01",
+      "SkillType": "Passive",
+      "UseType": "Passive",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "EntryAbility": "Monster_Common_PassiveSkill_StanceBreak_Action"
+    }
+  ],
+  "AbilityList": [
+    "Monster_Common_PassiveSkill_StanceBreak_Action",
+    "Monster_Common_Fever_Action"
+  ],
+  "SkillAbilityList": [
+    {
+      "Skill": "Skill01",
+      "AbilityList": [
+        "Monster_XP_Elite01_02_Skill01_Camera",
+        "Monster_XP_Elite01_02_Skill01_Phase01",
+        "Monster_XP_Elite01_02_Skill01_Phase02"
+      ]
+    },
+    {
+      "Skill": "Skill02",
+      "AbilityList": [
+        "Monster_XP_Elite01_02_Skill02_Camera",
+        "Monster_XP_Elite01_02_Skill02_Phase01",
+        "Monster_XP_Elite01_02_Skill02_Phase02"
+      ]
+    },
+    {
+      "Skill": "Skill06",
+      "AbilityList": [
+        "Monster_XP_Elite01_02_Skill03_Camera",
+        "Monster_XP_Elite01_02_Skill03_Phase01",
+        "Monster_XP_Elite01_02_Skill03_Phase02"
+      ]
+    },
+    {
+      "Skill": "Skill04",
+      "AbilityList": [
+        "Monster_XP_Elite01_02_Skill04_Camera",
+        "Monster_XP_Elite01_02_Skill04_Phase01",
+        "Monster_XP_Elite01_02_Skill04_Phase02"
+      ]
+    },
+    {
+      "Skill": "Skill05",
+      "AbilityList": [
+        "Monster_XP_Elite01_02_Skill05_Camera",
+        "Monster_XP_Elite01_02_Skill05_Phase01",
+        "Monster_XP_Elite01_02_Skill05_Phase02"
+      ]
+    },
+    {
+      "Skill": "Skill06",
+      "AbilityList": [
+        "Monster_XP_Elite01_02_Skill06_Camera",
+        "Monster_XP_Elite01_02_Skill06_Phase01",
+        "Monster_XP_Elite01_02_Skill06_Phase02"
+      ]
+    },
+    {
+      "Skill": "SkillP01",
+      "AbilityList": [
+        "Monster_XP_Elite01_02_PassiveSkill01"
+      ]
+    }
+  ],
+  "DynamicValues": {
+    "Floats": {
+      "-1126825319": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill01"
+        }
+      },
+      "-1847083384": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill02"
+        }
+      },
+      "-1553598528": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill06"
+        }
+      },
+      "1541391009": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill06",
+          "Index": 1
+        }
+      },
+      "-402291451": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill05"
+        }
+      },
+      "-714581356": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill05",
+          "Index": 1
+        }
+      },
+      "1733046403": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP01"
+        }
+      },
+      "984371189": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP01",
+          "Index": 1
+        }
+      },
+      "1692846945": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP01",
+          "Index": 2
+        }
+      },
+      "2099490446": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP01",
+          "Index": 3
+        }
+      },
+      "-1722292946": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP01",
+          "Index": 4
+        }
+      }
+    }
+  },
+  "CustomValues": {
+    "StanceBreak_Sign": 0,
+    "InsertController": 0,
+    "Phase_Flag": 1,
+    "AIFlag": 1
+  },
+  "WeaponType": "WP_Magic",
+  "ArmorType": "BlackTideCreations",
+  "DisableAnimEventLayers": [
+    "Riboon Layer"
+  ],
+  "OverrideWaveMonsterPerform": "Elite01_StartCamera"
+}

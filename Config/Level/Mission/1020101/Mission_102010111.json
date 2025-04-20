@@ -10,32 +10,36 @@
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 111669149696
+                "FixedValue": {
+                  "Value": 26
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288494483767296
+                "FixedValue": {
+                  "Value": 300001
                 }
               }
             }
           },
-          "TargetGroupID": {},
-          "TargetID": {},
+          "TargetGroupID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "TargetID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
           "TargetTypes": [],
           "OnTriggerEnter": [
             {
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "Mission_102010111_Prop_26_300001_OnEnter"
-              },
-              "TaskEnabled": true
+              }
             }
-          ],
-          "SkipFakeAvatar": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     },
@@ -45,8 +49,7 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Mission_102010111_Prop_26_300001_OnEnter"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.PropSetVisibility",
@@ -56,68 +59,51 @@
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 111669149696
+                "FixedValue": {
+                  "Value": 26
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288494483767296
+                "FixedValue": {
+                  "Value": 300001
                 }
               }
             }
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
           "$type": "RPG.GameCore.TriggerPerformance",
           "ValueSource": {},
           "PerformanceType": "C",
-          "PerformanceID": 102010111,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 102010111
         },
         {
           "$type": "RPG.GameCore.PlayScreenTransfer",
-          "Type": "Black",
           "Mode": "DirectlySet",
           "CustomTime": 0.5,
-          "MaskAlpha": 1.0,
-          "SwitchInEndTaskAfterUIClose": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "MaskAlpha": 1
         },
         {
           "$type": "RPG.GameCore.TriggerSound",
           "SoundName": {
             "Value": "Ev_sfx_belobog_shimmer_whoosh"
           },
-          "EmitterType": "LocalPlayer",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "EmitterType": "LocalPlayer"
         },
         {
           "$type": "RPG.GameCore.WaitSecond",
           "WaitTime": {
-            "fixedValue": {
-              "RawValue": 8589934592
+            "FixedValue": {
+              "Value": 2
             }
-          },
-          "MaxAdvencePerTick": -1.0,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
-          "$type": "RPG.GameCore.LockCurrentTeleportAction",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "$type": "RPG.GameCore.LockCurrentTeleportAction"
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_102010111",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_102010111"
         }
       ]
     },
@@ -125,10 +111,7 @@
       "TaskList": [
         {
           "$type": "RPG.GameCore.ChangeDynamicOptionalBlock",
-          "BlockKey": "301",
-          "IsRemoveExist": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "BlockKey": "301"
         }
       ]
     }

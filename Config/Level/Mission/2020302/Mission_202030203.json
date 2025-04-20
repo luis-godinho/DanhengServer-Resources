@@ -8,22 +8,17 @@
           "TaskIDList": [
             202030205
           ],
-          "PerformanceIDList": [],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceIDList": []
         },
         {
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Prop_202030203"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_202030203",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_202030203"
         }
       ]
     },
@@ -32,20 +27,16 @@
         {
           "$type": "RPG.GameCore.WaitSecond",
           "WaitTime": {
-            "fixedValue": {
-              "RawValue": 17179869184
+            "FixedValue": {
+              "Value": 4
             }
-          },
-          "MaxAdvencePerTick": -1.0,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
           "$type": "RPG.GameCore.TriggerCustomString",
           "CustomString": {
             "Value": "Maze_TriggerSpecialVision_01"
-          },
-          "TaskEnabled": true
+          }
         }
       ]
     },
@@ -56,29 +47,24 @@
           "Predicate": {
             "$type": "RPG.GameCore.ByCompareSubMissionState",
             "SubMissionID": 202030205,
-            "SubMissionState": "Started",
-            "TaskEnabled": true,
-            "IsClientOnly": true
+            "SubMissionState": "Started"
           },
           "SuccessTaskList": [
             {
               "$type": "RPG.GameCore.CreateProp",
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 124554051584
+                "FixedValue": {
+                  "Value": 29
                 }
               },
               "GroupPropID": {
-                "fixedValue": {
-                  "RawValue": 1288507368669184
+                "FixedValue": {
+                  "Value": 300004
                 }
               },
-              "CreateList": [],
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "CreateList": []
             }
-          ],
-          "TaskEnabled": true
+          ]
         }
       ]
     },
@@ -87,18 +73,16 @@
         {
           "$type": "RPG.GameCore.CreateProp",
           "GroupID": {
-            "fixedValue": {
-              "RawValue": 124554051584
+            "FixedValue": {
+              "Value": 29
             }
           },
           "GroupPropID": {
-            "fixedValue": {
-              "RawValue": 1288498778734592
+            "FixedValue": {
+              "Value": 300002
             }
           },
-          "CreateList": [],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "CreateList": []
         }
       ]
     }

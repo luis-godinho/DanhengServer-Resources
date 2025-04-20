@@ -1,0 +1,238 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.LevelPerformanceInitialize",
+          "PerformanceType": "E",
+          "HideMunicipalCrowd": false,
+          "HideMunicipalPedestrian": false,
+          "UseNewStreamingSourceType": false
+        },
+        {
+          "$type": "RPG.GameCore.PlayAndWaitSimpleTalk",
+          "SimpleTalkList": [
+            {
+              "TalkSentenceID": 202072201,
+              "ProtectTime": 0.3
+            },
+            {
+              "TalkSentenceID": 202072202,
+              "ProtectTime": 0.3
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.PerformanceTransition",
+          "CreateNpcList": [
+            {
+              "GroupID": {
+                "FixedValue": {
+                  "Value": 4
+                }
+              },
+              "GroupNpcID": {
+                "FixedValue": {
+                  "Value": 400001
+                }
+              },
+              "CreateList": []
+            },
+            {
+              "GroupID": {
+                "FixedValue": {
+                  "Value": 4
+                }
+              },
+              "GroupNpcID": {
+                "FixedValue": {
+                  "Value": 400002
+                }
+              },
+              "CreateList": []
+            },
+            {
+              "GroupID": {
+                "FixedValue": {
+                  "Value": 4
+                }
+              },
+              "GroupNpcID": {
+                "FixedValue": {
+                  "Value": 400003
+                }
+              },
+              "CreateList": []
+            }
+          ],
+          "CaptureNpcList": [],
+          "DestroyNpcList": [],
+          "CreateProp": {
+            "GroupID": {
+              "FixedValue": {
+                "Value": 0
+              }
+            },
+            "GroupPropID": {
+              "FixedValue": {
+                "Value": 0
+              }
+            },
+            "TaskEnabled": false
+          },
+          "DestroyProp": {
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+            },
+            "ID": {
+              "FixedValue": {
+                "Value": 0
+              }
+            },
+            "GroupID": {
+              "FixedValue": {
+                "Value": 0
+              }
+            },
+            "TaskEnabled": false
+          },
+          "ActiveVirtualCamera": {
+            "AreaName": "LevelArea_P42221_F42221001_G4",
+            "AnchorName": "Anchor2"
+          },
+          "ActiveTemplateVirtualCamera": {
+            "TaskEnabled": false
+          },
+          "SwitchCharacterAnchor": {
+            "IsLocalPlayer": true,
+            "CharacterUniqueName": "LocalPlayer",
+            "AreaName": {
+              "Value": "LevelArea_P42221_F42221001_G4"
+            },
+            "AnchorName": {
+              "Value": "Anchor3"
+            }
+          },
+          "AdvNpcFaceToPlayer": {
+            "TaskEnabled": false
+          },
+          "WaitStreamingFinish": true
+        },
+        {
+          "$type": "RPG.GameCore.PPFilterStackEffect",
+          "AssetPath": "EnviroSystem/PostProcessFilterAsset/TimeStopFilter.asset"
+        },
+        {
+          "$type": "RPG.GameCore.PlayAndWaitSimpleTalk",
+          "SimpleTalkList": [
+            {
+              "TalkSentenceID": 202072203,
+              "ProtectTime": 0.3
+            },
+            {
+              "TalkSentenceID": 202072204,
+              "ProtectTime": 0.3
+            },
+            {
+              "TalkSentenceID": 202072205,
+              "ProtectTime": 0.3
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.PerformanceTransition",
+          "SwitchOutTime": -1,
+          "CreateNpcList": [],
+          "CaptureNpcList": [],
+          "DestroyNpcList": [
+            {
+              "GroupID": 4,
+              "GroupNpcID": 400001,
+              "DestroyList": []
+            },
+            {
+              "GroupID": 4,
+              "GroupNpcID": 400002,
+              "DestroyList": []
+            },
+            {
+              "GroupID": 4,
+              "GroupNpcID": 400003,
+              "DestroyList": []
+            }
+          ],
+          "CreateProp": {
+            "GroupID": {
+              "FixedValue": {
+                "Value": 0
+              }
+            },
+            "GroupPropID": {
+              "FixedValue": {
+                "Value": 0
+              }
+            },
+            "TaskEnabled": false
+          },
+          "DestroyProp": {
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+            },
+            "ID": {
+              "FixedValue": {
+                "Value": 0
+              }
+            },
+            "GroupID": {
+              "FixedValue": {
+                "Value": 0
+              }
+            },
+            "TaskEnabled": false
+          },
+          "ActiveVirtualCamera": {
+            "AreaName": "LevelArea_P42221_F42221001_G4",
+            "AnchorName": "Anchor2",
+            "IsActive": false
+          },
+          "ActiveTemplateVirtualCamera": {
+            "TaskEnabled": false
+          },
+          "SwitchCharacterAnchor": {
+            "IsLocalPlayer": true,
+            "CharacterUniqueName": "LocalPlayer",
+            "AreaName": {
+              "Value": "LevelArea_P42221_F42221001_G4"
+            },
+            "AnchorName": {
+              "Value": "Anchor4"
+            }
+          },
+          "AdvNpcFaceToPlayer": {
+            "TaskEnabled": false
+          },
+          "WaitStreamingFinish": true
+        },
+        {
+          "$type": "RPG.GameCore.PPFilterStackEffect",
+          "Active": false,
+          "AssetPath": "EnviroSystem/PostProcessFilterAsset/TimeStopFilter.asset"
+        },
+        {
+          "$type": "RPG.GameCore.EndPerformance"
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitPerformanceEnd"
+        },
+        {
+          "$type": "RPG.GameCore.FinishLevelGraph"
+        }
+      ]
+    }
+  ]
+}

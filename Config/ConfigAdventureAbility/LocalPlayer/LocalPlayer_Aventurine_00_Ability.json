@@ -8,21 +8,12 @@
             "$type": "RPG.GameCore.TargetAlias",
             "Alias": "Caster"
           },
-          "Duration": -1.0,
-          "BlurX": 0.5,
-          "BlurY": 0.5,
-          "BlurRadius": 0.5,
-          "Iteration": 6,
-          "BlurStart": 0.2,
-          "BlurFeather": 0.1,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Active": false
         }
       ],
       "Name": "LocalPlayer_Aventurine_NormalAtk01",
       "TargetInfo": {
-        "TargetType": "SkillPointEntityOrNone",
-        "MaxTargetCount": 1
+        "TargetType": "SkillPointEntityOrNone"
       },
       "OnStart": [
         {
@@ -31,54 +22,27 @@
             "Freelook3rdConfig": {
               "DampChangeParam": {
                 "TargetValue": {
-                  "x": 1.0,
-                  "y": 1.0,
-                  "z": 1.0,
-                  "normalized": {
-                    "x": 0.577350259,
-                    "y": 0.577350259,
-                    "z": 0.577350259,
-                    "normalized": {
-                      "x": 0.5773503,
-                      "y": 0.5773503,
-                      "z": 0.5773503,
-                      "magnitude": 1.00000012,
-                      "sqrMagnitude": 1.00000024
-                    },
-                    "magnitude": 0.99999994,
-                    "sqrMagnitude": 0.99999994
-                  },
-                  "magnitude": 1.73205078,
-                  "sqrMagnitude": 3.0
+                  "X": 1,
+                  "Y": 1,
+                  "Z": 1
                 },
-                "Time": 0.1,
                 "ChangeCurvePath": "Camera/BlendCurve/AttackDampCurve.asset",
                 "RecoveryTime": 0.25,
                 "RecoveryCurvePath": "Camera/BlendCurve/AttackDampRecoverCurve.asset"
               }
             }
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
           "$type": "RPG.GameCore.PredicateTaskList",
           "Predicate": {
-            "$type": "RPG.GameCore.ByHaveAbilityTarget",
-            "TaskEnabled": true
+            "$type": "RPG.GameCore.ByHaveAbilityTarget"
           },
           "SuccessTaskList": [
             {
               "$type": "RPG.GameCore.LookAt",
-              "PerformerType": {
-                "$type": "RPG.GameCore.TargetAlias",
-                "Alias": "Caster"
-              },
               "TargetType": "AbilityTargetEntity",
-              "ToTargetRatio": 1.0,
-              "Duration": 0.1,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "Duration": 0.1
             },
             {
               "$type": "RPG.GameCore.AdventureTriggerAnimStateWithMove",
@@ -88,10 +52,8 @@
               },
               "AnimLogicState": "NormalAtk",
               "AnimStateName": "Attack_1",
-              "StopWhenHitOthers": true,
-              "MovingRangeList": [],
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "TransitionDuration": 0,
+              "MovingRangeList": []
             },
             {
               "$type": "RPG.GameCore.WaitAnimState",
@@ -101,12 +63,10 @@
               },
               "AnimStateName": "Attack_1",
               "NormalizedTimeEnd": {
-                "fixedValue": {
-                  "RawValue": 425201760
+                "FixedValue": {
+                  "Value": 0.099
                 }
-              },
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              }
             },
             {
               "$type": "RPG.GameCore.AdventureFireProjectile",
@@ -117,28 +77,13 @@
               "Projectile": {
                 "Behavior": "Static",
                 "EnableRayCast": true,
-                "FlyTime": -1.0,
-                "Gravity": -9.8,
                 "MaxLifeTime": 0.13,
                 "TargetOffset": {
-                  "z": 0.2,
-                  "normalized": {
-                    "z": 1.0,
-                    "magnitude": 1.0,
-                    "sqrMagnitude": 1.0
-                  },
-                  "magnitude": 0.2,
-                  "sqrMagnitude": 0.0400000028
+                  "Z": 0.2
                 },
                 "UseLookat": true,
                 "FlyEffect": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeAttack_Hit01.prefab",
-                "LinearPitchAngle": {},
-                "BoomerangEccentricity": 1.0,
-                "TriggerHitCallback": true,
-                "StaticProjectileCanPassAirWall": true,
-                "StaticExtraRadius": 0.4,
-                "ParabolaUseWorldSpaceUp": true,
-                "SubCurveIndex": {}
+                "StaticExtraRadius": 0.4
               },
               "OnProjectileLifetimeFinish": [
                 {
@@ -151,26 +96,19 @@
                     "$type": "RPG.GameCore.TargetAlias",
                     "Alias": "ProjectileHitEntity"
                   },
-                  "TriggerBattle": true,
                   "TriggerBattleDelay": 0.2,
                   "AttackDetectConfig": {
                     "$type": "RPG.GameCore.AdventureAttackDetectCircleConfig",
-                    "MaxRadius": 2.0,
-                    "FanAngle": 360.0,
-                    "Hight": 2.0
+                    "MaxRadius": 2,
+                    "FanAngle": 360,
+                    "Hight": 2
                   },
                   "HitConfig": {
                     "HitAnimation": "Hit"
-                  },
-                  "IncludeProps": true,
-                  "AttackDetectCollision": true,
-                  "TaskEnabled": true,
-                  "IsClientOnly": true
+                  }
                 }
               ],
-              "WaitProjectileFinish": true,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "WaitProjectileFinish": true
             },
             {
               "$type": "RPG.GameCore.AdventureFireProjectile",
@@ -181,31 +119,14 @@
               "Projectile": {
                 "Behavior": "Static",
                 "EnableRayCast": true,
-                "FlyTime": -1.0,
-                "Gravity": -9.8,
-                "MaxLifeTime": 1.0,
+                "MaxLifeTime": 1,
                 "AttachOffset": {
-                  "z": 5.0,
-                  "normalized": {
-                    "z": 1.0,
-                    "magnitude": 1.0,
-                    "sqrMagnitude": 1.0
-                  },
-                  "magnitude": 5.0,
-                  "sqrMagnitude": 25.0
+                  "Z": 5
                 },
                 "IgnoreTargetHitbox": true,
                 "FlyEffect": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeAttack_Hit02.prefab",
-                "LinearPitchAngle": {},
-                "BoomerangEccentricity": 1.0,
-                "TriggerHitCallback": true,
-                "StaticProjectileCanPassAirWall": true,
-                "StaticExtraRadius": 0.4,
-                "ParabolaUseWorldSpaceUp": true,
-                "SubCurveIndex": {}
-              },
-              "TaskEnabled": true,
-              "IsClientOnly": true
+                "StaticExtraRadius": 0.4
+              }
             },
             {
               "$type": "RPG.GameCore.WaitAnimState",
@@ -215,20 +136,16 @@
               },
               "AnimStateName": "Attack_1",
               "NormalizedTimeEnd": {
-                "fixedValue": {
-                  "RawValue": 481036337
+                "FixedValue": {
+                  "Value": 0.112
                 }
-              },
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              }
             },
             {
               "$type": "RPG.GameCore.VCameraConfigChange",
               "CameraConfig": {
                 "ShakeTemplateName": "Common_Rapid_Light"
-              },
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              }
             }
           ],
           "FailedTaskList": [
@@ -239,11 +156,7 @@
                 "Alias": "AdvLocalPlayer"
               },
               "AnimLogicState": "NormalAtk",
-              "AnimStateName": "Attack_1",
-              "TransitionDuration": 0.05,
-              "StopWhenHitOthers": true,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "AnimStateName": "Attack_1"
             },
             {
               "$type": "RPG.GameCore.WaitAnimState",
@@ -253,12 +166,10 @@
               },
               "AnimStateName": "Attack_1",
               "NormalizedTimeEnd": {
-                "fixedValue": {
-                  "RawValue": 425201760
+                "FixedValue": {
+                  "Value": 0.099
                 }
-              },
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              }
             },
             {
               "$type": "RPG.GameCore.AdventureFireProjectile",
@@ -269,27 +180,12 @@
               "Projectile": {
                 "Behavior": "Static",
                 "EnableRayCast": true,
-                "FlyTime": -1.0,
-                "Gravity": -9.8,
                 "MaxLifeTime": 0.13,
                 "AttachOffset": {
-                  "z": 5.0,
-                  "normalized": {
-                    "z": 1.0,
-                    "magnitude": 1.0,
-                    "sqrMagnitude": 1.0
-                  },
-                  "magnitude": 5.0,
-                  "sqrMagnitude": 25.0
+                  "Z": 5
                 },
                 "FlyEffect": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeAttack_Hit01.prefab",
-                "LinearPitchAngle": {},
-                "BoomerangEccentricity": 1.0,
-                "TriggerHitCallback": true,
-                "StaticProjectileCanPassAirWall": true,
-                "StaticExtraRadius": 0.4,
-                "ParabolaUseWorldSpaceUp": true,
-                "SubCurveIndex": {}
+                "StaticExtraRadius": 0.4
               },
               "OnProjectileLifetimeFinish": [
                 {
@@ -302,26 +198,19 @@
                     "$type": "RPG.GameCore.TargetAlias",
                     "Alias": "ProjectileHitEntity"
                   },
-                  "TriggerBattle": true,
                   "TriggerBattleDelay": 0.2,
                   "AttackDetectConfig": {
                     "$type": "RPG.GameCore.AdventureAttackDetectCircleConfig",
-                    "MaxRadius": 2.0,
-                    "FanAngle": 360.0,
-                    "Hight": 2.0
+                    "MaxRadius": 2,
+                    "FanAngle": 360,
+                    "Hight": 2
                   },
                   "HitConfig": {
                     "HitAnimation": "Hit"
-                  },
-                  "IncludeProps": true,
-                  "AttackDetectCollision": true,
-                  "TaskEnabled": true,
-                  "IsClientOnly": true
+                  }
                 }
               ],
-              "WaitProjectileFinish": true,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "WaitProjectileFinish": true
             },
             {
               "$type": "RPG.GameCore.AdventureFireProjectile",
@@ -332,30 +221,13 @@
               "Projectile": {
                 "Behavior": "Static",
                 "EnableRayCast": true,
-                "FlyTime": -1.0,
-                "Gravity": -9.8,
-                "MaxLifeTime": 1.0,
+                "MaxLifeTime": 1,
                 "AttachOffset": {
-                  "z": 5.0,
-                  "normalized": {
-                    "z": 1.0,
-                    "magnitude": 1.0,
-                    "sqrMagnitude": 1.0
-                  },
-                  "magnitude": 5.0,
-                  "sqrMagnitude": 25.0
+                  "Z": 5
                 },
                 "FlyEffect": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeAttack_Hit02.prefab",
-                "LinearPitchAngle": {},
-                "BoomerangEccentricity": 1.0,
-                "TriggerHitCallback": true,
-                "StaticProjectileCanPassAirWall": true,
-                "StaticExtraRadius": 0.4,
-                "ParabolaUseWorldSpaceUp": true,
-                "SubCurveIndex": {}
-              },
-              "TaskEnabled": true,
-              "IsClientOnly": true
+                "StaticExtraRadius": 0.4
+              }
             },
             {
               "$type": "RPG.GameCore.WaitAnimState",
@@ -365,12 +237,10 @@
               },
               "AnimStateName": "Attack_1",
               "NormalizedTimeEnd": {
-                "fixedValue": {
-                  "RawValue": 597000452
+                "FixedValue": {
+                  "Value": 0.139
                 }
-              },
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              }
             },
             {
               "$type": "RPG.GameCore.RadialBlurEffect",
@@ -378,27 +248,20 @@
                 "$type": "RPG.GameCore.TargetAlias",
                 "Alias": "Caster"
               },
-              "Active": true,
               "Duration": 0.05,
-              "BlurX": 0.5,
               "BlurY": 0.4,
-              "BlurRadius": 1.0,
+              "BlurRadius": 1,
               "Iteration": 4,
               "BlurStart": 0.005,
-              "BlurFeather": 0.01,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "BlurFeather": 0.01
             },
             {
               "$type": "RPG.GameCore.VCameraConfigChange",
               "CameraConfig": {
                 "ShakeTemplateName": "Common_Rapid_Light"
-              },
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              }
             }
-          ],
-          "TaskEnabled": true
+          ]
         }
       ]
     },
@@ -410,42 +273,30 @@
             "$type": "RPG.GameCore.TargetAlias",
             "Alias": "Caster"
           },
-          "Duration": -1.0,
-          "BlurX": 0.5,
-          "BlurY": 0.5,
-          "BlurRadius": 0.5,
-          "Iteration": 6,
-          "BlurStart": 0.2,
-          "BlurFeather": 0.1,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Active": false
         },
         {
           "$type": "RPG.GameCore.GlobalMainIntensityEffect",
           "IsRevert": true,
-          "FadeDuration": 1.0,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "FadeDuration": 1
         }
       ],
       "Name": "LocalPlayer_Aventurine_MazeSkill",
       "TargetInfo": {
-        "TargetType": "Caster",
-        "MaxTargetCount": 1
+        "TargetType": "Caster"
       },
       "OnAdd": [
         {
           "$type": "RPG.GameCore.SetDynamicValue",
-          "TargetType": {
-            "$type": "RPG.GameCore.TargetAlias",
-            "Alias": "Caster"
-          },
           "ContextScope": "ContextCaster",
-          "Value": {},
+          "Value": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
           "DynamicKey": {
             "Value": "_no_ssr_times"
-          },
-          "TaskEnabled": true
+          }
         }
       ],
       "OnStart": [
@@ -456,10 +307,7 @@
             "Alias": "Caster"
           },
           "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_Succeed.prefab",
-          "FadeOutRegionStart": -1.0,
-          "FadeOutRegionEnd": -1.0,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "IsNeedFadeOut": false
         },
         {
           "$type": "RPG.GameCore.RemoveEffect",
@@ -468,10 +316,7 @@
             "Alias": "Caster"
           },
           "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_Succeed_V2.prefab",
-          "FadeOutRegionStart": -1.0,
-          "FadeOutRegionEnd": -1.0,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "IsNeedFadeOut": false
         },
         {
           "$type": "RPG.GameCore.RemoveEffect",
@@ -480,10 +325,7 @@
             "Alias": "Caster"
           },
           "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_Border.prefab",
-          "FadeOutRegionStart": -1.0,
-          "FadeOutRegionEnd": -1.0,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "IsNeedFadeOut": false
         },
         {
           "$type": "RPG.GameCore.RemoveEffect",
@@ -492,10 +334,7 @@
             "Alias": "Caster"
           },
           "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_01.prefab",
-          "FadeOutRegionStart": -1.0,
-          "FadeOutRegionEnd": -1.0,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "IsNeedFadeOut": false
         },
         {
           "$type": "RPG.GameCore.RemoveEffect",
@@ -504,10 +343,7 @@
             "Alias": "Caster"
           },
           "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_02.prefab",
-          "FadeOutRegionStart": -1.0,
-          "FadeOutRegionEnd": -1.0,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "IsNeedFadeOut": false
         },
         {
           "$type": "RPG.GameCore.RemoveEffect",
@@ -516,10 +352,7 @@
             "Alias": "Caster"
           },
           "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_03.prefab",
-          "FadeOutRegionStart": -1.0,
-          "FadeOutRegionEnd": -1.0,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "IsNeedFadeOut": false
         },
         {
           "$type": "RPG.GameCore.RemoveEffect",
@@ -528,48 +361,44 @@
             "Alias": "Caster"
           },
           "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_04.prefab",
-          "FadeOutRegionStart": -1.0,
-          "FadeOutRegionEnd": -1.0,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "IsNeedFadeOut": false
         },
         {
           "$type": "RPG.GameCore.PredicateTaskList",
           "Predicate": {
             "$type": "RPG.GameCore.ByCompareDynamicValue",
-            "TargetType": {
-              "$type": "RPG.GameCore.TargetAlias",
-              "Alias": "Caster"
-            },
             "DynamicKey": {
               "Value": "_no_ssr_times"
             },
             "ContextScope": "ContextCaster",
             "CompareType": "GreaterEqual",
             "CompareValue": {
-              "fixedValue": {
-                "RawValue": -149061134974976
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQAAAAMR",
+                "FixedValues": [
+                  {
+                    "Value": 1
+                  }
+                ],
+                "DynamicHashes": [
+                  -272318413
+                ]
               }
-            },
-            "TaskEnabled": true
+            }
           },
           "SuccessTaskList": [
             {
               "$type": "RPG.GameCore.SetDynamicValue",
-              "TargetType": {
-                "$type": "RPG.GameCore.TargetAlias",
-                "Alias": "Caster"
-              },
               "ContextScope": "ContextAbility",
               "Value": {
-                "fixedValue": {
-                  "RawValue": 429496729600
+                "FixedValue": {
+                  "Value": 100
                 }
               },
               "DynamicKey": {
                 "Value": "_random"
-              },
-              "TaskEnabled": true
+              }
             }
           ],
           "FailedTaskList": [
@@ -578,65 +407,73 @@
               "DynamicKey": "_random",
               "ContextScope": "ContextAbility",
               "IsInt": true,
-              "Min": {},
-              "Max": {
-                "fixedValue": {
-                  "RawValue": 429496729600
+              "Min": {
+                "FixedValue": {
+                  "Value": 0
                 }
               },
-              "TaskEnabled": true
+              "Max": {
+                "FixedValue": {
+                  "Value": 100
+                }
+              }
             }
-          ],
-          "TaskEnabled": true
+          ]
         },
         {
           "$type": "RPG.GameCore.SetDynamicValue",
-          "TargetType": {
-            "$type": "RPG.GameCore.TargetAlias",
-            "Alias": "Caster"
-          },
           "Value": {
-            "fixedValue": {
-              "RawValue": -149061134974976
+            "IsDynamic": true,
+            "PostfixExpr": {
+              "OpCodes": "AQABAQIBAgIR",
+              "FixedValues": [],
+              "DynamicHashes": [
+                1717301631,
+                -1385279545,
+                1538473541
+              ]
             }
           },
           "DynamicKey": {
             "Value": "_sum_probability"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.PredicateTaskList",
           "Predicate": {
             "$type": "RPG.GameCore.ByCompareDynamicValue",
-            "TargetType": {
-              "$type": "RPG.GameCore.TargetAlias",
-              "Alias": "Caster"
-            },
             "DynamicKey": {
               "Value": "_random"
             },
             "ContextScope": "ContextAbility",
             "CompareType": "Less",
             "CompareValue": {
-              "fixedValue": {
-                "RawValue": -149061134974976
+              "IsDynamic": true,
+              "PostfixExpr": {
+                "OpCodes": "AQABAQUAAAQR",
+                "FixedValues": [
+                  {
+                    "Value": 100
+                  }
+                ],
+                "DynamicHashes": [
+                  1717301631,
+                  1977435654
+                ]
               }
-            },
-            "TaskEnabled": true
+            }
           },
           "SuccessTaskList": [
             {
               "$type": "RPG.GameCore.SetDynamicValue",
-              "TargetType": {
-                "$type": "RPG.GameCore.TargetAlias",
-                "Alias": "Caster"
+              "Value": {
+                "FixedValue": {
+                  "Value": 0
+                }
               },
-              "Value": {},
               "DynamicKey": {
                 "Value": "_result"
-              },
-              "TaskEnabled": true
+              }
             },
             {
               "$type": "RPG.GameCore.TriggerEffect",
@@ -645,34 +482,7 @@
                 "Alias": "Caster"
               },
               "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_Border.prefab",
-              "UniqueEffectName": "AventurineMazeSkill",
-              "Scale": {
-                "x": -1.0,
-                "y": -1.0,
-                "z": -1.0,
-                "normalized": {
-                  "x": -0.577350259,
-                  "y": -0.577350259,
-                  "z": -0.577350259,
-                  "normalized": {
-                    "x": -0.5773503,
-                    "y": -0.5773503,
-                    "z": -0.5773503,
-                    "magnitude": 1.00000012,
-                    "sqrMagnitude": 1.00000024
-                  },
-                  "magnitude": 0.99999994,
-                  "sqrMagnitude": 0.99999994
-                },
-                "magnitude": 1.73205078,
-                "sqrMagnitude": 3.0
-              },
-              "IsNeedFadeIn": true,
-              "ParamEntityUsage": "LookAt",
-              "TowardMaxPitchAngle": 90.0,
-              "MaxMutexCount": 1,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "UniqueEffectName": "AventurineMazeSkill"
             },
             {
               "$type": "RPG.GameCore.TriggerSound",
@@ -682,9 +492,7 @@
               "TargetType": {
                 "$type": "RPG.GameCore.TargetAlias",
                 "Alias": "Caster"
-              },
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              }
             },
             {
               "$type": "RPG.GameCore.TriggerEffectList",
@@ -694,80 +502,15 @@
               },
               "EffectList": [
                 {
-                  "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_01.prefab",
-                  "Scale": {
-                    "x": -1.0,
-                    "y": -1.0,
-                    "z": -1.0,
-                    "normalized": {
-                      "x": -0.577350259,
-                      "y": -0.577350259,
-                      "z": -0.577350259,
-                      "normalized": {
-                        "x": -0.5773503,
-                        "y": -0.5773503,
-                        "z": -0.5773503,
-                        "magnitude": 1.00000012,
-                        "sqrMagnitude": 1.00000024
-                      },
-                      "magnitude": 0.99999994,
-                      "sqrMagnitude": 0.99999994
-                    },
-                    "magnitude": 1.73205078,
-                    "sqrMagnitude": 3.0
-                  }
+                  "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_01.prefab"
                 },
                 {
-                  "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_02.prefab",
-                  "Scale": {
-                    "x": -1.0,
-                    "y": -1.0,
-                    "z": -1.0,
-                    "normalized": {
-                      "x": -0.577350259,
-                      "y": -0.577350259,
-                      "z": -0.577350259,
-                      "normalized": {
-                        "x": -0.5773503,
-                        "y": -0.5773503,
-                        "z": -0.5773503,
-                        "magnitude": 1.00000012,
-                        "sqrMagnitude": 1.00000024
-                      },
-                      "magnitude": 0.99999994,
-                      "sqrMagnitude": 0.99999994
-                    },
-                    "magnitude": 1.73205078,
-                    "sqrMagnitude": 3.0
-                  }
+                  "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_02.prefab"
                 },
                 {
-                  "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_04.prefab",
-                  "Scale": {
-                    "x": -1.0,
-                    "y": -1.0,
-                    "z": -1.0,
-                    "normalized": {
-                      "x": -0.577350259,
-                      "y": -0.577350259,
-                      "z": -0.577350259,
-                      "normalized": {
-                        "x": -0.5773503,
-                        "y": -0.5773503,
-                        "z": -0.5773503,
-                        "magnitude": 1.00000012,
-                        "sqrMagnitude": 1.00000024
-                      },
-                      "magnitude": 0.99999994,
-                      "sqrMagnitude": 0.99999994
-                    },
-                    "magnitude": 1.73205078,
-                    "sqrMagnitude": 3.0
-                  }
+                  "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_04.prefab"
                 }
-              ],
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              ]
             }
           ],
           "FailedTaskList": [
@@ -775,21 +518,26 @@
               "$type": "RPG.GameCore.PredicateTaskList",
               "Predicate": {
                 "$type": "RPG.GameCore.ByCompareDynamicValue",
-                "TargetType": {
-                  "$type": "RPG.GameCore.TargetAlias",
-                  "Alias": "Caster"
-                },
                 "DynamicKey": {
                   "Value": "_random"
                 },
                 "ContextScope": "ContextAbility",
                 "CompareType": "GreaterEqual",
                 "CompareValue": {
-                  "fixedValue": {
-                    "RawValue": -149061134974976
+                  "IsDynamic": true,
+                  "PostfixExpr": {
+                    "OpCodes": "AAABAAEBBQAABAMR",
+                    "FixedValues": [
+                      {
+                        "Value": 100
+                      }
+                    ],
+                    "DynamicHashes": [
+                      1538473541,
+                      1977435654
+                    ]
                   }
-                },
-                "TaskEnabled": true
+                }
               },
               "SuccessTaskList": [
                 {
@@ -799,34 +547,7 @@
                     "Alias": "Caster"
                   },
                   "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_Succeed_V2.prefab",
-                  "UniqueEffectName": "AventurineMazeSkill",
-                  "Scale": {
-                    "x": -1.0,
-                    "y": -1.0,
-                    "z": -1.0,
-                    "normalized": {
-                      "x": -0.577350259,
-                      "y": -0.577350259,
-                      "z": -0.577350259,
-                      "normalized": {
-                        "x": -0.5773503,
-                        "y": -0.5773503,
-                        "z": -0.5773503,
-                        "magnitude": 1.00000012,
-                        "sqrMagnitude": 1.00000024
-                      },
-                      "magnitude": 0.99999994,
-                      "sqrMagnitude": 0.99999994
-                    },
-                    "magnitude": 1.73205078,
-                    "sqrMagnitude": 3.0
-                  },
-                  "IsNeedFadeIn": true,
-                  "ParamEntityUsage": "LookAt",
-                  "TowardMaxPitchAngle": 90.0,
-                  "MaxMutexCount": 1,
-                  "TaskEnabled": true,
-                  "IsClientOnly": true
+                  "UniqueEffectName": "AventurineMazeSkill"
                 },
                 {
                   "$type": "RPG.GameCore.TriggerSound",
@@ -836,25 +557,18 @@
                   "TargetType": {
                     "$type": "RPG.GameCore.TargetAlias",
                     "Alias": "Caster"
-                  },
-                  "TaskEnabled": true,
-                  "IsClientOnly": true
+                  }
                 },
                 {
                   "$type": "RPG.GameCore.SetDynamicValue",
-                  "TargetType": {
-                    "$type": "RPG.GameCore.TargetAlias",
-                    "Alias": "Caster"
-                  },
                   "Value": {
-                    "fixedValue": {
-                      "RawValue": 8589934592
+                    "FixedValue": {
+                      "Value": 2
                     }
                   },
                   "DynamicKey": {
                     "Value": "_result"
-                  },
-                  "TaskEnabled": true
+                  }
                 },
                 {
                   "$type": "RPG.GameCore.TriggerEffectList",
@@ -864,80 +578,15 @@
                   },
                   "EffectList": [
                     {
-                      "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_03.prefab",
-                      "Scale": {
-                        "x": -1.0,
-                        "y": -1.0,
-                        "z": -1.0,
-                        "normalized": {
-                          "x": -0.577350259,
-                          "y": -0.577350259,
-                          "z": -0.577350259,
-                          "normalized": {
-                            "x": -0.5773503,
-                            "y": -0.5773503,
-                            "z": -0.5773503,
-                            "magnitude": 1.00000012,
-                            "sqrMagnitude": 1.00000024
-                          },
-                          "magnitude": 0.99999994,
-                          "sqrMagnitude": 0.99999994
-                        },
-                        "magnitude": 1.73205078,
-                        "sqrMagnitude": 3.0
-                      }
+                      "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_03.prefab"
                     },
                     {
-                      "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_03.prefab",
-                      "Scale": {
-                        "x": -1.0,
-                        "y": -1.0,
-                        "z": -1.0,
-                        "normalized": {
-                          "x": -0.577350259,
-                          "y": -0.577350259,
-                          "z": -0.577350259,
-                          "normalized": {
-                            "x": -0.5773503,
-                            "y": -0.5773503,
-                            "z": -0.5773503,
-                            "magnitude": 1.00000012,
-                            "sqrMagnitude": 1.00000024
-                          },
-                          "magnitude": 0.99999994,
-                          "sqrMagnitude": 0.99999994
-                        },
-                        "magnitude": 1.73205078,
-                        "sqrMagnitude": 3.0
-                      }
+                      "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_03.prefab"
                     },
                     {
-                      "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_03.prefab",
-                      "Scale": {
-                        "x": -1.0,
-                        "y": -1.0,
-                        "z": -1.0,
-                        "normalized": {
-                          "x": -0.577350259,
-                          "y": -0.577350259,
-                          "z": -0.577350259,
-                          "normalized": {
-                            "x": -0.5773503,
-                            "y": -0.5773503,
-                            "z": -0.5773503,
-                            "magnitude": 1.00000012,
-                            "sqrMagnitude": 1.00000024
-                          },
-                          "magnitude": 0.99999994,
-                          "sqrMagnitude": 0.99999994
-                        },
-                        "magnitude": 1.73205078,
-                        "sqrMagnitude": 3.0
-                      }
+                      "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_03.prefab"
                     }
-                  ],
-                  "TaskEnabled": true,
-                  "IsClientOnly": true
+                  ]
                 }
               ],
               "FailedTaskList": [
@@ -948,34 +597,7 @@
                     "Alias": "Caster"
                   },
                   "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_Succeed.prefab",
-                  "UniqueEffectName": "AventurineMazeSkill",
-                  "Scale": {
-                    "x": -1.0,
-                    "y": -1.0,
-                    "z": -1.0,
-                    "normalized": {
-                      "x": -0.577350259,
-                      "y": -0.577350259,
-                      "z": -0.577350259,
-                      "normalized": {
-                        "x": -0.5773503,
-                        "y": -0.5773503,
-                        "z": -0.5773503,
-                        "magnitude": 1.00000012,
-                        "sqrMagnitude": 1.00000024
-                      },
-                      "magnitude": 0.99999994,
-                      "sqrMagnitude": 0.99999994
-                    },
-                    "magnitude": 1.73205078,
-                    "sqrMagnitude": 3.0
-                  },
-                  "IsNeedFadeIn": true,
-                  "ParamEntityUsage": "LookAt",
-                  "TowardMaxPitchAngle": 90.0,
-                  "MaxMutexCount": 1,
-                  "TaskEnabled": true,
-                  "IsClientOnly": true
+                  "UniqueEffectName": "AventurineMazeSkill"
                 },
                 {
                   "$type": "RPG.GameCore.TriggerSound",
@@ -985,54 +607,49 @@
                   "TargetType": {
                     "$type": "RPG.GameCore.TargetAlias",
                     "Alias": "Caster"
-                  },
-                  "TaskEnabled": true,
-                  "IsClientOnly": true
+                  }
                 },
                 {
                   "$type": "RPG.GameCore.SetDynamicValue",
-                  "TargetType": {
-                    "$type": "RPG.GameCore.TargetAlias",
-                    "Alias": "Caster"
-                  },
                   "Value": {
-                    "fixedValue": {
-                      "RawValue": 4294967296
+                    "FixedValue": {
+                      "Value": 1
                     }
                   },
                   "DynamicKey": {
                     "Value": "_result"
-                  },
-                  "TaskEnabled": true
+                  }
                 },
                 {
                   "$type": "RPG.GameCore.SetDynamicValueByRandom",
                   "DynamicKey": "_random",
                   "ContextScope": "ContextAbility",
                   "IsInt": true,
-                  "Min": {},
-                  "Max": {
-                    "fixedValue": {
-                      "RawValue": 12884901888
+                  "Min": {
+                    "FixedValue": {
+                      "Value": 0
                     }
                   },
-                  "TaskEnabled": true
+                  "Max": {
+                    "FixedValue": {
+                      "Value": 3
+                    }
+                  }
                 },
                 {
                   "$type": "RPG.GameCore.PredicateTaskList",
                   "Predicate": {
                     "$type": "RPG.GameCore.ByCompareDynamicValue",
-                    "TargetType": {
-                      "$type": "RPG.GameCore.TargetAlias",
-                      "Alias": "Caster"
-                    },
                     "DynamicKey": {
                       "Value": "_random"
                     },
                     "ContextScope": "ContextAbility",
                     "CompareType": "Equal",
-                    "CompareValue": {},
-                    "TaskEnabled": true
+                    "CompareValue": {
+                      "FixedValue": {
+                        "Value": 0
+                      }
+                    }
                   },
                   "SuccessTaskList": [
                     {
@@ -1043,80 +660,15 @@
                       },
                       "EffectList": [
                         {
-                          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_01.prefab",
-                          "Scale": {
-                            "x": -1.0,
-                            "y": -1.0,
-                            "z": -1.0,
-                            "normalized": {
-                              "x": -0.577350259,
-                              "y": -0.577350259,
-                              "z": -0.577350259,
-                              "normalized": {
-                                "x": -0.5773503,
-                                "y": -0.5773503,
-                                "z": -0.5773503,
-                                "magnitude": 1.00000012,
-                                "sqrMagnitude": 1.00000024
-                              },
-                              "magnitude": 0.99999994,
-                              "sqrMagnitude": 0.99999994
-                            },
-                            "magnitude": 1.73205078,
-                            "sqrMagnitude": 3.0
-                          }
+                          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_01.prefab"
                         },
                         {
-                          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_01.prefab",
-                          "Scale": {
-                            "x": -1.0,
-                            "y": -1.0,
-                            "z": -1.0,
-                            "normalized": {
-                              "x": -0.577350259,
-                              "y": -0.577350259,
-                              "z": -0.577350259,
-                              "normalized": {
-                                "x": -0.5773503,
-                                "y": -0.5773503,
-                                "z": -0.5773503,
-                                "magnitude": 1.00000012,
-                                "sqrMagnitude": 1.00000024
-                              },
-                              "magnitude": 0.99999994,
-                              "sqrMagnitude": 0.99999994
-                            },
-                            "magnitude": 1.73205078,
-                            "sqrMagnitude": 3.0
-                          }
+                          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_01.prefab"
                         },
                         {
-                          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_01.prefab",
-                          "Scale": {
-                            "x": -1.0,
-                            "y": -1.0,
-                            "z": -1.0,
-                            "normalized": {
-                              "x": -0.577350259,
-                              "y": -0.577350259,
-                              "z": -0.577350259,
-                              "normalized": {
-                                "x": -0.5773503,
-                                "y": -0.5773503,
-                                "z": -0.5773503,
-                                "magnitude": 1.00000012,
-                                "sqrMagnitude": 1.00000024
-                              },
-                              "magnitude": 0.99999994,
-                              "sqrMagnitude": 0.99999994
-                            },
-                            "magnitude": 1.73205078,
-                            "sqrMagnitude": 3.0
-                          }
+                          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_01.prefab"
                         }
-                      ],
-                      "TaskEnabled": true,
-                      "IsClientOnly": true
+                      ]
                     }
                   ],
                   "FailedTaskList": [
@@ -1124,21 +676,16 @@
                       "$type": "RPG.GameCore.PredicateTaskList",
                       "Predicate": {
                         "$type": "RPG.GameCore.ByCompareDynamicValue",
-                        "TargetType": {
-                          "$type": "RPG.GameCore.TargetAlias",
-                          "Alias": "Caster"
-                        },
                         "DynamicKey": {
                           "Value": "_random"
                         },
                         "ContextScope": "ContextAbility",
                         "CompareType": "Equal",
                         "CompareValue": {
-                          "fixedValue": {
-                            "RawValue": 4294967296
+                          "FixedValue": {
+                            "Value": 1
                           }
-                        },
-                        "TaskEnabled": true
+                        }
                       },
                       "SuccessTaskList": [
                         {
@@ -1149,80 +696,15 @@
                           },
                           "EffectList": [
                             {
-                              "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_02.prefab",
-                              "Scale": {
-                                "x": -1.0,
-                                "y": -1.0,
-                                "z": -1.0,
-                                "normalized": {
-                                  "x": -0.577350259,
-                                  "y": -0.577350259,
-                                  "z": -0.577350259,
-                                  "normalized": {
-                                    "x": -0.5773503,
-                                    "y": -0.5773503,
-                                    "z": -0.5773503,
-                                    "magnitude": 1.00000012,
-                                    "sqrMagnitude": 1.00000024
-                                  },
-                                  "magnitude": 0.99999994,
-                                  "sqrMagnitude": 0.99999994
-                                },
-                                "magnitude": 1.73205078,
-                                "sqrMagnitude": 3.0
-                              }
+                              "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_02.prefab"
                             },
                             {
-                              "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_02.prefab",
-                              "Scale": {
-                                "x": -1.0,
-                                "y": -1.0,
-                                "z": -1.0,
-                                "normalized": {
-                                  "x": -0.577350259,
-                                  "y": -0.577350259,
-                                  "z": -0.577350259,
-                                  "normalized": {
-                                    "x": -0.5773503,
-                                    "y": -0.5773503,
-                                    "z": -0.5773503,
-                                    "magnitude": 1.00000012,
-                                    "sqrMagnitude": 1.00000024
-                                  },
-                                  "magnitude": 0.99999994,
-                                  "sqrMagnitude": 0.99999994
-                                },
-                                "magnitude": 1.73205078,
-                                "sqrMagnitude": 3.0
-                              }
+                              "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_02.prefab"
                             },
                             {
-                              "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_02.prefab",
-                              "Scale": {
-                                "x": -1.0,
-                                "y": -1.0,
-                                "z": -1.0,
-                                "normalized": {
-                                  "x": -0.577350259,
-                                  "y": -0.577350259,
-                                  "z": -0.577350259,
-                                  "normalized": {
-                                    "x": -0.5773503,
-                                    "y": -0.5773503,
-                                    "z": -0.5773503,
-                                    "magnitude": 1.00000012,
-                                    "sqrMagnitude": 1.00000024
-                                  },
-                                  "magnitude": 0.99999994,
-                                  "sqrMagnitude": 0.99999994
-                                },
-                                "magnitude": 1.73205078,
-                                "sqrMagnitude": 3.0
-                              }
+                              "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_02.prefab"
                             }
-                          ],
-                          "TaskEnabled": true,
-                          "IsClientOnly": true
+                          ]
                         }
                       ],
                       "FailedTaskList": [
@@ -1234,146 +716,73 @@
                           },
                           "EffectList": [
                             {
-                              "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_04.prefab",
-                              "Scale": {
-                                "x": -1.0,
-                                "y": -1.0,
-                                "z": -1.0,
-                                "normalized": {
-                                  "x": -0.577350259,
-                                  "y": -0.577350259,
-                                  "z": -0.577350259,
-                                  "normalized": {
-                                    "x": -0.5773503,
-                                    "y": -0.5773503,
-                                    "z": -0.5773503,
-                                    "magnitude": 1.00000012,
-                                    "sqrMagnitude": 1.00000024
-                                  },
-                                  "magnitude": 0.99999994,
-                                  "sqrMagnitude": 0.99999994
-                                },
-                                "magnitude": 1.73205078,
-                                "sqrMagnitude": 3.0
-                              }
+                              "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_04.prefab"
                             },
                             {
-                              "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_04.prefab",
-                              "Scale": {
-                                "x": -1.0,
-                                "y": -1.0,
-                                "z": -1.0,
-                                "normalized": {
-                                  "x": -0.577350259,
-                                  "y": -0.577350259,
-                                  "z": -0.577350259,
-                                  "normalized": {
-                                    "x": -0.5773503,
-                                    "y": -0.5773503,
-                                    "z": -0.5773503,
-                                    "magnitude": 1.00000012,
-                                    "sqrMagnitude": 1.00000024
-                                  },
-                                  "magnitude": 0.99999994,
-                                  "sqrMagnitude": 0.99999994
-                                },
-                                "magnitude": 1.73205078,
-                                "sqrMagnitude": 3.0
-                              }
+                              "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_04.prefab"
                             },
                             {
-                              "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_04.prefab",
-                              "Scale": {
-                                "x": -1.0,
-                                "y": -1.0,
-                                "z": -1.0,
-                                "normalized": {
-                                  "x": -0.577350259,
-                                  "y": -0.577350259,
-                                  "z": -0.577350259,
-                                  "normalized": {
-                                    "x": -0.5773503,
-                                    "y": -0.5773503,
-                                    "z": -0.5773503,
-                                    "magnitude": 1.00000012,
-                                    "sqrMagnitude": 1.00000024
-                                  },
-                                  "magnitude": 0.99999994,
-                                  "sqrMagnitude": 0.99999994
-                                },
-                                "magnitude": 1.73205078,
-                                "sqrMagnitude": 3.0
-                              }
+                              "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_04.prefab"
                             }
-                          ],
-                          "TaskEnabled": true,
-                          "IsClientOnly": true
+                          ]
                         }
-                      ],
-                      "TaskEnabled": true
+                      ]
                     }
-                  ],
-                  "TaskEnabled": true
+                  ]
                 }
-              ],
-              "TaskEnabled": true
+              ]
             }
-          ],
-          "TaskEnabled": true
+          ]
         },
         {
           "$type": "RPG.GameCore.PredicateTaskList",
           "Predicate": {
             "$type": "RPG.GameCore.AdvByCompareDynamicValue",
-            "TargetType": {
-              "$type": "RPG.GameCore.TargetAlias",
-              "Alias": "Caster"
-            },
             "DynamicKey": "_result",
             "CompareType": "Equal",
             "CompareValue": {
-              "fixedValue": {
-                "RawValue": 8589934592
+              "FixedValue": {
+                "Value": 2
               }
-            },
-            "TaskEnabled": true,
-            "IsClientOnly": true
+            }
           },
           "SuccessTaskList": [
             {
               "$type": "RPG.GameCore.SetDynamicValue",
-              "TargetType": {
-                "$type": "RPG.GameCore.TargetAlias",
-                "Alias": "Caster"
-              },
               "ContextScope": "ContextCaster",
-              "Value": {},
+              "Value": {
+                "FixedValue": {
+                  "Value": 0
+                }
+              },
               "DynamicKey": {
                 "Value": "_no_ssr_times"
-              },
-              "TaskEnabled": true
+              }
             }
           ],
           "FailedTaskList": [
             {
               "$type": "RPG.GameCore.SetDynamicValue",
-              "TargetType": {
-                "$type": "RPG.GameCore.TargetAlias",
-                "Alias": "Caster"
-              },
               "ContextScope": "ContextCaster",
               "Value": {
-                "fixedValue": {
-                  "RawValue": -149061134974976
+                "IsDynamic": true,
+                "PostfixExpr": {
+                  "OpCodes": "AQAAAAIR",
+                  "FixedValues": [
+                    {
+                      "Value": 1
+                    }
+                  ],
+                  "DynamicHashes": [
+                    1271644962
+                  ]
                 }
               },
               "DynamicKey": {
                 "Value": "_no_ssr_times"
-              },
-              "TaskEnabled": true
+              }
             }
-          ],
-          "TaskEnabled": true
+          ]
         },
         {
           "$type": "RPG.GameCore.AdventureTriggerAnimStateWithMove",
@@ -1382,11 +791,7 @@
             "Alias": "AdvLocalPlayer"
           },
           "AnimLogicState": "MazeSkill",
-          "AnimStateName": "MazeSkill",
-          "TransitionDuration": 0.05,
-          "StopWhenHitOthers": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "AnimStateName": "MazeSkill"
         },
         {
           "$type": "RPG.GameCore.WaitAnimState",
@@ -1396,50 +801,37 @@
           },
           "AnimStateName": "MazeSkill",
           "NormalizedTimeEnd": {
-            "fixedValue": {
-              "RawValue": 133143986
+            "FixedValue": {
+              "Value": 0.031
             }
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
           "$type": "RPG.GameCore.PredicateTaskList",
           "Predicate": {
             "$type": "RPG.GameCore.AdvByCompareDynamicValue",
-            "TargetType": {
-              "$type": "RPG.GameCore.TargetAlias",
-              "Alias": "Caster"
-            },
             "DynamicKey": "_result",
             "CompareType": "Equal",
             "CompareValue": {
-              "fixedValue": {
-                "RawValue": 8589934592
+              "FixedValue": {
+                "Value": 2
               }
-            },
-            "TaskEnabled": true,
-            "IsClientOnly": true
+            }
           },
           "SuccessTaskList": [
             {
               "$type": "RPG.GameCore.GlobalMainIntensityEffect",
               "TargetIntensity": 0.5,
-              "FadeDuration": 0.167,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "FadeDuration": 0.167
             }
           ],
           "FailedTaskList": [
             {
               "$type": "RPG.GameCore.GlobalMainIntensityEffect",
               "IsRevert": true,
-              "FadeDuration": 1.0,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "FadeDuration": 1
             }
-          ],
-          "TaskEnabled": true
+          ]
         },
         {
           "$type": "RPG.GameCore.WaitAnimState",
@@ -1449,12 +841,10 @@
           },
           "AnimStateName": "MazeSkill",
           "NormalizedTimeEnd": {
-            "fixedValue": {
-              "RawValue": 721554504
+            "FixedValue": {
+              "Value": 0.168
             }
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
           "$type": "RPG.GameCore.TriggerEffect",
@@ -1462,48 +852,19 @@
             "$type": "RPG.GameCore.TargetAlias",
             "Alias": "Caster"
           },
-          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_DefenceUp.prefab",
-          "Scale": {
-            "x": -1.0,
-            "y": -1.0,
-            "z": -1.0,
-            "normalized": {
-              "x": -0.577350259,
-              "y": -0.577350259,
-              "z": -0.577350259,
-              "normalized": {
-                "x": -0.5773503,
-                "y": -0.5773503,
-                "z": -0.5773503,
-                "magnitude": 1.00000012,
-                "sqrMagnitude": 1.00000024
-              },
-              "magnitude": 0.99999994,
-              "sqrMagnitude": 0.99999994
-            },
-            "magnitude": 1.73205078,
-            "sqrMagnitude": 3.0
-          },
-          "IsNeedFadeIn": true,
-          "ParamEntityUsage": "LookAt",
-          "TowardMaxPitchAngle": 90.0,
-          "MaxMutexCount": 1,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_DefenceUp.prefab"
         },
         {
           "$type": "RPG.GameCore.PredicateTaskList",
           "Predicate": {
             "$type": "RPG.GameCore.AdvByCompareDynamicValue",
-            "TargetType": {
-              "$type": "RPG.GameCore.TargetAlias",
-              "Alias": "Caster"
-            },
             "DynamicKey": "_result",
             "CompareType": "Equal",
-            "CompareValue": {},
-            "TaskEnabled": true,
-            "IsClientOnly": true
+            "CompareValue": {
+              "FixedValue": {
+                "Value": 0
+              }
+            }
           },
           "SuccessTaskList": [
             {
@@ -1523,9 +884,7 @@
                       "Alias": "Caster"
                     },
                     "BuffID": 130402,
-                    "Inverse": true,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "Inverse": true
                   },
                   {
                     "$type": "RPG.GameCore.ByCompareCarryMazebuff",
@@ -1534,20 +893,15 @@
                       "Alias": "Caster"
                     },
                     "BuffID": 130403,
-                    "Inverse": true,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "Inverse": true
                   }
-                ],
-                "TaskEnabled": true
+                ]
               },
               "LifeTime": {
-                "fixedValue": {
-                  "RawValue": -4294967296
+                "FixedValue": {
+                  "Value": -1
                 }
-              },
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              }
             },
             {
               "$type": "RPG.GameCore.AddMazeBuff",
@@ -1565,9 +919,7 @@
                       "$type": "RPG.GameCore.TargetAlias",
                       "Alias": "Caster"
                     },
-                    "BuffID": 130402,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "BuffID": 130402
                   },
                   {
                     "$type": "RPG.GameCore.ByCompareCarryMazebuff",
@@ -1575,20 +927,15 @@
                       "$type": "RPG.GameCore.TargetAlias",
                       "Alias": "Caster"
                     },
-                    "BuffID": 130403,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "BuffID": 130403
                   }
-                ],
-                "TaskEnabled": true
+                ]
               },
               "LifeTime": {
-                "fixedValue": {
-                  "RawValue": -4294967296
+                "FixedValue": {
+                  "Value": -1
                 }
-              },
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              }
             },
             {
               "$type": "RPG.GameCore.RadialBlurEffect",
@@ -1596,16 +943,12 @@
                 "$type": "RPG.GameCore.TargetAlias",
                 "Alias": "Caster"
               },
-              "Active": true,
               "Duration": 0.1,
-              "BlurX": 0.5,
               "BlurY": 0.4,
-              "BlurRadius": 1.0,
+              "BlurRadius": 1,
               "Iteration": 4,
               "BlurStart": 0.1,
-              "BlurFeather": 0.2,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "BlurFeather": 0.2
             }
           ],
           "FailedTaskList": [
@@ -1613,19 +956,13 @@
               "$type": "RPG.GameCore.PredicateTaskList",
               "Predicate": {
                 "$type": "RPG.GameCore.AdvByCompareDynamicValue",
-                "TargetType": {
-                  "$type": "RPG.GameCore.TargetAlias",
-                  "Alias": "Caster"
-                },
                 "DynamicKey": "_result",
                 "CompareType": "Equal",
                 "CompareValue": {
-                  "fixedValue": {
-                    "RawValue": 4294967296
+                  "FixedValue": {
+                    "Value": 1
                   }
-                },
-                "TaskEnabled": true,
-                "IsClientOnly": true
+                }
               },
               "SuccessTaskList": [
                 {
@@ -1645,20 +982,15 @@
                           "Alias": "Caster"
                         },
                         "BuffID": 130403,
-                        "Inverse": true,
-                        "TaskEnabled": true,
-                        "IsClientOnly": true
+                        "Inverse": true
                       }
-                    ],
-                    "TaskEnabled": true
+                    ]
                   },
                   "LifeTime": {
-                    "fixedValue": {
-                      "RawValue": -4294967296
+                    "FixedValue": {
+                      "Value": -1
                     }
-                  },
-                  "TaskEnabled": true,
-                  "IsClientOnly": true
+                  }
                 },
                 {
                   "$type": "RPG.GameCore.AddMazeBuff",
@@ -1673,17 +1005,13 @@
                       "$type": "RPG.GameCore.TargetAlias",
                       "Alias": "Caster"
                     },
-                    "BuffID": 130403,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "BuffID": 130403
                   },
                   "LifeTime": {
-                    "fixedValue": {
-                      "RawValue": -4294967296
+                    "FixedValue": {
+                      "Value": -1
                     }
-                  },
-                  "TaskEnabled": true,
-                  "IsClientOnly": true
+                  }
                 },
                 {
                   "$type": "RPG.GameCore.RadialBlurEffect",
@@ -1691,16 +1019,12 @@
                     "$type": "RPG.GameCore.TargetAlias",
                     "Alias": "Caster"
                   },
-                  "Active": true,
                   "Duration": 0.1,
-                  "BlurX": 0.5,
                   "BlurY": 0.4,
-                  "BlurRadius": 1.0,
+                  "BlurRadius": 1,
                   "Iteration": 4,
                   "BlurStart": 0.1,
-                  "BlurFeather": 0.2,
-                  "TaskEnabled": true,
-                  "IsClientOnly": true
+                  "BlurFeather": 0.2
                 },
                 {
                   "$type": "RPG.GameCore.TriggerEffect",
@@ -1708,34 +1032,7 @@
                     "$type": "RPG.GameCore.TargetAlias",
                     "Alias": "Caster"
                   },
-                  "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_Firework_V1.prefab",
-                  "Scale": {
-                    "x": -1.0,
-                    "y": -1.0,
-                    "z": -1.0,
-                    "normalized": {
-                      "x": -0.577350259,
-                      "y": -0.577350259,
-                      "z": -0.577350259,
-                      "normalized": {
-                        "x": -0.5773503,
-                        "y": -0.5773503,
-                        "z": -0.5773503,
-                        "magnitude": 1.00000012,
-                        "sqrMagnitude": 1.00000024
-                      },
-                      "magnitude": 0.99999994,
-                      "sqrMagnitude": 0.99999994
-                    },
-                    "magnitude": 1.73205078,
-                    "sqrMagnitude": 3.0
-                  },
-                  "IsNeedFadeIn": true,
-                  "ParamEntityUsage": "LookAt",
-                  "TowardMaxPitchAngle": 90.0,
-                  "MaxMutexCount": 1,
-                  "TaskEnabled": true,
-                  "IsClientOnly": true
+                  "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_Firework_V1.prefab"
                 }
               ],
               "FailedTaskList": [
@@ -1747,12 +1044,10 @@
                   },
                   "ID": 130403,
                   "LifeTime": {
-                    "fixedValue": {
-                      "RawValue": -4294967296
+                    "FixedValue": {
+                      "Value": -1
                     }
-                  },
-                  "TaskEnabled": true,
-                  "IsClientOnly": true
+                  }
                 },
                 {
                   "$type": "RPG.GameCore.RadialBlurEffect",
@@ -1760,32 +1055,21 @@
                     "$type": "RPG.GameCore.TargetAlias",
                     "Alias": "Caster"
                   },
-                  "Active": true,
                   "Duration": 0.2,
-                  "BlurX": 0.5,
                   "BlurY": 0.4,
-                  "BlurRadius": 1.0,
+                  "BlurRadius": 1,
                   "Iteration": 4,
                   "BlurStart": 0.1,
-                  "BlurFeather": 0.2,
-                  "TaskEnabled": true,
-                  "IsClientOnly": true
+                  "BlurFeather": 0.2
                 },
                 {
                   "$type": "RPG.GameCore.VCameraConfigChange",
                   "CameraConfig": {
                     "ShakeTemplateName": "Common_Rapid_Light",
                     "OverrideShakeConfigV2": {
-                      "ShakeScale": 1.0,
-                      "ShakeTime": -1.0,
-                      "LoopTime": 1.0,
-                      "RangeAttenuationDelay": -1.0,
-                      "RangeAttenuationTarget": -1.0,
-                      "RangeAttenuationDuration": -1.0
+                      "ShakeScale": 1
                     }
-                  },
-                  "TaskEnabled": true,
-                  "IsClientOnly": true
+                  }
                 },
                 {
                   "$type": "RPG.GameCore.TriggerEffect",
@@ -1793,51 +1077,22 @@
                     "$type": "RPG.GameCore.TargetAlias",
                     "Alias": "Caster"
                   },
-                  "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_Firework_V2.prefab",
-                  "Scale": {
-                    "x": -1.0,
-                    "y": -1.0,
-                    "z": -1.0,
-                    "normalized": {
-                      "x": -0.577350259,
-                      "y": -0.577350259,
-                      "z": -0.577350259,
-                      "normalized": {
-                        "x": -0.5773503,
-                        "y": -0.5773503,
-                        "z": -0.5773503,
-                        "magnitude": 1.00000012,
-                        "sqrMagnitude": 1.00000024
-                      },
-                      "magnitude": 0.99999994,
-                      "sqrMagnitude": 0.99999994
-                    },
-                    "magnitude": 1.73205078,
-                    "sqrMagnitude": 3.0
-                  },
-                  "IsNeedFadeIn": true,
-                  "ParamEntityUsage": "LookAt",
-                  "TowardMaxPitchAngle": 90.0,
-                  "MaxMutexCount": 1,
-                  "TaskEnabled": true,
-                  "IsClientOnly": true
+                  "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Aventurine_00/Eff_Avatar_Aventurine_00_MazeSkill01_Firework_V2.prefab"
                 }
-              ],
-              "TaskEnabled": true
+              ]
             }
-          ],
-          "TaskEnabled": true
+          ]
         },
         {
-          "$type": "RPG.GameCore.AdventureSubmitSkill",
-          "Caster": {
-            "$type": "RPG.GameCore.TargetAlias",
-            "Alias": "Caster"
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "$type": "RPG.GameCore.AdventureSubmitSkill"
         }
-      ]
+      ],
+      "DynamicValues": {
+        "Floats": {
+          "459325696": {},
+          "1312694214": {}
+        }
+      }
     }
   ]
 }

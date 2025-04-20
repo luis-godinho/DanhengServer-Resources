@@ -1,0 +1,59 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "Activity_Marble_Self_Turn_Begin"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideDetailDialog",
+          "GuideID": {
+            "Value": "9828"
+          },
+          "WaitForExit": true
+        },
+        {
+          "$type": "RPG.GameCore.WaitUIControllerClose",
+          "UIControllerName": "GuideDetailDialog"
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideHintWithText",
+          "Block": true,
+          "TargetEvent": [
+            {
+              "$type": "RPG.GameCore.WaitPlayerAction",
+              "ActionType": "AnyAction",
+              "Param": "ActivityMarbleBattlePage.SealInfoPanelEnm"
+            }
+          ],
+          "NodeIDList": [
+            "ActivityMarbleBattlePage.SealInfoPanelEnm"
+          ],
+          "GuideHintType": "ClickCircle",
+          "GuideTextType": "Talk",
+          "GuideText": "TutorialTextmap_552101",
+          "GuideTalkID": 590801,
+          "CustomTextDirection": "LeftDown",
+          "GuideHintShowConfig": {},
+          "GuideTextShowConfig": {},
+          "GuideUIContextConfig": {
+            "Type": "MainPage"
+          },
+          "EnableClickInHintArea": true,
+          "EnableActionList": [],
+          "EnableBattleOperationList": [],
+          "DisableBlackMask": true
+        },
+        {
+          "$type": "RPG.GameCore.TutorialClose"
+        }
+      ]
+    }
+  ],
+  "ValueSource": {},
+  "EntityEventList": []
+}

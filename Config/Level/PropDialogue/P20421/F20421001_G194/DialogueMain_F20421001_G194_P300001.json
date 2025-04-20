@@ -1,0 +1,40 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CollectDataConditions",
+          "TaskIDList": [
+            104030307
+          ],
+          "PerformanceIDList": []
+        },
+        {
+          "$type": "RPG.GameCore.SwitchCase",
+          "TaskList": [
+            {
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareSubMissionState",
+                "SubMissionID": 104030307,
+                "SubMissionState": "Started"
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.TriggerPerformance",
+                  "ValueSource": {},
+                  "PerformanceType": "E",
+                  "PerformanceID": 104030307
+                },
+                {
+                  "$type": "RPG.GameCore.ClientFinishMission",
+                  "SubmissionID": 104030307
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,25 +1,25 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "NPC",
   "Category": "Atmosphere",
   "AreaAnchorName": "LevelArea_P10305_F10305001_G48",
-  "SaveType": "Permanent",
-  "AtmosphereCondition": {
-    "Operation": "And"
-  },
+  "AtmosphereCondition": {},
   "LoadSide": "Server",
   "LoadOnInitial": true,
   "ValueSource": {},
   "ConflictIDList": [],
   "IsHoyoGroup": true,
-  "StreamingTemplateType": "Standard",
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
-  "ConflictWhiteList": [],
-  "TagContainer": [
-    {
-      "Tag": "Group.Atomsphere.NPC",
-      "TagHash": -882113524
-    }
+  "ConflictWhiteList": [
+    28
   ],
+  "TagContainer": {
+    "List": [
+      {
+        "Tag": "Group.Atomsphere.NPC",
+        "TagHash": -882113524
+      }
+    ]
+  },
   "AnchorList": [
     {
       "Name": "Anchor1",
@@ -52,14 +52,11 @@
   "NPCList": [
     {
       "NPCID": 13101,
-      "LoadOnInitial": true,
       "ValueSource": {},
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "ServerInteractVerificationIDList": [
         45
       ],
-      "DefaultLookAtMode": "LookPlayer",
       "MappingInfoID": 2369,
       "BoardShowList": [
         1,
@@ -67,11 +64,9 @@
         4
       ],
       "TalkDialogGroupIDList": [],
-      "DefaultAnimationType": "FreeStyle",
       "DefaultIdleFreeStyleMotionID": 100010209,
       "IsMapContent": true,
       "MiniMapIconType": 4,
-      "BornType": "Mission",
       "InitialHiddenNodeList": [],
       "Dialog": {
         "LevelGraph": "Config/Level/NPCDialogue/P10305/F10305001_G48/DialogueMain_F10305001_G48_N400001.json",
@@ -80,28 +75,16 @@
             "Name": "Common",
             "LevelGraph": "Config/Level/NPCDialogue/P10305/F10305001_G48/DialoguePack_Common_F10305001_G48_N400001.json"
           }
-        ],
-        "EnableDialogCamera": true
+        ]
       },
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "OverrideReplaceMaterialKeyList": [],
       "CameraCenterEntityList": [],
       "SpawnConfig": {
-        "TryCapture": true,
-        "CaptureDistanceTolerance": 10.0,
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "CaptureDistanceTolerance": 10,
+        "EntitySpawnConfig": {}
       },
-      "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true
-      },
+      "TriggerValidGuest": {},
       "Name": "NPC1",
       "RotY": 282.2058,
       "ID": 400001,
@@ -123,196 +106,140 @@
             {
               "PosX": -1.97,
               "PosZ": 2.726,
-              "RestartMode": "RestartFromPoint",
               "RootTask": {
                 "$type": "RPG.GameCore.SO_Sequence",
                 "Tasks": [
                   {
                     "$type": "RPG.GameCore.SO_MoveTo",
                     "MoveStance": "Walk",
-                    "SkipStartTurn": true,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "SkipStartTurn": true
                   },
                   {
                     "$type": "RPG.GameCore.SO_FaceTo",
                     "AnchorGroupId": 48,
-                    "AnchorPointId": 1,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "AnchorPointId": 1
                   },
                   {
                     "$type": "RPG.GameCore.SO_Wait",
-                    "Time": 25.0,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "Time": 25
                   }
                 ],
-                "WaitMessages": [],
-                "TaskEnabled": true,
-                "IsClientOnly": true
+                "WaitMessages": []
               }
             },
             {
               "PosX": -1.33,
               "PosZ": 5.2,
-              "RestartMode": "RestartFromPoint",
               "RootTask": {
                 "$type": "RPG.GameCore.SO_Sequence",
                 "Tasks": [
                   {
                     "$type": "RPG.GameCore.SO_MoveTo",
                     "MoveStance": "Walk",
-                    "SkipStartTurn": true,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "SkipStartTurn": true
                   },
                   {
                     "$type": "RPG.GameCore.SO_FaceTo",
                     "AnchorGroupId": 48,
-                    "AnchorPointId": 2,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "AnchorPointId": 2
                   },
                   {
                     "$type": "RPG.GameCore.SO_PlayFreeStyle",
                     "StoryAvatarID": "1",
-                    "StoryMotionID": 100010209,
-                    "ForceStart": true,
-                    "NormalizedTransitionDuration": 0.05,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "StoryMotionID": 100010209
                   },
                   {
                     "$type": "RPG.GameCore.SO_Wait",
-                    "Time": 25.0,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "Time": 25
                   }
                 ],
-                "WaitMessages": [],
-                "TaskEnabled": true,
-                "IsClientOnly": true
+                "WaitMessages": []
               }
             },
             {
               "PosX": 1.917,
               "PosZ": 5.531,
-              "RestartMode": "RestartFromPoint",
               "RootTask": {
                 "$type": "RPG.GameCore.SO_Sequence",
                 "Tasks": [
                   {
                     "$type": "RPG.GameCore.SO_MoveTo",
                     "MoveStance": "Walk",
-                    "SkipStartTurn": true,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "SkipStartTurn": true
                   },
                   {
                     "$type": "RPG.GameCore.SO_Wait",
-                    "Time": 25.0,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "Time": 25
                   }
                 ],
-                "WaitMessages": [],
-                "TaskEnabled": true,
-                "IsClientOnly": true
+                "WaitMessages": []
               }
             },
             {
               "PosX": 3.05,
               "PosZ": 3.235,
-              "RestartMode": "RestartFromPoint",
               "RootTask": {
                 "$type": "RPG.GameCore.SO_Sequence",
                 "Tasks": [
                   {
                     "$type": "RPG.GameCore.SO_MoveTo",
                     "MoveStance": "Walk",
-                    "SkipStartTurn": true,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "SkipStartTurn": true
                   },
                   {
                     "$type": "RPG.GameCore.SO_FaceTo",
                     "AnchorGroupId": 48,
-                    "AnchorPointId": 3,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "AnchorPointId": 3
                   },
                   {
                     "$type": "RPG.GameCore.SO_PlayFreeStyle",
                     "StoryAvatarID": "1",
-                    "StoryMotionID": 100010221,
-                    "ForceStart": true,
-                    "NormalizedTransitionDuration": 0.05,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "StoryMotionID": 100010221
                   },
                   {
                     "$type": "RPG.GameCore.SO_Wait",
-                    "Time": 25.0,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "Time": 25
                   }
                 ],
-                "WaitMessages": [],
-                "TaskEnabled": true,
-                "IsClientOnly": true
+                "WaitMessages": []
               }
             },
             {
               "PosX": 2.238,
               "PosZ": 1.311,
-              "RestartMode": "RestartFromPoint",
               "RootTask": {
                 "$type": "RPG.GameCore.SO_Sequence",
                 "Tasks": [
                   {
                     "$type": "RPG.GameCore.SO_MoveTo",
                     "MoveStance": "Walk",
-                    "SkipStartTurn": true,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "SkipStartTurn": true
                   },
                   {
                     "$type": "RPG.GameCore.SO_Wait",
-                    "Time": 25.0,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "Time": 25
                   }
                 ],
-                "WaitMessages": [],
-                "TaskEnabled": true,
-                "IsClientOnly": true
+                "WaitMessages": []
               }
             },
             {
               "PosX": -0.89,
               "PosZ": 0.959,
-              "RestartMode": "RestartFromPoint",
               "RootTask": {
                 "$type": "RPG.GameCore.SO_Sequence",
                 "Tasks": [
                   {
                     "$type": "RPG.GameCore.SO_MoveTo",
                     "MoveStance": "Walk",
-                    "SkipStartTurn": true,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "SkipStartTurn": true
                   },
                   {
                     "$type": "RPG.GameCore.SO_Wait",
-                    "Time": 25.0,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "Time": 25
                   }
                 ],
-                "WaitMessages": [],
-                "TaskEnabled": true,
-                "IsClientOnly": true
+                "WaitMessages": []
               }
             }
           ]

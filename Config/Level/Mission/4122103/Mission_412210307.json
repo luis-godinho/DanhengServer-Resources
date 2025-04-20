@@ -7,14 +7,11 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Talk_412210307"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_412210307",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_412210307"
         }
       ]
     },
@@ -24,29 +21,23 @@
           "$type": "RPG.GameCore.PredicateTaskList",
           "Predicate": {
             "$type": "RPG.GameCore.ByLocalPlayerIsFakeAvatar",
-            "Inverse": true,
-            "TaskEnabled": true,
-            "IsClientOnly": true
+            "Inverse": true
           },
           "SuccessTaskList": [
             {
               "$type": "RPG.GameCore.TriggerPerformance",
               "ValueSource": {},
               "PerformanceType": "E",
-              "PerformanceID": 412210307,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "PerformanceID": 412210307
             },
             {
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "Talk_412210307"
-              },
-              "TaskEnabled": true
+              }
             }
           ],
-          "FailedTaskList": [],
-          "TaskEnabled": true
+          "FailedTaskList": []
         }
       ]
     },
@@ -57,25 +48,20 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "OnStart_X301_03"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.PlayMissionTalk",
           "SimpleTalkList": [
             {
-              "TextSpeed": 20.0,
               "TalkSentenceID": 412210416,
-              "ProtectTime": 2.0
+              "ProtectTime": 2
             },
             {
-              "TextSpeed": 20.0,
               "TalkSentenceID": 412210346,
-              "ProtectTime": 2.0
+              "ProtectTime": 2
             }
-          ],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     }

@@ -4,48 +4,90 @@
     {
       "TaskList": [
         {
+          "$type": "RPG.GameCore.CollectDataConditions",
+          "TaskIDList": [
+            104030904
+          ],
+          "MainMissionIDList": [],
+          "PerformanceIDList": [],
+          "PerformanceIDDsList": [],
+          "CustomValueMainMissionIDList": []
+        },
+        {
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Mission_454050302"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByCompareSubMissionState",
+            "SubMissionID": 104030904,
+            "SubMissionState": "Finish"
           },
-          "TaskEnabled": true
-        },
-        {
-          "$type": "RPG.GameCore.ShowWorldShop4ThUpgradeHint",
-          "OfferingTypeID": 6,
-          "PhaseID": 3,
-          "TaskEnabled": true,
-          "IsClientOnly": true
-        },
-        {
-          "$type": "RPG.GameCore.ClientFinishMission",
-          "SubmissionID": 304008019,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.ClientFinishMission",
+              "SubmissionID": 304008019
+            }
+          ],
+          "FailedTaskList": [
+            {
+              "$type": "RPG.GameCore.ShowWorldShop4ThUpgradeHint",
+              "OfferingTypeID": 6,
+              "PhaseID": 3
+            },
+            {
+              "$type": "RPG.GameCore.ClientFinishMission",
+              "SubmissionID": 304008019
+            }
+          ]
         }
       ]
     },
     {
       "TaskList": [
         {
+          "$type": "RPG.GameCore.CollectDataConditions",
+          "TaskIDList": [
+            104030904
+          ],
+          "MainMissionIDList": [],
+          "PerformanceIDList": [],
+          "PerformanceIDDsList": [],
+          "CustomValueMainMissionIDList": []
+        },
+        {
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "TalkSentence_504033124"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByCompareSubMissionState",
+            "SubMissionID": 104030904,
+            "SubMissionState": "Finish"
           },
-          "TaskEnabled": true
-        },
-        {
-          "$type": "RPG.GameCore.ShowWorldShop4ThUpgradeHint",
-          "OfferingTypeID": 6,
-          "PhaseID": 3,
-          "TaskEnabled": true,
-          "IsClientOnly": true
-        },
-        {
-          "$type": "RPG.GameCore.ClientFinishMission",
-          "SubmissionID": 304008019,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.ClientFinishMission",
+              "SubmissionID": 304008019
+            }
+          ],
+          "FailedTaskList": [
+            {
+              "$type": "RPG.GameCore.ShowWorldShop4ThUpgradeHint",
+              "OfferingTypeID": 6,
+              "PhaseID": 3
+            },
+            {
+              "$type": "RPG.GameCore.ClientFinishMission",
+              "SubmissionID": 304008019
+            }
+          ]
         }
       ]
     }

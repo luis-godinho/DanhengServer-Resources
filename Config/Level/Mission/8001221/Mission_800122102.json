@@ -5,16 +5,11 @@
       "TaskList": [
         {
           "$type": "RPG.GameCore.ShowFuncBtn",
-          "Show": true,
-          "HideWhenGraphFinish": true,
           "PuzzleFunc": "Identify",
-          "CDDuration": 1.0,
-          "ShowBtnFucHint": true,
+          "CDDuration": 1,
           "CustomString": {
             "Value": "PhotoGraphGOGOGO"
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         }
       ]
     },
@@ -24,16 +19,11 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "PhotoGraphGOGOGO"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.SwitchPhotoGraphMode",
-          "PhotoGraphMode": "Identify",
-          "ExitWhenPreViewDialogFinish": true,
-          "InitFov": -1.0,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PhotoGraphMode": "Identify"
         }
       ]
     },
@@ -45,14 +35,15 @@
             "$type": "RPG.GameCore.TargetFetchAdvProp",
             "MultiGroupFetch": [
               {
-                "GroupID": {},
-                "ID": {}
+                "GroupID": {
+                  "FixedValue": {
+                    "Value": 0
+                  }
+                }
               }
             ]
           },
-          "IsAim": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "IsAim": true
         },
         {
           "$type": "RPG.GameCore.PhotoGraphWaitIdentifyFinish",
@@ -60,13 +51,14 @@
             "$type": "RPG.GameCore.TargetFetchAdvProp",
             "MultiGroupFetch": [
               {
-                "GroupID": {},
-                "ID": {}
+                "GroupID": {
+                  "FixedValue": {
+                    "Value": 0
+                  }
+                }
               }
             ]
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
           "$type": "RPG.GameCore.PhotoGraphAimTarget",
@@ -74,27 +66,23 @@
             "$type": "RPG.GameCore.TargetFetchAdvProp",
             "MultiGroupFetch": [
               {
-                "GroupID": {},
-                "ID": {}
+                "GroupID": {
+                  "FixedValue": {
+                    "Value": 0
+                  }
+                }
               }
             ]
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
-          "$type": "RPG.GameCore.SwitchPhotoGraphMode",
-          "ExitWhenPreViewDialogFinish": true,
-          "InitFov": -1.0,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "$type": "RPG.GameCore.SwitchPhotoGraphMode"
         },
         {
           "$type": "RPG.GameCore.TriggerCustomString",
           "CustomString": {
             "Value": "Mission_800122102_Photo_Took"
-          },
-          "TaskEnabled": true
+          }
         }
       ]
     },
@@ -104,20 +92,16 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Mission_800122102_Photo_Took"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.ShowFuncBtn",
-          "HideWhenGraphFinish": true,
+          "Show": false,
           "PuzzleFunc": "Identify",
-          "CDDuration": 1.0,
-          "ShowBtnFucHint": true,
+          "CDDuration": 1,
           "CustomString": {
             "Value": "PhotoGraphGOGOGO"
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         }
       ]
     },
@@ -127,14 +111,11 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Mission_800122102_Photo_Took"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_800122102",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_800122102"
         }
       ]
     }

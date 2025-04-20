@@ -1,0 +1,192 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CreateVirtualTeam"
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CreateNPC",
+          "GroupID": {
+            "FixedValue": {
+              "Value": 4
+            }
+          },
+          "GroupNpcID": {
+            "FixedValue": {
+              "Value": 400014
+            }
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CreateNPC",
+          "GroupID": {
+            "FixedValue": {
+              "Value": 4
+            }
+          },
+          "GroupNpcID": {
+            "FixedValue": {
+              "Value": 400013
+            }
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CreateNPC",
+          "GroupID": {
+            "FixedValue": {
+              "Value": 4
+            }
+          },
+          "GroupNpcID": {
+            "FixedValue": {
+              "Value": 400002
+            }
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CreateNPC",
+          "GroupID": {
+            "FixedValue": {
+              "Value": 4
+            }
+          },
+          "GroupNpcID": {
+            "FixedValue": {
+              "Value": 400015
+            }
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CreateProp",
+          "GroupID": {
+            "FixedValue": {
+              "Value": 4
+            }
+          },
+          "GroupPropID": {
+            "FixedValue": {
+              "Value": 300001
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.PropSetupTrigger",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+            "FetchType": "SinglePropByPropID",
+            "SinglePropID": {
+              "GroupID": {
+                "FixedValue": {
+                  "Value": 4
+                }
+              },
+              "ID": {
+                "FixedValue": {
+                  "Value": 300001
+                }
+              }
+            }
+          },
+          "TargetGroupID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "TargetID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "TargetTypes": [],
+          "DestroyAfterTriggered": true,
+          "OnTriggerEnter": [
+            {
+              "$type": "RPG.GameCore.TriggerCustomString",
+              "CustomString": {
+                "Value": "Mission_202031608_PropTrigger"
+              }
+            }
+          ],
+          "DestroyAfterGraphEnd": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "Mission_202031608_PropTrigger"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TriggerPerformance",
+          "ValueSource": {},
+          "PerformanceType": "D",
+          "PerformanceID": 202031608
+        },
+        {
+          "$type": "RPG.GameCore.TriggerCustomString",
+          "CustomString": {
+            "Value": "Battle_20212003"
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "Battle_20212003"
+          },
+          "GoNextImmediately": true
+        },
+        {
+          "$type": "RPG.GameCore.DestroyVirtualTeam"
+        },
+        {
+          "$type": "RPG.GameCore.TriggerBattle",
+          "EventID": {
+            "FixedValue": {
+              "Value": 20212004
+            }
+          },
+          "GroupID": {
+            "FixedValue": {
+              "Value": 1
+            }
+          },
+          "BattleAreaID": {
+            "FixedValue": {
+              "Value": 1
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

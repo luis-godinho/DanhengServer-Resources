@@ -1,4 +1,5 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "MainMission8002100_",
   "Category": "Mission",
   "AreaAnchorName": "LevelArea_P10000_F10000002_G25",
@@ -7,8 +8,6 @@
   "ValueSource": {},
   "ConflictIDList": [],
   "IsHoyoGroup": true,
-  "StreamingTemplateType": "Standard",
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
   "ConflictWhiteList": [],
   "AnchorList": [
     {
@@ -54,16 +53,13 @@
   "NPCList": [
     {
       "NPCID": 1001,
-      "LoadOnInitial": true,
       "ValueSource": {},
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "ServerInteractVerificationIDList": [],
+      "DefaultLookAtMode": "Closed",
       "BoardShowList": [],
       "TalkDialogGroupIDList": [],
-      "DefaultAnimationType": "FreeStyle",
       "DefaultIdleFreeStyleMotionID": 310010221,
-      "BornType": "Mission",
       "InitialHiddenNodeList": [],
       "Dialog": {
         "LevelGraph": "Config/Level/NPCDialogue/P10000/F10000002_G20/DialogueMain_F10000002_G20_N400001.json",
@@ -88,25 +84,13 @@
             }
           ],
           "Operation": "Or"
-        },
-        "EnableDialogCamera": true
-      },
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
-      "SpawnConfig": {
-        "TryCapture": true,
-        "CaptureDistanceTolerance": 10.0,
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
         }
       },
-      "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true
+      "SpawnConfig": {
+        "CaptureDistanceTolerance": 10,
+        "EntitySpawnConfig": {}
       },
+      "TriggerValidGuest": {},
       "Name": "NPC1",
       "ID": 400001,
       "PosX": 3.119002,

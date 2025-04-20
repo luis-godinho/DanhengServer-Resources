@@ -1,0 +1,33 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByMainMissionFinish",
+            "MainMissionID": 2020202,
+            "Inverse": true
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.CreateNPC",
+              "GroupID": {
+                "FixedValue": {
+                  "Value": 20
+                }
+              },
+              "GroupNpcID": {
+                "FixedValue": {
+                  "Value": 400007
+                }
+              },
+              "CreateList": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

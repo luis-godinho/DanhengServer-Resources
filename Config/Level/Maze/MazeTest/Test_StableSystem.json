@@ -1,0 +1,57 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropInitPuzzle",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          },
+          "BoardPath": {
+            "Custom": true,
+            "Key": "PuzzleBoardPath"
+          },
+          "LocalPosition": {
+            "Y": 0.1
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropPuzzleEventListener",
+          "FinishCallback": [
+            {
+              "$type": "RPG.GameCore.ToastPage",
+              "MessageOne": {
+                "Hash": 2012001348524219443
+              },
+              "MessageTwo": {
+                "Hash": 9297148114216607155
+              },
+              "CanInterrupt": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "ValueSource": {
+    "Values": [
+      {
+        "$type": "RPG.GameCore.SharedString",
+        "Key": "PuzzleBoardPath"
+      },
+      {
+        "$type": "RPG.GameCore.SharedString",
+        "Key": "PuzzleCam"
+      },
+      {
+        "$type": "RPG.GameCore.SharedString",
+        "Key": "IniPuzzleboard"
+      }
+    ]
+  }
+}

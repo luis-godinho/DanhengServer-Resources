@@ -1,8 +1,8 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "TSC_Room1_Light",
   "LevelGraph": "Config/Level/GroupGraph/F20421001/Group_F20421001_G9.json",
   "AreaAnchorName": "LevelArea_P20421_F20421001_G9",
-  "SaveType": "Permanent",
   "SavedValueCondition": {
     "Conditions": [],
     "Operation": "And"
@@ -12,22 +12,24 @@
   "ValueSource": {},
   "ConflictIDList": [],
   "IsHoyoGroup": true,
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
+  "StreamingTemplateType": "None",
   "ConflictWhiteList": [],
-  "TagContainer": [
-    {
-      "Tag": "Group.Level.Gameplay",
-      "TagHash": -141571921
-    }
-  ],
+  "TagContainer": {
+    "List": [
+      {
+        "Tag": "Group.Level.Gameplay",
+        "TagHash": -141571921
+      }
+    ]
+  },
   "AnchorList": [
     {
       "RotX": 49.16439,
-      "RotZ": 2.2e-05,
+      "RotZ": 2.2E-05,
       "Usage": "Camera",
       "CustomParameter": {
         "$type": "RPG.GameCore.LevelAnchorCameraParameter",
-        "fov": 40.0
+        "fov": 40
       },
       "Name": "Anchor1",
       "RotY": 19.55375,
@@ -41,56 +43,16 @@
   "PropList": [
     {
       "Scale": {
-        "x": 23.80139,
-        "y": 23.80139,
-        "z": 23.80139,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 41.2252159,
-        "sqrMagnitude": 1699.51855
+        "X": 23.80139,
+        "Y": 23.80139,
+        "Z": 23.80139
       },
       "PropID": 104031,
-      "LoadOnInitial": true,
       "ValueSource": {
         "Values": [
           {
             "$type": "RPG.GameCore.SharedFloat",
-            "Value": 10.0,
-            "Key": "PointRadius"
-          },
-          {
-            "$type": "RPG.GameCore.SharedStringList",
-            "Value": [],
-            "Key": "StageItemList"
-          },
-          {
-            "$type": "RPG.GameCore.SharedStringList",
-            "Value": [
-              "98"
-            ],
-            "Key": "BakedAffectedGroupList"
-          },
-          {
-            "$type": "RPG.GameCore.SharedFloat",
-            "Key": "AddDistance"
-          }
-        ],
-        "SharedValues": [
-          {
-            "$type": "RPG.GameCore.SharedFloat",
-            "Value": 10.0,
+            "Value": 10,
             "Key": "PointRadius"
           },
           {
@@ -112,29 +74,17 @@
         ]
       },
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Prop1",
       "ID": 300001,
@@ -143,54 +93,9 @@
       "PosZ": 334.04
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 104022,
-      "LoadOnInitial": true,
       "ValueSource": {
         "Values": [
-          {
-            "$type": "RPG.GameCore.SharedStringList",
-            "Value": [
-              "9,300003",
-              "9,300001"
-            ],
-            "Key": "FlipperPointList"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "LevelArea_P20421_F20421001_G9,Anchor1",
-            "Key": "InteractVirtualCamera"
-          },
-          {
-            "$type": "RPG.GameCore.SharedStringList",
-            "Value": [
-              "9,300005",
-              "9,300004"
-            ],
-            "Key": "MapIconList"
-          }
-        ],
-        "SharedValues": [
           {
             "$type": "RPG.GameCore.SharedStringList",
             "Value": [
@@ -216,45 +121,31 @@
       },
       "CampID": 4,
       "State": "Open",
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {
         "InteractTrigger": {
           "Shape": "Box",
-          "Radius": 2.0,
-          "DimX": 2.0,
-          "DimY": 2.0,
-          "DimZ": 2.0,
+          "Radius": 2,
+          "DimX": 2,
+          "DimY": 2,
+          "DimZ": 2,
           "Offset": {
-            "y": 1.0,
-            "magnitude": 1.0,
-            "sqrMagnitude": 1.0
+            "Y": 1
           }
         }
       },
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Prop2",
-      "RotY": 45.0,
+      "RotY": 45,
       "ID": 300002,
       "PosX": -4.66,
       "PosY": 175.2797,
@@ -262,60 +153,16 @@
     },
     {
       "Scale": {
-        "x": 20.5,
-        "y": 20.5,
-        "z": 20.5,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 35.5070419,
-        "sqrMagnitude": 1260.75
+        "X": 20.5,
+        "Y": 20.5,
+        "Z": 20.5
       },
       "PropID": 104031,
-      "LoadOnInitial": true,
       "ValueSource": {
         "Values": [
           {
             "$type": "RPG.GameCore.SharedFloat",
-            "Value": 10.0,
-            "Key": "PointRadius"
-          },
-          {
-            "$type": "RPG.GameCore.SharedStringList",
-            "Value": [
-              "Chap04_CloseView_MAZ_A201_R06_BlockData,Chap04_A201_01_TSC_DesignerCustom_Lod0,TSC_B/Expand/Collider01",
-              "Chap04_CloseView_MAZ_A201_R06_BlockData,Chap04_A201_01_TSC_DesignerCustom_Lod0,TSC_B/Expand/Collider01_C"
-            ],
-            "Key": "StageItemList"
-          },
-          {
-            "$type": "RPG.GameCore.SharedStringList",
-            "Value": [
-              "6",
-              "7"
-            ],
-            "Key": "BakedAffectedGroupList"
-          },
-          {
-            "$type": "RPG.GameCore.SharedFloat",
-            "Key": "AddDistance"
-          }
-        ],
-        "SharedValues": [
-          {
-            "$type": "RPG.GameCore.SharedFloat",
-            "Value": 10.0,
+            "Value": 10,
             "Key": "PointRadius"
           },
           {
@@ -341,142 +188,74 @@
         ]
       },
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Prop3",
-      "RotY": 315.0,
+      "RotY": 315,
       "ID": 300003,
-      "PosX": -1.0,
+      "PosX": -1,
       "PosY": 157.84,
       "PosZ": 322.66
     },
     {
       "Scale": {
-        "x": 11.69555,
-        "y": 11.69555,
-        "z": 11.69555,
-        "normalized": {
-          "x": 0.5773503,
-          "y": 0.5773503,
-          "z": 0.5773503,
-          "normalized": {
-            "x": 0.577350259,
-            "y": 0.577350259,
-            "z": 0.577350259,
-            "magnitude": 0.99999994,
-            "sqrMagnitude": 0.99999994
-          },
-          "magnitude": 1.00000012,
-          "sqrMagnitude": 1.00000024
-        },
-        "magnitude": 20.2572861,
-        "sqrMagnitude": 410.357666
+        "X": 11.69555,
+        "Y": 11.69555,
+        "Z": 11.69555
       },
       "PropID": 104141,
-      "LoadOnInitial": true,
       "ValueSource": {},
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
       "OverrideMapIconType": 261,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Prop4",
       "ID": 300004,
       "PosX": 11.93,
-      "PosY": 159.0,
+      "PosY": 159,
       "PosZ": 328.62
     },
     {
       "Scale": {
-        "x": 11.69555,
-        "y": 11.69555,
-        "z": 11.69555,
-        "normalized": {
-          "x": 0.5773503,
-          "y": 0.5773503,
-          "z": 0.5773503,
-          "normalized": {
-            "x": 0.577350259,
-            "y": 0.577350259,
-            "z": 0.577350259,
-            "magnitude": 0.99999994,
-            "sqrMagnitude": 0.99999994
-          },
-          "magnitude": 1.00000012,
-          "sqrMagnitude": 1.00000024
-        },
-        "magnitude": 20.2572861,
-        "sqrMagnitude": 410.357666
+        "X": 11.69555,
+        "Y": 11.69555,
+        "Z": 11.69555
       },
       "PropID": 104141,
-      "LoadOnInitial": true,
       "ValueSource": {},
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
       "OverrideMapIconType": 261,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Prop5",
       "ID": 300005,
@@ -486,21 +265,11 @@
     },
     {
       "Scale": {
-        "x": 2.93509,
-        "y": 2.38617,
-        "z": 1.52206,
-        "normalized": {
-          "x": 0.719842732,
-          "y": 0.585217834,
-          "z": 0.3732914,
-          "magnitude": 1.0,
-          "sqrMagnitude": 1.0
-        },
-        "magnitude": 4.0774045,
-        "sqrMagnitude": 16.625227
+        "X": 2.93509,
+        "Y": 2.38617,
+        "Z": 1.52206
       },
       "PropID": 104177,
-      "LoadOnInitial": true,
       "ValueSource": {
         "Values": [
           {
@@ -515,55 +284,26 @@
           },
           {
             "$type": "RPG.GameCore.SharedFloat",
-            "Value": 3.0,
-            "Key": "IndexWhenDayAndLightOn"
-          }
-        ],
-        "SharedValues": [
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "9,300002",
-            "Key": "AttachedToLight"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "9,300001",
-            "Key": "AttachedToLightMark"
-          },
-          {
-            "$type": "RPG.GameCore.SharedFloat",
-            "Value": 3.0,
+            "Value": 3,
             "Key": "IndexWhenDayAndLightOn"
           }
         ]
       },
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Prop6",
-      "RotY": 45.0,
+      "RotY": 45,
       "ID": 300006,
       "PosX": 3.3182,
       "PosY": 166.8431,
@@ -571,21 +311,11 @@
     },
     {
       "Scale": {
-        "x": 2.25036,
-        "y": 2.38617,
-        "z": 1.52206,
-        "normalized": {
-          "x": 0.6223546,
-          "y": 0.6599139,
-          "z": 0.420937568,
-          "magnitude": 1.0,
-          "sqrMagnitude": 1.0
-        },
-        "magnitude": 3.61588073,
-        "sqrMagnitude": 13.0745935
+        "X": 2.25036,
+        "Y": 2.38617,
+        "Z": 1.52206
       },
       "PropID": 104177,
-      "LoadOnInitial": true,
       "ValueSource": {
         "Values": [
           {
@@ -600,52 +330,23 @@
           },
           {
             "$type": "RPG.GameCore.SharedFloat",
-            "Value": 3.0,
-            "Key": "IndexWhenDayAndLightOn"
-          }
-        ],
-        "SharedValues": [
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "9,300002",
-            "Key": "AttachedToLight"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "9,300001",
-            "Key": "AttachedToLightMark"
-          },
-          {
-            "$type": "RPG.GameCore.SharedFloat",
-            "Value": 3.0,
+            "Value": 3,
             "Key": "IndexWhenDayAndLightOn"
           }
         ]
       },
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Prop7",
       "RotY": 91.32783,
@@ -656,21 +357,11 @@
     },
     {
       "Scale": {
-        "x": 1.71527,
-        "y": 2.38617,
-        "z": 1.52206,
-        "normalized": {
-          "x": 0.5182907,
-          "y": 0.721011639,
-          "z": 0.459909827,
-          "magnitude": 1.0,
-          "sqrMagnitude": 1.00000012
-        },
-        "magnitude": 3.309475,
-        "sqrMagnitude": 10.9526243
+        "X": 1.71527,
+        "Y": 2.38617,
+        "Z": 1.52206
       },
       "PropID": 104177,
-      "LoadOnInitial": true,
       "ValueSource": {
         "Values": [
           {
@@ -685,52 +376,23 @@
           },
           {
             "$type": "RPG.GameCore.SharedFloat",
-            "Value": 3.0,
-            "Key": "IndexWhenDayAndLightOn"
-          }
-        ],
-        "SharedValues": [
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "9,300002",
-            "Key": "AttachedToLight"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "9,300001",
-            "Key": "AttachedToLightMark"
-          },
-          {
-            "$type": "RPG.GameCore.SharedFloat",
-            "Value": 3.0,
+            "Value": 3,
             "Key": "IndexWhenDayAndLightOn"
           }
         ]
       },
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Prop8",
       "RotY": 76.31178,

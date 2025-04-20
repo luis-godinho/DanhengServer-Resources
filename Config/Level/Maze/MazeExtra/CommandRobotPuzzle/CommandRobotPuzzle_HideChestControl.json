@@ -1,0 +1,159 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropStateExecute",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+            "FetchType": "SinglePropByPropKey",
+            "SinglePropKey": {
+              "Custom": true,
+              "Key": "Puzzle"
+            },
+            "SinglePropID": {
+              "GroupID": {
+                "FixedValue": {
+                  "Value": 209
+                }
+              },
+              "ID": {
+                "FixedValue": {
+                  "Value": 300001
+                }
+              }
+            }
+          },
+          "State": "Open",
+          "Execute": [
+            {
+              "$type": "RPG.GameCore.PropStateExecute",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                "FetchType": "SinglePropByPropKey",
+                "SinglePropKey": {
+                  "Custom": true,
+                  "Key": "Chest"
+                },
+                "SinglePropID": {
+                  "GroupID": {
+                    "FixedValue": {
+                      "Value": 209
+                    }
+                  },
+                  "ID": {
+                    "FixedValue": {
+                      "Value": 300001
+                    }
+                  }
+                }
+              },
+              "State": "Hidden",
+              "Execute": [
+                {
+                  "$type": "RPG.GameCore.PropReqInteract",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                    "FetchType": "SinglePropByPropKey",
+                    "SinglePropKey": {
+                      "Custom": true,
+                      "Key": "Chest"
+                    },
+                    "SinglePropID": {
+                      "GroupID": {
+                        "FixedValue": {
+                          "Value": 209
+                        }
+                      },
+                      "ID": {
+                        "FixedValue": {
+                          "Value": 300049
+                        }
+                      }
+                    }
+                  },
+                  "InteractID": {
+                    "FixedValue": {
+                      "Value": 120120
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropStateChangeListenerConfig",
+          "ToState": "Open",
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.PropReqInteract",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                "FetchType": "SinglePropByPropKey",
+                "SinglePropKey": {
+                  "Custom": true,
+                  "Key": "Chest"
+                },
+                "SinglePropID": {
+                  "GroupID": {
+                    "FixedValue": {
+                      "Value": 209
+                    }
+                  },
+                  "ID": {
+                    "FixedValue": {
+                      "Value": 300049
+                    }
+                  }
+                }
+              },
+              "InteractID": {
+                "FixedValue": {
+                  "Value": 120120
+                }
+              }
+            }
+          ],
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+            "FetchType": "SinglePropByPropKey",
+            "SinglePropKey": {
+              "Custom": true,
+              "Key": "Puzzle"
+            },
+            "SinglePropID": {
+              "GroupID": {
+                "FixedValue": {
+                  "Value": 209
+                }
+              },
+              "ID": {
+                "FixedValue": {
+                  "Value": 300001
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ValueSource": {
+    "Values": [
+      {
+        "$type": "RPG.GameCore.SharedString",
+        "Key": "Chest"
+      },
+      {
+        "$type": "RPG.GameCore.SharedString",
+        "Key": "Puzzle"
+      }
+    ]
+  }
+}

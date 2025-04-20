@@ -1,0 +1,119 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CollectDataConditions",
+          "TaskIDList": [],
+          "MainMissionIDList": [],
+          "PerformanceIDList": [
+            503030704,
+            503025001
+          ],
+          "PerformanceIDDsList": [],
+          "CustomValueMainMissionIDList": []
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByComparePerformance",
+            "PerformanceID": 503025001
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.AddMenuItem",
+              "MenuIconType": "ChatIcon",
+              "MenuItemTextID": {
+                "Hash": 13416564879333309222
+              },
+              "PerformanceType": "E",
+              "PerformanceID": 503030703
+            },
+            {
+              "$type": "RPG.GameCore.AddMenuItem",
+              "MenuIconType": "ChatOutIcon",
+              "MenuItemTextID": {
+                "Hash": 10147134492607021626
+              },
+              "PerformanceType": "E",
+              "PerformanceID": 503030706,
+              "Important": true
+            }
+          ],
+          "FailedTaskList": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByComparePerformance",
+                "PerformanceID": 503030704
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.AddMenuItem",
+                  "MenuIconType": "SecretMissionIcon",
+                  "MenuItemTextID": {
+                    "Hash": 18097315260533328378
+                  },
+                  "PerformanceType": "E",
+                  "PerformanceID": 503030704,
+                  "Important": true
+                },
+                {
+                  "$type": "RPG.GameCore.AddMenuItem",
+                  "MenuIconType": "ChatIcon",
+                  "MenuItemTextID": {
+                    "Hash": 13416564879333309222
+                  },
+                  "PerformanceType": "E",
+                  "PerformanceID": 503030703
+                },
+                {
+                  "$type": "RPG.GameCore.AddMenuItem",
+                  "MenuIconType": "ChatOutIcon",
+                  "MenuItemTextID": {
+                    "Hash": 10147134492607021626
+                  },
+                  "PerformanceType": "E",
+                  "PerformanceID": 503030706,
+                  "Important": true
+                }
+              ],
+              "FailedTaskList": [
+                {
+                  "$type": "RPG.GameCore.AddMenuItem",
+                  "MenuIconType": "ShopIcon",
+                  "MenuItemTextID": {
+                    "Hash": 7643649786637654960
+                  },
+                  "PerformanceType": "E",
+                  "PerformanceID": 503030705,
+                  "Important": true
+                },
+                {
+                  "$type": "RPG.GameCore.AddMenuItem",
+                  "MenuIconType": "ChatIcon",
+                  "MenuItemTextID": {
+                    "Hash": 13416564879333309222
+                  },
+                  "PerformanceType": "E",
+                  "PerformanceID": 503030703
+                },
+                {
+                  "$type": "RPG.GameCore.AddMenuItem",
+                  "MenuIconType": "ChatOutIcon",
+                  "MenuItemTextID": {
+                    "Hash": 10147134492607021626
+                  },
+                  "PerformanceType": "E",
+                  "PerformanceID": 503030706,
+                  "Important": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

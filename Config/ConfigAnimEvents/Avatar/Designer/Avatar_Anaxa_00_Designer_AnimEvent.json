@@ -1,0 +1,441 @@
+{
+  "AnimatorStateEvents": [
+    {
+      "AnimatorStateName": "Skill01toSkill02",
+      "NormalizedTime": 0.001,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.TriggerEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Anaxa_00/Eff_Avatar_Anaxa_00_Skill02_Loop_05.prefab",
+          "MinMutexTime": -1,
+          "MinMutexType": "Entity"
+        }
+      ],
+      "AllowTriggeringOnTransitionOut": false
+    },
+    {
+      "AnimatorStateName": "Skill01toSkill02",
+      "NormalizedTime": 0.201,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.TriggerEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Anaxa_00/Eff_Avatar_Anaxa_00_Skill02_Loop_01.prefab",
+          "MinMutexTime": -1,
+          "MinMutexType": "Entity"
+        },
+        {
+          "$type": "RPG.GameCore.AnimSetParameter",
+          "ParameterName": "Skill02_Prop_Triggered",
+          "ParameterType": "Bool",
+          "Value": {
+            "FixedValue": {
+              "Value": 1
+            }
+          }
+        }
+      ],
+      "AllowTriggeringOnTransitionOut": false
+    },
+    {
+      "AnimatorStateName": "Skill02",
+      "NormalizedTime": 0.001,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByAnimatorParam",
+            "ParamType": "Bool",
+            "ParamName": "Skill02_Prop_Triggered",
+            "ParamCompareType": "Equal"
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.TriggerEffect",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Anaxa_00/Eff_Avatar_Anaxa_00_Skill02_Loop_07.prefab",
+              "MinMutexTime": -1,
+              "MinMutexType": "Entity"
+            },
+            {
+              "$type": "RPG.GameCore.RemoveEffect",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Anaxa_00/Eff_Avatar_Anaxa_00_Skill02_Loop_01.prefab",
+              "IsNeedFadeOut": false
+            },
+            {
+              "$type": "RPG.GameCore.RemoveEffect",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Anaxa_00/Eff_Avatar_Anaxa_00_Skill02_Loop_05.prefab",
+              "IsNeedFadeOut": false
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.AnimSetParameter",
+          "ParameterName": "Skill02_Prop_Triggered",
+          "ParameterType": "Bool"
+        }
+      ]
+    },
+    {
+      "AnimatorStateName": "Skill02",
+      "NormalizedTime": 0.053,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.RemoveEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Anaxa_00/Eff_Avatar_Anaxa_00_Skill02_Loop_01.prefab"
+        },
+        {
+          "$type": "RPG.GameCore.RemoveEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Anaxa_00/Eff_Avatar_Anaxa_00_Skill02_Loop_07.prefab"
+        }
+      ],
+      "AllowTriggeringOnTransitionIn": false
+    },
+    {
+      "AnimatorStateName": "Skill02toSkill01",
+      "NormalizedTime": 0.001,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByAnimatorParam",
+            "ParamType": "Bool",
+            "ParamName": "Skill02_Prop_Triggered",
+            "ParamCompareType": "Equal",
+            "BooleanValue": true
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.TriggerEffect",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Anaxa_00/Eff_Avatar_Anaxa_00_Skill02_Loop_06.prefab",
+              "MinMutexTime": -1,
+              "MinMutexType": "Entity"
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.AnimSetParameter",
+          "ParameterName": "Skill02_Prop_Triggered",
+          "ParameterType": "Bool"
+        }
+      ],
+      "AllowTriggeringOnTransitionOut": false
+    },
+    {
+      "AnimatorStateName": "Die",
+      "NormalizedTime": 0.9,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.TriggerDeadHandler"
+        }
+      ]
+    },
+    {
+      "AnimatorStateName": "Die_Limbo",
+      "NormalizedTime": 0.9,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.TriggerDeadHandler"
+        }
+      ]
+    },
+    {
+      "AnimatorStateName": "Die_Hit",
+      "NormalizedTime": 0.9,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.TriggerDeadHandler"
+        }
+      ]
+    },
+    {
+      "AnimatorStateName": "Die_Fly",
+      "NormalizedTime": 0.9,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.TriggerDeadHandler"
+        }
+      ]
+    },
+    {
+      "AnimatorStateName": "Die_Fly_Limbo",
+      "NormalizedTime": 0.9,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.TriggerDeadHandler"
+        }
+      ]
+    }
+  ],
+  "AnimatorStateGroupEvents": [
+    {
+      "States": [
+        {
+          "Name": "Skill01"
+        },
+        {
+          "Name": "Skill02"
+        },
+        {
+          "Name": "Skill03"
+        },
+        {
+          "Name": "Skill03_Ready"
+        },
+        {
+          "Name": "Skill03_Ready_Loop"
+        },
+        {
+          "Name": "Die_Loop"
+        },
+        {
+          "Name": "StandBy"
+        }
+      ],
+      "OnEnter": [
+        {
+          "$type": "RPG.GameCore.EnableEmotion",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          }
+        }
+      ],
+      "OnExit": [
+        {
+          "$type": "RPG.GameCore.EnableEmotion",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "Enable": true
+        }
+      ]
+    },
+    {
+      "States": [
+        {
+          "Name": "Skill01toSkill02",
+          "NormalizedTime": 0.202,
+          "EnterInTransition": false,
+          "ExitInTransition": true
+        },
+        {
+          "Name": "Skill02_Ready_Loop",
+          "EnterInTransition": false,
+          "ExitInTransition": true
+        }
+      ],
+      "OnEnter": [
+        {
+          "$type": "RPG.GameCore.TriggerEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Anaxa_00/Eff_Avatar_Anaxa_00_Skill02_Loop_01.prefab",
+          "MinMutexTime": -1,
+          "MinMutexType": "Entity"
+        }
+      ],
+      "OnExit": [
+        {
+          "$type": "RPG.GameCore.RemoveEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Anaxa_00/Eff_Avatar_Anaxa_00_Skill02_Loop_01.prefab"
+        },
+        {
+          "$type": "RPG.GameCore.RemoveEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Anaxa_00/Eff_Avatar_Anaxa_00_Skill02_Loop_07.prefab",
+          "IsNeedFadeOut": false
+        }
+      ]
+    },
+    {
+      "States": [
+        {
+          "Name": "Skill01toSkill02",
+          "NormalizedTime": 0.001,
+          "EnterInTransition": false,
+          "ExitInTransition": true
+        },
+        {
+          "Name": "Skill02_Ready_Loop",
+          "EnterInTransition": false,
+          "ExitInTransition": true
+        }
+      ],
+      "OnEnter": [
+        {
+          "$type": "RPG.GameCore.TriggerEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Anaxa_00/Eff_Avatar_Anaxa_00_Skill02_Loop_05.prefab",
+          "MinMutexTime": -1,
+          "MinMutexType": "Entity"
+        }
+      ],
+      "OnExit": [
+        {
+          "$type": "RPG.GameCore.RemoveEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Anaxa_00/Eff_Avatar_Anaxa_00_Skill02_Loop_05.prefab",
+          "IsNeedFadeOut": false
+        }
+      ]
+    },
+    {
+      "States": [
+        {
+          "Name": "Skill03_Ready"
+        },
+        {
+          "Name": "Skill03_Ready_Loop"
+        }
+      ],
+      "OnEnter": [
+        {
+          "$type": "RPG.GameCore.TriggerEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Anaxa_00/Eff_Avatar_Anaxa_00_Skill03_Ready.prefab"
+        },
+        {
+          "$type": "RPG.GameCore.TriggerEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Anaxa_00/Eff_Avatar_Anaxa_00_Skill03_Ready_Eye.prefab"
+        }
+      ],
+      "OnExit": [
+        {
+          "$type": "RPG.GameCore.RemoveEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Anaxa_00/Eff_Avatar_Anaxa_00_Skill03_Ready.prefab"
+        },
+        {
+          "$type": "RPG.GameCore.RemoveEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Anaxa_00/Eff_Avatar_Anaxa_00_Skill03_Ready_Eye.prefab"
+        }
+      ]
+    },
+    {
+      "States": [
+        {
+          "Name": "Skill03"
+        }
+      ],
+      "OnEnter": [
+        {
+          "$type": "RPG.GameCore.SetAttachmentVisibility",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AttachPoints": [
+            {
+              "Name": "EffectMask"
+            }
+          ],
+          "Visibility": true
+        }
+      ],
+      "OnExit": [
+        {
+          "$type": "RPG.GameCore.SetAttachmentVisibility",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AttachPoints": [
+            {
+              "Name": "EffectMask"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "States": [
+        {
+          "Name": "Hit_Stun"
+        },
+        {
+          "Name": "Hit"
+        }
+      ],
+      "OnEnter": [
+        {
+          "$type": "RPG.GameCore.SetBaseHitStateSpeed",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          }
+        }
+      ],
+      "OnExit": [
+        {
+          "$type": "RPG.GameCore.SetBaseHitStateSpeed",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "Value": 1
+        }
+      ]
+    }
+  ]
+}

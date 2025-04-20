@@ -9,26 +9,23 @@
             "$type": "RPG.GameCore.TargetFetchAdvPropEx"
           },
           "ID": {
-            "fixedValue": {
-              "RawValue": 1288507368669184
+            "FixedValue": {
+              "Value": 300004
             }
           },
           "GroupID": {
-            "fixedValue": {
-              "RawValue": 47244640256
+            "FixedValue": {
+              "Value": 11
             }
           },
-          "DestroyList": [],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "DestroyList": []
         }
       ]
     },
     {
       "TaskList": [
         {
-          "$type": "RPG.GameCore.ChangePropState",
-          "TaskEnabled": true
+          "$type": "RPG.GameCore.ChangePropState"
         }
       ]
     },
@@ -37,18 +34,16 @@
         {
           "$type": "RPG.GameCore.CreateProp",
           "GroupID": {
-            "fixedValue": {
-              "RawValue": 47244640256
+            "FixedValue": {
+              "Value": 11
             }
           },
           "GroupPropID": {
-            "fixedValue": {
-              "RawValue": 1288563203244032
+            "FixedValue": {
+              "Value": 300017
             }
           },
-          "CreateList": [],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "CreateList": []
         },
         {
           "$type": "RPG.GameCore.PropSetupTrigger",
@@ -57,13 +52,13 @@
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 47244640256
+                "FixedValue": {
+                  "Value": 11
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288563203244032
+                "FixedValue": {
+                  "Value": 300017
                 }
               }
             }
@@ -75,13 +70,9 @@
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "Mission_801410409_PropTrigger"
-              },
-              "TaskEnabled": true
+              }
             }
-          ],
-          "SkipFakeAvatar": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     },
@@ -91,20 +82,16 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Mission_801410409_PropTrigger"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.PlayMissionTalk",
           "SimpleTalkList": [
             {
-              "TextSpeed": 20.0,
               "TalkSentenceID": 814105306,
-              "ProtectTime": 2.0
+              "ProtectTime": 2
             }
-          ],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     },
@@ -113,57 +100,49 @@
         {
           "$type": "RPG.GameCore.CreateProp",
           "GroupID": {
-            "fixedValue": {
-              "RawValue": 47244640256
+            "FixedValue": {
+              "Value": 11
             }
           },
           "GroupPropID": {
-            "fixedValue": {
-              "RawValue": 1288511663636480
+            "FixedValue": {
+              "Value": 300005
             }
           },
-          "CreateList": [],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "CreateList": []
         },
         {
           "$type": "RPG.GameCore.PropSetupUITrigger",
           "DestroyAfterTriggered": true,
           "IconType": "ChatIcon",
           "ButtonText": {
-            "Hash": 997621036,
-            "Hash64": 10531492984781804004
+            "Hash": 10531492984781804004
           },
           "ButtonCallback": [
             {
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "Mission_801410409_PropUITrigger"
-              },
-              "TaskEnabled": true
+              }
             }
           ],
-          "InteractAngleRange": 180.0,
           "OverrideTargetTypes": [],
-          "SkipFakeAvatar": true,
           "TargetType": {
             "$type": "RPG.GameCore.TargetFetchAdvPropEx",
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 47244640256
+                "FixedValue": {
+                  "Value": 11
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288511663636480
+                "FixedValue": {
+                  "Value": 300005
                 }
               }
             }
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         }
       ]
     },
@@ -173,21 +152,16 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Mission_801410409_PropUITrigger"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.TriggerPerformance",
           "PerformanceType": "E",
-          "PerformanceID": 801410430,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 801410430
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_801410409",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_801410409"
         }
       ]
     }

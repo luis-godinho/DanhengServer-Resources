@@ -1,0 +1,81 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.ShowTutorialUI",
+          "ForceShowDialog": true
+        },
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "Castorice_Tutorial_Avatar_Heal"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideHintWithText",
+          "Block": true,
+          "TargetEvent": [
+            {
+              "$type": "RPG.GameCore.WaitTutorial",
+              "Event": "SelectSkill02"
+            }
+          ],
+          "NodeIDList": [
+            "BattleGamePhaseUI.SkillButton02"
+          ],
+          "GuideTextType": "InfoTip",
+          "GuideText": "TutorialTextmap_Avatar_1407_Hint08",
+          "GuideHintShowConfig": {
+            "UseCustomConfig": true,
+            "ScaleX": 1.4,
+            "ScaleY": 1.4
+          },
+          "GuideTextShowConfig": {},
+          "GuideUIContextConfig": {},
+          "EnableActionList": [
+            "Menu_BPSkill"
+          ],
+          "EnableBattleOperationList": [
+            "SkillButton"
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideHintWithText",
+          "Block": true,
+          "TargetEvent": [
+            {
+              "$type": "RPG.GameCore.WaitPlayerAction",
+              "ActionType": "ClickBtn",
+              "Param": "BattleGamePhaseUI.SkillButton02",
+              "ProtectTime": 0.5
+            }
+          ],
+          "NodeIDList": [
+            "BattleGamePhaseUI.SkillButton02"
+          ],
+          "GuideTextType": "InfoTip",
+          "GuideText": "TutorialTextmap_Avatar_1407_Hint09",
+          "GuideHintShowConfig": {
+            "UseCustomConfig": true,
+            "ScaleX": 1.4,
+            "ScaleY": 1.4
+          },
+          "GuideTextShowConfig": {},
+          "GuideUIContextConfig": {},
+          "EnableActionList": [
+            "Menu_BPSkill"
+          ],
+          "EnableBattleOperationList": [
+            "SkillButton"
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.TutorialClose"
+        }
+      ]
+    }
+  ],
+  "EntityEventList": []
+}

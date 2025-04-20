@@ -10,25 +10,25 @@
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 77309411328
+                "FixedValue": {
+                  "Value": 18
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288494483767296
+                "FixedValue": {
+                  "Value": 300001
                 }
               }
             }
           },
           "TargetGroupID": {
-            "fixedValue": {
-              "RawValue": 17179869184
+            "FixedValue": {
+              "Value": 4
             }
           },
           "TargetID": {
-            "fixedValue": {
-              "RawValue": 17179869184
+            "FixedValue": {
+              "Value": 4
             }
           },
           "TargetTypes": [],
@@ -39,13 +39,9 @@
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "Mission_101150210_Prop_18_300001_OnEnter"
-              },
-              "TaskEnabled": true
+              }
             }
-          ],
-          "SkipFakeAvatar": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     },
@@ -55,23 +51,19 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Mission_101150210_Prop_18_300001_OnEnter"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.TriggerPerformance",
           "ValueSource": {},
           "PerformanceType": "D",
-          "PerformanceID": 101150210,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 101150210
         },
         {
           "$type": "RPG.GameCore.TriggerCustomString",
           "CustomString": {
             "Value": "Mission_101150210_StartCameraMode"
-          },
-          "TaskEnabled": true
+          }
         }
       ]
     },
@@ -81,24 +73,21 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Mission_101150210_StartCameraMode"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.CreateProp",
           "GroupID": {
-            "fixedValue": {
-              "RawValue": 77309411328
+            "FixedValue": {
+              "Value": 18
             }
           },
           "GroupPropID": {
-            "fixedValue": {
-              "RawValue": 1288498778734592
+            "FixedValue": {
+              "Value": 300002
             }
           },
-          "CreateList": [],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "CreateList": []
         }
       ]
     },
@@ -108,8 +97,7 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Mission_101150210_StartCameraMode"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.PhotoGraphAimTarget",
@@ -127,9 +115,7 @@
             ]
           },
           "IsAim": true,
-          "AimIdentifyType": "Manual",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "AimIdentifyType": "Manual"
         },
         {
           "$type": "RPG.GameCore.AdvEntityFaceTo",
@@ -138,29 +124,23 @@
             "FetchType": "SingleNpcByNpcID",
             "SingleNpcID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 77309411328
+                "FixedValue": {
+                  "Value": 18
                 }
               },
               "GroupNpcID": {
-                "fixedValue": {
-                  "RawValue": 1717995508334592
+                "FixedValue": {
+                  "Value": 400002
                 }
               }
             }
           },
           "TargetType": {
-            "$type": "RPG.GameCore.TargetFetchAdvLocalPlayer",
-            "IncludeStoryPlayer": true
+            "$type": "RPG.GameCore.TargetFetchAdvLocalPlayer"
           },
           "EnableSteer": true,
-          "EnableLookAt": true,
-          "LookAtPoint": "Head",
-          "WaitFinishMode": "WaitAnimFinish",
-          "ForceToStandBy": true,
-          "TurnBackOnGraphEnd": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "FinishImmediately": false,
+          "ForceToStandBy": true
         },
         {
           "$type": "RPG.GameCore.PhotoGraphWaitIdentifyFinish",
@@ -184,20 +164,16 @@
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "Mission_101150210_CameraFail"
-              },
-              "TaskEnabled": true
+              }
             }
           ],
-          "OnPreviewFinish": [],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "OnPreviewFinish": []
         },
         {
           "$type": "RPG.GameCore.TriggerCustomString",
           "CustomString": {
             "Value": "Mission_101150210_CameraSuccess"
-          },
-          "TaskEnabled": true
+          }
         }
       ]
     },
@@ -207,8 +183,7 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Mission_101150210_CameraSuccess"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.PhotoGraphAimTarget",
@@ -224,9 +199,7 @@
                 "GroupNpcID": 400002
               }
             ]
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
           "$type": "RPG.GameCore.DestroyProp",
@@ -234,25 +207,22 @@
             "$type": "RPG.GameCore.TargetFetchAdvPropEx"
           },
           "ID": {
-            "fixedValue": {
-              "RawValue": 1288498778734592
+            "FixedValue": {
+              "Value": 300002
             }
           },
           "GroupID": {
-            "fixedValue": {
-              "RawValue": 77309411328
+            "FixedValue": {
+              "Value": 18
             }
           },
-          "DestroyList": [],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "DestroyList": []
         },
         {
           "$type": "RPG.GameCore.TriggerCustomString",
           "CustomString": {
             "Value": "Talk_101150251"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.SetMissionCustomValue",
@@ -264,16 +234,12 @@
               2
             ]
           },
-          "CustomValue": 2,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "CustomValue": 2
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
           "Key": "Mission_101150210",
-          "MainMissionID": 1011503,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "MainMissionID": 1011503
         }
       ]
     },
@@ -283,8 +249,7 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Mission_101150210_CameraFail"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.PhotoGraphAimTarget",
@@ -300,9 +265,7 @@
                 "GroupNpcID": 400002
               }
             ]
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
           "$type": "RPG.GameCore.DestroyProp",
@@ -310,25 +273,22 @@
             "$type": "RPG.GameCore.TargetFetchAdvPropEx"
           },
           "ID": {
-            "fixedValue": {
-              "RawValue": 1288498778734592
+            "FixedValue": {
+              "Value": 300002
             }
           },
           "GroupID": {
-            "fixedValue": {
-              "RawValue": 77309411328
+            "FixedValue": {
+              "Value": 18
             }
           },
-          "DestroyList": [],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "DestroyList": []
         },
         {
           "$type": "RPG.GameCore.TriggerCustomString",
           "CustomString": {
             "Value": "Talk_101150252"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.SetMissionCustomValue",
@@ -340,16 +300,12 @@
               2
             ]
           },
-          "CustomValue": 1,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "CustomValue": 1
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
           "Key": "Mission_101150210",
-          "MainMissionID": 1011503,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "MainMissionID": 1011503
         }
       ]
     }

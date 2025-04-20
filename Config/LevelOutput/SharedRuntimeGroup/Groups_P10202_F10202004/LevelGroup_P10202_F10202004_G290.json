@@ -1,4 +1,5 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "NPC_GNF",
   "Category": "Atmosphere",
   "AreaAnchorName": "LevelArea_P10202_F10202004_G290",
@@ -8,32 +9,29 @@
       {
         "$type": "RPG.GameCore.LevelGroupAtmosphereSavedValueCondition",
         "SavedValueName": "JinRenFinish",
-        "Operation": "Equal",
         "Value": 1
       },
       {
         "$type": "RPG.GameCore.LevelGroupAtmosphereSavedValueCondition",
         "SavedValueName": "GNFloarding",
-        "Operation": "Equal",
         "Value": 1
       }
-    ],
-    "Operation": "And"
+    ]
   },
   "LoadOnInitial": true,
   "ValueSource": {},
   "ConflictIDList": [],
   "IsHoyoGroup": true,
   "HoYoGroupType": "Container",
-  "StreamingTemplateType": "Standard",
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
   "ConflictWhiteList": [],
-  "TagContainer": [
-    {
-      "Tag": "Group.Atomsphere.NPC",
-      "TagHash": -882113524
-    }
-  ],
+  "TagContainer": {
+    "List": [
+      {
+        "Tag": "Group.Atomsphere.NPC",
+        "TagHash": -882113524
+      }
+    ]
+  },
   "AnchorList": [],
   "MonsterList": [],
   "PropList": [],
@@ -44,18 +42,13 @@
   "NPCList": [
     {
       "NPCID": 1215,
-      "LoadOnInitial": true,
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "ServerInteractVerificationIDList": [],
-      "DefaultLookAtMode": "LookPlayer",
       "BoardShowList": [
         8
       ],
       "TalkDialogGroupIDList": [],
-      "DefaultAnimationType": "FreeStyle",
       "DefaultIdleFreeStyleMotionID": 312100209,
-      "BornType": "Mission",
       "InitialHiddenNodeList": [],
       "Dialog": {
         "LevelGraph": "Config/Level/NPCDialogue/P10202/F10202004_G290/DialogueMain_F10202004_G290_N400001.json",
@@ -64,21 +57,12 @@
             "Name": "Common",
             "LevelGraph": "Config/Level/NPCDialogue/P10202/F10202004_G290/DialoguePack_Common_F10202004_G290_N400001.json"
           }
-        ],
-        "EnableDialogCamera": true
+        ]
       },
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "CameraCenterEntityList": [],
       "SpawnConfig": {
-        "TryCapture": true,
-        "CaptureDistanceTolerance": 10.0,
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "CaptureDistanceTolerance": 10,
+        "EntitySpawnConfig": {}
       },
       "Name": "NPC1",
       "RotY": 187.4149,

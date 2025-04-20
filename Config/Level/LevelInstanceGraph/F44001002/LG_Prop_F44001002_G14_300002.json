@@ -1,0 +1,85 @@
+{
+  "OnInitSequece": [
+    {
+      "TaskList": []
+    }
+  ],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropSetupTrigger",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          },
+          "IsSingle": true,
+          "TargetEntityType": "NPC",
+          "TargetGroupID": {
+            "FixedValue": {
+              "Value": 20
+            }
+          },
+          "TargetID": {
+            "FixedValue": {
+              "Value": 400001
+            }
+          },
+          "TargetTypes": [
+            "NPC"
+          ],
+          "OnTriggerEnter": [
+            {
+              "$type": "RPG.GameCore.PropStateExecute",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                "FetchType": "SinglePropByPropID",
+                "SinglePropID": {
+                  "GroupID": {
+                    "FixedValue": {
+                      "Value": 20
+                    }
+                  },
+                  "ID": {
+                    "FixedValue": {
+                      "Value": 300003
+                    }
+                  }
+                }
+              },
+              "State": "Open",
+              "Execute": [
+                {
+                  "$type": "RPG.GameCore.AdvClientChangePropState",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                    "FetchType": "SinglePropByPropID",
+                    "SinglePropKey": {
+                      "Custom": true,
+                      "Key": "Maze_Prop_Chap01_Door"
+                    },
+                    "SinglePropID": {
+                      "GroupID": {
+                        "FixedValue": {
+                          "Value": 20
+                        }
+                      },
+                      "ID": {
+                        "FixedValue": {
+                          "Value": 300003
+                        }
+                      }
+                    }
+                  },
+                  "FromState": "Open",
+                  "CanChangeServerProp": true
+                }
+              ]
+            }
+          ],
+          "OnTriggerExit": []
+        }
+      ]
+    }
+  ],
+  "Type": "EntityInstance"
+}

@@ -10,32 +10,36 @@
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 747324309504
+                "FixedValue": {
+                  "Value": 174
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288515958603776
+                "FixedValue": {
+                  "Value": 300006
                 }
               }
             }
           },
-          "TargetGroupID": {},
-          "TargetID": {},
+          "TargetGroupID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "TargetID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
           "TargetTypes": [],
           "OnTriggerEnter": [
             {
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "EnterArea_300008_401510302"
-              },
-              "TaskEnabled": true
+              }
             }
-          ],
-          "SkipFakeAvatar": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     },
@@ -45,23 +49,19 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "EnterArea_300008_401510302"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.TriggerPerformance",
           "ValueSource": {},
           "PerformanceType": "E",
-          "PerformanceID": 404022401,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 404022401
         },
         {
           "$type": "RPG.GameCore.TriggerCustomString",
           "CustomString": {
             "Value": "PerformanceFinish_404022401"
-          },
-          "TaskEnabled": true
+          }
         }
       ]
     },
@@ -72,14 +72,11 @@
           "CustomString": {
             "Value": "PerformanceFinish_404022401"
           },
-          "WaitOwnerOnly": true,
-          "TaskEnabled": true
+          "WaitOwnerOnly": true
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_401510310",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_401510310"
         }
       ]
     }

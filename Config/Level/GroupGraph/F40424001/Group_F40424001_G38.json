@@ -1,0 +1,238 @@
+{
+  "OnInitSequece": [
+    {
+      "TaskList": []
+    }
+  ],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvDistrictSetupTrigger",
+          "GroupID": {
+            "FixedValue": {
+              "Value": 142
+            }
+          },
+          "DistrictID": {
+            "FixedValue": {
+              "Value": 500001
+            }
+          },
+          "OnEnter": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByComparePropState",
+                "TargetType": {
+                  "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                  "FetchType": "SinglePropByPropKey",
+                  "SinglePropKey": {
+                    "Custom": true,
+                    "Key": "FollowAnchor"
+                  },
+                  "SinglePropID": {},
+                  "PropIDInOwnerGroup": {
+                    "FixedValue": {
+                      "Value": 300002
+                    }
+                  }
+                },
+                "State": "Open"
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.TriggerEntityEventV2",
+                  "EventName": {
+                    "Value": "Clt_OnReset"
+                  },
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                    "FetchType": "SinglePropByPropID",
+                    "SinglePropKey": {
+                      "Custom": true,
+                      "Key": "FollowAnchor"
+                    },
+                    "SinglePropID": {
+                      "GroupID": {
+                        "FixedValue": {
+                          "Value": 38
+                        }
+                      },
+                      "ID": {
+                        "FixedValue": {
+                          "Value": 300017
+                        }
+                      }
+                    },
+                    "PropIDInOwnerGroup": {
+                      "FixedValue": {
+                        "Value": 300002
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByComparePropState",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+              "FetchType": "SinglePropByPropKey",
+              "SinglePropKey": {
+                "Custom": true,
+                "Key": "FollowAnchor"
+              },
+              "SinglePropID": {},
+              "PropIDInOwnerGroup": {
+                "FixedValue": {
+                  "Value": 300002
+                }
+              }
+            },
+            "State": "Open"
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.SetFlipperLightDeviceFollowPlayer",
+              "DevicePropTarget": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                "FetchType": "SinglePropByPropKey",
+                "SinglePropKey": {
+                  "Custom": true,
+                  "Key": "EraFlipperOwner"
+                },
+                "SinglePropID": {},
+                "PropIDInOwnerGroup": {
+                  "FixedValue": {
+                    "Value": 300002
+                  }
+                }
+              },
+              "PointPropTarget": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                "FetchType": "SinglePropByPropKey",
+                "SinglePropKey": {
+                  "Custom": true,
+                  "Key": "FollowAnchor"
+                }
+              },
+              "AimAttachPoint": "Root",
+              "FollowOffset": {
+                "Y": 9
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvDistrictSetupTrigger",
+          "GroupID": {
+            "FixedValue": {
+              "Value": 142
+            }
+          },
+          "DistrictID": {
+            "FixedValue": {
+              "Value": 500002
+            }
+          },
+          "OnEnter": [
+            {
+              "$type": "RPG.GameCore.LockCamera",
+              "LockAxisX": false,
+              "LockRecenterY": true
+            },
+            {
+              "$type": "RPG.GameCore.VCameraConfigChange",
+              "CameraConfig": {
+                "Freelook3rdConfig": {
+                  "ExportToJson": true,
+                  "BaseChangeParam": {
+                    "ExportToJson": true,
+                    "ZoomRatio": 3,
+                    "CenterPos": {
+                      "X": 0.5,
+                      "Y": 0.8
+                    },
+                    "Time": 3,
+                    "ChangeCurvePath": "Camera/BlendCurve/EraFlipperCameraCurve.asset",
+                    "RecoveryTime": 1,
+                    "RecoveryCurvePath": "Camera/BlendCurve/EraFlipperCameraCurve2.asset"
+                  },
+                  "AxisYChangeParam": {
+                    "ExportToJson": true,
+                    "TargetValue": 0.6,
+                    "Time": 3,
+                    "ChangeCurvePath": "Camera/BlendCurve/EraFlipperCameraCurve.asset"
+                  }
+                },
+                "OverrideShakeConfigV2": {},
+                "NoiseConfig": {}
+              }
+            }
+          ],
+          "OnExit": [
+            {
+              "$type": "RPG.GameCore.UnLockCamera"
+            },
+            {
+              "$type": "RPG.GameCore.VCameraConfigChange",
+              "CameraConfig": {
+                "Freelook3rdConfig": {
+                  "ExportToJson": true,
+                  "BaseChangeParam": {
+                    "ExportToJson": true,
+                    "Reset": true,
+                    "ZoomRatio": 2,
+                    "CenterPos": {
+                      "X": 0.5,
+                      "Y": 0.8
+                    },
+                    "Time": 1,
+                    "ChangeCurvePath": "Camera/BlendCurve/EraFlipperCameraCurve.asset",
+                    "RecoveryTime": 1,
+                    "RecoveryCurvePath": "Camera/BlendCurve/EraFlipperCameraCurve2.asset"
+                  },
+                  "AxisYChangeParam": {
+                    "ExportToJson": true,
+                    "TargetValue": 0.35,
+                    "Time": 2,
+                    "ChangeCurvePath": "Camera/BlendCurve/EraFlipperCameraCurve.asset"
+                  }
+                },
+                "OverrideShakeConfigV2": {},
+                "NoiseConfig": {}
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "ValueSource": {
+    "Values": [
+      {
+        "$type": "RPG.GameCore.SharedString",
+        "Key": "FollowAnchor"
+      },
+      {
+        "$type": "RPG.GameCore.SharedString",
+        "Key": "EraFlipperOwner"
+      }
+    ]
+  },
+  "Type": "Group",
+  "EntityEventList": []
+}

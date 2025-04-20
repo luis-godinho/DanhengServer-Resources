@@ -1,4 +1,5 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "NPC_XKE",
   "Category": "Atmosphere",
   "AreaAnchorName": "LevelArea_P10001_F10001001_G8",
@@ -13,14 +14,14 @@
   },
   "ValueSource": {},
   "ConflictIDList": [],
-  "StreamingTemplateType": "Standard",
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
-  "TagContainer": [
-    {
-      "Tag": "Group.Atomsphere.NPC",
-      "TagHash": -882113524
-    }
-  ],
+  "TagContainer": {
+    "List": [
+      {
+        "Tag": "Group.Atomsphere.NPC",
+        "TagHash": -882113524
+      }
+    ]
+  },
   "AnchorList": [],
   "MonsterList": [],
   "PropList": [],
@@ -31,14 +32,13 @@
   "NPCList": [
     {
       "NPCID": 10201,
-      "LoadOnInitial": true,
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [
         500000202,
         500000203
       ],
       "ServerInteractVerificationIDList": [],
       "DefaultIdleStateName": "Think01Loop",
+      "DefaultLookAtMode": "Closed",
       "BoardShowList": [
         1,
         4,
@@ -49,9 +49,7 @@
       "TalkDialogGroupIDList": [
         500000200
       ],
-      "DefaultAnimationType": "FreeStyle",
       "DefaultIdleFreeStyleMotionID": 100020222,
-      "BornType": "Mission",
       "InitialHiddenNodeList": [],
       "Dialog": {
         "LevelGraph": "Config/Level/NPCDialogue/P10001/F10001001_G8/DialogueMain_F10001001_G8_N400001.json",
@@ -68,11 +66,8 @@
             "Name": "Transferred",
             "LevelGraph": "Config/Level/NPCDialogue/P10001/F10001001_G8/DialoguePack_Transferred_F10001001_G8_N400001.json"
           }
-        ],
-        "EnableDialogCamera": true
+        ]
       },
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "CameraCenterEntityList": [],
       "Name": "NPC1",
       "RotY": 294.9208,

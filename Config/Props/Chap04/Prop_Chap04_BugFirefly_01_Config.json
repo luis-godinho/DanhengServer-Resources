@@ -1,0 +1,64 @@
+{
+  "DisableAnimEventLayers": [
+    "Dissolve Layer"
+  ],
+  "AnimatorStateGroupEvents": [
+    {
+      "States": [
+        {
+          "Name": "Flying01"
+        }
+      ],
+      "OnEnter": [
+        {
+          "$type": "RPG.GameCore.SetupEffectTransformParams",
+          "OverrideFloating": true,
+          "FloatingFrequency": {
+            "FixedValue": {
+              "Value": 0.2
+            }
+          },
+          "FloatingDistance": {
+            "FixedValue": {
+              "Value": 0.1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "States": [
+        {
+          "Name": "Idle01"
+        }
+      ],
+      "OnEnter": [
+        {
+          "$type": "RPG.GameCore.SetupEffectTransformParams",
+          "OverrideFloating": true,
+          "FloatingFrequency": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "FloatingDistance": {
+            "FixedValue": {
+              "Value": 0
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "PropButtonConfigs": [
+    {
+      "ID": "Interact",
+      "ButtonIcon": {
+        "Value": "SpriteOutput/TalkIcon/SpecimenIcon.png"
+      },
+      "ButtonText": {
+        "Value": "PropInteractTitle_1"
+      }
+    }
+  ]
+}

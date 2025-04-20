@@ -1,12 +1,6 @@
 {
   "ModifierMap": {
     "ADV_Modifier_XP_Minion04_ListenTopazSkill": {
-      "LifeTime": -1.0,
-      "Level": 1,
-      "LevelMax": 1,
-      "IsCountDownAfterBattle": true,
-      "ApplyBehaviorFlagBindEffects": true,
-      "TickInterval": 1.0,
       "ModifierTaskList": [
         {
           "$type": "RPG.GameCore.ListenTargetUseSkill",
@@ -21,7 +15,7 @@
           "ListenSkillType": [
             "NormalAtk"
           ],
-          "Distance": 8.0,
+          "Distance": 8,
           "ListenCallback": [
             {
               "$type": "RPG.GameCore.AddAdventureModifier",
@@ -29,25 +23,14 @@
                 "$type": "RPG.GameCore.TargetAlias",
                 "Alias": "ModifierOwnerEntity"
               },
-              "ModifierName": "ADV_Modifier_XP_Minion04_MuteIgnoreVision",
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "ModifierName": "ADV_Modifier_XP_Minion04_MuteIgnoreVision"
             }
-          ],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
-      ],
-      "Count": -1,
-      "Stacking": "Unique"
+      ]
     },
     "ADV_Modifier_XP_Minion04_MuteIgnoreVision": {
-      "LifeTime": 8.0,
-      "Level": 1,
-      "LevelMax": 1,
-      "IsCountDownAfterBattle": true,
-      "ApplyBehaviorFlagBindEffects": true,
-      "TickInterval": 1.0,
+      "LifeTime": 8,
       "OnCreate": [
         {
           "$type": "RPG.GameCore.ModifyAiVisionExcludeTagRuntime",
@@ -58,9 +41,7 @@
           "VisionID": "Default",
           "ModifyTag": [
             "TrotterLover"
-          ],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ],
       "OnDestroy": [
@@ -74,69 +55,40 @@
           "IsAdd": true,
           "ModifyTag": [
             "TrotterLover"
-          ],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ],
-      "Count": -1,
       "Stacking": "Refresh"
     },
     "ADV_Modifier_W3_Junk_Passive": {
-      "LifeTime": -1.0,
-      "Level": 1,
-      "LevelMax": 1,
-      "IsCountDownAfterBattle": true,
-      "ApplyBehaviorFlagBindEffects": true,
       "BehaviorFlagList": [
         "BeHitWithoutBattle"
       ],
-      "TickInterval": 1.0,
       "OnBeAttack": [
         {
           "$type": "RPG.GameCore.AdventureSetAttackTargetWithoutBattle",
           "TargetType": {
             "$type": "RPG.GameCore.TargetAlias",
             "Alias": "ModifierOwnerEntity"
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         }
-      ],
-      "Count": -1,
-      "Stacking": "Unique"
+      ]
     },
     "ADV_Modifier_W3_Junk_Disguise": {
-      "LifeTime": -1.0,
-      "Level": 1,
-      "LevelMax": 1,
-      "IsCountDownAfterBattle": true,
-      "ApplyBehaviorFlagBindEffects": true,
-      "TickInterval": 1.0,
       "OnCreate": [
         {
           "$type": "RPG.GameCore.DebugLog",
-          "Message": "MDF_On",
-          "TaskEnabled": true
+          "Message": "MDF_On"
         }
       ],
       "OnDestroy": [
         {
           "$type": "RPG.GameCore.DebugLog",
-          "Message": "MDF_Off",
-          "TaskEnabled": true
+          "Message": "MDF_Off"
         }
-      ],
-      "Count": -1,
-      "Stacking": "Unique"
+      ]
     },
     "ADV_Monster_W3_TV_00_CleanFace": {
-      "LifeTime": -1.0,
-      "Level": 1,
-      "LevelMax": 1,
-      "IsCountDownAfterBattle": true,
-      "ApplyBehaviorFlagBindEffects": true,
-      "TickInterval": 1.0,
       "OnDestroy": [
         {
           "$type": "RPG.GameCore.RemoveEffect",
@@ -144,12 +96,7 @@
             "$type": "RPG.GameCore.TargetAlias",
             "Alias": "Caster"
           },
-          "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_W3_TV_00/Eff_Monster_W3_TV_00_Break_Occur_Blank.prefab",
-          "IsNeedFadeOut": true,
-          "FadeOutRegionStart": -1.0,
-          "FadeOutRegionEnd": -1.0,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_W3_TV_00/Eff_Monster_W3_TV_00_Break_Occur_Blank.prefab"
         }
       ],
       "OnModifierAdd": [
@@ -157,9 +104,7 @@
           "$type": "RPG.GameCore.PredicateTaskList",
           "Predicate": {
             "$type": "RPG.GameCore.ByCheckAdvModifierCallBackBehaviorFlag",
-            "Flag": "Freeze",
-            "TaskEnabled": true,
-            "IsClientOnly": true
+            "Flag": "Freeze"
           },
           "SuccessTaskList": [
             {
@@ -168,12 +113,7 @@
                 "$type": "RPG.GameCore.TargetAlias",
                 "Alias": "Caster"
               },
-              "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_W3_TV_00/Eff_Monster_W3_TV_00_BeingHit02.prefab",
-              "IsNeedFadeOut": true,
-              "FadeOutRegionStart": -1.0,
-              "FadeOutRegionEnd": -1.0,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_W3_TV_00/Eff_Monster_W3_TV_00_BeingHit02.prefab"
             },
             {
               "$type": "RPG.GameCore.TriggerEffect",
@@ -181,37 +121,9 @@
                 "$type": "RPG.GameCore.TargetAlias",
                 "Alias": "Caster"
               },
-              "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_W3_TV_00/Eff_Monster_W3_TV_00_Break_Occur_Blank.prefab",
-              "Scale": {
-                "x": -1.0,
-                "y": -1.0,
-                "z": -1.0,
-                "normalized": {
-                  "x": -0.577350259,
-                  "y": -0.577350259,
-                  "z": -0.577350259,
-                  "normalized": {
-                    "x": -0.5773503,
-                    "y": -0.5773503,
-                    "z": -0.5773503,
-                    "magnitude": 1.00000012,
-                    "sqrMagnitude": 1.00000024
-                  },
-                  "magnitude": 0.99999994,
-                  "sqrMagnitude": 0.99999994
-                },
-                "magnitude": 1.73205078,
-                "sqrMagnitude": 3.0
-              },
-              "IsNeedFadeIn": true,
-              "ParamEntityUsage": "LookAt",
-              "TowardMaxPitchAngle": 90.0,
-              "MaxMutexCount": 1,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_W3_TV_00/Eff_Monster_W3_TV_00_Break_Occur_Blank.prefab"
             }
-          ],
-          "TaskEnabled": true
+          ]
         }
       ],
       "OnModifierRemove": [
@@ -222,9 +134,7 @@
             "PredicateList": [
               {
                 "$type": "RPG.GameCore.ByCheckAdvModifierCallBackBehaviorFlag",
-                "Flag": "Freeze",
-                "TaskEnabled": true,
-                "IsClientOnly": true
+                "Flag": "Freeze"
               },
               {
                 "$type": "RPG.GameCore.AdvByContainBehaviorFlag",
@@ -233,9 +143,7 @@
                   "Alias": "Caster"
                 },
                 "Flag": "Freeze",
-                "Inverse": true,
-                "TaskEnabled": true,
-                "IsClientOnly": true
+                "Inverse": true
               },
               {
                 "$type": "RPG.GameCore.AdvByContainBehaviorFlag",
@@ -244,21 +152,16 @@
                   "Alias": "Caster"
                 },
                 "Flag": "Stun",
-                "Inverse": true,
-                "TaskEnabled": true,
-                "IsClientOnly": true
+                "Inverse": true
               },
               {
                 "$type": "RPG.GameCore.ByAnimatorParam",
                 "ParamType": "Int",
                 "ParamName": "Side",
                 "ParamCompareType": "NotEqual",
-                "IntegerValue": 2,
-                "TaskEnabled": true,
-                "IsClientOnly": true
+                "IntegerValue": 2
               }
-            ],
-            "TaskEnabled": true
+            ]
           },
           "SuccessTaskList": [
             {
@@ -267,27 +170,13 @@
                 "$type": "RPG.GameCore.TargetAlias",
                 "Alias": "Caster"
               },
-              "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_W3_TV_00/Eff_Monster_W3_TV_00_Break_Occur_Blank.prefab",
-              "IsNeedFadeOut": true,
-              "FadeOutRegionStart": -1.0,
-              "FadeOutRegionEnd": -1.0,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_W3_TV_00/Eff_Monster_W3_TV_00_Break_Occur_Blank.prefab"
             }
-          ],
-          "TaskEnabled": true
+          ]
         }
-      ],
-      "Count": -1,
-      "Stacking": "Unique"
+      ]
     },
     "ADV_Monster_W3_Figure_02_FireInHead": {
-      "LifeTime": -1.0,
-      "Level": 1,
-      "LevelMax": 1,
-      "IsCountDownAfterBattle": true,
-      "ApplyBehaviorFlagBindEffects": true,
-      "TickInterval": 1.0,
       "OnModifierAdd": [
         {
           "$type": "RPG.GameCore.ModifierAttachEffect",
@@ -296,23 +185,12 @@
             "Alias": "ModifierOwnerEntity"
           },
           "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_W3_Figure_02/Eff_Monster_W3_Figure_02_Fire_Loop.prefab",
-          "MinMutexTime": -1.0,
-          "MutexType": "Entity",
-          "MaxMutexCount": 1,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "MinMutexTime": -1,
+          "MutexType": "Entity"
         }
-      ],
-      "Count": -1,
-      "Stacking": "Unique"
+      ]
     },
     "ADV_Monster_W1_Mecha01_02_CleanEffect": {
-      "LifeTime": -1.0,
-      "Level": 1,
-      "LevelMax": 1,
-      "IsCountDownAfterBattle": true,
-      "ApplyBehaviorFlagBindEffects": true,
-      "TickInterval": 1.0,
       "OnDestroy": [
         {
           "$type": "RPG.GameCore.RemoveEffect",
@@ -321,10 +199,7 @@
             "Alias": "Caster"
           },
           "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_W1_Mecha01_02/Eff_Monster_W1_Mecha01_02_StandBy_Light.prefab",
-          "FadeOutRegionStart": -1.0,
-          "FadeOutRegionEnd": -1.0,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "IsNeedFadeOut": false
         },
         {
           "$type": "RPG.GameCore.RemoveEffect",
@@ -333,10 +208,7 @@
             "Alias": "Caster"
           },
           "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_W1_Mecha01_02/Eff_Monster_W1_Mecha01_02_MazeStandBy01_Light.prefab",
-          "FadeOutRegionStart": -1.0,
-          "FadeOutRegionEnd": -1.0,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "IsNeedFadeOut": false
         }
       ],
       "OnModifierAdd": [
@@ -344,9 +216,7 @@
           "$type": "RPG.GameCore.PredicateTaskList",
           "Predicate": {
             "$type": "RPG.GameCore.ByCheckAdvModifierCallBackBehaviorFlag",
-            "Flag": "Freeze",
-            "TaskEnabled": true,
-            "IsClientOnly": true
+            "Flag": "Freeze"
           },
           "SuccessTaskList": [
             {
@@ -356,10 +226,7 @@
                 "Alias": "Caster"
               },
               "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_W1_Mecha01_02/Eff_Monster_W1_Mecha01_02_StandBy_Light.prefab",
-              "FadeOutRegionStart": -1.0,
-              "FadeOutRegionEnd": -1.0,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "IsNeedFadeOut": false
             },
             {
               "$type": "RPG.GameCore.RemoveEffect",
@@ -368,25 +235,13 @@
                 "Alias": "Caster"
               },
               "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_W1_Mecha01_02/Eff_Monster_W1_Mecha01_02_MazeStandBy01_Light.prefab",
-              "FadeOutRegionStart": -1.0,
-              "FadeOutRegionEnd": -1.0,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "IsNeedFadeOut": false
             }
-          ],
-          "TaskEnabled": true
+          ]
         }
-      ],
-      "Count": -1,
-      "Stacking": "Unique"
+      ]
     },
     "ADV_Monster_W3_Dinosaur_02_CleanFace": {
-      "LifeTime": -1.0,
-      "Level": 1,
-      "LevelMax": 1,
-      "IsCountDownAfterBattle": true,
-      "ApplyBehaviorFlagBindEffects": true,
-      "TickInterval": 1.0,
       "OnDestroy": [
         {
           "$type": "RPG.GameCore.RemoveEffect",
@@ -394,12 +249,7 @@
             "$type": "RPG.GameCore.TargetAlias",
             "Alias": "Caster"
           },
-          "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_W3_Dinosaur_02/Eff_Monster_W3_Dinosaur_02_Break_Occur_Blank.prefab",
-          "IsNeedFadeOut": true,
-          "FadeOutRegionStart": -1.0,
-          "FadeOutRegionEnd": -1.0,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_W3_Dinosaur_02/Eff_Monster_W3_Dinosaur_02_Break_Occur_Blank.prefab"
         }
       ],
       "OnModifierAdd": [
@@ -407,9 +257,7 @@
           "$type": "RPG.GameCore.PredicateTaskList",
           "Predicate": {
             "$type": "RPG.GameCore.ByCheckAdvModifierCallBackBehaviorFlag",
-            "Flag": "Freeze",
-            "TaskEnabled": true,
-            "IsClientOnly": true
+            "Flag": "Freeze"
           },
           "SuccessTaskList": [
             {
@@ -418,12 +266,7 @@
                 "$type": "RPG.GameCore.TargetAlias",
                 "Alias": "Caster"
               },
-              "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_W3_Dinosaur_02/Eff_Monster_W3_Dinosaur_02_BeingHit02.prefab",
-              "IsNeedFadeOut": true,
-              "FadeOutRegionStart": -1.0,
-              "FadeOutRegionEnd": -1.0,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_W3_Dinosaur_02/Eff_Monster_W3_Dinosaur_02_BeingHit02.prefab"
             },
             {
               "$type": "RPG.GameCore.TriggerEffect",
@@ -431,37 +274,9 @@
                 "$type": "RPG.GameCore.TargetAlias",
                 "Alias": "Caster"
               },
-              "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_W3_Dinosaur_02/Eff_Monster_W3_Dinosaur_02_Break_Occur_Blank.prefab",
-              "Scale": {
-                "x": -1.0,
-                "y": -1.0,
-                "z": -1.0,
-                "normalized": {
-                  "x": -0.577350259,
-                  "y": -0.577350259,
-                  "z": -0.577350259,
-                  "normalized": {
-                    "x": -0.5773503,
-                    "y": -0.5773503,
-                    "z": -0.5773503,
-                    "magnitude": 1.00000012,
-                    "sqrMagnitude": 1.00000024
-                  },
-                  "magnitude": 0.99999994,
-                  "sqrMagnitude": 0.99999994
-                },
-                "magnitude": 1.73205078,
-                "sqrMagnitude": 3.0
-              },
-              "IsNeedFadeIn": true,
-              "ParamEntityUsage": "LookAt",
-              "TowardMaxPitchAngle": 90.0,
-              "MaxMutexCount": 1,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_W3_Dinosaur_02/Eff_Monster_W3_Dinosaur_02_Break_Occur_Blank.prefab"
             }
-          ],
-          "TaskEnabled": true
+          ]
         }
       ],
       "OnModifierRemove": [
@@ -472,9 +287,7 @@
             "PredicateList": [
               {
                 "$type": "RPG.GameCore.ByCheckAdvModifierCallBackBehaviorFlag",
-                "Flag": "Freeze",
-                "TaskEnabled": true,
-                "IsClientOnly": true
+                "Flag": "Freeze"
               },
               {
                 "$type": "RPG.GameCore.AdvByContainBehaviorFlag",
@@ -483,9 +296,7 @@
                   "Alias": "Caster"
                 },
                 "Flag": "Freeze",
-                "Inverse": true,
-                "TaskEnabled": true,
-                "IsClientOnly": true
+                "Inverse": true
               },
               {
                 "$type": "RPG.GameCore.AdvByContainBehaviorFlag",
@@ -494,21 +305,16 @@
                   "Alias": "Caster"
                 },
                 "Flag": "Stun",
-                "Inverse": true,
-                "TaskEnabled": true,
-                "IsClientOnly": true
+                "Inverse": true
               },
               {
                 "$type": "RPG.GameCore.ByAnimatorParam",
                 "ParamType": "Int",
                 "ParamName": "Side",
                 "ParamCompareType": "NotEqual",
-                "IntegerValue": 2,
-                "TaskEnabled": true,
-                "IsClientOnly": true
+                "IntegerValue": 2
               }
-            ],
-            "TaskEnabled": true
+            ]
           },
           "SuccessTaskList": [
             {
@@ -517,36 +323,20 @@
                 "$type": "RPG.GameCore.TargetAlias",
                 "Alias": "Caster"
               },
-              "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_W3_Dinosaur_02/Eff_Monster_W3_Dinosaur_02_Break_Occur_Blank.prefab",
-              "IsNeedFadeOut": true,
-              "FadeOutRegionStart": -1.0,
-              "FadeOutRegionEnd": -1.0,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "EffectPath": "Effects/Eff_Prefab/Eff_Monster/Eff_W3_Dinosaur_02/Eff_Monster_W3_Dinosaur_02_Break_Occur_Blank.prefab"
             }
-          ],
-          "TaskEnabled": true
+          ]
         }
-      ],
-      "Count": -1,
-      "Stacking": "Unique"
+      ]
     },
     "ADV_Monster_Common_HuntNPC": {
-      "LifeTime": -1.0,
-      "Level": 1,
-      "LevelMax": 1,
-      "IsCountDownAfterBattle": true,
-      "ApplyBehaviorFlagBindEffects": true,
       "BehaviorFlagList": [
         "NpcChase"
       ],
-      "TickInterval": 1.0,
       "OnCreate": [
         {
           "$type": "RPG.GameCore.AdvModifierOverrideFeatureFlagParam",
-          "OverrideAlertLevelClamp": "Combat",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "OverrideAlertLevelClamp": "Combat"
         }
       ],
       "OnDestroy": [],
@@ -554,12 +344,6 @@
       "Stacking": "Merge"
     },
     "ADV_Monster_W4_Shooter_00_FreezeStopAim": {
-      "LifeTime": -1.0,
-      "Level": 1,
-      "LevelMax": 1,
-      "IsCountDownAfterBattle": true,
-      "ApplyBehaviorFlagBindEffects": true,
-      "TickInterval": 1.0,
       "OnModifierAdd": [
         {
           "$type": "RPG.GameCore.PredicateTaskList",
@@ -568,31 +352,22 @@
             "PredicateList": [
               {
                 "$type": "RPG.GameCore.ByCheckAdvModifierCallBackBehaviorFlag",
-                "Flag": "Freeze",
-                "TaskEnabled": true,
-                "IsClientOnly": true
+                "Flag": "Freeze"
               },
               {
                 "$type": "RPG.GameCore.ByCheckAdvModifierCallBackBehaviorFlag",
-                "Flag": "TimeLock",
-                "TaskEnabled": true,
-                "IsClientOnly": true
+                "Flag": "TimeLock"
               }
-            ],
-            "TaskEnabled": true
+            ]
           },
           "SuccessTaskList": [
             {
               "$type": "RPG.GameCore.StopAim",
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "TransitTime": 0
             }
-          ],
-          "TaskEnabled": true
+          ]
         }
-      ],
-      "Count": -1,
-      "Stacking": "Unique"
+      ]
     }
   }
 }

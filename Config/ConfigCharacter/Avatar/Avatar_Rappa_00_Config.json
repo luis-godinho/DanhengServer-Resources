@@ -1,27 +1,15 @@
 {
+  "$type": "RPG.GameCore.CharacterConfig",
   "SomatoType": "MiddleAvatar",
-  "CharacterBodySize": "None",
   "BuffPanelOffset": {
-    "y": 1.2,
-    "normalized": {
-      "y": 1.0,
-      "magnitude": 1.0,
-      "sqrMagnitude": 1.0
-    },
-    "magnitude": 1.2,
-    "sqrMagnitude": 1.44
+    "Y": 1.2
   },
   "HitBoxWidth": 0.3,
-  "HitBoxLength": 1.0,
   "HitBoxHeight": 1.5,
-  "Resilience": "C",
   "Location": {
     "Width": 0.8
   },
-  "VisualRadius": 1.0,
-  "LookAtIKEnableRadius": 0.5,
   "SaveModelWhenDead": true,
-  "IsSpecialVisualCharacter": "Keep",
   "AnimEventConfigList": [
     "Config/ConfigAnimEvents/Avatar/Designer/Avatar_Rappa_00_Designer_AnimEvent.json",
     "Config/ConfigAnimEvents/Avatar/Effect/Avatar_Rappa_00_Effect_AnimEvent.json",
@@ -32,427 +20,214 @@
     {
       "Name": "Skill01",
       "UseType": "SelectEntity",
-      "ActivateAfterRevive": true,
-      "MaxCastTimes": -1,
       "TargetInfo": {
-        "TargetType": "EnemySelect",
-        "AdjoinSubTargetCount": 1,
-        "MaxTargetCount": 1,
-        "AllowFriendServant": "Allow",
-        "AllowEnemyServant": "Allow"
+        "TargetType": "EnemySelect"
       },
       "UseReadyTransitAnim": true,
-      "SkillNameHUD": true,
-      "CanOverkill": true,
       "ReadyAnimState": "Skill01_Ready",
       "ReadyAnimWaitTime": 0.3,
       "CameraConfig": {
         "NormalConfig": {
           "CameraState": "SelectDarkTeamEntity",
-          "AnchorTargetType": {
-            "$type": "RPG.GameCore.TargetAlias",
-            "Alias": "Caster"
-          },
           "IsLocalOffset": true,
           "AnchorOffset": {
-            "x": 0.5,
-            "y": 0.24,
-            "z": -0.56,
-            "normalized": {
-              "x": 0.634387,
-              "y": 0.304505765,
-              "z": -0.7105135,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 0.7881624,
-            "sqrMagnitude": 0.621199965
-          },
-          "AimTargetType": {
-            "$type": "RPG.GameCore.TargetAlias",
-            "Alias": "SkillTargetEntityList"
+            "X": 0.5,
+            "Y": 0.24,
+            "Z": -0.56
           },
           "AimOffset": {
-            "x": -2.8,
-            "y": 0.45,
-            "normalized": {
-              "x": -0.9873304,
-              "y": 0.1586781,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 2.83593,
-            "sqrMagnitude": 8.0425
+            "X": -2.8,
+            "Y": 0.45
           },
-          "FollowRadius": 3.0,
-          "AnchorToAimAngle": 30.0,
-          "NearClipping": 0.1,
-          "ForbidDynamicOffset": true,
-          "ResetToDefault": true,
-          "UseSkillPerformIgnoreDynamicOffset": true,
-          "UseAimTargetToCameraFocus": true
+          "FollowRadius": 3,
+          "AnchorToAimAngle": 30
         },
         "BlendConfig": {
-          "BlendType": "Cut",
-          "FOVSmoothDampTime": -1.0,
-          "FrameBlendWeightStart": 1.0,
-          "FrameBlendDuration": 1.0
+          "BlendType": "Cut"
         }
       },
       "CameraConfigAdded": {
         "NormalConfig": {
           "CameraState": "SelectDarkTeamEntity",
-          "AnchorTargetType": {
-            "$type": "RPG.GameCore.TargetAlias",
-            "Alias": "Caster"
-          },
           "IsLocalOffset": true,
           "AnchorOffset": {
-            "x": 0.05,
-            "y": -0.05,
-            "z": -0.04,
-            "normalized": {
-              "x": 0.6154575,
-              "y": -0.6154575,
-              "z": -0.492365956,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 0.0812403858,
-            "sqrMagnitude": 0.00660000043
-          },
-          "AimTargetType": {
-            "$type": "RPG.GameCore.TargetAlias",
-            "Alias": "SkillTargetEntityList"
+            "X": 0.05,
+            "Y": -0.05,
+            "Z": -0.04
           },
           "AimOffset": {
-            "x": -2.8,
-            "y": 0.45,
-            "normalized": {
-              "x": -0.9873304,
-              "y": 0.1586781,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 2.83593,
-            "sqrMagnitude": 8.0425
+            "X": -2.8,
+            "Y": 0.45
           },
           "FollowRadius": 2.65,
-          "AnchorToAimAngle": 23.0,
-          "NearClipping": 0.1,
-          "ForbidDynamicOffset": true,
-          "ResetToDefault": true,
-          "UseSkillPerformIgnoreDynamicOffset": true,
-          "UseAimTargetToCameraFocus": true
+          "AnchorToAimAngle": 23
         },
         "BlendConfig": {
           "BlendType": "Custom",
           "CustomCurveName": "BlendCut_00to1",
-          "BlendTime": 1.0,
-          "FOVSmoothDampTime": -1.0,
-          "FrameBlendWeightStart": 1.0,
-          "FrameBlendDuration": 1.0
+          "BlendTime": 1
         }
       },
       "EntryAbility": "Avatar_Rappa_00_Skill01_Phase01",
-      "DelayRatio": {
-        "RawValue": 4294967296
-      },
       "ComplexSkillAIPreCheck": {
-        "SkillBasicPower": {
-          "RawValue": 4294967296
-        },
         "Groups": [
           {
-            "GroupName": "DefaultNormalSkill_PreCheck",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "DefaultNormalSkill_PreCheck"
           },
           {
             "GroupName": "Add01_Asta_ChargeNum",
             "Weight": {
-              "RawValue": 2147483650
+              "Value": 0.5
             }
           },
           {
             "GroupName": "BasePp_Common_WeakBreak",
             "Weight": {
-              "RawValue": 2147483650
+              "Value": 0.5
             }
           }
         ]
       },
       "ComplexSkillAI": {
-        "SkillBasicPower": {
-          "RawValue": 4294967296
-        },
         "Groups": [
           {
-            "GroupName": "DefaultNormalSkill",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "DefaultNormalSkill"
           },
           {
             "GroupName": "BaseWeight",
             "Weight": {
-              "RawValue": 1932735285
+              "Value": 0.45
             }
           },
           {
             "GroupName": "BasePp_Common_Weak",
             "Weight": {
-              "RawValue": 2147483650
+              "Value": 0.5
             }
           }
         ]
-      },
-      "AIUltraSkillPriority": "PROG_Default",
-      "CanBeInterrupted": true,
-      "AutoCostSpNeed": true,
-      "AutoStandbyOnSkillFinish": true,
-      "IsSkillInsertable": true
+      }
     },
     {
       "Name": "Skill02",
       "SkillType": "Skill",
       "UseType": "SelectEntity",
-      "ActivateAfterRevive": true,
-      "MaxCastTimes": -1,
       "TargetInfo": {
-        "TargetType": "AllEnemy",
-        "AdjoinSubTargetCount": 1,
-        "MaxTargetCount": 1,
-        "AllowFriendServant": "Allow",
-        "AllowEnemyServant": "Allow"
+        "TargetType": "AllEnemy"
       },
       "UseReadyTransitAnim": true,
-      "SkillNameHUD": true,
-      "CanOverkill": true,
       "ReadyAnimState": "Skill02_Ready_Loop",
       "ReadyAnimWaitTime": 0.3,
       "CameraConfig": {
         "NormalConfig": {
           "CameraState": "UseSkillPerform",
-          "AnchorTargetType": {
-            "$type": "RPG.GameCore.TargetAlias",
-            "Alias": "Caster"
-          },
           "IsLocalOffset": true,
           "AnchorOffset": {
-            "x": -1.19,
-            "y": 1.52,
-            "z": 2.18,
-            "normalized": {
-              "x": -0.408674181,
-              "y": 0.522003949,
-              "z": 0.7486636,
-              "normalized": {
-                "x": -0.4086742,
-                "y": 0.522004,
-                "z": 0.748663664,
-                "magnitude": 1.0,
-                "sqrMagnitude": 1.0
-              },
-              "magnitude": 0.99999994,
-              "sqrMagnitude": 0.9999999
-            },
-            "magnitude": 2.91185522,
-            "sqrMagnitude": 8.478901
-          },
-          "AimTargetType": {
-            "$type": "RPG.GameCore.TargetAlias",
-            "Alias": "SkillTargetEntityList"
+            "X": -1.19,
+            "Y": 1.52,
+            "Z": 2.18
           },
           "AimOffset": {
-            "x": -0.89,
-            "y": 0.38,
-            "z": 3.42,
-            "normalized": {
-              "x": -0.2504024,
-              "y": 0.10691338,
-              "z": 0.9622205,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.00000012
-            },
-            "magnitude": 3.554279,
-            "sqrMagnitude": 12.6329
-          },
-          "NearClipping": 0.1,
-          "ForbidDynamicOffset": true,
-          "ResetToDefault": true,
-          "UseSkillPerformIgnoreDynamicOffset": true,
-          "UseAimTargetToCameraFocus": true
+            "X": -0.89,
+            "Y": 0.38,
+            "Z": 3.42
+          }
         },
         "BlendConfig": {
           "BlendType": "Custom",
           "CustomCurveName": "BlendCut01",
-          "BlendTime": 1.0,
-          "FOVSmoothDampTime": -1.0,
-          "FrameBlendWeightStart": 1.0,
-          "FrameBlendDuration": 1.0
+          "BlendTime": 1
         }
       },
       "CameraConfigAdded": {
         "NormalConfig": {
           "CameraState": "SelectDarkTeamEntity",
           "AttackType": "RangeAttack",
-          "AnchorTargetType": {
-            "$type": "RPG.GameCore.TargetAlias",
-            "Alias": "Caster"
-          },
           "IsLocalOffset": true,
           "AnchorOffset": {
-            "x": -0.12,
-            "y": -0.24,
-            "z": 0.23,
-            "normalized": {
-              "x": -0.3395471,
-              "y": -0.6790942,
-              "z": 0.6507986,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 0.353411943,
-            "sqrMagnitude": 0.1249
-          },
-          "AimTargetType": {
-            "$type": "RPG.GameCore.TargetAlias",
-            "Alias": "SkillTargetEntityList"
+            "X": -0.12,
+            "Y": -0.24,
+            "Z": 0.23
           },
           "AimOffset": {
-            "x": -2.8,
-            "y": 0.45,
-            "normalized": {
-              "x": -0.9873304,
-              "y": 0.1586781,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 2.83593,
-            "sqrMagnitude": 8.0425
+            "X": -2.8,
+            "Y": 0.45
           },
           "FollowRadius": 2.6,
-          "AnchorToAimAngle": 20.0,
-          "NearClipping": 0.1,
-          "ForbidDynamicOffset": true,
-          "ResetToDefault": true,
-          "UseSkillPerformIgnoreDynamicOffset": true,
-          "UseAimTargetToCameraFocus": true
+          "AnchorToAimAngle": 20
         },
         "BlendConfig": {
           "BlendType": "Custom",
           "CustomCurveName": "BlendCut_05to1",
-          "BlendTime": 1.0,
-          "FOVSmoothDampTime": -1.0,
-          "FrameBlendWeightStart": 1.0,
-          "FrameBlendDuration": 1.0
+          "BlendTime": 1
         }
       },
       "EntryAbility": "Avatar_Rappa_00_Skill02_Phase01",
-      "DelayRatio": {
-        "RawValue": 4294967296
-      },
       "ComplexSkillAIPreCheck": {
-        "SkillBasicPower": {
-          "RawValue": 4294967296
-        },
         "Groups": [
           {
-            "GroupName": "DefaultBPSkill_PreCheck",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "DefaultBPSkill_PreCheck"
           },
           {
             "GroupName": "BaseWeight",
             "Weight": {
-              "RawValue": 3006477110
+              "Value": 0.7
             }
           },
           {
             "GroupName": "AddNP_Common_BPSkill",
             "Weight": {
-              "RawValue": 858993460
+              "Value": 0.2
             }
           }
         ]
       },
       "ComplexSkillAI": {
-        "SkillBasicPower": {
-          "RawValue": 4294967296
-        },
         "Groups": [
           {
-            "GroupName": "DefaultBPSkill",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "DefaultBPSkill"
           },
           {
             "GroupName": "BaseWeight",
             "Weight": {
-              "RawValue": 3006477110
+              "Value": 0.7
             }
           },
           {
             "GroupName": "AddNP_Common_BPSkill",
             "Weight": {
-              "RawValue": 858993460
+              "Value": 0.2
             }
           }
         ]
-      },
-      "AIUltraSkillPriority": "PROG_Default",
-      "CanBeInterrupted": true,
-      "AutoCostSpNeed": true,
-      "AutoStandbyOnSkillFinish": true,
-      "IsSkillInsertable": true
+      }
     },
     {
       "Name": "Skill03",
       "SkillType": "Ultra",
       "UseType": "SelectEntity",
-      "ActivateAfterRevive": true,
-      "MaxCastTimes": -1,
       "TargetInfo": {
-        "TargetType": "Caster",
-        "AdjoinSubTargetCount": 1,
-        "MaxTargetCount": 1,
-        "AllowFriendServant": "Allow",
-        "AllowEnemyServant": "Allow"
+        "TargetType": "Caster"
       },
-      "CanOverkill": true,
+      "SkillNameHUD": false,
       "ReadyAnimState": "Skill03_Ready",
       "EntryAbility": "Avatar_Rappa_00_Skill03_Phase01",
       "PrepareAbility": "Avatar_Rappa_00_Skill03_EnterReady",
-      "DelayRatio": {
-        "RawValue": 4294967296
-      },
       "ComplexSkillAI": {
         "SkillBasicPower": {
-          "RawValue": 429496729600
+          "Value": 100
         },
         "Groups": [
           {
-            "GroupName": "DefaultUltra",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "DefaultUltra"
           },
           {
-            "GroupName": "Ultra_Common_ImmediateRelease",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "Ultra_Common_ImmediateRelease"
           }
         ]
       },
       "AIUltraSkillPriority": "DamageAfterHeal",
-      "CanBeInterrupted": true,
-      "AutoCostSpNeed": true,
-      "IsSkillInsertable": true,
+      "AutoStandbyOnSkillFinish": false,
       "InsertCondition": {
         "$type": "RPG.GameCore.ByIsContainModifier",
         "TargetType": {
@@ -462,256 +237,147 @@
         "ModifierName": {
           "Value": "MAvatar_Rappa_00_UltraMode"
         },
-        "Inverse": true,
-        "TaskEnabled": true
+        "Inverse": true
       }
     },
     {
       "Name": "Skill34",
       "SkillType": "Ultra",
       "UseType": "SelectEntity",
-      "ActivateAfterRevive": true,
-      "MaxCastTimes": -1,
       "TargetInfo": {
-        "TargetType": "Caster",
-        "AdjoinSubTargetCount": 1,
-        "MaxTargetCount": 1,
-        "AllowFriendServant": "Allow",
-        "AllowEnemyServant": "Allow"
+        "TargetType": "Caster"
       },
-      "CanOverkill": true,
+      "SkillNameHUD": false,
       "ReadyAnimState": "Skill03_01_IntoReady",
       "ReadyAnimWaitTime": 0.3,
       "EntryAbility": "Avatar_Rappa_00_Skill03_SP0_Phase01",
-      "DelayRatio": {
-        "RawValue": 4294967296
-      },
       "ComplexSkillAI": {
+        "SkillBasicPower": {
+          "Value": 0
+        },
         "Groups": [
           {
-            "GroupName": "DefaultUltra",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "DefaultUltra"
           },
           {
-            "GroupName": "Ultra_Common_ImmediateRelease",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "Ultra_Common_ImmediateRelease"
           }
         ]
       },
       "AIUltraSkillPriority": "OnlyBuff",
-      "CanBeInterrupted": true,
-      "AutoCostSpNeed": true,
-      "IsSkillInsertable": true,
+      "AutoStandbyOnSkillFinish": false,
       "NoCutin": true
     },
     {
       "Name": "Skill11",
       "UseType": "SelectEntity",
-      "ActivateAfterRevive": true,
       "AlwaysDoAutoLock": true,
       "LockType": "ScoreOfSource",
       "AutoLockBySource": {
-        "SkillBasicPower": {
-          "RawValue": 4294967296
-        },
         "Groups": [
           {
-            "GroupName": "AutoLock_Default",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "AutoLock_Default"
           },
           {
-            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_TargetCount",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_TargetCount"
           },
           {
-            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_WeaknessCompare",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_WeaknessCompare"
           },
           {
-            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_MonsterLevel",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_MonsterLevel"
           },
           {
-            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_MonsterHp",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_MonsterHp"
           }
         ]
       },
-      "MaxCastTimes": -1,
       "TargetInfo": {
         "TargetType": "EnemySelect",
         "SubTargetType": "TargetAdjoinEntity",
-        "AdjoinSubTargetCount": 1,
-        "MaxTargetCount": 1,
-        "AliveState": "AliveOrLimbo",
-        "AllowFriendServant": "Allow",
-        "AllowEnemyServant": "Allow"
+        "AliveState": "AliveOrLimbo"
       },
       "UseReadyTransitAnim": true,
-      "CanOverkill": true,
+      "SkillNameHUD": false,
       "ReadyAnimState": "Skill03_01_IntoReady",
       "ReadyAnimWaitTime": 0.3,
       "CameraConfig": {
         "NormalConfig": {
           "CameraState": "CasterToTargetPerform",
-          "AnchorTargetType": {
-            "$type": "RPG.GameCore.TargetAlias",
-            "Alias": "Caster"
-          },
           "IsLocalOffset": true,
           "AnchorOffset": {
-            "x": 0.001,
-            "y": 0.07,
-            "z": -3.61,
-            "normalized": {
-              "x": 0.000276956271,
-              "y": 0.0193869378,
-              "z": -0.999812,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 3.61067867,
-            "sqrMagnitude": 13.037
+            "X": 0.001,
+            "Y": 0.07,
+            "Z": -3.61
           },
           "AimTargetType": {
             "$type": "RPG.GameCore.TargetAlias",
             "Alias": "DarkTeamCenter"
           },
           "AimOffset": {
-            "x": 0.001,
-            "y": -0.5,
-            "normalized": {
-              "x": 0.00199999614,
-              "y": -0.999998,
-              "normalized": {
-                "x": 0.00199999637,
-                "y": -0.999998033,
-                "magnitude": 1.0,
-                "sqrMagnitude": 1.00000012
-              },
-              "magnitude": 0.99999994,
-              "sqrMagnitude": 0.99999994
-            },
-            "magnitude": 0.500001,
-            "sqrMagnitude": 0.250001
+            "X": 0.001,
+            "Y": -0.5
           },
-          "AimRatio": 1.0,
-          "FollowRadius": 1e-06,
-          "FollowDamp": 1e-06,
-          "AimDamp": 1e-06,
-          "Dutch": 1e-06,
+          "AimRatio": 1,
+          "FollowRadius": 1E-06,
+          "FollowDamp": 1E-06,
+          "AimDamp": 1E-06,
+          "Dutch": 1E-06,
           "FOV": 37.84929,
-          "NearClipping": 0.1,
-          "ForbidDynamicOffset": true,
-          "ResetToDefault": true,
-          "ForbidChangeOffset": true,
-          "UseSkillPerformIgnoreDynamicOffset": true,
-          "UseAimTargetToCameraFocus": true
+          "ForbidChangeOffset": true
         },
         "BlendConfig": {
-          "BlendType": "Cut",
-          "FOVSmoothDampTime": -1.0,
-          "FrameBlendWeightStart": 1.0,
-          "FrameBlendDuration": 1.0
+          "BlendType": "Cut"
         },
         "ShowEntityConfig": {
           "ShowTargetType": {
             "$type": "RPG.GameCore.TargetAlias",
             "Alias": "CasterWithAllEnemy + AllDarkTeamUnselectable"
           },
-          "IsTargetIgnoreCameraDither": true,
-          "IsAliveOnly": true
+          "IsTargetIgnoreCameraDither": true
         },
         "NoiseConfig": {
-          "IgnoreActionWaitOrder": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "IgnoreActionWaitOrder": true
         }
       },
       "CameraConfigAdded": {
         "NormalConfig": {
           "CameraState": "CasterToTargetPerform",
-          "AnchorTargetType": {
-            "$type": "RPG.GameCore.TargetAlias",
-            "Alias": "Caster"
-          },
           "IsLocalOffset": true,
           "AnchorOffset": {
-            "x": 0.001,
-            "y": 0.07,
-            "z": -3.61,
-            "normalized": {
-              "x": 0.000276956271,
-              "y": 0.0193869378,
-              "z": -0.999812,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 3.61067867,
-            "sqrMagnitude": 13.037
+            "X": 0.001,
+            "Y": 0.07,
+            "Z": -3.61
           },
           "AimTargetType": {
             "$type": "RPG.GameCore.TargetAlias",
             "Alias": "DarkTeamCenter"
           },
           "AimOffset": {
-            "x": 0.001,
-            "y": -0.05,
-            "normalized": {
-              "x": 0.0199960023,
-              "y": -0.9998001,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.00000012
-            },
-            "magnitude": 0.05001,
-            "sqrMagnitude": 0.00250100018
+            "X": 0.001,
+            "Y": -0.05
           },
-          "AimRatio": 1.0,
-          "FollowRadius": 1e-06,
-          "FollowDamp": 1e-06,
-          "AimDamp": 1e-06,
-          "Dutch": 1e-06,
+          "AimRatio": 1,
+          "FollowRadius": 1E-06,
+          "FollowDamp": 1E-06,
+          "AimDamp": 1E-06,
+          "Dutch": 1E-06,
           "FOV": 37.84929,
-          "NearClipping": 0.1,
-          "ForbidDynamicOffset": true,
-          "ResetToDefault": true,
-          "ForbidChangeOffset": true,
-          "UseSkillPerformIgnoreDynamicOffset": true,
-          "UseAimTargetToCameraFocus": true
+          "ForbidChangeOffset": true
         },
         "BlendConfig": {
           "BlendType": "EaseInOut",
-          "BlendTime": 0.167,
-          "FOVSmoothDampTime": -1.0,
-          "FrameBlendWeightStart": 1.0,
-          "FrameBlendDuration": 1.0
+          "BlendTime": 0.167
         },
         "ShowEntityConfig": {
           "ShowTargetType": {
             "$type": "RPG.GameCore.TargetAlias",
             "Alias": "CasterWithAllEnemy + AllDarkTeamUnselectable"
           },
-          "IsTargetIgnoreCameraDither": true,
-          "IsAliveOnly": true
+          "IsTargetIgnoreCameraDither": true
         },
         "NoiseConfig": {
-          "IgnoreActionWaitOrder": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "IgnoreActionWaitOrder": true
         }
       },
       "CustomFormationConfig": {
@@ -723,91 +389,48 @@
         "CustomCenterTargetType": {
           "$type": "RPG.GameCore.TargetAlias",
           "Alias": "DarkTeamCenter"
-        },
-        "CustomFormationIgnoreDying": true
+        }
       },
       "EntryAbility": "Avatar_Rappa_00_Skill11_Phase01",
-      "DelayRatio": {
-        "RawValue": 4294967296
-      },
       "ComplexSkillAIPreCheck": {
-        "SkillBasicPower": {
-          "RawValue": 4294967296
-        },
         "Groups": [
           {
-            "GroupName": "DefaultNormalSkill_PreCheck",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "DefaultNormalSkill_PreCheck"
           },
           {
-            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_TargetCount",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_TargetCount"
           },
           {
-            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_WeaknessCompare",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_WeaknessCompare"
           },
           {
-            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_MonsterLevel",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_MonsterLevel"
           },
           {
-            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_MonsterHp",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_MonsterHp"
           }
         ]
       },
       "ComplexSkillAI": {
-        "SkillBasicPower": {
-          "RawValue": 4294967296
-        },
         "Groups": [
           {
-            "GroupName": "DefaultNormalSkill",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "DefaultNormalSkill"
           },
           {
-            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_TargetCount",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_TargetCount"
           },
           {
-            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_WeaknessCompare",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_WeaknessCompare"
           },
           {
-            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_MonsterLevel",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_MonsterLevel"
           },
           {
-            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_MonsterHp",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_MonsterHp"
           }
         ]
       },
-      "AIUltraSkillPriority": "PROG_Default",
-      "CanBeInterrupted": true,
-      "AutoCostSpNeed": true,
-      "IsSkillInsertable": true,
+      "AutoStandbyOnSkillFinish": false,
       "ForceSkillPanelActive": true,
       "UseInputCache": true,
       "InputCacheTime": 0.2
@@ -815,141 +438,75 @@
     {
       "Name": "Skill12",
       "UseType": "SelectEntity",
-      "ActivateAfterRevive": true,
       "LockType": "ScoreOfSource",
       "AutoLockBySource": {
-        "SkillBasicPower": {
-          "RawValue": 4294967296
-        },
         "Groups": [
           {
-            "GroupName": "AutoLock_Default",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "AutoLock_Default"
           },
           {
-            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_TargetCount",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_TargetCount"
           },
           {
-            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_WeaknessCompare",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_WeaknessCompare"
           },
           {
-            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_MonsterLevel",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_MonsterLevel"
           },
           {
-            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_MonsterHp",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_MonsterHp"
           }
         ]
       },
-      "MaxCastTimes": -1,
       "TargetInfo": {
         "TargetType": "EnemySelect",
         "SubTargetType": "TargetAdjoinEntity",
-        "AdjoinSubTargetCount": 1,
-        "MaxTargetCount": 1,
-        "AliveState": "AliveOrLimbo",
-        "AllowFriendServant": "Allow",
-        "AllowEnemyServant": "Allow"
+        "AliveState": "AliveOrLimbo"
       },
       "UseReadyTransitAnim": true,
-      "CanOverkill": true,
+      "SkillNameHUD": false,
       "ReadyAnimState": "Skill03_02_Ready_Loop",
       "ReadyAnimWaitTime": 0.3,
       "EntryAbility": "Avatar_Rappa_00_Skill12_Phase01",
-      "DelayRatio": {
-        "RawValue": 4294967296
-      },
       "ComplexSkillAIPreCheck": {
-        "SkillBasicPower": {
-          "RawValue": 4294967296
-        },
         "Groups": [
           {
-            "GroupName": "DefaultNormalSkill_PreCheck",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "DefaultNormalSkill_PreCheck"
           },
           {
-            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_TargetCount",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_TargetCount"
           },
           {
-            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_WeaknessCompare",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_WeaknessCompare"
           },
           {
-            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_MonsterLevel",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_MonsterLevel"
           },
           {
-            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_MonsterHp",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_MonsterHp"
           }
         ]
       },
       "ComplexSkillAI": {
-        "SkillBasicPower": {
-          "RawValue": 4294967296
-        },
         "Groups": [
           {
-            "GroupName": "DefaultNormalSkill",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "DefaultNormalSkill"
           },
           {
-            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_TargetCount",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_TargetCount"
           },
           {
-            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_WeaknessCompare",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_WeaknessCompare"
           },
           {
-            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_MonsterLevel",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_MonsterLevel"
           },
           {
-            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_MonsterHp",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_MonsterHp"
           }
         ]
       },
-      "AIUltraSkillPriority": "PROG_Default",
-      "CanBeInterrupted": true,
-      "AutoCostSpNeed": true,
-      "IsSkillInsertable": true,
+      "AutoStandbyOnSkillFinish": false,
       "ForceSkillPanelActive": true,
       "UseInputCache": true,
       "InputCacheTime": 0.2
@@ -957,226 +514,130 @@
     {
       "Name": "Skill13",
       "UseType": "SelectEntity",
-      "ActivateAfterRevive": true,
       "LockType": "ScoreOfSource",
       "AutoLockBySource": {
-        "SkillBasicPower": {
-          "RawValue": 4294967296
-        },
         "Groups": [
           {
-            "GroupName": "AutoLock_Default",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "AutoLock_Default"
           },
           {
-            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_TargetCount",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_TargetCount"
           },
           {
-            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_WeaknessCompare",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_WeaknessCompare"
           },
           {
-            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_MonsterLevel",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_MonsterLevel"
           },
           {
-            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_MonsterHp",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_MonsterHp"
           }
         ]
       },
-      "MaxCastTimes": -1,
       "TargetInfo": {
         "TargetType": "AllEnemy",
-        "AdjoinSubTargetCount": 1,
-        "MaxTargetCount": 1,
-        "AliveState": "AliveOrLimbo",
-        "AllowFriendServant": "Allow",
-        "AllowEnemyServant": "Allow"
+        "AliveState": "AliveOrLimbo"
       },
       "UseReadyTransitAnim": true,
-      "CanOverkill": true,
+      "SkillNameHUD": false,
       "ReadyAnimState": "Skill03_03_Ready_Loop",
       "ReadyAnimWaitTime": 0.3,
       "EntryAbility": "Avatar_Rappa_00_Skill13_Phase01",
-      "DelayRatio": {
-        "RawValue": 4294967296
-      },
       "ComplexSkillAIPreCheck": {
-        "SkillBasicPower": {
-          "RawValue": 4294967296
-        },
         "Groups": [
           {
-            "GroupName": "DefaultNormalSkill_PreCheck",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "DefaultNormalSkill_PreCheck"
           },
           {
-            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_TargetCount",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_TargetCount"
           },
           {
-            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_WeaknessCompare",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_WeaknessCompare"
           },
           {
-            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_MonsterLevel",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_MonsterLevel"
           },
           {
-            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_MonsterHp",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_MonsterHp"
           }
         ]
       },
       "ComplexSkillAI": {
-        "SkillBasicPower": {
-          "RawValue": 4294967296
-        },
         "Groups": [
           {
-            "GroupName": "DefaultNormalSkill",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "DefaultNormalSkill"
           },
           {
-            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_TargetCount",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_TargetCount"
           },
           {
-            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_WeaknessCompare",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_WeaknessCompare"
           },
           {
-            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_MonsterLevel",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_MonsterLevel"
           },
           {
-            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_MonsterHp",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_MonsterHp"
           }
         ]
       },
-      "AIUltraSkillPriority": "PROG_Default",
-      "CanBeInterrupted": true,
-      "AutoCostSpNeed": true,
-      "IsSkillInsertable": true,
+      "AutoStandbyOnSkillFinish": false,
       "UseInputCache": true,
       "InputCacheTime": 0.2
     },
     {
       "Name": "Skill14",
       "UseType": "SelectEntity",
-      "ActivateAfterRevive": true,
       "LockType": "ScoreOfSource",
       "AutoLockBySource": {
-        "SkillBasicPower": {
-          "RawValue": 4294967296
-        },
         "Groups": [
           {
-            "GroupName": "DefaultNormalSkill_Special",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "DefaultNormalSkill_Special"
           },
           {
-            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_TargetCount",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_TargetCount"
           },
           {
-            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_WeaknessCompare",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_WeaknessCompare"
           },
           {
-            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_MonsterLevel",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_MonsterLevel"
           },
           {
-            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_MonsterHp",
-            "Weight": {
-              "RawValue": 4294967296
-            }
+            "GroupName": "BasepP_Rappa_Skill11AndSkill12Groups_MonsterHp"
           }
         ]
       },
-      "MaxCastTimes": -1,
       "TargetInfo": {
         "TargetType": "AllEnemy",
-        "AdjoinSubTargetCount": 1,
-        "MaxTargetCount": 1,
-        "AliveState": "AliveOrLimbo",
-        "AllowFriendServant": "Allow",
-        "AllowEnemyServant": "Allow"
+        "AliveState": "AliveOrLimbo"
       },
       "UseReadyTransitAnim": true,
-      "CanOverkill": true,
+      "SkillNameHUD": false,
       "ReadyAnimState": "Skill03_03_Ready_Loop",
       "ReadyAnimWaitTime": 0.3,
       "EntryAbility": "Avatar_Rappa_00_Skill13_Phase01",
-      "DelayRatio": {
-        "RawValue": 4294967296
-      },
       "ComplexSkillAIPreCheck": {
-        "SkillBasicPower": {
-          "RawValue": 4294967296
-        },
         "Groups": [
           {
-            "GroupName": "DefaultNormalSkill_PreCheck"
+            "GroupName": "DefaultNormalSkill_PreCheck",
+            "Weight": {
+              "Value": 0
+            }
           }
         ]
       },
       "ComplexSkillAI": {
-        "SkillBasicPower": {
-          "RawValue": 4294967296
-        },
         "Groups": [
           {
-            "GroupName": "DefaultNormalSkill"
+            "GroupName": "DefaultNormalSkill",
+            "Weight": {
+              "Value": 0
+            }
           }
         ]
       },
-      "AIUltraSkillPriority": "PROG_Default",
-      "CanBeInterrupted": true,
-      "AutoCostSpNeed": true,
-      "IsSkillInsertable": true,
+      "AutoStandbyOnSkillFinish": false,
       "UseInputCache": true,
       "InputCacheTime": 0.2
     },
@@ -1184,74 +645,28 @@
       "Name": "SkillP01",
       "SkillType": "Passive",
       "UseType": "Passive",
-      "ActivateAfterRevive": true,
-      "MaxCastTimes": -1,
       "TargetInfo": {
-        "TargetType": "Caster",
-        "AdjoinSubTargetCount": 1,
-        "MaxTargetCount": 1,
-        "AllowFriendServant": "Allow",
-        "AllowEnemyServant": "Allow"
+        "TargetType": "Caster"
       },
-      "CanOverkill": true,
-      "EntryAbility": "Avatar_Rappa_00_PassiveSkill01",
-      "DelayRatio": {
-        "RawValue": 4294967296
-      },
-      "AIUltraSkillPriority": "PROG_Default",
-      "CanBeInterrupted": true,
-      "AutoCostSpNeed": true,
-      "AutoStandbyOnSkillFinish": true,
-      "IsSkillInsertable": true
+      "SkillNameHUD": false,
+      "EntryAbility": "Avatar_Rappa_00_PassiveSkill01"
     },
     {
       "Name": "SkillMaze",
       "SkillType": "Maze",
-      "ActivateAfterRevive": true,
-      "MaxCastTimes": -1,
       "TargetInfo": {
-        "TargetType": "AllEnemy",
-        "AdjoinSubTargetCount": 1,
-        "MaxTargetCount": 1,
-        "AllowFriendServant": "Allow",
-        "AllowEnemyServant": "Allow"
+        "TargetType": "AllEnemy"
       },
-      "SkillNameHUD": true,
-      "CanOverkill": true,
-      "EntryAbility": "Avatar_Rappa_00_SkillMazeInLevel",
-      "DelayRatio": {
-        "RawValue": 4294967296
-      },
-      "AIUltraSkillPriority": "PROG_Default",
-      "CanBeInterrupted": true,
-      "AutoCostSpNeed": true,
-      "AutoStandbyOnSkillFinish": true,
-      "IsSkillInsertable": true
+      "EntryAbility": "Avatar_Rappa_00_SkillMazeInLevel"
     },
     {
       "Name": "PassiveSkill02",
       "SkillType": "Passive",
       "UseType": "Passive",
-      "ActivateAfterRevive": true,
-      "MaxCastTimes": -1,
       "TargetInfo": {
-        "TargetType": "Caster",
-        "AdjoinSubTargetCount": 1,
-        "MaxTargetCount": 1,
-        "AllowFriendServant": "Allow",
-        "AllowEnemyServant": "Allow"
+        "TargetType": "Caster"
       },
-      "SkillNameHUD": true,
-      "CanOverkill": true,
-      "EntryAbility": "Avatar_Common_PassiveSkill",
-      "DelayRatio": {
-        "RawValue": 4294967296
-      },
-      "AIUltraSkillPriority": "PROG_Default",
-      "CanBeInterrupted": true,
-      "AutoCostSpNeed": true,
-      "AutoStandbyOnSkillFinish": true,
-      "IsSkillInsertable": true
+      "EntryAbility": "Avatar_Common_PassiveSkill"
     }
   ],
   "AbilityList": [
@@ -1323,35 +738,302 @@
       ]
     }
   ],
+  "DynamicValues": {
+    "Floats": {
+      "-1917346382": {},
+      "-1273652738": {},
+      "-488214203": {},
+      "-2108372850": {},
+      "1770647072": {},
+      "-429342494": {},
+      "332656846": {},
+      "-312937298": {},
+      "-565540632": {},
+      "1860511353": {},
+      "-1099166634": {},
+      "1690111937": {},
+      "-1126825319": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill01"
+        }
+      },
+      "-1847083384": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill02"
+        }
+      },
+      "1324740921": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill03"
+        }
+      },
+      "1324641752": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill03",
+          "Index": 1
+        }
+      },
+      "-1713530551": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill03",
+          "Index": 2
+        }
+      },
+      "-866407598": {},
+      "-1125526435": {},
+      "94009680": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill11"
+        }
+      },
+      "93973805": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill11",
+          "Index": 1
+        }
+      },
+      "94081678": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill11",
+          "Index": 2
+        }
+      },
+      "94037355": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill11",
+          "Index": 3
+        }
+      },
+      "-1236892619": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill12"
+        }
+      },
+      "-1236928494": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill12",
+          "Index": 1
+        }
+      },
+      "1135972378": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill13"
+        }
+      },
+      "316671541": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP01"
+        }
+      },
+      "-1613992976": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP01",
+          "Index": 1
+        }
+      },
+      "-516038353": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP01",
+          "Index": 2
+        }
+      },
+      "188638222": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP01",
+          "Index": 3
+        }
+      },
+      "-47678875": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP01",
+          "Index": 4
+        }
+      },
+      "-915892476": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP01",
+          "Index": 5
+        }
+      },
+      "-2030667235": {},
+      "1753799834": {},
+      "-1664234136": {},
+      "-994930350": {},
+      "1899211628": {
+        "ReadInfo": {
+          "Type": "SkillTreeParam",
+          "TriggerKey": "PointB1"
+        }
+      },
+      "1899175757": {
+        "ReadInfo": {
+          "Type": "SkillTreeParam",
+          "TriggerKey": "PointB1",
+          "Index": 1
+        }
+      },
+      "745450807": {
+        "ReadInfo": {
+          "Type": "SkillTreeParam",
+          "TriggerKey": "PointB2"
+        }
+      },
+      "-1012896973": {},
+      "-2125946860": {},
+      "819266972": {
+        "ReadInfo": {
+          "Type": "SkillTreeParam",
+          "TriggerKey": "PointB3"
+        }
+      },
+      "-81441405": {
+        "ReadInfo": {
+          "Type": "SkillTreeParam",
+          "TriggerKey": "PointB3",
+          "Index": 1
+        }
+      },
+      "819338970": {
+        "ReadInfo": {
+          "Type": "SkillTreeParam",
+          "TriggerKey": "PointB3",
+          "Index": 2
+        }
+      },
+      "819581631": {
+        "ReadInfo": {
+          "Type": "SkillTreeParam",
+          "TriggerKey": "PointB3",
+          "Index": 3
+        }
+      },
+      "-750365570": {
+        "ReadInfo": {
+          "Type": "SkillTreeParam",
+          "TriggerKey": "PointB3",
+          "Index": 4
+        }
+      },
+      "-1185123048": {
+        "ReadInfo": {
+          "Type": "SkillRank",
+          "TriggerKey": "Rank01"
+        }
+      },
+      "818552347": {},
+      "-1028331707": {
+        "ReadInfo": {
+          "Type": "SkillRank",
+          "TriggerKey": "Rank01",
+          "Index": 1
+        }
+      },
+      "-1183793641": {
+        "ReadInfo": {
+          "Type": "SkillRank",
+          "TriggerKey": "Rank02"
+        }
+      },
+      "-1186030315": {
+        "ReadInfo": {
+          "Type": "SkillRank",
+          "TriggerKey": "Rank04"
+        }
+      },
+      "502628217": {
+        "ReadInfo": {
+          "Type": "SkillRank",
+          "TriggerKey": "Rank06"
+        }
+      },
+      "-1022267320": {
+        "ReadInfo": {
+          "Type": "SkillRank",
+          "TriggerKey": "Rank06",
+          "Index": 1
+        }
+      },
+      "-544228574": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillMaze",
+          "Index": 1
+        }
+      },
+      "-544399741": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillMaze",
+          "Index": 2
+        }
+      },
+      "1781301822": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillMaze",
+          "Index": 3
+        }
+      },
+      "1781409695": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillMaze",
+          "Index": 4
+        }
+      }
+    }
+  },
   "WeaponType": "WP_Magic",
   "SkillReadyTransits": [
     {
       "To": 1,
-      "AnimStateName": "Skill01_Ready"
+      "AnimStateName": "Skill01_Ready",
+      "TransitionInTime": 0
     },
     {
       "From": 2,
       "To": 1,
       "AnimStateName": "Skill02toSkill01",
+      "TransitionInTime": 0,
       "ReverseOutroTime": 0.06
     },
     {
       "From": 1,
       "To": 2,
       "AnimStateName": "Skill01toSkill02",
+      "TransitionInTime": 0,
       "ReverseOutroTime": 0.06
     }
   ],
-  "InitAnimStateName": "StandBy",
-  "ModifierPerformTimeFactor": 1.0,
   "DisableAnimEventLayers": [
     "Riboon Layer"
   ],
-  "RepeatOccurAnimWhenBeHitNormalizedTime": -1.0,
-  "IgnoreDynamicOffsetBySelf": true,
-  "OverrideHeightForCameraOffset": -1.0,
-  "MonsterIgnoreGlobalDymanicOffset": true,
-  "MaxMonsterPhase": 1,
+  "AITagList": {
+    "Floats": {
+      "-2126289379": {},
+      "762466": {},
+      "-447313187": {},
+      "-1570322415": {}
+    }
+  },
   "GlobalAIFactorGroups": {
     "BasepP_Rappa_Skill11AndSkill12Groups_WeaknessCompare": {
       "Factors": [
@@ -1364,41 +1046,41 @@
             "Ranges": [
               {
                 "ymin": {
-                  "RawValue": 2147483648000
+                  "Value": 500
                 },
                 "xmax": {
-                  "RawValue": 2147483650
+                  "Value": 0.5
                 },
                 "ymax": {
-                  "RawValue": 2147483648000
+                  "Value": 500
                 }
               },
               {
                 "xmin": {
-                  "RawValue": 2147483650
+                  "Value": 0.5
                 },
                 "ymin": {
-                  "RawValue": 4294967296000
+                  "Value": 1000
                 },
                 "xmax": {
-                  "RawValue": 6442450946
+                  "Value": 1.5
                 },
                 "ymax": {
-                  "RawValue": 4294967296000
+                  "Value": 1000
                 }
               },
               {
                 "xmin": {
-                  "RawValue": 6442450946
+                  "Value": 1.5
                 },
                 "ymin": {
-                  "RawValue": 644245094400
+                  "Value": 150
                 },
                 "xmax": {
-                  "RawValue": 10737418242
+                  "Value": 2.5
                 },
                 "ymax": {
-                  "RawValue": 644245094400
+                  "Value": 150
                 }
               }
             ]
@@ -1418,38 +1100,38 @@
             "Ranges": [
               {
                 "ymin": {
-                  "RawValue": 429496729600
+                  "Value": 100
                 },
                 "xmax": {
-                  "RawValue": 2147483650
+                  "Value": 0.5
                 },
                 "ymax": {
-                  "RawValue": 429496729600
+                  "Value": 100
                 }
               },
               {
                 "ymin": {
-                  "RawValue": 2147483648000
+                  "Value": 500
                 },
                 "xmax": {
-                  "RawValue": 6442450946
+                  "Value": 1.5
                 },
                 "ymax": {
-                  "RawValue": 2147483648000
+                  "Value": 500
                 }
               },
               {
                 "xmin": {
-                  "RawValue": 6442450946
+                  "Value": 1.5
                 },
                 "ymin": {
-                  "RawValue": 8589934592000
+                  "Value": 2000
                 },
                 "xmax": {
-                  "RawValue": 10737418242
+                  "Value": 2.5
                 },
                 "ymax": {
-                  "RawValue": 8589934592000
+                  "Value": 2000
                 }
               }
             ]
@@ -1462,9 +1144,7 @@
         {
           "Source": {
             "$type": "RPG.GameCore.ComplexSkillAISourcePropertyCompareRatio",
-            "FromTargetA": true,
             "PropertyTypeA": "CurrentHP",
-            "FromTargetB": true,
             "PropertyTypeB": "MaxHP"
           },
           "Mapper": {
@@ -1472,15 +1152,15 @@
             "Ranges": [
               {
                 "ymin": {
-                  "RawValue": -6442450944000
+                  "Value": -1500
                 },
                 "ymax": {
-                  "RawValue": -6442450944000
+                  "Value": -1500
                 }
               },
               {
                 "xmax": {
-                  "RawValue": 4294967296
+                  "Value": 1
                 }
               }
             ]
@@ -1491,7 +1171,7 @@
             "CompareType": "Less",
             "IsOverrideFinalScore": true,
             "FinalScore": {
-              "RawValue": 4294967296
+              "Value": 1
             }
           }
         }
@@ -1508,69 +1188,69 @@
             "Ranges": [
               {
                 "ymin": {
-                  "RawValue": 8589934592
+                  "Value": 2
                 },
                 "xmax": {
-                  "RawValue": 6442450946
+                  "Value": 1.5
                 },
                 "ymax": {
-                  "RawValue": 8589934592
+                  "Value": 2
                 }
               },
               {
                 "xmin": {
-                  "RawValue": 6442450946
+                  "Value": 1.5
                 },
                 "ymin": {
-                  "RawValue": 12884901888
+                  "Value": 3
                 },
                 "xmax": {
-                  "RawValue": 10737418242
+                  "Value": 2.5
                 },
                 "ymax": {
-                  "RawValue": 12884901888
+                  "Value": 3
                 }
               },
               {
                 "xmin": {
-                  "RawValue": 10737418242
+                  "Value": 2.5
                 },
                 "ymin": {
-                  "RawValue": 34359738368
+                  "Value": 8
                 },
                 "xmax": {
-                  "RawValue": 15032385538
+                  "Value": 3.5
                 },
                 "ymax": {
-                  "RawValue": 34359738368
+                  "Value": 8
                 }
               },
               {
                 "xmin": {
-                  "RawValue": 15032385538
+                  "Value": 3.5
                 },
                 "ymin": {
-                  "RawValue": 38654705664
+                  "Value": 9
                 },
                 "xmax": {
-                  "RawValue": 19327352834
+                  "Value": 4.5
                 },
                 "ymax": {
-                  "RawValue": 38654705664
+                  "Value": 9
                 }
               },
               {
                 "xmin": {
-                  "RawValue": 19327352834
+                  "Value": 4.5
                 },
                 "ymin": {
-                  "RawValue": 42949672960
+                  "Value": 10
                 },
                 "xmax": {
-                  "RawValue": 23622320130
+                  "Value": 5.5
                 },
                 "ymax": {
-                  "RawValue": 42949672960
+                  "Value": 10
                 }
               }
             ]
@@ -1578,6 +1258,5 @@
         }
       ]
     }
-  },
-  "AlwaysCutOnSkillTargetTeamChange": true
+  }
 }

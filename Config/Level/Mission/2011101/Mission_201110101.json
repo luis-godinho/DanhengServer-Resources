@@ -7,14 +7,11 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "201110101_F"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_201110101",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_201110101"
         }
       ]
     },
@@ -23,54 +20,42 @@
         {
           "$type": "RPG.GameCore.CaptureNPCToCharacter",
           "GroupID": {
-            "fixedValue": {
-              "RawValue": 94489280512
+            "FixedValue": {
+              "Value": 22
             }
           },
           "GroupNpcID": {
-            "fixedValue": {
-              "RawValue": 1717991213367296
+            "FixedValue": {
+              "Value": 400001
             }
           },
           "CharacterUniqueName": {
             "Value": "moli"
-          },
-          "ReleaseIfPerformanceEnd": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
           "$type": "RPG.GameCore.CaptureNPCToCharacter",
           "GroupID": {
-            "fixedValue": {
-              "RawValue": 103079215104
+            "FixedValue": {
+              "Value": 24
             }
           },
           "GroupNpcID": {
-            "fixedValue": {
-              "RawValue": 1717995508334592
+            "FixedValue": {
+              "Value": 400002
             }
           },
           "CharacterUniqueName": {
             "Value": "researcher"
-          },
-          "ReleaseIfPerformanceEnd": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
           "$type": "RPG.GameCore.CharacterHeadStopLookAt",
-          "CharacterUniqueName": "moli",
-          "FadeOutTime": -1.0,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "CharacterUniqueName": "moli"
         },
         {
           "$type": "RPG.GameCore.CharacterHeadStopLookAt",
-          "CharacterUniqueName": "researcher",
-          "FadeOutTime": -1.0,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "CharacterUniqueName": "researcher"
         }
       ]
     },
@@ -83,42 +68,42 @@
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 94489280512
+                "FixedValue": {
+                  "Value": 22
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288494483767296
+                "FixedValue": {
+                  "Value": 300001
                 }
               }
             }
           },
-          "TargetGroupID": {},
-          "TargetID": {},
+          "TargetGroupID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "TargetID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
           "TargetTypes": [],
           "OnTriggerEnter": [
             {
               "$type": "RPG.GameCore.PlayNPCBubbleTalk",
               "BubbleTalkInfoList": [
                 {
-                  "AutoSkipTime": 3.0,
+                  "AutoSkipTime": 3,
                   "GroupID": 24,
                   "GroupNpcID": 400002,
                   "TalkSentenceID": 201312536
                 }
-              ],
-              "BubbleTalkType": "Normal",
-              "LoopInterval": 1.0,
-              "InstantFinish": true,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              ]
             }
           ],
-          "DestroyAfterGraphEnd": true,
-          "SkipFakeAvatar": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "DestroyAfterGraphEnd": true
         }
       ]
     }

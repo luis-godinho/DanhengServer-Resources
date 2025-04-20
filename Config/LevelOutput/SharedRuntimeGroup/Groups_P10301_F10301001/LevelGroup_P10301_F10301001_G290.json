@@ -1,18 +1,16 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "NPC",
   "Category": "Atmosphere",
   "AreaAnchorName": "LevelArea_P10301_F10301001_G290",
-  "SaveType": "Permanent",
   "AtmosphereCondition": {
     "Conditions": [
       {
         "$type": "RPG.GameCore.LevelGroupAtmosphereSavedValueCondition",
         "SavedValueName": "FSV_KekenaChoose",
-        "Operation": "Equal",
         "Value": 2
       }
-    ],
-    "Operation": "And"
+    ]
   },
   "LoadSide": "Server",
   "LoadOnInitial": true,
@@ -20,15 +18,15 @@
   "ConflictIDList": [],
   "IsHoyoGroup": true,
   "HoYoGroupType": "Container",
-  "StreamingTemplateType": "Standard",
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
   "ConflictWhiteList": [],
-  "TagContainer": [
-    {
-      "Tag": "Group.Atomsphere.NPC",
-      "TagHash": -882113524
-    }
-  ],
+  "TagContainer": {
+    "List": [
+      {
+        "Tag": "Group.Atomsphere.NPC",
+        "TagHash": -882113524
+      }
+    ]
+  },
   "AnchorList": [],
   "MonsterList": [],
   "PropList": [],
@@ -39,14 +37,11 @@
   "NPCList": [
     {
       "NPCID": 13117,
-      "LoadOnInitial": true,
       "ValueSource": {},
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "ServerInteractVerificationIDList": [
         47
       ],
-      "DefaultLookAtMode": "LookPlayer",
       "MappingInfoID": 2371,
       "BoardShowList": [
         1,
@@ -55,32 +50,18 @@
         128
       ],
       "TalkDialogGroupIDList": [],
-      "DefaultAnimationType": "FreeStyle",
       "DefaultIdleFreeStyleMotionID": 100010000,
       "IsMapContent": true,
       "MiniMapIconType": 4,
-      "BornType": "Mission",
       "InitialHiddenNodeList": [],
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "OverrideBehaviorType": "DreamlandActor",
       "OverrideReplaceMaterialKeyList": [],
       "CameraCenterEntityList": [],
       "SpawnConfig": {
-        "TryCapture": true,
-        "CaptureDistanceTolerance": 1.5,
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
-      "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true
-      },
+      "TriggerValidGuest": {},
       "Name": "NPC1",
       "RotY": 7.274408,
       "ID": 400001,

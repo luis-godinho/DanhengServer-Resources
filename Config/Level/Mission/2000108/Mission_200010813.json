@@ -6,24 +6,20 @@
         {
           "$type": "RPG.GameCore.CreateNPC",
           "GroupID": {
-            "fixedValue": {
-              "RawValue": 154618822656
+            "FixedValue": {
+              "Value": 36
             }
           },
           "GroupNpcID": {
-            "fixedValue": {
-              "RawValue": 1718004098269184
+            "FixedValue": {
+              "Value": 400004
             }
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
           "$type": "RPG.GameCore.DestroyNPC",
           "GroupID": 36,
-          "GroupNpcID": 400004,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "GroupNpcID": 400004
         }
       ]
     },
@@ -32,17 +28,15 @@
         {
           "$type": "RPG.GameCore.CreateNPC",
           "GroupID": {
-            "fixedValue": {
-              "RawValue": 154618822656
+            "FixedValue": {
+              "Value": 36
             }
           },
           "GroupNpcID": {
-            "fixedValue": {
-              "RawValue": 1718008393236480
+            "FixedValue": {
+              "Value": 400005
             }
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         }
       ]
     },
@@ -51,20 +45,16 @@
         {
           "$type": "RPG.GameCore.WaitSecond",
           "WaitTime": {
-            "fixedValue": {
-              "RawValue": 858993460
+            "FixedValue": {
+              "Value": 0.2
             }
-          },
-          "MaxAdvencePerTick": -1.0,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
           "$type": "RPG.GameCore.TriggerCustomString",
           "CustomString": {
             "Value": "200010811_End"
-          },
-          "TaskEnabled": true
+          }
         }
       ]
     },
@@ -74,16 +64,13 @@
           "$type": "RPG.GameCore.TriggerPerformance",
           "ValueSource": {},
           "PerformanceType": "E",
-          "PerformanceID": 200010813,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 200010813
         },
         {
           "$type": "RPG.GameCore.TriggerCustomString",
           "CustomString": {
             "Value": "200010813HP"
-          },
-          "TaskEnabled": true
+          }
         }
       ]
     },
@@ -93,53 +80,40 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "200010813HP"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.TriggerEffectOnAnchor",
           "AreaName": "MainMission_2000201",
           "AnchorName": "Waypoint_1",
-          "EffectPath": "Effects/Eff_Prefab/Eff_Scene/Interactive Object/Eff_Chap01_MAZ_Prop_HPBox_01.prefab",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "EffectPath": "Effects/Eff_Prefab/Eff_Scene/Interactive Object/Eff_Chap01_MAZ_Prop_HPBox_01.prefab"
         },
         {
           "$type": "RPG.GameCore.TriggerSound",
           "SoundName": {
             "Value": "Ev_sfx_belobog_des_recoverbox"
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
           "$type": "RPG.GameCore.WaitSecond",
           "WaitTime": {
-            "fixedValue": {
-              "RawValue": 4294967296
+            "FixedValue": {
+              "Value": 1
             }
-          },
-          "MaxAdvencePerTick": -1.0,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
           "$type": "RPG.GameCore.PlayMissionTalk",
           "SimpleTalkList": [
             {
-              "TextSpeed": 20.0,
               "TalkSentenceID": 201080900,
-              "ProtectTime": 2.0
+              "ProtectTime": 2
             }
-          ],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_200010813",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_200010813"
         }
       ]
     }

@@ -1,0 +1,85 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CaptureNPCToCharacter",
+          "GroupID": {
+            "FixedValue": {
+              "Value": 6
+            }
+          },
+          "GroupNpcID": {
+            "FixedValue": {
+              "Value": 400001
+            }
+          },
+          "CharacterUniqueName": {
+            "Value": "Luka"
+          },
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvNpcEx",
+            "FetchType": "SingleNpcByNpcID",
+            "SingleNpcID": {
+              "GroupID": {
+                "FixedValue": {
+                  "Value": 6
+                }
+              },
+              "GroupNpcID": {
+                "FixedValue": {
+                  "Value": 400001
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropSetupTrigger",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          },
+          "TargetGroupID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "TargetID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "TargetTypes": [],
+          "OnTriggerEnter": [
+            {
+              "$type": "RPG.GameCore.CharacterTriggerAnimState",
+              "CharacterUniqueName": {
+                "Value": "Luka"
+              },
+              "AnimStateName": "LookBackBS",
+              "NormalizedTransitionDuration": 0.25
+            }
+          ],
+          "OnTriggerExit": [
+            {
+              "$type": "RPG.GameCore.CharacterTriggerAnimState",
+              "CharacterUniqueName": {
+                "Value": "Luka"
+              },
+              "AnimStateName": "LookBackAS",
+              "NormalizedTransitionDuration": 0.25
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "ValueSource": {
+    "Values": []
+  }
+}

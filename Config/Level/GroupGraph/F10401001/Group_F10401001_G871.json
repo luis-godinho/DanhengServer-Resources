@@ -1,0 +1,136 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvSetupCustomTaskTrigger",
+          "TargetType": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "TargetType": "Prop",
+            "Targets": [
+              300004
+            ]
+          },
+          "TriggerName": "MissionTrigger",
+          "OnEnter": [
+            {
+              "$type": "RPG.GameCore.TriggerGroupEvent",
+              "EventName": {
+                "Value": "GroupEvent_G843"
+              }
+            }
+          ],
+          "DisableAfterTriggered": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "GroupEvent_G843"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.PlayFullScreenTransfer",
+              "Action": [
+                {
+                  "$type": "RPG.GameCore.ScrTrfActPerformanceGroup",
+                  "AdvCreateGroupEntity": {
+                    "InstanceIDList": [],
+                    "TaskEnabled": false
+                  },
+                  "AdvDestroyGroupEntity": {
+                    "TaskEnabled": false
+                  },
+                  "CaptureNpc": [],
+                  "SwitchCharacterAnchor": {
+                    "IsLocalPlayer": true,
+                    "CharacterUniqueName": "LocalPlayer",
+                    "AreaName": {
+                      "Value": "LevelArea_P10401_F10401001_G871"
+                    },
+                    "AnchorName": {
+                      "Value": "Anchor1"
+                    }
+                  },
+                  "ActiveVirtualCamera": {
+                    "TaskEnabled": false
+                  },
+                  "ActiveTemplateVirtualCamera": {
+                    "TaskEnabled": false
+                  },
+                  "AdvNpcFaceToPlayer": {
+                    "SteerImmediately": true,
+                    "FinishImmadiate": true,
+                    "TaskEnabled": false
+                  }
+                }
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.TriggerPerformance",
+              "ValueSource": {},
+              "PerformanceType": "E",
+              "PerformanceID": 104030626,
+              "MaskConfig": {
+                "UseExcelData": false,
+                "StartBlack": "None"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.ClientFinishMission",
+              "SubmissionID": 104030621
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": []
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvEnableTrigger",
+          "TargetType": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "TargetType": "Prop",
+            "Targets": [
+              300003
+            ]
+          },
+          "TriggerName": "InteractTrigger"
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "Fly_True871"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TriggerEntityEvent",
+          "EventName": {
+            "Value": "Clt_TriggerNext"
+          },
+          "InstanceID": {
+            "FixedValue": {
+              "Value": 300003
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ValueSource": {
+    "Values": []
+  },
+  "Type": "Group",
+  "EntityEventList": []
+}

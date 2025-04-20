@@ -1,0 +1,66 @@
+{
+  "AnimStateEvents": [
+    {
+      "AnimStateName": "Idle_To_Break",
+      "TimeRewindEffConfigs": [
+        {
+          "TriggerEffConfig": {
+            "EffectPath": "Effects/Eff_Prefab/Eff_Scene/InteractiveProp/Eff_Chap04_Prop_TimeSandClock_01_BackwardData_Lod0.prefab",
+            "AttachPoint": "Root"
+          },
+          "Duration": 1.65
+        },
+        {
+          "ControlType": "UseCurrentEff",
+          "TriggerEffConfig": {
+            "EffectPath": "Effects/Eff_Prefab/Eff_Scene/InteractiveProp/Eff_Chap04_Prop_TimeSandClock_03_BackwardData_Lod0.prefab",
+            "IsAttachToTargetEntity": true,
+            "AttachPoint": "EffRoot"
+          },
+          "EffectUniqueName": "TestEffect",
+          "BlendOutAnim": "End_To_Start",
+          "BlendInAnim": "Start_To_End",
+          "Duration": 1.65
+        }
+      ],
+      "TimeRewindAudioConfigs": [
+        {
+          "EventName": "Ev_sfx_amphoreus_timeline_hourglass",
+          "InverseEventName": "Ev_sfx_amphoreus_timeline_hourglass_reverse",
+          "Duration": 1.65,
+          "AudioDuration": 3.85
+        }
+      ],
+      "TimeRewindEntityEventConfigs": []
+    },
+    {
+      "AnimStateName": "Idle_To_Break",
+      "NormalizeTime": 0.2,
+      "TimeRewindEntityEventConfigs": [
+        {
+          "EventName": "Event1_TriggerLoop",
+          "TriggerInRewind": true
+        },
+        {
+          "EventName": "Event1_RemoveLoop",
+          "TriggerInForward": true
+        }
+      ]
+    },
+    {
+      "AnimStateName": "Idle_To_Break",
+      "NormalizeTime": 5,
+      "TimeRewindEntityEventConfigs": [
+        {
+          "EventName": "Event2_RemoveLoop",
+          "TriggerInRewind": true
+        },
+        {
+          "EventName": "Event2_TriggerLoop",
+          "TriggerInForward": true
+        }
+      ]
+    }
+  ],
+  "AnimClipEvents": []
+}

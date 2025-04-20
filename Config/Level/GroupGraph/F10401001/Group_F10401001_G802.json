@@ -1,0 +1,173 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.TriggerPerformance",
+          "ValueSource": {},
+          "PerformanceType": "D",
+          "PerformanceID": 500041206,
+          "MaskConfig": {
+            "UseExcelData": false,
+            "StartBlack": "NoPre",
+            "EndBlack": "NoPost"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.ClientFinishMission",
+          "SubmissionID": 500041206
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitFloorCustomValueChangeV2",
+          "Name": {
+            "Value": "FCV_MissionCavalryBeastRun05"
+          },
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.TriggerGroupEvent",
+              "EventName": {
+                "Value": "NPCMove_G802_400001"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.TriggerGroupEvent",
+              "EventName": {
+                "Value": "NPCMove_G802_400002"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.TriggerGroupEvent",
+              "EventName": {
+                "Value": "NPCMove_G802_400003"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.TriggerGroupEvent",
+              "EventName": {
+                "Value": "NPCMove_G802_400004"
+              }
+            }
+          ],
+          "Condition": {
+            "$type": "RPG.GameCore.ByCheckFloorCustomBoolV2",
+            "Name": {
+              "Value": "FCV_MissionCavalryBeastRun05"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "NPCMove_G802_400001"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.AdvSetAIMoveTo",
+              "EntityInstanceID": {
+                "FixedValue": {
+                  "Value": 400001
+                }
+              },
+              "GroupId": 802,
+              "PointID": 1,
+              "MotionFlag": "Run",
+              "SpeedScale": 5
+            },
+            {
+              "$type": "RPG.GameCore.TriggerAnimState",
+              "TargetType": {
+                "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                "Targets": [
+                  400001
+                ]
+              },
+              "AnimStateName": "Run"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "NPCMove_G802_400002"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.AdvSetAIMoveTo",
+              "EntityInstanceID": {
+                "FixedValue": {
+                  "Value": 400002
+                }
+              },
+              "GroupId": 802,
+              "PointID": 1,
+              "MotionFlag": "Run",
+              "SpeedScale": 0.8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "NPCMove_G802_400003"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.AdvSetAIMoveTo",
+              "EntityInstanceID": {
+                "FixedValue": {
+                  "Value": 400003
+                }
+              },
+              "GroupId": 802,
+              "PointID": 1,
+              "MotionFlag": "Run",
+              "SpeedScale": 0.8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "NPCMove_G802_400004"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.AdvSetAIMoveTo",
+              "EntityInstanceID": {
+                "FixedValue": {
+                  "Value": 400004
+                }
+              },
+              "GroupId": 802,
+              "PointID": 1,
+              "MotionFlag": "Run",
+              "SpeedScale": 0.8
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "Type": "Group"
+}

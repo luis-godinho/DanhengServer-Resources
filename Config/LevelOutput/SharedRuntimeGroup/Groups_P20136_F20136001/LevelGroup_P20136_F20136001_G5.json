@@ -1,4 +1,5 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "NPC_PatrolNPC_01",
   "Category": "Atmosphere",
   "AreaAnchorName": "LevelArea_P20136_F20136001_G5",
@@ -6,14 +7,14 @@
   "LoadOnInitial": true,
   "ValueSource": {},
   "ConflictIDList": [],
-  "StreamingTemplateType": "Standard",
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
-  "TagContainer": [
-    {
-      "Tag": "Group.Atomsphere.NPC",
-      "TagHash": -882113524
-    }
-  ],
+  "TagContainer": {
+    "List": [
+      {
+        "Tag": "Group.Atomsphere.NPC",
+        "TagHash": -882113524
+      }
+    ]
+  },
   "AnchorList": [],
   "MonsterList": [],
   "PropList": [],
@@ -197,6 +198,7 @@
   "NPCList": [
     {
       "NPCID": 11213,
+      "LoadOnInitial": false,
       "AIConfig": {
         "AIFile": "Config/ConfigAI/Adventure/NPC_Patrol/Npc_Patrol_20136001_01.json",
         "PathwayList": [
@@ -209,17 +211,13 @@
         ],
         "SlaveConfigList": []
       },
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "ServerInteractVerificationIDList": [],
-      "DefaultLookAtMode": "LookPlayer",
       "BoardShowList": [],
       "TalkDialogGroupIDList": [],
+      "DefaultAnimationType": "IdleState",
       "DefaultIdleFreeStyleMotionID": 100020000,
-      "BornType": "Mission",
       "InitialHiddenNodeList": [],
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "OverrideReplaceMaterialKeyList": [],
       "CameraCenterEntityList": [],
@@ -232,6 +230,7 @@
     },
     {
       "NPCID": 2101,
+      "LoadOnInitial": false,
       "AIConfig": {
         "AIFile": "Config/ConfigAI/Adventure/NPC_Patrol/Npc_Patrol_20135001_02.json",
         "PathwayList": [
@@ -244,29 +243,19 @@
         ],
         "SlaveConfigList": []
       },
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "ServerInteractVerificationIDList": [],
-      "DefaultLookAtMode": "LookPlayer",
       "BoardShowList": [],
       "TalkDialogGroupIDList": [],
+      "DefaultAnimationType": "IdleState",
       "DefaultIdleFreeStyleMotionID": 100020000,
-      "BornType": "Mission",
       "InitialHiddenNodeList": [],
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "OverrideReplaceMaterialKeyList": [],
       "CameraCenterEntityList": [],
       "SpawnConfig": {
-        "TryCapture": true,
-        "CaptureDistanceTolerance": 10.0,
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "CaptureDistanceTolerance": 10,
+        "EntitySpawnConfig": {}
       },
       "Name": "NPC6",
       "RotY": 1.46603,

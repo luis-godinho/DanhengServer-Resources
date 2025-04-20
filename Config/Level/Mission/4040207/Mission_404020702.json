@@ -5,60 +5,48 @@
       "TaskList": [
         {
           "$type": "RPG.GameCore.ShowFuncBtn",
-          "Show": true,
-          "HideWhenGraphFinish": true,
           "ItemID": 140070,
-          "PuzzleFunc": "Info",
-          "CDDuration": 2.0,
-          "ShowBtnFucHint": true,
-          "ShowBtnEffect": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "CDDuration": 2,
+          "ShowBtnEffect": true
         },
         {
           "$type": "RPG.GameCore.CreateNPC",
           "GroupID": {
-            "fixedValue": {
-              "RawValue": 403726925824
+            "FixedValue": {
+              "Value": 94
             }
           },
           "GroupNpcID": {
-            "fixedValue": {
-              "RawValue": 1717995508334592
+            "FixedValue": {
+              "Value": 400002
             }
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
           "$type": "RPG.GameCore.CreateProp",
           "GroupID": {
-            "fixedValue": {
-              "RawValue": 403726925824
+            "FixedValue": {
+              "Value": 94
             }
           },
           "GroupPropID": {
-            "fixedValue": {
-              "RawValue": 1288498778734592
+            "FixedValue": {
+              "Value": 300002
             }
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
           "$type": "RPG.GameCore.CreateProp",
           "GroupID": {
-            "fixedValue": {
-              "RawValue": 403726925824
+            "FixedValue": {
+              "Value": 94
             }
           },
           "GroupPropID": {
-            "fixedValue": {
-              "RawValue": 1288503073701888
+            "FixedValue": {
+              "Value": 300003
             }
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         }
       ]
     },
@@ -71,20 +59,28 @@
             "MultiGroupFetch": [
               {
                 "GroupID": {
-                  "fixedValue": {
-                    "RawValue": 403726925824
+                  "FixedValue": {
+                    "Value": 94
                   }
                 },
                 "ID": {
-                  "fixedValue": {
-                    "RawValue": 1288498778734592
+                  "FixedValue": {
+                    "Value": 300002
                   }
                 }
               }
             ]
           },
-          "TargetGroupID": {},
-          "TargetID": {},
+          "TargetGroupID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "TargetID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
           "TargetTypes": [],
           "DestroyAfterTriggered": true,
           "OnTriggerEnter": [
@@ -92,24 +88,19 @@
               "$type": "RPG.GameCore.PlayMissionTalk",
               "SimpleTalkList": [
                 {
-                  "TextSpeed": 40.0,
+                  "TextSpeed": 40,
                   "TalkSentenceID": 404020747,
-                  "ProtectTime": 2.0
+                  "ProtectTime": 2
                 },
                 {
-                  "TextSpeed": 40.0,
+                  "TextSpeed": 40,
                   "TalkSentenceID": 404020748,
-                  "ProtectTime": 2.0
+                  "ProtectTime": 2
                 }
-              ],
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              ]
             }
           ],
-          "OnTriggerExit": [],
-          "SkipFakeAvatar": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "OnTriggerExit": []
         }
       ]
     },
@@ -122,20 +113,28 @@
             "MultiGroupFetch": [
               {
                 "GroupID": {
-                  "fixedValue": {
-                    "RawValue": 403726925824
+                  "FixedValue": {
+                    "Value": 94
                   }
                 },
                 "ID": {
-                  "fixedValue": {
-                    "RawValue": 1288503073701888
+                  "FixedValue": {
+                    "Value": 300003
                   }
                 }
               }
             ]
           },
-          "TargetGroupID": {},
-          "TargetID": {},
+          "TargetGroupID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "TargetID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
           "TargetTypes": [],
           "DestroyAfterTriggered": true,
           "OnTriggerEnter": [
@@ -143,24 +142,19 @@
               "$type": "RPG.GameCore.PlayMissionTalk",
               "SimpleTalkList": [
                 {
-                  "TextSpeed": 40.0,
+                  "TextSpeed": 40,
                   "TalkSentenceID": 404020747,
-                  "ProtectTime": 2.0
+                  "ProtectTime": 2
                 },
                 {
-                  "TextSpeed": 40.0,
+                  "TextSpeed": 40,
                   "TalkSentenceID": 404020748,
-                  "ProtectTime": 2.0
+                  "ProtectTime": 2
                 }
-              ],
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              ]
             }
           ],
-          "OnTriggerExit": [],
-          "SkipFakeAvatar": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "OnTriggerExit": []
         }
       ]
     },
@@ -170,14 +164,11 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "404020702_Finish"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_404020702",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_404020702"
         }
       ]
     }

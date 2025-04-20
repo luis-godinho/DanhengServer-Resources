@@ -1,4 +1,5 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "NPC",
   "AreaAnchorName": "LevelArea_P40122_F40122001_G10",
   "SaveType": "Reset",
@@ -22,8 +23,6 @@
   },
   "GroupStateList": [],
   "ConflictIDList": [],
-  "StreamingTemplateType": "Standard",
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
   "AnchorList": [
     {
       "Name": "Startpoint",
@@ -39,7 +38,7 @@
       "ID": 2,
       "PosX": -9.48,
       "PosY": -2.590106,
-      "PosZ": 148.0
+      "PosZ": 148
     },
     {
       "Usage": "LookAtCamera",
@@ -60,7 +59,6 @@
   "NPCList": [
     {
       "NPCID": 1111,
-      "LoadOnInitial": true,
       "CampID": 1,
       "AIConfig": {
         "AIFile": "Config/ConfigAI/Adventure/NPC_Track/ST_NPC_Track.json",
@@ -70,30 +68,18 @@
       "SOConfig": {
         "InstanceID": 1
       },
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "ServerInteractVerificationIDList": [],
-      "DefaultLookAtMode": "LookPlayer",
       "BoardShowList": [],
       "TalkDialogGroupIDList": [],
-      "DefaultAnimationType": "FreeStyle",
       "DefaultIdleFreeStyleMotionID": 311110000,
       "OverrideSeriesID": 4294967295,
       "IsMapContent": true,
       "MiniMapIconType": 130,
-      "BornType": "Mission",
       "InitialHiddenNodeList": [],
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "SpawnConfig": {
-        "TryCapture": true,
-        "CaptureDistanceTolerance": 10.0,
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "CaptureDistanceTolerance": 10,
+        "EntitySpawnConfig": {}
       },
       "Name": "Luka_02",
       "RotY": 342.15,
@@ -114,49 +100,37 @@
               "PosX": -2.420745,
               "PosY": 0.013384,
               "PosZ": 5.200531,
-              "RestartMode": "RestartFromPoint",
               "RootTask": {
                 "$type": "RPG.GameCore.SO_Sequence",
                 "Tasks": [
                   {
                     "$type": "RPG.GameCore.SO_MoveTo",
                     "MoveStance": "Walk",
-                    "FinishAfterStop": true,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "FinishAfterStop": true
                   },
                   {
                     "$type": "RPG.GameCore.SO_FaceTo",
                     "AnchorGroupId": 10,
-                    "AnchorPointId": 3,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "AnchorPointId": 3
                   },
                   {
                     "$type": "RPG.GameCore.SO_Wait",
-                    "Time": 1.0,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "Time": 1
                   },
                   {
                     "$type": "RPG.GameCore.SO_TriggerCustomString",
                     "CustomString": {
                       "Value": "triggerlookback"
-                    },
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    }
                   }
                 ],
-                "WaitMessages": [],
-                "TaskEnabled": true,
-                "IsClientOnly": true
+                "WaitMessages": []
               }
             },
             {
               "PosX": -21.015,
               "PosY": 8.122544,
               "PosZ": -3.410004,
-              "RestartMode": "RestartFromPoint",
               "RootTask": {
                 "$type": "RPG.GameCore.SO_Sequence",
                 "Tasks": [
@@ -164,81 +138,60 @@
                     "$type": "RPG.GameCore.SO_MoveTo",
                     "MoveStance": "Run",
                     "SkipStartTurn": true,
-                    "FinishAfterStop": true,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "FinishAfterStop": true
                   }
                 ],
-                "WaitMessages": [],
-                "TaskEnabled": true,
-                "IsClientOnly": true
+                "WaitMessages": []
               }
             },
             {
               "PosX": -21.67,
               "PosY": 8.122544,
               "PosZ": -7.76,
-              "RestartMode": "RestartFromPoint",
               "RootTask": {
                 "$type": "RPG.GameCore.SO_Sequence",
                 "Tasks": [
                   {
                     "$type": "RPG.GameCore.SO_MoveTo",
-                    "MoveStance": "Walk",
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "MoveStance": "Walk"
                   }
                 ],
-                "WaitMessages": [],
-                "TaskEnabled": true,
-                "IsClientOnly": true
+                "WaitMessages": []
               }
             },
             {
               "PosX": -31.5,
               "PosY": 12.51788,
               "PosZ": -12.63,
-              "RestartMode": "RestartFromPoint",
               "RootTask": {
                 "$type": "RPG.GameCore.SO_Sequence",
                 "Tasks": [
                   {
                     "$type": "RPG.GameCore.SO_MoveTo",
-                    "MoveStance": "Walk",
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "MoveStance": "Walk"
                   }
                 ],
-                "WaitMessages": [],
-                "TaskEnabled": true,
-                "IsClientOnly": true
+                "WaitMessages": []
               }
             },
             {
               "PosX": -26.42,
               "PosY": 12.51788,
               "PosZ": 0.080002,
-              "RestartMode": "RestartFromPoint",
               "RootTask": {
                 "$type": "RPG.GameCore.SO_Sequence",
                 "Tasks": [
                   {
                     "$type": "RPG.GameCore.SO_MoveTo",
                     "MoveStance": "Walk",
-                    "SkipStartTurn": true,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "SkipStartTurn": true
                   },
                   {
                     "$type": "RPG.GameCore.SO_Wait",
-                    "Time": -1.0,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "Time": -1
                   }
                 ],
-                "WaitMessages": [],
-                "TaskEnabled": true,
-                "IsClientOnly": true
+                "WaitMessages": []
               }
             }
           ]

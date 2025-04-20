@@ -1,0 +1,50 @@
+{
+  "AnimStateEvents": [
+    {
+      "AnimStateName": "Idle_To_Broken",
+      "TimeRewindEffConfigs": [
+        {
+          "TriggerEffConfig": {
+            "EffectPath": "Effects/Eff_Prefab/Eff_Scene/InteractiveProp/Eff_Chap04_Prop_TRBeaconBuild_01_FadeIn_Lod0.prefab",
+            "AttachPoint": "Root"
+          },
+          "Duration": 2.2
+        },
+        {
+          "ControlType": "UseCurrentEff",
+          "TriggerEffConfig": {
+            "EffectPath": "Effects/Eff_Prefab/Eff_Scene/InteractiveProp/Eff_Chap04_Prop_TRBeaconBuild_02_FadeIn_Lod0.prefab",
+            "IsAttachToTargetEntity": true,
+            "AttachPoint": "Root"
+          },
+          "EffectUniqueName": "TestEffect",
+          "BlendOutAnim": "End_To_Start",
+          "BlendInAnim": "Start_To_End",
+          "Duration": 2.95
+        }
+      ],
+      "TimeRewindAudioConfigs": [
+        {
+          "EventName": "Ev_sfx_amphoreus_timeline_lighthouse",
+          "InverseEventName": "Ev_sfx_amphoreus_timeline_lighthouse_reverse",
+          "Duration": 3,
+          "AudioDuration": 5.09
+        }
+      ],
+      "TimeRewindCameraShakeConfigs": []
+    },
+    {
+      "AnimStateName": "Idle_To_Broken",
+      "TimeRewindCameraShakeConfigs": [
+        {
+          "ShakeTemplateName": "2.4LevelShake",
+          "OverrideShakeConfigV2": {
+            "ShakeTime": 3
+          },
+          "ShakeDuration": 3
+        }
+      ]
+    }
+  ],
+  "AnimClipEvents": []
+}

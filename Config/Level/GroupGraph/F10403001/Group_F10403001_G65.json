@@ -1,0 +1,311 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CollectDataConditions",
+          "TaskIDList": [
+            104030211,
+            104030208
+          ],
+          "MainMissionIDList": [],
+          "PerformanceIDList": [],
+          "PerformanceIDDsList": [],
+          "CustomValueMainMissionIDList": [
+            1040302
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "EnterArea_G{GroupID}"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.TriggerPerformance",
+              "ValueSource": {},
+              "PerformanceType": "D",
+              "PerformanceID": 104030212,
+              "MaskConfig": {
+                "UseExcelData": false,
+                "EndBlack": "NoPost"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareMissionCustomValue",
+                "MainMissionID": 1040302,
+                "MissionCustomValue": {
+                  "Index": 1,
+                  "ValidValueParamList": [
+                    0,
+                    1
+                  ]
+                },
+                "EquationType": "Equal",
+                "TargetValue": 1
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.ClientFinishMission",
+                  "SubmissionID": 104030209
+                }
+              ],
+              "FailedTaskList": [
+                {
+                  "$type": "RPG.GameCore.ClientFinishMission",
+                  "SubmissionID": 104030211
+                },
+                {
+                  "$type": "RPG.GameCore.PlayFullScreenTransfer",
+                  "PrevDuration": -1,
+                  "KeepDuration": 0.3
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "Prop300001Created"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.AdvSetupCustomTaskTrigger",
+              "TargetType": {
+                "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                "TargetType": "Prop",
+                "Targets": [
+                  300001
+                ]
+              },
+              "TriggerName": "MissionTrigger",
+              "OnEnter": [
+                {
+                  "$type": "RPG.GameCore.TriggerGroupEvent",
+                  "EventName": {
+                    "Value": "EnterArea_G{GroupID}"
+                  }
+                }
+              ],
+              "DisableAfterTriggered": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "NPCReach"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.AdvNpcFaceToPlayer",
+              "GroupID": 65,
+              "GroupNpcID": 400002,
+              "TryFaceToFace": false,
+              "PlayerLookAtNpc": false,
+              "StopLookAtOnGraphEnd": false,
+              "TurnBackOnGraphEnd": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitSubMissionStateChange",
+          "SubMissions": [
+            104030211
+          ],
+          "State": "Finish",
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.AdvCreateGroupEntity",
+              "InstanceIDList": [
+                400001
+              ],
+              "SkipCreated": true
+            },
+            {
+              "$type": "RPG.GameCore.AdvDestroyGroupEntity",
+              "InstanceIDList": [
+                400002,
+                300001
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.SetMissionWayPoint",
+              "SubMissionID": 104030209,
+              "OverideMissionWayPointType": true,
+              "MissionWayPointType": "NPC",
+              "OverideWayPointFloorID": true,
+              "WayPointFloorID": 10403001,
+              "OverideWayPointGroupID": true,
+              "WayPointGroupID": 65,
+              "OverideWayPointEntityID": true,
+              "WayPointEntityID": 400001
+            }
+          ],
+          "TriggerOnMissionInit": false
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CollectDataConditions",
+          "TaskIDList": [
+            104030211,
+            104030208
+          ],
+          "MainMissionIDList": [],
+          "PerformanceIDList": [],
+          "PerformanceIDDsList": [],
+          "CustomValueMainMissionIDList": [
+            1040302
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByCompareSubMissionState",
+            "SubMissionID": 104030208,
+            "SubMissionState": "Finish"
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareSubMissionState",
+                "SubMissionID": 104030211,
+                "SubMissionState": "Finish"
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.AdvCreateGroupEntity",
+                  "InstanceIDList": [
+                    400001
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.SetMissionWayPoint",
+                  "SubMissionID": 104030209,
+                  "OverideMissionWayPointType": true,
+                  "MissionWayPointType": "NPC",
+                  "OverideWayPointFloorID": true,
+                  "WayPointFloorID": 10403001,
+                  "OverideWayPointGroupID": true,
+                  "WayPointGroupID": 65,
+                  "OverideWayPointEntityID": true,
+                  "WayPointEntityID": 400001
+                }
+              ],
+              "FailedTaskList": [
+                {
+                  "$type": "RPG.GameCore.AdvCreateGroupEntity",
+                  "InstanceIDList": [
+                    300001,
+                    400001
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.TriggerGroupEvent",
+                  "EventName": {
+                    "Value": "Prop300001Created"
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.SetMissionWayPoint",
+                  "SubMissionID": 104030209,
+                  "OverideMissionWayPointType": true,
+                  "MissionWayPointType": "NPC",
+                  "OverideWayPointFloorID": true,
+                  "WayPointFloorID": 10403001,
+                  "OverideWayPointGroupID": true,
+                  "WayPointGroupID": 65,
+                  "OverideWayPointEntityID": true,
+                  "WayPointEntityID": 400001
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitSubMissionStateChange",
+          "SubMissions": [
+            104030208
+          ],
+          "State": "Finish",
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.AdvCreateGroupEntity",
+              "InstanceIDList": [
+                400002,
+                300001
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.TriggerGroupEvent",
+              "EventName": {
+                "Value": "Prop300001Created"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.SetMissionWayPoint",
+              "SubMissionID": 104030209,
+              "OverideMissionWayPointType": true,
+              "MissionWayPointType": "NPC",
+              "OverideWayPointFloorID": true,
+              "WayPointFloorID": 10403001,
+              "OverideWayPointGroupID": true,
+              "WayPointGroupID": 65,
+              "OverideWayPointEntityID": true,
+              "WayPointEntityID": 400002
+            },
+            {
+              "$type": "RPG.GameCore.AdvSetAILeadWay",
+              "EntityInstanceID": {
+                "FixedValue": {
+                  "Value": 400002
+                }
+              },
+              "PathwayGroupID": 65,
+              "PathwayID": 1,
+              "StartIndex": 1,
+              "MotionFlag": "Run",
+              "WaitForPlayer": true,
+              "OnReach": [
+                {
+                  "$type": "RPG.GameCore.TriggerGroupEvent",
+                  "EventName": {
+                    "Value": "NPCReach"
+                  }
+                }
+              ],
+              "PathOffset": []
+            }
+          ],
+          "TriggerOnMissionInit": false
+        }
+      ]
+    }
+  ],
+  "Type": "Group",
+  "EntityEventList": []
+}

@@ -1,0 +1,561 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropSetupOptionsTrigger",
+          "DisableAfterTriggered": true,
+          "OptionList": [
+            {
+              "OptionTextmapID": {
+                "Hash": 17829478854479327390
+              },
+              "ButtonIcon": "SpriteOutput/TalkIcon/TriggerProp.png",
+              "TriggerCustomString": "Go_Tutorial"
+            },
+            {
+              "OptionTextmapID": {
+                "Hash": 18055711994300940686
+              },
+              "ButtonIcon": "SpriteOutput/TalkIcon/TriggerProp.png",
+              "TriggerCustomString": "Go_lv1"
+            },
+            {
+              "OptionTextmapID": {
+                "Hash": 12126982999645010449
+              },
+              "ButtonIcon": "SpriteOutput/TalkIcon/TriggerProp.png",
+              "TriggerCustomString": "Go_lv2"
+            },
+            {
+              "OptionTextmapID": {
+                "Hash": 7464335479451372039
+              },
+              "ButtonIcon": "SpriteOutput/TalkIcon/TriggerProp.png",
+              "TriggerCustomString": "Go_lv3"
+            }
+          ],
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          }
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "Go_Tutorial"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.ActiveVirtualCamera",
+          "AreaName": "InsertionPuzzle_Cameras",
+          "AnchorName": "TestScene_InsertionPuzzleCam"
+        },
+        {
+          "$type": "RPG.GameCore.PropTriggerAnimState",
+          "AnimStateName": "Closed",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+            "FetchType": "SinglePropByPropID",
+            "SinglePropID": {
+              "GroupID": {
+                "FixedValue": {
+                  "Value": 2
+                }
+              },
+              "ID": {
+                "FixedValue": {
+                  "Value": 300002
+                }
+              }
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.SetLocalPlayerDitherAlpha",
+          "Duration": 1
+        },
+        {
+          "$type": "RPG.GameCore.PropInitPuzzle",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          },
+          "BoardPath": {
+            "Value": "Props/DesignerBackup/InsertionPuzzle/InsertionPuzzleBoard_lv0.prefab"
+          },
+          "LocalPosition": {
+            "X": 0.9544,
+            "Y": 1.559,
+            "Z": 0.4392
+          },
+          "LocalRotation": {
+            "Y": 240.4
+          },
+          "LocalScale": {
+            "X": 9,
+            "Y": 9,
+            "Z": 1
+          }
+        },
+        {
+          "$type": "RPG.GameCore.LockPlayerControl"
+        },
+        {
+          "$type": "RPG.GameCore.TakenMazePuzzleChallenge",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          },
+          "MazePuzzleChallengeID": {
+            "Value": "1020"
+          },
+          "AutoClosePuzzle": false,
+          "AutoResetPuzzle": false,
+          "AutoFinishChallenge": false
+        },
+        {
+          "$type": "RPG.GameCore.PropStartPuzzle",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          }
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "Go_lv2"
+          },
+          "WaitOwnerOnly": true
+        },
+        {
+          "$type": "RPG.GameCore.ActiveVirtualCamera",
+          "AreaName": "InsertionPuzzle_Cameras",
+          "AnchorName": "TestScene_InsertionPuzzleCam"
+        },
+        {
+          "$type": "RPG.GameCore.PropTriggerAnimState",
+          "AnimStateName": "Closed",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+            "FetchType": "SinglePropByPropID",
+            "SinglePropID": {
+              "GroupID": {
+                "FixedValue": {
+                  "Value": 2
+                }
+              },
+              "ID": {
+                "FixedValue": {
+                  "Value": 300002
+                }
+              }
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.SetLocalPlayerDitherAlpha",
+          "Duration": 1
+        },
+        {
+          "$type": "RPG.GameCore.PropInitPuzzle",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          },
+          "BoardPath": {
+            "Value": "Props/DesignerBackup/InsertionPuzzle/InsertionPuzzleBoard_lv2.prefab"
+          },
+          "LocalPosition": {
+            "X": 0.9544,
+            "Y": 1.559,
+            "Z": 0.4392
+          },
+          "LocalRotation": {
+            "Y": 240.4
+          },
+          "LocalScale": {
+            "X": 9,
+            "Y": 9,
+            "Z": 1
+          }
+        },
+        {
+          "$type": "RPG.GameCore.LockPlayerControl"
+        },
+        {
+          "$type": "RPG.GameCore.ShowCableUI",
+          "Visible": true
+        },
+        {
+          "$type": "RPG.GameCore.ShowMazeUI"
+        },
+        {
+          "$type": "RPG.GameCore.PropStartPuzzle",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          }
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "Go_lv1"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.ActiveVirtualCamera",
+          "AreaName": "InsertionPuzzle_Cameras",
+          "AnchorName": "TestScene_InsertionPuzzleCam"
+        },
+        {
+          "$type": "RPG.GameCore.PropTriggerAnimState",
+          "AnimStateName": "Closed",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+            "FetchType": "SinglePropByPropID",
+            "SinglePropID": {
+              "GroupID": {
+                "FixedValue": {
+                  "Value": 2
+                }
+              },
+              "ID": {
+                "FixedValue": {
+                  "Value": 300002
+                }
+              }
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.SetLocalPlayerDitherAlpha",
+          "Duration": 1
+        },
+        {
+          "$type": "RPG.GameCore.PropInitPuzzle",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          },
+          "BoardPath": {
+            "Value": "Props/DesignerBackup/InsertionPuzzle/InsertionPuzzleBoard_lv1.prefab"
+          },
+          "LocalPosition": {
+            "X": 0.9544,
+            "Y": 1.559,
+            "Z": 0.4392
+          },
+          "LocalRotation": {
+            "Y": 240.4
+          },
+          "LocalScale": {
+            "X": 9,
+            "Y": 9,
+            "Z": 1
+          }
+        },
+        {
+          "$type": "RPG.GameCore.LockPlayerControl"
+        },
+        {
+          "$type": "RPG.GameCore.ShowCableUI",
+          "Visible": true
+        },
+        {
+          "$type": "RPG.GameCore.ShowMazeUI"
+        },
+        {
+          "$type": "RPG.GameCore.PropStartPuzzle",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          }
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "Go_lv3"
+          },
+          "WaitOwnerOnly": true
+        },
+        {
+          "$type": "RPG.GameCore.ActiveVirtualCamera",
+          "AreaName": "InsertionPuzzle_Cameras",
+          "AnchorName": "TestScene_InsertionPuzzleCam"
+        },
+        {
+          "$type": "RPG.GameCore.PropTriggerAnimState",
+          "AnimStateName": "Closed",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+            "FetchType": "SinglePropByPropID",
+            "SinglePropID": {
+              "GroupID": {
+                "FixedValue": {
+                  "Value": 2
+                }
+              },
+              "ID": {
+                "FixedValue": {
+                  "Value": 300002
+                }
+              }
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.SetLocalPlayerDitherAlpha",
+          "Duration": 1
+        },
+        {
+          "$type": "RPG.GameCore.PropInitPuzzle",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          },
+          "BoardPath": {
+            "Value": "Props/DesignerBackup/InsertionPuzzle/InsertionPuzzleBoard_lv3.prefab"
+          },
+          "LocalPosition": {
+            "X": 0.9544,
+            "Y": 1.559,
+            "Z": 0.4392
+          },
+          "LocalRotation": {
+            "Y": 240.4
+          },
+          "LocalScale": {
+            "X": 9,
+            "Y": 9,
+            "Z": 1
+          }
+        },
+        {
+          "$type": "RPG.GameCore.LockPlayerControl"
+        },
+        {
+          "$type": "RPG.GameCore.ShowCableUI",
+          "Visible": true
+        },
+        {
+          "$type": "RPG.GameCore.ShowMazeUI"
+        },
+        {
+          "$type": "RPG.GameCore.PropStartPuzzle",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropPuzzleEventListener",
+          "FinishCallback": [
+            {
+              "$type": "RPG.GameCore.WaitSecond",
+              "WaitTime": {
+                "FixedValue": {
+                  "Value": 2
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.ToastPage",
+              "MessageOne": {
+                "Hash": 11359071802413664976
+              },
+              "MessageTwo": {
+                "Hash": 6151298755470494323
+              }
+            },
+            {
+              "$type": "RPG.GameCore.FinishMazePuzzleChallenge",
+              "MazePuzzleChallengeID": {
+                "Value": "1020"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.PropTriggerAnimState",
+              "AnimStateName": "Open",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                "FetchType": "SinglePropByPropID",
+                "SinglePropID": {
+                  "GroupID": {
+                    "FixedValue": {
+                      "Value": 2
+                    }
+                  },
+                  "ID": {
+                    "FixedValue": {
+                      "Value": 300002
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.WaitSecond",
+              "WaitTime": {
+                "FixedValue": {
+                  "Value": 1
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.ActiveVirtualCamera",
+              "AreaName": "InsertionPuzzle_Cameras",
+              "AnchorName": "TestScene_InsertionPuzzleCam",
+              "IsActive": false
+            },
+            {
+              "$type": "RPG.GameCore.SetLocalPlayerDitherAlpha",
+              "DitherAlpha": 1,
+              "Duration": 1
+            },
+            {
+              "$type": "RPG.GameCore.PropClosePuzzle",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.UnLockPlayerControl"
+            },
+            {
+              "$type": "RPG.GameCore.ShowCableUI"
+            },
+            {
+              "$type": "RPG.GameCore.ShowMazeUI",
+              "IsShow": true
+            },
+            {
+              "$type": "RPG.GameCore.PropSetupOptionsTrigger",
+              "DisableAfterTriggered": true,
+              "OptionList": [
+                {
+                  "OptionTextmapID": {
+                    "Hash": 17829478854479327390
+                  },
+                  "ButtonIcon": "SpriteOutput/TalkIcon/TriggerProp.png",
+                  "TriggerCustomString": "Go_Tutorial"
+                },
+                {
+                  "OptionTextmapID": {
+                    "Hash": 18055711994300940686
+                  },
+                  "ButtonIcon": "SpriteOutput/TalkIcon/TriggerProp.png",
+                  "TriggerCustomString": "Go_lv1"
+                },
+                {
+                  "OptionTextmapID": {
+                    "Hash": 12126982999645010449
+                  },
+                  "ButtonIcon": "SpriteOutput/TalkIcon/TriggerProp.png",
+                  "TriggerCustomString": "Go_lv2"
+                },
+                {
+                  "OptionTextmapID": {
+                    "Hash": 7464335479451372039
+                  },
+                  "ButtonIcon": "SpriteOutput/TalkIcon/TriggerProp.png",
+                  "TriggerCustomString": "Go_lv3"
+                }
+              ],
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+              }
+            }
+          ],
+          "ResetCallbackLoop": false,
+          "QuitCallback": [
+            {
+              "$type": "RPG.GameCore.ActiveVirtualCamera",
+              "AreaName": "InsertionPuzzle_Cameras",
+              "AnchorName": "TestScene_InsertionPuzzleCam",
+              "IsActive": false
+            },
+            {
+              "$type": "RPG.GameCore.SetLocalPlayerDitherAlpha",
+              "DitherAlpha": 1,
+              "Duration": 1
+            },
+            {
+              "$type": "RPG.GameCore.PropClosePuzzle",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.UnLockPlayerControl"
+            },
+            {
+              "$type": "RPG.GameCore.ShowMazeUI",
+              "IsShow": true
+            },
+            {
+              "$type": "RPG.GameCore.PropSetupOptionsTrigger",
+              "DisableAfterTriggered": true,
+              "OptionList": [
+                {
+                  "OptionTextmapID": {
+                    "Hash": 17829478854479327390
+                  },
+                  "ButtonIcon": "SpriteOutput/TalkIcon/TriggerProp.png",
+                  "TriggerCustomString": "Go_Tutorial"
+                },
+                {
+                  "OptionTextmapID": {
+                    "Hash": 18055711994300940686
+                  },
+                  "ButtonIcon": "SpriteOutput/TalkIcon/TriggerProp.png",
+                  "TriggerCustomString": "Go_lv1"
+                },
+                {
+                  "OptionTextmapID": {
+                    "Hash": 12126982999645010449
+                  },
+                  "ButtonIcon": "SpriteOutput/TalkIcon/TriggerProp.png",
+                  "TriggerCustomString": "Go_lv2"
+                },
+                {
+                  "OptionTextmapID": {
+                    "Hash": 7464335479451372039
+                  },
+                  "ButtonIcon": "SpriteOutput/TalkIcon/TriggerProp.png",
+                  "TriggerCustomString": "Go_lv3"
+                }
+              ],
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "ValueSource": {
+    "Values": [
+      {
+        "$type": "RPG.GameCore.SharedString",
+        "Key": "PrefabPath"
+      }
+    ]
+  }
+}

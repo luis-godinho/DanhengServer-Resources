@@ -1,8 +1,8 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "SwitchHandProp",
   "LevelGraph": "Config/Level/GroupGraph/F20422001/Group_F20422001_G61.json",
   "AreaAnchorName": "LevelArea_P20422_F20422001_G61",
-  "SaveType": "Permanent",
   "SavedValueCondition": {
     "Conditions": [],
     "Operation": "And"
@@ -12,18 +12,20 @@
   "ValueSource": {},
   "ConflictIDList": [],
   "IsHoyoGroup": true,
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
+  "StreamingTemplateType": "None",
   "ConflictWhiteList": [],
-  "TagContainer": [
-    {
-      "Tag": "GameModule.EraFlip.State.Day",
-      "TagHash": 1090843668
-    },
-    {
-      "Tag": "Group.Level.Gameplay",
-      "TagHash": -141571921
-    }
-  ],
+  "TagContainer": {
+    "List": [
+      {
+        "Tag": "GameModule.EraFlip.State.Day",
+        "TagHash": 1090843668
+      },
+      {
+        "Tag": "Group.Level.Gameplay",
+        "TagHash": -141571921
+      }
+    ]
+  },
   "AnchorList": [
     {
       "Name": "Anchor1",
@@ -37,10 +39,10 @@
       "Usage": "Camera",
       "CustomParameter": {
         "$type": "RPG.GameCore.LevelAnchorCameraParameter",
-        "fov": 40.0
+        "fov": 40
       },
       "Name": "Anchor2",
-      "RotY": 270.0,
+      "RotY": 270,
       "ID": 2,
       "PosX": -38.3,
       "PosY": 33.22,
@@ -51,28 +53,11 @@
   "PropList": [
     {
       "Scale": {
-        "x": 1.5,
-        "y": 1.5,
-        "z": 1.5,
-        "normalized": {
-          "x": 0.5773503,
-          "y": 0.5773503,
-          "z": 0.5773503,
-          "normalized": {
-            "x": 0.577350259,
-            "y": 0.577350259,
-            "z": 0.577350259,
-            "magnitude": 0.99999994,
-            "sqrMagnitude": 0.99999994
-          },
-          "magnitude": 1.00000012,
-          "sqrMagnitude": 1.00000024
-        },
-        "magnitude": 2.598076,
-        "sqrMagnitude": 6.75
+        "X": 1.5,
+        "Y": 1.5,
+        "Z": 1.5
       },
       "PropID": 104069,
-      "LoadOnInitial": true,
       "IsOverrideInitLevelGraph": true,
       "InitLevelGraph": "Config/Level/Props/Chap04/InitLevelGraph_Prop_Chap04_SwitchHandCatchable_02.json",
       "ValueSource": {
@@ -82,57 +67,31 @@
             "Value": "60,300002",
             "Key": "SwitchHandProp"
           }
-        ],
-        "SharedValues": [
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "60,300002",
-            "Key": "SwitchHandProp"
-          }
         ]
       },
       "Trigger": {
         "Shape": "Box",
-        "Radius": 1.0,
-        "DimX": 3.0,
-        "DimY": 5.0,
-        "DimZ": 3.0,
+        "Radius": 1,
+        "DimX": 3,
+        "DimY": 5,
+        "DimZ": 3,
         "Offset": {
-          "y": 2.5,
-          "normalized": {
-            "y": 1.0,
-            "magnitude": 1.0,
-            "sqrMagnitude": 1.0
-          },
-          "magnitude": 2.5,
-          "sqrMagnitude": 6.25
+          "Y": 2.5
         }
       },
       "CampID": 4,
       "State": "Open",
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Prop1",
       "RotY": 180.654,
@@ -143,47 +102,18 @@
     },
     {
       "Scale": {
-        "x": 1.5,
-        "y": 1.5,
-        "z": 1.5,
-        "normalized": {
-          "x": 0.5773503,
-          "y": 0.5773503,
-          "z": 0.5773503,
-          "normalized": {
-            "x": 0.577350259,
-            "y": 0.577350259,
-            "z": 0.577350259,
-            "magnitude": 0.99999994,
-            "sqrMagnitude": 0.99999994
-          },
-          "magnitude": 1.00000012,
-          "sqrMagnitude": 1.00000024
-        },
-        "magnitude": 2.598076,
-        "sqrMagnitude": 6.75
+        "X": 1.5,
+        "Y": 1.5,
+        "Z": 1.5
       },
       "PropID": 104099,
-      "LoadOnInitial": true,
       "IsOverrideInitLevelGraph": true,
       "InitLevelGraph": "Config/Level/Props/Chap04/InitLevelGraph_Prop_Chap04_SwitchHandCatchable_02.json",
       "ValueSource": {
         "Values": [
           {
             "$type": "RPG.GameCore.SharedFloat",
-            "Value": 2.0,
-            "Key": "CatchablePropType"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "60,300002",
-            "Key": "SwitchHandProp"
-          }
-        ],
-        "SharedValues": [
-          {
-            "$type": "RPG.GameCore.SharedFloat",
-            "Value": 2.0,
+            "Value": 2,
             "Key": "CatchablePropType"
           },
           {
@@ -195,46 +125,27 @@
       },
       "Trigger": {
         "Shape": "Box",
-        "Radius": 1.0,
-        "DimX": 3.0,
-        "DimY": 5.0,
-        "DimZ": 3.0,
+        "Radius": 1,
+        "DimX": 3,
+        "DimY": 5,
+        "DimZ": 3,
         "Offset": {
-          "y": 2.5,
-          "normalized": {
-            "y": 1.0,
-            "magnitude": 1.0,
-            "sqrMagnitude": 1.0
-          },
-          "magnitude": 2.5,
-          "sqrMagnitude": 6.25
+          "Y": 2.5
         }
       },
       "CampID": 4,
       "State": "Open",
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Prop2",
       "ID": 300002,
@@ -244,28 +155,11 @@
     },
     {
       "Scale": {
-        "x": 1.5,
-        "y": 1.5,
-        "z": 1.5,
-        "normalized": {
-          "x": 0.5773503,
-          "y": 0.5773503,
-          "z": 0.5773503,
-          "normalized": {
-            "x": 0.577350259,
-            "y": 0.577350259,
-            "z": 0.577350259,
-            "magnitude": 0.99999994,
-            "sqrMagnitude": 0.99999994
-          },
-          "magnitude": 1.00000012,
-          "sqrMagnitude": 1.00000024
-        },
-        "magnitude": 2.598076,
-        "sqrMagnitude": 6.75
+        "X": 1.5,
+        "Y": 1.5,
+        "Z": 1.5
       },
       "PropID": 104069,
-      "LoadOnInitial": true,
       "IsOverrideInitLevelGraph": true,
       "InitLevelGraph": "Config/Level/Props/Chap04/InitLevelGraph_Prop_Chap04_SwitchHandCatchable_A102Ver_02.json",
       "ValueSource": {
@@ -280,85 +174,39 @@
             "Value": "60,300002",
             "Key": "SwitchHandProp"
           }
-        ],
-        "SharedValues": [
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "163,300001",
-            "Key": "AttachTarget"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "60,300002",
-            "Key": "SwitchHandProp"
-          }
         ]
       },
       "Trigger": {
         "Shape": "Box",
-        "Radius": 1.0,
-        "DimX": 8.0,
-        "DimY": 8.0,
-        "DimZ": 8.0,
+        "Radius": 1,
+        "DimX": 8,
+        "DimY": 8,
+        "DimZ": 8,
         "Offset": {
-          "y": 1.5,
-          "z": -1.0,
-          "normalized": {
-            "y": 0.8320503,
-            "z": -0.5547002,
-            "magnitude": 1.0,
-            "sqrMagnitude": 1.00000012
-          },
-          "magnitude": 1.80277562,
-          "sqrMagnitude": 3.25
+          "Y": 1.5,
+          "Z": -1
         }
       },
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {
         "InteractTrigger": {
-          "Radius": 5.0,
+          "Radius": 5,
           "Offset": {
-            "y": 2.0,
-            "z": -1.0,
-            "normalized": {
-              "y": 0.8944272,
-              "z": -0.4472136,
-              "normalized": {
-                "y": 0.89442724,
-                "z": -0.44721362,
-                "magnitude": 1.0,
-                "sqrMagnitude": 1.00000012
-              },
-              "magnitude": 0.99999994,
-              "sqrMagnitude": 0.99999994
-            },
-            "magnitude": 2.236068,
-            "sqrMagnitude": 5.0
+            "Y": 2,
+            "Z": -1
           }
         }
       },
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Prop3",
       "ID": 300003,
@@ -368,52 +216,18 @@
     },
     {
       "Scale": {
-        "x": 1.5,
-        "y": 1.5,
-        "z": 1.5,
-        "normalized": {
-          "x": 0.5773503,
-          "y": 0.5773503,
-          "z": 0.5773503,
-          "normalized": {
-            "x": 0.577350259,
-            "y": 0.577350259,
-            "z": 0.577350259,
-            "magnitude": 0.99999994,
-            "sqrMagnitude": 0.99999994
-          },
-          "magnitude": 1.00000012,
-          "sqrMagnitude": 1.00000024
-        },
-        "magnitude": 2.598076,
-        "sqrMagnitude": 6.75
+        "X": 1.5,
+        "Y": 1.5,
+        "Z": 1.5
       },
       "PropID": 104099,
-      "LoadOnInitial": true,
       "IsOverrideInitLevelGraph": true,
       "InitLevelGraph": "Config/Level/Props/Chap04/InitLevelGraph_Prop_Chap04_SwitchHandCatchable_A102Ver_02.json",
       "ValueSource": {
         "Values": [
           {
             "$type": "RPG.GameCore.SharedFloat",
-            "Value": 2.0,
-            "Key": "CatchablePropType"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "163,300001",
-            "Key": "AttachTarget"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "60,300002",
-            "Key": "SwitchHandProp"
-          }
-        ],
-        "SharedValues": [
-          {
-            "$type": "RPG.GameCore.SharedFloat",
-            "Value": 2.0,
+            "Value": 2,
             "Key": "CatchablePropType"
           },
           {
@@ -430,69 +244,35 @@
       },
       "Trigger": {
         "Shape": "Box",
-        "Radius": 1.0,
-        "DimX": 8.0,
-        "DimY": 8.0,
-        "DimZ": 8.0,
+        "Radius": 1,
+        "DimX": 8,
+        "DimY": 8,
+        "DimZ": 8,
         "Offset": {
-          "y": 1.5,
-          "z": -1.0,
-          "normalized": {
-            "y": 0.8320503,
-            "z": -0.5547002,
-            "magnitude": 1.0,
-            "sqrMagnitude": 1.00000012
-          },
-          "magnitude": 1.80277562,
-          "sqrMagnitude": 3.25
+          "Y": 1.5,
+          "Z": -1
         }
       },
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {
         "InteractTrigger": {
-          "Radius": 5.0,
+          "Radius": 5,
           "Offset": {
-            "y": 2.0,
-            "z": -1.0,
-            "normalized": {
-              "y": 0.8944272,
-              "z": -0.4472136,
-              "normalized": {
-                "y": 0.89442724,
-                "z": -0.44721362,
-                "magnitude": 1.0,
-                "sqrMagnitude": 1.00000012
-              },
-              "magnitude": 0.99999994,
-              "sqrMagnitude": 0.99999994
-            },
-            "magnitude": 2.236068,
-            "sqrMagnitude": 5.0
+            "Y": 2,
+            "Z": -1
           }
         }
       },
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Prop4",
       "ID": 300004,
@@ -502,28 +282,11 @@
     },
     {
       "Scale": {
-        "x": 1.5,
-        "y": 1.5,
-        "z": 1.5,
-        "normalized": {
-          "x": 0.5773503,
-          "y": 0.5773503,
-          "z": 0.5773503,
-          "normalized": {
-            "x": 0.577350259,
-            "y": 0.577350259,
-            "z": 0.577350259,
-            "magnitude": 0.99999994,
-            "sqrMagnitude": 0.99999994
-          },
-          "magnitude": 1.00000012,
-          "sqrMagnitude": 1.00000024
-        },
-        "magnitude": 2.598076,
-        "sqrMagnitude": 6.75
+        "X": 1.5,
+        "Y": 1.5,
+        "Z": 1.5
       },
       "PropID": 104069,
-      "LoadOnInitial": true,
       "IsOverrideInitLevelGraph": true,
       "InitLevelGraph": "Config/Level/Props/Chap04/InitLevelGraph_Prop_Chap04_SwitchHandCatchable_A102Ver_02.json",
       "ValueSource": {
@@ -538,85 +301,39 @@
             "Value": "60,300002",
             "Key": "SwitchHandProp"
           }
-        ],
-        "SharedValues": [
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "163,300002",
-            "Key": "AttachTarget"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "60,300002",
-            "Key": "SwitchHandProp"
-          }
         ]
       },
       "Trigger": {
         "Shape": "Box",
-        "Radius": 1.0,
-        "DimX": 8.0,
-        "DimY": 8.0,
-        "DimZ": 8.0,
+        "Radius": 1,
+        "DimX": 8,
+        "DimY": 8,
+        "DimZ": 8,
         "Offset": {
-          "y": 1.5,
-          "z": -1.0,
-          "normalized": {
-            "y": 0.8320503,
-            "z": -0.5547002,
-            "magnitude": 1.0,
-            "sqrMagnitude": 1.00000012
-          },
-          "magnitude": 1.80277562,
-          "sqrMagnitude": 3.25
+          "Y": 1.5,
+          "Z": -1
         }
       },
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {
         "InteractTrigger": {
-          "Radius": 5.0,
+          "Radius": 5,
           "Offset": {
-            "y": 2.0,
-            "z": -1.0,
-            "normalized": {
-              "y": 0.8944272,
-              "z": -0.4472136,
-              "normalized": {
-                "y": 0.89442724,
-                "z": -0.44721362,
-                "magnitude": 1.0,
-                "sqrMagnitude": 1.00000012
-              },
-              "magnitude": 0.99999994,
-              "sqrMagnitude": 0.99999994
-            },
-            "magnitude": 2.236068,
-            "sqrMagnitude": 5.0
+            "Y": 2,
+            "Z": -1
           }
         }
       },
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Prop5",
       "ID": 300005,
@@ -626,52 +343,18 @@
     },
     {
       "Scale": {
-        "x": 1.5,
-        "y": 1.5,
-        "z": 1.5,
-        "normalized": {
-          "x": 0.5773503,
-          "y": 0.5773503,
-          "z": 0.5773503,
-          "normalized": {
-            "x": 0.577350259,
-            "y": 0.577350259,
-            "z": 0.577350259,
-            "magnitude": 0.99999994,
-            "sqrMagnitude": 0.99999994
-          },
-          "magnitude": 1.00000012,
-          "sqrMagnitude": 1.00000024
-        },
-        "magnitude": 2.598076,
-        "sqrMagnitude": 6.75
+        "X": 1.5,
+        "Y": 1.5,
+        "Z": 1.5
       },
       "PropID": 104099,
-      "LoadOnInitial": true,
       "IsOverrideInitLevelGraph": true,
       "InitLevelGraph": "Config/Level/Props/Chap04/InitLevelGraph_Prop_Chap04_SwitchHandCatchable_A102Ver_02.json",
       "ValueSource": {
         "Values": [
           {
             "$type": "RPG.GameCore.SharedFloat",
-            "Value": 2.0,
-            "Key": "CatchablePropType"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "163,300002",
-            "Key": "AttachTarget"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "60,300002",
-            "Key": "SwitchHandProp"
-          }
-        ],
-        "SharedValues": [
-          {
-            "$type": "RPG.GameCore.SharedFloat",
-            "Value": 2.0,
+            "Value": 2,
             "Key": "CatchablePropType"
           },
           {
@@ -688,69 +371,35 @@
       },
       "Trigger": {
         "Shape": "Box",
-        "Radius": 1.0,
-        "DimX": 8.0,
-        "DimY": 8.0,
-        "DimZ": 8.0,
+        "Radius": 1,
+        "DimX": 8,
+        "DimY": 8,
+        "DimZ": 8,
         "Offset": {
-          "y": 1.5,
-          "z": -1.0,
-          "normalized": {
-            "y": 0.8320503,
-            "z": -0.5547002,
-            "magnitude": 1.0,
-            "sqrMagnitude": 1.00000012
-          },
-          "magnitude": 1.80277562,
-          "sqrMagnitude": 3.25
+          "Y": 1.5,
+          "Z": -1
         }
       },
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {
         "InteractTrigger": {
-          "Radius": 5.0,
+          "Radius": 5,
           "Offset": {
-            "y": 2.0,
-            "z": -1.0,
-            "normalized": {
-              "y": 0.8944272,
-              "z": -0.4472136,
-              "normalized": {
-                "y": 0.89442724,
-                "z": -0.44721362,
-                "magnitude": 1.0,
-                "sqrMagnitude": 1.00000012
-              },
-              "magnitude": 0.99999994,
-              "sqrMagnitude": 0.99999994
-            },
-            "magnitude": 2.236068,
-            "sqrMagnitude": 5.0
+            "Y": 2,
+            "Z": -1
           }
         }
       },
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Prop6",
       "ID": 300006,
@@ -759,55 +408,21 @@
       "PosZ": 336.3354
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 104037,
-      "LoadOnInitial": true,
       "ValueSource": {},
       "CampID": 4,
       "EventID": 20004401,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Prop8",
       "RotY": 346.8473,
@@ -817,55 +432,21 @@
       "PosZ": 309.8
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 104037,
-      "LoadOnInitial": true,
       "ValueSource": {},
       "CampID": 4,
       "EventID": 20004401,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Prop9",
       "RotY": 54.84008,

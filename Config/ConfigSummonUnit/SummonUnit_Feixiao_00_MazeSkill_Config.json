@@ -1,63 +1,50 @@
 {
   "GroupConfigName": "StaticUnit",
   "ConfigEntityPath": "Config/ConfigEntity/SummonUnit/SummonUnit_Common_TeamField_Entity.json",
-  "TickLodTemplateName": "DefaultStaticEntity",
-  "ShoesType": "boot",
-  "Duration": {
-    "fixedValue": {
-      "RawValue": -4294967296
-    }
-  },
   "TriggerConfig": {
     "CustomTriggers": [
       {
         "TriggerName": "GatheringRange",
-        "DefaultEnable": true,
         "Radius": {
-          "fixedValue": {
-            "RawValue": 51539607552
+          "FixedValue": {
+            "Value": 12
           }
         },
-        "RayStartOffsetY": 1.0,
         "TargetTypes": [
           "NPCMonster"
         ],
-        "OnlyCheckFilterOnEnter": true,
-        "OnTriggerEnter": [],
-        "SkipFakeAvatar": true
+        "OnTriggerEnter": []
       },
       {
         "TriggerName": "AttackRange",
-        "DefaultEnable": true,
         "Radius": {
-          "fixedValue": {
-            "RawValue": 17179869184
+          "FixedValue": {
+            "Value": 4
           }
         },
-        "RayStartOffsetY": 1.0,
         "TargetTypes": [
           "NPCMonster"
         ],
-        "OnlyCheckFilterOnEnter": true,
-        "OnTriggerEnter": [],
-        "SkipFakeAvatar": true
+        "OnTriggerEnter": []
       }
     ]
   },
   "GatherConfig": {
-    "RegionOffset": -5.0,
-    "RegionRadius": 3.0,
-    "ConstraintRadius": 12.0,
+    "RegionOffset": -5,
+    "RegionRadius": 3,
+    "ConstraintRadius": 12,
     "UpdateOnce": true,
+    "DampSmoothTime": 0,
     "CentripetalSpeedCurve": "Camera/BlendCurve/BlendCut_1220_MazeCentripetalSpeed.asset",
-    "CentripetalFactorX": 12.0,
-    "CentripetalFactorY": 50.0,
+    "CentripetalFactorX": 12,
+    "CentripetalFactorY": 50,
     "TangentSpeedCurve": "Camera/BlendCurve/BlendCut_1220_MazeTangentSpeed.asset",
-    "TangentSpeedFactorX": 40.0,
-    "TangentSpeedFactorY": 6.0,
-    "MaxRadius": 2.0,
+    "TangentSpeedFactorX": 40,
+    "TangentSpeedFactorY": 6,
+    "MaxRadius": 2,
     "RingCount": 3,
     "IsClockwise": true,
+    "UpdateDirection": false,
     "CollideIgnorePlayer": true,
     "ForAttack": true,
     "FilterModifiers": [

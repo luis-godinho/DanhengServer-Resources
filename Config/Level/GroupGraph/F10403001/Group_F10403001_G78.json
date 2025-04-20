@@ -1,0 +1,207 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "EnterArea_G{GroupID}"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.ClientFinishMission",
+              "SubmissionID": 104030235
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvSetupCustomTaskTrigger",
+          "TargetType": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "TargetType": "Prop",
+            "Targets": [
+              300001
+            ]
+          },
+          "TriggerName": "MissionTrigger",
+          "OnEnter": [
+            {
+              "$type": "RPG.GameCore.TriggerGroupEvent",
+              "EventName": {
+                "Value": "EnterArea_G{GroupID}"
+              }
+            }
+          ],
+          "DisableAfterTriggered": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "NPCReach"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.PlayMissionTalk",
+              "SimpleTalkList": [
+                {
+                  "TalkSentenceID": 140315919
+                },
+                {
+                  "TalkSentenceID": 140315920
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "NPCReach"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.AdvNpcFaceToPlayer",
+              "GroupID": 78,
+              "GroupNpcID": 400001,
+              "TryFaceToFace": false,
+              "PlayerLookAtNpc": false,
+              "StopLookAtOnGraphEnd": false,
+              "TurnBackOnGraphEnd": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitSecond",
+          "WaitTime": {
+            "FixedValue": {
+              "Value": 1
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.AdvSetAILeadWay",
+          "EntityInstanceID": {
+            "FixedValue": {
+              "Value": 400001
+            }
+          },
+          "PathwayGroupID": 78,
+          "PathwayID": 1,
+          "StartIndex": 1,
+          "MotionFlag": "Run",
+          "WaitForPlayer": true,
+          "StartWaitDistance": 12,
+          "StopWaitDistance": 8,
+          "OnReach": [
+            {
+              "$type": "RPG.GameCore.TriggerGroupEvent",
+              "EventName": {
+                "Value": "NPCReach"
+              }
+            }
+          ],
+          "PathOffset": []
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "MissionTalk"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.PlayMissionTalk",
+              "SimpleTalkList": [
+                {
+                  "TalkSentenceID": 140315948
+                },
+                {
+                  "TalkSentenceID": 140315949
+                },
+                {
+                  "TalkSentenceID": 140315950
+                },
+                {
+                  "TalkSentenceID": 140315951
+                },
+                {
+                  "TalkSentenceID": 140315952
+                },
+                {
+                  "TalkSentenceID": 140315913,
+                  "ProtectTime": 2
+                },
+                {
+                  "TalkSentenceID": 140315914,
+                  "ProtectTime": 2
+                },
+                {
+                  "TalkSentenceID": 140315915,
+                  "ProtectTime": 2
+                },
+                {
+                  "TalkSentenceID": 140315916,
+                  "ProtectTime": 2
+                },
+                {
+                  "TalkSentenceID": 140315917,
+                  "ProtectTime": 2
+                },
+                {
+                  "TalkSentenceID": 140315918,
+                  "ProtectTime": 2
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvSetupCustomTaskTrigger",
+          "TargetType": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "TargetType": "Prop",
+            "Targets": [
+              300002
+            ]
+          },
+          "TriggerName": "MissionTrigger",
+          "OnEnter": [
+            {
+              "$type": "RPG.GameCore.TriggerGroupEvent",
+              "EventName": {
+                "Value": "MissionTalk"
+              }
+            }
+          ],
+          "DisableAfterTriggered": true
+        }
+      ]
+    }
+  ],
+  "Type": "Group",
+  "EntityEventList": []
+}

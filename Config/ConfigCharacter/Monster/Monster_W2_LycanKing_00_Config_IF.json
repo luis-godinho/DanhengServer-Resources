@@ -1,0 +1,599 @@
+{
+  "$type": "RPG.GameCore.CharacterConfig",
+  "SomatoType": "LargeMonster",
+  "CharacterHUDOffset": {
+    "X": 1.125,
+    "Y": 2.4,
+    "Z": 0.125
+  },
+  "BuffPanelOffset": {
+    "Y": 2.2
+  },
+  "HitBoxOffset": {
+    "X": 0.3
+  },
+  "HitBoxWidth": 2,
+  "HitBoxHeight": 1.95,
+  "Resilience": "B",
+  "Location": {
+    "Width": 3
+  },
+  "VisualRadius": 1.7,
+  "AnimEventConfigList": [
+    "Config/ConfigAnimEvents/Monster/Designer/Monster_W2_LycanKing_00_Designer_AnimEvent.json",
+    "Config/ConfigAnimEvents/Monster/Effect/Monster_W2_LycanKing_00_Effect_AnimEvent.json",
+    "Config/ConfigAnimEvents/Monster/Audio/Monster_W2_LycanKing_00_Audio_AnimEvent.json"
+  ],
+  "SkillList": [
+    {
+      "Name": "Passive_BGM",
+      "UseType": "Passive",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "EntryAbility": "Monster_W2_LycanKing_00_PassiveSkill_BGM"
+    },
+    {
+      "Name": "Skill01",
+      "UseType": "SelectEntity",
+      "TargetInfo": {
+        "TargetType": "EnemySelect"
+      },
+      "ReadyAnimState": "StandBy",
+      "EntryAbility": "Monster_W2_LycanKing_00_Skill01_Phase01"
+    },
+    {
+      "Name": "Skill02",
+      "UseType": "SelectEntity",
+      "TargetInfo": {
+        "TargetType": "EnemySelect",
+        "SubTargetType": "TargetAdjoinEntity"
+      },
+      "ReadyAnimState": "StandBy",
+      "EntryAbility": "Monster_W2_LycanKing_00_Skill02_Phase01"
+    },
+    {
+      "Name": "Skill03",
+      "UseType": "SelectEntity",
+      "TargetInfo": {
+        "TargetType": "AllEnemy"
+      },
+      "ReadyAnimState": "StandBy",
+      "EntryAbility": "Monster_W2_LycanKing_00_Skill03_Phase01"
+    },
+    {
+      "Name": "Skill04",
+      "UseType": "SelectEntity",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "ReadyAnimState": "StandBy",
+      "EntryAbility": "Monster_W2_LycanKing_00_IF_Skill04_Phase01"
+    },
+    {
+      "Name": "Skill05",
+      "UseType": "SelectEntity",
+      "TargetInfo": {
+        "TargetType": "EnemySelect"
+      },
+      "ReadyAnimState": "StandBy",
+      "EntryAbility": "Monster_W2_LycanKing_00_IF_Skill05_Phase01"
+    },
+    {
+      "Name": "SkillP01",
+      "SkillType": "Passive",
+      "UseType": "Passive",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "EntryAbility": "Monster_W2_LycanKing_00_IF_PassiveSkillInitiate"
+    },
+    {
+      "Name": "SkillP02",
+      "SkillType": "Passive",
+      "UseType": "Passive",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "EntryAbility": "Monster_W2_LycanKing_00_SkillP02"
+    },
+    {
+      "Name": "SkillP03",
+      "SkillType": "Passive",
+      "UseType": "Passive",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "EntryAbility": "Monster_W2_LycanKing_00_SkillP03"
+    },
+    {
+      "Name": "SkillEX01",
+      "SkillType": "Passive",
+      "UseType": "Passive",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "EntryAbility": "Monster_W2_LycanKing_00_IF_SkillEX01"
+    },
+    {
+      "Name": "SkillEX02",
+      "SkillType": "Passive",
+      "UseType": "Passive",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "EntryAbility": "Monster_W2_LycanKing_00_IF_SkillEX02"
+    },
+    {
+      "Name": "SkillEX03",
+      "SkillType": "Passive",
+      "UseType": "Passive",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "EntryAbility": "Monster_W2_LycanKing_00_IF_SkillEX03"
+    },
+    {
+      "Name": "SkillEX04",
+      "SkillType": "Passive",
+      "UseType": "Passive",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "EntryAbility": "Monster_W2_LycanKing_00_IF_SkillEX04"
+    },
+    {
+      "Name": "SkillEX05",
+      "SkillType": "Passive",
+      "UseType": "Passive",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "EntryAbility": "Monster_W2_LycanKing_00_SkillP04"
+    },
+    {
+      "Name": "PassiveSkill01",
+      "SkillType": "Passive",
+      "UseType": "Passive",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "EntryAbility": "Monster_Common_PassiveSkill_StanceBreak_Action"
+    },
+    {
+      "Name": "Skill07",
+      "UseType": "SelectEntity",
+      "TargetInfo": {
+        "TargetType": "EnemySelect"
+      },
+      "ReadyAnimState": "StandBy",
+      "EntryAbility": "Monster_W2_LycanKing_00_Skill07_Phase01"
+    },
+    {
+      "Name": "Skill08",
+      "UseType": "SelectEntity",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "ReadyAnimState": "StandBy",
+      "EntryAbility": "Monster_W2_LycanKing_00_IF_Skill08_Phase01",
+      "IsLinkSkill": true
+    },
+    {
+      "Name": "ChangePhase",
+      "UseType": "SelectEntity",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "ReadyAnimState": "StandBy",
+      "EntryAbility": "Monster_W2_LycanKing_00_ChangePhase_Phase01"
+    }
+  ],
+  "AbilityList": [
+    "Monster_W2_LycanKing_00_IF_PassiveSkillInitiate",
+    "Monster_W2_LycanKing_00_IF_PassiveSkill_Insert",
+    "Monster_Common_PassiveSkill_StanceBreak_Action",
+    "Monster_W2_LycanKing_00_SkillP02",
+    "Monster_W2_LycanKing_00_SkillP03",
+    "Monster_W2_LycanKing_00_SkillP04",
+    "BattleEventAbility_Monster_W2_LycanKing_00_IF_StanceDamage",
+    "BattleEventAbility_Monster_W2_LycanKing_00_IF_RageFinish",
+    "Monster_W2_LycanKing_00_IF_SkillEX01",
+    "Monster_W2_LycanKing_00_IF_SkillEX02",
+    "Monster_W2_LycanKing_00_IF_SkillEX03",
+    "Monster_W2_LycanKing_00_IF_SkillEX04"
+  ],
+  "SkillAbilityList": [
+    {
+      "Skill": "Passive_BGM",
+      "AbilityList": [
+        "Monster_W2_LycanKing_00_PassiveSkill_BGM"
+      ]
+    },
+    {
+      "Skill": "Skill01",
+      "AbilityList": [
+        "Monster_W2_LycanKing_00_Skill01_Phase01",
+        "Monster_W2_LycanKing_00_Skill01_Phase02",
+        "Monster_W2_LycanKing_00_Skill01_Camera",
+        "Monster_W2_LycanKing_00_IF_Skill01_Phase01",
+        "Monster_W2_LycanKing_00_IF_Skill01_Phase02",
+        "Monster_W2_LycanKing_00_IF_Skill01_Camera"
+      ]
+    },
+    {
+      "Skill": "Skill02",
+      "AbilityList": [
+        "Monster_W2_LycanKing_00_Skill02_Phase01",
+        "Monster_W2_LycanKing_00_Skill02_Phase02",
+        "Monster_W2_LycanKing_00_Skill02_Camera"
+      ]
+    },
+    {
+      "Skill": "Skill03",
+      "AbilityList": [
+        "Monster_W2_LycanKing_00_Skill03_Phase01",
+        "Monster_W2_LycanKing_00_Skill03_Phase02",
+        "Monster_W2_LycanKing_00_Skill03_Camera"
+      ]
+    },
+    {
+      "Skill": "Skill04",
+      "AbilityList": [
+        "Monster_W2_LycanKing_00_IF_Skill04_Phase01",
+        "Monster_W2_LycanKing_00_IF_Skill04_Phase02",
+        "Monster_W2_LycanKing_00_Skill04_Camera"
+      ]
+    },
+    {
+      "Skill": "Skill05",
+      "AbilityList": [
+        "Monster_W2_LycanKing_00_IF_Skill05_Insert_Phase01",
+        "Monster_W2_LycanKing_00_IF_Skill05_Insert_Phase02",
+        "Monster_W2_LycanKing_00_Skill05_Insert_Camera",
+        "Monster_W2_LycanKing_00_IF_Skill05_Phase01",
+        "Monster_W2_LycanKing_00_IF_Skill05_Phase02"
+      ]
+    },
+    {
+      "Skill": "SkillP01",
+      "AbilityList": [
+        "Monster_W2_LycanKing_00_PassiveSkillInitiate"
+      ]
+    },
+    {
+      "Skill": "Skill07",
+      "AbilityList": [
+        "Monster_W2_LycanKing_00_Skill07_Phase01",
+        "Monster_W2_LycanKing_00_Skill07_Phase02",
+        "Monster_W2_LycanKing_00_Skill07_Camera"
+      ]
+    },
+    {
+      "Skill": "Skill08",
+      "AbilityList": [
+        "Monster_W2_LycanKing_00_IF_Skill08_Phase01",
+        "Monster_W2_LycanKing_00_IF_Skill08_Phase02",
+        "Monster_W2_LycanKing_00_IF_Skill08_Camera"
+      ]
+    },
+    {
+      "Skill": "ChangePhase",
+      "AbilityList": [
+        "Monster_W2_LycanKing_00_ChangePhase_Phase01",
+        "Monster_W2_LycanKing_00_ChangePhase_Phase02",
+        "Monster_W2_LycanKing_00_ChangePhase_Camera"
+      ]
+    }
+  ],
+  "DynamicValues": {
+    "Floats": {
+      "-1126825319": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill01"
+        }
+      },
+      "-1847083384": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill02"
+        }
+      },
+      "-1055926903": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill02",
+          "Index": 1
+        }
+      },
+      "-56289053": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill03"
+        }
+      },
+      "2110907654": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill04"
+        }
+      },
+      "-1624026094": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill04",
+          "Index": 1
+        }
+      },
+      "-2071569544": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill04",
+          "Index": 2
+        }
+      },
+      "121381101": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill04",
+          "Index": 3
+        }
+      },
+      "-402291451": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill05"
+        }
+      },
+      "-868211745": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill05",
+          "Index": 1
+        }
+      },
+      "-426412196": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP01"
+        }
+      },
+      "1391447923": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP01",
+          "Index": 1
+        }
+      },
+      "523817363": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP01",
+          "Index": 2
+        }
+      },
+      "-2084756422": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP01",
+          "Index": 3
+        }
+      },
+      "1584065535": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP02"
+        }
+      },
+      "2048804941": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP02",
+          "Index": 1
+        }
+      },
+      "701541298": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP02",
+          "Index": 2
+        }
+      },
+      "-1480927169": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP02",
+          "Index": 3
+        }
+      },
+      "811129513": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP02",
+          "Index": 4
+        }
+      },
+      "-955605551": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP02",
+          "Index": 5
+        }
+      },
+      "-1736050897": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP03"
+        }
+      },
+      "363683734": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP03",
+          "Index": 1
+        }
+      },
+      "-727903732": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP03",
+          "Index": 2
+        }
+      },
+      "99134282": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP03",
+          "Index": 3
+        }
+      },
+      "649703651": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP03",
+          "Index": 4
+        }
+      },
+      "1643420006": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill08"
+        }
+      },
+      "-590949018": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill08",
+          "Index": 1
+        }
+      },
+      "-904781514": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill08",
+          "Index": 2
+        }
+      },
+      "555337333": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill08",
+          "Index": 3
+        }
+      },
+      "1112205278": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill08",
+          "Index": 4
+        }
+      },
+      "1464534018": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill08",
+          "Index": 5
+        }
+      },
+      "-892481826": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillEX01"
+        }
+      },
+      "666604926": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillEX01",
+          "Index": 1
+        }
+      },
+      "378416374": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillEX01",
+          "Index": 2
+        }
+      },
+      "517948865": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillEX04"
+        }
+      },
+      "-674234576": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillEX05"
+        }
+      },
+      "-779795548": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillEX05",
+          "Index": 1
+        }
+      },
+      "-1718816686": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillEX05",
+          "Index": 2
+        }
+      },
+      "-326742053": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillEX05",
+          "Index": 3
+        }
+      }
+    }
+  },
+  "CustomValues": {
+    "WolfSummon01": 9002330,
+    "WolfSummon02": 9002331,
+    "AIFlag": 1,
+    "PhaseFlag": 1,
+    "HitCount": 0,
+    "LycanDieCount": 0,
+    "Huimie_InsertFlag": 0,
+    "Wolf_AttackCount": 0,
+    "Wolf_MaxAttackCount": 0,
+    "WolfBoss_BloodRageCountForSkill05": 0,
+    "WolfBoss_BloodRageCount": 0,
+    "WolfBoss_BloodRageMaxCount": 0,
+    "isRaging": 0,
+    "HardLevel": 1
+  },
+  "WeaponType": "WP_Magic",
+  "DisableAnimEventLayers": [
+    "Riboon Layer"
+  ],
+  "OnHitEditFootIKModeMap": {
+    "Back": "LockFoot",
+    "Left": "LockFoot",
+    "Forward": "LockRightFoot",
+    "Right": "LockFoot"
+  },
+  "CameraNamedDynamicOffset": "W2_LycanKing_00",
+  "MonsterIgnoreGlobalDymanicOffset": false,
+  "MaxMonsterPhase": 2,
+  "PhaseList": [
+    {
+      "PhaseNum": 1
+    },
+    {
+      "PhaseNum": 2
+    }
+  ],
+  "OverrideColliderCameraByName": "Monster_W2_LycanKng_00",
+  "EffectAdaptionList": [
+    {
+      "EffectPath": "Effects/Eff_Prefab/Eff_Common/Eff_Buff_Common_Taunt_Loop.prefab",
+      "AttachPoint": "MustacheA_01_JNT",
+      "Scale": 1.5
+    }
+  ]
+}

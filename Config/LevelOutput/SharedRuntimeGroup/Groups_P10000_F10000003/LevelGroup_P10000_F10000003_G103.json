@@ -1,4 +1,5 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "Pam_NPC",
   "Category": "Custom",
   "AreaAnchorName": "LevelArea_P10000_F10000003_G103",
@@ -8,15 +9,15 @@
   "ConflictIDList": [],
   "IsHoyoGroup": true,
   "HoYoGroupType": "Container",
-  "StreamingTemplateType": "Standard",
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
   "ConflictWhiteList": [],
-  "TagContainer": [
-    {
-      "Tag": "Group.Mission.Pam",
-      "TagHash": -2096892441
-    }
-  ],
+  "TagContainer": {
+    "List": [
+      {
+        "Tag": "Group.Mission.Pam",
+        "TagHash": -2096892441
+      }
+    ]
+  },
   "AnchorList": [],
   "MonsterList": [],
   "PropList": [],
@@ -28,10 +29,8 @@
     {
       "NPCID": 3001,
       "LevelGraph": "Config/Level/Maze/Chapter00/Train/Train_PamAction.json",
-      "LoadOnInitial": true,
       "ValueSource": {
-        "Values": [],
-        "SharedValues": []
+        "Values": []
       },
       "AIConfig": {
         "AIFile": "Config/ConfigAI/Adventure/NPC/Special/NPC_Special_Pam_AI.json",
@@ -41,7 +40,6 @@
       "AIVariableSource": {
         "Values": []
       },
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "ServerInteractVerificationIDList": [
         1,
@@ -49,13 +47,11 @@
         3,
         4
       ],
-      "DefaultLookAtMode": "LookPlayer",
       "BoardShowList": [
         4,
         8
       ],
       "TalkDialogGroupIDList": [],
-      "DefaultAnimationType": "FreeStyle",
       "DefaultIdleFreeStyleMotionID": 900010000,
       "BornType": "Permanent",
       "InitialHiddenNodeList": [],
@@ -70,31 +66,24 @@
             "Name": "other",
             "LevelGraph": "Config/Level/NPCDialogue/P10000/F10000000_G3/DialoguePack_other_F10000000_G3_N400001.json"
           }
-        ],
-        "EnableDialogCamera": true
+        ]
       },
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "OverrideReplaceMaterialKeyList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
       "SpawnConfig": {
-        "TryCapture": true,
-        "CaptureDistanceTolerance": 1.5,
         "OverrideSpawn": true,
         "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0
+          "NeedFadeIn": false,
+          "NeedFadeOut": false
         }
       },
       "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true,
         "TargetList": []
       },
       "Name": "NPC1",
-      "RotY": 150.0,
+      "RotY": 150,
       "ID": 400001,
       "PosX": -5.45,
       "PosY": -15.28876,

@@ -5,10 +5,7 @@
       "TaskList": [
         {
           "$type": "RPG.GameCore.PlayFullScreenTransfer",
-          "Type": "Black",
-          "PrevDuration": 0.5,
-          "KeepDuration": 0.5,
-          "PostDuration": -1.0,
+          "PostDuration": -1,
           "Action": [
             {
               "$type": "RPG.GameCore.ScrTrfActTaskList",
@@ -16,28 +13,24 @@
                 {
                   "$type": "RPG.GameCore.TeleportToRotatableRegion",
                   "TargetRegionIndex": {
-                    "fixedValue": {
-                      "RawValue": -4294967296
+                    "FixedValue": {
+                      "Value": -1
                     }
                   },
                   "TargetAnchorGroupID": {
-                    "fixedValue": {
-                      "RawValue": 601295421440
+                    "FixedValue": {
+                      "Value": 140
                     }
                   },
                   "TargetAnchorInstanceID": {
-                    "fixedValue": {
-                      "RawValue": 8589934592
+                    "FixedValue": {
+                      "Value": 2
                     }
-                  },
-                  "TaskEnabled": true,
-                  "IsClientOnly": true
+                  }
                 }
               ]
             }
-          ],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     },
@@ -48,24 +41,19 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Talk_103070112"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
           "Key": "Mission_103070112",
-          "KeepScreenTransferUntilGroupRefresh": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "KeepScreenTransferUntilGroupRefresh": true
         }
       ]
     },
     {
       "TaskList": [
         {
-          "$type": "RPG.GameCore.PlayMazeButtonEffect",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "$type": "RPG.GameCore.PlayMazeButtonEffect"
         }
       ]
     }

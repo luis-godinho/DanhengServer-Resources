@@ -5,16 +5,11 @@
       "TaskList": [
         {
           "$type": "RPG.GameCore.ShowFuncBtn",
-          "Show": true,
-          "HideWhenGraphFinish": true,
           "PuzzleFunc": "Identify",
-          "CDDuration": 1.0,
-          "ShowBtnFucHint": true,
+          "CDDuration": 1,
           "CustomString": {
             "Value": "PhotoGraphGOGOGO"
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         }
       ]
     },
@@ -25,17 +20,16 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "PhotoGraphGOGOGO"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.SwitchPhotoGraphMode",
           "PhotoGraphMode": "Identify",
-          "ExitWhenPreViewDialogFinish": true,
-          "IdentifyRadiusOverride": {},
-          "InitFov": -1.0,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "IdentifyRadiusOverride": {
+            "FixedValue": {
+              "Value": 0
+            }
+          }
         }
       ]
     },
@@ -48,22 +42,20 @@
             "FetchType": "SingleNpcByNpcID",
             "SingleNpcID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 51539607552
+                "FixedValue": {
+                  "Value": 12
                 }
               },
               "GroupNpcID": {
-                "fixedValue": {
-                  "RawValue": 1717999803301888
+                "FixedValue": {
+                  "Value": 400003
                 }
               }
             }
           },
           "IsAim": true,
           "AimIdentifyType": "Manual",
-          "AimTagExtraOffset": 0.3,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "AimTagExtraOffset": 0.3
         },
         {
           "$type": "RPG.GameCore.PhotoGraphWaitIdentifyFinish",
@@ -72,13 +64,13 @@
             "FetchType": "SingleNpcByNpcID",
             "SingleNpcID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 51539607552
+                "FixedValue": {
+                  "Value": 12
                 }
               },
               "GroupNpcID": {
-                "fixedValue": {
-                  "RawValue": 1717999803301888
+                "FixedValue": {
+                  "Value": 400003
                 }
               }
             }
@@ -88,12 +80,9 @@
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "PhotoGraphFinish_201141212"
-              },
-              "TaskEnabled": true
+              }
             }
-          ],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         },
         {
           "$type": "RPG.GameCore.PhotoGraphAimTarget",
@@ -102,21 +91,19 @@
             "FetchType": "SingleNpcByNpcID",
             "SingleNpcID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 51539607552
+                "FixedValue": {
+                  "Value": 12
                 }
               },
               "GroupNpcID": {
-                "fixedValue": {
-                  "RawValue": 1717999803301888
+                "FixedValue": {
+                  "Value": 400003
                 }
               }
             }
           },
           "AimIdentifyType": "Manual",
-          "AimTagExtraOffset": 0.3,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "AimTagExtraOffset": 0.3
         }
       ]
     },
@@ -127,14 +114,11 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "PhotoGraphFinish_201141212"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_201141212",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_201141212"
         }
       ]
     }

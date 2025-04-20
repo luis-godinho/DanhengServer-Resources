@@ -1,0 +1,195 @@
+{
+  "$type": "RPG.GameCore.CharacterConfig",
+  "CharacterHUDOffset": {
+    "Y": 1.5
+  },
+  "BuffPanelOffset": {
+    "Y": 2
+  },
+  "HitBoxHeight": 0.4,
+  "Location": {},
+  "VisualRadius": 0.8,
+  "AnimEventConfigList": [
+    "Config/ConfigAnimEvents/Monster/Designer/Monster_AML_Boss_00_Designer_AnimEvent.json"
+  ],
+  "SkillList": [
+    {
+      "Name": "Skill01",
+      "UseType": "SelectEntity",
+      "TargetInfo": {
+        "TargetType": "AllEnemy"
+      },
+      "ReadyAnimState": "StandBy",
+      "EntryAbility": "Monster_AML_Boss_00_Part1_Skill01_Phase01"
+    },
+    {
+      "Name": "Skill02",
+      "UseType": "SelectEntity",
+      "TargetInfo": {
+        "TargetType": "AllEnemy"
+      },
+      "ReadyAnimState": "StandBy",
+      "EntryAbility": "Monster_AML_Boss_00_Part1_Skill02_Phase01"
+    },
+    {
+      "Name": "Skill03",
+      "UseType": "SelectEntity",
+      "TargetInfo": {
+        "TargetType": "AllEnemy"
+      },
+      "ReadyAnimState": "StandBy",
+      "EntryAbility": "Monster_AML_Boss_00_Part1_Skill03_Phase01"
+    },
+    {
+      "Name": "PassiveSkill01",
+      "SkillType": "Passive",
+      "UseType": "Passive",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "EntryAbility": "Monster_Common_PassiveSkill_StanceBreak_Action"
+    },
+    {
+      "Name": "PassiveSkill02",
+      "SkillType": "Passive",
+      "UseType": "Passive",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "EntryAbility": "Monster_Common_MuteHitFly"
+    },
+    {
+      "Name": "PassiveSkill03",
+      "SkillType": "Passive",
+      "UseType": "Passive",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "EntryAbility": "Monster_AML_Boss_00_Part1_HitEffect"
+    }
+  ],
+  "AbilityList": [
+    "Monster_Common_PassiveSkill_StanceBreak_Action",
+    "Monster_Common_MuteHitFly",
+    "Monster_AML_Boss_00_Part1_HitEffect"
+  ],
+  "SkillAbilityList": [
+    {
+      "Skill": "Skill01",
+      "AbilityList": [
+        "Monster_AML_Boss_00_Part1_Skill01_Phase01",
+        "Monster_AML_Boss_00_Part1_Skill01_Phase02",
+        "Monster_AML_Boss_00_Part1_Skill01_Camera"
+      ]
+    },
+    {
+      "Skill": "Skill02",
+      "AbilityList": [
+        "Monster_AML_Boss_00_Part1_Skill02_Phase01",
+        "Monster_AML_Boss_00_Part1_Skill02_Phase02",
+        "Monster_AML_Boss_00_Part1_Skill02_Camera"
+      ]
+    },
+    {
+      "Skill": "Skill03",
+      "AbilityList": [
+        "Monster_AML_Boss_00_Part1_Skill03_Phase01",
+        "Monster_AML_Boss_00_Part1_Skill03_Phase02",
+        "Monster_AML_Boss_00_Part1_Skill03_Camera"
+      ]
+    }
+  ],
+  "DynamicValues": {
+    "Floats": {
+      "-1126825319": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill01"
+        }
+      },
+      "-1847083384": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill02"
+        }
+      },
+      "242280286": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill02",
+          "Index": 1
+        }
+      },
+      "-1019407308": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill02",
+          "Index": 2
+        }
+      },
+      "220391868": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill02",
+          "Index": 3
+        }
+      },
+      "1086047149": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill02",
+          "Index": 4
+        }
+      },
+      "-56289053": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill03"
+        }
+      },
+      "-894095079": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill03",
+          "Index": 1
+        }
+      },
+      "238783065": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill03",
+          "Index": 2
+        }
+      },
+      "630854039": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill03",
+          "Index": 3
+        }
+      },
+      "709261362": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill03",
+          "Index": 4
+        }
+      }
+    }
+  },
+  "WeaponType": "WP_Scythe",
+  "DisableAnimEventLayers": [
+    "Riboon Layer"
+  ],
+  "MonsterIgnoreGlobalDymanicOffset": false,
+  "MaxMonsterPhase": 2,
+  "PhaseList": [
+    {
+      "PhaseNum": 1
+    },
+    {
+      "PhaseNum": 2
+    }
+  ],
+  "OverrideColliderCameraByName": "Monster_AML_Boss_00_Part1_Viewmode_Camera"
+}

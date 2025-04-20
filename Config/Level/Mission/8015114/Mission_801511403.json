@@ -5,10 +5,7 @@
       "TaskList": [
         {
           "$type": "RPG.GameCore.PlayFullScreenTransfer",
-          "Type": "Black",
-          "PrevDuration": -1.0,
-          "KeepDuration": 0.5,
-          "PostDuration": 0.5,
+          "PrevDuration": -1,
           "Action": [
             {
               "$type": "RPG.GameCore.ScrTrfActTaskList",
@@ -24,32 +21,21 @@
                     "Value": "Anchor1"
                   },
                   "Target": {
-                    "$type": "RPG.GameCore.TargetFetchAdvLocalPlayer",
-                    "IncludeStoryPlayer": true
-                  },
-                  "ResetAnimation": true,
-                  "ResetCamera": true,
-                  "ClearSpecialVision": true,
-                  "TaskEnabled": true,
-                  "IsClientOnly": true
+                    "$type": "RPG.GameCore.TargetFetchAdvLocalPlayer"
+                  }
                 },
                 {
                   "$type": "RPG.GameCore.PlayerRemoteControlOtherEntity",
                   "SpecialNPCID": 12117,
-                  "TaskEnabled": true,
-                  "IsClientOnly": true
+                  "SupportRush": false
                 },
                 {
                   "$type": "RPG.GameCore.PlayerForceWalk",
-                  "ForceWalk": true,
-                  "TaskEnabled": true,
-                  "IsClientOnly": true
+                  "ForceWalk": true
                 }
               ]
             }
-          ],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     },
@@ -60,14 +46,11 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Talk_801511403"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_801511403",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_801511403"
         }
       ]
     },
@@ -76,9 +59,7 @@
         {
           "$type": "RPG.GameCore.SetHudTemplate",
           "TemplateID": 1013,
-          "EnableTemplate": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "EnableTemplate": true
         }
       ]
     }

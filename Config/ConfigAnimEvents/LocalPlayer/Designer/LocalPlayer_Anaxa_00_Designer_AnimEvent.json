@@ -1,0 +1,339 @@
+{
+  "AnimatorStateEvents": [
+    {
+      "AnimatorStateName": "Attack_1",
+      "NormalizedTime": 0.01,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.SetAttachmentScale",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AttachPoints": [
+            {
+              "Name": "Weapon_00_JNT",
+              "TriggerEffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Anaxa_00/Eff_Avatar_Anaxa_00_Common_WeaponStart.prefab"
+            }
+          ],
+          "IsReset": true
+        }
+      ],
+      "AllowTriggeringOnTransitionOut": false
+    },
+    {
+      "AnimatorStateName": "Attack_1",
+      "NormalizedTime": 0.72,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.SetAttachmentScale",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AttachPoints": [
+            {
+              "Name": "Weapon_00_JNT",
+              "TriggerEffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Anaxa_00/Eff_Avatar_Anaxa_00_Common_WeaponEnd.prefab"
+            }
+          ],
+          "Scale": {}
+        }
+      ],
+      "AllowTriggeringOnTransitionOut": false
+    },
+    {
+      "AnimatorStateName": "Idle_Show_01",
+      "NormalizedTime": 0.264179,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.TriggerEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Anaxa_00/Eff_Avatar_Anaxa_00_idleshow01_01.prefab"
+        }
+      ],
+      "AllowTriggeringOnTransitionOut": false
+    },
+    {
+      "AnimatorStateName": "Idle_Show_02",
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.TriggerEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Anaxa_00/Eff_Avatar_Anaxa_00_idleshow02.prefab"
+        }
+      ],
+      "AllowTriggeringOnTransitionOut": false
+    },
+    {
+      "AnimatorStateName": "Idle_Show_02",
+      "NormalizedTime": 0.321,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.SetAttachmentVisibility",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AttachPoints": [
+            {
+              "Name": "Weapon_02",
+              "TriggerEffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Anaxa_00/Eff_Avatar_Anaxa_00_idleshow02_WeaponStart.prefab"
+            }
+          ],
+          "Visibility": true
+        }
+      ],
+      "AllowTriggeringOnTransitionOut": false
+    },
+    {
+      "AnimatorStateName": "Idle_Show_02",
+      "NormalizedTime": 0.85,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.SetAttachmentScale",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AttachPoints": [
+            {
+              "Name": "Weapon_00_JNT",
+              "TriggerEffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Anaxa_00/Eff_Avatar_Anaxa_00_Common_WeaponEnd.prefab"
+            }
+          ],
+          "Scale": {}
+        }
+      ],
+      "AllowTriggeringOnTransitionOut": false
+    }
+  ],
+  "AnimatorStateGroupEvents": [
+    {
+      "States": [
+        {
+          "Name": "Attack_1",
+          "EnterInTransition": false,
+          "ExitInTransition": true
+        }
+      ],
+      "OnEnter": [
+        {
+          "$type": "RPG.GameCore.SetAttachmentScale",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AttachPoints": [
+            {
+              "Name": "Weapon_00_JNT",
+              "TriggerEffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Anaxa_00/Eff_Avatar_Anaxa_00_Common_WeaponStart.prefab"
+            }
+          ],
+          "IsReset": true
+        }
+      ],
+      "OnExit": [
+        {
+          "$type": "RPG.GameCore.SetAttachmentScale",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AttachPoints": [
+            {
+              "Name": "Weapon_00_JNT",
+              "TriggerEffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Anaxa_00/Eff_Avatar_Anaxa_00_Common_WeaponEnd.prefab"
+            }
+          ],
+          "Scale": {}
+        }
+      ]
+    },
+    {
+      "States": [
+        {
+          "Name": "Idle_Show_01",
+          "EnterInTransition": false,
+          "ExitInTransition": true
+        }
+      ],
+      "OnExit": [
+        {
+          "$type": "RPG.GameCore.RemoveEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Anaxa_00/Eff_Avatar_Anaxa_00_idleshow01_01.prefab"
+        }
+      ]
+    },
+    {
+      "States": [
+        {
+          "Name": "Idle_Show_02",
+          "NormalizedTime": 0.089,
+          "EnterInTransition": false,
+          "ExitInTransition": true
+        }
+      ],
+      "OnEnter": [
+        {
+          "$type": "RPG.GameCore.SetAttachmentScale",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AttachPoints": [
+            {
+              "Name": "Weapon_00_JNT"
+            }
+          ],
+          "IsReset": true
+        },
+        {
+          "$type": "RPG.GameCore.SetAttachmentVisibility",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AttachPoints": [
+            {
+              "Name": "Weapon_01"
+            },
+            {
+              "Name": "Weapon_02"
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.SetAttachmentVisibility",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AttachPoints": [
+            {
+              "Name": "Weapon_01",
+              "TriggerEffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Anaxa_00/Eff_Avatar_Anaxa_00_Common_WeaponStart.prefab"
+            }
+          ],
+          "Visibility": true
+        }
+      ],
+      "OnExit": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByAnimatorParam",
+            "ParamName": "NormalizedTime",
+            "ParamCompareType": "GreaterEqual",
+            "FloatValue": 0.321
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByAnimatorParam",
+                "ParamName": "NormalizedTime",
+                "ParamCompareType": "LessEqual",
+                "FloatValue": 0.431
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.SetAttachmentScale",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "Caster"
+                  },
+                  "AttachPoints": [
+                    {
+                      "Name": "Weapon_00_JNT",
+                      "TriggerEffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Anaxa_00/Eff_Avatar_Anaxa_00_idleshow02_WeaponEnd.prefab"
+                    }
+                  ],
+                  "Scale": {}
+                },
+                {
+                  "$type": "RPG.GameCore.SetAttachmentScale",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "Caster"
+                  },
+                  "AttachPoints": [
+                    {
+                      "Name": "Weapon_00_JNT"
+                    }
+                  ],
+                  "IsReset": true
+                }
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.SetAttachmentScale",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "AttachPoints": [
+                {
+                  "Name": "Weapon_00_JNT",
+                  "TriggerEffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Anaxa_00/Eff_Avatar_Anaxa_00_Common_WeaponEnd.prefab"
+                }
+              ],
+              "Scale": {}
+            }
+          ],
+          "FailedTaskList": [
+            {
+              "$type": "RPG.GameCore.SetAttachmentScale",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "Caster"
+              },
+              "AttachPoints": [
+                {
+                  "Name": "Weapon_00_JNT",
+                  "TriggerEffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Anaxa_00/Eff_Avatar_Anaxa_00_idleshow02_WeaponEnd.prefab"
+                }
+              ],
+              "Scale": {}
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.SetAttachmentVisibility",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AttachPoints": [
+            {
+              "Name": "Weapon_01"
+            },
+            {
+              "Name": "Weapon_02"
+            }
+          ],
+          "Visibility": true
+        },
+        {
+          "$type": "RPG.GameCore.RemoveEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Anaxa_00/Eff_Avatar_Anaxa_00_idleshow02.prefab",
+          "IsNeedFadeOut": false
+        }
+      ]
+    }
+  ]
+}

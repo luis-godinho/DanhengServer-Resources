@@ -1,0 +1,93 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropSetupTrigger",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+            "FetchType": "SinglePropByPropID",
+            "SinglePropID": {
+              "GroupID": {
+                "FixedValue": {
+                  "Value": 11
+                }
+              },
+              "ID": {
+                "FixedValue": {
+                  "Value": 300002
+                }
+              }
+            }
+          },
+          "TargetTypes": [],
+          "OnTriggerEnter": [
+            {
+              "$type": "RPG.GameCore.ShowFuncBtn",
+              "PuzzleFunc": "TriggerCustomString",
+              "CDDuration": 0,
+              "CustomString": {
+                "Value": "opendecal"
+              }
+            }
+          ],
+          "OnTriggerExit": []
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "opendecal"
+          },
+          "ResetWhenTaskBegin": true
+        },
+        {
+          "$type": "RPG.GameCore.DecalPuzzleStart",
+          "DecalConfigIDs": [
+            5,
+            2
+          ],
+          "Title": {
+            "Hash": 17127442575524422076
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "DecalPuzzle_Finish"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.DecalPuzzleEnd"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "DecalPuzzle_ShotWrong"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.DecalPuzzleEnd"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "Type": "EntityInstance"
+}

@@ -1,0 +1,983 @@
+{
+  "$type": "RPG.GameCore.CharacterConfig",
+  "SomatoType": "MiddleAvatar",
+  "BuffPanelOffset": {
+    "Y": 1.2
+  },
+  "HitBoxWidth": 0.3,
+  "HitBoxHeight": 1.5,
+  "Location": {
+    "Width": 0.8
+  },
+  "SaveModelWhenDead": true,
+  "AnimEventConfigList": [
+    "Config/ConfigAnimEvents/Avatar/Designer/Avatar_Castorice_00_Designer_AnimEvent.json",
+    "Config/ConfigAnimEvents/Avatar/Effect/Avatar_Castorice_00_Effect_AnimEvent.json",
+    "Config/ConfigAnimEvents/Avatar/Audio/Avatar_Castorice_00_Audio_AnimEvent.json",
+    "Config/ConfigAnimEvents/Avatar/Audio/Avatar_Common_ControllerVibration_AnimEvent.json"
+  ],
+  "SkillList": [
+    {
+      "Name": "Skill01",
+      "UseType": "SelectEntity",
+      "TargetInfo": {
+        "TargetType": "EnemySelect"
+      },
+      "UseReadyTransitAnim": true,
+      "ReadyAnimState": "Skill01_Ready",
+      "ReadyAnimWaitTime": 0.3,
+      "CameraConfig": {
+        "NormalConfig": {
+          "CameraState": "SelectDarkTeamEntity",
+          "IsLocalOffset": true,
+          "AnchorOffset": {
+            "X": 0.5,
+            "Y": 0.24,
+            "Z": -0.56
+          },
+          "AimOffset": {
+            "X": -2.8,
+            "Y": 0.45
+          },
+          "FollowRadius": 3,
+          "AnchorToAimAngle": 30,
+          "Dutch": 2
+        },
+        "BlendConfig": {
+          "BlendType": "Cut"
+        }
+      },
+      "CameraConfigAdded": {
+        "NormalConfig": {
+          "CameraState": "SelectDarkTeamEntity",
+          "IsLocalOffset": true,
+          "AnchorOffset": {
+            "X": 0.1,
+            "Y": 0.02,
+            "Z": -0.25
+          },
+          "AimOffset": {
+            "X": -2.8,
+            "Y": 0.45
+          },
+          "FollowRadius": 2.85,
+          "AnchorToAimAngle": 23
+        },
+        "BlendConfig": {
+          "BlendType": "Custom",
+          "CustomCurveName": "BlendCut_00to1",
+          "BlendTime": 1
+        }
+      },
+      "EntryAbility": "Avatar_Castorice_00_Skill01_Phase01",
+      "ComplexSkillAIPreCheck": {
+        "Groups": [
+          {
+            "GroupName": "DefaultNormalSkill_PreCheck"
+          },
+          {
+            "GroupName": "BaseWeight",
+            "Weight": {
+              "Value": 0.3
+            }
+          },
+          {
+            "GroupName": "BasePp_Common_SingleAttack",
+            "Weight": {
+              "Value": 0.4
+            }
+          },
+          {
+            "GroupName": "BasePp_Common_WeakBreak",
+            "Weight": {
+              "Value": 0.3
+            }
+          }
+        ]
+      },
+      "ComplexSkillAI": {
+        "Groups": [
+          {
+            "GroupName": "DefaultNormalSkill"
+          },
+          {
+            "GroupName": "BaseWeight",
+            "Weight": {
+              "Value": 0.3
+            }
+          },
+          {
+            "GroupName": "BasePp_Common_SingleAttack",
+            "Weight": {
+              "Value": 0.4
+            }
+          },
+          {
+            "GroupName": "BasePp_Common_WeakBreak",
+            "Weight": {
+              "Value": 0.3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Name": "Skill02",
+      "SkillType": "Skill",
+      "UseType": "SelectEntity",
+      "TargetInfo": {
+        "TargetType": "EnemySelect",
+        "SubTargetType": "TargetAdjoinEntity"
+      },
+      "UseReadyTransitAnim": true,
+      "ReadyAnimState": "Skill02_Ready_Loop",
+      "ReadyAnimWaitTime": 0.3,
+      "CameraConfig": {
+        "NormalConfig": {
+          "CameraState": "SelectDarkTeamEntity",
+          "IsLocalOffset": true,
+          "AnchorOffset": {
+            "X": -0.02,
+            "Y": -0.12,
+            "Z": 0.13
+          },
+          "AimOffset": {
+            "X": -2.8,
+            "Y": 0.9
+          },
+          "FollowRadius": 2.48,
+          "AnchorToAimAngle": 20,
+          "Dutch": 3
+        },
+        "BlendConfig": {
+          "BlendType": "Custom",
+          "CustomCurveName": "BlendCut_05to1",
+          "BlendTime": 1
+        }
+      },
+      "EntryAbility": "Avatar_Castorice_00_Skill02_Phase01",
+      "ComplexSkillAIPreCheck": {
+        "Groups": [
+          {
+            "GroupName": "DefaultBPSkill_PreCheck"
+          },
+          {
+            "GroupName": "BasePp_Common_SingleAttack",
+            "Weight": {
+              "Value": 0.1
+            }
+          },
+          {
+            "GroupName": "BasePp_Common_WeakBreak",
+            "Weight": {
+              "Value": 0.2
+            }
+          },
+          {
+            "GroupName": "AddpP_Common_SelfNeighbour",
+            "Weight": {
+              "Value": 0.7
+            }
+          }
+        ]
+      },
+      "ComplexSkillAI": {
+        "Groups": [
+          {
+            "GroupName": "DefaultBPSkill"
+          },
+          {
+            "GroupName": "BasePp_Common_SingleAttack",
+            "Weight": {
+              "Value": 0.1
+            }
+          },
+          {
+            "GroupName": "BasePp_Common_WeakBreak",
+            "Weight": {
+              "Value": 0.2
+            }
+          },
+          {
+            "GroupName": "AddpP_Common_SelfNeighbour",
+            "Weight": {
+              "Value": 0.7
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Name": "Skill03",
+      "SkillType": "Ultra",
+      "UseType": "SelectEntity",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "SkillNameHUD": false,
+      "ReadyAnimState": "Skill03_Ready",
+      "EntryAbility": "Avatar_Castorice_00_Skill03_Phase01",
+      "PrepareAbility": "Avatar_Castorice_00_Skill03_EnterReady",
+      "ActionDelayPreshowConfig": {
+        "AddSpeedValue": {
+          "IsDynamic": true,
+          "PostfixExpr": {
+            "OpCodes": "AQAR",
+            "FixedValues": [],
+            "DynamicHashes": [
+              -1228793236
+            ]
+          }
+        }
+      },
+      "ComplexSkillAI": {
+        "SkillBasicPower": {
+          "Value": 100
+        },
+        "Groups": [
+          {
+            "GroupName": "DefaultUltra"
+          },
+          {
+            "GroupName": "Ultra_Common_ImmediateRelease"
+          }
+        ]
+      },
+      "AIUltraSkillPriority": "OnlyBuff"
+    },
+    {
+      "Name": "Skill21",
+      "SkillType": "Skill",
+      "UseType": "SelectEntity",
+      "TargetInfo": {
+        "TargetType": "AllEnemy"
+      },
+      "UseReadyTransitAnim": true,
+      "ReadyAnimState": "Skill21_Ready_Loop",
+      "ReadyAnimWaitTime": 0.3,
+      "CameraConfig": {
+        "NormalConfig": {
+          "CameraState": "SelectDarkTeamEntity",
+          "AttackType": "RangeAttack",
+          "IsLocalOffset": true,
+          "AnchorOffset": {
+            "X": -0.02,
+            "Y": -0.12,
+            "Z": 0.13
+          },
+          "AimOffset": {
+            "X": -2.8,
+            "Y": 0.9
+          },
+          "FollowRadius": 2.48,
+          "AnchorToAimAngle": 20,
+          "Dutch": 3
+        },
+        "BlendConfig": {
+          "BlendType": "Custom",
+          "CustomCurveName": "BlendCut_05to1",
+          "BlendTime": 1
+        }
+      },
+      "EntryAbility": "Avatar_Castorice_00_Skill21_Phase01",
+      "ComplexSkillAIPreCheck": {
+        "Groups": [
+          {
+            "GroupName": "DefaultBPSkill_PreCheck"
+          },
+          {
+            "GroupName": "BasePp_Common_SingleAttack",
+            "Weight": {
+              "Value": 0.1
+            }
+          },
+          {
+            "GroupName": "BasePp_Common_WeakBreak",
+            "Weight": {
+              "Value": 0.2
+            }
+          },
+          {
+            "GroupName": "AddpP_Common_SelfNeighbour",
+            "Weight": {
+              "Value": 0.7
+            }
+          }
+        ]
+      },
+      "ComplexSkillAI": {
+        "Groups": [
+          {
+            "GroupName": "DefaultBPSkill"
+          },
+          {
+            "GroupName": "BasePp_Common_SingleAttack",
+            "Weight": {
+              "Value": 0.1
+            }
+          },
+          {
+            "GroupName": "BasePp_Common_WeakBreak",
+            "Weight": {
+              "Value": 0.2
+            }
+          },
+          {
+            "GroupName": "AddpP_Common_SelfNeighbour",
+            "Weight": {
+              "Value": 0.7
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Name": "SkillP01",
+      "SkillType": "Passive",
+      "UseType": "Passive",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "EntryAbility": "Avatar_Castorice_00_PassiveSkill_1"
+    },
+    {
+      "Name": "SkillMaze",
+      "SkillType": "Maze",
+      "TargetInfo": {
+        "TargetType": "AllEnemy"
+      },
+      "EntryAbility": "Avatar_Castorice_00_SkillMazeInLevel"
+    },
+    {
+      "Name": "PassiveSkill02",
+      "UseType": "Passive",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "EntryAbility": "Avatar_Common_PassiveSkill"
+    },
+    {
+      "Name": "PassiveSkill02",
+      "SkillType": "Passive",
+      "UseType": "Passive",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "EntryAbility": "Summoner_Common_PassiveSkill"
+    }
+  ],
+  "AbilityList": [
+    "Avatar_Common_PassiveSkill",
+    "Summoner_Common_PassiveSkill"
+  ],
+  "SkillAbilityList": [
+    {
+      "Skill": "Skill01",
+      "AbilityList": [
+        "Avatar_Castorice_00_Skill01_Camera",
+        "Avatar_Castorice_00_Skill01_Phase01",
+        "Avatar_Castorice_00_Skill01_Phase02"
+      ]
+    },
+    {
+      "Skill": "Skill02",
+      "AbilityList": [
+        "Avatar_Castorice_00_Skill02_Camera",
+        "Avatar_Castorice_00_Skill02_Phase01",
+        "Avatar_Castorice_00_Skill02_Phase02"
+      ]
+    },
+    {
+      "Skill": "Skill21",
+      "AbilityList": [
+        "Avatar_Castorice_00_Skill21_Camera",
+        "Avatar_Castorice_00_Skill21_Camera02",
+        "Avatar_Castorice_00_Skill21_Phase01",
+        "Avatar_Castorice_00_Skill21_Phase02"
+      ]
+    },
+    {
+      "Skill": "Skill03",
+      "AbilityList": [
+        "Avatar_Castorice_00_Skill03_Camera",
+        "Avatar_Castorice_00_Skill03_Camera02",
+        "Avatar_Castorice_00_Skill03_EnterReady",
+        "Avatar_Castorice_00_Skill03_Phase01",
+        "Avatar_Castorice_00_Skill03_Phase02"
+      ]
+    },
+    {
+      "Skill": "SkillP01",
+      "AbilityList": [
+        "Avatar_Castorice_00_PassiveSkill_1"
+      ]
+    },
+    {
+      "Skill": "SkillMaze",
+      "AbilityList": [
+        "Avatar_Castorice_00_SkillMazeInLevel"
+      ]
+    }
+  ],
+  "DynamicValues": {
+    "Floats": {
+      "-1861328525": {},
+      "778854283": {},
+      "-954128122": {},
+      "-2081989280": {},
+      "-1510251399": {},
+      "807570590": {},
+      "1398323094": {},
+      "-1286632605": {},
+      "-427488850": {},
+      "-1145046975": {},
+      "-1334623816": {},
+      "2108592725": {},
+      "-403523649": {},
+      "-1175712008": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill01"
+        }
+      },
+      "2133001108": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill02"
+        }
+      },
+      "1476844314": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill02",
+          "Index": 1
+        }
+      },
+      "-2087063973": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill02",
+          "Index": 2
+        }
+      },
+      "-1052586619": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill21"
+        }
+      },
+      "-366218697": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill21",
+          "Index": 1
+        }
+      },
+      "1793566328": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill21",
+          "Index": 2
+        }
+      },
+      "-1370918771": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill03"
+        }
+      },
+      "242053466": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill03",
+          "Index": 1
+        }
+      },
+      "-1019369861": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill03",
+          "Index": 2
+        }
+      },
+      "1860629253": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill03",
+          "Index": 3
+        }
+      },
+      "1483210409": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP01"
+        }
+      },
+      "1399499482": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP01",
+          "Index": 1
+        }
+      },
+      "560676287": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP01",
+          "Index": 2
+        }
+      },
+      "770577398": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillP01",
+          "Index": 3
+        }
+      },
+      "-1268301392": {
+        "ReadInfo": {
+          "Type": "SkillTreeParam",
+          "TriggerKey": "PointB1"
+        }
+      },
+      "1943744695": {
+        "ReadInfo": {
+          "Type": "SkillTreeParam",
+          "TriggerKey": "PointB1",
+          "Index": 1
+        }
+      },
+      "86500255": {
+        "ReadInfo": {
+          "Type": "SkillTreeParam",
+          "TriggerKey": "PointB2"
+        }
+      },
+      "860524227": {
+        "ReadInfo": {
+          "Type": "SkillTreeParam",
+          "TriggerKey": "PointB2",
+          "Index": 1
+        }
+      },
+      "975277858": {
+        "ReadInfo": {
+          "Type": "SkillTreeParam",
+          "TriggerKey": "PointB2",
+          "Index": 2
+        }
+      },
+      "348088544": {
+        "ReadInfo": {
+          "Type": "SkillTreeParam",
+          "TriggerKey": "PointB3"
+        }
+      },
+      "-1157561649": {
+        "ReadInfo": {
+          "Type": "SkillTreeParam",
+          "TriggerKey": "PointB3",
+          "Index": 1
+        }
+      },
+      "-873920944": {
+        "ReadInfo": {
+          "Type": "SkillRank",
+          "TriggerKey": "Rank01"
+        }
+      },
+      "867701803": {
+        "ReadInfo": {
+          "Type": "SkillRank",
+          "TriggerKey": "Rank01",
+          "Index": 1
+        }
+      },
+      "-1917418607": {
+        "ReadInfo": {
+          "Type": "SkillRank",
+          "TriggerKey": "Rank01",
+          "Index": 2
+        }
+      },
+      "-1291963496": {
+        "ReadInfo": {
+          "Type": "SkillRank",
+          "TriggerKey": "Rank01",
+          "Index": 3
+        }
+      },
+      "-1227230863": {
+        "ReadInfo": {
+          "Type": "SkillRank",
+          "TriggerKey": "Rank02"
+        }
+      },
+      "-1604531662": {
+        "ReadInfo": {
+          "Type": "SkillRank",
+          "TriggerKey": "Rank02",
+          "Index": 1
+        }
+      },
+      "-90193581": {
+        "ReadInfo": {
+          "Type": "SkillRank",
+          "TriggerKey": "Rank02",
+          "Index": 2
+        }
+      },
+      "1830362926": {
+        "ReadInfo": {
+          "Type": "SkillRank",
+          "TriggerKey": "Rank04"
+        }
+      },
+      "-581053323": {
+        "ReadInfo": {
+          "Type": "SkillRank",
+          "TriggerKey": "Rank06"
+        }
+      },
+      "46509027": {
+        "ReadInfo": {
+          "Type": "SkillRank",
+          "TriggerKey": "Rank06",
+          "Index": 1
+        }
+      },
+      "-751486911": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillMaze"
+        }
+      },
+      "1364644032": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillMaze",
+          "Index": 1
+        }
+      },
+      "1735306759": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "SkillMaze",
+          "Index": 3
+        }
+      },
+      "-931289371": {},
+      "2048826282": {},
+      "-243583340": {},
+      "1156468365": {},
+      "298168687": {},
+      "1712564216": {},
+      "-639670508": {}
+    }
+  },
+  "WeaponType": "WP_Magic",
+  "SkillReadyTransits": [
+    {
+      "From": 1,
+      "To": 2,
+      "AnimStateName": "Skill01toSkill02",
+      "TransitionInTime": 0.05,
+      "ReverseOutroTime": 0.06
+    },
+    {
+      "From": 2,
+      "To": 1,
+      "AnimStateName": "Skill02toSkill01",
+      "TransitionInTime": 0.05,
+      "ReverseOutroTime": 0.06
+    },
+    {
+      "From": 1,
+      "To": 4,
+      "AnimStateName": "Skill01toSkill21",
+      "TransitionInTime": 0.05,
+      "ReverseOutroTime": 0.06
+    },
+    {
+      "From": 4,
+      "To": 1,
+      "AnimStateName": "Skill02toSkill01",
+      "TransitionInTime": 0.05,
+      "ReverseOutroTime": 0.06
+    }
+  ],
+  "DisableAnimEventLayers": [
+    "Riboon Layer"
+  ],
+  "OverrideColliderCameraByName": "Castorice_AvatarServantToSummoner",
+  "EntityColliderConfig": {
+    "EntityColliderCameraConfigList": [
+      {
+        "KeyName": "AvatarServantToSummoner",
+        "OverrideByNameList": [
+          {
+            "Name": "Castorice_AvatarServantToSummoner",
+            "TaskList": [
+              {
+                "$type": "RPG.GameCore.PredicateTaskList",
+                "Predicate": {
+                  "$type": "RPG.GameCore.ByCompareDynamicValue",
+                  "DynamicKey": {
+                    "Value": "DV_DataViewSelectCharacterDie"
+                  },
+                  "CompareType": "Equal",
+                  "CompareValue": {
+                    "FixedValue": {
+                      "Value": 1
+                    }
+                  }
+                },
+                "SuccessTaskList": [
+                  {
+                    "$type": "RPG.GameCore.VCameraConfigChange",
+                    "CameraConfig": {
+                      "NormalConfig": {
+                        "CameraState": "UseSkillPerform",
+                        "AnchorTargetType": {
+                          "$type": "RPG.GameCore.TargetAlias",
+                          "Alias": "BattleDataViewUISelectEnter"
+                        },
+                        "IsLocalOffset": true,
+                        "AnchorOffset": {
+                          "X": -0.56,
+                          "Y": 1.1,
+                          "Z": 0.21
+                        },
+                        "AimTargetType": {
+                          "$type": "RPG.GameCore.TargetAlias",
+                          "Alias": "BattleDataViewUISelectEnter"
+                        },
+                        "AimOffset": {
+                          "X": -0.56,
+                          "Y": 0.5,
+                          "Z": 0.21
+                        },
+                        "FollowPoleAngle": 80,
+                        "FollowRadius": 2.6,
+                        "FollowDamp": 0.01,
+                        "AimDamp": 0.01,
+                        "FOV": 35,
+                        "NeedCutBlending": true,
+                        "ForbidChangeOffset": true
+                      },
+                      "BlendConfig": {
+                        "BlendType": "Custom",
+                        "CustomCurveName": "BlendCut_99to1",
+                        "BlendTime": 1.5
+                      },
+                      "ShowEntityConfig": {
+                        "ShowTargetType": {
+                          "$type": "RPG.GameCore.TargetAlias",
+                          "Alias": "BattleDataViewUISelectEnter"
+                        },
+                        "IsAliveOnly": false
+                      },
+                      "DOFFocusConfig": {
+                        "CocMethodType": "RegionCoc",
+                        "FixedFocusDistance": 6,
+                        "NearTransitionRegion": 10,
+                        "FarTransitionRegion": 0.62
+                      }
+                    }
+                  }
+                ],
+                "FailedTaskList": [
+                  {
+                    "$type": "RPG.GameCore.PredicateTaskList",
+                    "Predicate": {
+                      "$type": "RPG.GameCore.ByIsTargetValid",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetAlias",
+                        "Alias": "BattleDataViewUISelectEnter.GetServant"
+                      }
+                    },
+                    "SuccessTaskList": [
+                      {
+                        "$type": "RPG.GameCore.VCameraConfigChange",
+                        "CameraConfig": {
+                          "NormalConfig": {
+                            "CameraState": "UseSkillPerform",
+                            "AnchorTargetType": {
+                              "$type": "RPG.GameCore.TargetAlias",
+                              "Alias": "BattleDataViewUISelectEnter"
+                            },
+                            "IsLocalOffset": true,
+                            "AnchorOffset": {
+                              "X": -0.56,
+                              "Y": 0.08,
+                              "Z": 0.01
+                            },
+                            "AimTargetType": {
+                              "$type": "RPG.GameCore.TargetAlias",
+                              "Alias": "BattleDataViewUISelectEnter"
+                            },
+                            "AimOffset": {
+                              "X": -0.56,
+                              "Y": 0.08,
+                              "Z": 0.01
+                            },
+                            "FollowPoleAngle": 80,
+                            "FollowRadius": 2,
+                            "FollowDamp": 0.01,
+                            "AimDamp": 0.01,
+                            "FOV": 35,
+                            "NeedCutBlending": true,
+                            "ForbidChangeOffset": true
+                          },
+                          "BlendConfig": {
+                            "BlendType": "Custom",
+                            "CustomCurveName": "BlendCut_99to1",
+                            "BlendTime": 2
+                          },
+                          "ShowEntityConfig": {
+                            "ShowTargetType": {
+                              "$type": "RPG.GameCore.TargetAlias",
+                              "Alias": "BattleDataViewUISelectEnter"
+                            },
+                            "IsAliveOnly": false
+                          },
+                          "DOFFocusConfig": {
+                            "CocMethodType": "RegionCoc",
+                            "FixedFocusDistance": 6,
+                            "NearTransitionRegion": 10,
+                            "FarTransitionRegion": 0.62
+                          }
+                        }
+                      }
+                    ],
+                    "FailedTaskList": [
+                      {
+                        "$type": "RPG.GameCore.VCameraConfigChange",
+                        "CameraConfig": {
+                          "NormalConfig": {
+                            "CameraState": "UseSkillPerform",
+                            "AnchorTargetType": {
+                              "$type": "RPG.GameCore.TargetAlias",
+                              "Alias": "BattleDataViewUISelectEnter"
+                            },
+                            "IsLocalOffset": true,
+                            "AnchorOffset": {
+                              "X": -0.56,
+                              "Y": 0.08,
+                              "Z": 0.01
+                            },
+                            "AimTargetType": {
+                              "$type": "RPG.GameCore.TargetAlias",
+                              "Alias": "BattleDataViewUISelectEnter"
+                            },
+                            "AimOffset": {
+                              "X": -0.56,
+                              "Y": 0.08,
+                              "Z": 0.01
+                            },
+                            "FollowPoleAngle": 80,
+                            "FollowRadius": 2,
+                            "FollowDamp": 0.01,
+                            "AimDamp": 0.01,
+                            "FOV": 35,
+                            "NeedCutBlending": true,
+                            "ForbidChangeOffset": true
+                          },
+                          "BlendConfig": {
+                            "BlendType": "Custom",
+                            "CustomCurveName": "BlendCut_ServantSwitch",
+                            "BlendTime": 2
+                          },
+                          "ShowEntityConfig": {
+                            "ShowTargetType": {
+                              "$type": "RPG.GameCore.TargetAlias",
+                              "Alias": "BattleDataViewUISelectEnter"
+                            },
+                            "IsAliveOnly": false
+                          },
+                          "DOFFocusConfig": {
+                            "CocMethodType": "RegionCoc",
+                            "FixedFocusDistance": 6,
+                            "NearTransitionRegion": 10,
+                            "FarTransitionRegion": 0.62
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "AITagList": {
+    "Floats": {
+      "-2126289379": {},
+      "-447313187": {},
+      "762466": {},
+      "1692650493": {},
+      "-1649595214": {},
+      "-325110748": {},
+      "-1029229138": {}
+    }
+  },
+  "GlobalAIFactorGroups": {
+    "Castorice_00_BpSkillTeamHPCheck": {
+      "Factors": [
+        {
+          "Source": {
+            "$type": "RPG.GameCore.ComplexSkillAIAllTeamMemberCombine",
+            "TeamType": "TeamLight",
+            "Evaluator": {
+              "$type": "RPG.GameCore.ComplexSkillAISourcePropertyCompareRatio",
+              "PropertyTypeA": "CurrentHP",
+              "PropertyTypeB": "MaxHP"
+            },
+            "ListCombineType": "Min"
+          },
+          "Mapper": {
+            "$type": "RPG.GameCore.ComplexSkillAIMapperMultiRange",
+            "Ranges": [
+              {
+                "xmax": {
+                  "Value": 0.35
+                }
+              },
+              {
+                "xmin": {
+                  "Value": 0.35
+                },
+                "ymin": {
+                  "Value": 30
+                },
+                "xmax": {
+                  "Value": 0.5
+                },
+                "ymax": {
+                  "Value": 100
+                }
+              },
+              {
+                "xmin": {
+                  "Value": 0.51
+                },
+                "ymin": {
+                  "Value": 100
+                },
+                "xmax": {
+                  "Value": 1
+                },
+                "ymax": {
+                  "Value": 100
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

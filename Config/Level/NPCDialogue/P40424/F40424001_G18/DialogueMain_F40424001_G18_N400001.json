@@ -1,0 +1,40 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.TriggerPerformance",
+          "ValueSource": {},
+          "PerformanceType": "D",
+          "PerformanceID": 104030610,
+          "MaskConfig": {
+            "UseExcelData": false
+          }
+        },
+        {
+          "$type": "RPG.GameCore.PerformanceEndSeq",
+          "BeforeCases": [
+            {
+              "$type": "RPG.GameCore.SwitchCharacterAnchorV2",
+              "SwitchCharacterAnchorConfig": {
+                "IsLocalPlayer": true,
+                "CharacterUniqueName": "LocalPlayer",
+                "AreaName": {
+                  "Value": "LevelArea_P40424_F40424001_G18"
+                },
+                "AnchorName": {
+                  "Value": "Anchor1"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.ClientFinishMission",
+          "SubmissionID": 104031609
+        }
+      ]
+    }
+  ]
+}

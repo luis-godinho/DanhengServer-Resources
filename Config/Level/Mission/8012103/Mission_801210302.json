@@ -5,50 +5,39 @@
       "TaskList": [
         {
           "$type": "RPG.GameCore.WaitUIControllerClose",
-          "UIControllerName": "TreasureDungeonResultDialog",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "UIControllerName": "TreasureDungeonResultDialog"
         },
         {
           "$type": "RPG.GameCore.ClosePage",
           "PageNames": [
             "TreasureDungeonEntrancePage"
           ],
-          "PageRootNames": [],
-          "IsSilentExit": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PageRootNames": []
         },
         {
           "$type": "RPG.GameCore.WaitSecond",
           "WaitTime": {
-            "fixedValue": {
-              "RawValue": 2147483650
+            "FixedValue": {
+              "Value": 0.5
             }
           },
-          "MaxAdvencePerTick": -1.0,
-          "IsClientOnly": true
+          "TaskEnabled": false
         },
         {
           "$type": "RPG.GameCore.TriggerPerformance",
           "ValueSource": {},
           "PerformanceType": "E",
-          "PerformanceID": 801210302,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 801210302
         },
         {
           "$type": "RPG.GameCore.TriggerCustomString",
           "CustomString": {
             "Value": "OpenUI_TreasureDungeon_Mission"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_801210302",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_801210302"
         }
       ]
     }

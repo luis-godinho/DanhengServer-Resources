@@ -1,56 +1,20 @@
 {
   "GroupConfigName": "Field",
   "ConfigEntityPath": "Config/ConfigEntity/SummonUnit/SummonUnit_Common_TeamField_Entity.json",
-  "TickLodTemplateName": "DefaultStaticEntity",
   "ResidentEffects": [
     {
-      "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Jiaoqiu_00/Eff_Avatar_Jiaoqiu_00_MazeSkill01.prefab",
-      "Scale": {
-        "x": -1.0,
-        "y": -1.0,
-        "z": -1.0,
-        "normalized": {
-          "x": -0.577350259,
-          "y": -0.577350259,
-          "z": -0.577350259,
-          "normalized": {
-            "x": -0.5773503,
-            "y": -0.5773503,
-            "z": -0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
-      "IsNeedFadeIn": true,
-      "ParamEntityUsage": "LookAt",
-      "TowardMaxPitchAngle": 90.0,
-      "MaxMutexCount": 1,
-      "TaskEnabled": true,
-      "IsClientOnly": true
+      "$type": "RPG.GameCore.TriggerEffect",
+      "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Jiaoqiu_00/Eff_Avatar_Jiaoqiu_00_MazeSkill01.prefab"
     }
   ],
-  "ShoesType": "boot",
-  "Duration": {
-    "fixedValue": {
-      "RawValue": -4294967296
-    }
-  },
   "OnCreate": [
     {
       "$type": "RPG.GameCore.WaitSecond",
       "WaitTime": {
-        "fixedValue": {
-          "RawValue": 2430951490
+        "FixedValue": {
+          "Value": 0.566
         }
-      },
-      "MaxAdvencePerTick": -1.0,
-      "TaskEnabled": true,
-      "IsClientOnly": true
+      }
     },
     {
       "$type": "RPG.GameCore.SetSummonUnitTriggerEnable",
@@ -62,27 +26,24 @@
         "AddDebuffOnEnemyTrigger",
         "HitPropTrigger"
       ],
-      "Enable": true,
-      "TaskEnabled": true,
-      "IsClientOnly": true
+      "Enable": true
     }
   ],
   "TriggerConfig": {
     "CustomTriggers": [
       {
         "TriggerName": "AddDebuffOnEnemyTrigger",
+        "DefaultEnable": false,
         "Radius": {
-          "fixedValue": {
-            "RawValue": 25769803776
+          "FixedValue": {
+            "Value": 6
           }
         },
         "UseVerticalBound": true,
         "NeedRaycast": true,
-        "RayStartOffsetY": 1.0,
         "TargetTypes": [
           "NPCMonster"
         ],
-        "OnlyCheckFilterOnEnter": true,
         "ColliderRelativePath": "Trigger",
         "OnTriggerEnter": [
           {
@@ -91,9 +52,7 @@
               "$type": "RPG.GameCore.TargetAlias",
               "Alias": "TaskActionTarget"
             },
-            "ID": 121801,
-            "TaskEnabled": true,
-            "IsClientOnly": true
+            "ID": 121801
           }
         ],
         "OnTriggerExit": [
@@ -103,23 +62,20 @@
               "$type": "RPG.GameCore.TargetAlias",
               "Alias": "TaskActionTarget"
             },
-            "ID": 121801,
-            "TaskEnabled": true,
-            "IsClientOnly": true
+            "ID": 121801
           }
-        ],
-        "SkipFakeAvatar": true
+        ]
       },
       {
         "TriggerName": "HitPropTrigger",
+        "DefaultEnable": false,
         "Radius": {
-          "fixedValue": {
-            "RawValue": 25769803776
+          "FixedValue": {
+            "Value": 6
           }
         },
         "UseVerticalBound": true,
         "NeedRaycast": true,
-        "RayStartOffsetY": 1.0,
         "TargetTypes": [
           "Prop"
         ],
@@ -131,11 +87,8 @@
           },
           "Types": [
             "PROP_DESTRUCT"
-          ],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         },
-        "OnlyCheckFilterOnEnter": true,
         "OnTriggerEnter": [
           {
             "$type": "RPG.GameCore.TriggerHitProp",
@@ -143,9 +96,7 @@
               "$type": "RPG.GameCore.TargetAlias",
               "Alias": "TaskActionTarget"
             },
-            "ClientMode": "PreShow",
-            "TaskEnabled": true,
-            "IsClientOnly": true
+            "ClientMode": "PreShow"
           }
         ],
         "OnTriggerExit": [],
@@ -155,12 +106,9 @@
             "TargetType": {
               "$type": "RPG.GameCore.TargetAlias",
               "Alias": "TaskActionTarget"
-            },
-            "TaskEnabled": true,
-            "IsClientOnly": true
+            }
           }
-        ],
-        "SkipFakeAvatar": true
+        ]
       }
     ]
   }

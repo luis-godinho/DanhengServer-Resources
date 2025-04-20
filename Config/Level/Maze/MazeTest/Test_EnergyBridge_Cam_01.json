@@ -1,0 +1,60 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropSetupTrigger",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          },
+          "TargetGroupID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "TargetID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "TargetTypes": [],
+          "ColliderRelativePath": "CustomTrigger_02",
+          "DisableAfterTriggered": true,
+          "OnTriggerEnter": [
+            {
+              "$type": "RPG.GameCore.ActiveVirtualCamera",
+              "AreaName": "Test_N301_LevelArea",
+              "AnchorName": "LookToBridge_Cam_01",
+              "BlendConfig": {
+                "ExportToJson": true,
+                "BlendType": "Cut"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.WaitSecond",
+              "WaitTime": {
+                "FixedValue": {
+                  "Value": 4
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.ActiveVirtualCamera",
+              "AreaName": "Test_N301_LevelArea",
+              "AnchorName": "LookToBridge_Cam_01",
+              "IsActive": false,
+              "BlendConfig": {
+                "ExportToJson": true,
+                "BlendType": "Cut"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "ValueSource": {
+    "Values": []
+  }
+}

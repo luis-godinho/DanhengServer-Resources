@@ -1,0 +1,50 @@
+{
+  "OnInitSequece": [
+    {
+      "TaskList": []
+    }
+  ],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "Talk_801515737"
+          },
+          "GoNextImmediately": true
+        },
+        {
+          "$type": "RPG.GameCore.PropReqInteract",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+            "FetchType": "SinglePropByPropID",
+            "SinglePropID": {
+              "GroupID": {
+                "FixedValue": {
+                  "Value": 11
+                }
+              },
+              "ID": {
+                "FixedValue": {
+                  "Value": 300001
+                }
+              }
+            },
+            "PropIDInOwnerGroup": {
+              "FixedValue": {
+                "Value": 300001
+              }
+            }
+          },
+          "InteractID": {
+            "FixedValue": {
+              "Value": 1010
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "Type": "Group"
+}

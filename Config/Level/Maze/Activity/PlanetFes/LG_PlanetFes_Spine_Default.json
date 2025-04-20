@@ -1,0 +1,1564 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.ByCompareGraphDynamicFloat",
+          "Name": "PlanetFesEnableIdleShow",
+          "Value": {
+            "FixedValue": {
+              "Value": 1
+            }
+          },
+          "CompareType": "Equal"
+        },
+        {
+          "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+          "Name": "PlanetFesAnimState",
+          "Value": {
+            "Value": "None"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.SelectorConfig",
+          "TaskList": [
+            {
+              "$type": "RPG.GameCore.SequenceConfig",
+              "TaskList": [
+                {
+                  "$type": "RPG.GameCore.ByCompareGraphDynamicFloat",
+                  "Name": "PlanetFesInIdleWalk",
+                  "Value": {
+                    "FixedValue": {
+                      "Value": 0
+                    }
+                  },
+                  "CompareType": "Equal"
+                },
+                {
+                  "$type": "RPG.GameCore.SelectorConfig",
+                  "TaskList": [
+                    {
+                      "$type": "RPG.GameCore.SequenceConfig",
+                      "TaskList": [
+                        {
+                          "$type": "RPG.GameCore.ByRandomChanceClientOnly",
+                          "Chance": {
+                            "FixedValue": {
+                              "Value": 0.9
+                            }
+                          },
+                          "LogComment": "0.1概率进入走路"
+                        },
+                        {
+                          "$type": "RPG.GameCore.SetGraphDynamicString",
+                          "Name": "PlanetFesAnimState",
+                          "TargetIDs": [],
+                          "Value": {
+                            "Value": "OnIdle"
+                          }
+                        },
+                        {
+                          "$type": "RPG.GameCore.WaitSecond",
+                          "WaitTime": {
+                            "FixedValue": {
+                              "Value": 3
+                            }
+                          }
+                        },
+                        {
+                          "$type": "RPG.GameCore.SelectorConfig",
+                          "TaskList": [
+                            {
+                              "$type": "RPG.GameCore.SequenceConfig",
+                              "TaskList": [
+                                {
+                                  "$type": "RPG.GameCore.ByRandomChanceClientOnly",
+                                  "Chance": {
+                                    "FixedValue": {
+                                      "Value": 0.5
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 3
+                                    }
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "$type": "RPG.GameCore.SequenceConfig",
+                              "TaskList": [
+                                {
+                                  "$type": "RPG.GameCore.ByRandomChanceClientOnly",
+                                  "Chance": {
+                                    "FixedValue": {
+                                      "Value": 0.6
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 4
+                                    }
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "$type": "RPG.GameCore.SequenceConfig",
+                              "TaskList": [
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 5
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                      "Name": "PlanetFesInIdleWalk",
+                      "TargetIDs": [],
+                      "Value": {
+                        "FixedValue": {
+                          "Value": 1
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.SequenceConfig",
+              "TaskList": [
+                {
+                  "$type": "RPG.GameCore.SelectorConfig",
+                  "TaskList": [
+                    {
+                      "$type": "RPG.GameCore.SequenceConfig",
+                      "TaskList": [
+                        {
+                          "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                          "Name": "PlanetFesAnimState",
+                          "Value": {
+                            "Value": "None"
+                          }
+                        },
+                        {
+                          "$type": "RPG.GameCore.ByCompareGraphDynamicFloat",
+                          "Name": "PlanetFesInIdleWalk",
+                          "Value": {
+                            "FixedValue": {
+                              "Value": 1
+                            }
+                          },
+                          "CompareType": "Equal"
+                        },
+                        {
+                          "$type": "RPG.GameCore.SelectorConfig",
+                          "TaskList": [
+                            {
+                              "$type": "RPG.GameCore.SequenceConfig",
+                              "TaskList": [
+                                {
+                                  "$type": "RPG.GameCore.ByRandomChanceClientOnly",
+                                  "Chance": {
+                                    "FixedValue": {
+                                      "Value": 0.3
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarStopMove"
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 0.5
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                                  "Name": "PlanetFesAnimState",
+                                  "Value": {
+                                    "Value": "None"
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarMoveTo",
+                                  "Position": 1,
+                                  "Duration": 3
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 2
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarStopMove"
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 3
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                                  "Name": "PlanetFesAnimState",
+                                  "Value": {
+                                    "Value": "None"
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarMoveTo",
+                                  "Position": -1,
+                                  "Duration": 6
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 4
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarStopMove"
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 2.8
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarMoveTo",
+                                  "Duration": 3
+                                },
+                                {
+                                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                                  "Name": "PlanetFesAnimState",
+                                  "Value": {
+                                    "Value": "None"
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 2
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                                  "Name": "PlanetFesAnimState",
+                                  "Value": {
+                                    "Value": "None"
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesPlaySpinAnim",
+                                  "AnimName": "Move_Sit_Idle"
+                                },
+                                {
+                                  "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                                  "Name": "PlanetFesInIdleWalk",
+                                  "TargetIDs": [],
+                                  "Value": {
+                                    "FixedValue": {
+                                      "Value": 0
+                                    }
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "$type": "RPG.GameCore.SequenceConfig",
+                              "TaskList": [
+                                {
+                                  "$type": "RPG.GameCore.ByRandomChanceClientOnly",
+                                  "Chance": {
+                                    "FixedValue": {
+                                      "Value": 0.3
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarStopMove"
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 0.5
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                                  "Name": "PlanetFesAnimState",
+                                  "Value": {
+                                    "Value": "None"
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarMoveTo",
+                                  "Position": -1,
+                                  "Duration": 3
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 2
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarStopMove"
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 2.6
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                                  "Name": "PlanetFesAnimState",
+                                  "Value": {
+                                    "Value": "None"
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarMoveTo",
+                                  "Position": 1,
+                                  "Duration": 6
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 4
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarStopMove"
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 3.2
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarMoveTo",
+                                  "Duration": 3
+                                },
+                                {
+                                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                                  "Name": "PlanetFesAnimState",
+                                  "Value": {
+                                    "Value": "None"
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 2
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                                  "Name": "PlanetFesAnimState",
+                                  "Value": {
+                                    "Value": "None"
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesPlaySpinAnim",
+                                  "AnimName": "Move_Sit_Idle"
+                                },
+                                {
+                                  "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                                  "Name": "PlanetFesInIdleWalk",
+                                  "TargetIDs": [],
+                                  "Value": {
+                                    "FixedValue": {
+                                      "Value": 0
+                                    }
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "$type": "RPG.GameCore.SequenceConfig",
+                              "TaskList": [
+                                {
+                                  "$type": "RPG.GameCore.ByRandomChanceClientOnly",
+                                  "Chance": {
+                                    "FixedValue": {
+                                      "Value": 0.3
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarStopMove"
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 0.5
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                                  "Name": "PlanetFesAnimState",
+                                  "Value": {
+                                    "Value": "None"
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarMoveTo",
+                                  "Position": 1,
+                                  "Duration": 2
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 2
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarStopMove"
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 2
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                                  "Name": "PlanetFesAnimState",
+                                  "Value": {
+                                    "Value": "None"
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarMoveTo",
+                                  "Position": -1,
+                                  "Duration": 4
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 4
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarStopMove"
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 2.2
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarMoveTo",
+                                  "Duration": 2
+                                },
+                                {
+                                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                                  "Name": "PlanetFesAnimState",
+                                  "Value": {
+                                    "Value": "None"
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 2
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarStopMove"
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 4
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarMoveTo",
+                                  "Position": -1,
+                                  "Duration": 2
+                                },
+                                {
+                                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                                  "Name": "PlanetFesAnimState",
+                                  "Value": {
+                                    "Value": "None"
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 2
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarStopMove"
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 2.5
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarMoveTo",
+                                  "Duration": 2
+                                },
+                                {
+                                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                                  "Name": "PlanetFesAnimState",
+                                  "Value": {
+                                    "Value": "None"
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 2
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                                  "Name": "PlanetFesAnimState",
+                                  "Value": {
+                                    "Value": "None"
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesPlaySpinAnim",
+                                  "AnimName": "Move_Sit_Idle"
+                                },
+                                {
+                                  "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                                  "Name": "PlanetFesInIdleWalk",
+                                  "TargetIDs": [],
+                                  "Value": {
+                                    "FixedValue": {
+                                      "Value": 0
+                                    }
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "$type": "RPG.GameCore.SequenceConfig",
+                              "TaskList": [
+                                {
+                                  "$type": "RPG.GameCore.ByRandomChanceClientOnly",
+                                  "Chance": {
+                                    "FixedValue": {
+                                      "Value": 0.5
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarStopMove"
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 0.5
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                                  "Name": "PlanetFesAnimState",
+                                  "Value": {
+                                    "Value": "None"
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarMoveTo",
+                                  "Position": -1,
+                                  "Duration": 2
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 2
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarStopMove"
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 3.8
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                                  "Name": "PlanetFesAnimState",
+                                  "Value": {
+                                    "Value": "None"
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarMoveTo",
+                                  "Position": 1,
+                                  "Duration": 4
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 4
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarStopMove"
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 4
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarMoveTo",
+                                  "Position": -1,
+                                  "Duration": 4
+                                },
+                                {
+                                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                                  "Name": "PlanetFesAnimState",
+                                  "Value": {
+                                    "Value": "None"
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 2
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarStopMove"
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 3
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarMoveTo",
+                                  "Duration": 2
+                                },
+                                {
+                                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                                  "Name": "PlanetFesAnimState",
+                                  "Value": {
+                                    "Value": "None"
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 2
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarStopMove"
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 2
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarMoveTo",
+                                  "Position": 1,
+                                  "Duration": 2
+                                },
+                                {
+                                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                                  "Name": "PlanetFesAnimState",
+                                  "Value": {
+                                    "Value": "None"
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 2
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarStopMove"
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 2.1
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarMoveTo",
+                                  "Position": -1,
+                                  "Duration": 4
+                                },
+                                {
+                                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                                  "Name": "PlanetFesAnimState",
+                                  "Value": {
+                                    "Value": "None"
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 2
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarStopMove"
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 0.5
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarMoveTo",
+                                  "Duration": 2
+                                },
+                                {
+                                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                                  "Name": "PlanetFesAnimState",
+                                  "Value": {
+                                    "Value": "None"
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 2
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                                  "Name": "PlanetFesAnimState",
+                                  "Value": {
+                                    "Value": "None"
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesPlaySpinAnim",
+                                  "AnimName": "Move_Sit_Idle"
+                                },
+                                {
+                                  "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                                  "Name": "PlanetFesInIdleWalk",
+                                  "TargetIDs": [],
+                                  "Value": {
+                                    "FixedValue": {
+                                      "Value": 0
+                                    }
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "$type": "RPG.GameCore.SequenceConfig",
+                              "TaskList": [
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarStopMove"
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 0.5
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                                  "Name": "PlanetFesAnimState",
+                                  "Value": {
+                                    "Value": "None"
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarMoveTo",
+                                  "Position": 1,
+                                  "Duration": 3
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 2
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarStopMove"
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 1.9
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                                  "Name": "PlanetFesAnimState",
+                                  "Value": {
+                                    "Value": "None"
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarMoveTo",
+                                  "Duration": 3
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 4
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarStopMove"
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 3.5
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarMoveTo",
+                                  "Position": 1,
+                                  "Duration": 3
+                                },
+                                {
+                                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                                  "Name": "PlanetFesAnimState",
+                                  "Value": {
+                                    "Value": "None"
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 2
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarStopMove"
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 3
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarMoveTo",
+                                  "Position": -1,
+                                  "Duration": 5
+                                },
+                                {
+                                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                                  "Name": "PlanetFesAnimState",
+                                  "Value": {
+                                    "Value": "None"
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 2
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarStopMove"
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 4.1
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesAvatarMoveTo",
+                                  "Duration": 2
+                                },
+                                {
+                                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                                  "Name": "PlanetFesAnimState",
+                                  "Value": {
+                                    "Value": "None"
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.GameCore.WaitSecond",
+                                  "WaitTime": {
+                                    "FixedValue": {
+                                      "Value": 2
+                                    }
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                                  "Name": "PlanetFesAnimState",
+                                  "Value": {
+                                    "Value": "None"
+                                  }
+                                },
+                                {
+                                  "$type": "RPG.Client.PlanetFesPlaySpinAnim",
+                                  "AnimName": "Move_Sit_Idle"
+                                },
+                                {
+                                  "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                                  "Name": "PlanetFesInIdleWalk",
+                                  "TargetIDs": [],
+                                  "Value": {
+                                    "FixedValue": {
+                                      "Value": 0
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "$type": "RPG.GameCore.SequenceConfig",
+                      "TaskList": [
+                        {
+                          "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                          "Name": "PlanetFesInIdleWalk",
+                          "TargetIDs": [],
+                          "Value": {
+                            "FixedValue": {
+                              "Value": 0
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.SelectorConfig",
+          "TaskList": [
+            {
+              "$type": "RPG.GameCore.SequenceConfig",
+              "TaskList": [
+                {
+                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                  "Name": "PlanetFesAnimState",
+                  "Value": {
+                    "Value": "OnLevelUp"
+                  }
+                },
+                {
+                  "$type": "RPG.Client.PlanetFesPlaySpinAnim",
+                  "AnimType": "OnLevelUp"
+                },
+                {
+                  "$type": "RPG.GameCore.WaitSecond",
+                  "WaitTime": {
+                    "FixedValue": {
+                      "Value": 3
+                    }
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                  "Name": "PlanetFesAnimState",
+                  "Value": {
+                    "Value": "OnLevelUp"
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.SetGraphDynamicString",
+                  "Name": "PlanetFesAnimState",
+                  "TargetIDs": [],
+                  "Value": {
+                    "Value": "None"
+                  }
+                }
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.SequenceConfig",
+              "TaskList": [
+                {
+                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                  "Name": "PlanetFesAnimState",
+                  "Value": {
+                    "Value": "OnStarUp"
+                  }
+                },
+                {
+                  "$type": "RPG.Client.PlanetFesPlaySpinAnim",
+                  "AnimType": "OnLevelUp"
+                },
+                {
+                  "$type": "RPG.GameCore.WaitSecond",
+                  "WaitTime": {
+                    "FixedValue": {
+                      "Value": 2
+                    }
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                  "Name": "PlanetFesAnimState",
+                  "Value": {
+                    "Value": "OnStarUp"
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.SetGraphDynamicString",
+                  "Name": "PlanetFesAnimState",
+                  "TargetIDs": [],
+                  "Value": {
+                    "Value": "None"
+                  }
+                }
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.SequenceConfig",
+              "TaskList": [
+                {
+                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                  "Name": "PlanetFesAnimState",
+                  "Value": {
+                    "Value": "OnGotDeliver"
+                  }
+                },
+                {
+                  "$type": "RPG.Client.PlanetFesPlaySpinAnim",
+                  "AnimType": "OnGotDeliver"
+                },
+                {
+                  "$type": "RPG.GameCore.WaitSecond",
+                  "WaitTime": {
+                    "FixedValue": {
+                      "Value": 2
+                    }
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                  "Name": "PlanetFesAnimState",
+                  "Value": {
+                    "Value": "OnGotDeliver"
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.SetGraphDynamicString",
+                  "Name": "PlanetFesAnimState",
+                  "TargetIDs": [],
+                  "Value": {
+                    "Value": "None"
+                  }
+                }
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.SequenceConfig",
+              "TaskList": [
+                {
+                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                  "Name": "PlanetFesAnimState",
+                  "Value": {
+                    "Value": "OnAvatarEvent"
+                  }
+                },
+                {
+                  "$type": "RPG.Client.PlanetFesPlaySpinAnim",
+                  "AnimType": "OnAvatarEvent"
+                },
+                {
+                  "$type": "RPG.GameCore.WaitSecond",
+                  "WaitTime": {
+                    "FixedValue": {
+                      "Value": 2
+                    }
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                  "Name": "PlanetFesAnimState",
+                  "Value": {
+                    "Value": "OnAvatarEvent"
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.SetGraphDynamicString",
+                  "Name": "PlanetFesAnimState",
+                  "TargetIDs": [],
+                  "Value": {
+                    "Value": "None"
+                  }
+                }
+              ],
+              "TaskEnabled": false
+            },
+            {
+              "$type": "RPG.GameCore.SequenceConfig",
+              "TaskList": [
+                {
+                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                  "Name": "PlanetFesAnimState",
+                  "Value": {
+                    "Value": "OnStartWork"
+                  }
+                },
+                {
+                  "$type": "RPG.Client.PlanetFesPlaySpinAnim",
+                  "AnimType": "OnStartWork"
+                },
+                {
+                  "$type": "RPG.GameCore.WaitSecond",
+                  "WaitTime": {
+                    "FixedValue": {
+                      "Value": 2
+                    }
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                  "Name": "PlanetFesAnimState",
+                  "Value": {
+                    "Value": "OnStartWork"
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.SetGraphDynamicString",
+                  "Name": "PlanetFesAnimState",
+                  "TargetIDs": [],
+                  "Value": {
+                    "Value": "None"
+                  }
+                }
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.SequenceConfig",
+              "TaskList": [
+                {
+                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                  "Name": "PlanetFesAnimState",
+                  "Value": {
+                    "Value": "OnGenBuff"
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.WaitSecond",
+                  "WaitTime": {
+                    "FixedValue": {
+                      "Value": 1.3
+                    }
+                  }
+                },
+                {
+                  "$type": "RPG.Client.PlanetFesPlaySpinAnim",
+                  "AnimType": "OnGenBuff"
+                },
+                {
+                  "$type": "RPG.GameCore.WaitSecond",
+                  "WaitTime": {
+                    "FixedValue": {
+                      "Value": 2
+                    }
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                  "Name": "PlanetFesAnimState",
+                  "Value": {
+                    "Value": "OnGenBuff"
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.SetGraphDynamicString",
+                  "Name": "PlanetFesAnimState",
+                  "TargetIDs": [],
+                  "Value": {
+                    "Value": "None"
+                  }
+                }
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.SequenceConfig",
+              "TaskList": [
+                {
+                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                  "Name": "PlanetFesAnimState",
+                  "Value": {
+                    "Value": "OnSingleClick"
+                  }
+                },
+                {
+                  "$type": "RPG.Client.PlanetFesPlaySpinAnim",
+                  "AnimType": "OnSingleClick"
+                },
+                {
+                  "$type": "RPG.GameCore.WaitSecond",
+                  "WaitTime": {
+                    "FixedValue": {
+                      "Value": 4
+                    }
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                  "Name": "PlanetFesAnimState",
+                  "Value": {
+                    "Value": "OnSingleClick"
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.SetGraphDynamicString",
+                  "Name": "PlanetFesAnimState",
+                  "TargetIDs": [],
+                  "Value": {
+                    "Value": "None"
+                  }
+                }
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.SequenceConfig",
+              "TaskList": [
+                {
+                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                  "Name": "PlanetFesAnimState",
+                  "Value": {
+                    "Value": "OnMultiClick"
+                  }
+                },
+                {
+                  "$type": "RPG.Client.PlanetFesPlaySpinAnim",
+                  "AnimType": "OnMultiClick"
+                },
+                {
+                  "$type": "RPG.GameCore.WaitSecond",
+                  "WaitTime": {
+                    "FixedValue": {
+                      "Value": 4
+                    }
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                  "Name": "PlanetFesAnimState",
+                  "Value": {
+                    "Value": "OnMultiClick"
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.SetGraphDynamicString",
+                  "Name": "PlanetFesAnimState",
+                  "TargetIDs": [],
+                  "Value": {
+                    "Value": "None"
+                  }
+                }
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.SequenceConfig",
+              "TaskList": [
+                {
+                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                  "Name": "PlanetFesAnimState",
+                  "Value": {
+                    "Value": "OnNewAvatar"
+                  }
+                },
+                {
+                  "$type": "RPG.Client.PlanetFesPlaySpinAnim",
+                  "AnimType": "OnNewAvatar"
+                },
+                {
+                  "$type": "RPG.GameCore.WaitSecond",
+                  "WaitTime": {
+                    "FixedValue": {
+                      "Value": 2
+                    }
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                  "Name": "PlanetFesAnimState",
+                  "Value": {
+                    "Value": "OnNewAvatar"
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.SetGraphDynamicString",
+                  "Name": "PlanetFesAnimState",
+                  "TargetIDs": [],
+                  "Value": {
+                    "Value": "None"
+                  }
+                }
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.SequenceConfig",
+              "TaskList": [
+                {
+                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                  "Name": "PlanetFesAnimState",
+                  "Value": {
+                    "Value": "OnEnterManage"
+                  }
+                },
+                {
+                  "$type": "RPG.Client.PlanetFesAvatarStopMove",
+                  "ResetPosition": true
+                },
+                {
+                  "$type": "RPG.Client.PlanetFesClearSpinAnim"
+                },
+                {
+                  "$type": "RPG.Client.PlanetFesPlaySpinAnim",
+                  "AnimName": "Move_Sit_Idle"
+                },
+                {
+                  "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                  "Name": "PlanetFesEnableIdleShow",
+                  "TargetIDs": [],
+                  "Value": {
+                    "FixedValue": {
+                      "Value": 0
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.SequenceConfig",
+              "TaskList": [
+                {
+                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                  "Name": "PlanetFesAnimState",
+                  "Value": {
+                    "Value": "OnExitManage"
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.SetGraphDynamicString",
+                  "Name": "PlanetFesAnimState",
+                  "TargetIDs": [],
+                  "Value": {
+                    "Value": "None"
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                  "Name": "PlanetFesEnableIdleShow",
+                  "TargetIDs": [],
+                  "Value": {
+                    "FixedValue": {
+                      "Value": 1
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.SequenceConfig",
+              "TaskList": [
+                {
+                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                  "Name": "PlanetFesAnimState",
+                  "Value": {
+                    "Value": "OnIdle"
+                  }
+                },
+                {
+                  "$type": "RPG.Client.PlanetFesAvatarStopMove"
+                },
+                {
+                  "$type": "RPG.Client.PlanetFesPlaySpinAnim",
+                  "AnimType": "OnIdle"
+                },
+                {
+                  "$type": "RPG.GameCore.WaitSecond",
+                  "WaitTime": {
+                    "FixedValue": {
+                      "Value": 3
+                    }
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.ByCompareGraphDynamicString",
+                  "Name": "PlanetFesAnimState",
+                  "Value": {
+                    "Value": "OnIdle"
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.SetGraphDynamicString",
+                  "Name": "PlanetFesAnimState",
+                  "TargetIDs": [],
+                  "Value": {
+                    "Value": "None"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "ValueSource": {
+    "Values": [
+      {
+        "$type": "RPG.GameCore.SharedInt",
+        "Key": "PlanetFesEnableIdleShow"
+      },
+      {
+        "$type": "RPG.GameCore.SharedString",
+        "Value": "None",
+        "Key": "PlanetFesAnimState"
+      },
+      {
+        "$type": "RPG.GameCore.SharedFloat",
+        "Key": "PlanetFesInIdleWalk"
+      }
+    ]
+  },
+  "EntityEventList": []
+}

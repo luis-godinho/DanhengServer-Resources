@@ -1,0 +1,71 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "G17_Fadeout"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.SetTargetEntityFadeWithAnim",
+          "TargetType": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "Targets": [
+              400001
+            ]
+          },
+          "Duration": 1.5
+        },
+        {
+          "$type": "RPG.GameCore.TriggerEffect",
+          "TargetType": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "Targets": [
+              400001
+            ]
+          },
+          "Flags": [],
+          "EffectPath": "Effects/Eff_Prefab/Eff_NPC/Normal/Common/Eff_Normal_Common_BeHug01AS.prefab",
+          "SubObjectModifyDataList": []
+        },
+        {
+          "$type": "RPG.GameCore.TriggerSound",
+          "SoundName": {
+            "Value": "Ev_sfx_storyd_300dev_Missionfailed"
+          },
+          "EmitterType": "NPC",
+          "GroupID": 17,
+          "ID": 400001
+        },
+        {
+          "$type": "RPG.GameCore.SetTargetEntityFadeWithAnim",
+          "TargetType": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "Targets": [
+              400002
+            ]
+          },
+          "TargetValue": 1,
+          "Duration": 1.5
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.SetTargetEntityFadeWithAnim",
+          "TargetType": {
+            "$type": "RPG.GameCore.GroupFetchLocalTarget",
+            "Targets": [
+              400002
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "Type": "Group"
+}

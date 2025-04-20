@@ -7,37 +7,31 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Talk_412210108"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.PropEnableCollider",
           "OPType": "TriggerOnly",
-          "TriggerSelect": "AllDynamic",
           "TargetType": {
             "$type": "RPG.GameCore.TargetFetchAdvPropEx",
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 47244640256
+                "FixedValue": {
+                  "Value": 11
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288494483767296
+                "FixedValue": {
+                  "Value": 300001
                 }
               }
             }
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_412210108",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_412210108"
         }
       ]
     },
@@ -48,8 +42,7 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "OnEnter"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.SetMissionWayPoint",
@@ -58,9 +51,7 @@
           "OverideWayPointGroupID": true,
           "OverideWayPointEntityID": true,
           "OverideWayPointShowRangeMin": true,
-          "OverideMapWaypointRange": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "OverideMapWaypointRange": true
         }
       ]
     },
@@ -71,14 +62,11 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "OnClose_X101_01"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.ResetMissionWayPoint",
-          "SubMissionID": 412210108,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "SubMissionID": 412210108
         }
       ]
     },
@@ -89,14 +77,11 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "OnClose_X101_02"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.ResetMissionWayPoint",
-          "SubMissionID": 412210108,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "SubMissionID": 412210108
         }
       ]
     },
@@ -105,9 +90,7 @@
         {
           "$type": "RPG.GameCore.PredicateTaskList",
           "Predicate": {
-            "$type": "RPG.GameCore.ByLocalPlayerIsFakeAvatar",
-            "TaskEnabled": true,
-            "IsClientOnly": true
+            "$type": "RPG.GameCore.ByLocalPlayerIsFakeAvatar"
           },
           "SuccessTaskList": [
             {
@@ -117,12 +100,9 @@
               "OverideWayPointGroupID": true,
               "OverideWayPointEntityID": true,
               "OverideWayPointShowRangeMin": true,
-              "OverideMapWaypointRange": true,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "OverideMapWaypointRange": true
             }
-          ],
-          "TaskEnabled": true
+          ]
         }
       ]
     }

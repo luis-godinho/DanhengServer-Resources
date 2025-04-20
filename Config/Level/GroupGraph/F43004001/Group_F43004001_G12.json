@@ -1,0 +1,63 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvSetAILeadWay",
+          "EntityInstanceID": {
+            "FixedValue": {
+              "Value": 400001
+            }
+          },
+          "PathwayGroupID": 12,
+          "PathwayID": 1,
+          "MotionFlag": "Walk",
+          "WaitForPlayer": true,
+          "StartWaitDistance": 4,
+          "StopWaitDistance": 4,
+          "ForcePlayerWalk": true,
+          "OnReach": [
+            {
+              "$type": "RPG.GameCore.TriggerCustomString",
+              "CustomString": {
+                "Value": "Talk_200100207"
+              }
+            }
+          ],
+          "PathOffset": []
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvDistrictSetupTrigger",
+          "GroupID": {
+            "FixedValue": {
+              "Value": 12
+            }
+          },
+          "DistrictID": {
+            "FixedValue": {
+              "Value": 1
+            }
+          },
+          "DisableAfterTrigger": true,
+          "OnEnter": [
+            {
+              "$type": "RPG.GameCore.PlayMissionTalk",
+              "SimpleTalkList": [
+                {
+                  "TalkSentenceID": 200103616
+                }
+              ]
+            }
+          ],
+          "OverridedValidGuestConfig": {}
+        }
+      ]
+    }
+  ],
+  "Type": "Group"
+}

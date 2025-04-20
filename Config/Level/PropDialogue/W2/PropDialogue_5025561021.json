@@ -1,0 +1,58 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropSetupUITrigger",
+          "ButtonIcon": "SpriteOutput/TalkIcon/CheckIcon.png",
+          "IconType": "CheckIcon",
+          "ButtonText": {
+            "Hash": 16304550243505668348
+          },
+          "ButtonCallback": [
+            {
+              "$type": "RPG.GameCore.RandomConfig",
+              "OddsList": [
+                {
+                  "FixedValue": {
+                    "Value": 0.5
+                  }
+                },
+                {
+                  "FixedValue": {
+                    "Value": 0.5
+                  }
+                }
+              ],
+              "TaskList": [
+                {
+                  "$type": "RPG.GameCore.ShowReading",
+                  "BookID": {
+                    "FixedValue": {
+                      "Value": 190415
+                    }
+                  },
+                  "ShouldPauseGame": true
+                },
+                {
+                  "$type": "RPG.GameCore.ShowReading",
+                  "BookID": {
+                    "FixedValue": {
+                      "Value": 190416
+                    }
+                  },
+                  "ShouldPauseGame": true
+                }
+              ]
+            }
+          ],
+          "OverrideTargetTypes": [],
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          }
+        }
+      ]
+    }
+  ]
+}

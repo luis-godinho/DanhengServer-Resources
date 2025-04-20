@@ -1,0 +1,116 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.LevelPerformanceInitialize",
+          "PerformanceType": "E",
+          "CreateCharacterList": [],
+          "EntityVisiableList": [],
+          "UseNewStreamingSourceType": false,
+          "MarkStreamingItems": [],
+          "ResetEnvironment": false
+        },
+        {
+          "$type": "RPG.GameCore.AdvNpcFaceToPlayer",
+          "WaitFinishMode": "WaitAnimFinish"
+        },
+        {
+          "$type": "RPG.GameCore.SetTargetUniqueName",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchNormalPam"
+          },
+          "UniqueName": "Pam_Unique"
+        },
+        {
+          "$type": "RPG.GameCore.TriggerCustomString",
+          "CustomString": {
+            "Value": "Talk_501020125"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.PlaySimpleTalk",
+          "SimpleTalkList": [
+            {
+              "TalkSentenceID": 501020125,
+              "ProtectTime": 0.3
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.WaitSimpleTalkFinish"
+        },
+        {
+          "$type": "RPG.GameCore.EndPerformance"
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "Talk_501020125"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.CharacterTriggerFreeStyleGraph",
+          "TargetAlias": {
+            "$type": "RPG.GameCore.TargetFetchUniqueNameEntity",
+            "UniqueName": "Pam_Unique"
+          },
+          "GraphName": {
+            "Value": "Confuse01_StandBy"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.WaitSecond",
+          "WaitTime": {
+            "FixedValue": {
+              "Value": 3
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TriggerCustomString",
+          "CustomString": {
+            "Value": "AnimGroup"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.WaitSecond",
+          "WaitTime": {
+            "FixedValue": {
+              "Value": 2
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.CharacterStopFreeStyle",
+          "CharacterUniqueName": "Pam_Unique"
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitPerformanceEnd"
+        },
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "AnimGroup"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.CharacterStopFreeStyle",
+          "CharacterUniqueName": "Pam_Unique"
+        },
+        {
+          "$type": "RPG.GameCore.FinishLevelGraph"
+        }
+      ]
+    }
+  ]
+}

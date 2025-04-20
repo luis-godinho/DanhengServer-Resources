@@ -10,34 +10,40 @@
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 34359738368
+                "FixedValue": {
+                  "Value": 8
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288494483767296
+                "FixedValue": {
+                  "Value": 300001
                 }
               }
             }
           },
-          "TargetGroupID": {},
-          "TargetID": {},
+          "TargetGroupID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "TargetID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
           "TargetTypes": [],
           "OnTriggerEnter": [
             {
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "Mission_102130106_PropTrigger"
-              },
-              "TaskEnabled": true
+              }
             },
             {
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "ForceWalk_On"
-              },
-              "TaskEnabled": true
+              }
             }
           ],
           "OnTriggerExit": [
@@ -45,13 +51,9 @@
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "ForceWalk_Off"
-              },
-              "TaskEnabled": true
+              }
             }
-          ],
-          "SkipFakeAvatar": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     },
@@ -61,26 +63,21 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Mission_102130106_PropTrigger"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.TriggerSound",
           "SoundName": {
             "Value": "Ev_chapter2_6_echo_memory_noscirpt"
           },
-          "EmitterType": "LocalPlayer",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "EmitterType": "LocalPlayer"
         },
         {
           "$type": "RPG.GameCore.TransitEnvProfile",
           "Path": {
             "Value": "Stages/Outputs/Chapter02/EnviroProfile/Chap02_CloseView_MAZ_X301_MainLine_01_Day_Varient1.enviroProfile.asset"
           },
-          "Duration": 2.5,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Duration": 2.5
         }
       ]
     },
@@ -93,19 +90,27 @@
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 34359738368
+                "FixedValue": {
+                  "Value": 8
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288498778734592
+                "FixedValue": {
+                  "Value": 300002
                 }
               }
             }
           },
-          "TargetGroupID": {},
-          "TargetID": {},
+          "TargetGroupID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "TargetID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
           "TargetTypes": [],
           "DestroyAfterTriggered": true,
           "OnTriggerEnter": [
@@ -113,13 +118,9 @@
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "Mission_102130106_StopWalk"
-              },
-              "TaskEnabled": true
+              }
             }
-          ],
-          "SkipFakeAvatar": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     },
@@ -129,13 +130,10 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Mission_102130106_StopWalk"
-          },
-          "TaskEnabled": true
+          }
         },
         {
-          "$type": "RPG.GameCore.PlayerForceWalk",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "$type": "RPG.GameCore.PlayerForceWalk"
         },
         {
           "$type": "RPG.GameCore.PropSetVisibility",
@@ -145,47 +143,37 @@
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 34359738368
+                "FixedValue": {
+                  "Value": 8
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288503073701888
+                "FixedValue": {
+                  "Value": 300003
                 }
               }
             }
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
           "$type": "RPG.GameCore.TriggerSound",
           "SoundName": {
             "Value": "Ev_chapter2_6_echo_memory_noscirpt_stop"
           },
-          "EmitterType": "LocalPlayer",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "EmitterType": "LocalPlayer"
         },
         {
           "$type": "RPG.GameCore.TriggerPerformance",
           "ValueSource": {},
           "PerformanceType": "E",
-          "PerformanceID": 102130106,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 102130106
         },
         {
-          "$type": "RPG.GameCore.PlayerForceWalk",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "$type": "RPG.GameCore.PlayerForceWalk"
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_102130106",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_102130106"
         }
       ]
     },
@@ -196,14 +184,11 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "ForceWalk_On"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.PlayerForceWalk",
-          "ForceWalk": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "ForceWalk": true
         }
       ]
     },
@@ -214,13 +199,10 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "ForceWalk_Off"
-          },
-          "TaskEnabled": true
+          }
         },
         {
-          "$type": "RPG.GameCore.PlayerForceWalk",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "$type": "RPG.GameCore.PlayerForceWalk"
         }
       ]
     }

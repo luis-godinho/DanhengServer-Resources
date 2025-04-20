@@ -1,0 +1,138 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "Castorice_Tutorial_WaveMonster_01"
+          },
+          "GoNextImmediately": true
+        },
+        {
+          "$type": "RPG.GameCore.ShowTutorialUI",
+          "ForceShowDialog": true
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideHintWithText",
+          "Block": true,
+          "TargetEvent": [
+            {
+              "$type": "RPG.GameCore.WaitTutorial",
+              "Event": "ClickAction"
+            }
+          ],
+          "NodeIDList": [
+            "BattleGamePhaseUI.SkillButton_1407_Fire_02"
+          ],
+          "GuideTextType": "InfoTip",
+          "GuideText": "TutorialTextmap_Avatar_1407_Hint02",
+          "GuideHintShowConfig": {
+            "UseCustomConfig": true,
+            "ScaleX": 1.4,
+            "ScaleY": 1.4
+          },
+          "GuideTextShowConfig": {},
+          "GuideUIContextConfig": {},
+          "EnableActionList": [
+            "Menu_BPSkill"
+          ],
+          "EnableBattleOperationList": [
+            "SkillButton",
+            "ActionButton"
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "Castorice_Tutorial_Skill_02"
+          },
+          "GoNextImmediately": true
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideHintWithText",
+          "Block": true,
+          "TargetEvent": [
+            {
+              "$type": "RPG.GameCore.WaitTutorial",
+              "Event": "ClickAction"
+            }
+          ],
+          "NodeIDList": [
+            "BattleGamePhaseUI.SkillButton_1407_Fire_02"
+          ],
+          "GuideTextType": "InfoTip",
+          "GuideText": "TutorialTextmap_Avatar_1407_Hint03",
+          "GuideHintShowConfig": {
+            "UseCustomConfig": true,
+            "ScaleX": 1.4,
+            "ScaleY": 1.4
+          },
+          "GuideTextShowConfig": {},
+          "GuideUIContextConfig": {},
+          "EnableActionList": [
+            "Menu_BPSkill"
+          ],
+          "EnableBattleOperationList": [
+            "SkillButton",
+            "ActionButton"
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "Castorice_Tutorial_Bomb_Pre"
+          },
+          "GoNextImmediately": true
+        },
+        {
+          "$type": "RPG.GameCore.PauseGame",
+          "Pause": true
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideHintWithText",
+          "Block": true,
+          "TargetEvent": [
+            {
+              "$type": "RPG.GameCore.WaitPlayerAction",
+              "ActionType": "AnyAction",
+              "ProtectTime": 0.5
+            }
+          ],
+          "NodeIDList": [
+            "BattleGamePhaseUI.SkillButton_1407_Fire"
+          ],
+          "GuideTextType": "InfoTip",
+          "GuideText": "TutorialTextmap_Avatar_1407_Hint04",
+          "GuideHintShowConfig": {
+            "UseCustomConfig": true,
+            "ScaleX": 1.4,
+            "ScaleY": 1.4
+          },
+          "GuideTextShowConfig": {},
+          "GuideUIContextConfig": {},
+          "EnableActionList": [],
+          "EnableBattleOperationList": [
+            "SkillButton",
+            "ActionButton"
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.PauseGame"
+        },
+        {
+          "$type": "RPG.GameCore.TutorialClose"
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.TutorialClose"
+        }
+      ]
+    }
+  ],
+  "EntityEventList": []
+}

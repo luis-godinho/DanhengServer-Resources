@@ -6,63 +6,51 @@
         {
           "$type": "RPG.GameCore.SetMissionAudioState",
           "SetBGMEmotionState": true,
-          "BGMEmotionStateName": "State_Tense",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "BGMEmotionStateName": "State_Tense"
         },
         {
           "$type": "RPG.GameCore.TriggerPerformance",
           "ValueSource": {},
           "PerformanceType": "C",
-          "PerformanceID": 103030109,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 103030109
         },
         {
           "$type": "RPG.GameCore.ResetMissionAudioState",
-          "ResetBGMEmotionState": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "ResetBGMEmotionState": true
         },
         {
           "$type": "RPG.GameCore.TriggerPerformance",
           "ValueSource": {},
           "PerformanceType": "D",
-          "PerformanceID": 103030196,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 103030196
         },
         {
           "$type": "RPG.GameCore.TriggerPerformance",
           "ValueSource": {},
           "PerformanceType": "D",
-          "PerformanceID": 103030197,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 103030197
         },
         {
           "$type": "RPG.GameCore.PlayFullScreenTransfer",
-          "Type": "Black",
-          "KeepDuration": 0.5,
-          "PostDuration": 0.5,
+          "PrevDuration": 0,
           "Action": [
             {
               "$type": "RPG.GameCore.ScrTrfActPerformance",
               "CreateNpc": {
-                "IsClientOnly": true
+                "TaskEnabled": false
               },
               "DestroyNpc": {
                 "Hide": true,
-                "IsClientOnly": true
+                "TaskEnabled": false
               },
               "CreateProp": {
-                "IsClientOnly": true
+                "TaskEnabled": false
               },
               "DestroyProp": {
                 "TargetType": {
                   "$type": "RPG.GameCore.TargetFetchAdvPropEx"
                 },
-                "IsClientOnly": true
+                "TaskEnabled": false
               },
               "CaptureNpc": [],
               "SwitchCharacterAnchor": {
@@ -73,48 +61,26 @@
                 },
                 "AnchorName": {
                   "Value": "Anchor1"
-                },
-                "ResetAnimation": true,
-                "ResetCamera": true,
-                "ClearSpecialVision": true,
-                "TaskEnabled": true,
-                "IsClientOnly": true
+                }
               },
               "ActiveVirtualCamera": {
-                "IsActive": true,
-                "VCameraDitherMaxDistance": 1.0,
-                "CenterPosX": -1.0,
-                "CenterPosY": -1.0,
-                "IsClientOnly": true
+                "TaskEnabled": false
               },
               "ActiveTemplateVirtualCamera": {
-                "IsActive": true,
-                "IsClientOnly": true
+                "TaskEnabled": false
               },
               "AdvNpcFaceToPlayer": {
-                "FromDialog": true,
-                "TryFaceToFace": true,
-                "NpcLookAtPlayer": true,
-                "PlayerLookAtNpc": true,
-                "StopLookAtOnGraphEnd": true,
-                "TurnBackOnGraphEnd": true,
                 "SteerImmediately": true,
                 "FinishImmadiate": true,
-                "WaitFinishMode": "WaitFaceAngle",
-                "ForceToStandBy": true,
-                "IsClientOnly": true
+                "TaskEnabled": false
               }
             }
-          ],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
           "Key": "Mission_103030109",
-          "KeepScreenTransferUntilGroupRefresh": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "KeepScreenTransferUntilGroupRefresh": true
         }
       ]
     }

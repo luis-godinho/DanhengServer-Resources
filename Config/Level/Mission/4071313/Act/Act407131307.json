@@ -1,0 +1,140 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.LevelPerformanceInitialize",
+          "PerformanceType": "E",
+          "CreateCharacterList": [],
+          "EntityVisiableList": [],
+          "HideMunicipalCrowd": false,
+          "HideMunicipalPedestrian": false,
+          "HideMunicipalOther": false,
+          "PropVisiableList": [],
+          "UseNewStreamingSourceType": false,
+          "MarkStreamingItems": []
+        },
+        {
+          "$type": "RPG.GameCore.PlayAndWaitSimpleTalk",
+          "SimpleTalkList": [
+            {
+              "TalkSentenceID": 407131367
+            },
+            {
+              "TalkSentenceID": 407131368
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.TriggerCustomString",
+          "CustomString": {
+            "Value": "Raid301_3_DoorOpen"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.CreateNPC",
+          "GroupID": {
+            "FixedValue": {
+              "Value": 14
+            }
+          },
+          "GroupNpcID": {
+            "FixedValue": {
+              "Value": 400002
+            }
+          },
+          "CreateList": []
+        },
+        {
+          "$type": "RPG.GameCore.WaitSecond",
+          "WaitTime": {
+            "FixedValue": {
+              "Value": 3
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.EndPerformance"
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitPerformanceEnd"
+        },
+        {
+          "$type": "RPG.GameCore.UnLockPlayerControl"
+        },
+        {
+          "$type": "RPG.GameCore.FinishLevelGraph",
+          "MakeOwnerEntityDie": true
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "Raid301_3_DoorOpen"
+          },
+          "GoNextImmediately": true
+        },
+        {
+          "$type": "RPG.GameCore.PropReqInteract",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+            "FetchType": "SinglePropByPropID",
+            "SinglePropKey": {
+              "Custom": true,
+              "Key": "Maze_Chap01_RotateBridge_Part01"
+            },
+            "SinglePropID": {
+              "GroupID": {
+                "FixedValue": {
+                  "Value": 6
+                }
+              },
+              "ID": {
+                "FixedValue": {
+                  "Value": 300013
+                }
+              }
+            }
+          },
+          "InteractID": {
+            "FixedValue": {
+              "Value": 1010
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.PropTriggerAnimState",
+          "AnimStateName": "Activing",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+            "FetchType": "SinglePropByPropID",
+            "SinglePropKey": {
+              "Custom": true,
+              "Key": "Maze_Chap01_RotateBridge_Part01"
+            },
+            "SinglePropID": {
+              "GroupID": {
+                "FixedValue": {
+                  "Value": 6
+                }
+              },
+              "ID": {
+                "FixedValue": {
+                  "Value": 300013
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

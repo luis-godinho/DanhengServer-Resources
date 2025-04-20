@@ -6,55 +6,53 @@
         {
           "$type": "RPG.GameCore.CreateNPC",
           "GroupID": {
-            "fixedValue": {
-              "RawValue": 214748364800
+            "FixedValue": {
+              "Value": 50
             }
           },
           "GroupNpcID": {
-            "fixedValue": {
-              "RawValue": 1717995508334592
+            "FixedValue": {
+              "Value": 400002
             }
           },
           "CreateList": [
             {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 214748364800
+                "FixedValue": {
+                  "Value": 50
                 }
               },
               "GroupInstanceID": {
-                "fixedValue": {
-                  "RawValue": 1717999803301888
+                "FixedValue": {
+                  "Value": 400003
                 }
               }
             },
             {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 214748364800
+                "FixedValue": {
+                  "Value": 50
                 }
               },
               "GroupInstanceID": {
-                "fixedValue": {
-                  "RawValue": 1718004098269184
+                "FixedValue": {
+                  "Value": 400004
                 }
               }
             },
             {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 214748364800
+                "FixedValue": {
+                  "Value": 50
                 }
               },
               "GroupInstanceID": {
-                "fixedValue": {
-                  "RawValue": 1718008393236480
+                "FixedValue": {
+                  "Value": 400005
                 }
               }
             }
-          ],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     },
@@ -64,18 +62,16 @@
         {
           "$type": "RPG.GameCore.CreateProp",
           "GroupID": {
-            "fixedValue": {
-              "RawValue": 214748364800
+            "FixedValue": {
+              "Value": 50
             }
           },
           "GroupPropID": {
-            "fixedValue": {
-              "RawValue": 1288494483767296
+            "FixedValue": {
+              "Value": 300001
             }
           },
-          "CreateList": [],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "CreateList": []
         },
         {
           "$type": "RPG.GameCore.PropSetupTrigger",
@@ -84,13 +80,13 @@
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 214748364800
+                "FixedValue": {
+                  "Value": 50
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288494483767296
+                "FixedValue": {
+                  "Value": 300001
                 }
               }
             }
@@ -102,13 +98,9 @@
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "PropTrigger_801510102"
-              },
-              "TaskEnabled": true
+              }
             }
-          ],
-          "SkipFakeAvatar": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     },
@@ -119,36 +111,27 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "PropTrigger_801510102"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.SetAudioEmotionState",
           "StateName": "State_Joyful",
-          "SubMissionID": 801519102,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "SubMissionID": 801519102
         },
         {
           "$type": "RPG.GameCore.TriggerPerformance",
           "ValueSource": {},
           "PerformanceType": "D",
-          "PerformanceID": 801519102,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 801519102
         },
         {
           "$type": "RPG.GameCore.SetAudioEmotionState",
           "ResetToFloorDefault": true,
-          "SubMissionID": 801519102,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "SubMissionID": 801519102
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_801519102",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_801519102"
         }
       ]
     },
@@ -159,19 +142,15 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "PropTrigger_801510102"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.WaitSecond",
           "WaitTime": {
-            "fixedValue": {
-              "RawValue": 2147483650
+            "FixedValue": {
+              "Value": 0.5
             }
-          },
-          "MaxAdvencePerTick": -1.0,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
           "$type": "RPG.GameCore.DestroyNPC",
@@ -179,44 +158,45 @@
           "GroupNpcID": 400002,
           "DestroyList": [
             {
+              "$type": "RPG.GameCore.GroupEntityInfo",
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 214748364800
+                "FixedValue": {
+                  "Value": 50
                 }
               },
               "GroupInstanceID": {
-                "fixedValue": {
-                  "RawValue": 1717999803301888
+                "FixedValue": {
+                  "Value": 400003
                 }
               }
             },
             {
+              "$type": "RPG.GameCore.GroupEntityInfo",
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 214748364800
+                "FixedValue": {
+                  "Value": 50
                 }
               },
               "GroupInstanceID": {
-                "fixedValue": {
-                  "RawValue": 1718004098269184
+                "FixedValue": {
+                  "Value": 400004
                 }
               }
             },
             {
+              "$type": "RPG.GameCore.GroupEntityInfo",
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 214748364800
+                "FixedValue": {
+                  "Value": 50
                 }
               },
               "GroupInstanceID": {
-                "fixedValue": {
-                  "RawValue": 1718008393236480
+                "FixedValue": {
+                  "Value": 400005
                 }
               }
             }
-          ],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     }

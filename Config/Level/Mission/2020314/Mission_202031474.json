@@ -6,70 +6,63 @@
         {
           "$type": "RPG.GameCore.CreateProp",
           "GroupID": {
-            "fixedValue": {
-              "RawValue": 21474836480
+            "FixedValue": {
+              "Value": 5
             }
           },
           "GroupPropID": {
-            "fixedValue": {
-              "RawValue": 1288614742851584
+            "FixedValue": {
+              "Value": 300029
             }
           },
           "CreateList": [
             {
+              "$type": "RPG.GameCore.GroupEntityInfo",
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 21474836480
+                "FixedValue": {
+                  "Value": 5
                 }
               },
               "GroupInstanceID": {
-                "fixedValue": {
-                  "RawValue": 1288610447884288
+                "FixedValue": {
+                  "Value": 300028
                 }
               }
             }
-          ],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         },
         {
           "$type": "RPG.GameCore.PropSetupUITrigger",
           "DestroyAfterTriggered": true,
           "IconType": "CheckIcon",
           "ButtonText": {
-            "Hash": 278713937,
-            "Hash64": 16304550243505668348
+            "Hash": 16304550243505668348
           },
           "ButtonCallback": [
             {
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "Mission_202031474_PropUITrigger"
-              },
-              "TaskEnabled": true
+              }
             }
           ],
-          "InteractAngleRange": 180.0,
           "OverrideTargetTypes": [],
-          "SkipFakeAvatar": true,
           "TargetType": {
             "$type": "RPG.GameCore.TargetFetchAdvPropEx",
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 21474836480
+                "FixedValue": {
+                  "Value": 5
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288614742851584
+                "FixedValue": {
+                  "Value": 300029
                 }
               }
             }
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         }
       ]
     },
@@ -79,22 +72,17 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Mission_202031474_PropUITrigger"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.TriggerPerformance",
           "ValueSource": {},
           "PerformanceType": "E",
-          "PerformanceID": 202031474,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 202031474
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_202031474",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_202031474"
         }
       ]
     }

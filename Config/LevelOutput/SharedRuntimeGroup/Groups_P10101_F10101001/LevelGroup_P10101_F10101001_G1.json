@@ -1,20 +1,20 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "DefaultData",
   "AreaAnchorName": "LevelArea_P10101_F10101001_G1",
-  "SaveType": "Permanent",
   "LoadSide": "Server",
   "LoadOnInitial": true,
   "GroupRefreshID": 1,
   "ValueSource": {},
   "ConflictIDList": [],
-  "StreamingTemplateType": "Standard",
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
-  "TagContainer": [
-    {
-      "Tag": "Group.Level.AnchorPoint",
-      "TagHash": -1743222658
-    }
-  ],
+  "TagContainer": {
+    "List": [
+      {
+        "Tag": "Group.Level.AnchorPoint",
+        "TagHash": -1743222658
+      }
+    ]
+  },
   "AnchorList": [
     {
       "Name": "Anchor1",
@@ -26,7 +26,7 @@
     },
     {
       "Name": "Anchor2",
-      "RotY": 90.0,
+      "RotY": 90,
       "ID": 2,
       "PosX": -43.3,
       "PosY": -0.093124,
@@ -34,7 +34,7 @@
     },
     {
       "Name": "Anchor3",
-      "RotY": 300.0,
+      "RotY": 300,
       "ID": 3,
       "PosX": 33.046,
       "PosY": 0.009865,
@@ -52,45 +52,11 @@
   "MonsterList": [],
   "PropList": [
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 101,
-      "LoadOnInitial": true,
       "IsOverrideInitLevelGraph": true,
       "InitLevelGraph": "Config/Level/Props/Common/InitLevelGraph_Prop_Common_CheckPoint_ActiveHint.json",
       "ValueSource": {
         "Values": [
-          {
-            "$type": "RPG.GameCore.SharedInt",
-            "Value": 1,
-            "Key": "Maze_CheckPoint_RefreshGroupID"
-          },
-          {
-            "$type": "RPG.GameCore.SharedInt",
-            "Value": 300001,
-            "Key": "Maze_CheckPoint_RefreshPropID"
-          }
-        ],
-        "SharedValues": [
           {
             "$type": "RPG.GameCore.SharedInt",
             "Value": 1,
@@ -106,23 +72,17 @@
       "Trigger": {
         "Radius": 2.5,
         "Offset": {
-          "y": 1.0,
-          "magnitude": 1.0,
-          "sqrMagnitude": 1.0
+          "Y": 1
         },
         "PointList": [],
         "Server": true
       },
       "State": "CheckPointEnable",
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {
         "CustomTrigger_Spring": {
-          "Radius": 7.0,
+          "Radius": 7,
           "Offset": {
-            "y": 1.0,
-            "magnitude": 1.0,
-            "sqrMagnitude": 1.0
+            "Y": 1
           },
           "PointList": [],
           "Server": true
@@ -133,73 +93,29 @@
       "AnchorGroupID": 1,
       "AnchorID": 4,
       "MappingInfoID": 1010101,
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
       "TagOverrideComponents": {},
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Prop1",
-      "RotY": 45.0,
+      "RotY": 45,
       "ID": 300001,
       "PosX": -15.15,
       "PosY": 0.009586,
       "PosZ": 80.34
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 101,
-      "LoadOnInitial": true,
       "IsOverrideInitLevelGraph": true,
       "InitLevelGraph": "Config/Level/Props/Common/InitLevelGraph_Prop_Common_CheckPoint_ActiveHint.json",
       "ValueSource": {
         "Values": [
-          {
-            "$type": "RPG.GameCore.SharedInt",
-            "Value": 1,
-            "Key": "Maze_CheckPoint_RefreshGroupID"
-          },
-          {
-            "$type": "RPG.GameCore.SharedInt",
-            "Value": 300002,
-            "Key": "Maze_CheckPoint_RefreshPropID"
-          }
-        ],
-        "SharedValues": [
           {
             "$type": "RPG.GameCore.SharedInt",
             "Value": 1,
@@ -215,23 +131,17 @@
       "Trigger": {
         "Radius": 2.5,
         "Offset": {
-          "y": 1.0,
-          "magnitude": 1.0,
-          "sqrMagnitude": 1.0
+          "Y": 1
         },
         "PointList": [],
         "Server": true
       },
       "State": "CheckPointEnable",
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {
         "CustomTrigger_Spring": {
-          "Radius": 5.0,
+          "Radius": 5,
           "Offset": {
-            "y": 1.0,
-            "magnitude": 1.0,
-            "sqrMagnitude": 1.0
+            "Y": 1
           },
           "PointList": [],
           "Server": true
@@ -242,73 +152,29 @@
       "AnchorGroupID": 1,
       "AnchorID": 2,
       "MappingInfoID": 1010102,
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
       "TagOverrideComponents": {},
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Prop2",
-      "RotY": 90.0,
+      "RotY": 90,
       "ID": 300002,
       "PosX": -47.36,
       "PosY": 0.009171,
       "PosZ": -39.76
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 101,
-      "LoadOnInitial": true,
       "IsOverrideInitLevelGraph": true,
       "InitLevelGraph": "Config/Level/Props/Common/InitLevelGraph_Prop_Common_CheckPoint_ActiveHint.json",
       "ValueSource": {
         "Values": [
-          {
-            "$type": "RPG.GameCore.SharedInt",
-            "Value": 1,
-            "Key": "Maze_CheckPoint_RefreshGroupID"
-          },
-          {
-            "$type": "RPG.GameCore.SharedInt",
-            "Value": 300003,
-            "Key": "Maze_CheckPoint_RefreshPropID"
-          }
-        ],
-        "SharedValues": [
           {
             "$type": "RPG.GameCore.SharedInt",
             "Value": 1,
@@ -324,23 +190,17 @@
       "Trigger": {
         "Radius": 2.5,
         "Offset": {
-          "y": 1.0,
-          "magnitude": 1.0,
-          "sqrMagnitude": 1.0
+          "Y": 1
         },
         "PointList": [],
         "Server": true
       },
       "State": "CheckPointEnable",
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {
         "CustomTrigger_Spring": {
-          "Radius": 5.0,
+          "Radius": 5,
           "Offset": {
-            "y": 1.0,
-            "magnitude": 1.0,
-            "sqrMagnitude": 1.0
+            "Y": 1
           },
           "PointList": [],
           "Server": true
@@ -351,25 +211,15 @@
       "AnchorGroupID": 1,
       "AnchorID": 3,
       "MappingInfoID": 1010103,
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
       "TagOverrideComponents": {},
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Prop3",
       "ID": 300003,
@@ -379,42 +229,25 @@
     },
     {
       "Scale": {
-        "x": 4.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.9428091,
-          "y": 0.235702276,
-          "z": 0.235702276,
-          "magnitude": 1.0,
-          "sqrMagnitude": 1.00000012
-        },
-        "magnitude": 4.2426405,
-        "sqrMagnitude": 18.0
+        "X": 4,
+        "Y": 1,
+        "Z": 1
       },
       "PropID": 102,
-      "LoadOnInitial": true,
       "IsOverrideInitLevelGraph": true,
       "ValueSource": {},
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {},
       "Name": "Airwall",
-      "RotY": 315.0,
+      "RotY": 315,
       "ID": 300004,
       "PosX": -47.83,
       "PosY": -6.336254,
@@ -422,42 +255,25 @@
     },
     {
       "Scale": {
-        "x": 16.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.9961165,
-          "y": 0.0622572824,
-          "z": 0.0622572824,
-          "magnitude": 1.0,
-          "sqrMagnitude": 1.0
-        },
-        "magnitude": 16.0623779,
-        "sqrMagnitude": 258.0
+        "X": 16,
+        "Y": 1,
+        "Z": 1
       },
       "PropID": 102,
-      "LoadOnInitial": true,
       "IsOverrideInitLevelGraph": true,
       "ValueSource": {},
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {},
       "Name": "Airwall",
-      "RotY": 90.0,
+      "RotY": 90,
       "ID": 300006,
       "PosX": 31.69,
       "PosY": 0.21,
@@ -465,39 +281,22 @@
     },
     {
       "Scale": {
-        "x": 4.0,
-        "y": 1.0,
-        "z": 5.0,
-        "normalized": {
-          "x": 0.6172134,
-          "y": 0.154303357,
-          "z": 0.77151674,
-          "magnitude": 1.0,
-          "sqrMagnitude": 1.0
-        },
-        "magnitude": 6.48074055,
-        "sqrMagnitude": 42.0
+        "X": 4,
+        "Y": 1,
+        "Z": 5
       },
       "PropID": 102,
-      "LoadOnInitial": true,
       "IsOverrideInitLevelGraph": true,
       "ValueSource": {},
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {},
       "Name": "Airwall",
       "RotY": 153.5,
@@ -507,65 +306,31 @@
       "PosZ": -168.31
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 100,
-      "LoadOnInitial": true,
       "IsOverrideInitLevelGraph": true,
       "InitLevelGraph": "Config/Level/Maze/Chapter01/Town/Town_AirwallInteract.json",
       "ValueSource": {},
       "Trigger": {
         "Shape": "Box",
-        "Radius": 1.0,
-        "DimX": 5.0,
-        "DimY": 2.0,
-        "DimZ": 1.0,
+        "Radius": 1,
+        "DimX": 5,
+        "DimY": 2,
+        "DimZ": 1,
         "PointList": []
       },
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
       "TagOverrideComponents": {},
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Prop5",
       "ID": 300005,
@@ -575,39 +340,22 @@
     },
     {
       "Scale": {
-        "x": 1.5,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.7276069,
-          "y": 0.485071272,
-          "z": 0.485071272,
-          "magnitude": 1.0,
-          "sqrMagnitude": 1.0
-        },
-        "magnitude": 2.06155276,
-        "sqrMagnitude": 4.25
+        "X": 1.5,
+        "Y": 1,
+        "Z": 1
       },
       "PropID": 102,
-      "LoadOnInitial": true,
       "IsOverrideInitLevelGraph": true,
       "ValueSource": {},
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {},
       "Name": "Prop8",
       "ID": 300008,
@@ -618,36 +366,14 @@
   ],
   "DistrictList": [
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "Trigger": {
         "Shape": "Box",
-        "Radius": 1.0,
-        "DimX": 75.0,
-        "DimY": 3.0,
-        "DimZ": 40.0,
+        "Radius": 1,
+        "DimX": 75,
+        "DimY": 3,
+        "DimZ": 40,
         "PointList": []
       },
-      "LoadOnInitial": true,
       "OnEnterAudioState": [
         {
           "GroupName": "StateGroup_City_Belobog",
@@ -657,60 +383,35 @@
       "OnEnterRTPC": [
         {
           "RTPCName": "RTPC_Wind_Type",
-          "RTPCValue": 50.0,
+          "RTPCValue": 50,
           "IsRandom": true,
-          "RandomFrequncy": 5.0,
-          "RTPCRangeMin": 40.0,
-          "RTPCRangeMax": 60.0
+          "RTPCRangeMin": 40,
+          "RTPCRangeMax": 60
         },
         {
           "RTPCName": "RTPC_Wind_Strength",
-          "RTPCValue": 50.0,
+          "RTPCValue": 50,
           "IsRandom": true,
-          "RandomFrequncy": 5.0,
-          "RTPCRangeMin": 10.0,
-          "RTPCRangeMax": 60.0
+          "RTPCRangeMin": 10,
+          "RTPCRangeMax": 60
         }
       ],
-      "NPCCrowdRadius": 25.0,
       "Name": "District1",
-      "RotY": 45.0,
+      "RotY": 45,
       "ID": 1,
       "PosX": -8.59,
       "PosY": 0.020462,
       "PosZ": 82.11
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "Trigger": {
         "Shape": "Box",
-        "Radius": 1.0,
-        "DimX": 10.0,
-        "DimY": 3.0,
-        "DimZ": 30.0,
+        "Radius": 1,
+        "DimX": 10,
+        "DimY": 3,
+        "DimZ": 30,
         "PointList": []
       },
-      "LoadOnInitial": true,
       "OnEnterAudioState": [
         {
           "GroupName": "StateGroup_City_Belobog",
@@ -720,22 +421,19 @@
       "OnEnterRTPC": [
         {
           "RTPCName": "RTPC_Wind_Type",
-          "RTPCValue": 50.0,
+          "RTPCValue": 50,
           "IsRandom": true,
-          "RandomFrequncy": 5.0,
-          "RTPCRangeMin": 40.0,
-          "RTPCRangeMax": 60.0
+          "RTPCRangeMin": 40,
+          "RTPCRangeMax": 60
         },
         {
           "RTPCName": "RTPC_Wind_Strength",
-          "RTPCValue": 50.0,
+          "RTPCValue": 50,
           "IsRandom": true,
-          "RandomFrequncy": 5.0,
-          "RTPCRangeMin": 10.0,
-          "RTPCRangeMax": 60.0
+          "RTPCRangeMin": 10,
+          "RTPCRangeMax": 60
         }
       ],
-      "NPCCrowdRadius": 25.0,
       "Name": "District2",
       "ID": 2,
       "PosX": -15.11,
@@ -743,36 +441,14 @@
       "PosZ": 4.77
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "Trigger": {
         "Shape": "Box",
-        "Radius": 1.0,
-        "DimX": 120.0,
-        "DimY": 3.0,
-        "DimZ": 100.0,
+        "Radius": 1,
+        "DimX": 120,
+        "DimY": 3,
+        "DimZ": 100,
         "PointList": []
       },
-      "LoadOnInitial": true,
       "OnEnterAudioState": [
         {
           "GroupName": "StateGroup_City_Belobog",
@@ -782,22 +458,19 @@
       "OnEnterRTPC": [
         {
           "RTPCName": "RTPC_Wind_Type",
-          "RTPCValue": 50.0,
+          "RTPCValue": 50,
           "IsRandom": true,
-          "RandomFrequncy": 5.0,
-          "RTPCRangeMin": 40.0,
-          "RTPCRangeMax": 60.0
+          "RTPCRangeMin": 40,
+          "RTPCRangeMax": 60
         },
         {
           "RTPCName": "RTPC_Wind_Strength",
-          "RTPCValue": 50.0,
+          "RTPCValue": 50,
           "IsRandom": true,
-          "RandomFrequncy": 5.0,
-          "RTPCRangeMin": 10.0,
-          "RTPCRangeMax": 60.0
+          "RTPCRangeMin": 10,
+          "RTPCRangeMax": 60
         }
       ],
-      "NPCCrowdRadius": 25.0,
       "Name": "District3",
       "ID": 3,
       "PosX": 24.7,
@@ -805,36 +478,14 @@
       "PosZ": -59.1
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "Trigger": {
         "Shape": "Box",
-        "Radius": 1.0,
-        "DimX": 25.0,
-        "DimY": 10.0,
-        "DimZ": 40.0,
+        "Radius": 1,
+        "DimX": 25,
+        "DimY": 10,
+        "DimZ": 40,
         "PointList": []
       },
-      "LoadOnInitial": true,
       "OnEnterAudioState": [
         {
           "GroupName": "StateGroup_City_Belobog",
@@ -844,22 +495,19 @@
       "OnEnterRTPC": [
         {
           "RTPCName": "RTPC_Wind_Type",
-          "RTPCValue": 50.0,
+          "RTPCValue": 50,
           "IsRandom": true,
-          "RandomFrequncy": 5.0,
-          "RTPCRangeMin": 40.0,
-          "RTPCRangeMax": 60.0
+          "RTPCRangeMin": 40,
+          "RTPCRangeMax": 60
         },
         {
           "RTPCName": "RTPC_Wind_Strength",
-          "RTPCValue": 50.0,
+          "RTPCValue": 50,
           "IsRandom": true,
-          "RandomFrequncy": 5.0,
-          "RTPCRangeMin": 10.0,
-          "RTPCRangeMax": 60.0
+          "RTPCRangeMin": 10,
+          "RTPCRangeMax": 60
         }
       ],
-      "NPCCrowdRadius": 25.0,
       "Name": "District4",
       "ID": 4,
       "PosX": 12.2,
@@ -867,36 +515,14 @@
       "PosZ": 10.1
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "Trigger": {
         "Shape": "Box",
-        "Radius": 1.0,
-        "DimX": 15.0,
-        "DimY": 10.0,
-        "DimZ": 40.0,
+        "Radius": 1,
+        "DimX": 15,
+        "DimY": 10,
+        "DimZ": 40,
         "PointList": []
       },
-      "LoadOnInitial": true,
       "OnEnterAudioState": [
         {
           "GroupName": "StateGroup_City_Belobog",
@@ -906,22 +532,19 @@
       "OnEnterRTPC": [
         {
           "RTPCName": "RTPC_Wind_Type",
-          "RTPCValue": 50.0,
+          "RTPCValue": 50,
           "IsRandom": true,
-          "RandomFrequncy": 5.0,
-          "RTPCRangeMin": 40.0,
-          "RTPCRangeMax": 60.0
+          "RTPCRangeMin": 40,
+          "RTPCRangeMax": 60
         },
         {
           "RTPCName": "RTPC_Wind_Strength",
-          "RTPCValue": 50.0,
+          "RTPCValue": 50,
           "IsRandom": true,
-          "RandomFrequncy": 5.0,
-          "RTPCRangeMin": 10.0,
-          "RTPCRangeMax": 60.0
+          "RTPCRangeMin": 10,
+          "RTPCRangeMax": 60
         }
       ],
-      "NPCCrowdRadius": 25.0,
       "Name": "District5",
       "ID": 5,
       "PosX": -28.4,
@@ -929,36 +552,14 @@
       "PosZ": 9.86
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "Trigger": {
         "Shape": "Box",
-        "Radius": 1.0,
-        "DimX": 80.0,
-        "DimY": 6.0,
-        "DimZ": 50.0,
+        "Radius": 1,
+        "DimX": 80,
+        "DimY": 6,
+        "DimZ": 50,
         "PointList": []
       },
-      "LoadOnInitial": true,
       "OnEnterAudioState": [
         {
           "GroupName": "StateGroup_City_Belobog",
@@ -968,59 +569,34 @@
       "OnEnterRTPC": [
         {
           "RTPCName": "RTPC_Wind_Type",
-          "RTPCValue": 10.0,
+          "RTPCValue": 10,
           "IsRandom": true,
-          "RandomFrequncy": 5.0,
-          "RTPCRangeMax": 20.0
+          "RTPCRangeMax": 20
         },
         {
           "RTPCName": "RTPC_Wind_Strength",
-          "RTPCValue": 50.0,
+          "RTPCValue": 50,
           "IsRandom": true,
-          "RandomFrequncy": 5.0,
-          "RTPCRangeMin": 10.0,
-          "RTPCRangeMax": 60.0
+          "RTPCRangeMin": 10,
+          "RTPCRangeMax": 60
         }
       ],
-      "NPCCrowdRadius": 25.0,
       "Name": "District6",
-      "RotY": 45.0,
+      "RotY": 45,
       "ID": 6,
       "PosX": -47.4,
       "PosY": -5.084598,
       "PosZ": 75.9
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "Trigger": {
         "Shape": "Box",
-        "Radius": 1.0,
-        "DimX": 40.0,
-        "DimY": 6.0,
-        "DimZ": 40.0,
+        "Radius": 1,
+        "DimX": 40,
+        "DimY": 6,
+        "DimZ": 40,
         "PointList": []
       },
-      "LoadOnInitial": true,
       "OnEnterAudioState": [
         {
           "GroupName": "StateGroup_City_Belobog",
@@ -1030,21 +606,18 @@
       "OnEnterRTPC": [
         {
           "RTPCName": "RTPC_Wind_Type",
-          "RTPCValue": 10.0,
+          "RTPCValue": 10,
           "IsRandom": true,
-          "RandomFrequncy": 5.0,
-          "RTPCRangeMax": 20.0
+          "RTPCRangeMax": 20
         },
         {
           "RTPCName": "RTPC_Wind_Strength",
-          "RTPCValue": 50.0,
+          "RTPCValue": 50,
           "IsRandom": true,
-          "RandomFrequncy": 5.0,
-          "RTPCRangeMin": 10.0,
-          "RTPCRangeMax": 60.0
+          "RTPCRangeMin": 10,
+          "RTPCRangeMax": 60
         }
       ],
-      "NPCCrowdRadius": 25.0,
       "Name": "District7",
       "ID": 7,
       "PosX": -17.4,
@@ -1052,36 +625,14 @@
       "PosZ": 41.3
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "Trigger": {
         "Shape": "Box",
-        "Radius": 1.0,
-        "DimX": 50.0,
-        "DimY": 8.0,
-        "DimZ": 60.0,
+        "Radius": 1,
+        "DimX": 50,
+        "DimY": 8,
+        "DimZ": 60,
         "PointList": []
       },
-      "LoadOnInitial": true,
       "OnEnterAudioState": [
         {
           "GroupName": "StateGroup_City_Belobog",
@@ -1091,21 +642,18 @@
       "OnEnterRTPC": [
         {
           "RTPCName": "RTPC_Wind_Type",
-          "RTPCValue": 10.0,
+          "RTPCValue": 10,
           "IsRandom": true,
-          "RandomFrequncy": 5.0,
-          "RTPCRangeMax": 20.0
+          "RTPCRangeMax": 20
         },
         {
           "RTPCName": "RTPC_Wind_Strength",
-          "RTPCValue": 50.0,
+          "RTPCValue": 50,
           "IsRandom": true,
-          "RandomFrequncy": 5.0,
-          "RTPCRangeMin": 10.0,
-          "RTPCRangeMax": 60.0
+          "RTPCRangeMin": 10,
+          "RTPCRangeMax": 60
         }
       ],
-      "NPCCrowdRadius": 25.0,
       "Name": "District8",
       "ID": 8,
       "PosX": 17.1,
@@ -1113,36 +661,14 @@
       "PosZ": -136.3
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "Trigger": {
         "Shape": "Box",
-        "Radius": 1.0,
-        "DimX": 55.0,
-        "DimY": 10.0,
-        "DimZ": 45.0,
+        "Radius": 1,
+        "DimX": 55,
+        "DimY": 10,
+        "DimZ": 45,
         "PointList": []
       },
-      "LoadOnInitial": true,
       "OnEnterAudioState": [
         {
           "GroupName": "StateGroup_City_Belobog",
@@ -1152,21 +678,18 @@
       "OnEnterRTPC": [
         {
           "RTPCName": "RTPC_Wind_Type",
-          "RTPCValue": 10.0,
+          "RTPCValue": 10,
           "IsRandom": true,
-          "RandomFrequncy": 5.0,
-          "RTPCRangeMax": 20.0
+          "RTPCRangeMax": 20
         },
         {
           "RTPCName": "RTPC_Wind_Strength",
-          "RTPCValue": 50.0,
+          "RTPCValue": 50,
           "IsRandom": true,
-          "RandomFrequncy": 5.0,
-          "RTPCRangeMin": 10.0,
-          "RTPCRangeMax": 60.0
+          "RTPCRangeMin": 10,
+          "RTPCRangeMax": 60
         }
       ],
-      "NPCCrowdRadius": 25.0,
       "Name": "District9",
       "ID": 9,
       "PosX": -13.51,
@@ -1174,36 +697,14 @@
       "PosZ": -39.93
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "Trigger": {
         "Shape": "Box",
-        "Radius": 1.0,
-        "DimX": 9.0,
-        "DimY": 20.0,
-        "DimZ": 20.0,
+        "Radius": 1,
+        "DimX": 9,
+        "DimY": 20,
+        "DimZ": 20,
         "PointList": []
       },
-      "LoadOnInitial": true,
       "OnEnterAudioState": [
         {
           "GroupName": "StateGroup_City_Belobog",
@@ -1213,21 +714,18 @@
       "OnEnterRTPC": [
         {
           "RTPCName": "RTPC_Wind_Type",
-          "RTPCValue": 10.0,
+          "RTPCValue": 10,
           "IsRandom": true,
-          "RandomFrequncy": 5.0,
-          "RTPCRangeMax": 20.0
+          "RTPCRangeMax": 20
         },
         {
           "RTPCName": "RTPC_Wind_Strength",
-          "RTPCValue": 50.0,
+          "RTPCValue": 50,
           "IsRandom": true,
-          "RandomFrequncy": 5.0,
-          "RTPCRangeMin": 10.0,
-          "RTPCRangeMax": 60.0
+          "RTPCRangeMin": 10,
+          "RTPCRangeMax": 60
         }
       ],
-      "NPCCrowdRadius": 25.0,
       "Name": "District10",
       "ID": 10,
       "PosX": -5.22,
@@ -1235,46 +733,17 @@
       "PosZ": -72.32
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "Trigger": {
         "Shape": "Box",
-        "Radius": 1.0,
-        "DimX": 9.0,
-        "DimY": 20.0,
-        "DimZ": 20.0,
+        "Radius": 1,
+        "DimX": 9,
+        "DimY": 20,
+        "DimZ": 20,
         "Offset": {
-          "z": -8.0,
-          "normalized": {
-            "z": -1.0,
-            "magnitude": 1.0,
-            "sqrMagnitude": 1.0
-          },
-          "magnitude": 8.0,
-          "sqrMagnitude": 64.0
+          "Z": -8
         },
         "PointList": []
       },
-      "LoadOnInitial": true,
       "OnEnterAudioState": [
         {
           "GroupName": "StateGroup_City_Belobog",
@@ -1284,21 +753,18 @@
       "OnEnterRTPC": [
         {
           "RTPCName": "RTPC_Wind_Type",
-          "RTPCValue": 10.0,
+          "RTPCValue": 10,
           "IsRandom": true,
-          "RandomFrequncy": 5.0,
-          "RTPCRangeMax": 20.0
+          "RTPCRangeMax": 20
         },
         {
           "RTPCName": "RTPC_Wind_Strength",
-          "RTPCValue": 50.0,
+          "RTPCValue": 50,
           "IsRandom": true,
-          "RandomFrequncy": 5.0,
-          "RTPCRangeMin": 10.0,
-          "RTPCRangeMax": 60.0
+          "RTPCRangeMin": 10,
+          "RTPCRangeMax": 60
         }
       ],
-      "NPCCrowdRadius": 25.0,
       "Name": "District11",
       "ID": 11,
       "PosX": -5.22,
@@ -1306,43 +772,20 @@
       "PosZ": 0.28
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "Trigger": {
         "Shape": "Box",
-        "Radius": 1.0,
-        "DimX": 70.0,
-        "DimY": 10.0,
-        "DimZ": 61.0,
+        "Radius": 1,
+        "DimX": 70,
+        "DimY": 10,
+        "DimZ": 61,
         "PointList": []
       },
-      "LoadOnInitial": true,
       "OnEnterAudioState": [
         {
           "GroupName": "StateGroup_City_Belobog",
           "StateName": "State_BuilderStairs_Low"
         }
       ],
-      "NPCCrowdRadius": 25.0,
       "Name": "District13",
       "ID": 13,
       "PosX": 71.6,
@@ -1350,43 +793,20 @@
       "PosZ": -40.3
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "Trigger": {
         "Shape": "Box",
-        "Radius": 1.0,
-        "DimX": 35.0,
-        "DimY": 5.0,
-        "DimZ": 50.0,
+        "Radius": 1,
+        "DimX": 35,
+        "DimY": 5,
+        "DimZ": 50,
         "PointList": []
       },
-      "LoadOnInitial": true,
       "OnEnterAudioState": [
         {
           "GroupName": "StateGroup_City_Belobog",
           "StateName": "State_WarningArea"
         }
       ],
-      "NPCCrowdRadius": 25.0,
       "Name": "District14",
       "ID": 14,
       "PosX": -22.9,
@@ -1394,36 +814,14 @@
       "PosZ": -133.6
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "Trigger": {
         "Shape": "Box",
-        "Radius": 40.0,
-        "DimX": 50.0,
-        "DimY": 4.0,
-        "DimZ": 100.0,
+        "Radius": 40,
+        "DimX": 50,
+        "DimY": 4,
+        "DimZ": 100,
         "PointList": []
       },
-      "LoadOnInitial": true,
       "OnEnterAudioState": [
         {
           "GroupName": "StateGroup_City_Belobog",
@@ -1433,22 +831,19 @@
       "OnEnterRTPC": [
         {
           "RTPCName": "RTPC_Wind_Type",
-          "RTPCValue": 50.0,
+          "RTPCValue": 50,
           "IsRandom": true,
-          "RandomFrequncy": 5.0,
-          "RTPCRangeMin": 40.0,
-          "RTPCRangeMax": 60.0
+          "RTPCRangeMin": 40,
+          "RTPCRangeMax": 60
         },
         {
           "RTPCName": "RTPC_Wind_Strength",
-          "RTPCValue": 50.0,
+          "RTPCValue": 50,
           "IsRandom": true,
-          "RandomFrequncy": 5.0,
-          "RTPCRangeMin": 10.0,
-          "RTPCRangeMax": 60.0
+          "RTPCRangeMin": 10,
+          "RTPCRangeMax": 60
         }
       ],
-      "NPCCrowdRadius": 25.0,
       "Name": "District12",
       "ID": 12,
       "PosX": -58.66,
@@ -1456,43 +851,20 @@
       "PosZ": -40.83
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "Trigger": {
         "Shape": "Box",
-        "Radius": 1.0,
-        "DimX": 50.0,
-        "DimY": 10.0,
-        "DimZ": 61.0,
+        "Radius": 1,
+        "DimX": 50,
+        "DimY": 10,
+        "DimZ": 61,
         "PointList": []
       },
-      "LoadOnInitial": true,
       "OnEnterAudioState": [
         {
           "GroupName": "StateGroup_City_Belobog",
           "StateName": "State_BuilderStairs_High"
         }
       ],
-      "NPCCrowdRadius": 25.0,
       "Name": "District15",
       "ID": 15,
       "PosX": 88.3,
@@ -1500,36 +872,14 @@
       "PosZ": -39.76
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "Trigger": {
         "Shape": "Box",
-        "Radius": 1.0,
-        "DimX": 9.0,
-        "DimY": 20.0,
-        "DimZ": 21.0,
+        "Radius": 1,
+        "DimX": 9,
+        "DimY": 20,
+        "DimZ": 21,
         "PointList": []
       },
-      "LoadOnInitial": true,
       "OnEnterAudioState": [
         {
           "GroupName": "StateGroup_City_Belobog",
@@ -1539,21 +889,18 @@
       "OnEnterRTPC": [
         {
           "RTPCName": "RTPC_Wind_Type",
-          "RTPCValue": 10.0,
+          "RTPCValue": 10,
           "IsRandom": true,
-          "RandomFrequncy": 5.0,
-          "RTPCRangeMax": 20.0
+          "RTPCRangeMax": 20
         },
         {
           "RTPCName": "RTPC_Wind_Strength",
-          "RTPCValue": 50.0,
+          "RTPCValue": 50,
           "IsRandom": true,
-          "RandomFrequncy": 5.0,
-          "RTPCRangeMin": 10.0,
-          "RTPCRangeMax": 60.0
+          "RTPCRangeMin": 10,
+          "RTPCRangeMax": 60
         }
       ],
-      "NPCCrowdRadius": 25.0,
       "Name": "District16",
       "ID": 16,
       "PosX": -5.15,
@@ -1561,36 +908,14 @@
       "PosZ": -92.81
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "Trigger": {
         "Shape": "Box",
-        "Radius": 1.0,
-        "DimX": 9.0,
-        "DimY": 20.0,
-        "DimZ": 28.0,
+        "Radius": 1,
+        "DimX": 9,
+        "DimY": 20,
+        "DimZ": 28,
         "PointList": []
       },
-      "LoadOnInitial": true,
       "OnEnterAudioState": [
         {
           "GroupName": "StateGroup_City_Belobog",
@@ -1600,21 +925,18 @@
       "OnEnterRTPC": [
         {
           "RTPCName": "RTPC_Wind_Type",
-          "RTPCValue": 10.0,
+          "RTPCValue": 10,
           "IsRandom": true,
-          "RandomFrequncy": 5.0,
-          "RTPCRangeMax": 20.0
+          "RTPCRangeMax": 20
         },
         {
           "RTPCName": "RTPC_Wind_Strength",
-          "RTPCValue": 50.0,
+          "RTPCValue": 50,
           "IsRandom": true,
-          "RandomFrequncy": 5.0,
-          "RTPCRangeMin": 10.0,
-          "RTPCRangeMax": 60.0
+          "RTPCRangeMin": 10,
+          "RTPCRangeMax": 60
         }
       ],
-      "NPCCrowdRadius": 25.0,
       "Name": "District17",
       "ID": 17,
       "PosX": -5.4,

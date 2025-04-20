@@ -1,0 +1,85 @@
+{
+  "OnInitSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropSetupOptionsTrigger",
+          "OptionList": [
+            {
+              "OptionTextmapID": {
+                "Hash": 6697777971104861018
+              },
+              "TriggerCustomString": "Pam_Heal"
+            }
+          ],
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          }
+        }
+      ]
+    }
+  ],
+  "OnStartSequece": [
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "Pam_Heal"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.LockPlayerControl"
+        },
+        {
+          "$type": "RPG.GameCore.PlayScreenTransfer",
+          "CustomTime": 1
+        },
+        {
+          "$type": "RPG.GameCore.AdventureRevivePlayer",
+          "RevivedHPRatio": {
+            "FixedValue": {
+              "Value": 1
+            }
+          },
+          "RevivedSPRatio": {
+            "FixedValue": {
+              "Value": 1
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.AdventureModifyTeamPlayerHP",
+          "AddRatio": {
+            "FixedValue": {
+              "Value": 1
+            }
+          },
+          "ModifyFunction": "Set",
+          "ModifyValue": {
+            "FixedValue": {
+              "Value": 0
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.WaitSecond",
+          "WaitTime": {
+            "FixedValue": {
+              "Value": 1
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.PlayScreenTransfer",
+          "Mode": "SwitchOut",
+          "CustomTime": 1
+        },
+        {
+          "$type": "RPG.GameCore.UnLockPlayerControl"
+        }
+      ]
+    }
+  ]
+}

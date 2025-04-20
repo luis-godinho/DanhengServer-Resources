@@ -1,13 +1,12 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "DefaultCocoon02",
   "Category": "System",
   "AreaAnchorName": "LevelArea_P20411_F20411001_G294",
-  "SaveType": "Permanent",
   "SystemUnlockCondition": {
     "Conditions": [
       23526
-    ],
-    "Operation": "And"
+    ]
   },
   "LoadSide": "Server",
   "LoadOnInitial": true,
@@ -15,15 +14,15 @@
   "ConflictIDList": [],
   "IsHoyoGroup": true,
   "HoYoGroupType": "Container",
-  "StreamingTemplateType": "Standard",
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
   "ConflictWhiteList": [],
-  "TagContainer": [
-    {
-      "Tag": "Group.Level.SpecialEntrance",
-      "TagHash": -1446353026
-    }
-  ],
+  "TagContainer": {
+    "List": [
+      {
+        "Tag": "Group.Level.SpecialEntrance",
+        "TagHash": -1446353026
+      }
+    ]
+  },
   "AnchorList": [
     {
       "Usage": "Actor",
@@ -38,29 +37,7 @@
   "MonsterList": [],
   "PropList": [
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 808,
-      "LoadOnInitial": true,
       "IsOverrideInitLevelGraph": true,
       "InitLevelGraph": "Config/Level/Props/Common/InitLevelGraph_Prop_Common_Cocoon_02.json",
       "ValueSource": {
@@ -77,51 +54,18 @@
           },
           {
             "$type": "RPG.GameCore.SharedFloat",
-            "Value": 1.0,
-            "Key": "FloorBattleAreaID"
-          }
-        ],
-        "SharedValues": [
-          {
-            "$type": "RPG.GameCore.SharedInt",
-            "Value": 1026,
-            "Key": "CocoonID"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "MappingInfo_Name_1026_0",
-            "Key": "UITextmapID"
-          },
-          {
-            "$type": "RPG.GameCore.SharedFloat",
-            "Value": 1.0,
+            "Value": 1,
             "Key": "FloorBattleAreaID"
           }
         ]
       },
       "State": "CheckPointDisable",
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {
         "CustomTrigger_Spring": {
-          "Radius": 11.0,
+          "Radius": 11,
           "Offset": {
-            "x": -3.0,
-            "z": 6.0,
-            "normalized": {
-              "x": -0.4472136,
-              "z": 0.8944272,
-              "normalized": {
-                "x": -0.44721362,
-                "z": 0.89442724,
-                "magnitude": 1.0,
-                "sqrMagnitude": 1.00000012
-              },
-              "magnitude": 0.99999994,
-              "sqrMagnitude": 0.99999994
-            },
-            "magnitude": 6.708204,
-            "sqrMagnitude": 45.0
+            "X": -3,
+            "Z": 6
           },
           "Server": true
         }
@@ -131,7 +75,6 @@
       "AnchorGroupID": 294,
       "AnchorID": 1,
       "MappingInfoID": 1026,
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [
@@ -150,19 +93,11 @@
           "IconID": 62
         }
       ],
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Prop1",
       "RotY": 191.8578,

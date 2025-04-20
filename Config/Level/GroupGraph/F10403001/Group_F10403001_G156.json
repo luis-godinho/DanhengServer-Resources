@@ -1,0 +1,80 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitSubMissionStateChange",
+          "SubMissions": [
+            500041504
+          ],
+          "State": "Finish",
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.AdvSetAIFollow",
+              "FetchTarget": true,
+              "TargetType": {
+                "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                "Targets": [
+                  400001
+                ]
+              },
+              "FetchFollowTarget": true,
+              "FollowTargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvLocalPlayer"
+              },
+              "PreferSlotIDs": [
+                2,
+                3
+              ]
+            }
+          ],
+          "TriggerOnMissionInit": false
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CollectDataConditions",
+          "TaskIDList": [
+            500041504
+          ],
+          "MainMissionIDList": [],
+          "PerformanceIDList": [],
+          "PerformanceIDDsList": [],
+          "CustomValueMainMissionIDList": []
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByCompareSubMissionState",
+            "SubMissionID": 500041504,
+            "SubMissionState": "Finish"
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.AdvSetAIFollow",
+              "FetchTarget": true,
+              "TargetType": {
+                "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                "Targets": [
+                  400001
+                ]
+              },
+              "FetchFollowTarget": true,
+              "FollowTargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvLocalPlayer"
+              },
+              "PreferSlotIDs": [
+                2,
+                3
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "Type": "Group"
+}

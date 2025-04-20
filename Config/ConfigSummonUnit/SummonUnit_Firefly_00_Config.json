@@ -1,96 +1,34 @@
 {
   "GroupConfigName": "FollowField",
   "ConfigEntityPath": "Config/ConfigEntity/SummonUnit/SummonUnit_Common_TeamField_Entity.json",
-  "TickLodTemplateName": "DefaultStaticEntity",
   "ResidentEffects": [
     {
+      "$type": "RPG.GameCore.TriggerEffect",
       "TargetType": {
         "$type": "RPG.GameCore.TargetAlias",
         "Alias": "AdvLocalPlayer"
       },
       "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Firefly_00/Eff_Avatar_Firefly_00_MazeSkill_01_Hit.prefab",
-      "AttachPoint": "Origin",
-      "Scale": {
-        "x": -1.0,
-        "y": -1.0,
-        "z": -1.0,
-        "normalized": {
-          "x": -0.577350259,
-          "y": -0.577350259,
-          "z": -0.577350259,
-          "normalized": {
-            "x": -0.5773503,
-            "y": -0.5773503,
-            "z": -0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
-      "IsNeedFadeIn": true,
-      "ParamEntityUsage": "LookAt",
-      "TowardMaxPitchAngle": 90.0,
-      "MaxMutexCount": 1,
-      "TaskEnabled": true,
-      "IsClientOnly": true
+      "AttachPoint": "Origin"
     },
     {
+      "$type": "RPG.GameCore.TriggerEffect",
       "TargetType": {
         "$type": "RPG.GameCore.TargetAlias",
         "Alias": "AdvLocalPlayer"
       },
       "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Firefly_00/Eff_Avatar_Firefly_00_MazeSkill_01_Hit_02.prefab",
-      "AttachPoint": "Origin",
-      "Scale": {
-        "x": -1.0,
-        "y": -1.0,
-        "z": -1.0,
-        "normalized": {
-          "x": -0.577350259,
-          "y": -0.577350259,
-          "z": -0.577350259,
-          "normalized": {
-            "x": -0.5773503,
-            "y": -0.5773503,
-            "z": -0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
-      "IsNeedFadeIn": true,
-      "ParamEntityUsage": "LookAt",
-      "TowardMaxPitchAngle": 90.0,
-      "MaxMutexCount": 1,
-      "TaskEnabled": true,
-      "IsClientOnly": true
+      "AttachPoint": "Origin"
     }
   ],
-  "ShoesType": "boot",
   "AttachPoint": "Origin",
-  "Duration": {
-    "fixedValue": {
-      "RawValue": -4294967296
-    }
-  },
   "OnCreate": [
     {
       "$type": "RPG.GameCore.DisableMazeLockTarget",
       "Target": {
         "$type": "RPG.GameCore.TargetAlias",
         "Alias": "AdvLocalPlayer"
-      },
-      "Disable": true,
-      "TaskEnabled": true,
-      "IsClientOnly": true
+      }
     }
   ],
   "OnDestroy": [
@@ -100,8 +38,7 @@
         "$type": "RPG.GameCore.TargetAlias",
         "Alias": "AdvLocalPlayer"
       },
-      "TaskEnabled": true,
-      "IsClientOnly": true
+      "Disable": false
     },
     {
       "$type": "RPG.GameCore.RemoveEffect",
@@ -110,10 +47,7 @@
         "Alias": "Caster"
       },
       "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Firefly_00/Eff_Avatar_Firefly_00_MazeSkill_01_Hit.prefab",
-      "FadeOutRegionStart": -1.0,
-      "FadeOutRegionEnd": -1.0,
-      "TaskEnabled": true,
-      "IsClientOnly": true
+      "IsNeedFadeOut": false
     },
     {
       "$type": "RPG.GameCore.RemoveEffect",
@@ -122,31 +56,25 @@
         "Alias": "Caster"
       },
       "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Firefly_00/Eff_Avatar_Firefly_00_MazeSkill_01_Hit_02.prefab",
-      "FadeOutRegionStart": -1.0,
-      "FadeOutRegionEnd": -1.0,
-      "TaskEnabled": true,
-      "IsClientOnly": true
+      "IsNeedFadeOut": false
     }
   ],
   "TriggerConfig": {
     "CustomTriggers": [
       {
         "TriggerName": "ShowMonsterTargetTrigger",
-        "DefaultEnable": true,
         "Radius": {
-          "fixedValue": {
-            "RawValue": 42949672960
+          "FixedValue": {
+            "Value": 10
           }
         },
         "UseVerticalBound": true,
-        "UpperBound": 2.0,
+        "UpperBound": 2,
         "LowerBound": -0.5,
         "NeedRaycast": true,
-        "RayStartOffsetY": 1.0,
         "TargetTypes": [
           "NPCMonster"
         ],
-        "OnlyCheckFilterOnEnter": true,
         "OnTriggerEnter": [
           {
             "$type": "RPG.GameCore.PredicateTaskList",
@@ -156,8 +84,7 @@
                 "$type": "RPG.GameCore.TargetAlias",
                 "Alias": "TaskActionTarget"
               },
-              "AliveOnly": true,
-              "TaskEnabled": true
+              "AliveOnly": true
             },
             "SuccessTaskList": [
               {
@@ -166,37 +93,9 @@
                   "$type": "RPG.GameCore.TargetAlias",
                   "Alias": "TaskActionTarget"
                 },
-                "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Firefly_00/Eff_Avatar_Firefly_00_MazeSkill_01_Hit_03.prefab",
-                "Scale": {
-                  "x": -1.0,
-                  "y": -1.0,
-                  "z": -1.0,
-                  "normalized": {
-                    "x": -0.577350259,
-                    "y": -0.577350259,
-                    "z": -0.577350259,
-                    "normalized": {
-                      "x": -0.5773503,
-                      "y": -0.5773503,
-                      "z": -0.5773503,
-                      "magnitude": 1.00000012,
-                      "sqrMagnitude": 1.00000024
-                    },
-                    "magnitude": 0.99999994,
-                    "sqrMagnitude": 0.99999994
-                  },
-                  "magnitude": 1.73205078,
-                  "sqrMagnitude": 3.0
-                },
-                "IsNeedFadeIn": true,
-                "ParamEntityUsage": "LookAt",
-                "TowardMaxPitchAngle": 90.0,
-                "MaxMutexCount": 1,
-                "TaskEnabled": true,
-                "IsClientOnly": true
+                "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Firefly_00/Eff_Avatar_Firefly_00_MazeSkill_01_Hit_03.prefab"
               }
-            ],
-            "TaskEnabled": true
+            ]
           }
         ],
         "OnTriggerExit": [
@@ -206,29 +105,21 @@
               "$type": "RPG.GameCore.TargetAlias",
               "Alias": "TaskActionTarget"
             },
-            "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Firefly_00/Eff_Avatar_Firefly_00_MazeSkill_01_Hit_03.prefab",
-            "IsNeedFadeOut": true,
-            "FadeOutRegionStart": -1.0,
-            "FadeOutRegionEnd": -1.0,
-            "TaskEnabled": true,
-            "IsClientOnly": true
+            "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Firefly_00/Eff_Avatar_Firefly_00_MazeSkill_01_Hit_03.prefab"
           }
-        ],
-        "SkipFakeAvatar": true
+        ]
       },
       {
         "TriggerName": "ShowPropTargetTrigger",
-        "DefaultEnable": true,
         "Radius": {
-          "fixedValue": {
-            "RawValue": 42949672960
+          "FixedValue": {
+            "Value": 10
           }
         },
         "UseVerticalBound": true,
-        "UpperBound": 2.0,
+        "UpperBound": 2,
         "LowerBound": -0.5,
         "NeedRaycast": true,
-        "RayStartOffsetY": 1.0,
         "TargetTypes": [
           "Prop"
         ],
@@ -237,11 +128,8 @@
           "TargetType": {
             "$type": "RPG.GameCore.TargetAlias",
             "Alias": "ParamEntity"
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
-        "OnlyCheckFilterOnEnter": true,
         "OnTriggerEnter": [
           {
             "$type": "RPG.GameCore.PredicateTaskList",
@@ -251,8 +139,7 @@
                 "$type": "RPG.GameCore.TargetAlias",
                 "Alias": "TaskActionTarget"
               },
-              "AliveOnly": true,
-              "TaskEnabled": true
+              "AliveOnly": true
             },
             "SuccessTaskList": [
               {
@@ -262,37 +149,9 @@
                   "Alias": "TaskActionTarget"
                 },
                 "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Firefly_00/Eff_Avatar_Firefly_00_MazeSkill_01_Hit_03.prefab",
-                "AttachPoint": "Root",
-                "Scale": {
-                  "x": -1.0,
-                  "y": -1.0,
-                  "z": -1.0,
-                  "normalized": {
-                    "x": -0.577350259,
-                    "y": -0.577350259,
-                    "z": -0.577350259,
-                    "normalized": {
-                      "x": -0.5773503,
-                      "y": -0.5773503,
-                      "z": -0.5773503,
-                      "magnitude": 1.00000012,
-                      "sqrMagnitude": 1.00000024
-                    },
-                    "magnitude": 0.99999994,
-                    "sqrMagnitude": 0.99999994
-                  },
-                  "magnitude": 1.73205078,
-                  "sqrMagnitude": 3.0
-                },
-                "IsNeedFadeIn": true,
-                "ParamEntityUsage": "LookAt",
-                "TowardMaxPitchAngle": 90.0,
-                "MaxMutexCount": 1,
-                "TaskEnabled": true,
-                "IsClientOnly": true
+                "AttachPoint": "Root"
               }
-            ],
-            "TaskEnabled": true
+            ]
           }
         ],
         "OnTriggerExit": [
@@ -302,15 +161,9 @@
               "$type": "RPG.GameCore.TargetAlias",
               "Alias": "TaskActionTarget"
             },
-            "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Firefly_00/Eff_Avatar_Firefly_00_MazeSkill_01_Hit_03.prefab",
-            "IsNeedFadeOut": true,
-            "FadeOutRegionStart": -1.0,
-            "FadeOutRegionEnd": -1.0,
-            "TaskEnabled": true,
-            "IsClientOnly": true
+            "EffectPath": "Effects/Eff_Prefab/Eff_Avatar/Eff_Firefly_00/Eff_Avatar_Firefly_00_MazeSkill_01_Hit_03.prefab"
           }
-        ],
-        "SkipFakeAvatar": true
+        ]
       }
     ]
   }

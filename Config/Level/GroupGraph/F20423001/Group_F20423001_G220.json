@@ -1,0 +1,1021 @@
+{
+  "OnInitSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.MemoryVisionPuzzleInit"
+        }
+      ]
+    }
+  ],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "Puzzle2LG_OnMemoryVisionOpen"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.SetGraphDynamicFloat",
+              "Name": "Loc_EntityAsync",
+              "TargetIDs": [],
+              "Value": {
+                "FixedValue": {
+                  "Value": 0
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.AdvCreateEntityAsync",
+              "InstanceIDList": [],
+              "AdvancedSpawnList": [
+                {
+                  "InstanceID": 300002,
+                  "SpawnEntityType": "Prop"
+                },
+                {
+                  "InstanceID": 400001
+                },
+                {
+                  "InstanceID": 400002
+                },
+                {
+                  "InstanceID": 400003
+                },
+                {
+                  "InstanceID": 400004
+                },
+                {
+                  "InstanceID": 400005
+                },
+                {
+                  "InstanceID": 400009
+                }
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.SetGraphDynamicFloat",
+              "Name": "Loc_EntityAsync",
+              "TargetIDs": [],
+              "Value": {
+                "FixedValue": {
+                  "Value": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "Puzzle2LG_OnMemoryVisionClose"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.AdvDestroyEntityAsync",
+              "NeedDisappear": true,
+              "InstanceIDList": [],
+              "AdvancedSpawnList": [
+                {
+                  "InstanceID": 400009
+                }
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.TriggerGroupEvent",
+              "EventName": {
+                "Value": "G220_DesAll"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AdvDistrictSetupTrigger",
+          "GroupID": {
+            "FixedValue": {
+              "Value": 220
+            }
+          },
+          "DistrictID": {
+            "FixedValue": {
+              "Value": 1
+            }
+          },
+          "OnExit": [
+            {
+              "$type": "RPG.GameCore.TriggerGroupEvent",
+              "EventName": {
+                "Value": "LG2Puzzle_CloseMemoryVision"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.TriggerEntityEvent",
+              "EventName": {
+                "Value": "Clt_TriggerClose"
+              },
+              "InstanceID": {
+                "FixedValue": {
+                  "Value": 300001
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "MissionFinish"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TriggerGroupEvent",
+          "EventName": {
+            "Value": "LG2Puzzle_CloseMemoryVision"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TriggerEntityEvent",
+          "EventName": {
+            "Value": "Clt_TriggerClose"
+          },
+          "InstanceID": {
+            "FixedValue": {
+              "Value": 300001
+            }
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGraphDynamicValueChange",
+          "Name": "Loc_EntityAsync",
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.GenericSwitchCase",
+              "SwitchRef": {
+                "$type": "RPG.GameCore.SwitchRefGraphDynamicFloat",
+                "Name": "Loc_EntityAsync"
+              },
+              "Cases": [
+                {
+                  "$type": "RPG.GameCore.NumberCaseContainer",
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 0
+                    }
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.TriggerEntityEvent",
+                      "EventName": {
+                        "Value": "Clt_TriggerDisableInteract"
+                      },
+                      "InstanceID": {
+                        "FixedValue": {
+                          "Value": 300001
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.NumberCaseContainer",
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 1
+                    }
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.TriggerEntityEvent",
+                      "EventName": {
+                        "Value": "Clt_TriggerEnableInteract"
+                      },
+                      "InstanceID": {
+                        "FixedValue": {
+                          "Value": 300001
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "G220_PropTalk1Finish"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.SetTargetEntityFadeWithAnim",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvNpcEx",
+                "FetchType": "SingleNpcByNpcID",
+                "SingleNpcID": {
+                  "GroupID": {
+                    "FixedValue": {
+                      "Value": 220
+                    }
+                  },
+                  "GroupNpcID": {
+                    "FixedValue": {
+                      "Value": 400002
+                    }
+                  }
+                }
+              },
+              "Duration": 0.5
+            },
+            {
+              "$type": "RPG.GameCore.WaitSecond",
+              "WaitTime": {
+                "FixedValue": {
+                  "Value": 0.5
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.AdvDestroyEntityAsync",
+              "NeedDisappear": true,
+              "InstanceIDList": [],
+              "AdvancedSpawnList": [
+                {
+                  "InstanceID": 400002
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "G220_PropTalk1Finish"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.SetTargetEntityFadeWithAnim",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvNpcEx",
+                "FetchType": "SingleNpcByNpcID",
+                "SingleNpcID": {
+                  "GroupID": {
+                    "FixedValue": {
+                      "Value": 220
+                    }
+                  },
+                  "GroupNpcID": {
+                    "FixedValue": {
+                      "Value": 400003
+                    }
+                  }
+                }
+              },
+              "Duration": 0.5
+            },
+            {
+              "$type": "RPG.GameCore.WaitSecond",
+              "WaitTime": {
+                "FixedValue": {
+                  "Value": 0.5
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.AdvDestroyEntityAsync",
+              "NeedDisappear": true,
+              "InstanceIDList": [],
+              "AdvancedSpawnList": [
+                {
+                  "InstanceID": 400003
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "G220_PropTalk1Finish"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.SetTargetEntityFadeWithAnim",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvNpcEx",
+                "FetchType": "SingleNpcByNpcID",
+                "SingleNpcID": {
+                  "GroupID": {
+                    "FixedValue": {
+                      "Value": 220
+                    }
+                  },
+                  "GroupNpcID": {
+                    "FixedValue": {
+                      "Value": 400004
+                    }
+                  }
+                }
+              },
+              "Duration": 0.5
+            },
+            {
+              "$type": "RPG.GameCore.WaitSecond",
+              "WaitTime": {
+                "FixedValue": {
+                  "Value": 0.5
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.AdvDestroyEntityAsync",
+              "NeedDisappear": true,
+              "InstanceIDList": [],
+              "AdvancedSpawnList": [
+                {
+                  "InstanceID": 400004
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "G220_PropTalk1Finish"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.SetTargetEntityFadeWithAnim",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvNpcEx",
+                "FetchType": "SingleNpcByNpcID",
+                "SingleNpcID": {
+                  "GroupID": {
+                    "FixedValue": {
+                      "Value": 220
+                    }
+                  },
+                  "GroupNpcID": {
+                    "FixedValue": {
+                      "Value": 400005
+                    }
+                  }
+                }
+              },
+              "Duration": 0.5
+            },
+            {
+              "$type": "RPG.GameCore.WaitSecond",
+              "WaitTime": {
+                "FixedValue": {
+                  "Value": 0.5
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.AdvDestroyEntityAsync",
+              "NeedDisappear": true,
+              "InstanceIDList": [],
+              "AdvancedSpawnList": [
+                {
+                  "InstanceID": 400005
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "G220_PropTalk1Finish"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.AdvDestroyEntityAsync",
+              "NeedDisappear": true,
+              "InstanceIDList": [],
+              "AdvancedSpawnList": [
+                {
+                  "InstanceID": 300002,
+                  "SpawnEntityType": "Prop"
+                }
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.CharacterTriggerFreeStyle",
+              "CharacterUniqueName": "220-400001",
+              "StoryAvatarID": "NPC_Avatar_Male_Mydeimos_00",
+              "StoryMotionID": 314040001
+            },
+            {
+              "$type": "RPG.GameCore.WaitSecond",
+              "WaitTime": {
+                "FixedValue": {
+                  "Value": 1
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.SetTargetEntityFadeWithAnim",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvNpcEx",
+                "FetchType": "SingleNpcByNpcID",
+                "SingleNpcID": {
+                  "GroupID": {
+                    "FixedValue": {
+                      "Value": 220
+                    }
+                  },
+                  "GroupNpcID": {
+                    "FixedValue": {
+                      "Value": 400001
+                    }
+                  }
+                }
+              },
+              "Duration": 0.5
+            },
+            {
+              "$type": "RPG.GameCore.WaitSecond",
+              "WaitTime": {
+                "FixedValue": {
+                  "Value": 0.5
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.AdvDestroyEntityAsync",
+              "NeedDisappear": true,
+              "InstanceIDList": [],
+              "AdvancedSpawnList": [
+                {
+                  "InstanceID": 400001
+                }
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.AdvCreateEntityAsync",
+              "InstanceIDList": [],
+              "AdvancedSpawnList": [
+                {
+                  "InstanceID": 300003,
+                  "SpawnEntityType": "Prop"
+                },
+                {
+                  "InstanceID": 400006
+                },
+                {
+                  "InstanceID": 400007
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "G220_PropTalk3Finish"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.SetTargetEntityFadeWithAnim",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvNpcEx",
+                "FetchType": "SingleNpcByNpcID",
+                "SingleNpcID": {
+                  "GroupID": {
+                    "FixedValue": {
+                      "Value": 220
+                    }
+                  },
+                  "GroupNpcID": {
+                    "FixedValue": {
+                      "Value": 400007
+                    }
+                  }
+                }
+              },
+              "Duration": 0.5
+            },
+            {
+              "$type": "RPG.GameCore.WaitSecond",
+              "WaitTime": {
+                "FixedValue": {
+                  "Value": 0.5
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.AdvDestroyEntityAsync",
+              "NeedDisappear": true,
+              "InstanceIDList": [],
+              "AdvancedSpawnList": [
+                {
+                  "InstanceID": 400007
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "G220_PropTalk3Finish"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.AdvCreateEntityAsync",
+              "InstanceIDList": [],
+              "AdvancedSpawnList": [
+                {
+                  "InstanceID": 400008
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "G220_PropTalk4Finish"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.SetTargetEntityFadeWithAnim",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvNpcEx",
+                "FetchType": "SingleNpcByNpcID",
+                "SingleNpcID": {
+                  "GroupID": {
+                    "FixedValue": {
+                      "Value": 220
+                    }
+                  },
+                  "GroupNpcID": {
+                    "FixedValue": {
+                      "Value": 400008
+                    }
+                  }
+                }
+              },
+              "Duration": 0.5
+            },
+            {
+              "$type": "RPG.GameCore.WaitSecond",
+              "WaitTime": {
+                "FixedValue": {
+                  "Value": 0.5
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.AdvDestroyEntityAsync",
+              "NeedDisappear": true,
+              "InstanceIDList": [],
+              "AdvancedSpawnList": [
+                {
+                  "InstanceID": 400008
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "G220_PropTalk2Finish"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.AdvDestroyEntityAsync",
+              "NeedDisappear": true,
+              "InstanceIDList": [],
+              "AdvancedSpawnList": [
+                {
+                  "InstanceID": 300003,
+                  "SpawnEntityType": "Prop"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "G220_DesAll"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByTargetNpcExists",
+                "GroupID": 220,
+                "GroupNpcID": 400001
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.AdvDestroyEntityAsync",
+                  "NeedDisappear": true,
+                  "InstanceIDList": [],
+                  "AdvancedSpawnList": [
+                    {
+                      "InstanceID": 400001
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "G220_DesAll"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByTargetNpcExists",
+                "GroupID": 220,
+                "GroupNpcID": 400002
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.AdvDestroyEntityAsync",
+                  "NeedDisappear": true,
+                  "InstanceIDList": [],
+                  "AdvancedSpawnList": [
+                    {
+                      "InstanceID": 400002
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "G220_DesAll"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByTargetNpcExists",
+                "GroupID": 220,
+                "GroupNpcID": 400003
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.AdvDestroyEntityAsync",
+                  "NeedDisappear": true,
+                  "InstanceIDList": [],
+                  "AdvancedSpawnList": [
+                    {
+                      "InstanceID": 400003
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "G220_DesAll"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByTargetNpcExists",
+                "GroupID": 220,
+                "GroupNpcID": 400004
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.AdvDestroyEntityAsync",
+                  "NeedDisappear": true,
+                  "InstanceIDList": [],
+                  "AdvancedSpawnList": [
+                    {
+                      "InstanceID": 400004
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "G220_DesAll"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByTargetNpcExists",
+                "GroupID": 220,
+                "GroupNpcID": 400005
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.AdvDestroyEntityAsync",
+                  "NeedDisappear": true,
+                  "InstanceIDList": [],
+                  "AdvancedSpawnList": [
+                    {
+                      "InstanceID": 400005
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "G220_DesAll"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByTargetNpcExists",
+                "GroupID": 220,
+                "GroupNpcID": 400006
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.AdvDestroyEntityAsync",
+                  "NeedDisappear": true,
+                  "InstanceIDList": [],
+                  "AdvancedSpawnList": [
+                    {
+                      "InstanceID": 400006
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "G220_DesAll"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByTargetNpcExists",
+                "GroupID": 220,
+                "GroupNpcID": 400007
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.AdvDestroyEntityAsync",
+                  "NeedDisappear": true,
+                  "InstanceIDList": [],
+                  "AdvancedSpawnList": [
+                    {
+                      "InstanceID": 400007
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "G220_DesAll"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByTargetNpcExists",
+                "GroupID": 220,
+                "GroupNpcID": 400008
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.AdvDestroyEntityAsync",
+                  "NeedDisappear": true,
+                  "InstanceIDList": [],
+                  "AdvancedSpawnList": [
+                    {
+                      "InstanceID": 400008
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "G220_DesAll"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.AdvByEntityExist",
+                "TargetType": {
+                  "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                  "FetchType": "SinglePropByPropID",
+                  "SinglePropID": {
+                    "GroupID": {
+                      "FixedValue": {
+                        "Value": 220
+                      }
+                    },
+                    "ID": {
+                      "FixedValue": {
+                        "Value": 300002
+                      }
+                    }
+                  }
+                }
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.AdvDestroyEntityAsync",
+                  "NeedDisappear": true,
+                  "InstanceIDList": [],
+                  "AdvancedSpawnList": [
+                    {
+                      "InstanceID": 300002,
+                      "SpawnEntityType": "Prop"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGroupEvent",
+          "EventName": {
+            "Value": "G220_DesAll"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.AdvByEntityExist",
+                "TargetType": {
+                  "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                  "FetchType": "SinglePropByPropID",
+                  "SinglePropID": {
+                    "GroupID": {
+                      "FixedValue": {
+                        "Value": 220
+                      }
+                    },
+                    "ID": {
+                      "FixedValue": {
+                        "Value": 300003
+                      }
+                    }
+                  }
+                }
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.AdvDestroyEntityAsync",
+                  "NeedDisappear": true,
+                  "InstanceIDList": [],
+                  "AdvancedSpawnList": [
+                    {
+                      "InstanceID": 300003,
+                      "SpawnEntityType": "Prop"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "ValueSource": {
+    "Values": [
+      {
+        "$type": "RPG.GameCore.SharedInt",
+        "Value": 1,
+        "Key": "Loc_EntityAsync"
+      }
+    ]
+  },
+  "Type": "Group",
+  "EntityEventList": []
+}

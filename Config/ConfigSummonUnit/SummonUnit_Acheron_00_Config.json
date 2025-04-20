@@ -1,33 +1,22 @@
 {
-  "GroupConfigName": "Default",
   "ConfigEntityPath": "Config/ConfigEntity/SummonUnit/SummonUnit_Common_TeamField_Entity.json",
-  "TickLodTemplateName": "DefaultStaticEntity",
   "ResidentEffects": [],
-  "ShoesType": "boot",
   "AttachPoint": "Origin",
-  "Duration": {
-    "fixedValue": {
-      "RawValue": -4294967296
-    }
-  },
   "OnCreate": [],
   "OnDestroy": [],
   "TriggerConfig": {
     "CustomTriggers": [
       {
         "TriggerName": "AcheronNpcMonsterTrigger",
-        "DefaultEnable": true,
         "Radius": {
-          "fixedValue": {
-            "RawValue": 85899345920
+          "FixedValue": {
+            "Value": 20
           }
         },
-        "RayStartOffsetY": 1.0,
         "ForceSyncTargetToSever": true,
         "TargetTypes": [
           "NPCMonster"
         ],
-        "OnlyCheckFilterOnEnter": true,
         "ColliderRelativePath": "Trigger",
         "OnTriggerEnter": [
           {
@@ -37,9 +26,7 @@
               "TargetType": {
                 "$type": "RPG.GameCore.TargetAlias",
                 "Alias": "TaskActionTarget"
-              },
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              }
             },
             "SuccessTaskList": [
               {
@@ -48,12 +35,9 @@
                   "$type": "RPG.GameCore.TargetAlias",
                   "Alias": "TaskActionTarget"
                 },
-                "ID": 130802,
-                "TaskEnabled": true,
-                "IsClientOnly": true
+                "ID": 130802
               }
-            ],
-            "TaskEnabled": true
+            ]
           }
         ],
         "OnTriggerExit": [
@@ -65,15 +49,12 @@
             },
             "ID": 130802,
             "LifeTime": {
-              "fixedValue": {
-                "RawValue": 2147483650
+              "FixedValue": {
+                "Value": 0.5
               }
-            },
-            "TaskEnabled": true,
-            "IsClientOnly": true
+            }
           }
-        ],
-        "SkipFakeAvatar": true
+        ]
       }
     ]
   }

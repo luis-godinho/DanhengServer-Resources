@@ -1,0 +1,375 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropSetupUITrigger",
+          "ButtonText": {
+            "Hash": 5327447753951709053
+          },
+          "ButtonCallback": [
+            {
+              "$type": "RPG.GameCore.SelectorConfig",
+              "TaskList": [
+                {
+                  "$type": "RPG.GameCore.PropStateExecute",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                  },
+                  "Execute": [
+                    {
+                      "$type": "RPG.GameCore.PredicateTaskList",
+                      "Predicate": {
+                        "$type": "RPG.GameCore.ByAnd",
+                        "PredicateList": [
+                          {
+                            "$type": "RPG.GameCore.ByComparePropState",
+                            "TargetType": {
+                              "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                              "FetchType": "SinglePropByPropID",
+                              "SinglePropID": {
+                                "GroupID": {
+                                  "FixedValue": {
+                                    "Value": 3
+                                  }
+                                },
+                                "ID": {
+                                  "FixedValue": {
+                                    "Value": 300004
+                                  }
+                                }
+                              }
+                            },
+                            "State": "Open"
+                          },
+                          {
+                            "$type": "RPG.GameCore.ByComparePropState",
+                            "TargetType": {
+                              "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                              "FetchType": "SinglePropByPropID",
+                              "SinglePropID": {
+                                "GroupID": {
+                                  "FixedValue": {
+                                    "Value": 3
+                                  }
+                                },
+                                "ID": {
+                                  "FixedValue": {
+                                    "Value": 300002
+                                  }
+                                }
+                              }
+                            },
+                            "State": "Open"
+                          }
+                        ]
+                      },
+                      "SuccessTaskList": [
+                        {
+                          "$type": "RPG.GameCore.PropMoveTo",
+                          "Duration": {
+                            "FixedValue": {
+                              "Value": 3
+                            }
+                          },
+                          "AreaName": "Tramcar_Game_Lv2_Points",
+                          "AnchorName": "Point2",
+                          "WaitFinish": true,
+                          "TargetType": {
+                            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                          }
+                        },
+                        {
+                          "$type": "RPG.GameCore.PropMoveTo",
+                          "Duration": {
+                            "FixedValue": {
+                              "Value": 3
+                            }
+                          },
+                          "AreaName": "Tramcar_Game_Lv2_Points",
+                          "AnchorName": "Point3",
+                          "TargetRotation": {
+                            "Y": 40
+                          },
+                          "WaitFinish": true,
+                          "TargetType": {
+                            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                          }
+                        },
+                        {
+                          "$type": "RPG.GameCore.PropMoveTo",
+                          "Duration": {
+                            "FixedValue": {
+                              "Value": 1
+                            }
+                          },
+                          "AreaName": "Tramcar_Game_Lv2_Points",
+                          "AnchorName": "Point4",
+                          "WaitFinish": true,
+                          "TargetType": {
+                            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                          }
+                        },
+                        {
+                          "$type": "RPG.GameCore.PropReqInteract",
+                          "TargetType": {
+                            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                          },
+                          "InteractID": {
+                            "FixedValue": {
+                              "Value": 1010
+                            }
+                          }
+                        }
+                      ],
+                      "FailedTaskList": [
+                        {
+                          "$type": "RPG.GameCore.ToastPile",
+                          "DescTextID": {
+                            "Hash": 14152814599144191632
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.PropStateExecute",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                  },
+                  "State": "Open",
+                  "Execute": [
+                    {
+                      "$type": "RPG.GameCore.PredicateTaskList",
+                      "Predicate": {
+                        "$type": "RPG.GameCore.ByAnd",
+                        "PredicateList": [
+                          {
+                            "$type": "RPG.GameCore.ByComparePropState",
+                            "TargetType": {
+                              "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                              "FetchType": "SinglePropByPropID",
+                              "SinglePropID": {
+                                "GroupID": {
+                                  "FixedValue": {
+                                    "Value": 3
+                                  }
+                                },
+                                "ID": {
+                                  "FixedValue": {
+                                    "Value": 300004
+                                  }
+                                }
+                              }
+                            },
+                            "State": "Open"
+                          },
+                          {
+                            "$type": "RPG.GameCore.ByComparePropState",
+                            "TargetType": {
+                              "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                              "FetchType": "SinglePropByPropID",
+                              "SinglePropID": {
+                                "GroupID": {
+                                  "FixedValue": {
+                                    "Value": 3
+                                  }
+                                },
+                                "ID": {
+                                  "FixedValue": {
+                                    "Value": 300002
+                                  }
+                                }
+                              }
+                            },
+                            "State": "Open"
+                          }
+                        ]
+                      },
+                      "SuccessTaskList": [
+                        {
+                          "$type": "RPG.GameCore.PropMoveTo",
+                          "Duration": {
+                            "FixedValue": {
+                              "Value": 1
+                            }
+                          },
+                          "AreaName": "Tramcar_Game_Lv2_Points",
+                          "AnchorName": "Point3",
+                          "TargetRotation": {
+                            "Y": 40
+                          },
+                          "WaitFinish": true,
+                          "TargetType": {
+                            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                          }
+                        },
+                        {
+                          "$type": "RPG.GameCore.PropMoveTo",
+                          "Duration": {
+                            "FixedValue": {
+                              "Value": 3
+                            }
+                          },
+                          "AreaName": "Tramcar_Game_Lv2_Points",
+                          "AnchorName": "Point2",
+                          "WaitFinish": true,
+                          "TargetType": {
+                            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                          }
+                        },
+                        {
+                          "$type": "RPG.GameCore.PropMoveTo",
+                          "Duration": {
+                            "FixedValue": {
+                              "Value": 3
+                            }
+                          },
+                          "AreaName": "Tramcar_Game_Lv2_Points",
+                          "AnchorName": "Point1",
+                          "WaitFinish": true,
+                          "TargetType": {
+                            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                          }
+                        },
+                        {
+                          "$type": "RPG.GameCore.PropReqInteract",
+                          "TargetType": {
+                            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                          },
+                          "InteractID": {
+                            "FixedValue": {
+                              "Value": 1100
+                            }
+                          }
+                        }
+                      ],
+                      "FailedTaskList": [
+                        {
+                          "$type": "RPG.GameCore.PredicateTaskList",
+                          "Predicate": {
+                            "$type": "RPG.GameCore.ByAnd",
+                            "PredicateList": [
+                              {
+                                "$type": "RPG.GameCore.ByComparePropState",
+                                "TargetType": {
+                                  "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                                  "FetchType": "SinglePropByPropID",
+                                  "SinglePropID": {
+                                    "GroupID": {
+                                      "FixedValue": {
+                                        "Value": 3
+                                      }
+                                    },
+                                    "ID": {
+                                      "FixedValue": {
+                                        "Value": 300004
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              {
+                                "$type": "RPG.GameCore.ByComparePropState",
+                                "TargetType": {
+                                  "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                                  "FetchType": "SinglePropByPropID",
+                                  "SinglePropID": {
+                                    "GroupID": {
+                                      "FixedValue": {
+                                        "Value": 3
+                                      }
+                                    },
+                                    "ID": {
+                                      "FixedValue": {
+                                        "Value": 300002
+                                      }
+                                    }
+                                  }
+                                },
+                                "State": "Locked"
+                              }
+                            ]
+                          },
+                          "SuccessTaskList": [
+                            {
+                              "$type": "RPG.GameCore.PropMoveTo",
+                              "Duration": {
+                                "FixedValue": {
+                                  "Value": 1
+                                }
+                              },
+                              "AreaName": "Tramcar_Game_Lv2_Points",
+                              "AnchorName": "Point3",
+                              "TargetRotation": {
+                                "Y": 40
+                              },
+                              "WaitFinish": true,
+                              "TargetType": {
+                                "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                              }
+                            },
+                            {
+                              "$type": "RPG.GameCore.PropMoveTo",
+                              "Duration": {
+                                "FixedValue": {
+                                  "Value": 3
+                                }
+                              },
+                              "AreaName": "Tramcar_Game_Lv2_Points",
+                              "AnchorName": "Point5",
+                              "WaitFinish": true,
+                              "TargetType": {
+                                "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                              }
+                            },
+                            {
+                              "$type": "RPG.GameCore.PropMoveTo",
+                              "Duration": {
+                                "FixedValue": {
+                                  "Value": 4
+                                }
+                              },
+                              "AreaName": "Tramcar_Game_Lv2_Points",
+                              "AnchorName": "Point6",
+                              "TargetRotation": {
+                                "Y": 40
+                              },
+                              "WaitFinish": true,
+                              "TargetType": {
+                                "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                              }
+                            },
+                            {
+                              "$type": "RPG.GameCore.ToastPile",
+                              "DescTextID": {
+                                "Hash": 9693722353427165594
+                              }
+                            }
+                          ],
+                          "FailedTaskList": [
+                            {
+                              "$type": "RPG.GameCore.ToastPile",
+                              "DescTextID": {
+                                "Hash": 14152814599144191632
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          }
+        }
+      ]
+    }
+  ]
+}

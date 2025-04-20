@@ -1,0 +1,77 @@
+{
+  "OnInitSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropSwitchMaterial",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          },
+          "MatID": {
+            "IsDynamic": true,
+            "PostfixExpr": {
+              "OpCodes": "AQAR",
+              "FixedValues": [],
+              "DynamicHashes": [
+                -229239293
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.GenericSwitchCase",
+          "SwitchRef": {
+            "$type": "RPG.GameCore.SwitchRefGraphDynamicFloat",
+            "Name": "SealType"
+          },
+          "Cases": [
+            {
+              "$type": "RPG.GameCore.NumberCaseContainer",
+              "Case": {
+                "FixedValue": {
+                  "Value": 6
+                }
+              },
+              "OnSuccess": [
+                {
+                  "$type": "RPG.GameCore.TriggerEffectList",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                  },
+                  "EffectList": [
+                    {
+                      "EffectPath": "Effects/Eff_Prefab/Eff_ActivityProp/Eff_ActivityMarble_01/Eff_ActivityMarble_Split_Ball_Loop_01.prefab",
+                      "IsAttachToTargetEntity": true,
+                      "AttachPoint": "EffRoot"
+                    },
+                    {
+                      "EffectPath": "Effects/Eff_Prefab/Eff_ActivityProp/Eff_ActivityMarble_01/Eff_ActivityMarble_Split_Ball_Loop_02.prefab",
+                      "IsAttachToTargetEntity": true,
+                      "AttachPoint": "EffRoot"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "ValueSource": {
+    "Values": [
+      {
+        "$type": "RPG.GameCore.SharedInt",
+        "Key": "SealType"
+      }
+    ]
+  },
+  "Type": "Entity",
+  "EntityEventList": []
+}

@@ -8,8 +8,7 @@
           "CustomString": {
             "Value": "Hold"
           },
-          "WaitOwnerOnly": true,
-          "TaskEnabled": true
+          "WaitOwnerOnly": true
         }
       ]
     },
@@ -22,19 +21,27 @@
             "FetchType": "SinglePropByPropID",
             "SinglePropID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 98784247808
+                "FixedValue": {
+                  "Value": 23
                 }
               },
               "ID": {
-                "fixedValue": {
-                  "RawValue": 1288494483767296
+                "FixedValue": {
+                  "Value": 300001
                 }
               }
             }
           },
-          "TargetGroupID": {},
-          "TargetID": {},
+          "TargetGroupID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "TargetID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
           "TargetTypes": [],
           "ColliderRelativePath": "Trigger",
           "DestroyAfterTriggered": true,
@@ -43,29 +50,21 @@
               "$type": "RPG.GameCore.PlayMissionTalk",
               "SimpleTalkList": [
                 {
-                  "TextSpeed": 30.0,
+                  "TextSpeed": 30,
                   "TalkSentenceID": 201010601,
                   "ProtectTime": 0.3
                 },
                 {
-                  "TextSpeed": 20.0,
                   "TalkSentenceID": 201010602,
                   "ProtectTime": 0.3
                 }
-              ],
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              ]
             },
             {
               "$type": "RPG.GameCore.FinishPerformanceMission",
-              "Key": "Mission_101010102",
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "Key": "Mission_101010102"
             }
-          ],
-          "SkipFakeAvatar": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         }
       ]
     }

@@ -1,0 +1,203 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropSetupUITrigger",
+          "IconType": "CheckIcon",
+          "ButtonText": {
+            "Hash": 8272382420037174806
+          },
+          "ButtonCallback": [
+            {
+              "$type": "RPG.GameCore.SwitchPhotoGraphMode",
+              "PhotoGraphMode": "Identify",
+              "SkipPhotoPreviewDialog": true,
+              "IdentifyRadiusOverride": {
+                "FixedValue": {
+                  "Value": 0
+                }
+              },
+              "IdentifyMaxExitDistance": 50,
+              "IdentifyLookAt": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+              },
+              "InitFov": 1
+            }
+          ],
+          "OverrideTargetTypes": [],
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PhotoGraphAimTarget",
+          "AimTargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          },
+          "IsAim": true,
+          "AimIdentifyType": "Manual"
+        },
+        {
+          "$type": "RPG.GameCore.PhotoGraphWaitIdentifyFinish",
+          "WaitTargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          },
+          "OnIdentifyFinish": []
+        },
+        {
+          "$type": "RPG.GameCore.LockPhotoIdentifyHint"
+        },
+        {
+          "$type": "RPG.GameCore.PhotoGraphAimTarget",
+          "AimTargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.PhotoGraphShowIdentifyResult",
+          "IsIdentifySuccess": true,
+          "IsShowToast": true,
+          "ToastText": {
+            "Hash": 845206858745524995
+          }
+        },
+        {
+          "$type": "RPG.GameCore.DestroyProp",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          },
+          "ID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "GroupID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "DestroyList": [
+            {
+              "$type": "RPG.GameCore.GroupEntityInfo",
+              "GroupID": {
+                "IsDynamic": true,
+                "PostfixExpr": {
+                  "OpCodes": "AQAR",
+                  "FixedValues": [],
+                  "DynamicHashes": [
+                    1276558386
+                  ]
+                }
+              },
+              "GroupInstanceID": {
+                "IsDynamic": true,
+                "PostfixExpr": {
+                  "OpCodes": "AQAR",
+                  "FixedValues": [],
+                  "DynamicHashes": [
+                    -710485593
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.WaitSecond",
+          "WaitTime": {
+            "FixedValue": {
+              "Value": 1
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.SwitchPhotoGraphMode",
+          "IdentifyRadiusOverride": {
+            "FixedValue": {
+              "Value": 0
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TriggerCustomString",
+          "CustomString": {
+            "Custom": true,
+            "Key": "MissionPhotoID"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.DestroyProp",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          },
+          "ID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "GroupID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "DestroyList": [
+            {
+              "$type": "RPG.GameCore.GroupEntityInfo",
+              "GroupID": {
+                "IsDynamic": true,
+                "PostfixExpr": {
+                  "OpCodes": "AQAR",
+                  "FixedValues": [],
+                  "DynamicHashes": [
+                    49349642
+                  ]
+                }
+              },
+              "GroupInstanceID": {
+                "IsDynamic": true,
+                "PostfixExpr": {
+                  "OpCodes": "AQAR",
+                  "FixedValues": [],
+                  "DynamicHashes": [
+                    1556424128
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {}
+  ],
+  "ValueSource": {
+    "Values": [
+      {
+        "$type": "RPG.GameCore.SharedString",
+        "Key": "MissionPhotoID"
+      },
+      {
+        "$type": "RPG.GameCore.SharedInt",
+        "Key": "Prop_Groupid"
+      },
+      {
+        "$type": "RPG.GameCore.SharedInt",
+        "Key": "Prop_id"
+      },
+      {
+        "$type": "RPG.GameCore.SharedInt",
+        "Key": "Mark_Groupid"
+      },
+      {
+        "$type": "RPG.GameCore.SharedInt",
+        "Key": "Mark_Propid"
+      }
+    ]
+  }
+}

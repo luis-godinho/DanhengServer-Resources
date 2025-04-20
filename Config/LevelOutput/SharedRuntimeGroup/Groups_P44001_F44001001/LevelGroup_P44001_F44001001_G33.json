@@ -1,21 +1,19 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "MainMission4070011_LeaveMiracleRoom",
   "Category": "Mission",
   "LevelGraph": "Config/Level/GroupGraph/F44001001/Group_F44001001_G33.json",
   "AreaAnchorName": "LevelArea_P44001_F44001001_G33",
-  "SaveType": "Permanent",
   "LoadSide": "Server",
   "OwnerMainMissionID": 4070011,
   "ValueSource": {},
   "ConflictIDList": [],
   "IsHoyoGroup": true,
-  "StreamingTemplateType": "Standard",
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
   "ConflictWhiteList": [],
   "AnchorList": [
     {
       "RotX": 20.88796,
-      "RotZ": -1e-06,
+      "RotZ": -1E-06,
       "Usage": "Camera",
       "CustomParameter": {
         "$type": "RPG.GameCore.LevelAnchorCameraParameter"
@@ -47,38 +45,15 @@
   "PropList": [],
   "DistrictList": [
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "Trigger": {
         "Shape": "GeometryBox",
-        "Radius": 1.0,
+        "Radius": 1,
         "DimX": 6.75,
         "DimY": 6.75,
         "DimZ": 6.75,
         "PointList": []
       },
-      "LoadOnInitial": true,
       "DistrictType": "Level",
-      "NPCCrowdRadius": 25.0,
       "ValueSource": {},
       "Name": "District1",
       "RotY": 19.1787,
@@ -88,37 +63,14 @@
       "PosZ": -103.81
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "Trigger": {
         "Shape": "Box",
-        "Radius": 1.0,
+        "Radius": 1,
         "DimX": 5.77,
         "DimY": 5.77,
         "DimZ": 5.77,
         "PointList": []
       },
-      "LoadOnInitial": true,
-      "NPCCrowdRadius": 25.0,
       "ValueSource": {},
       "Name": "District2",
       "RotY": 19.1787,
@@ -134,16 +86,8 @@
   "NPCList": [
     {
       "NPCID": 3015,
-      "LoadOnInitial": true,
       "ValueSource": {
         "Values": [
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "LevelArea_P44001_F44001001_G22,TransferPeiPei",
-            "Key": "Anchor"
-          }
-        ],
-        "SharedValues": [
           {
             "$type": "RPG.GameCore.SharedString",
             "Value": "LevelArea_P44001_F44001001_G22,TransferPeiPei",
@@ -152,31 +96,20 @@
         ]
       },
       "CampID": 2,
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "ServerInteractVerificationIDList": [],
+      "DefaultLookAtMode": "Closed",
       "BoardShowList": [
         8
       ],
       "TalkDialogGroupIDList": [],
-      "BornType": "Mission",
+      "DefaultAnimationType": "IdleState",
       "InitialHiddenNodeList": [],
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "SpawnConfig": {
-        "TryCapture": true,
-        "CaptureDistanceTolerance": 10.0,
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "CaptureDistanceTolerance": 10,
+        "EntitySpawnConfig": {}
       },
-      "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true
-      },
+      "TriggerValidGuest": {},
       "Name": "NPC1",
       "RotY": 167.9004,
       "ID": 400001,
@@ -193,39 +126,29 @@
         {
           "PointList": [
             {
+              "RestartMode": "RestartFromSO",
               "RootTask": {
                 "$type": "RPG.GameCore.SO_Sequence",
                 "Tasks": [
                   {
                     "$type": "RPG.GameCore.SO_KeepDistanceMoveTo",
                     "MoveStance": "FastRun",
-                    "StartRunDistance": 10.0,
-                    "StartSprintDistance": 8.0,
-                    "FreeScaleDistance": 6.0,
+                    "StartRunDistance": 10,
+                    "StartSprintDistance": 8,
+                    "FreeScaleDistance": 6,
                     "ScaleInterval": 0.1,
-                    "TransitionTime": 0.25,
-                    "PlayerSpeedRatio": 3.0,
-                    "ScaleStep": 0.3,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "PlayerSpeedRatio": 3,
+                    "ScaleStep": 0.3
                   },
                   {
-                    "$type": "RPG.GameCore.SO_Wait",
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "$type": "RPG.GameCore.SO_Wait"
                   },
                   {
                     "$type": "RPG.GameCore.SO_PlayFreeStyle",
-                    "StoryMotionID": 900030243,
-                    "ForceStart": true,
-                    "NormalizedTransitionDuration": 0.05,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "StoryMotionID": 900030243
                   }
                 ],
-                "WaitMessages": [],
-                "TaskEnabled": true,
-                "IsClientOnly": true
+                "WaitMessages": []
               }
             }
           ]
@@ -244,39 +167,29 @@
         {
           "PointList": [
             {
+              "RestartMode": "RestartFromSO",
               "RootTask": {
                 "$type": "RPG.GameCore.SO_Sequence",
                 "Tasks": [
                   {
                     "$type": "RPG.GameCore.SO_KeepDistanceMoveTo",
                     "MoveStance": "FastRun",
-                    "StartRunDistance": 10.0,
-                    "StartSprintDistance": 8.0,
-                    "FreeScaleDistance": 6.0,
+                    "StartRunDistance": 10,
+                    "StartSprintDistance": 8,
+                    "FreeScaleDistance": 6,
                     "ScaleInterval": 0.1,
-                    "TransitionTime": 0.25,
-                    "PlayerSpeedRatio": 3.0,
-                    "ScaleStep": 0.3,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "PlayerSpeedRatio": 3,
+                    "ScaleStep": 0.3
                   },
                   {
-                    "$type": "RPG.GameCore.SO_Wait",
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "$type": "RPG.GameCore.SO_Wait"
                   },
                   {
                     "$type": "RPG.GameCore.SO_PlayFreeStyle",
-                    "StoryMotionID": 900030250,
-                    "ForceStart": true,
-                    "NormalizedTransitionDuration": 0.05,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "StoryMotionID": 900030250
                   }
                 ],
-                "WaitMessages": [],
-                "TaskEnabled": true,
-                "IsClientOnly": true
+                "WaitMessages": []
               }
             }
           ]
@@ -295,39 +208,29 @@
         {
           "PointList": [
             {
+              "RestartMode": "RestartFromSO",
               "RootTask": {
                 "$type": "RPG.GameCore.SO_Sequence",
                 "Tasks": [
                   {
                     "$type": "RPG.GameCore.SO_KeepDistanceMoveTo",
                     "MoveStance": "FastRun",
-                    "StartRunDistance": 10.0,
-                    "StartSprintDistance": 8.0,
-                    "FreeScaleDistance": 6.0,
+                    "StartRunDistance": 10,
+                    "StartSprintDistance": 8,
+                    "FreeScaleDistance": 6,
                     "ScaleInterval": 0.1,
-                    "TransitionTime": 0.25,
-                    "PlayerSpeedRatio": 3.0,
-                    "ScaleStep": 0.3,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "PlayerSpeedRatio": 3,
+                    "ScaleStep": 0.3
                   },
                   {
-                    "$type": "RPG.GameCore.SO_Wait",
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "$type": "RPG.GameCore.SO_Wait"
                   },
                   {
                     "$type": "RPG.GameCore.SO_PlayFreeStyle",
-                    "StoryMotionID": 900030250,
-                    "ForceStart": true,
-                    "NormalizedTransitionDuration": 0.05,
-                    "TaskEnabled": true,
-                    "IsClientOnly": true
+                    "StoryMotionID": 900030250
                   }
                 ],
-                "WaitMessages": [],
-                "TaskEnabled": true,
-                "IsClientOnly": true
+                "WaitMessages": []
               }
             }
           ]

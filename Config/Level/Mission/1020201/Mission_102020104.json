@@ -4,28 +4,18 @@
     {
       "TaskList": [
         {
-          "$type": "RPG.GameCore.LockPlayerControl",
-          "LockCameraControl": true,
-          "LockInteractSelect": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "$type": "RPG.GameCore.LockPlayerControl"
         },
         {
           "$type": "RPG.GameCore.PerformanceTransition",
-          "SwitchInTime": 0.5,
-          "SwitchKeepTime": 0.5,
+          "SwitchOutTime": 0,
           "CreateNpcList": [],
           "CaptureNpcList": [],
           "DestroyNpcList": [],
-          "DisactiveVCamOnGraphEnd": true,
           "ActiveVirtualCamera": {
             "AreaName": "1020201_temp",
             "AnchorName": "Camera_102020102",
-            "IsActive": true,
-            "VCameraDitherMaxDistance": 1.0,
-            "CenterPosX": -1.0,
-            "CenterPosY": -1.0,
-            "IsClientOnly": true
+            "TaskEnabled": false
           },
           "SwitchCharacterAnchor": {
             "IsLocalPlayer": true,
@@ -34,35 +24,21 @@
             },
             "AnchorName": {
               "Value": "Anchor1"
-            },
-            "ResetAnimation": true,
-            "ResetCamera": true,
-            "ClearSpecialVision": true,
-            "TaskEnabled": true,
-            "IsClientOnly": true
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+            }
+          }
         },
         {
           "$type": "RPG.GameCore.TriggerPerformance",
           "ValueSource": {},
           "PerformanceType": "C",
-          "PerformanceID": 102020104,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 102020104
         },
         {
-          "$type": "RPG.GameCore.UnLockPlayerControl",
-          "UnLockCameraControl": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "$type": "RPG.GameCore.UnLockPlayerControl"
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_102020104",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_102020104"
         }
       ]
     }

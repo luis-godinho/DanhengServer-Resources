@@ -11,9 +11,7 @@
           "PerformanceIDDsList": [],
           "CustomValueMainMissionIDList": [
             8015162
-          ],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         },
         {
           "$type": "RPG.GameCore.SetMissionWayPoint",
@@ -23,9 +21,7 @@
           "OverideWayPointEntityID": true,
           "WayPointEntityID": 400001,
           "OverideWayPointShowRangeMin": true,
-          "OverideMapWaypointRange": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "OverideMapWaypointRange": true
         },
         {
           "$type": "RPG.GameCore.PredicateTaskList",
@@ -46,17 +42,14 @@
               ]
             },
             "EquationType": "Equal",
-            "TargetValue": 1,
-            "TaskEnabled": true,
-            "IsClientOnly": true
+            "TargetValue": 1
           },
           "SuccessTaskList": [
             {
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "OnInit_NoPre_QiongGuan_Submission"
-              },
-              "TaskEnabled": true
+              }
             },
             {
               "$type": "RPG.GameCore.SetMissionCustomValue",
@@ -74,12 +67,9 @@
                   8
                 ]
               },
-              "CustomValue": 2,
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              "CustomValue": 2
             }
-          ],
-          "TaskEnabled": true
+          ]
         }
       ]
     },
@@ -90,43 +80,26 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "OnStart_QiongGuan_Submission"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.NpcPossession",
-          "GroupID": {},
-          "GroupNpcID": {},
-          "PossessionInfo": {
-            "Name": "Possession_RobCraneBox_A_01",
-            "LocalScale": {
-              "x": 1.0,
-              "y": 1.0,
-              "z": 1.0,
-              "normalized": {
-                "x": 0.577350259,
-                "y": 0.577350259,
-                "z": 0.577350259,
-                "normalized": {
-                  "x": 0.5773503,
-                  "y": 0.5773503,
-                  "z": 0.5773503,
-                  "magnitude": 1.00000012,
-                  "sqrMagnitude": 1.00000024
-                },
-                "magnitude": 0.99999994,
-                "sqrMagnitude": 0.99999994
-              },
-              "magnitude": 1.73205078,
-              "sqrMagnitude": 3.0
+          "GroupID": {
+            "FixedValue": {
+              "Value": 0
             }
           },
-          "TargetType": {
-            "$type": "RPG.GameCore.TargetFetchAdvLocalPlayer",
-            "IncludeStoryPlayer": true
+          "GroupNpcID": {
+            "FixedValue": {
+              "Value": 0
+            }
           },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PossessionInfo": {
+            "Name": "Possession_RobCraneBox_A_01"
+          },
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvLocalPlayer"
+          }
         },
         {
           "$type": "RPG.GameCore.SetMissionCustomValue",
@@ -144,9 +117,7 @@
               0
             ]
           },
-          "CustomValue": 2,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "CustomValue": 2
         },
         {
           "$type": "RPG.GameCore.SetMissionWayPoint",
@@ -158,9 +129,7 @@
           "OverideWayPointShowRangeMin": true,
           "WayPointShowRangeMin": 99,
           "OverideMapWaypointRange": true,
-          "MapWaypointRange": 25.0,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "MapWaypointRange": 25
         }
       ]
     },
@@ -171,8 +140,7 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "OnClose_QiongGuan_Submission"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.SetMissionCustomValue",
@@ -189,9 +157,7 @@
               7,
               0
             ]
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
           "$type": "RPG.GameCore.SetMissionWayPoint",
@@ -203,9 +169,7 @@
           "OverideWayPointEntityID": true,
           "WayPointEntityID": 400001,
           "OverideWayPointShowRangeMin": true,
-          "OverideMapWaypointRange": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "OverideMapWaypointRange": true
         }
       ]
     },
@@ -216,8 +180,7 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "AddMCV_801516211"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.CalculateMissionCustomValue",
@@ -246,9 +209,7 @@
           },
           "ValueB": {
             "DirectValue": 1
-          },
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         }
       ]
     },
@@ -262,9 +223,7 @@
           "PerformanceIDDsList": [],
           "CustomValueMainMissionIDList": [
             8015162
-          ],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         },
         {
           "$type": "RPG.GameCore.WaitMissionCustomValueChange",
@@ -281,71 +240,49 @@
           "OnChange": [
             {
               "$type": "RPG.GameCore.PerformanceTransition",
-              "SwitchInTime": 0.5,
               "SwitchKeepTime": 1.5,
-              "SwitchOutTime": 0.5,
               "TextEnabled": true,
               "TalkSentenceID": 815162519,
               "CreateNpcList": [],
               "CaptureNpcList": [],
               "DestroyNpcList": [],
               "CreateProp": {
-                "IsClientOnly": true
+                "TaskEnabled": false
               },
               "DestroyProp": {
                 "TargetType": {
                   "$type": "RPG.GameCore.TargetFetchAdvPropEx"
                 },
-                "IsClientOnly": true
+                "TaskEnabled": false
               },
               "AdvCreateGroupEntity": {
                 "InstanceIDList": [],
-                "IsClientOnly": true
+                "TaskEnabled": false
               },
               "AdvDestroyGroupEntity": {
                 "InstanceIDList": [],
-                "IsClientOnly": true
+                "TaskEnabled": false
               },
-              "DisactiveVCamOnGraphEnd": true,
               "ActiveVirtualCamera": {
-                "IsActive": true,
-                "VCameraDitherMaxDistance": 1.0,
-                "CenterPosX": -1.0,
-                "CenterPosY": -1.0,
-                "IsClientOnly": true
+                "TaskEnabled": false
               },
               "ActiveTemplateVirtualCamera": {
-                "IsActive": true,
-                "IsClientOnly": true
+                "TaskEnabled": false
               },
               "SwitchCharacterAnchor": {
-                "ResetAnimation": true,
-                "ResetCamera": true,
-                "ClearSpecialVision": true,
-                "IsClientOnly": true
+                "TaskEnabled": false
               },
               "AdvNpcFaceToPlayer": {
-                "FromDialog": true,
-                "TryFaceToFace": true,
-                "NpcLookAtPlayer": true,
-                "PlayerLookAtNpc": true,
-                "StopLookAtOnGraphEnd": true,
-                "TurnBackOnGraphEnd": true,
                 "SteerImmediately": true,
                 "FinishImmadiate": true,
-                "WaitFinishMode": "WaitFaceAngle",
-                "ForceToStandBy": true,
-                "IsClientOnly": true
-              },
-              "TaskEnabled": true,
-              "IsClientOnly": true
+                "TaskEnabled": false
+              }
             },
             {
               "$type": "RPG.GameCore.TriggerCustomString",
               "CustomString": {
                 "Value": "Talk_801516211"
-              },
-              "TaskEnabled": true
+              }
             }
           ],
           "Condition": {
@@ -361,13 +298,8 @@
               ]
             },
             "EquationType": "GreaterEqual",
-            "TargetValue": 3,
-            "TaskEnabled": true,
-            "IsClientOnly": true
-          },
-          "IsLoop": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+            "TargetValue": 3
+          }
         }
       ]
     },
@@ -377,14 +309,11 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Talk_801516211"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_801516211",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_801516211"
         }
       ]
     }

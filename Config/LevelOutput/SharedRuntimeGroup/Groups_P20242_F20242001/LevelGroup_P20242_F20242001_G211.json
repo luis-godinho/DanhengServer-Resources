@@ -1,4 +1,5 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "bto01",
   "Category": "Atmosphere",
   "AreaAnchorName": "LevelArea_P20242_F20242001_G211",
@@ -8,25 +9,23 @@
       {
         "$type": "RPG.GameCore.LevelGroupAtmosphereSavedValueCondition",
         "SavedValueName": "bto",
-        "Operation": "Equal",
         "Value": 1
       }
-    ],
-    "Operation": "And"
+    ]
   },
   "ValueSource": {},
   "ConflictIDList": [],
   "IsHoyoGroup": true,
   "HoYoGroupType": "Container",
-  "StreamingTemplateType": "Standard",
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
   "ConflictWhiteList": [],
-  "TagContainer": [
-    {
-      "Tag": "Group.Activity.250SparringTournament",
-      "TagHash": 761488828
-    }
-  ],
+  "TagContainer": {
+    "List": [
+      {
+        "Tag": "Group.Activity.250SparringTournament",
+        "TagHash": 761488828
+      }
+    ]
+  },
   "AnchorList": [
     {
       "Name": "Anchor1",
@@ -39,61 +38,11 @@
   "MonsterList": [],
   "PropList": [
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 100,
-      "LoadOnInitial": true,
       "IsOverrideInitLevelGraph": true,
       "InitLevelGraph": "Config/Level/CrowdBubble/MunicipalChat_Play_Template.json",
       "ValueSource": {
         "Values": [
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "Config/Level/MunicipalChatConfig/F20242001/MunicipalChatConfig_F20242001_0038.json",
-            "Key": "PlayMunicipalChatPath"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "MunicipalChatConfig_F20242001_0038",
-            "Key": "PlayMunicipalChatName"
-          },
-          {
-            "$type": "RPG.GameCore.SharedJsonConfigList",
-            "Value": [
-              {
-                "$type": "RPG.GameCore.MunicipalChatEntityInfo",
-                "UniqueName": "1",
-                "GroupInstanceID": 400001
-              },
-              {
-                "$type": "RPG.GameCore.MunicipalChatEntityInfo",
-                "UniqueName": "2",
-                "GroupInstanceID": 400002
-              }
-            ],
-            "Key": "PlayMunicipalChatCharacterList"
-          }
-        ],
-        "SharedValues": [
           {
             "$type": "RPG.GameCore.SharedString",
             "Value": "Config/Level/MunicipalChatConfig/F20242001/MunicipalChatConfig_F20242001_0038.json",
@@ -126,30 +75,18 @@
         "Radius": 3.5,
         "PointList": []
       },
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
       "TagOverrideComponents": {},
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Prop_Municipal_0038",
       "ID": 300001,
@@ -159,29 +96,7 @@
       "IsDelete": true
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 100,
-      "LoadOnInitial": true,
       "IsOverrideInitLevelGraph": true,
       "InitLevelGraph": "Config/Level/CrowdBubble/MunicipalChat_Stop_Template.json",
       "ValueSource": {
@@ -191,43 +106,24 @@
             "Value": "MunicipalChatConfig_F20242001_0038",
             "Key": "StopMunicipalChatName"
           }
-        ],
-        "SharedValues": [
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "MunicipalChatConfig_F20242001_0038",
-            "Key": "StopMunicipalChatName"
-          }
         ]
       },
       "Trigger": {
-        "Radius": 5.0,
+        "Radius": 5,
         "PointList": []
       },
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
       "TagOverrideComponents": {},
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Prop_Municipal_0038_Stop",
       "ID": 300002,
@@ -237,61 +133,11 @@
       "IsDelete": true
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 100,
-      "LoadOnInitial": true,
       "IsOverrideInitLevelGraph": true,
       "InitLevelGraph": "Config/Level/CrowdBubble/MunicipalChat_Play_Template.json",
       "ValueSource": {
         "Values": [
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "Config/Level/MunicipalChatConfig/F20242001/MunicipalChatConfig_F20242001_0043.json",
-            "Key": "PlayMunicipalChatPath"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "MunicipalChatConfig_F20242001_0043",
-            "Key": "PlayMunicipalChatName"
-          },
-          {
-            "$type": "RPG.GameCore.SharedJsonConfigList",
-            "Value": [
-              {
-                "$type": "RPG.GameCore.MunicipalChatEntityInfo",
-                "UniqueName": "1",
-                "GroupInstanceID": 400001
-              },
-              {
-                "$type": "RPG.GameCore.MunicipalChatEntityInfo",
-                "UniqueName": "2",
-                "GroupInstanceID": 400002
-              }
-            ],
-            "Key": "PlayMunicipalChatCharacterList"
-          }
-        ],
-        "SharedValues": [
           {
             "$type": "RPG.GameCore.SharedString",
             "Value": "Config/Level/MunicipalChatConfig/F20242001/MunicipalChatConfig_F20242001_0043.json",
@@ -324,21 +170,14 @@
         "Radius": 3.5,
         "PointList": []
       },
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {},
       "Name": "Prop_Municipal_0043",
       "ID": 300003,
@@ -347,29 +186,7 @@
       "PosZ": -22.5665
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 100,
-      "LoadOnInitial": true,
       "IsOverrideInitLevelGraph": true,
       "InitLevelGraph": "Config/Level/CrowdBubble/MunicipalChat_Stop_Template.json",
       "ValueSource": {
@@ -379,34 +196,20 @@
             "Value": "MunicipalChatConfig_F20242001_0043",
             "Key": "StopMunicipalChatName"
           }
-        ],
-        "SharedValues": [
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "MunicipalChatConfig_F20242001_0043",
-            "Key": "StopMunicipalChatName"
-          }
         ]
       },
       "Trigger": {
-        "Radius": 5.0,
+        "Radius": 5,
         "PointList": []
       },
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {},
       "Name": "Prop_Municipal_0043_Stop",
       "ID": 300004,
@@ -422,38 +225,23 @@
   "NPCList": [
     {
       "NPCID": 3116,
-      "LoadOnInitial": true,
       "ValueSource": {},
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "ServerInteractVerificationIDList": [],
+      "DefaultLookAtMode": "Closed",
       "BoardShowList": [
         8
       ],
       "TalkDialogGroupIDList": [],
-      "DefaultAnimationType": "FreeStyle",
       "DefaultIdleFreeStyleMotionID": 100010237,
-      "BornType": "Mission",
       "InitialHiddenNodeList": [],
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "OverrideReplaceMaterialKeyList": [],
       "CameraCenterEntityList": [],
       "SpawnConfig": {
-        "TryCapture": true,
-        "CaptureDistanceTolerance": 1.5,
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
-      "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true
-      },
+      "TriggerValidGuest": {},
       "Name": "NPC1",
       "RotY": 174.8147,
       "ID": 400001,
@@ -463,39 +251,24 @@
     },
     {
       "NPCID": 12262,
-      "LoadOnInitial": true,
       "ValueSource": {},
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "ServerInteractVerificationIDList": [],
       "DefaultBlendShapeConfigName": "Happy02",
+      "DefaultLookAtMode": "Closed",
       "BoardShowList": [
         8
       ],
       "TalkDialogGroupIDList": [],
-      "DefaultAnimationType": "FreeStyle",
       "DefaultIdleFreeStyleMotionID": 100020353,
-      "BornType": "Mission",
       "InitialHiddenNodeList": [],
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "OverrideReplaceMaterialKeyList": [],
       "CameraCenterEntityList": [],
       "SpawnConfig": {
-        "TryCapture": true,
-        "CaptureDistanceTolerance": 1.5,
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
-      "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true
-      },
+      "TriggerValidGuest": {},
       "Name": "NPC2",
       "RotY": 49.75693,
       "ID": 400002,
@@ -511,21 +284,12 @@
           "Identity": "XianZhou_YaoQing",
           "FeatureID": "XianZhou_YaoQing_FoxianLady",
           "UniqueName": "211_1_01",
-          "LookAtMode": "LookCrowd",
           "LookAtTarget": "211_1_02",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": 0.485764,
-            "z": 0.343544,
-            "normalized": {
-              "x": 0.81645143,
-              "z": 0.577414155,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 0.594969869,
-            "sqrMagnitude": 0.353989154
+            "X": 0.485764,
+            "Z": 0.343544
           },
           "LocalRotationY": 177.8221,
           "DefaultAnimationType": "FreeStyle",
@@ -535,27 +299,12 @@
           "Identity": "XianZhou_Realm-Keeping",
           "FeatureID": "XianZhou_Realm-Keeping_VidyadharaMale",
           "UniqueName": "211_1_02",
-          "LookAtMode": "LookCrowd",
           "LookAtTarget": "211_1_01",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": 0.241,
-            "z": -0.369,
-            "normalized": {
-              "x": 0.546821356,
-              "z": -0.8372493,
-              "normalized": {
-                "x": 0.5468214,
-                "z": -0.837249339,
-                "magnitude": 1.0,
-                "sqrMagnitude": 1.00000012
-              },
-              "magnitude": 0.99999994,
-              "sqrMagnitude": 0.9999999
-            },
-            "magnitude": 0.440728933,
-            "sqrMagnitude": 0.194241986
+            "X": 0.241,
+            "Z": -0.369
           },
           "LocalRotationY": 69.47335,
           "DefaultAnimationType": "FreeStyle",
@@ -565,19 +314,12 @@
           "Identity": "XianZhou_ZhuMing",
           "FeatureID": "XianZhou_ZhuMing_VidyadharaMale",
           "UniqueName": "211_1_03",
+          "LookAtMode": "Closed",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": 2.032036,
-            "z": 0.051395,
-            "normalized": {
-              "x": 0.9996803,
-              "z": 0.02528428,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 2.032686,
-            "sqrMagnitude": 4.131812
+            "X": 2.032036,
+            "Z": 0.051395
           },
           "LocalRotationY": 270.4328,
           "DefaultAnimationType": "FreeStyle",
@@ -587,55 +329,17 @@
           "Identity": "XianZhou_Folk",
           "FeatureID": "XianZhou_Folk_FoxianLady",
           "UniqueName": "211_1_04",
-          "LookAtMode": "LookCrowd",
           "LookAtTarget": "211_1_01",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": 1.147713,
-            "y": 0.029827,
-            "z": -0.552078,
-            "normalized": {
-              "x": 0.9009155,
-              "y": 0.0234131776,
-              "z": -0.433362424,
-              "normalized": {
-                "x": 0.900915563,
-                "y": 0.02341318,
-                "z": -0.433362454,
-                "magnitude": 1.0,
-                "sqrMagnitude": 1.0
-              },
-              "magnitude": 0.99999994,
-              "sqrMagnitude": 0.9999999
-            },
-            "magnitude": 1.27394068,
-            "sqrMagnitude": 1.6229248
+            "X": 1.147713,
+            "Y": 0.029827,
+            "Z": -0.552078
           },
           "LocalRotationY": 336.1012,
           "PossessionConfig": {
-            "Name": "Decoration_ChineseWeapons_A_05_Lady_Appalud01Loop",
-            "LocalScale": {
-              "x": 1.0,
-              "y": 1.0,
-              "z": 1.0,
-              "normalized": {
-                "x": 0.577350259,
-                "y": 0.577350259,
-                "z": 0.577350259,
-                "normalized": {
-                  "x": 0.5773503,
-                  "y": 0.5773503,
-                  "z": 0.5773503,
-                  "magnitude": 1.00000012,
-                  "sqrMagnitude": 1.00000024
-                },
-                "magnitude": 0.99999994,
-                "sqrMagnitude": 0.99999994
-              },
-              "magnitude": 1.73205078,
-              "sqrMagnitude": 3.0
-            }
+            "Name": "Decoration_ChineseWeapons_A_05_Lady_Appalud01Loop"
           },
           "DefaultAnimationType": "FreeStyle",
           "DefaultIdleFreeStyleMotionID": 100020345
@@ -660,30 +364,13 @@
           "CrowdUniqueName": "211_1_02"
         }
       ],
-      "TriggerRudius": 5.0,
+      "TriggerRudius": 5,
       "InteractPerformanceTriggerRadius": 2.5,
       "CenterPos": {
-        "x": 0.976628,
-        "y": 0.007457,
-        "z": -0.131535,
-        "normalized": {
-          "x": 0.9910234,
-          "y": 0.007566916,
-          "z": -0.133473814,
-          "normalized": {
-            "x": 0.9910235,
-            "y": 0.00756691629,
-            "z": -0.133473828,
-            "magnitude": 1.0,
-            "sqrMagnitude": 1.00000012
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 0.985474169,
-        "sqrMagnitude": 0.971159339
+        "X": 0.976628,
+        "Y": 0.007457,
+        "Z": -0.131535
       },
-      "LoadPriority": "Middle",
       "Name": "Crowd1",
       "ID": 1,
       "PosX": 48.026,
@@ -703,25 +390,9 @@
           },
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": 2.479,
-            "y": 0.004116,
-            "z": 0.049999,
-            "normalized": {
-              "x": 0.999795258,
-              "y": 0.001660007,
-              "z": 0.02016489,
-              "normalized": {
-                "x": 0.9997953,
-                "y": 0.00166000717,
-                "z": 0.0201648921,
-                "magnitude": 1.0,
-                "sqrMagnitude": 1.0
-              },
-              "magnitude": 0.99999994,
-              "sqrMagnitude": 0.99999994
-            },
-            "magnitude": 2.47950768,
-            "sqrMagnitude": 6.14795876
+            "X": 2.479,
+            "Y": 0.004116,
+            "Z": 0.049999
           },
           "LocalRotationY": 341.8599,
           "DefaultAnimationType": "FreeStyle",
@@ -738,40 +409,11 @@
           },
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": 0.296,
-            "z": -1.168,
-            "normalized": {
-              "x": 0.24565883,
-              "z": -0.9693564,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.00000012
-            },
-            "magnitude": 1.20492315,
-            "sqrMagnitude": 1.45183992
+            "X": 0.296,
+            "Z": -1.168
           },
           "PossessionConfig": {
-            "Name": "Decoration_ChineseWeapons_A_05_Male",
-            "LocalScale": {
-              "x": 1.0,
-              "y": 1.0,
-              "z": 1.0,
-              "normalized": {
-                "x": 0.577350259,
-                "y": 0.577350259,
-                "z": 0.577350259,
-                "normalized": {
-                  "x": 0.5773503,
-                  "y": 0.5773503,
-                  "z": 0.5773503,
-                  "magnitude": 1.00000012,
-                  "sqrMagnitude": 1.00000024
-                },
-                "magnitude": 0.99999994,
-                "sqrMagnitude": 0.99999994
-              },
-              "magnitude": 1.73205078,
-              "sqrMagnitude": 3.0
-            }
+            "Name": "Decoration_ChineseWeapons_A_05_Male"
           },
           "DefaultAnimationType": "FreeStyle",
           "DefaultIdleFreeStyleMotionID": 100010231
@@ -787,28 +429,7 @@
           },
           "LookAtPosition": {},
           "PossessionConfig": {
-            "Name": "Decoration_ChineseWeapons_A_01_Lady_PutHand01Loop",
-            "LocalScale": {
-              "x": 1.0,
-              "y": 1.0,
-              "z": 1.0,
-              "normalized": {
-                "x": 0.577350259,
-                "y": 0.577350259,
-                "z": 0.577350259,
-                "normalized": {
-                  "x": 0.5773503,
-                  "y": 0.5773503,
-                  "z": 0.5773503,
-                  "magnitude": 1.00000012,
-                  "sqrMagnitude": 1.00000024
-                },
-                "magnitude": 0.99999994,
-                "sqrMagnitude": 0.99999994
-              },
-              "magnitude": 1.73205078,
-              "sqrMagnitude": 3.0
-            }
+            "Name": "Decoration_ChineseWeapons_A_01_Lady_PutHand01Loop"
           },
           "DefaultAnimationType": "FreeStyle",
           "DefaultIdleFreeStyleMotionID": 100020000
@@ -824,42 +445,12 @@
           },
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": 1.507999,
-            "y": 0.029823,
-            "z": 0.221998,
-            "normalized": {
-              "x": 0.989147842,
-              "y": 0.01956192,
-              "z": 0.145616055,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.00000012
-            },
-            "magnitude": 1.52454352,
-            "sqrMagnitude": 2.324233
+            "X": 1.507999,
+            "Y": 0.029823,
+            "Z": 0.221998
           },
           "PossessionConfig": {
-            "Name": "Decoration_ChineseWeapons_A_03_Lady",
-            "LocalScale": {
-              "x": 1.0,
-              "y": 1.0,
-              "z": 1.0,
-              "normalized": {
-                "x": 0.577350259,
-                "y": 0.577350259,
-                "z": 0.577350259,
-                "normalized": {
-                  "x": 0.5773503,
-                  "y": 0.5773503,
-                  "z": 0.5773503,
-                  "magnitude": 1.00000012,
-                  "sqrMagnitude": 1.00000024
-                },
-                "magnitude": 0.99999994,
-                "sqrMagnitude": 0.99999994
-              },
-              "magnitude": 1.73205078,
-              "sqrMagnitude": 3.0
-            }
+            "Name": "Decoration_ChineseWeapons_A_03_Lady"
           },
           "DefaultAnimationType": "FreeStyle",
           "DefaultIdleFreeStyleMotionID": 100020000
@@ -875,46 +466,11 @@
           },
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": 0.822,
-            "z": -0.433,
-            "normalized": {
-              "x": 0.8847547,
-              "z": -0.4660569,
-              "normalized": {
-                "x": 0.8847548,
-                "z": -0.466056943,
-                "magnitude": 1.0,
-                "sqrMagnitude": 1.00000012
-              },
-              "magnitude": 0.99999994,
-              "sqrMagnitude": 0.99999994
-            },
-            "magnitude": 0.929071069,
-            "sqrMagnitude": 0.863173
+            "X": 0.822,
+            "Z": -0.433
           },
           "PossessionConfig": {
-            "Name": "Possession_MineralGlass_A_04",
-            "LocalScale": {
-              "x": 1.0,
-              "y": 1.0,
-              "z": 1.0,
-              "normalized": {
-                "x": 0.577350259,
-                "y": 0.577350259,
-                "z": 0.577350259,
-                "normalized": {
-                  "x": 0.5773503,
-                  "y": 0.5773503,
-                  "z": 0.5773503,
-                  "magnitude": 1.00000012,
-                  "sqrMagnitude": 1.00000024
-                },
-                "magnitude": 0.99999994,
-                "sqrMagnitude": 0.99999994
-              },
-              "magnitude": 1.73205078,
-              "sqrMagnitude": 3.0
-            }
+            "Name": "Possession_MineralGlass_A_04"
           },
           "DefaultAnimationType": "FreeStyle",
           "DefaultIdleFreeStyleMotionID": 100010318
@@ -922,20 +478,10 @@
       ],
       "NewMunicipalChatCrowdInfos": [],
       "CenterPos": {
-        "x": 1.021,
-        "y": 0.006788,
-        "z": -0.265801,
-        "normalized": {
-          "x": 0.9677237,
-          "y": 0.00643379847,
-          "z": -0.251931369,
-          "magnitude": 1.0,
-          "sqrMagnitude": 1.0
-        },
-        "magnitude": 1.05505323,
-        "sqrMagnitude": 1.11313736
+        "X": 1.021,
+        "Y": 0.006788,
+        "Z": -0.265801
       },
-      "LoadPriority": "Middle",
       "Name": "Crowd2",
       "ID": 2,
       "PosX": 47.696,
@@ -948,55 +494,17 @@
           "Identity": "XianZhou_YaoQing",
           "FeatureID": "XianZhou_YaoQing_XianZhouMale",
           "UniqueName": "211_3_01",
-          "LookAtMode": "LookCrowd",
           "LookAtTarget": "211_3_04",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": 0.05,
-            "y": 4e-06,
-            "z": 0.821,
-            "normalized": {
-              "x": 0.0607887171,
-              "y": 4.86309727e-06,
-              "z": 0.998150647,
-              "normalized": {
-                "x": 0.06078872,
-                "y": 4.86309773e-06,
-                "z": 0.9981507,
-                "magnitude": 1.0,
-                "sqrMagnitude": 1.00000012
-              },
-              "magnitude": 0.99999994,
-              "sqrMagnitude": 0.99999994
-            },
-            "magnitude": 0.8225211,
-            "sqrMagnitude": 0.676541
+            "X": 0.05,
+            "Y": 4E-06,
+            "Z": 0.821
           },
           "LocalRotationY": 159.9338,
           "PossessionConfig": {
-            "Name": "Decoration_ChineseWeapons_A_01_Male_HoldFistSalute01Loop",
-            "LocalScale": {
-              "x": 1.0,
-              "y": 1.0,
-              "z": 1.0,
-              "normalized": {
-                "x": 0.577350259,
-                "y": 0.577350259,
-                "z": 0.577350259,
-                "normalized": {
-                  "x": 0.5773503,
-                  "y": 0.5773503,
-                  "z": 0.5773503,
-                  "magnitude": 1.00000012,
-                  "sqrMagnitude": 1.00000024
-                },
-                "magnitude": 0.99999994,
-                "sqrMagnitude": 0.99999994
-              },
-              "magnitude": 1.73205078,
-              "sqrMagnitude": 3.0
-            }
+            "Name": "Decoration_ChineseWeapons_A_01_Male_HoldFistSalute01Loop"
           },
           "DefaultAnimationType": "FreeStyle",
           "DefaultIdleFreeStyleMotionID": 100010444
@@ -1005,52 +513,16 @@
           "Identity": "XianZhou_ZhuMing",
           "FeatureID": "XianZhou_ZhuMing_XianZhouLady",
           "UniqueName": "211_3_02",
-          "LookAtMode": "LookCrowd",
           "LookAtTarget": "211_3_03",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": -0.625,
-            "z": 0.748,
-            "normalized": {
-              "x": -0.6411929,
-              "z": 0.7673797,
-              "normalized": {
-                "x": -0.641193,
-                "z": 0.767379761,
-                "magnitude": 1.0,
-                "sqrMagnitude": 1.00000012
-              },
-              "magnitude": 0.99999994,
-              "sqrMagnitude": 0.99999994
-            },
-            "magnitude": 0.974745631,
-            "sqrMagnitude": 0.950129032
+            "X": -0.625,
+            "Z": 0.748
           },
           "LocalRotationY": 161.3591,
           "PossessionConfig": {
-            "Name": "Decoration_ChineseWeapons_A_01_Lady_Appalud01Loop",
-            "LocalScale": {
-              "x": 1.0,
-              "y": 1.0,
-              "z": 1.0,
-              "normalized": {
-                "x": 0.577350259,
-                "y": 0.577350259,
-                "z": 0.577350259,
-                "normalized": {
-                  "x": 0.5773503,
-                  "y": 0.5773503,
-                  "z": 0.5773503,
-                  "magnitude": 1.00000012,
-                  "sqrMagnitude": 1.00000024
-                },
-                "magnitude": 0.99999994,
-                "sqrMagnitude": 0.99999994
-              },
-              "magnitude": 1.73205078,
-              "sqrMagnitude": 3.0
-            }
+            "Name": "Decoration_ChineseWeapons_A_01_Lady_Appalud01Loop"
           },
           "DefaultAnimationType": "FreeStyle",
           "DefaultIdleFreeStyleMotionID": 100020444
@@ -1059,52 +531,16 @@
           "Identity": "XianZhou_Folk",
           "FeatureID": "XianZhou_Folk_XianZhouMale",
           "UniqueName": "211_3_03",
-          "LookAtMode": "LookCrowd",
           "LookAtTarget": "211_3_02",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": -0.582999,
-            "z": -1.013999,
-            "normalized": {
-              "x": -0.498438716,
-              "z": -0.8669249,
-              "normalized": {
-                "x": -0.498438746,
-                "z": -0.866924942,
-                "magnitude": 1.0,
-                "sqrMagnitude": 1.0
-              },
-              "magnitude": 0.99999994,
-              "sqrMagnitude": 0.99999994
-            },
-            "magnitude": 1.16965032,
-            "sqrMagnitude": 1.36808181
+            "X": -0.582999,
+            "Z": -1.013999
           },
           "LocalRotationY": 33.75024,
           "PossessionConfig": {
-            "Name": "Decoration_ChineseWeapons_A_04_Male_HoldFistSalute01Loop",
-            "LocalScale": {
-              "x": 1.0,
-              "y": 1.0,
-              "z": 1.0,
-              "normalized": {
-                "x": 0.577350259,
-                "y": 0.577350259,
-                "z": 0.577350259,
-                "normalized": {
-                  "x": 0.5773503,
-                  "y": 0.5773503,
-                  "z": 0.5773503,
-                  "magnitude": 1.00000012,
-                  "sqrMagnitude": 1.00000024
-                },
-                "magnitude": 0.99999994,
-                "sqrMagnitude": 0.99999994
-              },
-              "magnitude": 1.73205078,
-              "sqrMagnitude": 3.0
-            }
+            "Name": "Decoration_ChineseWeapons_A_04_Male_HoldFistSalute01Loop"
           },
           "DefaultAnimationType": "FreeStyle",
           "DefaultIdleFreeStyleMotionID": 100010444
@@ -1113,45 +549,15 @@
           "Identity": "XianZhou_Folk",
           "FeatureID": "XianZhou_Folk_XianZhouLady",
           "UniqueName": "211_3_04",
-          "LookAtMode": "LookCrowd",
           "LookAtTarget": "211_3_02",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": -0.017,
-            "z": -0.564,
-            "normalized": {
-              "x": -0.0301281642,
-              "z": -0.9995461,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.00000012
-            },
-            "magnitude": 0.564256132,
-            "sqrMagnitude": 0.318385
+            "X": -0.017,
+            "Z": -0.564
           },
           "PossessionConfig": {
-            "Name": "Decoration_ChineseWeapons_A_02_Lady",
-            "LocalScale": {
-              "x": 1.0,
-              "y": 1.0,
-              "z": 1.0,
-              "normalized": {
-                "x": 0.577350259,
-                "y": 0.577350259,
-                "z": 0.577350259,
-                "normalized": {
-                  "x": 0.5773503,
-                  "y": 0.5773503,
-                  "z": 0.5773503,
-                  "magnitude": 1.00000012,
-                  "sqrMagnitude": 1.00000024
-                },
-                "magnitude": 0.99999994,
-                "sqrMagnitude": 0.99999994
-              },
-              "magnitude": 1.73205078,
-              "sqrMagnitude": 3.0
-            }
+            "Name": "Decoration_ChineseWeapons_A_02_Lady"
           },
           "DefaultAnimationType": "FreeStyle",
           "DefaultIdleFreeStyleMotionID": 100020444
@@ -1160,46 +566,16 @@
           "Identity": "XianZhou_YaoQing",
           "FeatureID": "XianZhou_YaoQing_FoxianMale",
           "UniqueName": "211_3_05",
-          "LookAtMode": "LookCrowd",
           "LookAtTarget": "211_3_03",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": -1.348001,
-            "z": 0.577001,
-            "normalized": {
-              "x": -0.9193212,
-              "z": 0.393508047,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 1.46630037,
-            "sqrMagnitude": 2.15003681
+            "X": -1.348001,
+            "Z": 0.577001
           },
           "LocalRotationY": 137.2737,
           "PossessionConfig": {
-            "Name": "Decoration_ChineseWeapons_A_06_Male",
-            "LocalScale": {
-              "x": 1.0,
-              "y": 1.0,
-              "z": 1.0,
-              "normalized": {
-                "x": 0.577350259,
-                "y": 0.577350259,
-                "z": 0.577350259,
-                "normalized": {
-                  "x": 0.5773503,
-                  "y": 0.5773503,
-                  "z": 0.5773503,
-                  "magnitude": 1.00000012,
-                  "sqrMagnitude": 1.00000024
-                },
-                "magnitude": 0.99999994,
-                "sqrMagnitude": 0.99999994
-              },
-              "magnitude": 1.73205078,
-              "sqrMagnitude": 3.0
-            }
+            "Name": "Decoration_ChineseWeapons_A_06_Male"
           },
           "DefaultAnimationType": "FreeStyle",
           "DefaultIdleFreeStyleMotionID": 100010444
@@ -1220,23 +596,13 @@
           "CrowdUniqueName": "211_3_02"
         }
       ],
-      "TriggerRudius": 5.0,
+      "TriggerRudius": 5,
       "InteractPerformanceTriggerRadius": 2.5,
       "CenterPos": {
-        "x": -0.5046,
-        "y": 1e-06,
-        "z": 0.1136,
-        "normalized": {
-          "x": -0.975582838,
-          "y": 1.9333786e-06,
-          "z": 0.219631821,
-          "magnitude": 1.0,
-          "sqrMagnitude": 1.0
-        },
-        "magnitude": 0.517229259,
-        "sqrMagnitude": 0.26752612
+        "X": -0.5046,
+        "Y": 1E-06,
+        "Z": 0.1136
       },
-      "LoadPriority": "Middle",
       "Name": "Crowd3",
       "RotY": 79.03078,
       "ID": 3,
@@ -1250,27 +616,12 @@
           "Identity": "XianZhou_Folk",
           "FeatureID": "XianZhou_Folk_VidyadharaChildBoy",
           "UniqueName": "211_4_01",
-          "LookAtMode": "LookCrowd",
           "LookAtTarget": "211_4_02",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": 0.464,
-            "z": -0.112,
-            "normalized": {
-              "x": 0.9720822,
-              "z": -0.234640539,
-              "normalized": {
-                "x": 0.972082257,
-                "z": -0.234640554,
-                "magnitude": 1.0,
-                "sqrMagnitude": 1.00000012
-              },
-              "magnitude": 0.99999994,
-              "sqrMagnitude": 0.99999994
-            },
-            "magnitude": 0.4773259,
-            "sqrMagnitude": 0.227839991
+            "X": 0.464,
+            "Z": -0.112
           },
           "LocalRotationY": 199.1574,
           "DefaultAnimationType": "FreeStyle",
@@ -1280,21 +631,12 @@
           "Identity": "XianZhou_Folk",
           "FeatureID": "XianZhou_Folk_FoxianChildGirl",
           "UniqueName": "211_4_02",
-          "LookAtMode": "LookCrowd",
           "LookAtTarget": "211_4_01",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": 0.07,
-            "z": -0.925,
-            "normalized": {
-              "x": 0.07545991,
-              "z": -0.9971489,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 0.927644849,
-            "sqrMagnitude": 0.860525
+            "X": 0.07,
+            "Z": -0.925
           },
           "LocalRotationY": 23.86223,
           "DefaultAnimationType": "FreeStyle",
@@ -1312,27 +654,12 @@
           "CrowdUniqueName": "211_4_01"
         }
       ],
-      "TriggerRudius": 5.0,
+      "TriggerRudius": 5,
       "InteractPerformanceTriggerRadius": 2.5,
       "CenterPos": {
-        "x": 0.267,
-        "z": -0.5185,
-        "normalized": {
-          "x": 0.457812846,
-          "z": -0.8890485,
-          "normalized": {
-            "x": 0.4578129,
-            "z": -0.889048636,
-            "magnitude": 1.0,
-            "sqrMagnitude": 1.00000012
-          },
-          "magnitude": 0.9999999,
-          "sqrMagnitude": 0.9999998
-        },
-        "magnitude": 0.5832077,
-        "sqrMagnitude": 0.340131223
+        "X": 0.267,
+        "Z": -0.5185
       },
-      "LoadPriority": "Middle",
       "Name": "Crowd4",
       "ID": 4,
       "PosX": 42.209,
@@ -1345,27 +672,12 @@
           "Identity": "XianZhou_Sky-Faring",
           "FeatureID": "XianZhou_Sky-Faring_XianZhouMale",
           "UniqueName": "211_5_01",
-          "LookAtMode": "LookCrowd",
           "LookAtTarget": "211_5_05",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": -0.326,
-            "z": -1.487,
-            "normalized": {
-              "x": -0.214147434,
-              "z": -0.9768013,
-              "normalized": {
-                "x": -0.214147463,
-                "z": -0.9768014,
-                "magnitude": 1.0,
-                "sqrMagnitude": 1.00000012
-              },
-              "magnitude": 0.9999999,
-              "sqrMagnitude": 0.9999998
-            },
-            "magnitude": 1.52231574,
-            "sqrMagnitude": 2.317445
+            "X": -0.326,
+            "Z": -1.487
           },
           "DefaultAnimationType": "FreeStyle",
           "DefaultIdleFreeStyleMotionID": 100010303
@@ -1374,23 +686,13 @@
           "Identity": "XianZhou_Sky-Faring",
           "FeatureID": "XianZhou_Sky-Faring_FoxianLady",
           "UniqueName": "211_5_02",
-          "LookAtMode": "LookCrowd",
           "LookAtTarget": "211_5_04",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": 1.106422,
-            "y": 0.007,
-            "z": 0.87217,
-            "normalized": {
-              "x": 0.7853289,
-              "y": 0.00496854074,
-              "z": 0.619058847,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 1.40886438,
-            "sqrMagnitude": 1.98489892
+            "X": 1.106422,
+            "Y": 0.007,
+            "Z": 0.87217
           },
           "LocalRotationY": 55.37213,
           "DefaultAnimationType": "FreeStyle",
@@ -1400,23 +702,13 @@
           "Identity": "XianZhou_Sky-Faring",
           "FeatureID": "XianZhou_Sky-Faring_FoxianMale",
           "UniqueName": "211_5_03",
-          "LookAtMode": "LookCrowd",
           "LookAtTarget": "211_5_05",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": -0.976002,
-            "y": 0.009998,
-            "z": -1.228001,
-            "normalized": {
-              "x": -0.6221919,
-              "y": 0.006373629,
-              "z": -0.7828388,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 1.56865108,
-            "sqrMagnitude": 2.46066618
+            "X": -0.976002,
+            "Y": 0.009998,
+            "Z": -1.228001
           },
           "DefaultAnimationType": "FreeStyle",
           "DefaultIdleFreeStyleMotionID": 100010363
@@ -1425,46 +717,16 @@
           "Identity": "XianZhou_Folk",
           "FeatureID": "XianZhou_Folk_XianZhouMale",
           "UniqueName": "211_5_04",
-          "LookAtMode": "LookCrowd",
           "LookAtTarget": "211_5_02",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": 1.885,
-            "z": 1.595,
-            "normalized": {
-              "x": 0.7633863,
-              "z": 0.6459423,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.00000012
-            },
-            "magnitude": 2.469261,
-            "sqrMagnitude": 6.09725
+            "X": 1.885,
+            "Z": 1.595
           },
           "LocalRotationY": 206.6891,
           "PossessionConfig": {
-            "Name": "Decoration_ChineseWeapons_A_05_Male",
-            "LocalScale": {
-              "x": 1.0,
-              "y": 1.0,
-              "z": 1.0,
-              "normalized": {
-                "x": 0.577350259,
-                "y": 0.577350259,
-                "z": 0.577350259,
-                "normalized": {
-                  "x": 0.5773503,
-                  "y": 0.5773503,
-                  "z": 0.5773503,
-                  "magnitude": 1.00000012,
-                  "sqrMagnitude": 1.00000024
-                },
-                "magnitude": 0.99999994,
-                "sqrMagnitude": 0.99999994
-              },
-              "magnitude": 1.73205078,
-              "sqrMagnitude": 3.0
-            }
+            "Name": "Decoration_ChineseWeapons_A_05_Male"
           },
           "DefaultAnimationType": "FreeStyle",
           "DefaultIdleFreeStyleMotionID": 100010202
@@ -1473,48 +735,17 @@
           "Identity": "XianZhou_YaoQing",
           "FeatureID": "XianZhou_YaoQing_FoxianMale",
           "UniqueName": "211_5_05",
-          "LookAtMode": "LookCrowd",
           "LookAtTarget": "211_5_03",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": -0.903999,
-            "y": 4e-06,
-            "z": 0.891998,
-            "normalized": {
-              "x": -0.711815834,
-              "y": 3.149631e-06,
-              "z": 0.7023662,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 1.26999,
-            "sqrMagnitude": 1.61287451
+            "X": -0.903999,
+            "Y": 4E-06,
+            "Z": 0.891998
           },
           "LocalRotationY": 177.5412,
           "PossessionConfig": {
-            "Name": "Decoration_ChineseWeapons_A_01_Male_HoldFistSalute01Loop",
-            "LocalScale": {
-              "x": 1.0,
-              "y": 1.0,
-              "z": 1.0,
-              "normalized": {
-                "x": 0.577350259,
-                "y": 0.577350259,
-                "z": 0.577350259,
-                "normalized": {
-                  "x": 0.5773503,
-                  "y": 0.5773503,
-                  "z": 0.5773503,
-                  "magnitude": 1.00000012,
-                  "sqrMagnitude": 1.00000024
-                },
-                "magnitude": 0.99999994,
-                "sqrMagnitude": 0.99999994
-              },
-              "magnitude": 1.73205078,
-              "sqrMagnitude": 3.0
-            }
+            "Name": "Decoration_ChineseWeapons_A_01_Male_HoldFistSalute01Loop"
           },
           "DefaultAnimationType": "FreeStyle",
           "DefaultIdleFreeStyleMotionID": 100010445
@@ -1523,35 +754,13 @@
           "Identity": "XianZhou_Folk",
           "FeatureID": "XianZhou_Folk_VidyadharaLady",
           "UniqueName": "211_5_06",
+          "LookAtMode": "Closed",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": -1.122257,
-            "y": 4e-06,
-            "z": 1.673069,
-            "normalized": {
-              "x": -0.5570615,
-              "y": 1.985504e-06,
-              "z": 0.830471337,
-              "normalized": {
-                "x": -0.557061434,
-                "y": 1.98550379e-06,
-                "z": 0.8304712,
-                "normalized": {
-                  "x": -0.5570615,
-                  "y": 1.985504e-06,
-                  "z": 0.8304713,
-                  "magnitude": 1.0,
-                  "sqrMagnitude": 1.0
-                },
-                "magnitude": 0.99999994,
-                "sqrMagnitude": 0.9999999
-              },
-              "magnitude": 1.00000012,
-              "sqrMagnitude": 1.00000024
-            },
-            "magnitude": 2.01460171,
-            "sqrMagnitude": 4.05862045
+            "X": -1.122257,
+            "Y": 4E-06,
+            "Z": 1.673069
           },
           "LocalRotationY": 175.0172,
           "DefaultAnimationType": "FreeStyle",
@@ -1560,20 +769,10 @@
       ],
       "NewMunicipalChatCrowdInfos": [],
       "CenterPos": {
-        "x": -0.056139,
-        "y": 0.002834,
-        "z": 0.386206,
-        "normalized": {
-          "x": -0.143844664,
-          "y": 0.00726154353,
-          "z": 0.989573658,
-          "magnitude": 1.0,
-          "sqrMagnitude": 1.0
-        },
-        "magnitude": 0.390275151,
-        "sqrMagnitude": 0.1523147
+        "X": -0.056139,
+        "Y": 0.002834,
+        "Z": 0.386206
       },
-      "LoadPriority": "Middle",
       "Name": "Crowd5",
       "ID": 5,
       "PosX": 42.48,
@@ -1586,21 +785,12 @@
           "Identity": "XianZhou_YaoQing",
           "FeatureID": "XianZhou_YaoQing_FoxianLady",
           "UniqueName": "211_6_01",
-          "LookAtMode": "LookCrowd",
           "LookAtTarget": "211_6_02",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": 0.485764,
-            "z": 0.343544,
-            "normalized": {
-              "x": 0.81645143,
-              "z": 0.577414155,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 0.594969869,
-            "sqrMagnitude": 0.353989154
+            "X": 0.485764,
+            "Z": 0.343544
           },
           "LocalRotationY": 177.8221,
           "DefaultAnimationType": "FreeStyle",
@@ -1610,21 +800,12 @@
           "Identity": "XianZhou_Realm-Keeping",
           "FeatureID": "XianZhou_Realm-Keeping_VidyadharaMale",
           "UniqueName": "211_6_02",
-          "LookAtMode": "LookCrowd",
           "LookAtTarget": "211_6_01",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": 0.241001,
-            "z": -0.369,
-            "normalized": {
-              "x": 0.546822965,
-              "z": -0.837248266,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 0.440729469,
-            "sqrMagnitude": 0.194242463
+            "X": 0.241001,
+            "Z": -0.369
           },
           "LocalRotationY": 69.47335,
           "DefaultAnimationType": "FreeStyle",
@@ -1634,19 +815,12 @@
           "Identity": "XianZhou_ZhuMing",
           "FeatureID": "XianZhou_ZhuMing_VidyadharaMale",
           "UniqueName": "211_6_03",
+          "LookAtMode": "Closed",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": 2.032036,
-            "z": 0.051395,
-            "normalized": {
-              "x": 0.9996803,
-              "z": 0.02528428,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 2.032686,
-            "sqrMagnitude": 4.131812
+            "X": 2.032036,
+            "Z": 0.051395
           },
           "LocalRotationY": 270.4328,
           "DefaultAnimationType": "FreeStyle",
@@ -1656,30 +830,13 @@
           "Identity": "XianZhou_Folk",
           "FeatureID": "XianZhou_Folk_FoxianLady",
           "UniqueName": "211_6_04",
-          "LookAtMode": "LookCrowd",
           "LookAtTarget": "211_6_01",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": 1.147713,
-            "y": 0.029827,
-            "z": -0.552078,
-            "normalized": {
-              "x": 0.9009155,
-              "y": 0.0234131776,
-              "z": -0.433362424,
-              "normalized": {
-                "x": 0.900915563,
-                "y": 0.02341318,
-                "z": -0.433362454,
-                "magnitude": 1.0,
-                "sqrMagnitude": 1.0
-              },
-              "magnitude": 0.99999994,
-              "sqrMagnitude": 0.9999999
-            },
-            "magnitude": 1.27394068,
-            "sqrMagnitude": 1.6229248
+            "X": 1.147713,
+            "Y": 0.029827,
+            "Z": -0.552078
           },
           "LocalRotationY": 336.1012,
           "DefaultAnimationType": "FreeStyle",
@@ -1687,23 +844,13 @@
         }
       ],
       "NewMunicipalChatCrowdInfos": [],
-      "TriggerRudius": 5.0,
+      "TriggerRudius": 5,
       "InteractPerformanceTriggerRadius": 2.5,
       "CenterPos": {
-        "x": 0.976629,
-        "y": 0.007457,
-        "z": -0.131535,
-        "normalized": {
-          "x": 0.9910235,
-          "y": 0.00756690837,
-          "z": -0.133473679,
-          "magnitude": 1.0,
-          "sqrMagnitude": 1.0
-        },
-        "magnitude": 0.9854752,
-        "sqrMagnitude": 0.9711613
+        "X": 0.976629,
+        "Y": 0.007457,
+        "Z": -0.131535
       },
-      "LoadPriority": "Middle",
       "Name": "Crowd6",
       "RotY": 162.0465,
       "ID": 6,
@@ -1717,27 +864,12 @@
           "Identity": "XianZhou_Sky-Faring",
           "FeatureID": "XianZhou_Sky-Faring_FoxianLady",
           "UniqueName": "211_7_01",
-          "LookAtMode": "LookCrowd",
           "LookAtTarget": "211_7_02",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": -2.007078,
-            "z": 0.33408,
-            "normalized": {
-              "x": -0.9864284,
-              "z": 0.164191931,
-              "normalized": {
-                "x": -0.98642844,
-                "z": 0.164191946,
-                "magnitude": 1.0,
-                "sqrMagnitude": 1.0
-              },
-              "magnitude": 0.99999994,
-              "sqrMagnitude": 0.99999994
-            },
-            "magnitude": 2.034692,
-            "sqrMagnitude": 4.13997126
+            "X": -2.007078,
+            "Z": 0.33408
           },
           "LocalRotationY": 177.601,
           "DefaultAnimationType": "FreeStyle",
@@ -1747,21 +879,12 @@
           "Identity": "XianZhou_YaoQing",
           "FeatureID": "XianZhou_YaoQing_FoxianLady",
           "UniqueName": "211_7_02",
-          "LookAtMode": "LookCrowd",
           "LookAtTarget": "211_7_01",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": -0.446666,
-            "z": -0.606529,
-            "normalized": {
-              "x": -0.592983842,
-              "z": -0.8052144,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.00000012
-            },
-            "magnitude": 0.753251553,
-            "sqrMagnitude": 0.567387938
+            "X": -0.446666,
+            "Z": -0.606529
           },
           "LocalRotationY": 306.7075,
           "DefaultAnimationType": "FreeStyle",
@@ -1771,19 +894,12 @@
           "Identity": "XianZhou_Artisanship",
           "FeatureID": "XianZhou_Artisanship_XianZhouMale",
           "UniqueName": "211_7_03",
+          "LookAtMode": "Closed",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": -1.982,
-            "z": -1.189,
-            "normalized": {
-              "x": -0.8575311,
-              "z": -0.514432132,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 2.31128645,
-            "sqrMagnitude": 5.342045
+            "X": -1.982,
+            "Z": -1.189
           },
           "DefaultAnimationType": "FreeStyle",
           "DefaultIdleFreeStyleMotionID": 100010202
@@ -1792,19 +908,12 @@
           "Identity": "XianZhou_Divination",
           "FeatureID": "XianZhou_Divination_VidyadharaLady",
           "UniqueName": "211_7_04",
+          "LookAtMode": "Closed",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": -1.297,
-            "z": -1.507,
-            "normalized": {
-              "x": -0.6523226,
-              "z": -0.7579414,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 1.98828018,
-            "sqrMagnitude": 3.953258
+            "X": -1.297,
+            "Z": -1.507
           },
           "DefaultAnimationType": "FreeStyle",
           "DefaultIdleFreeStyleMotionID": 100020222
@@ -1812,24 +921,9 @@
       ],
       "NewMunicipalChatCrowdInfos": [],
       "CenterPos": {
-        "x": -1.433186,
-        "z": -0.742112,
-        "normalized": {
-          "x": -0.888013,
-          "z": -0.459818244,
-          "normalized": {
-            "x": -0.888013065,
-            "z": -0.459818274,
-            "magnitude": 1.0,
-            "sqrMagnitude": 1.0
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.61392462,
-        "sqrMagnitude": 2.60475254
+        "X": -1.433186,
+        "Z": -0.742112
       },
-      "LoadPriority": "Middle",
       "Name": "Crowd7",
       "RotY": 337.4143,
       "ID": 7,
@@ -1843,19 +937,12 @@
           "Identity": "XianZhou_Sky-Faring",
           "FeatureID": "XianZhou_Sky-Faring_FoxianLady",
           "UniqueName": "211_8_01",
+          "LookAtMode": "Closed",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": -2.016,
-            "z": 0.357,
-            "normalized": {
-              "x": -0.9846801,
-              "z": 0.174370438,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 2.04736543,
-            "sqrMagnitude": 4.191705
+            "X": -2.016,
+            "Z": 0.357
           },
           "LocalRotationY": 235.4851,
           "DefaultAnimationType": "FreeStyle",
@@ -1865,25 +952,12 @@
           "Identity": "XianZhou_Sky-Faring",
           "FeatureID": "XianZhou_Sky-Faring_XianZhouMale",
           "UniqueName": "211_8_02",
+          "LookAtMode": "Closed",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": -0.388974,
-            "z": -0.534995,
-            "normalized": {
-              "x": -0.588059664,
-              "z": -0.8088175,
-              "normalized": {
-                "x": -0.5880597,
-                "z": -0.808817565,
-                "magnitude": 1.0,
-                "sqrMagnitude": 1.0
-              },
-              "magnitude": 0.99999994,
-              "sqrMagnitude": 0.99999994
-            },
-            "magnitude": 0.6614533,
-            "sqrMagnitude": 0.437520444
+            "X": -0.388974,
+            "Z": -0.534995
           },
           "LocalRotationY": 64.99125,
           "DefaultAnimationType": "FreeStyle",
@@ -1893,19 +967,12 @@
           "Identity": "XianZhou_Sky-Faring",
           "FeatureID": "XianZhou_Sky-Faring_XianZhouLady",
           "UniqueName": "211_8_03",
+          "LookAtMode": "Closed",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": -2.329,
-            "z": 1.096,
-            "normalized": {
-              "x": -0.9048187,
-              "z": 0.425797015,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 2.57399631,
-            "sqrMagnitude": 6.625457
+            "X": -2.329,
+            "Z": 1.096
           },
           "LocalRotationY": 199.483,
           "DefaultAnimationType": "FreeStyle",
@@ -1915,27 +982,12 @@
           "Identity": "XianZhou_ZhuMing",
           "FeatureID": "XianZhou_ZhuMing_FoxianMale",
           "UniqueName": "211_8_04",
-          "LookAtMode": "LookCrowd",
           "LookAtTarget": "211_8_03",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": 0.774684,
-            "z": 0.016262,
-            "normalized": {
-              "x": 0.9997797,
-              "z": 0.02098716,
-              "normalized": {
-                "x": 0.999779761,
-                "z": 0.0209871624,
-                "magnitude": 1.0,
-                "sqrMagnitude": 1.0
-              },
-              "magnitude": 0.99999994,
-              "sqrMagnitude": 0.99999994
-            },
-            "magnitude": 0.7748547,
-            "sqrMagnitude": 0.6003998
+            "X": 0.774684,
+            "Z": 0.016262
           },
           "LocalRotationY": 244.9995,
           "DefaultAnimationType": "FreeStyle",
@@ -1945,25 +997,12 @@
           "Identity": "XianZhou_YaoQing",
           "FeatureID": "XianZhou_YaoQing_XianZhouMale",
           "UniqueName": "211_8_05",
+          "LookAtMode": "Closed",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": 0.479532,
-            "z": 0.899574,
-            "normalized": {
-              "x": 0.4704043,
-              "z": 0.882450938,
-              "normalized": {
-                "x": 0.470404327,
-                "z": 0.882451,
-                "magnitude": 1.0,
-                "sqrMagnitude": 1.0
-              },
-              "magnitude": 0.99999994,
-              "sqrMagnitude": 0.9999999
-            },
-            "magnitude": 1.01940393,
-            "sqrMagnitude": 1.03918433
+            "X": 0.479532,
+            "Z": 0.899574
           },
           "LocalRotationY": 215.0894,
           "DefaultAnimationType": "FreeStyle",
@@ -1973,25 +1012,12 @@
           "Identity": "XianZhou_YaoQing",
           "FeatureID": "XianZhou_YaoQing_FoxianLady",
           "UniqueName": "211_8_06",
+          "LookAtMode": "Closed",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": 1.359,
-            "z": 1.043,
-            "normalized": {
-              "x": 0.793296158,
-              "z": 0.6088358,
-              "normalized": {
-                "x": 0.7932963,
-                "z": 0.6088359,
-                "magnitude": 1.0,
-                "sqrMagnitude": 1.00000012
-              },
-              "magnitude": 0.9999999,
-              "sqrMagnitude": 0.9999998
-            },
-            "magnitude": 1.71310544,
-            "sqrMagnitude": 2.93473
+            "X": 1.359,
+            "Z": 1.043
           },
           "LocalRotationY": 239.4955,
           "DefaultAnimationType": "FreeStyle",
@@ -2000,24 +1026,9 @@
       ],
       "NewMunicipalChatCrowdInfos": [],
       "CenterPos": {
-        "x": -0.35346,
-        "z": 0.479474,
-        "normalized": {
-          "x": -0.593376756,
-          "z": 0.8049248,
-          "normalized": {
-            "x": -0.5933768,
-            "z": 0.804924846,
-            "magnitude": 1.0,
-            "sqrMagnitude": 1.0
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.9999999
-        },
-        "magnitude": 0.5956755,
-        "sqrMagnitude": 0.3548293
+        "X": -0.35346,
+        "Z": 0.479474
       },
-      "LoadPriority": "Middle",
       "Name": "Crowd8",
       "RotY": 286.279,
       "ID": 8,

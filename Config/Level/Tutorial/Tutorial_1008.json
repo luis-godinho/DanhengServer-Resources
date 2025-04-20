@@ -1,0 +1,164 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitUIControllerClose",
+          "UIControllerName": "RogueMagicSelectUnitPage"
+        },
+        {
+          "$type": "RPG.GameCore.CheckUIMode",
+          "OnMobile": [
+            {
+              "$type": "RPG.GameCore.ShowGuideHintWithText",
+              "Block": true,
+              "TargetEvent": [
+                {
+                  "$type": "RPG.GameCore.WaitPlayerAction",
+                  "ActionType": "ClickBtn",
+                  "Param": "MazeMainPage.25",
+                  "ProtectTime": 0
+                }
+              ],
+              "NodeIDList": [
+                "MazeMainPage.25"
+              ],
+              "GuideTextType": "InfoTip",
+              "GuideText": "TutorialTextmap_100801",
+              "ShowKeyMapTip": false,
+              "GuideHintShowConfig": {},
+              "GuideTextShowConfig": {},
+              "GuideUIContextConfig": {},
+              "EnableActionList": [],
+              "EnableBattleOperationList": [],
+              "DisableBlackMask": true
+            }
+          ],
+          "OnPC": [
+            {
+              "$type": "RPG.GameCore.ShowGuideHintWithText",
+              "TargetEvent": [
+                {
+                  "$type": "RPG.GameCore.ShowGuideHintWithText",
+                  "Block": true,
+                  "TargetEvent": [
+                    {
+                      "$type": "RPG.GameCore.WaitPlayerAction",
+                      "ActionType": "ClickBtn",
+                      "Param": "MazeMainPage.25",
+                      "ProtectTime": 0
+                    }
+                  ],
+                  "NodeIDList": [
+                    "MazeMainPage.25"
+                  ],
+                  "GuideTextType": "InfoTip",
+                  "GuideText": "TutorialTextmap_100801",
+                  "GuideHintShowConfig": {},
+                  "GuideTextShowConfig": {},
+                  "GuideUIContextConfig": {},
+                  "EnableActionList": [],
+                  "EnableBattleOperationList": [],
+                  "DisableBlackMask": true
+                }
+              ],
+              "NodeIDList": [],
+              "GuideTextType": "TopCenterTip",
+              "GuideText": "TutorialTextmap_300300",
+              "OverrideActionName": "Special_MouseOperating",
+              "GuideHintShowConfig": {},
+              "GuideTextShowConfig": {},
+              "GuideUIContextConfig": {
+                "Type": "MainPage"
+              }
+            }
+          ],
+          "OnController": [
+            {
+              "$type": "RPG.GameCore.ShowGuideHintWithText",
+              "Block": true,
+              "TargetEvent": [
+                {
+                  "$type": "RPG.GameCore.WaitTutorial",
+                  "Event": "ActionPress",
+                  "Param": "Maze_ShortCutWheel"
+                }
+              ],
+              "NodeIDList": [],
+              "GuideTextType": "TopCenterTip",
+              "GuideText": "TutorialTextmap_400100",
+              "OverrideActionName": "Maze_ShortCutWheel",
+              "GuideHintShowConfig": {},
+              "GuideTextShowConfig": {},
+              "GuideUIContextConfig": {
+                "Type": "MainPage"
+              },
+              "EnableActionList": [
+                "Maze_ShortCutWheel"
+              ],
+              "DisableBlackMask": true
+            },
+            {
+              "$type": "RPG.GameCore.ShowGuideHintWithText",
+              "Block": true,
+              "TargetEvent": [
+                {
+                  "$type": "RPG.GameCore.WaitSelectWheelItem",
+                  "TutorialGuideLittleWheelItem": "Tutorial"
+                }
+              ],
+              "NodeIDList": [
+                "MazeMainPage.ItemLeft.ShortCut04"
+              ],
+              "GuideTextType": "TopCenterTip",
+              "GuideText": "TutorialTextmap_100801",
+              "GuideHintShowConfig": {},
+              "GuideTextShowConfig": {},
+              "GuideUIContextConfig": {
+                "Type": "Normal",
+                "Name": "ShortCutWheelDialog"
+              },
+              "EnableActionList": [
+                "Menu_UnchangeDPadLeft"
+              ],
+              "EnableBattleOperationList": [],
+              "DisableBlackMask": true
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.ShowGuideHintWithText",
+          "Block": true,
+          "TargetEvent": [
+            {
+              "$type": "RPG.GameCore.WaitPlayerAction",
+              "ActionType": "AnyAction",
+              "Param": "MazeMainPage.25"
+            }
+          ],
+          "NodeIDList": [
+            "WikipediaOverviewPage.WikiInfoRow"
+          ],
+          "IsAutoMatchGuideHintType": false,
+          "GuideTextType": "InfoTip",
+          "GuideText": "TutorialTextmap_100802",
+          "GuideTalkID": 523111,
+          "CustomTextDirection": "RightDown",
+          "GuideHintShowConfig": {},
+          "GuideTextShowConfig": {},
+          "GuideUIContextConfig": {
+            "Type": "Normal",
+            "Name": "WikipediaOverviewPage"
+          },
+          "EnableActionList": [],
+          "EnableBattleOperationList": [],
+          "DisableBlackMask": true
+        },
+        {
+          "$type": "RPG.GameCore.TutorialClose"
+        }
+      ]
+    }
+  ]
+}

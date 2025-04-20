@@ -1,25 +1,24 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "Crowd",
   "Category": "Atmosphere",
   "AreaAnchorName": "LevelArea_P20322_F20322001_G77",
   "SaveType": "Reset",
-  "AtmosphereCondition": {
-    "Operation": "And"
-  },
+  "AtmosphereCondition": {},
   "LoadOnInitial": true,
   "ValueSource": {},
   "ConflictIDList": [],
   "IsHoyoGroup": true,
   "HoYoGroupType": "Container",
-  "StreamingTemplateType": "Standard",
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
   "ConflictWhiteList": [],
-  "TagContainer": [
-    {
-      "Tag": "Group.Atomsphere.Crowd",
-      "TagHash": -581694062
-    }
-  ],
+  "TagContainer": {
+    "List": [
+      {
+        "Tag": "Group.Atomsphere.Crowd",
+        "TagHash": -581694062
+      }
+    ]
+  },
   "AnchorList": [
     {
       "Name": "Anchor1",
@@ -53,61 +52,11 @@
   "MonsterList": [],
   "PropList": [
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 100,
-      "LoadOnInitial": true,
       "IsOverrideInitLevelGraph": true,
       "InitLevelGraph": "Config/Level/CrowdBubble/MunicipalChat_Play_Template.json",
       "ValueSource": {
         "Values": [
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "Config/Level/MunicipalChatConfig/F20322001/MunicipalChatConfig_F20322001_0011.json",
-            "Key": "PlayMunicipalChatPath"
-          },
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "MunicipalChatConfig_F20322001_0011",
-            "Key": "PlayMunicipalChatName"
-          },
-          {
-            "$type": "RPG.GameCore.SharedJsonConfigList",
-            "Value": [
-              {
-                "$type": "RPG.GameCore.MunicipalChatEntityInfo",
-                "UniqueName": "1",
-                "GroupInstanceID": 400001
-              },
-              {
-                "$type": "RPG.GameCore.MunicipalChatEntityInfo",
-                "UniqueName": "2",
-                "GroupInstanceID": 400002
-              }
-            ],
-            "Key": "PlayMunicipalChatCharacterList"
-          }
-        ],
-        "SharedValues": [
           {
             "$type": "RPG.GameCore.SharedString",
             "Value": "Config/Level/MunicipalChatConfig/F20322001/MunicipalChatConfig_F20322001_0011.json",
@@ -140,28 +89,16 @@
         "Radius": 3.5,
         "PointList": []
       },
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Prop_Municipal_0011",
       "ID": 300001,
@@ -170,29 +107,7 @@
       "PosZ": 156.674
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 100,
-      "LoadOnInitial": true,
       "IsOverrideInitLevelGraph": true,
       "InitLevelGraph": "Config/Level/CrowdBubble/MunicipalChat_Stop_Template.json",
       "ValueSource": {
@@ -202,41 +117,22 @@
             "Value": "MunicipalChatConfig_F20322001_0011",
             "Key": "StopMunicipalChatName"
           }
-        ],
-        "SharedValues": [
-          {
-            "$type": "RPG.GameCore.SharedString",
-            "Value": "MunicipalChatConfig_F20322001_0011",
-            "Key": "StopMunicipalChatName"
-          }
         ]
       },
       "Trigger": {
-        "Radius": 5.0,
+        "Radius": 5,
         "PointList": []
       },
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Prop_Municipal_0011_Stop",
       "ID": 300002,
@@ -252,39 +148,24 @@
   "NPCList": [
     {
       "NPCID": 13319,
-      "LoadOnInitial": true,
       "ValueSource": {},
       "StaticNPC": true,
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "ServerInteractVerificationIDList": [],
+      "DefaultLookAtMode": "Closed",
       "BoardShowList": [
         8
       ],
       "TalkDialogGroupIDList": [],
-      "DefaultAnimationType": "FreeStyle",
       "DefaultIdleFreeStyleMotionID": 100040237,
-      "BornType": "Mission",
       "InitialHiddenNodeList": [],
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "OverrideReplaceMaterialKeyList": [],
       "CameraCenterEntityList": [],
       "SpawnConfig": {
-        "TryCapture": true,
-        "CaptureDistanceTolerance": 1.5,
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
-      "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true
-      },
+      "TriggerValidGuest": {},
       "Name": "NPC1",
       "RotY": 76.0733,
       "ID": 400001,
@@ -294,10 +175,8 @@
     },
     {
       "NPCID": 13231,
-      "LoadOnInitial": true,
       "ValueSource": {},
       "StaticNPC": true,
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "ServerInteractVerificationIDList": [],
       "DefaultLookAtMode": "LookTarget",
@@ -309,29 +188,15 @@
         8
       ],
       "TalkDialogGroupIDList": [],
-      "DefaultAnimationType": "FreeStyle",
       "DefaultIdleFreeStyleMotionID": 100020000,
-      "BornType": "Mission",
       "InitialHiddenNodeList": [],
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "OverrideReplaceMaterialKeyList": [],
       "CameraCenterEntityList": [],
       "SpawnConfig": {
-        "TryCapture": true,
-        "CaptureDistanceTolerance": 1.5,
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
-      "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true
-      },
+      "TriggerValidGuest": {},
       "Name": "NPC2",
       "RotY": 159.3092,
       "ID": 400002,
@@ -347,6 +212,7 @@
           "Identity": "Pinuo_Waiter",
           "FeatureID": "Pinuo_Waiter_BlackMale",
           "UniqueName": "77_1_01",
+          "LookAtMode": "Closed",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "DefaultAnimationType": "FreeStyle",
@@ -356,25 +222,12 @@
           "Identity": "Pinuo_Waiter",
           "FeatureID": "Pinuo_Waiter_BlackLady",
           "UniqueName": "77_1_02",
+          "LookAtMode": "Closed",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": 0.846,
-            "z": -0.046,
-            "normalized": {
-              "x": 0.998525,
-              "z": -0.0542933233,
-              "normalized": {
-                "x": 0.9985251,
-                "z": -0.054293327,
-                "magnitude": 1.0,
-                "sqrMagnitude": 1.00000012
-              },
-              "magnitude": 0.99999994,
-              "sqrMagnitude": 0.99999994
-            },
-            "magnitude": 0.8472497,
-            "sqrMagnitude": 0.717832
+            "X": 0.846,
+            "Z": -0.046
           },
           "DefaultAnimationType": "FreeStyle",
           "DefaultIdleFreeStyleMotionID": 100020336
@@ -391,31 +244,16 @@
           "CrowdUniqueName": "77_1_01"
         }
       ],
-      "TriggerRudius": 5.0,
+      "TriggerRudius": 5,
       "CenterPos": {
-        "x": 0.423,
-        "z": -0.023,
-        "normalized": {
-          "x": 0.998525,
-          "z": -0.0542933233,
-          "normalized": {
-            "x": 0.9985251,
-            "z": -0.054293327,
-            "magnitude": 1.0,
-            "sqrMagnitude": 1.00000012
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 0.423624843,
-        "sqrMagnitude": 0.179458
+        "X": 0.423,
+        "Z": -0.023
       },
-      "LoadPriority": "Middle",
       "Name": "Crowd1",
       "RotY": 130.5154,
       "ID": 1,
       "PosX": -3.532375,
-      "PosY": 95.0,
+      "PosY": 95,
       "PosZ": -10.7407
     },
     {
@@ -424,19 +262,12 @@
           "Identity": "Tourist_High",
           "FeatureID": "Tourist_High_Male",
           "UniqueName": "77_2_01",
+          "LookAtMode": "Closed",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": 0.36,
-            "z": 0.74,
-            "normalized": {
-              "x": 0.437465727,
-              "z": 0.89923507,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 0.822921634,
-            "sqrMagnitude": 0.6772
+            "X": 0.36,
+            "Z": 0.74
           },
           "LocalRotationY": 318.7032,
           "DefaultAnimationType": "FreeStyle",
@@ -446,19 +277,12 @@
           "Identity": "Tourist_High",
           "FeatureID": "Tourist_High_Lady",
           "UniqueName": "77_2_02",
+          "LookAtMode": "Closed",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": 0.360308,
-            "z": -1.030994,
-            "normalized": {
-              "x": 0.32990998,
-              "z": -0.944012463,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.00000012
-            },
-            "magnitude": 1.09214032,
-            "sqrMagnitude": 1.1927706
+            "X": 0.360308,
+            "Z": -1.030994
           },
           "LocalRotationY": 308.3347,
           "DefaultAnimationType": "FreeStyle",
@@ -468,19 +292,12 @@
           "Identity": "Tourist_High",
           "FeatureID": "Tourist_High_EntertainmentLady",
           "UniqueName": "77_2_03",
+          "LookAtMode": "Closed",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": -0.84946,
-            "z": -0.203209,
-            "normalized": {
-              "x": -0.972558856,
-              "z": -0.232656881,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 0.873427868,
-            "sqrMagnitude": 0.7628762
+            "X": -0.84946,
+            "Z": -0.203209
           },
           "LocalRotationY": 139.1088,
           "DefaultAnimationType": "FreeStyle",
@@ -498,24 +315,15 @@
           "CrowdUniqueName": "77_2_03"
         }
       ],
-      "TriggerRudius": 5.0,
+      "TriggerRudius": 5,
       "CenterPos": {
-        "x": -0.043051,
-        "z": -0.164734,
-        "normalized": {
-          "x": -0.2528448,
-          "z": -0.9675069,
-          "magnitude": 1.0,
-          "sqrMagnitude": 1.0
-        },
-        "magnitude": 0.1702665,
-        "sqrMagnitude": 0.02899068
+        "X": -0.043051,
+        "Z": -0.164734
       },
-      "LoadPriority": "Middle",
       "Name": "Crowd2",
       "ID": 2,
       "PosX": 10.38538,
-      "PosY": 95.0,
+      "PosY": 95,
       "PosZ": -19.79255
     },
     {
@@ -524,19 +332,12 @@
           "Identity": "Tourist_High",
           "FeatureID": "Tourist_High_RobotMale",
           "UniqueName": "77_3_03",
+          "LookAtMode": "Closed",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": -0.270001,
-            "z": 1.92,
-            "normalized": {
-              "x": -0.13925533,
-              "z": 0.9902565,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 1.93889153,
-            "sqrMagnitude": 3.75930047
+            "X": -0.270001,
+            "Z": 1.92
           },
           "LocalRotationY": 283.1121,
           "DefaultAnimationType": "FreeStyle",
@@ -546,27 +347,12 @@
           "Identity": "Tourist_High",
           "FeatureID": "Tourist_High_RobotLady",
           "UniqueName": "77_3_04",
-          "LookAtMode": "LookCrowd",
           "LookAtTarget": "77_3_03",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": -0.311001,
-            "z": 2.913,
-            "normalized": {
-              "x": -0.106159814,
-              "z": 0.994349,
-              "normalized": {
-                "x": -0.106159821,
-                "z": 0.994349062,
-                "magnitude": 1.0,
-                "sqrMagnitude": 1.0
-              },
-              "magnitude": 0.99999994,
-              "sqrMagnitude": 0.9999999
-            },
-            "magnitude": 2.929555,
-            "sqrMagnitude": 8.582292
+            "X": -0.311001,
+            "Z": 2.913
           },
           "LocalRotationY": 234.739,
           "DefaultAnimationType": "FreeStyle",
@@ -584,30 +370,15 @@
           "CrowdUniqueName": "77_3_04"
         }
       ],
-      "TriggerRudius": 5.0,
+      "TriggerRudius": 5,
       "CenterPos": {
-        "x": -0.290501,
-        "z": 2.4165,
-        "normalized": {
-          "x": -0.11935623,
-          "z": 0.992851436,
-          "normalized": {
-            "x": -0.119356237,
-            "z": 0.9928515,
-            "magnitude": 1.0,
-            "sqrMagnitude": 1.0
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.9999999
-        },
-        "magnitude": 2.433899,
-        "sqrMagnitude": 5.92386341
+        "X": -0.290501,
+        "Z": 2.4165
       },
-      "LoadPriority": "Middle",
       "Name": "Crowd3",
       "ID": 3,
       "PosX": -16.48,
-      "PosY": 95.0,
+      "PosY": 95,
       "PosZ": -26.56
     },
     {
@@ -616,21 +387,12 @@
           "Identity": "Tourist_High",
           "FeatureID": "Tourist_High_EntertainmentLady",
           "UniqueName": "77_4_01",
-          "LookAtMode": "LookCrowd",
           "LookAtTarget": "77_4_02",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": -0.838,
-            "z": -0.239,
-            "normalized": {
-              "x": -0.961653769,
-              "z": -0.2742664,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 0.8714155,
-            "sqrMagnitude": 0.759364963
+            "X": -0.838,
+            "Z": -0.239
           },
           "LocalRotationY": 104.0802,
           "DefaultAnimationType": "FreeStyle",
@@ -640,21 +402,12 @@
           "Identity": "Pinuo_Waiter",
           "FeatureID": "Pinuo_Waiter_BlackMale",
           "UniqueName": "77_4_02",
-          "LookAtMode": "LookCrowd",
           "LookAtTarget": "77_4_01",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": 0.126,
-            "z": 0.965,
-            "normalized": {
-              "x": 0.129470974,
-              "z": 0.9915832,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 0.9731911,
-            "sqrMagnitude": 0.947100937
+            "X": 0.126,
+            "Z": 0.965
           },
           "LocalRotationY": 202.7815,
           "DefaultAnimationType": "FreeStyle",
@@ -672,24 +425,15 @@
           "CrowdUniqueName": "77_4_01"
         }
       ],
-      "TriggerRudius": 5.0,
+      "TriggerRudius": 5,
       "CenterPos": {
-        "x": -0.356,
-        "z": 0.363,
-        "normalized": {
-          "x": -0.7001894,
-          "z": 0.713957131,
-          "magnitude": 1.0,
-          "sqrMagnitude": 1.0
-        },
-        "magnitude": 0.5084339,
-        "sqrMagnitude": 0.258505
+        "X": -0.356,
+        "Z": 0.363
       },
-      "LoadPriority": "Middle",
       "Name": "Crowd4",
       "ID": 4,
       "PosX": -10.14,
-      "PosY": 95.0,
+      "PosY": 95,
       "PosZ": -31.92
     },
     {
@@ -698,27 +442,12 @@
           "Identity": "Family_Normal",
           "FeatureID": "Family_Normal_Male",
           "UniqueName": "77_7_01",
-          "LookAtMode": "LookCrowd",
           "LookAtTarget": "77_7_02",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": 0.545053,
-            "z": -0.246323,
-            "normalized": {
-              "x": 0.9112639,
-              "z": -0.4118228,
-              "normalized": {
-                "x": 0.911263943,
-                "z": -0.411822826,
-                "magnitude": 1.0,
-                "sqrMagnitude": 1.0
-              },
-              "magnitude": 0.99999994,
-              "sqrMagnitude": 0.9999999
-            },
-            "magnitude": 0.5981286,
-            "sqrMagnitude": 0.3577578
+            "X": 0.545053,
+            "Z": -0.246323
           },
           "LocalRotationY": 36.87386,
           "DefaultAnimationType": "FreeStyle",
@@ -728,21 +457,12 @@
           "Identity": "Family_Normal",
           "FeatureID": "Family_Normal_Lady",
           "UniqueName": "77_7_02",
-          "LookAtMode": "LookCrowd",
           "LookAtTarget": "77_7_01",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": 1.770654,
-            "z": 0.319626,
-            "normalized": {
-              "x": 0.9840952,
-              "z": 0.177641943,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 1.799271,
-            "sqrMagnitude": 3.23737621
+            "X": 1.770654,
+            "Z": 0.319626
           },
           "LocalRotationY": 291.6967,
           "DefaultAnimationType": "FreeStyle",
@@ -760,24 +480,15 @@
           "CrowdUniqueName": "77_7_01"
         }
       ],
-      "TriggerRudius": 5.0,
+      "TriggerRudius": 5,
       "CenterPos": {
-        "x": 1.157853,
-        "z": 0.036652,
-        "normalized": {
-          "x": 0.9994994,
-          "z": 0.0316392928,
-          "magnitude": 1.0,
-          "sqrMagnitude": 1.0
-        },
-        "magnitude": 1.158433,
-        "sqrMagnitude": 1.341967
+        "X": 1.157853,
+        "Z": 0.036652
       },
-      "LoadPriority": "Middle",
       "Name": "Crowd7",
       "ID": 7,
       "PosX": 1.59,
-      "PosY": 95.0,
+      "PosY": 95,
       "PosZ": -27.89
     },
     {
@@ -786,19 +497,12 @@
           "Identity": "Pinuo_Waiter",
           "FeatureID": "Pinuo_Waiter_BlackMale",
           "UniqueName": "77_8_01",
+          "LookAtMode": "Closed",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": -0.55,
-            "z": -0.060007,
-            "normalized": {
-              "x": -0.994100869,
-              "z": -0.108460017,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.00000012
-            },
-            "magnitude": 0.5532638,
-            "sqrMagnitude": 0.306100845
+            "X": -0.55,
+            "Z": -0.060007
           },
           "LocalRotationY": 140.8593,
           "DefaultAnimationType": "FreeStyle",
@@ -808,19 +512,12 @@
           "Identity": "Pinuo_Waiter",
           "FeatureID": "Pinuo_Waiter_BlackLady",
           "UniqueName": "77_8_02",
+          "LookAtMode": "Closed",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": 0.464,
-            "z": 0.910005,
-            "normalized": {
-              "x": 0.454246432,
-              "z": 0.8908761,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 1.021472,
-            "sqrMagnitude": 1.043405
+            "X": 0.464,
+            "Z": 0.910005
           },
           "LocalRotationY": 135.5169,
           "DefaultAnimationType": "FreeStyle",
@@ -838,20 +535,11 @@
           "CrowdUniqueName": "77_8_01"
         }
       ],
-      "TriggerRudius": 5.0,
+      "TriggerRudius": 5,
       "CenterPos": {
-        "x": -0.043,
-        "z": 0.424999,
-        "normalized": {
-          "x": -0.1006628,
-          "z": 0.9949206,
-          "magnitude": 1.0,
-          "sqrMagnitude": 1.0
-        },
-        "magnitude": 0.427168757,
-        "sqrMagnitude": 0.182473138
+        "X": -0.043,
+        "Z": 0.424999
       },
-      "LoadPriority": "Middle",
       "Name": "Crowd8",
       "RotY": 356.8329,
       "ID": 8,
@@ -865,41 +553,16 @@
           "Identity": "Pinuo_Waiter",
           "FeatureID": "Pinuo_Waiter_BlackMale",
           "UniqueName": "77_9_01",
+          "LookAtMode": "Closed",
           "LookAtAnchor": {},
           "LookAtPosition": {},
           "LocalPosition": {
-            "x": -0.113,
-            "z": 0.591003,
-            "normalized": {
-              "x": -0.187798455,
-              "z": 0.982207537,
-              "normalized": {
-                "x": -0.18779847,
-                "z": 0.9822076,
-                "magnitude": 1.0,
-                "sqrMagnitude": 1.0
-              },
-              "magnitude": 0.99999994,
-              "sqrMagnitude": 0.9999999
-            },
-            "magnitude": 0.6017089,
-            "sqrMagnitude": 0.362053573
+            "X": -0.113,
+            "Z": 0.591003
           },
           "LocalRotationY": 176.9628,
           "DefaultAnimationType": "FreeStyle",
-          "DefaultIdleFreeStyleMotionID": 100010336,
-          "NearbyAnimConfig": {
-            "Offset": {
-              "z": 1.8,
-              "normalized": {
-                "z": 1.0,
-                "magnitude": 1.0,
-                "sqrMagnitude": 1.0
-              },
-              "magnitude": 1.8,
-              "sqrMagnitude": 3.23999977
-            }
-          }
+          "DefaultIdleFreeStyleMotionID": 100010336
         }
       ],
       "NewMunicipalChatConfigPath": "Config/Level/MunicipalChatConfig/F20322001/MunicipalChatConfig_F20322001_0009.json",
@@ -909,26 +572,11 @@
           "CrowdUniqueName": "77_9_01"
         }
       ],
-      "TriggerRudius": 5.0,
+      "TriggerRudius": 5,
       "CenterPos": {
-        "x": -0.113,
-        "z": 0.591003,
-        "normalized": {
-          "x": -0.187798455,
-          "z": 0.982207537,
-          "normalized": {
-            "x": -0.18779847,
-            "z": 0.9822076,
-            "magnitude": 1.0,
-            "sqrMagnitude": 1.0
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.9999999
-        },
-        "magnitude": 0.6017089,
-        "sqrMagnitude": 0.362053573
+        "X": -0.113,
+        "Z": 0.591003
       },
-      "LoadPriority": "Middle",
       "Name": "Crowd9",
       "ID": 9,
       "PosX": 1.86,

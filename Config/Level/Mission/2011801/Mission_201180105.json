@@ -10,27 +10,23 @@
             "FetchType": "SingleNpcByNpcID",
             "SingleNpcID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 42949672960
+                "FixedValue": {
+                  "Value": 10
                 }
               },
               "GroupNpcID": {
-                "fixedValue": {
-                  "RawValue": 1717991213367296
+                "FixedValue": {
+                  "Value": 400001
                 }
               }
             }
           },
           "IconPath": "SpriteOutput/MapPics/Billboard/IconBillboardMapCompanion02.png",
-          "OnNameBoard": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "OnNameBoard": true
         },
         {
           "$type": "RPG.GameCore.ResetMissionWayPoint",
-          "SubMissionID": 201180102,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "SubMissionID": 201180102
         }
       ]
     },
@@ -40,8 +36,7 @@
           "$type": "RPG.GameCore.TriggerCustomString",
           "CustomString": {
             "Value": "Mission_201180105_StandBy"
-          },
-          "TaskEnabled": true
+          }
         }
       ]
     },
@@ -52,51 +47,39 @@
           "CustomString": {
             "Value": "Mission_201180105"
           },
-          "GoNextImmediately": true,
-          "TaskEnabled": true
+          "GoNextImmediately": true
         },
         {
           "$type": "RPG.GameCore.TriggerPerformance",
           "ValueSource": {},
           "PerformanceType": "C",
-          "PerformanceID": 201180103,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 201180103
         },
         {
           "$type": "RPG.GameCore.TriggerCustomString",
           "CustomString": {
             "Value": "Track_OnSuccess"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.CharacterStopFreeStyle",
           "CharacterUniqueName": "LocalPlayer",
           "TargetType": {
-            "$type": "RPG.GameCore.TargetFetchAdvLocalPlayer"
+            "$type": "RPG.GameCore.TargetFetchAdvLocalPlayer",
+            "IncludeStoryPlayer": false
           },
-          "NormalizedTransitionDuration": 0.1,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "NormalizedTransitionDuration": 0.1
         },
         {
-          "$type": "RPG.GameCore.UnLockPlayerControl",
-          "UnLockCameraControl": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "$type": "RPG.GameCore.UnLockPlayerControl"
         },
         {
           "$type": "RPG.GameCore.BlockInputController",
-          "ActionNameList": [],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "ActionNameList": []
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_201180105",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_201180105"
         }
       ]
     },
@@ -111,12 +94,7 @@
           },
           "AnchorName": {
             "Value": "PlayerPointInPhase02"
-          },
-          "ResetAnimation": true,
-          "ResetCamera": true,
-          "ClearSpecialVision": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         }
       ]
     },
@@ -128,14 +106,11 @@
           "CustomString": {
             "Value": "Track_OnFail_Reset01"
           },
-          "GoNextImmediately": true,
-          "TaskEnabled": true
+          "GoNextImmediately": true
         },
         {
           "$type": "RPG.GameCore.ResetMissionWayPoint",
-          "SubMissionID": 201180105,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "SubMissionID": 201180105
         },
         {
           "$type": "RPG.GameCore.ShowWaypointByProp",
@@ -144,21 +119,19 @@
             "FetchType": "SingleNpcByNpcID",
             "SingleNpcID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 42949672960
+                "FixedValue": {
+                  "Value": 10
                 }
               },
               "GroupNpcID": {
-                "fixedValue": {
-                  "RawValue": 1717991213367296
+                "FixedValue": {
+                  "Value": 400001
                 }
               }
             }
           },
           "IconPath": "SpriteOutput/MapPics/Billboard/IconBillboardMapCompanion02.png",
-          "OnNameBoard": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "OnNameBoard": true
         }
       ]
     },
@@ -170,8 +143,7 @@
           "CustomString": {
             "Value": "isReached02"
           },
-          "GoNextImmediately": true,
-          "TaskEnabled": true
+          "GoNextImmediately": true
         },
         {
           "$type": "RPG.GameCore.HideWaypointByProp",
@@ -180,31 +152,26 @@
             "FetchType": "SingleNpcByNpcID",
             "SingleNpcID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 42949672960
+                "FixedValue": {
+                  "Value": 10
                 }
               },
               "GroupNpcID": {
-                "fixedValue": {
-                  "RawValue": 1717991213367296
+                "FixedValue": {
+                  "Value": 400001
                 }
               }
             }
           },
-          "OnNameBoard": true,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "OnNameBoard": true
         },
         {
           "$type": "RPG.GameCore.WaitSecond",
           "WaitTime": {
-            "fixedValue": {
-              "RawValue": 429496730
+            "FixedValue": {
+              "Value": 0.1
             }
-          },
-          "MaxAdvencePerTick": -1.0,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
           "$type": "RPG.GameCore.SetMissionWayPoint",
@@ -214,9 +181,7 @@
           "OverideWayPointGroupID": true,
           "WayPointGroupID": 12,
           "OverideWayPointEntityID": true,
-          "WayPointEntityID": 300004,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "WayPointEntityID": 300004
         }
       ]
     }

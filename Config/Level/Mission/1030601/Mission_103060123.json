@@ -8,14 +8,11 @@
           "$type": "RPG.GameCore.WaitCustomString",
           "CustomString": {
             "Value": "Talk_103060123"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_103060123",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_103060123"
         }
       ]
     },
@@ -24,26 +21,18 @@
         {
           "$type": "RPG.GameCore.WaitSecond",
           "WaitTime": {
-            "fixedValue": {
-              "RawValue": 4294967296
+            "FixedValue": {
+              "Value": 1
             }
-          },
-          "MaxAdvencePerTick": -1.0,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          }
         },
         {
           "$type": "RPG.GameCore.PPFilterStackEffect",
+          "Active": false,
           "PriorityGroup": "PerformanceGroup",
-          "StartRate": -1.0,
           "Rate": 0.3,
-          "Duration": 1.0,
-          "RecoverDuration": 0.5,
-          "AssetPath": "EnviroSystem/PostProcessFilterAsset/DizzinessVarient.asset",
-          "MaxAttenuationDistance": 10,
-          "MinAttenuationDistanceRate": 1.0,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Duration": 1,
+          "AssetPath": "EnviroSystem/PostProcessFilterAsset/DizzinessVarient.asset"
         }
       ]
     }

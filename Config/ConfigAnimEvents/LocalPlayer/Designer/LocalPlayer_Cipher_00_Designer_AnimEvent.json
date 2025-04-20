@@ -1,0 +1,66 @@
+{
+  "AnimatorStateEvents": [
+    {
+      "AnimatorStateName": "MazeSkill",
+      "NormalizedTime": 0.129,
+      "EventList": [
+        {
+          "$type": "RPG.GameCore.SetAttachmentVisibility",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AttachPoints": [
+            {
+              "Name": "Weapon"
+            }
+          ]
+        }
+      ],
+      "AllowTriggeringOnTransitionOut": false
+    }
+  ],
+  "AnimatorStateGroupEvents": [
+    {
+      "States": [
+        {
+          "Name": "MazeSkill",
+          "NormalizedTime": 0.012,
+          "ExitInTransition": true,
+          "ReEnterOnStateLoop": true,
+          "ResetOnSameStateChange": true
+        }
+      ],
+      "OnEnter": [
+        {
+          "$type": "RPG.GameCore.SetAttachmentVisibility",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AttachPoints": [
+            {
+              "Name": "Weapon"
+            }
+          ],
+          "Visibility": true,
+          "VisibilityApplyDelay": 1
+        }
+      ],
+      "OnExit": [
+        {
+          "$type": "RPG.GameCore.SetAttachmentVisibility",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "AttachPoints": [
+            {
+              "Name": "Weapon"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

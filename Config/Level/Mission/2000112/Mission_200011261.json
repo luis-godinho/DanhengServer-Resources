@@ -1,0 +1,71 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.CreateProp",
+          "GroupID": {
+            "FixedValue": {
+              "Value": 31
+            }
+          },
+          "GroupPropID": {
+            "FixedValue": {
+              "Value": 300005
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.CreateNPC",
+          "GroupID": {
+            "FixedValue": {
+              "Value": 31
+            }
+          },
+          "GroupNpcID": {
+            "FixedValue": {
+              "Value": 400003
+            }
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "Mission_200011261"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.DestroyProp",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          },
+          "ID": {
+            "FixedValue": {
+              "Value": 300005
+            }
+          },
+          "GroupID": {
+            "FixedValue": {
+              "Value": 31
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.DestroyNPC",
+          "GroupID": 31,
+          "GroupNpcID": 400003
+        },
+        {
+          "$type": "RPG.GameCore.FinishPerformanceMission",
+          "Key": "Mission_200011261"
+        }
+      ]
+    }
+  ],
+  "Type": "Mission"
+}

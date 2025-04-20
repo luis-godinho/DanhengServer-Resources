@@ -1,0 +1,66 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropSetupOptionsTrigger",
+          "OptionList": [
+            {
+              "OptionTextmapID": {
+                "Hash": 2654339266875431280
+              },
+              "TriggerCustomString": "Control_Start"
+            }
+          ],
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          }
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "Control_Start"
+          },
+          "WaitOwnerOnly": true
+        },
+        {
+          "$type": "RPG.GameCore.PropMove",
+          "ID": 300008,
+          "GroupID": 4,
+          "Duration": 3,
+          "DeltaPosition": {
+            "Y": 4.6
+          },
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+            "FetchType": "SinglePropByPropID",
+            "SinglePropID": {
+              "GroupID": {
+                "FixedValue": {
+                  "Value": 4
+                }
+              },
+              "ID": {
+                "FixedValue": {
+                  "Value": 300008
+                }
+              }
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.PropEnableCollider",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          }
+        }
+      ]
+    }
+  ]
+}

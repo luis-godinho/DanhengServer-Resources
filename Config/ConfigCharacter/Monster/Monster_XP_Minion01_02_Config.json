@@ -1,0 +1,107 @@
+{
+  "$type": "RPG.GameCore.CharacterConfig",
+  "CharacterHUDOffset": {
+    "Y": 2.3
+  },
+  "BuffPanelOffset": {
+    "Y": 1.8
+  },
+  "HitBoxWidth": 0.3,
+  "HitBoxHeight": 1.5,
+  "Location": {
+    "Width": 1.1,
+    "LocalZOffsetMin": 0.3,
+    "LocalZOffsetMax": 1,
+    "RootOffset": {
+      "Y": -0.05
+    }
+  },
+  "VisualRadius": 0.8,
+  "AnimEventConfigList": [
+    "Config/ConfigAnimEvents/Monster/Designer/Monster_XP_Minion01_03_Designer_AnimEvent.json",
+    "Config/ConfigAnimEvents/Monster/Effect/Monster_XP_Minion01_03_Effect_AnimEvent.json",
+    "Config/ConfigAnimEvents/Monster/Audio/Monster_XP_Minion01_03_Audio_AnimEvent.json"
+  ],
+  "SkillList": [
+    {
+      "Name": "Skill01",
+      "UseType": "SelectEntity",
+      "TargetInfo": {
+        "TargetType": "EnemySelect"
+      },
+      "ReadyAnimState": "StandBy",
+      "EntryAbility": "Monster_XP_Minion01_03_Skill01_Phase01"
+    },
+    {
+      "Name": "PassiveSkillInitiate",
+      "SkillType": "Passive",
+      "UseType": "Passive",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "EntryAbility": "Monster_XP_Minion01_03_PassiveSkillInitiate"
+    },
+    {
+      "Name": "PassiveSkill01",
+      "SkillType": "Passive",
+      "UseType": "Passive",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "EntryAbility": "Monster_Common_PassiveSkill_StanceBreak_Action"
+    }
+  ],
+  "AbilityList": [
+    "Monster_XP_Minion01_03_PassiveSkillInitiate",
+    "Monster_Common_PassiveSkill_StanceBreak_Action"
+  ],
+  "SkillAbilityList": [
+    {
+      "Skill": "Skill01",
+      "AbilityList": [
+        "Monster_XP_Minion01_03_Skill01_Phase01",
+        "Monster_XP_Minion01_03_Skill01_Phase02",
+        "Monster_XP_Minion01_03_Skill01_Camera"
+      ]
+    }
+  ],
+  "DynamicValues": {
+    "Floats": {
+      "-1126825319": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill01"
+        }
+      },
+      "1050242723": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill01",
+          "Index": 1
+        }
+      },
+      "-1476159857": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill01",
+          "Index": 2
+        }
+      },
+      "-1594388517": {
+        "ReadInfo": {
+          "Type": "SkillParam",
+          "TriggerKey": "Skill01",
+          "Index": 3
+        }
+      }
+    }
+  },
+  "CustomValues": {
+    "AIFlag": 0
+  },
+  "WeaponType": "WP_Scythe",
+  "DisableAnimEventLayers": [
+    "Riboon Layer"
+  ],
+  "MonsterIgnoreGlobalDymanicOffset": false
+}

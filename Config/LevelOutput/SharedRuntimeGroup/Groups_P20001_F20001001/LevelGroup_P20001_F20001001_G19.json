@@ -1,4 +1,5 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "SubMission2",
   "AreaAnchorName": "LevelArea_P20001_F20001001_G19",
   "SaveType": "Reset",
@@ -29,14 +30,14 @@
   },
   "ValueSource": {},
   "ConflictIDList": [],
-  "StreamingTemplateType": "Standard",
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
-  "TagContainer": [
-    {
-      "Tag": "Group.Mission.LegacyNormal",
-      "TagHash": 439974373
-    }
-  ],
+  "TagContainer": {
+    "List": [
+      {
+        "Tag": "Group.Mission.LegacyNormal",
+        "TagHash": 439974373
+      }
+    ]
+  },
   "AnchorList": [],
   "MonsterList": [],
   "PropList": [],
@@ -47,8 +48,6 @@
   "NPCList": [
     {
       "NPCID": 10101,
-      "LoadOnInitial": true,
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [
         200010201,
         500000602,
@@ -56,6 +55,7 @@
       ],
       "ServerInteractVerificationIDList": [],
       "DefaultIdleStateName": "Akimbo02Loop",
+      "DefaultLookAtMode": "Closed",
       "BoardShowList": [
         1,
         4,
@@ -66,7 +66,6 @@
       "TalkDialogGroupIDList": [
         500000600
       ],
-      "DefaultAnimationType": "FreeStyle",
       "DefaultIdleFreeStyleMotionID": 100010216,
       "BornType": "Permanent",
       "InitialHiddenNodeList": [],
@@ -81,16 +80,13 @@
             "Name": "Transferred",
             "LevelGraph": "Config/Level/NPCDialogue/P20001/F20001001_G19/DialoguePack_Transferred_F20001001_G19_N400001.json"
           }
-        ],
-        "EnableDialogCamera": true
+        ]
       },
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "OverrideReplaceMaterialKeyList": [],
       "CameraCenterEntityList": [],
       "Name": "NPC1",
-      "RotY": 180.0,
+      "RotY": 180,
       "ID": 400001,
       "PosY": 0.147002,
       "PosZ": 131.616

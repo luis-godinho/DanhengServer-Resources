@@ -1,0 +1,193 @@
+{
+  "OnInitSequece": [
+    {
+      "TaskList": []
+    }
+  ],
+  "OnStartSequece": [
+    {
+      "TaskList": []
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByComparePropState",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+              "FetchType": "SinglePropByPropKey",
+              "SinglePropKey": {
+                "Custom": true,
+                "Key": "FollowAnchor"
+              },
+              "SinglePropID": {},
+              "PropIDInOwnerGroup": {
+                "FixedValue": {
+                  "Value": 300002
+                }
+              }
+            },
+            "State": "Open"
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.SetFlipperLightDeviceFollowPlayer",
+              "DevicePropTarget": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                "FetchType": "SinglePropByPropKey",
+                "SinglePropKey": {
+                  "Custom": true,
+                  "Key": "EraFlipperOwner"
+                },
+                "SinglePropID": {},
+                "PropIDInOwnerGroup": {
+                  "FixedValue": {
+                    "Value": 300002
+                  }
+                }
+              },
+              "PointPropTarget": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                "FetchType": "SinglePropByPropKey",
+                "SinglePropKey": {
+                  "Custom": true,
+                  "Key": "FollowAnchor"
+                }
+              },
+              "AimAttachPoint": "Root",
+              "FollowOffset": {
+                "Y": 9
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitPropStateChangeV2",
+          "InstanceID": 300008,
+          "ToState": "Open",
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.SetFollowLightDeviceDamp",
+              "On": false
+            },
+            {
+              "$type": "RPG.GameCore.AdvOverrideCameraModuleConfig",
+              "OverrideConfigs": [
+                {
+                  "OverrideType": "Freelook3rdModuleConfig",
+                  "OverrideConfigPath": "Camera/ModuleConfig/OverrideModuleConfig/Freelook3rdModuleConfig_ShallowWater.asset"
+                },
+                {
+                  "OverrideType": "ZoomModuleConfig",
+                  "OverrideConfigPath": "Camera/ModuleConfig/OverrideModuleConfig/ZoomModuleConfig_ShallowWater.asset"
+                }
+              ],
+              "BlendTime": 3,
+              "BlendCurve": "Camera/BlendCurve/EraFlipperCameraCurve.asset",
+              "ClearWhenResetCamera": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitPropStateChangeV2",
+          "InstanceID": 300008,
+          "FromState": "Open",
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.SetFollowLightDeviceDamp",
+              "On": false
+            },
+            {
+              "$type": "RPG.GameCore.AdvOverrideCameraModuleConfig",
+              "OverrideConfigs": [],
+              "BlendTime": 3,
+              "BlendCurve": "Camera/BlendCurve/EraFlipperCameraCurve2.asset",
+              "IsReset": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByComparePropState",
+            "TargetType": {
+              "$type": "RPG.GameCore.GroupFetchLocalTarget",
+              "TargetType": "Prop",
+              "Targets": [
+                300008
+              ]
+            }
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.SetFollowLightDeviceDamp",
+              "On": false
+            },
+            {
+              "$type": "RPG.GameCore.AdvOverrideCameraModuleConfig",
+              "OverrideConfigs": [],
+              "BlendTime": 3,
+              "BlendCurve": "Camera/BlendCurve/EraFlipperCameraCurve2.asset",
+              "IsReset": true
+            }
+          ],
+          "FailedTaskList": [
+            {
+              "$type": "RPG.GameCore.SetFollowLightDeviceDamp",
+              "On": false
+            },
+            {
+              "$type": "RPG.GameCore.AdvOverrideCameraModuleConfig",
+              "OverrideConfigs": [
+                {
+                  "OverrideType": "Freelook3rdModuleConfig",
+                  "OverrideConfigPath": "Camera/ModuleConfig/OverrideModuleConfig/Freelook3rdModuleConfig_ShallowWater.asset"
+                },
+                {
+                  "OverrideType": "ZoomModuleConfig",
+                  "OverrideConfigPath": "Camera/ModuleConfig/OverrideModuleConfig/ZoomModuleConfig_ShallowWater.asset"
+                }
+              ],
+              "BlendTime": 3,
+              "BlendCurve": "Camera/BlendCurve/EraFlipperCameraCurve.asset",
+              "ClearWhenResetCamera": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": []
+    },
+    {
+      "TaskList": []
+    }
+  ],
+  "ValueSource": {
+    "Values": [
+      {
+        "$type": "RPG.GameCore.SharedString",
+        "Key": "FollowAnchor"
+      },
+      {
+        "$type": "RPG.GameCore.SharedString",
+        "Key": "EraFlipperOwner"
+      }
+    ]
+  },
+  "Type": "Group",
+  "EntityEventList": []
+}

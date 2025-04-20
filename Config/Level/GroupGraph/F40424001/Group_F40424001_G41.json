@@ -1,0 +1,216 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.LoopWaitServerPropStateChange"
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.LoopWaitServerPropStateChange"
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByComparePropState",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+              "FetchType": "SinglePropByPropKey",
+              "SinglePropKey": {
+                "Custom": true,
+                "Key": "FollowAnchor"
+              },
+              "SinglePropID": {},
+              "PropIDInOwnerGroup": {
+                "FixedValue": {
+                  "Value": 300002
+                }
+              }
+            },
+            "State": "Open"
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.SetFlipperLightDeviceFollowPlayer",
+              "DevicePropTarget": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                "FetchType": "SinglePropByPropKey",
+                "SinglePropKey": {
+                  "Custom": true,
+                  "Key": "EraFlipperOwner"
+                },
+                "SinglePropID": {},
+                "PropIDInOwnerGroup": {
+                  "FixedValue": {
+                    "Value": 300002
+                  }
+                }
+              },
+              "PointPropTarget": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                "FetchType": "SinglePropByPropKey",
+                "SinglePropKey": {
+                  "Custom": true,
+                  "Key": "FollowAnchor"
+                }
+              },
+              "AimAttachPoint": "Root",
+              "FollowOffset": {
+                "Y": 9
+              }
+            }
+          ],
+          "FailedTaskList": []
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitFloorSavedValueChangeV2",
+          "Name": {
+            "Value": "FSV_LightFinish"
+          },
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareFloorSavedValue",
+                "DynamicName": {
+                  "Value": "FSV_LightFinish"
+                },
+                "CompareType": "Equal",
+                "CompareValue": 2
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.SetEntityVisible",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                    "TargetType": "Prop",
+                    "Targets": [
+                      300001,
+                      300002,
+                      300003,
+                      300012
+                    ]
+                  },
+                  "Visible": true
+                },
+                {
+                  "$type": "RPG.GameCore.TriggerEntityEvent",
+                  "EventName": {
+                    "Value": "Clt_TriggerOpen"
+                  },
+                  "InstanceID": {
+                    "FixedValue": {
+                      "Value": 300001
+                    }
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.PlayScreenTransfer",
+                  "CustomTime": 0.35
+                }
+              ],
+              "FailedTaskList": [
+                {
+                  "$type": "RPG.GameCore.SetEntityVisible",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                    "TargetType": "Prop",
+                    "Targets": [
+                      300001,
+                      300002,
+                      300003,
+                      300012
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByCompareFloorSavedValue",
+            "DynamicName": {
+              "Value": "FSV_LightFinish"
+            },
+            "CompareType": "Equal",
+            "CompareValue": 2
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.SetEntityVisible",
+              "TargetType": {
+                "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                "TargetType": "Prop",
+                "Targets": [
+                  300001,
+                  300002,
+                  300003,
+                  300012
+                ]
+              },
+              "Visible": true
+            },
+            {
+              "$type": "RPG.GameCore.TriggerEntityEvent",
+              "EventName": {
+                "Value": "Clt_TriggerOpen"
+              },
+              "InstanceID": {
+                "FixedValue": {
+                  "Value": 300001
+                }
+              }
+            }
+          ],
+          "FailedTaskList": [
+            {
+              "$type": "RPG.GameCore.SetEntityVisible",
+              "TargetType": {
+                "$type": "RPG.GameCore.GroupFetchLocalTarget",
+                "TargetType": "Prop",
+                "Targets": [
+                  300001,
+                  300002,
+                  300003,
+                  300012
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "ValueSource": {
+    "Values": [
+      {
+        "$type": "RPG.GameCore.SharedString",
+        "Key": "FollowAnchor"
+      },
+      {
+        "$type": "RPG.GameCore.SharedString",
+        "Key": "EraFlipperOwner"
+      }
+    ]
+  },
+  "Type": "Group",
+  "EntityEventList": []
+}

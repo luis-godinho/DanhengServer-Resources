@@ -7,16 +7,13 @@
           "$type": "RPG.GameCore.TriggerPerformance",
           "ValueSource": {},
           "PerformanceType": "D",
-          "PerformanceID": 201130301,
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "PerformanceID": 201130301
         },
         {
           "$type": "RPG.GameCore.TriggerCustomString",
           "CustomString": {
             "Value": "Maze_MissionStart_ModeProbe_201130301"
-          },
-          "TaskEnabled": true
+          }
         },
         {
           "$type": "RPG.GameCore.SetNpcWaypath",
@@ -25,20 +22,18 @@
             "FetchType": "SingleNpcByNpcID",
             "SingleNpcID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 55834574848
+                "FixedValue": {
+                  "Value": 13
                 }
               },
               "GroupNpcID": {
-                "fixedValue": {
-                  "RawValue": 1717991213367296
+                "FixedValue": {
+                  "Value": 400001
                 }
               }
             }
           },
-          "UsageType": "TaskFollow",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "UsageType": "TaskFollow"
         },
         {
           "$type": "RPG.GameCore.SetNpcStatus",
@@ -47,38 +42,31 @@
             "FetchType": "SingleNpcByNpcID",
             "SingleNpcID": {
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 55834574848
+                "FixedValue": {
+                  "Value": 13
                 }
               },
               "GroupNpcID": {
-                "fixedValue": {
-                  "RawValue": 1717991213367296
+                "FixedValue": {
+                  "Value": 400001
                 }
               }
             }
           },
-          "Status": "FollowPlayer",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Status": "FollowPlayer"
         },
         {
           "$type": "RPG.GameCore.PlayMissionTalk",
           "SimpleTalkList": [
             {
-              "TextSpeed": 20.0,
               "TalkSentenceID": 201131003,
-              "ProtectTime": 2.0
+              "ProtectTime": 2
             }
-          ],
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          ]
         },
         {
           "$type": "RPG.GameCore.FinishPerformanceMission",
-          "Key": "Mission_201130301",
-          "TaskEnabled": true,
-          "IsClientOnly": true
+          "Key": "Mission_201130301"
         }
       ]
     },
@@ -90,28 +78,23 @@
           "Predicate": {
             "$type": "RPG.GameCore.ByTargetNpcExists",
             "GroupID": 13,
-            "GroupNpcID": 400001,
-            "TaskEnabled": true,
-            "IsClientOnly": true
+            "GroupNpcID": 400001
           },
           "FailedTaskList": [
             {
               "$type": "RPG.GameCore.CreateNPC",
               "GroupID": {
-                "fixedValue": {
-                  "RawValue": 55834574848
+                "FixedValue": {
+                  "Value": 13
                 }
               },
               "GroupNpcID": {
-                "fixedValue": {
-                  "RawValue": 1717991213367296
+                "FixedValue": {
+                  "Value": 400001
                 }
-              },
-              "TaskEnabled": true,
-              "IsClientOnly": true
+              }
             }
-          ],
-          "TaskEnabled": true
+          ]
         }
       ]
     }

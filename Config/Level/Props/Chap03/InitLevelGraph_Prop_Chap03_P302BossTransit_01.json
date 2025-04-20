@@ -1,0 +1,72 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AnimSetParameter",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "ParameterName": "BossPhase",
+          "ParameterType": "Int",
+          "Value": {
+            "FixedValue": {
+              "Value": 1
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TransitEnvProfile",
+          "Path": {
+            "Value": "Stages/Outputs/Chapter03/EnviroProfile/Chap03_CloseView_BAT_P302_Boss_night_01.enviroProfile.asset"
+          },
+          "Priority": "TASK_DYNAMIC_BLOCK_BATTLE_AREA"
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitCustomString",
+          "CustomString": {
+            "Value": "BAT_P302_Boss_TriggerPhase_03"
+          }
+        },
+        {
+          "$type": "RPG.GameCore.AnimSetParameter",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetAlias",
+            "Alias": "Caster"
+          },
+          "ParameterName": "BossPhase",
+          "ParameterType": "Int",
+          "Value": {
+            "FixedValue": {
+              "Value": 2
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.TransitEnvProfile",
+          "Path": {
+            "Value": "Stages/Outputs/Chapter03/EnviroProfile/Chap03_CloseView_BAT_P302_Boss_night_02.enviroProfile.asset"
+          },
+          "Priority": "TASK_DYNAMIC_BLOCK_BATTLE_AREA"
+        }
+      ]
+    }
+  ],
+  "ValueSource": {
+    "Values": [
+      {
+        "$type": "RPG.GameCore.SharedInt",
+        "Key": "HasChangeToPhase2"
+      }
+    ]
+  },
+  "Type": "Entity",
+  "EntityEventList": []
+}

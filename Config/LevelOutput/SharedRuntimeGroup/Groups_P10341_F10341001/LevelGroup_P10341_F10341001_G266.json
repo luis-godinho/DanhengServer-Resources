@@ -1,12 +1,11 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "RG_Shop",
   "AreaAnchorName": "LevelArea_P10341_F10341001_G266",
-  "SaveType": "Permanent",
   "SavedValueCondition": {
     "Conditions": [
       {
         "SavedValueName": "RogueTourn_ShopActivated",
-        "Operation": "Equal",
         "Value": 1
       }
     ],
@@ -18,15 +17,15 @@
   "ConflictIDList": [],
   "IsHoyoGroup": true,
   "HoYoGroupType": "Container",
-  "StreamingTemplateType": "Standard",
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
   "ConflictWhiteList": [],
-  "TagContainer": [
-    {
-      "Tag": "Group.Atomsphere.Shop",
-      "TagHash": -1454131895
-    }
-  ],
+  "TagContainer": {
+    "List": [
+      {
+        "Tag": "Group.Atomsphere.Shop",
+        "TagHash": -1454131895
+      }
+    ]
+  },
   "AnchorList": [],
   "MonsterList": [],
   "PropList": [],
@@ -37,14 +36,13 @@
   "NPCList": [
     {
       "NPCID": 13267,
-      "LoadOnInitial": true,
       "ValueSource": {},
       "StaticNPC": true,
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "ServerInteractVerificationIDList": [
         69
       ],
+      "DefaultLookAtMode": "Closed",
       "MappingInfoID": 2430,
       "BoardShowList": [
         1,
@@ -53,11 +51,9 @@
         64
       ],
       "TalkDialogGroupIDList": [],
-      "DefaultAnimationType": "FreeStyle",
       "DefaultIdleFreeStyleMotionID": 100020000,
       "IsMapContent": true,
       "MiniMapIconType": 4,
-      "BornType": "Mission",
       "InitialHiddenNodeList": [],
       "Dialog": {
         "LevelGraph": "Config/Level/NPCDialogue/P10341/F10341001_G266/DialogueMain_F10341001_G266_N400001.json",
@@ -66,26 +62,13 @@
             "Name": "Common",
             "LevelGraph": "Config/Level/NPCDialogue/P10341/F10341001_G266/DialoguePack_Common_F10341001_G266_N400001.json"
           }
-        ],
-        "EnableDialogCamera": true
+        ]
       },
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "CameraCenterEntityList": [],
       "SpawnConfig": {
-        "TryCapture": true,
-        "CaptureDistanceTolerance": 1.5,
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
-      "TriggerValidGuest": {
-        "LocalPlayer": true,
-        "Teammember": true
-      },
+      "TriggerValidGuest": {},
       "Name": "NPC1",
       "RotY": 120.8736,
       "ID": 400001,

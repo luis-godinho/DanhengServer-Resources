@@ -1,4 +1,5 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "Tpl_Default_TrackCamera_Statue",
   "LevelGraph": "Config/Level/GroupTemplateGraph/01_Maze_Default/Default_TrackCamera_Template.json",
   "AreaAnchorName": "LevelArea_P20412_F20412001_G110",
@@ -6,8 +7,7 @@
   "SavedValueCondition": {
     "Conditions": [
       {
-        "SavedValueName": "FSV_TrailCam_Off",
-        "Operation": "Equal"
+        "SavedValueName": "FSV_TrailCam_Off"
       }
     ],
     "Operation": "And"
@@ -36,79 +36,38 @@
       },
       {
         "$type": "RPG.GameCore.SharedFloat",
-        "Value": 5.0,
-        "Key": "TrackWidth"
-      }
-    ],
-    "SharedValues": [
-      {
-        "$type": "RPG.GameCore.SharedString",
-        "Value": "Level/Common_Adventure/DollyTrackPrefab/Chap04_MAZ_A102_DollyTrack_01.prefab",
-        "Key": "TrackCameraArea"
-      },
-      {
-        "$type": "RPG.GameCore.SharedString",
-        "Value": "Chap04_MAZ_A102_DollyTrack_01,VC",
-        "Key": "LevelAreaCameraKey"
-      },
-      {
-        "$type": "RPG.GameCore.SharedFloat",
-        "Value": 5.0,
+        "Value": 5,
         "Key": "TrackWidth"
       }
     ]
   },
   "ConflictIDList": [],
   "IsHoyoGroup": true,
-  "StreamingTemplateType": "Standard",
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
   "ConflictWhiteList": [],
-  "TagContainer": [
-    {
-      "Tag": "Group.Level.Gameplay",
-      "TagHash": -141571921
-    }
-  ],
+  "TagContainer": {
+    "List": [
+      {
+        "Tag": "Group.Level.Gameplay",
+        "TagHash": -141571921
+      }
+    ]
+  },
   "AnchorList": [],
   "MonsterList": [],
   "PropList": [],
   "DistrictList": [
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "Trigger": {
         "Shape": "GeometryBox",
-        "Radius": 1.0,
-        "DimX": 10.0,
-        "DimY": 5.0,
+        "Radius": 1,
+        "DimX": 10,
+        "DimY": 5,
         "DimZ": 5.56,
         "PointList": []
       },
-      "LoadOnInitial": true,
       "DistrictType": "Level",
-      "NPCCrowdRadius": 25.0,
       "ValueSource": {
-        "Values": [],
-        "SharedValues": []
+        "Values": []
       },
       "Name": "District1",
       "ID": 1,

@@ -1,8 +1,8 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "NPC07",
   "Category": "Atmosphere",
   "AreaAnchorName": "LevelArea_P10202_F10202004_G148",
-  "SaveType": "Permanent",
   "LoadCondition": {
     "Conditions": [
       {
@@ -15,14 +15,14 @@
   "LoadSide": "Server",
   "ValueSource": {},
   "ConflictIDList": [],
-  "StreamingTemplateType": "Standard",
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
-  "TagContainer": [
-    {
-      "Tag": "Group.Atomsphere.Shop",
-      "TagHash": -1454131895
-    }
-  ],
+  "TagContainer": {
+    "List": [
+      {
+        "Tag": "Group.Atomsphere.Shop",
+        "TagHash": -1454131895
+      }
+    ]
+  },
   "AnchorList": [],
   "MonsterList": [],
   "PropList": [],
@@ -33,13 +33,10 @@
   "NPCList": [
     {
       "NPCID": 12269,
-      "LoadOnInitial": true,
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "ServerInteractVerificationIDList": [
         43
       ],
-      "DefaultLookAtMode": "LookPlayer",
       "MappingInfoID": 2306,
       "BoardShowList": [
         1,
@@ -48,7 +45,6 @@
         64
       ],
       "TalkDialogGroupIDList": [],
-      "DefaultAnimationType": "FreeStyle",
       "DefaultIdleFreeStyleMotionID": 100040000,
       "IsMapContent": true,
       "MiniMapIconType": 4,
@@ -61,21 +57,12 @@
             "Name": "Common",
             "LevelGraph": "Config/Level/NPCDialogue/P10202/F10202004_G148/DialoguePack_Common_F10202004_G148_N400001.json"
           }
-        ],
-        "EnableDialogCamera": true
+        ]
       },
-      "InteractIconType": "ChatIcon",
-      "DialogueTriggerSkipFakeAvatar": true,
       "CameraCenterEntityList": [],
       "SpawnConfig": {
-        "TryCapture": true,
-        "CaptureDistanceTolerance": 10.0,
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "CaptureDistanceTolerance": 10,
+        "EntitySpawnConfig": {}
       },
       "Name": "NPC1",
       "RotY": 73.02026,

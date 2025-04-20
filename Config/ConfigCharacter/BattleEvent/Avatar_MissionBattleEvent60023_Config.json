@@ -1,0 +1,66 @@
+{
+  "$type": "RPG.GameCore.BattleEventConfig",
+  "HaveActionDelay": false,
+  "DamageType": "Imaginary",
+  "AIPath": "Config/ConfigAI/Avatar_ComplexSkilll_AutoFight_AI.json",
+  "BuffPanelOffset": {
+    "X": "Infinity",
+    "Y": "Infinity",
+    "Z": "Infinity"
+  },
+  "AnimEventConfigList": [
+    "Config/ConfigAnimEvents/Avatar/Designer/Avatar_Mydeimos_00_Designer_AnimEvent.json",
+    "Config/ConfigAnimEvents/Avatar/Effect/Avatar_Mydeimos_00_Effect_AnimEvent.json",
+    "Config/ConfigAnimEvents/Avatar/Audio/Avatar_Mydeimos_00_Audio_AnimEvent.json",
+    "Config/ConfigAnimEvents/Avatar/Audio/Avatar_Common_ControllerVibration_AnimEvent.json"
+  ],
+  "SkillList": [
+    {
+      "Name": "SkillP01",
+      "SkillType": "Passive",
+      "UseType": "Passive",
+      "TargetInfo": {
+        "TargetType": "Caster"
+      },
+      "SkillNameHUD": false,
+      "CameraConfig": {},
+      "EntryAbility": "Avatar_MissionBattleEvent60023_Passive",
+      "ComplexSkillAI": {
+        "SkillBasicPower": {
+          "Value": 90
+        },
+        "Groups": [
+          {
+            "GroupName": "Ultra_Common_ImmediateRelease"
+          }
+        ]
+      },
+      "AIUltraSkillPriority": "DamageBeforeHeal"
+    }
+  ],
+  "AbilityList": [],
+  "SkillAbilityList": [
+    {
+      "Skill": "SkillP01",
+      "AbilityList": [
+        "Avatar_MissionBattleEvent60023_Passive",
+        "Avatar_MissionBattleEvent60023_Skill03_Phase01",
+        "BattleEventAbility_60023_Camera"
+      ]
+    }
+  ],
+  "DynamicValues": {
+    "Floats": {
+      "898701636": {},
+      "353522323": {},
+      "909827945": {},
+      "909827942": {},
+      "1168259864": {},
+      "-1387017452": {},
+      "-491285238": {}
+    }
+  },
+  "DisableAnimEventLayers": [
+    "Riboon Layer"
+  ]
+}

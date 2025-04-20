@@ -1,8 +1,8 @@
 {
+  "$type": "RPG.GameCore.RtLevelGroupInfo",
   "GroupName": "QTEGotchard",
   "LevelGraph": "Config/Level/GroupGraph/F20411001/Group_F20411001_G251.json",
   "AreaAnchorName": "LevelArea_P20411_F20411001_G251",
-  "SaveType": "Permanent",
   "SavedValueCondition": {
     "Conditions": [],
     "Operation": "And"
@@ -11,21 +11,21 @@
   "LoadOnInitial": true,
   "GroupStateList": [
     {
-      "Comment": "\u8d3c\u7075\u62a2\u593a",
+      "Comment": "贼灵抢夺",
       "DstState": 1
     },
     {
-      "Comment": "\u6355\u6349\u8d3c\u7075",
+      "Comment": "捕捉贼灵",
       "SrcState": 1,
       "DstState": 2
     },
     {
-      "Comment": "\u8d3c\u7075\u5f52\u8fd8",
+      "Comment": "贼灵归还",
       "SrcState": 2,
       "DstState": 3
     },
     {
-      "Comment": "\u5b9d\u7bb1\u51fa\u73b0",
+      "Comment": "宝箱出现",
       "SrcState": 3,
       "DstState": 4
     }
@@ -64,97 +64,47 @@
       },
       {
         "$type": "RPG.GameCore.SharedFloat",
-        "Value": 2.0,
+        "Value": 2,
         "Key": "StruggleDuration"
       },
       {
         "$type": "RPG.GameCore.SharedFloat",
-        "Value": 90.0,
+        "Value": 90,
         "Key": "Steer2Run"
       },
       {
         "$type": "RPG.GameCore.SharedFloat",
-        "Value": -135.0,
+        "Value": -135,
         "Key": "Steer2Player"
       },
       {
         "$type": "RPG.GameCore.SharedFloat",
-        "Value": 90.0,
-        "Key": "Steer2Leave"
-      }
-    ],
-    "SharedValues": [
-      {
-        "$type": "RPG.GameCore.SharedString",
-        "Value": "LevelArea_P20411_F20411001_G251,Vcam1",
-        "Key": "Vcam1"
-      },
-      {
-        "$type": "RPG.GameCore.SharedString",
-        "Value": "LevelArea_P20411_F20411001_G251,Vcam2",
-        "Key": "Vcam2"
-      },
-      {
-        "$type": "RPG.GameCore.SharedString",
-        "Value": "LevelArea_P20411_F20411001_G251,Vcam3",
-        "Key": "Vcam3"
-      },
-      {
-        "$type": "RPG.GameCore.SharedString",
-        "Value": "LevelArea_P20411_F20411001_G251,Vcam4",
-        "Key": "Vcam4"
-      },
-      {
-        "$type": "RPG.GameCore.SharedString",
-        "Value": "FSV_QTEGotchard_RewardGet_01",
-        "Key": "FSV_QTEGotchard_RewardGet_ID"
-      },
-      {
-        "$type": "RPG.GameCore.SharedFloat",
-        "Value": 4.5,
-        "Key": "GoodRadius"
-      },
-      {
-        "$type": "RPG.GameCore.SharedFloat",
-        "Value": 2.0,
-        "Key": "StruggleDuration"
-      },
-      {
-        "$type": "RPG.GameCore.SharedFloat",
-        "Value": 90.0,
-        "Key": "Steer2Run"
-      },
-      {
-        "$type": "RPG.GameCore.SharedFloat",
-        "Value": -135.0,
-        "Key": "Steer2Player"
-      },
-      {
-        "$type": "RPG.GameCore.SharedFloat",
-        "Value": 90.0,
+        "Value": 90,
         "Key": "Steer2Leave"
       }
     ]
   },
   "ConflictIDList": [],
   "IsHoyoGroup": true,
-  "HoyoGroupLowestLoadPlatformQuality": "VeryLow",
+  "StreamingTemplateType": "None",
   "ConflictWhiteList": [],
-  "TagContainer": [
-    {
-      "Tag": "Group.Level.SpecialGameplay",
-      "TagHash": 718389408
-    }
-  ],
+  "TagContainer": {
+    "List": [
+      {
+        "Tag": "Group.Level.SpecialGameplay",
+        "TagHash": 718389408
+      }
+    ]
+  },
   "AnchorList": [
     {
       "RotX": 34.30848,
-      "RotZ": 2e-06,
+      "RotZ": 2E-06,
       "Usage": "Camera",
       "LookAtCameraTemplate": "Level/Common_Adventure/Camera_Module/PinballPuzzleCam01.prefab",
       "CustomParameter": {
         "$type": "RPG.GameCore.LevelAnchorCameraParameter",
-        "fov": 60.0
+        "fov": 60
       },
       "Name": "Vcam1",
       "RotY": 7.906795,
@@ -165,15 +115,15 @@
     },
     {
       "RotX": 34.30848,
-      "RotZ": 2e-06,
+      "RotZ": 2E-06,
       "Usage": "Camera",
       "LookAtCameraTemplate": "Level/Common_Adventure/Camera_Module/PinballPuzzleCam01.prefab",
       "CustomParameter": {
         "$type": "RPG.GameCore.LevelAnchorCameraParameter",
-        "fov": 60.0,
+        "fov": 60,
         "AimIsComposer": true,
-        "AimHorizontalDamping": 1.0,
-        "AimVerticalDamping": 1.0,
+        "AimHorizontalDamping": 1,
+        "AimVerticalDamping": 1,
         "AimScreenX": 0.5,
         "AimScreenY": 0.5,
         "AimDeadZoneWidth": 0.3,
@@ -188,12 +138,12 @@
     },
     {
       "RotX": 34.30848,
-      "RotZ": 2e-06,
+      "RotZ": 2E-06,
       "Usage": "Camera",
       "LookAtCameraTemplate": "Level/Common_Adventure/Camera_Module/PinballPuzzleCam01.prefab",
       "CustomParameter": {
         "$type": "RPG.GameCore.LevelAnchorCameraParameter",
-        "fov": 60.0
+        "fov": 60
       },
       "Name": "Vcam3",
       "RotY": 7.906795,
@@ -204,15 +154,15 @@
     },
     {
       "RotX": 34.30848,
-      "RotZ": 2e-06,
+      "RotZ": 2E-06,
       "Usage": "Camera",
       "LookAtCameraTemplate": "Level/Common_Adventure/Camera_Module/PinballPuzzleCam01.prefab",
       "CustomParameter": {
         "$type": "RPG.GameCore.LevelAnchorCameraParameter",
-        "fov": 20.0,
+        "fov": 20,
         "AimIsComposer": true,
-        "AimHorizontalDamping": 1.0,
-        "AimVerticalDamping": 1.0,
+        "AimHorizontalDamping": 1,
+        "AimVerticalDamping": 1,
         "AimScreenX": 0.5,
         "AimScreenY": 0.5,
         "AimDeadZoneWidth": 0.3,
@@ -229,59 +179,25 @@
   "MonsterList": [],
   "PropList": [
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 60401,
-      "LoadOnInitial": true,
       "IsOverrideInitLevelGraph": true,
       "ValueSource": {},
       "CampID": 4,
       "State": "ChestClosed",
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Fake",
-      "RotY": 180.0,
+      "RotY": 180,
       "ID": 300001,
       "PosX": 141.949,
       "PosY": 70.33997,
@@ -289,85 +205,34 @@
     },
     {
       "Scale": {
-        "x": 0.6,
-        "y": 0.6,
-        "z": 0.6,
-        "normalized": {
-          "x": 0.5773503,
-          "y": 0.5773503,
-          "z": 0.5773503,
-          "normalized": {
-            "x": 0.577350259,
-            "y": 0.577350259,
-            "z": 0.577350259,
-            "magnitude": 0.99999994,
-            "sqrMagnitude": 0.99999994
-          },
-          "magnitude": 1.00000012,
-          "sqrMagnitude": 1.00000024
-        },
-        "magnitude": 1.03923047,
-        "sqrMagnitude": 1.08
+        "X": 0.6,
+        "Y": 0.6,
+        "Z": 0.6
       },
       "PropID": 104159,
-      "LoadOnInitial": true,
       "ValueSource": {},
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "Coin",
-      "RotY": 180.0,
+      "RotY": 180,
       "ID": 300002,
       "PosX": 141.949,
       "PosY": 70.43997,
       "PosZ": -35.487
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 104102,
-      "LoadOnInitial": true,
       "ValueSource": {
         "Values": [
           {
@@ -382,39 +247,12 @@
           },
           {
             "$type": "RPG.GameCore.SharedFloat",
-            "Value": 18.0,
+            "Value": 18,
             "Key": "StartMoveSpeed"
           },
           {
             "$type": "RPG.GameCore.SharedFloat",
-            "Value": 9.0,
-            "Key": "HoldMoveSpeed"
-          },
-          {
-            "$type": "RPG.GameCore.SharedInt",
-            "Value": 1,
-            "Key": "CaughtType"
-          }
-        ],
-        "SharedValues": [
-          {
-            "$type": "RPG.GameCore.SharedJsonConfig",
-            "Value": {
-              "$type": "RPG.GameCore.GameLevelObjectRefConfig",
-              "GroupID": 251,
-              "InstanceID": 1,
-              "Type": "Curve"
-            },
-            "Key": "CurveRef"
-          },
-          {
-            "$type": "RPG.GameCore.SharedFloat",
-            "Value": 18.0,
-            "Key": "StartMoveSpeed"
-          },
-          {
-            "$type": "RPG.GameCore.SharedFloat",
-            "Value": 9.0,
+            "Value": 9,
             "Key": "HoldMoveSpeed"
           },
           {
@@ -425,90 +263,44 @@
         ]
       },
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "IsClientOnly": true,
       "CameraCenterEntityList": [],
       "CameraConfig": {},
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "MascotSpirits",
-      "RotY": 270.0,
+      "RotY": 270,
       "ID": 300003,
       "PosX": 143.955,
       "PosY": 71.057,
       "PosZ": -35.496
     },
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "PropID": 100,
-      "LoadOnInitial": true,
       "ValueSource": {},
       "CampID": 4,
-      "OverrideHintRange": -1.0,
-      "OverrideSoundRange": -1.0,
       "CustomTriggerMap": {},
       "CustomTriggerMapV2": {},
       "StateConfigs": [],
-      "DialogueTriggerAngle": 120,
       "DialogueGroups": [],
       "TalkDialogGroupIDList": [],
       "ServerInteractVerificationIDList": [],
-      "OverrideMapIconType": -1,
-      "DialogueTriggerSkipFakeAvatar": true,
       "DialogueTriggerSkipSpecifiedFakeAvatarList": [],
       "CameraCenterEntityList": [],
       "CameraConfig": {},
-      "LookAtPlayerTriggerRadius": 2.0,
-      "OverrideLockRaycastOffset": 1.5,
       "SpawnConfig": {
-        "EntitySpawnConfig": {
-          "NeedBlackIn": true,
-          "BlackInDistance": 25.0,
-          "NeedFadeIn": true,
-          "NeedFadeOut": true
-        }
+        "EntitySpawnConfig": {}
       },
       "Name": "EffectPoint",
-      "RotY": 180.0,
+      "RotY": 180,
       "ID": 300004,
       "PosX": 141.949,
       "PosY": 70.33997,
@@ -517,41 +309,18 @@
   ],
   "DistrictList": [
     {
-      "Scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0,
-        "normalized": {
-          "x": 0.577350259,
-          "y": 0.577350259,
-          "z": 0.577350259,
-          "normalized": {
-            "x": 0.5773503,
-            "y": 0.5773503,
-            "z": 0.5773503,
-            "magnitude": 1.00000012,
-            "sqrMagnitude": 1.00000024
-          },
-          "magnitude": 0.99999994,
-          "sqrMagnitude": 0.99999994
-        },
-        "magnitude": 1.73205078,
-        "sqrMagnitude": 3.0
-      },
       "Trigger": {
         "Shape": "GeometrySphere",
-        "Radius": 3.0,
-        "DimX": 20.0,
-        "DimY": 6.0,
-        "DimZ": 15.0,
+        "Radius": 3,
+        "DimX": 20,
+        "DimY": 6,
+        "DimZ": 15,
         "PointList": []
       },
-      "LoadOnInitial": true,
       "DistrictType": "Level",
-      "NPCCrowdRadius": 25.0,
       "ValueSource": {},
       "Name": "District1",
-      "RotY": 180.0,
+      "RotY": 180,
       "ID": 1,
       "PosX": 141.949,
       "PosY": 70.33997,
@@ -572,299 +341,109 @@
       "PointList": [
         {
           "Position": {
-            "x": 46.19254,
-            "y": -23.08833,
-            "z": -9.161091,
-            "normalized": {
-              "x": 0.8807375,
-              "y": -0.440217346,
-              "z": -0.174671412,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 52.447567,
-            "sqrMagnitude": 2750.74731
+            "X": 46.19254,
+            "Y": -23.08833,
+            "Z": -9.161091
           },
           "ControlType": 1,
           "Control1": {
-            "x": 4.364262,
-            "z": 0.007523,
-            "normalized": {
-              "x": 0.99999845,
-              "z": 0.001723771,
-              "normalized": {
-                "x": 0.9999985,
-                "z": 0.0017237711,
-                "magnitude": 1.0,
-                "sqrMagnitude": 1.0
-              },
-              "magnitude": 0.99999994,
-              "sqrMagnitude": 0.9999999
-            },
-            "magnitude": 4.364269,
-            "sqrMagnitude": 19.04684
+            "X": 4.364262,
+            "Z": 0.007523
           },
           "Control2": {
-            "x": -4.364262,
-            "z": -0.007523,
-            "normalized": {
-              "x": -0.99999845,
-              "z": -0.001723771,
-              "normalized": {
-                "x": -0.9999985,
-                "z": -0.0017237711,
-                "magnitude": 1.0,
-                "sqrMagnitude": 1.0
-              },
-              "magnitude": 0.99999994,
-              "sqrMagnitude": 0.9999999
-            },
-            "magnitude": 4.364269,
-            "sqrMagnitude": 19.04684
+            "X": -4.364262,
+            "Z": -0.007523
           },
           "Alias": "Start"
         },
         {
           "Position": {
-            "x": 37.88906,
-            "y": -23.09604,
-            "z": -10.12879,
-            "normalized": {
-              "x": 0.8324552,
-              "y": -0.507439852,
-              "z": -0.2225382,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.00000012
-            },
-            "magnitude": 45.5148354,
-            "sqrMagnitude": 2071.60034
+            "X": 37.88906,
+            "Y": -23.09604,
+            "Z": -10.12879
           },
           "ControlType": 1,
           "Control1": {
-            "x": 1.795341,
-            "y": -0.281124,
-            "z": 0.142151,
-            "normalized": {
-              "x": 0.984952569,
-              "y": -0.154229075,
-              "z": 0.07798629,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 1.822769,
-            "sqrMagnitude": 3.322487
+            "X": 1.795341,
+            "Y": -0.281124,
+            "Z": 0.142151
           },
           "Control2": {
-            "x": -1.795341,
-            "y": 0.281124,
-            "z": -0.142151,
-            "normalized": {
-              "x": -0.984952569,
-              "y": 0.154229075,
-              "z": -0.07798629,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 1.822769,
-            "sqrMagnitude": 3.322487
+            "X": -1.795341,
+            "Y": 0.281124,
+            "Z": -0.142151
           }
         },
         {
           "Position": {
-            "x": 14.7415,
-            "y": -6.388374,
-            "z": 6.402098,
-            "normalized": {
-              "x": 0.8523662,
-              "y": -0.369381279,
-              "z": 0.370174825,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.00000012
-            },
-            "magnitude": 17.294796,
-            "sqrMagnitude": 299.11
+            "X": 14.7415,
+            "Y": -6.388374,
+            "Z": 6.402098
           },
           "ControlType": 1,
           "Control1": {
-            "x": -0.343432,
-            "z": -2.196167,
-            "normalized": {
-              "x": -0.154500231,
-              "z": -0.9879927,
-              "normalized": {
-                "x": -0.154500246,
-                "z": -0.987992764,
-                "magnitude": 1.0,
-                "sqrMagnitude": 1.0
-              },
-              "magnitude": 0.99999994,
-              "sqrMagnitude": 0.99999994
-            },
-            "magnitude": 2.22285748,
-            "sqrMagnitude": 4.94109535
+            "X": -0.343432,
+            "Z": -2.196167
           },
           "Control2": {
-            "x": 0.343432,
-            "z": 2.196167,
-            "normalized": {
-              "x": 0.154500231,
-              "z": 0.9879927,
-              "normalized": {
-                "x": 0.154500246,
-                "z": 0.987992764,
-                "magnitude": 1.0,
-                "sqrMagnitude": 1.0
-              },
-              "magnitude": 0.99999994,
-              "sqrMagnitude": 0.99999994
-            },
-            "magnitude": 2.22285748,
-            "sqrMagnitude": 4.94109535
+            "X": 0.343432,
+            "Z": 2.196167
           },
           "Alias": "1"
         },
         {
           "Position": {
-            "x": 28.13544,
-            "y": -5.521622,
-            "z": 34.3051,
-            "normalized": {
-              "x": 0.629295766,
-              "y": -0.123500228,
-              "z": 0.7672904,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 44.7094078,
-            "sqrMagnitude": 1998.93115
+            "X": 28.13544,
+            "Y": -5.521622,
+            "Z": 34.3051
           },
           "ControlType": 1,
           "Control1": {
-            "x": -7.249491,
-            "y": -4.456406,
-            "z": -1.324326,
-            "normalized": {
-              "x": -0.8417783,
-              "y": -0.5174578,
-              "z": -0.153774783,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 8.612115,
-            "sqrMagnitude": 74.16852
+            "X": -7.249491,
+            "Y": -4.456406,
+            "Z": -1.324326
           },
           "Control2": {
-            "x": 7.249491,
-            "y": 4.456406,
-            "z": 1.324326,
-            "normalized": {
-              "x": 0.8417783,
-              "y": 0.5174578,
-              "z": 0.153774783,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 8.612115,
-            "sqrMagnitude": 74.16852
+            "X": 7.249491,
+            "Y": 4.456406,
+            "Z": 1.324326
           },
           "Alias": "2"
         },
         {
           "Position": {
-            "x": 10.579,
-            "y": 5.743477,
-            "z": 4.989654,
-            "normalized": {
-              "x": 0.8118513,
-              "y": 0.440764666,
-              "z": 0.38291496,
-              "normalized": {
-                "x": 0.8118514,
-                "y": 0.4407647,
-                "z": 0.382915,
-                "magnitude": 1.0,
-                "sqrMagnitude": 1.00000012
-              },
-              "magnitude": 0.99999994,
-              "sqrMagnitude": 0.9999999
-            },
-            "magnitude": 13.0307112,
-            "sqrMagnitude": 169.799423
+            "X": 10.579,
+            "Y": 5.743477,
+            "Z": 4.989654
           },
           "ControlType": 1,
           "Control1": {
-            "x": 5.278043,
-            "y": 0.666137,
-            "z": 5.550231,
-            "normalized": {
-              "x": 0.6865231,
-              "y": 0.0866454542,
-              "z": 0.721927047,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 7.68807745,
-            "sqrMagnitude": 59.1065369
+            "X": 5.278043,
+            "Y": 0.666137,
+            "Z": 5.550231
           },
           "Control2": {
-            "x": -5.278043,
-            "y": -0.666137,
-            "z": -5.550231,
-            "normalized": {
-              "x": -0.6865231,
-              "y": -0.0866454542,
-              "z": -0.721927047,
-              "magnitude": 1.0,
-              "sqrMagnitude": 1.0
-            },
-            "magnitude": 7.68807745,
-            "sqrMagnitude": 59.1065369
+            "X": -5.278043,
+            "Y": -0.666137,
+            "Z": -5.550231
           },
           "Alias": "3"
         },
         {
           "ControlType": 1,
           "Control1": {
-            "x": 5.028843,
-            "z": 0.03218,
-            "normalized": {
-              "x": 0.9999795,
-              "z": 0.00639895536,
-              "normalized": {
-                "x": 0.999979556,
-                "z": 0.006398956,
-                "magnitude": 1.0,
-                "sqrMagnitude": 1.0
-              },
-              "magnitude": 0.99999994,
-              "sqrMagnitude": 0.99999994
-            },
-            "magnitude": 5.028946,
-            "sqrMagnitude": 25.2902966
+            "X": 5.028843,
+            "Z": 0.03218
           },
           "Control2": {
-            "x": -5.028843,
-            "z": -0.03218,
-            "normalized": {
-              "x": -0.9999795,
-              "z": -0.00639895536,
-              "normalized": {
-                "x": -0.999979556,
-                "z": -0.006398956,
-                "magnitude": 1.0,
-                "sqrMagnitude": 1.0
-              },
-              "magnitude": 0.99999994,
-              "sqrMagnitude": 0.99999994
-            },
-            "magnitude": 5.028946,
-            "sqrMagnitude": 25.2902966
+            "X": -5.028843,
+            "Z": -0.03218
           },
           "Alias": "End"
         }
       ],
       "Name": "Curve1",
-      "RotY": 270.0,
+      "RotY": 270,
       "ID": 1,
       "PosX": 143.955,
       "PosY": 71.057,

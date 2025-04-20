@@ -1,0 +1,202 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropSetupTrigger",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          },
+          "IsSingle": true,
+          "TargetEntityType": "NPCMonster",
+          "TargetGroupID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "TargetID": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "TargetTypes": [
+            "NPCMonster"
+          ],
+          "DisableAfterTriggered": true,
+          "OnTriggerEnter": [
+            {
+              "$type": "RPG.GameCore.PropStateExecute",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+              },
+              "Execute": [
+                {
+                  "$type": "RPG.GameCore.TriggerEffectList",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                    "FetchType": "SinglePropByPropID",
+                    "SinglePropID": {
+                      "GroupID": {
+                        "FixedValue": {
+                          "Value": 20
+                        }
+                      },
+                      "ID": {
+                        "FixedValue": {
+                          "Value": 300002
+                        }
+                      }
+                    }
+                  },
+                  "EffectList": [
+                    {
+                      "EffectPath": "Characters/WhiteBox/WEffects/WEff_Prefab/WEff_Monster/Eff_Monster_Test_Maze_Common_Buff.prefab",
+                      "PositionOffset": {
+                        "Y": -1
+                      }
+                    },
+                    {
+                      "EffectPath": "Props/DesignerBackup/BossCocoon/Test_Eff_WeltArea02.prefab",
+                      "PositionOffset": {
+                        "Y": 0.5
+                      }
+                    },
+                    {
+                      "EffectPath": "Props/DesignerBackup/BossCocoon/Test_Eff_Common_CocoonBoss_Idle_Locked.prefab",
+                      "AttachPoint": "Origin",
+                      "PositionOffset": {
+                        "Y": 0.2
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.TriggerEffect",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetAlias",
+                    "Alias": "TaskActionTarget"
+                  },
+                  "AliveOnly": true,
+                  "EffectPath": "Characters/WhiteBox/WEffects/WEff_Prefab/WEff_Monster/Eff_Monster_Test_Maze_Common_Buff02.prefab",
+                  "PositionOffset": {
+                    "Z": -1
+                  }
+                }
+              ]
+            }
+          ],
+          "OnTriggerExit": []
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropStateChangeListenerConfig",
+          "ToState": "Open",
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.RemoveEffect",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                "FetchType": "SinglePropByPropID",
+                "SinglePropID": {
+                  "GroupID": {
+                    "FixedValue": {
+                      "Value": 20
+                    }
+                  },
+                  "ID": {
+                    "FixedValue": {
+                      "Value": 300002
+                    }
+                  }
+                }
+              },
+              "EffectPath": "Characters/WhiteBox/WEffects/WEff_Prefab/WEff_Monster/Eff_Monster_Test_Maze_Common_Buff.prefab"
+            },
+            {
+              "$type": "RPG.GameCore.RemoveEffect",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                "FetchType": "SinglePropByPropID",
+                "SinglePropID": {
+                  "GroupID": {
+                    "FixedValue": {
+                      "Value": 20
+                    }
+                  },
+                  "ID": {
+                    "FixedValue": {
+                      "Value": 300002
+                    }
+                  }
+                }
+              },
+              "EffectPath": "Props/DesignerBackup/BossCocoon/Test_Eff_WeltArea02.prefab"
+            },
+            {
+              "$type": "RPG.GameCore.RemoveEffect",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                "FetchType": "SinglePropByPropID",
+                "SinglePropID": {
+                  "GroupID": {
+                    "FixedValue": {
+                      "Value": 20
+                    }
+                  },
+                  "ID": {
+                    "FixedValue": {
+                      "Value": 300002
+                    }
+                  }
+                }
+              },
+              "EffectPath": "Props/DesignerBackup/BossCocoon/Test_Eff_Common_CocoonBoss_Idle_Locked.prefab"
+            },
+            {
+              "$type": "RPG.GameCore.RemoveEffect",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetAlias",
+                "Alias": "TaskActionTarget"
+              },
+              "EffectPath": "Characters/WhiteBox/WEffects/WEff_Prefab/WEff_Monster/Eff_Monster_Test_Maze_Common_Buff02.prefab"
+            },
+            {
+              "$type": "RPG.GameCore.ToastPile",
+              "DescTextID": {
+                "Hash": 4519820821972150150
+              }
+            }
+          ],
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+            "FetchType": "SinglePropByPropID",
+            "SinglePropID": {
+              "GroupID": {
+                "FixedValue": {
+                  "Value": 20
+                }
+              },
+              "ID": {
+                "FixedValue": {
+                  "Value": 300003
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ValueSource": {
+    "Values": [
+      {
+        "$type": "RPG.GameCore.SharedString",
+        "Key": "Maze_Prop_Chap01_BaseControllSimpleDoor"
+      }
+    ]
+  }
+}

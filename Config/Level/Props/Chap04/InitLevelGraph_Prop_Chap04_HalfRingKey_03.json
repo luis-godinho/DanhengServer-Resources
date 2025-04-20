@@ -1,0 +1,3622 @@
+{
+  "OnInitSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.AnimSetParameter",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          },
+          "ParameterName": "AxisType",
+          "ParameterType": "Int",
+          "Value": {
+            "IsDynamic": true,
+            "PostfixExpr": {
+              "OpCodes": "AQAR",
+              "FixedValues": [],
+              "DynamicHashes": [
+                1739791826
+              ]
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.AnimSetParameter",
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          },
+          "ParameterName": "LoopWaitStartInt",
+          "ParameterType": "Int",
+          "Value": {
+            "IsDynamic": true,
+            "PostfixExpr": {
+              "OpCodes": "AQAR",
+              "FixedValues": [],
+              "DynamicHashes": [
+                -1921733673
+              ]
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.GenericSwitchCase",
+          "SwitchRef": {
+            "$type": "RPG.GameCore.SwitchRefPropState"
+          },
+          "Cases": [
+            {
+              "$type": "RPG.GameCore.PropStateCaseContainer",
+              "Case": "Locked",
+              "OnSuccess": [
+                {
+                  "$type": "RPG.GameCore.AnimSetParameter",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                  },
+                  "ParameterName": "IsReady",
+                  "ParameterType": "Bool"
+                },
+                {
+                  "$type": "RPG.GameCore.AnimSetParameter",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                  },
+                  "ParameterName": "RotateSpeedWhenLockX",
+                  "Value": {
+                    "IsDynamic": true,
+                    "PostfixExpr": {
+                      "OpCodes": "AQAR",
+                      "FixedValues": [],
+                      "DynamicHashes": [
+                        -741410211
+                      ]
+                    }
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.AnimSetParameter",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                  },
+                  "ParameterName": "RotateSpeedWhenLockY",
+                  "Value": {
+                    "IsDynamic": true,
+                    "PostfixExpr": {
+                      "OpCodes": "AQAR",
+                      "FixedValues": [],
+                      "DynamicHashes": [
+                        824673730
+                      ]
+                    }
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.AnimSetParameter",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                  },
+                  "ParameterName": "RotateSpeedWhenLockZ",
+                  "Value": {
+                    "IsDynamic": true,
+                    "PostfixExpr": {
+                      "OpCodes": "AQAR",
+                      "FixedValues": [],
+                      "DynamicHashes": [
+                        421389203
+                      ]
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.PropStateCaseContainer",
+              "OnSuccess": [
+                {
+                  "$type": "RPG.GameCore.AnimSetParameter",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                  },
+                  "ParameterName": "IsReady",
+                  "ParameterType": "Bool",
+                  "Value": {
+                    "FixedValue": {
+                      "Value": 1
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.PropStateCaseContainer",
+              "Case": "Open",
+              "OnSuccess": [
+                {
+                  "$type": "RPG.GameCore.AnimSetParameter",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                  },
+                  "ParameterName": "IsReady",
+                  "ParameterType": "Bool",
+                  "Value": {
+                    "FixedValue": {
+                      "Value": 1
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGraphDynamicValueChange",
+          "Name": "Loc_ResultSerialNum",
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.GenericSwitchCase",
+              "SwitchRef": {
+                "$type": "RPG.GameCore.SwitchRefGraphDynamicFloat",
+                "Name": "Loc_ResultSerialNum"
+              },
+              "Cases": [
+                {
+                  "$type": "RPG.GameCore.NumberCaseContainer",
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 1
+                    }
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                      "Name": "ResultDigitalNum",
+                      "TargetIDs": [],
+                      "Value": {
+                        "FixedValue": {
+                          "Value": 160
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.NumberCaseContainer",
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 2
+                    }
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                      "Name": "ResultDigitalNum",
+                      "TargetIDs": [],
+                      "Value": {
+                        "FixedValue": {
+                          "Value": 10
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.NumberCaseContainer",
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 3
+                    }
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                      "Name": "ResultDigitalNum",
+                      "TargetIDs": [],
+                      "Value": {
+                        "FixedValue": {
+                          "Value": 80
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.NumberCaseContainer",
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 4
+                    }
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                      "Name": "ResultDigitalNum",
+                      "TargetIDs": [],
+                      "Value": {
+                        "FixedValue": {
+                          "Value": 10
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.NumberCaseContainer",
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 5
+                    }
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                      "Name": "ResultDigitalNum",
+                      "TargetIDs": [],
+                      "Value": {
+                        "FixedValue": {
+                          "Value": 4
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.NumberCaseContainer",
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 6
+                    }
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                      "Name": "ResultDigitalNum",
+                      "TargetIDs": [],
+                      "Value": {
+                        "FixedValue": {
+                          "Value": 5
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.NumberCaseContainer",
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 7
+                    }
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                      "Name": "ResultDigitalNum",
+                      "TargetIDs": [],
+                      "Value": {
+                        "FixedValue": {
+                          "Value": 1
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.NumberCaseContainer",
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 8
+                    }
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                      "Name": "ResultDigitalNum",
+                      "TargetIDs": [],
+                      "Value": {
+                        "FixedValue": {
+                          "Value": 5
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.NumberCaseContainer",
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 9
+                    }
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                      "Name": "ResultDigitalNum",
+                      "TargetIDs": [],
+                      "Value": {
+                        "FixedValue": {
+                          "Value": 8
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.NumberCaseContainer",
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 10
+                    }
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                      "Name": "ResultDigitalNum",
+                      "TargetIDs": [],
+                      "Value": {
+                        "FixedValue": {
+                          "Value": 144
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.NumberCaseContainer",
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 11
+                    }
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                      "Name": "ResultDigitalNum",
+                      "TargetIDs": [],
+                      "Value": {
+                        "FixedValue": {
+                          "Value": 8
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.NumberCaseContainer",
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 12
+                    }
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                      "Name": "ResultDigitalNum",
+                      "TargetIDs": [],
+                      "Value": {
+                        "FixedValue": {
+                          "Value": 144
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.NumberCaseContainer",
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 13
+                    }
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                      "Name": "ResultDigitalNum",
+                      "TargetIDs": [],
+                      "Value": {
+                        "FixedValue": {
+                          "Value": 1
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.NumberCaseContainer",
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 14
+                    }
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                      "Name": "ResultDigitalNum",
+                      "TargetIDs": [],
+                      "Value": {
+                        "FixedValue": {
+                          "Value": 5
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.NumberCaseContainer",
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 15
+                    }
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                      "Name": "ResultDigitalNum",
+                      "TargetIDs": [],
+                      "Value": {
+                        "FixedValue": {
+                          "Value": 4
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.NumberCaseContainer",
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 16
+                    }
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                      "Name": "ResultDigitalNum",
+                      "TargetIDs": [],
+                      "Value": {
+                        "FixedValue": {
+                          "Value": 5
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.NumberCaseContainer",
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 17
+                    }
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                      "Name": "ResultDigitalNum",
+                      "TargetIDs": [],
+                      "Value": {
+                        "FixedValue": {
+                          "Value": 2
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.NumberCaseContainer",
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 18
+                    }
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                      "Name": "ResultDigitalNum",
+                      "TargetIDs": [],
+                      "Value": {
+                        "FixedValue": {
+                          "Value": 96
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.NumberCaseContainer",
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 19
+                    }
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                      "Name": "ResultDigitalNum",
+                      "TargetIDs": [],
+                      "Value": {
+                        "FixedValue": {
+                          "Value": 2
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.NumberCaseContainer",
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 20
+                    }
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                      "Name": "ResultDigitalNum",
+                      "TargetIDs": [],
+                      "Value": {
+                        "FixedValue": {
+                          "Value": 96
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.NumberCaseContainer",
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 21
+                    }
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                      "Name": "ResultDigitalNum",
+                      "TargetIDs": [],
+                      "Value": {
+                        "FixedValue": {
+                          "Value": 160
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.NumberCaseContainer",
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 22
+                    }
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                      "Name": "ResultDigitalNum",
+                      "TargetIDs": [],
+                      "Value": {
+                        "FixedValue": {
+                          "Value": 10
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.NumberCaseContainer",
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 23
+                    }
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                      "Name": "ResultDigitalNum",
+                      "TargetIDs": [],
+                      "Value": {
+                        "FixedValue": {
+                          "Value": 80
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.NumberCaseContainer",
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 24
+                    }
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                      "Name": "ResultDigitalNum",
+                      "TargetIDs": [],
+                      "Value": {
+                        "FixedValue": {
+                          "Value": 10
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGraphDynamicValueChange",
+          "Name": "ResultDigitalNum",
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.TriggerEntityEvent",
+              "EventName": {
+                "Value": "Clt_OnResultDigitalNumChanged"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitEntityEvent",
+          "EventName": {
+            "Value": "Self_TriggerUpdateSerialNum"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.GenericSwitchCase",
+              "SwitchRef": {
+                "$type": "RPG.GameCore.SwitchRefGraphDynamicFloat",
+                "Name": "RotAxisType"
+              },
+              "Cases": [
+                {
+                  "$type": "RPG.GameCore.NumberCaseContainer",
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 1
+                    }
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.GenericSwitchCase",
+                      "SwitchRef": {
+                        "$type": "RPG.GameCore.SwitchRefGraphDynamicFloat",
+                        "Name": "RotateIndex"
+                      },
+                      "Cases": [
+                        {
+                          "$type": "RPG.GameCore.NumberCaseContainer",
+                          "Case": {
+                            "FixedValue": {
+                              "Value": 0
+                            }
+                          },
+                          "OnSuccess": [
+                            {
+                              "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                              "Name": "Loc_ResultSerialNum",
+                              "TargetIDs": [],
+                              "Value": {
+                                "FixedValue": {
+                                  "Value": 1
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "$type": "RPG.GameCore.NumberCaseContainer",
+                          "Case": {
+                            "FixedValue": {
+                              "Value": 1
+                            }
+                          },
+                          "OnSuccess": [
+                            {
+                              "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                              "Name": "Loc_ResultSerialNum",
+                              "TargetIDs": [],
+                              "Value": {
+                                "FixedValue": {
+                                  "Value": 20
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "$type": "RPG.GameCore.NumberCaseContainer",
+                          "Case": {
+                            "FixedValue": {
+                              "Value": 2
+                            }
+                          },
+                          "OnSuccess": [
+                            {
+                              "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                              "Name": "Loc_ResultSerialNum",
+                              "TargetIDs": [],
+                              "Value": {
+                                "FixedValue": {
+                                  "Value": 23
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "$type": "RPG.GameCore.NumberCaseContainer",
+                          "Case": {
+                            "FixedValue": {
+                              "Value": 3
+                            }
+                          },
+                          "OnSuccess": [
+                            {
+                              "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                              "Name": "Loc_ResultSerialNum",
+                              "TargetIDs": [],
+                              "Value": {
+                                "FixedValue": {
+                                  "Value": 10
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.NumberCaseContainer",
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 2
+                    }
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.GenericSwitchCase",
+                      "SwitchRef": {
+                        "$type": "RPG.GameCore.SwitchRefGraphDynamicFloat",
+                        "Name": "RotateIndex"
+                      },
+                      "Cases": [
+                        {
+                          "$type": "RPG.GameCore.NumberCaseContainer",
+                          "Case": {
+                            "FixedValue": {
+                              "Value": 0
+                            }
+                          },
+                          "OnSuccess": [
+                            {
+                              "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                              "Name": "Loc_ResultSerialNum",
+                              "TargetIDs": [],
+                              "Value": {
+                                "FixedValue": {
+                                  "Value": 2
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "$type": "RPG.GameCore.NumberCaseContainer",
+                          "Case": {
+                            "FixedValue": {
+                              "Value": 1
+                            }
+                          },
+                          "OnSuccess": [
+                            {
+                              "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                              "Name": "Loc_ResultSerialNum",
+                              "TargetIDs": [],
+                              "Value": {
+                                "FixedValue": {
+                                  "Value": 17
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "$type": "RPG.GameCore.NumberCaseContainer",
+                          "Case": {
+                            "FixedValue": {
+                              "Value": 2
+                            }
+                          },
+                          "OnSuccess": [
+                            {
+                              "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                              "Name": "Loc_ResultSerialNum",
+                              "TargetIDs": [],
+                              "Value": {
+                                "FixedValue": {
+                                  "Value": 24
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "$type": "RPG.GameCore.NumberCaseContainer",
+                          "Case": {
+                            "FixedValue": {
+                              "Value": 3
+                            }
+                          },
+                          "OnSuccess": [
+                            {
+                              "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                              "Name": "Loc_ResultSerialNum",
+                              "TargetIDs": [],
+                              "Value": {
+                                "FixedValue": {
+                                  "Value": 11
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.NumberCaseContainer",
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 3
+                    }
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.GenericSwitchCase",
+                      "SwitchRef": {
+                        "$type": "RPG.GameCore.SwitchRefGraphDynamicFloat",
+                        "Name": "RotateIndex"
+                      },
+                      "Cases": [
+                        {
+                          "$type": "RPG.GameCore.NumberCaseContainer",
+                          "Case": {
+                            "FixedValue": {
+                              "Value": 0
+                            }
+                          },
+                          "OnSuccess": [
+                            {
+                              "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                              "Name": "Loc_ResultSerialNum",
+                              "TargetIDs": [],
+                              "Value": {
+                                "FixedValue": {
+                                  "Value": 3
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "$type": "RPG.GameCore.NumberCaseContainer",
+                          "Case": {
+                            "FixedValue": {
+                              "Value": 1
+                            }
+                          },
+                          "OnSuccess": [
+                            {
+                              "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                              "Name": "Loc_ResultSerialNum",
+                              "TargetIDs": [],
+                              "Value": {
+                                "FixedValue": {
+                                  "Value": 18
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "$type": "RPG.GameCore.NumberCaseContainer",
+                          "Case": {
+                            "FixedValue": {
+                              "Value": 2
+                            }
+                          },
+                          "OnSuccess": [
+                            {
+                              "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                              "Name": "Loc_ResultSerialNum",
+                              "TargetIDs": [],
+                              "Value": {
+                                "FixedValue": {
+                                  "Value": 21
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "$type": "RPG.GameCore.NumberCaseContainer",
+                          "Case": {
+                            "FixedValue": {
+                              "Value": 3
+                            }
+                          },
+                          "OnSuccess": [
+                            {
+                              "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                              "Name": "Loc_ResultSerialNum",
+                              "TargetIDs": [],
+                              "Value": {
+                                "FixedValue": {
+                                  "Value": 12
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.NumberCaseContainer",
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 4
+                    }
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.GenericSwitchCase",
+                      "SwitchRef": {
+                        "$type": "RPG.GameCore.SwitchRefGraphDynamicFloat",
+                        "Name": "RotateIndex"
+                      },
+                      "Cases": [
+                        {
+                          "$type": "RPG.GameCore.NumberCaseContainer",
+                          "Case": {
+                            "FixedValue": {
+                              "Value": 0
+                            }
+                          },
+                          "OnSuccess": [
+                            {
+                              "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                              "Name": "Loc_ResultSerialNum",
+                              "TargetIDs": [],
+                              "Value": {
+                                "FixedValue": {
+                                  "Value": 4
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "$type": "RPG.GameCore.NumberCaseContainer",
+                          "Case": {
+                            "FixedValue": {
+                              "Value": 1
+                            }
+                          },
+                          "OnSuccess": [
+                            {
+                              "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                              "Name": "Loc_ResultSerialNum",
+                              "TargetIDs": [],
+                              "Value": {
+                                "FixedValue": {
+                                  "Value": 19
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "$type": "RPG.GameCore.NumberCaseContainer",
+                          "Case": {
+                            "FixedValue": {
+                              "Value": 2
+                            }
+                          },
+                          "OnSuccess": [
+                            {
+                              "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                              "Name": "Loc_ResultSerialNum",
+                              "TargetIDs": [],
+                              "Value": {
+                                "FixedValue": {
+                                  "Value": 22
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "$type": "RPG.GameCore.NumberCaseContainer",
+                          "Case": {
+                            "FixedValue": {
+                              "Value": 3
+                            }
+                          },
+                          "OnSuccess": [
+                            {
+                              "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                              "Name": "Loc_ResultSerialNum",
+                              "TargetIDs": [],
+                              "Value": {
+                                "FixedValue": {
+                                  "Value": 9
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.NumberCaseContainer",
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 5
+                    }
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.GenericSwitchCase",
+                      "SwitchRef": {
+                        "$type": "RPG.GameCore.SwitchRefGraphDynamicFloat",
+                        "Name": "RotateIndex"
+                      },
+                      "Cases": [
+                        {
+                          "$type": "RPG.GameCore.NumberCaseContainer",
+                          "Case": {
+                            "FixedValue": {
+                              "Value": 0
+                            }
+                          },
+                          "OnSuccess": [
+                            {
+                              "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                              "Name": "Loc_ResultSerialNum",
+                              "TargetIDs": [],
+                              "Value": {
+                                "FixedValue": {
+                                  "Value": 5
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "$type": "RPG.GameCore.NumberCaseContainer",
+                          "Case": {
+                            "FixedValue": {
+                              "Value": 1
+                            }
+                          },
+                          "OnSuccess": [
+                            {
+                              "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                              "Name": "Loc_ResultSerialNum",
+                              "TargetIDs": [],
+                              "Value": {
+                                "FixedValue": {
+                                  "Value": 8
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "$type": "RPG.GameCore.NumberCaseContainer",
+                          "Case": {
+                            "FixedValue": {
+                              "Value": 2
+                            }
+                          },
+                          "OnSuccess": [
+                            {
+                              "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                              "Name": "Loc_ResultSerialNum",
+                              "TargetIDs": [],
+                              "Value": {
+                                "FixedValue": {
+                                  "Value": 7
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "$type": "RPG.GameCore.NumberCaseContainer",
+                          "Case": {
+                            "FixedValue": {
+                              "Value": 3
+                            }
+                          },
+                          "OnSuccess": [
+                            {
+                              "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                              "Name": "Loc_ResultSerialNum",
+                              "TargetIDs": [],
+                              "Value": {
+                                "FixedValue": {
+                                  "Value": 6
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.NumberCaseContainer",
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 6
+                    }
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.GenericSwitchCase",
+                      "SwitchRef": {
+                        "$type": "RPG.GameCore.SwitchRefGraphDynamicFloat",
+                        "Name": "RotateIndex"
+                      },
+                      "Cases": [
+                        {
+                          "$type": "RPG.GameCore.NumberCaseContainer",
+                          "Case": {
+                            "FixedValue": {
+                              "Value": 0
+                            }
+                          },
+                          "OnSuccess": [
+                            {
+                              "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                              "Name": "Loc_ResultSerialNum",
+                              "TargetIDs": [],
+                              "Value": {
+                                "FixedValue": {
+                                  "Value": 13
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "$type": "RPG.GameCore.NumberCaseContainer",
+                          "Case": {
+                            "FixedValue": {
+                              "Value": 1
+                            }
+                          },
+                          "OnSuccess": [
+                            {
+                              "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                              "Name": "Loc_ResultSerialNum",
+                              "TargetIDs": [],
+                              "Value": {
+                                "FixedValue": {
+                                  "Value": 14
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "$type": "RPG.GameCore.NumberCaseContainer",
+                          "Case": {
+                            "FixedValue": {
+                              "Value": 2
+                            }
+                          },
+                          "OnSuccess": [
+                            {
+                              "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                              "Name": "Loc_ResultSerialNum",
+                              "TargetIDs": [],
+                              "Value": {
+                                "FixedValue": {
+                                  "Value": 15
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "$type": "RPG.GameCore.NumberCaseContainer",
+                          "Case": {
+                            "FixedValue": {
+                              "Value": 3
+                            }
+                          },
+                          "OnSuccess": [
+                            {
+                              "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                              "Name": "Loc_ResultSerialNum",
+                              "TargetIDs": [],
+                              "Value": {
+                                "FixedValue": {
+                                  "Value": 16
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitEntityEvent",
+          "EventName": {
+            "Value": "Self_UpdateRewindState"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.GenericSwitchCase",
+              "SwitchRef": {
+                "$type": "RPG.GameCore.SwitchRefGraphDynamicFloat",
+                "Name": "RotateIndex"
+              },
+              "Cases": [
+                {
+                  "$type": "RPG.GameCore.NumberCaseContainer",
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 0
+                    }
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.SetTimelineEntityState",
+                      "Target": {
+                        "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                      },
+                      "StateName": {
+                        "Value": "L0_00"
+                      },
+                      "CutIn": false
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.NumberCaseContainer",
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 1
+                    }
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.SetTimelineEntityState",
+                      "Target": {
+                        "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                      },
+                      "StateName": {
+                        "Value": "L1_01"
+                      },
+                      "CutIn": false
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.NumberCaseContainer",
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 2
+                    }
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.SetTimelineEntityState",
+                      "Target": {
+                        "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                      },
+                      "StateName": {
+                        "Value": "L2_02"
+                      },
+                      "CutIn": false
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.NumberCaseContainer",
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 3
+                    }
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.SetTimelineEntityState",
+                      "Target": {
+                        "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                      },
+                      "StateName": {
+                        "Value": "L3_03"
+                      },
+                      "CutIn": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitEntityEvent",
+          "EventName": {
+            "Value": "Self_UpdateCanDoRotate"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByAnd",
+                "PredicateList": [
+                  {
+                    "$type": "RPG.GameCore.ByCompareGraphDynamicFloat",
+                    "Name": "Loc_RewindAnimBuffer",
+                    "Value": {
+                      "FixedValue": {
+                        "Value": 0
+                      }
+                    },
+                    "CompareType": "Equal"
+                  },
+                  {
+                    "$type": "RPG.GameCore.ByCompareGraphDynamicFloat",
+                    "Name": "Loc_IsInPauseCtrl",
+                    "Value": {
+                      "FixedValue": {
+                        "Value": 0
+                      }
+                    },
+                    "CompareType": "Equal"
+                  },
+                  {
+                    "$type": "RPG.GameCore.ByCompareGraphDynamicFloat",
+                    "Name": "IsStatic",
+                    "Value": {
+                      "FixedValue": {
+                        "Value": 0
+                      }
+                    },
+                    "CompareType": "Equal"
+                  },
+                  {
+                    "$type": "RPG.GameCore.ByComparePropState",
+                    "TargetType": {
+                      "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                    }
+                  }
+                ]
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                  "Name": "Loc_CanDoRotate",
+                  "TargetIDs": [],
+                  "Value": {
+                    "FixedValue": {
+                      "Value": 1
+                    }
+                  }
+                }
+              ],
+              "FailedTaskList": [
+                {
+                  "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                  "Name": "Loc_CanDoRotate",
+                  "TargetIDs": [],
+                  "Value": {
+                    "FixedValue": {
+                      "Value": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGraphDynamicValueChange",
+          "Name": "Loc_RewindAnimBuffer",
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.TriggerEntityEvent",
+              "EventName": {
+                "Value": "Self_UpdateCanDoRotate"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.ByCompareGraphDynamicFloat",
+          "Name": "Loc_IsInPauseCtrl",
+          "Value": {
+            "FixedValue": {
+              "Value": 0
+            }
+          },
+          "CompareType": "Equal"
+        },
+        {
+          "$type": "RPG.GameCore.TriggerEntityEvent",
+          "EventName": {
+            "Value": "Self_UpdateCanDoRotate"
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitEntityEvent",
+          "EventName": {
+            "Value": "Clt_TriggerRotate"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByAnd",
+                "PredicateList": [
+                  {
+                    "$type": "RPG.GameCore.ByCompareGraphDynamicFloat",
+                    "Name": "Loc_CanDoRotate",
+                    "Value": {
+                      "FixedValue": {
+                        "Value": 1
+                      }
+                    },
+                    "CompareType": "Equal"
+                  },
+                  {
+                    "$type": "RPG.GameCore.ByCompareGraphDynamicFloat",
+                    "Name": "KeyStateStable",
+                    "Value": {
+                      "FixedValue": {
+                        "Value": 1
+                      }
+                    },
+                    "CompareType": "Equal"
+                  }
+                ]
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                  "Name": "RotateIndex",
+                  "TargetIDs": [],
+                  "Value": {
+                    "IsDynamic": true,
+                    "PostfixExpr": {
+                      "OpCodes": "AQAAAAIAAQYAAQIAAQYR",
+                      "FixedValues": [
+                        {
+                          "Value": 1
+                        },
+                        {
+                          "Value": 4
+                        }
+                      ],
+                      "DynamicHashes": [
+                        -1571460261
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGraphDynamicValueChange",
+          "Name": "RotateIndex",
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareGraphDynamicFloat",
+                "Name": "Loc_CanDoRotate",
+                "Value": {
+                  "FixedValue": {
+                    "Value": 1
+                  }
+                },
+                "CompareType": "Equal"
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.TriggerEntityEvent",
+                  "EventName": {
+                    "Value": "Self_UpdateRewindState"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitEntityEventV2",
+          "EventName": {
+            "Value": "Self_StartTimelineMode"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.AddTimelineEntityEventListener",
+              "Target": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+              },
+              "StateEnterListener": [],
+              "OnStartControlEntity": [
+                {
+                  "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                  "Name": "Loc_IsInRewindCtrl",
+                  "TargetIDs": [],
+                  "Value": {
+                    "FixedValue": {
+                      "Value": 1
+                    }
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                  "Name": "Loc_RewindAnimBuffer",
+                  "TargetIDs": [],
+                  "Value": {
+                    "FixedValue": {
+                      "Value": 1
+                    }
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                  "Name": "KeyStateStable",
+                  "TargetIDs": [],
+                  "Value": {
+                    "FixedValue": {
+                      "Value": 0
+                    }
+                  }
+                }
+              ],
+              "OnEndControlEntity": [
+                {
+                  "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                  "Name": "Loc_IsInRewindCtrl",
+                  "TargetIDs": [],
+                  "Value": {
+                    "FixedValue": {
+                      "Value": 0
+                    }
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                  "Name": "KeyRecentlyRewinded",
+                  "TargetIDs": [],
+                  "Value": {
+                    "FixedValue": {
+                      "Value": 1
+                    }
+                  }
+                }
+              ],
+              "OnPause": [],
+              "OnResumePause": [],
+              "OnAddPause": [
+                {
+                  "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                  "Name": "Loc_IsInPauseCtrl",
+                  "TargetIDs": [],
+                  "Value": {
+                    "FixedValue": {
+                      "Value": 1
+                    }
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.TriggerEntityEvent",
+                  "EventName": {
+                    "Value": "Self_UpdateCanDoRotate"
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByCompareGraphDynamicFloat",
+                    "Name": "GroupPauseSolving",
+                    "Value": {
+                      "FixedValue": {
+                        "Value": 0
+                      }
+                    },
+                    "CompareType": "Equal"
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.TriggerGroupEvent",
+                      "EventName": {
+                        "Value": "Group_SetGroupKeyPause"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "OnRemovePause": [
+                {
+                  "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                  "Name": "Loc_IsInPauseCtrl",
+                  "TargetIDs": [],
+                  "Value": {
+                    "FixedValue": {
+                      "Value": 0
+                    }
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.TriggerEntityEvent",
+                  "EventName": {
+                    "Value": "Self_UpdateCanDoRotate"
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.PredicateTaskList",
+                  "Predicate": {
+                    "$type": "RPG.GameCore.ByCompareGraphDynamicFloat",
+                    "Name": "GroupPauseSolving",
+                    "Value": {
+                      "FixedValue": {
+                        "Value": 0
+                      }
+                    },
+                    "CompareType": "Equal"
+                  },
+                  "SuccessTaskList": [
+                    {
+                      "$type": "RPG.GameCore.TriggerGroupEvent",
+                      "EventName": {
+                        "Value": "Group_ReSetGroupKeyPause"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitEntityEventV2",
+          "EventName": {
+            "Value": "Self_StartTimelineMode"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.TimeRewindLoopControlStateChangeListener",
+              "Target": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+              },
+              "Callback": [
+                {
+                  "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                  "Name": "RotateIndex",
+                  "TargetIDs": [],
+                  "Value": {
+                    "IsDynamic": true,
+                    "PostfixExpr": {
+                      "OpCodes": "AQAAAAMAAQYAAQIAAQYR",
+                      "FixedValues": [
+                        {
+                          "Value": 1
+                        },
+                        {
+                          "Value": 4
+                        }
+                      ],
+                      "DynamicHashes": [
+                        -1571460261
+                      ]
+                    }
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.TriggerEntityEvent",
+                  "EventName": {
+                    "Value": "Self_TriggerUpdateSerialNum"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitEntityEvent",
+          "EventName": {
+            "Value": "Self_TriggerMoveTo"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.PropMoveToV2",
+              "MoveToTarget": {
+                "$type": "RPG.GameCore.PropMoveToV2TargetAnchor",
+                "DynamicAnchor": {
+                  "Custom": true,
+                  "Key": "MoveTargetPos"
+                }
+              },
+              "WaitFinish": true,
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+              },
+              "Duration": {
+                "IsDynamic": true,
+                "PostfixExpr": {
+                  "OpCodes": "AQAR",
+                  "FixedValues": [],
+                  "DynamicHashes": [
+                    -1333226913
+                  ]
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareGraphDynamicFloat",
+                "Name": "IsStatic",
+                "Value": {
+                  "FixedValue": {
+                    "Value": 0
+                  }
+                },
+                "CompareType": "Equal"
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.TriggerEntityEventV2",
+                  "EventName": {
+                    "Value": "Self_StartInitialState"
+                  },
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.WaitGroupEvent",
+                  "EventName": {
+                    "Value": "Group_StartTimelineMode"
+                  },
+                  "OnEvent": [
+                    {
+                      "$type": "RPG.GameCore.TriggerEntityEventV2",
+                      "EventName": {
+                        "Value": "Self_StartTimelineMode"
+                      },
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                      }
+                    }
+                  ],
+                  "IsLoop": false
+                }
+              ],
+              "FailedTaskList": [
+                {
+                  "$type": "RPG.GameCore.TriggerEntityEventV2",
+                  "EventName": {
+                    "Value": "Self_StartInitialState"
+                  },
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitEntityEvent",
+          "EventName": {
+            "Value": "Self_TriggerJumpTo"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.PropMoveToV2",
+              "MoveToTarget": {
+                "$type": "RPG.GameCore.PropMoveToV2TargetAnchor",
+                "DynamicAnchor": {
+                  "Custom": true,
+                  "Key": "MoveTargetPos"
+                }
+              },
+              "WaitFinish": true,
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareGraphDynamicFloat",
+                "Name": "IsStatic",
+                "Value": {
+                  "FixedValue": {
+                    "Value": 0
+                  }
+                },
+                "CompareType": "Equal"
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.TriggerEntityEventV2",
+                  "EventName": {
+                    "Value": "Self_StartTimelineMode"
+                  },
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                  }
+                }
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.TriggerEntityEventV2",
+              "EventName": {
+                "Value": "Self_StartInitialState"
+              },
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitPropStateChange",
+          "FromAnyState": true,
+          "ToAnyState": true,
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.GenericSwitchCase",
+              "SwitchRef": {
+                "$type": "RPG.GameCore.SwitchRefPropState"
+              },
+              "Cases": [
+                {
+                  "$type": "RPG.GameCore.PropStateCaseContainer",
+                  "Case": "Locked",
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.AnimSetParameter",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                      },
+                      "ParameterName": "IsReady",
+                      "ParameterType": "Bool"
+                    },
+                    {
+                      "$type": "RPG.GameCore.SetTimelineEntityState",
+                      "Target": {
+                        "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                      },
+                      "StateName": {
+                        "Value": "L0_00"
+                      },
+                      "CutIn": false
+                    },
+                    {
+                      "$type": "RPG.GameCore.SetTimeRewindEntityActive",
+                      "Target": {
+                        "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                      }
+                    },
+                    {
+                      "$type": "RPG.GameCore.AdvSetColliderGroupState",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                      },
+                      "GroupName": "Closed"
+                    },
+                    {
+                      "$type": "RPG.GameCore.SetNavMeshState",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                      },
+                      "Name": {
+                        "Value": "Closed"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.PropStateCaseContainer",
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.TriggerEntityEvent",
+                      "EventName": {
+                        "Value": "Self_TriggerMoveTo"
+                      }
+                    },
+                    {
+                      "$type": "RPG.GameCore.AnimSetParameter",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                      },
+                      "ParameterName": "IsReady",
+                      "ParameterType": "Bool",
+                      "Value": {
+                        "FixedValue": {
+                          "Value": 1
+                        }
+                      }
+                    },
+                    {
+                      "$type": "RPG.GameCore.WaitEntityEventV2",
+                      "EventName": {
+                        "Value": "Self_StartInitialState"
+                      },
+                      "OnEvent": [
+                        {
+                          "$type": "RPG.GameCore.GenericSwitchCase",
+                          "SwitchRef": {
+                            "$type": "RPG.GameCore.SwitchRefGraphDynamicFloat",
+                            "Name": "RotateIndex"
+                          },
+                          "Cases": [
+                            {
+                              "$type": "RPG.GameCore.NumberCaseContainer",
+                              "Case": {
+                                "FixedValue": {
+                                  "Value": 0
+                                }
+                              },
+                              "OnSuccess": [
+                                {
+                                  "$type": "RPG.GameCore.SetTimelineEntityState",
+                                  "Target": {
+                                    "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                                  },
+                                  "StateName": {
+                                    "Value": "L0_00"
+                                  },
+                                  "CutIn": false
+                                }
+                              ]
+                            },
+                            {
+                              "$type": "RPG.GameCore.NumberCaseContainer",
+                              "Case": {
+                                "FixedValue": {
+                                  "Value": 1
+                                }
+                              },
+                              "OnSuccess": [
+                                {
+                                  "$type": "RPG.GameCore.SetTimelineEntityState",
+                                  "Target": {
+                                    "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                                  },
+                                  "StateName": {
+                                    "Value": "L1_01"
+                                  },
+                                  "CutIn": false
+                                }
+                              ]
+                            },
+                            {
+                              "$type": "RPG.GameCore.NumberCaseContainer",
+                              "Case": {
+                                "FixedValue": {
+                                  "Value": 2
+                                }
+                              },
+                              "OnSuccess": [
+                                {
+                                  "$type": "RPG.GameCore.SetTimelineEntityState",
+                                  "Target": {
+                                    "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                                  },
+                                  "StateName": {
+                                    "Value": "L2_02"
+                                  },
+                                  "CutIn": false
+                                }
+                              ]
+                            },
+                            {
+                              "$type": "RPG.GameCore.NumberCaseContainer",
+                              "Case": {
+                                "FixedValue": {
+                                  "Value": 3
+                                }
+                              },
+                              "OnSuccess": [
+                                {
+                                  "$type": "RPG.GameCore.SetTimelineEntityState",
+                                  "Target": {
+                                    "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                                  },
+                                  "StateName": {
+                                    "Value": "L3_03"
+                                  },
+                                  "CutIn": false
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "$type": "RPG.GameCore.TriggerEntityEvent",
+                          "EventName": {
+                            "Value": "Self_TriggerUpdateSerialNum"
+                          }
+                        },
+                        {
+                          "$type": "RPG.GameCore.TriggerEntityEvent",
+                          "EventName": {
+                            "Value": "Self_UpdateCanDoRotate"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.PropStateCaseContainer",
+                  "Case": "Open",
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.TriggerEntityEvent",
+                      "EventName": {
+                        "Value": "Self_TriggerMoveTo"
+                      }
+                    },
+                    {
+                      "$type": "RPG.GameCore.AnimSetParameter",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                      },
+                      "ParameterName": "IsReady",
+                      "ParameterType": "Bool",
+                      "Value": {
+                        "FixedValue": {
+                          "Value": 1
+                        }
+                      }
+                    },
+                    {
+                      "$type": "RPG.GameCore.SetTimeRewindEntityActive",
+                      "Target": {
+                        "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                      }
+                    },
+                    {
+                      "$type": "RPG.GameCore.AdvSetColliderGroupState",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                      },
+                      "GroupName": "Open"
+                    },
+                    {
+                      "$type": "RPG.GameCore.RemoveNavMeshState",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitPropStateChange",
+          "FromAnyState": true,
+          "ToAnyState": true,
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.GenericSwitchCase",
+              "SwitchRef": {
+                "$type": "RPG.GameCore.SwitchRefPropState"
+              },
+              "Cases": [
+                {
+                  "$type": "RPG.GameCore.PropStateCaseContainer",
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.WaitEntityEventV2",
+                      "EventName": {
+                        "Value": "Self_StartTimelineMode"
+                      },
+                      "OnEvent": [
+                        {
+                          "$type": "RPG.GameCore.SetTimeRewindEntityActive",
+                          "Target": {
+                            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                          },
+                          "Active": true
+                        },
+                        {
+                          "$type": "RPG.GameCore.AdvSetColliderGroupState",
+                          "TargetType": {
+                            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                          },
+                          "GroupName": "Closed"
+                        },
+                        {
+                          "$type": "RPG.GameCore.SetNavMeshState",
+                          "TargetType": {
+                            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                          },
+                          "Name": {
+                            "Value": "Closed"
+                          }
+                        },
+                        {
+                          "$type": "RPG.GameCore.SetGraphDynamicFloat",
+                          "Name": "KeyStateStable",
+                          "TargetIDs": [],
+                          "Value": {
+                            "FixedValue": {
+                              "Value": 1
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.GenericSwitchCase",
+          "SwitchRef": {
+            "$type": "RPG.GameCore.SwitchRefPropState"
+          },
+          "Cases": [
+            {
+              "$type": "RPG.GameCore.PropStateCaseContainer",
+              "Case": "Locked",
+              "OnSuccess": [
+                {
+                  "$type": "RPG.GameCore.SetTimelineEntityState",
+                  "Target": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                  },
+                  "StateName": {
+                    "Value": "L0_00"
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.SetTimeRewindEntityActive",
+                  "Target": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                  }
+                },
+                {
+                  "$type": "RPG.GameCore.AdvSetColliderGroupState",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                  },
+                  "GroupName": "Closed"
+                },
+                {
+                  "$type": "RPG.GameCore.SetNavMeshState",
+                  "TargetType": {
+                    "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                  },
+                  "Name": {
+                    "Value": "Closed"
+                  }
+                }
+              ]
+            }
+          ],
+          "Default": [
+            {
+              "$type": "RPG.GameCore.TriggerEntityEvent",
+              "EventName": {
+                "Value": "Self_TriggerJumpTo"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.GenericSwitchCase",
+              "SwitchRef": {
+                "$type": "RPG.GameCore.SwitchRefGraphDynamicFloat",
+                "Name": "RotateIndex"
+              },
+              "Cases": [
+                {
+                  "$type": "RPG.GameCore.NumberCaseContainer",
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 0
+                    }
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.SetTimelineEntityState",
+                      "Target": {
+                        "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                      },
+                      "StateName": {
+                        "Value": "L0_00"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.NumberCaseContainer",
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 1
+                    }
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.SetTimelineEntityState",
+                      "Target": {
+                        "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                      },
+                      "StateName": {
+                        "Value": "L1_01"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.NumberCaseContainer",
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 2
+                    }
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.SetTimelineEntityState",
+                      "Target": {
+                        "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                      },
+                      "StateName": {
+                        "Value": "L2_02"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.NumberCaseContainer",
+                  "Case": {
+                    "FixedValue": {
+                      "Value": 3
+                    }
+                  },
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.SetTimelineEntityState",
+                      "Target": {
+                        "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                      },
+                      "StateName": {
+                        "Value": "L3_03"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.TriggerEntityEvent",
+              "EventName": {
+                "Value": "Self_TriggerUpdateSerialNum"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.TriggerEntityEvent",
+              "EventName": {
+                "Value": "Self_UpdateCanDoRotate"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.GenericSwitchCase",
+              "SwitchRef": {
+                "$type": "RPG.GameCore.SwitchRefPropState"
+              },
+              "Cases": [
+                {
+                  "$type": "RPG.GameCore.PropStateCaseContainer",
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.SetTimeRewindEntityActive",
+                      "Target": {
+                        "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                      },
+                      "Active": true
+                    },
+                    {
+                      "$type": "RPG.GameCore.AdvSetColliderGroupState",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                      },
+                      "GroupName": "Closed"
+                    },
+                    {
+                      "$type": "RPG.GameCore.SetNavMeshState",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                      },
+                      "Name": {
+                        "Value": "Closed"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$type": "RPG.GameCore.PropStateCaseContainer",
+                  "Case": "Open",
+                  "OnSuccess": [
+                    {
+                      "$type": "RPG.GameCore.SetTimeRewindEntityActive",
+                      "Target": {
+                        "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                      }
+                    },
+                    {
+                      "$type": "RPG.GameCore.AdvSetColliderGroupState",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                      },
+                      "GroupName": "Open"
+                    },
+                    {
+                      "$type": "RPG.GameCore.RemoveNavMeshState",
+                      "TargetType": {
+                        "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitAnimStateChange",
+          "StateName": "L0_00",
+          "IsEnter": true
+        },
+        {
+          "$type": "RPG.GameCore.SetGraphDynamicFloat",
+          "Name": "KeyStateStable",
+          "TargetIDs": [],
+          "Value": {
+            "FixedValue": {
+              "Value": 1
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.SetGraphDynamicFloat",
+          "Name": "KeyRecentlyRewinded",
+          "TargetIDs": [],
+          "Value": {
+            "FixedValue": {
+              "Value": 0
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByCompareGraphDynamicFloat",
+            "Name": "Loc_IsInRewindCtrl",
+            "Value": {
+              "FixedValue": {
+                "Value": 0
+              }
+            },
+            "CompareType": "Equal"
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.SetGraphDynamicFloat",
+              "Name": "Loc_RewindAnimBuffer",
+              "TargetIDs": [],
+              "Value": {
+                "FixedValue": {
+                  "Value": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByComparePropState",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+            },
+            "State": "Locked",
+            "Inverse": true
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.TriggerEntityEvent",
+              "EventName": {
+                "Value": "Self_TriggerUpdateSerialNum"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitAnimStateChange",
+          "StateName": "L1_01",
+          "IsEnter": true
+        },
+        {
+          "$type": "RPG.GameCore.SetGraphDynamicFloat",
+          "Name": "KeyStateStable",
+          "TargetIDs": [],
+          "Value": {
+            "FixedValue": {
+              "Value": 1
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.SetGraphDynamicFloat",
+          "Name": "KeyRecentlyRewinded",
+          "TargetIDs": [],
+          "Value": {
+            "FixedValue": {
+              "Value": 0
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByCompareGraphDynamicFloat",
+            "Name": "Loc_IsInRewindCtrl",
+            "Value": {
+              "FixedValue": {
+                "Value": 0
+              }
+            },
+            "CompareType": "Equal"
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.SetGraphDynamicFloat",
+              "Name": "Loc_RewindAnimBuffer",
+              "TargetIDs": [],
+              "Value": {
+                "FixedValue": {
+                  "Value": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByComparePropState",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+            },
+            "State": "Locked",
+            "Inverse": true
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.TriggerEntityEvent",
+              "EventName": {
+                "Value": "Self_TriggerUpdateSerialNum"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitAnimStateChange",
+          "StateName": "L2_02",
+          "IsEnter": true
+        },
+        {
+          "$type": "RPG.GameCore.SetGraphDynamicFloat",
+          "Name": "KeyStateStable",
+          "TargetIDs": [],
+          "Value": {
+            "FixedValue": {
+              "Value": 1
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.SetGraphDynamicFloat",
+          "Name": "KeyRecentlyRewinded",
+          "TargetIDs": [],
+          "Value": {
+            "FixedValue": {
+              "Value": 0
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByCompareGraphDynamicFloat",
+            "Name": "Loc_IsInRewindCtrl",
+            "Value": {
+              "FixedValue": {
+                "Value": 0
+              }
+            },
+            "CompareType": "Equal"
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.SetGraphDynamicFloat",
+              "Name": "Loc_RewindAnimBuffer",
+              "TargetIDs": [],
+              "Value": {
+                "FixedValue": {
+                  "Value": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByComparePropState",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+            },
+            "State": "Locked",
+            "Inverse": true
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.TriggerEntityEvent",
+              "EventName": {
+                "Value": "Self_TriggerUpdateSerialNum"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitAnimStateChange",
+          "StateName": "L3_03",
+          "IsEnter": true
+        },
+        {
+          "$type": "RPG.GameCore.SetGraphDynamicFloat",
+          "Name": "KeyStateStable",
+          "TargetIDs": [],
+          "Value": {
+            "FixedValue": {
+              "Value": 1
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.SetGraphDynamicFloat",
+          "Name": "KeyRecentlyRewinded",
+          "TargetIDs": [],
+          "Value": {
+            "FixedValue": {
+              "Value": 0
+            }
+          }
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByCompareGraphDynamicFloat",
+            "Name": "Loc_IsInRewindCtrl",
+            "Value": {
+              "FixedValue": {
+                "Value": 0
+              }
+            },
+            "CompareType": "Equal"
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.SetGraphDynamicFloat",
+              "Name": "Loc_RewindAnimBuffer",
+              "TargetIDs": [],
+              "Value": {
+                "FixedValue": {
+                  "Value": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "$type": "RPG.GameCore.PredicateTaskList",
+          "Predicate": {
+            "$type": "RPG.GameCore.ByComparePropState",
+            "TargetType": {
+              "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+            },
+            "State": "Locked",
+            "Inverse": true
+          },
+          "SuccessTaskList": [
+            {
+              "$type": "RPG.GameCore.TriggerEntityEvent",
+              "EventName": {
+                "Value": "Self_TriggerUpdateSerialNum"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitEntityEvent",
+          "EventName": {
+            "Value": "Clt_TriggerOpen"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareEntityAuthoritySide"
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.GenericSwitchCase",
+                  "SwitchRef": {
+                    "$type": "RPG.GameCore.SwitchRefPropState"
+                  },
+                  "Cases": [
+                    {
+                      "$type": "RPG.GameCore.PropStateCaseContainer",
+                      "OnSuccess": [
+                        {
+                          "$type": "RPG.GameCore.AdvClientChangePropState",
+                          "TargetType": {
+                            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                          },
+                          "ToState": "Open"
+                        }
+                      ]
+                    },
+                    {
+                      "$type": "RPG.GameCore.PropStateCaseContainer",
+                      "Case": "Locked",
+                      "OnSuccess": [
+                        {
+                          "$type": "RPG.GameCore.AdvClientChangePropState",
+                          "TargetType": {
+                            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                          },
+                          "FromState": "Locked",
+                          "ToState": "Open"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "FailedTaskList": [
+                {
+                  "$type": "RPG.GameCore.GenericSwitchCase",
+                  "SwitchRef": {
+                    "$type": "RPG.GameCore.SwitchRefPropState"
+                  },
+                  "Cases": [
+                    {
+                      "$type": "RPG.GameCore.PropStateCaseContainer",
+                      "OnSuccess": [
+                        {
+                          "$type": "RPG.GameCore.PropReqInteract",
+                          "TargetType": {
+                            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                          },
+                          "InteractID": {
+                            "FixedValue": {
+                              "Value": 1010
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "$type": "RPG.GameCore.PropStateCaseContainer",
+                      "Case": "Locked",
+                      "OnSuccess": [
+                        {
+                          "$type": "RPG.GameCore.PropReqInteract",
+                          "TargetType": {
+                            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                          },
+                          "InteractID": {
+                            "FixedValue": {
+                              "Value": 1210
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitEntityEvent",
+          "EventName": {
+            "Value": "Clt_TriggerClose"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareEntityAuthoritySide"
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.GenericSwitchCase",
+                  "SwitchRef": {
+                    "$type": "RPG.GameCore.SwitchRefPropState"
+                  },
+                  "Cases": [
+                    {
+                      "$type": "RPG.GameCore.PropStateCaseContainer",
+                      "Case": "Open",
+                      "OnSuccess": [
+                        {
+                          "$type": "RPG.GameCore.AdvClientChangePropState",
+                          "TargetType": {
+                            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                          },
+                          "FromState": "Open"
+                        }
+                      ]
+                    },
+                    {
+                      "$type": "RPG.GameCore.PropStateCaseContainer",
+                      "Case": "Locked",
+                      "OnSuccess": [
+                        {
+                          "$type": "RPG.GameCore.AdvClientChangePropState",
+                          "TargetType": {
+                            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                          },
+                          "FromState": "Locked"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "FailedTaskList": [
+                {
+                  "$type": "RPG.GameCore.GenericSwitchCase",
+                  "SwitchRef": {
+                    "$type": "RPG.GameCore.SwitchRefPropState"
+                  },
+                  "Cases": [
+                    {
+                      "$type": "RPG.GameCore.PropStateCaseContainer",
+                      "Case": "Open",
+                      "OnSuccess": [
+                        {
+                          "$type": "RPG.GameCore.PropReqInteract",
+                          "TargetType": {
+                            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                          },
+                          "InteractID": {
+                            "FixedValue": {
+                              "Value": 1100
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "$type": "RPG.GameCore.PropStateCaseContainer",
+                      "Case": "Locked",
+                      "OnSuccess": [
+                        {
+                          "$type": "RPG.GameCore.PropReqInteract",
+                          "TargetType": {
+                            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                          },
+                          "InteractID": {
+                            "FixedValue": {
+                              "Value": 1200
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitEntityEvent",
+          "EventName": {
+            "Value": "Clt_TriggerLock"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.PredicateTaskList",
+              "Predicate": {
+                "$type": "RPG.GameCore.ByCompareEntityAuthoritySide"
+              },
+              "SuccessTaskList": [
+                {
+                  "$type": "RPG.GameCore.GenericSwitchCase",
+                  "SwitchRef": {
+                    "$type": "RPG.GameCore.SwitchRefPropState"
+                  },
+                  "Cases": [
+                    {
+                      "$type": "RPG.GameCore.PropStateCaseContainer",
+                      "Case": "Open",
+                      "OnSuccess": [
+                        {
+                          "$type": "RPG.GameCore.AdvClientChangePropState",
+                          "TargetType": {
+                            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                          },
+                          "FromState": "Open",
+                          "ToState": "Locked"
+                        }
+                      ]
+                    },
+                    {
+                      "$type": "RPG.GameCore.PropStateCaseContainer",
+                      "OnSuccess": [
+                        {
+                          "$type": "RPG.GameCore.AdvClientChangePropState",
+                          "TargetType": {
+                            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                          },
+                          "ToState": "Locked"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "FailedTaskList": [
+                {
+                  "$type": "RPG.GameCore.GenericSwitchCase",
+                  "SwitchRef": {
+                    "$type": "RPG.GameCore.SwitchRefPropState"
+                  },
+                  "Cases": [
+                    {
+                      "$type": "RPG.GameCore.PropStateCaseContainer",
+                      "Case": "Open",
+                      "OnSuccess": [
+                        {
+                          "$type": "RPG.GameCore.PropReqInteract",
+                          "TargetType": {
+                            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                          },
+                          "InteractID": {
+                            "FixedValue": {
+                              "Value": 1120
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "$type": "RPG.GameCore.PropStateCaseContainer",
+                      "OnSuccess": [
+                        {
+                          "$type": "RPG.GameCore.PropReqInteract",
+                          "TargetType": {
+                            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+                          },
+                          "InteractID": {
+                            "FixedValue": {
+                              "Value": 1020
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.LoopWaitEntityServerEvent"
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.LoopWaitEntityServerEvent"
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.LoopWaitEntityServerEvent"
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitEntityEventV2",
+          "EventName": {
+            "Value": "Self_StartLockWait"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.AnimSetParameter",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+              },
+              "ParameterName": "LoopWaitTrigger",
+              "ParameterType": "Trigger"
+            }
+          ],
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          }
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitAnimStateChange",
+          "StateName": "L0_00",
+          "IsEnter": true,
+          "IsListenAllLayer": true
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitAnimStateChange",
+          "StateName": "L1_01",
+          "IsEnter": true,
+          "IsListenAllLayer": true
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitAnimStateChange",
+          "StateName": "L2_02",
+          "IsEnter": true,
+          "IsListenAllLayer": true
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitAnimStateChange",
+          "StateName": "L3_03",
+          "IsEnter": true,
+          "IsListenAllLayer": true
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitAnimStateChange",
+          "StateName": "00_To_01",
+          "IsEnter": true,
+          "IsListenAllLayer": true
+        },
+        {
+          "$type": "RPG.GameCore.SetGraphDynamicFloat",
+          "Name": "KeyStateStable",
+          "TargetIDs": [],
+          "Value": {
+            "FixedValue": {
+              "Value": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitAnimStateChange",
+          "StateName": "01_To_02",
+          "IsEnter": true,
+          "IsListenAllLayer": true
+        },
+        {
+          "$type": "RPG.GameCore.SetGraphDynamicFloat",
+          "Name": "KeyStateStable",
+          "TargetIDs": [],
+          "Value": {
+            "FixedValue": {
+              "Value": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitAnimStateChange",
+          "StateName": "02_To_03",
+          "IsEnter": true,
+          "IsListenAllLayer": true
+        },
+        {
+          "$type": "RPG.GameCore.SetGraphDynamicFloat",
+          "Name": "KeyStateStable",
+          "TargetIDs": [],
+          "Value": {
+            "FixedValue": {
+              "Value": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitAnimStateChange",
+          "StateName": "03_To_00",
+          "IsEnter": true,
+          "IsListenAllLayer": true
+        },
+        {
+          "$type": "RPG.GameCore.SetGraphDynamicFloat",
+          "Name": "KeyStateStable",
+          "TargetIDs": [],
+          "Value": {
+            "FixedValue": {
+              "Value": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitGraphDynamicValueChange",
+          "Name": "KeyRecentlyRewinded",
+          "OnChange": [
+            {
+              "$type": "RPG.GameCore.ByCompareGraphDynamicFloat",
+              "Name": "KeyRecentlyRewinded",
+              "Value": {
+                "FixedValue": {
+                  "Value": 0
+                }
+              },
+              "CompareType": "Equal"
+            },
+            {
+              "$type": "RPG.GameCore.SetGraphDynamicFloat",
+              "Name": "KeyRecentlyRewinded",
+              "TargetIDs": [],
+              "Value": {
+                "FixedValue": {
+                  "Value": 0
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.TriggerGroupEvent",
+              "EventName": {
+                "Value": "Group_CheckKeyStateStable"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.TriggerEntityEventV2",
+              "EventName": {
+                "Value": "Clt_CheckKeyStateStable"
+              },
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitEntityEvent",
+          "EventName": {
+            "Value": "Self_TriggerMoveTo"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.WaitSecond",
+              "WaitTime": {
+                "IsDynamic": true,
+                "PostfixExpr": {
+                  "OpCodes": "AQAR",
+                  "FixedValues": [],
+                  "DynamicHashes": [
+                    -1333226913
+                  ]
+                }
+              }
+            },
+            {
+              "$type": "RPG.GameCore.AdvTriggerEffectList",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+              },
+              "ConfigNameList": [
+                "LoopTail"
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.SetAdvEffectTowardAnchor",
+              "ConfigName": "LoopTail",
+              "DynamicAnchor": {
+                "Custom": true,
+                "Key": "FaceTargetPos"
+              }
+            }
+          ],
+          "IsLoop": false
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitEntityEvent",
+          "EventName": {
+            "Value": "Self_TriggerJumpTo"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.WaitSecond"
+            },
+            {
+              "$type": "RPG.GameCore.AdvTriggerEffectList",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+              },
+              "ConfigNameList": [
+                "LoopTail"
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.SetAdvEffectTowardAnchor",
+              "ConfigName": "LoopTail",
+              "DynamicAnchor": {
+                "Custom": true,
+                "Key": "FaceTargetPos"
+              }
+            }
+          ],
+          "IsLoop": false
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitEntityEvent",
+          "EventName": {
+            "Value": "Clt_StopAndPlayFade"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.AdvTriggerEffectList",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+              },
+              "ConfigNameList": [
+                "Finish"
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.SetAdvEffectTowardAnchor",
+              "ConfigName": "Finish",
+              "DynamicAnchor": {
+                "Custom": true,
+                "Key": "FaceTargetPos"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.RemoveEffect",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+              },
+              "EffectPath": "Effects/Eff_Prefab/Eff_Scene/InteractiveProp/Eff_Chap04_Prop_TimeRing_01_LoopLine_Lod0.prefab",
+              "AttachPointName": "EffectPoint",
+              "Flags": []
+            }
+          ],
+          "IsLoop": false
+        }
+      ]
+    },
+    {
+      "IsLoop": true,
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitEntityEvent",
+          "EventName": {
+            "Value": "Clt_CheckKeyAndHoleBit"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.AnimSetParameter",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+              },
+              "ParameterName": "LoopLightTrigger",
+              "ParameterType": "Trigger"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitEntityEventV2",
+          "EventName": {
+            "Value": "Self_BreakLockWait"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.AnimSetParameter",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+              },
+              "ParameterName": "LoopBreakTrigger",
+              "ParameterType": "Trigger"
+            }
+          ],
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          }
+        }
+      ]
+    },
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.WaitEntityEventV2",
+          "EventName": {
+            "Value": "Self_RemoveStageCollider"
+          },
+          "OnEvent": [
+            {
+              "$type": "RPG.GameCore.RemoveNavMeshState",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.AdvSetColliderGroupState",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+              },
+              "GroupName": "ClosedWithOutStg"
+            }
+          ],
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          }
+        }
+      ]
+    }
+  ],
+  "ValueSource": {
+    "Values": [
+      {
+        "$type": "RPG.GameCore.SharedString",
+        "Key": "MoveTargetPos"
+      },
+      {
+        "$type": "RPG.GameCore.SharedFloat",
+        "Value": 1,
+        "Key": "MoveDuration"
+      },
+      {
+        "$type": "RPG.GameCore.SharedInt",
+        "Key": "IsStatic"
+      },
+      {
+        "$type": "RPG.GameCore.SharedInt",
+        "Value": 1,
+        "Key": "RotAxisType"
+      },
+      {
+        "$type": "RPG.GameCore.SharedInt",
+        "Key": "RotateIndex"
+      },
+      {
+        "$type": "RPG.GameCore.SharedInt",
+        "Key": "Loc_IsInRewindCtrl"
+      },
+      {
+        "$type": "RPG.GameCore.SharedInt",
+        "Key": "Loc_RewindAnimBuffer"
+      },
+      {
+        "$type": "RPG.GameCore.SharedInt",
+        "Key": "Loc_IsInPauseCtrl"
+      },
+      {
+        "$type": "RPG.GameCore.SharedInt",
+        "Value": 1,
+        "Key": "Loc_CanDoRotate"
+      },
+      {
+        "$type": "RPG.GameCore.SharedInt",
+        "Value": -1,
+        "Key": "Loc_ResultSerialNum"
+      },
+      {
+        "$type": "RPG.GameCore.SharedInt",
+        "Key": "ResultDigitalNum"
+      },
+      {
+        "$type": "RPG.GameCore.SharedFloat",
+        "Key": "RotateSpeedWhenLockX"
+      },
+      {
+        "$type": "RPG.GameCore.SharedFloat",
+        "Key": "RotateSpeedWhenLockY"
+      },
+      {
+        "$type": "RPG.GameCore.SharedFloat",
+        "Key": "RotateSpeedWhenLockZ"
+      },
+      {
+        "$type": "RPG.GameCore.SharedFloat",
+        "Value": 1,
+        "Key": "KeyStateStable"
+      },
+      {
+        "$type": "RPG.GameCore.SharedFloat",
+        "Key": "KeyRecentlyRewinded"
+      },
+      {
+        "$type": "RPG.GameCore.SharedString",
+        "Key": "FaceTargetPos"
+      },
+      {
+        "$type": "RPG.GameCore.SharedInt",
+        "Key": "FloatPosWhenLock"
+      },
+      {
+        "$type": "RPG.GameCore.SharedInt",
+        "Key": "GroupPauseSolving"
+      }
+    ]
+  },
+  "Type": "Entity",
+  "EntityEventList": [
+    {
+      "Name": "Clt_TriggerRotate",
+      "Description": "三个钥匙需要统一转，所以不能各自转，需外部统一控制旋转"
+    },
+    {
+      "Name": "Self_UpdateRewindState",
+      "IsPrivate": true
+    },
+    {
+      "Name": "Self_TriggerUpdateSerialNum",
+      "IsPrivate": true
+    },
+    {
+      "Name": "Clt_OnResultDigitalNumChanged"
+    },
+    {
+      "Name": "Self_UpdateCanDoRotate",
+      "IsPrivate": true
+    },
+    {
+      "Name": "Self_TriggerMoveTo",
+      "IsPrivate": true
+    },
+    {
+      "Name": "Self_TriggerJumpTo",
+      "IsPrivate": true
+    },
+    {
+      "Name": "Clt_TriggerOpen"
+    },
+    {
+      "Name": "Clt_TriggerClose"
+    },
+    {
+      "Name": "Clt_TriggerLock"
+    },
+    {
+      "Name": "Srv_TriggerOpen",
+      "IsClient": false
+    },
+    {
+      "Name": "Srv_TriggerClose",
+      "IsClient": false
+    },
+    {
+      "Name": "Srv_TriggerLock",
+      "IsClient": false
+    },
+    {
+      "Name": "Self_StartTimelineMode"
+    },
+    {
+      "Name": "Self_StartInitialState"
+    },
+    {
+      "Name": "Clt_CheckKeyAndHoleBit"
+    },
+    {
+      "Name": "Clt_StopAndPlayFade"
+    },
+    {
+      "Name": "Clt_CheckKeyStateStable"
+    },
+    {
+      "Name": "Self_StartLockWait"
+    },
+    {
+      "Name": "Self_BreakLockWait"
+    },
+    {
+      "Name": "Self_RemoveStageCollider"
+    }
+  ]
+}

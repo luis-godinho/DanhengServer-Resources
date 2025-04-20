@@ -1,0 +1,63 @@
+{
+  "OnInitSequece": [],
+  "OnStartSequece": [
+    {
+      "TaskList": [
+        {
+          "$type": "RPG.GameCore.PropSetupUITrigger",
+          "DestroyAfterTriggered": true,
+          "IconType": "ChatIcon",
+          "ButtonText": {
+            "Hash": 2235407286287928176
+          },
+          "ButtonCallback": [
+            {
+              "$type": "RPG.GameCore.TriggerCustomString",
+              "CustomString": {
+                "Value": "Talk_800325004_2"
+              }
+            },
+            {
+              "$type": "RPG.GameCore.PlayMissionTalk",
+              "SimpleTalkList": [
+                {
+                  "TalkSentenceID": 813250055,
+                  "ProtectTime": 2,
+                  "ForceToNextTime": 2
+                },
+                {
+                  "TalkSentenceID": 813250060,
+                  "ProtectTime": 2,
+                  "ForceToNextTime": 2
+                }
+              ]
+            },
+            {
+              "$type": "RPG.GameCore.PropDestruct",
+              "TargetType": {
+                "$type": "RPG.GameCore.TargetFetchAdvPropEx",
+                "FetchType": "SinglePropByPropID",
+                "SinglePropID": {
+                  "GroupID": {
+                    "FixedValue": {
+                      "Value": 198
+                    }
+                  },
+                  "ID": {
+                    "FixedValue": {
+                      "Value": 300005
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "OverrideTargetTypes": [],
+          "TargetType": {
+            "$type": "RPG.GameCore.TargetFetchAdvPropEx"
+          }
+        }
+      ]
+    }
+  ]
+}
